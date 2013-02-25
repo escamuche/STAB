@@ -21,7 +21,7 @@ public class DefendAction extends SelfAction {
 	@Override
 	public boolean execute(BaseInfo self) {
 		self.playAnimation(DefendAnimation.ID);
-		self.getScene().sendMessage(ConsoleMessage.SUCCESS, self.getText()+" defends");
+		self.sendMessage(ConsoleMessage.SUCCESS, self.getText()+" defends");
 		
 		Modifier masdosalaCA= Modifier.createMod("CA", +2);  // Creamos un modificador de +2 a la ca
 		Effect buffqueduraunround = Effect.createRound("Nombre innecesario de ejemplo", masdosalaCA); //creamos un efecto que dura 1 round, y que aplica ese modificador (y lo quita cuando se pasa)
