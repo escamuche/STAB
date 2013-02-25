@@ -213,3 +213,13 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+/res
+/config.txt
+/jinput-dx8_64.dll
+/jinput-dx8.dll
+/jinput-raw_64.dll
+/jinput-raw.dll
+/lwjgl.dll
+/lwjgl64.dll
+/OpenAL32.dll
+/OpenAL64.dll
