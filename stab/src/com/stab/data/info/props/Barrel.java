@@ -15,4 +15,11 @@ public class Barrel extends Obstacle {
 		setResource("Barril");
 		setText("");
 	}
+	
+	@Override
+	public void die() {
+		super.die();
+		setResource("BarrilRoto");
+	}
+	
 }
