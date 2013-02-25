@@ -7,6 +7,7 @@ import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.Kill;
 import com.stab.data.adventure.TestAdventure;
 import com.stab.data.animation.CloseDoorAnimation;
+import com.stab.data.animation.DamageNumberAnimation;
 import com.stab.data.animation.OpenDoorAnimation;
 import com.stab.data.animation.WalkAnimation;
 import com.stab.data.info.player.WarriorCharacter;
@@ -77,6 +78,7 @@ public class StabInit {
 		of.setMapping(WalkAnimation.class);
 		of.setMapping(OpenDoorAnimation.class);
 		of.setMapping(CloseDoorAnimation.class);
+		of.setMapping(DamageNumberAnimation.class);
 	}
 	
 	static void initActions(){
