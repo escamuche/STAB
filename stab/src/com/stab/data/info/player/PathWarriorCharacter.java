@@ -17,6 +17,11 @@ public static final String ID="WARRIOR_INFO";
 		setResource("tokenWarrior");
 		setText("Warrior1");
 		this.setMaxHp(15);
+		this.setAttribute("ToHit",4);
+		this.setAttribute("Armor",14);
+		this.setAttribute("Damage",7);
+		this.setAttribute("Saving",4);
+		this.setAttribute("Experience",0);
 		
 		 
 	}

@@ -13,7 +13,8 @@ public class Kill extends TargetAction{
 	@Override
 	public boolean execute(Info yo, Info target) {
 		BaseInfo aMatar = (BaseInfo)target;
-		Damage d= new Damage(10, Damage.FIRE_DAMAGE,yo);
+		BaseInfo elqueMata = (BaseInfo)yo;
+		Damage d= new Damage(elqueMata.getValue("Damage"), Damage.SLASHING_DAMAGE,yo);
 		aMatar.apply(d);
 	    return true;
 	}
