@@ -2,11 +2,12 @@ package com.stab.data.info.player;
 
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.WarriorActionSet;
-import com.stab.model.info.base.Character;
 
-public class WarriorCharacter extends Character {
 
-	public static final String ID="WARRIOR_INFO";
+public class WarriorCharacter extends PathfinderCharacter{
+
+	
+public static final String ID="WARRIOR_INFO";
 	
 	
 	@Override
@@ -15,6 +16,13 @@ public class WarriorCharacter extends Character {
 		setActionSet(new WarriorActionSet());
 		setResource("tokenWarrior");
 		setText("Warrior1");
+		this.setMaxHp(15);
+		this.setAttribute("ToHit",4);
+		this.setAttribute("Armor",14);
+		this.setAttribute("Damage",7);
+		this.setAttribute("Saving",4);
+		this.setAttribute("Experience",0);
+		
 		 
 	}
 	
@@ -32,3 +40,4 @@ public class WarriorCharacter extends Character {
 	}
 	
 }
+	
