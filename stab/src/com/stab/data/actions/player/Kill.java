@@ -16,7 +16,7 @@ public class Kill extends TargetAction{
 		BaseInfo aMatar = (BaseInfo)target;
 		BaseInfo elqueMata = (BaseInfo)yo;
 		Damage d= new Damage(elqueMata.getValue("Damage"), Damage.SLASHING_DAMAGE,yo);
-		elqueMata.getScene().sendMessage(ConsoleMessage.SUCCESS, elqueMata.getAttribute("Damage")+" de daño");
+		elqueMata.getScene().sendMessage(ConsoleMessage.SUCCESS, d.getAmount()+" de daño");
 		aMatar.apply(d);
 	    return true;
 	}
