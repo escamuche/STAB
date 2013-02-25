@@ -1,5 +1,6 @@
 package com.stab.data.info.player;
 
+import com.stab.data.StabConstants;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.WarriorActionSet;
 
@@ -17,11 +18,11 @@ public static final String ID="WARRIOR_INFO";
 		setResource("tokenWarrior");
 		setText("Warrior1");
 		this.setMaxHp(15);
-		this.setAttribute("ToHit",4);
-		this.setAttribute("Armor",14);
-		this.setAttribute("Damage",7);
-		this.setAttribute("Saving",4);
-		this.setAttribute("Experience",0);
+		this.setAttribute(StabConstants.TOHIT,4);
+		this.setAttribute(StabConstants.ARMOR,14);
+		this.setAttribute(StabConstants.DAMAGE,7);
+		this.setAttribute(StabConstants.SAVING,4);
+		this.setAttribute(StabConstants.EXPERIENCE,0);
 		
 		 
 	}
