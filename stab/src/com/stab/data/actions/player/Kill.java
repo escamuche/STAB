@@ -1,9 +1,10 @@
 package com.stab.data.actions.player;
 
-import com.stab.data.info.props.Barrel;
 import com.stab.model.action.TargetAction;
 import com.stab.model.basic.token.PhysicalToken;
+import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.info.applicable.base.Damage;
 
 public class Kill extends TargetAction{
 	
@@ -11,9 +12,10 @@ public class Kill extends TargetAction{
 
 	@Override
 	public boolean execute(Info yo, Info target) {
-		
-		( (Barrel) target) .die();
-		return true;
+		BaseInfo aMatar = (BaseInfo)target;
+		Damage d= new Damage(10, Damage.FIRE_DAMAGE,yo);
+		aMatar.apply(d);
+	    return true;
 	}
 	
 	public Kill() {
