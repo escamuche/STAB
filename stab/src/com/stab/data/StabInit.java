@@ -13,6 +13,7 @@ import com.stab.data.animation.WalkAnimation;
 import com.stab.data.info.player.WarriorCharacter;
 import com.stab.data.info.props.Barrel;
 import com.stab.data.info.props.Crate;
+import com.stab.data.info.props.Dummy;
 import com.stab.data.info.props.WoodenDoor;
 import com.stab.data.scene.StabLobby;
 import com.stab.data.utils.DefaultBlockData;
@@ -69,6 +70,7 @@ public class StabInit {
 		of.setMapping(Crate.class);
 		of.setMapping(WoodenDoor.class);
 		of.setMapping(Barrel.class);
+		of.setMapping(Dummy.class);
 		
 		
 		
