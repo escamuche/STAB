@@ -26,18 +26,14 @@ public class Kill extends TargetAction{
 		int dado = Roll.d20();
 		int dañobase=elqueMata.getValue(StabConstants.DAMAGE);
 		
-		Modifier critical= Modifier.createMod(StabConstants.DAMAGE, +dañobase);
 		
 		if (dado == 20) {  
-			Effect buffdaño = Effect.createRound("buffcritico", critical);		
-		    elqueMata.addTrait(buffdaño);
+			dañobase=dañobase*2;
 		    critico=true;
-		    return true;
 			}
 		
 		if (dado == 1) {
 			pifia=true;
-			return false;
 		    }
 		
 		int dar = elqueMata.getValue(StabConstants.TOHIT) + dado;
@@ -72,7 +68,7 @@ public class Kill extends TargetAction{
 	public Kill() {
      setRange(1);
      setTargetClass(PhysicalToken.class);
-     setResource("actions/ability_warrior_defensivestance");
+     setResource("actions/ability_steelmelee");
 	}
 
 	public static void main(String[] args) {
