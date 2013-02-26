@@ -15,7 +15,7 @@ public class DefendAction extends SelfAction {
 	public DefendAction() {
 		this.setName("Defend");
 		this.setResource("actions/ability_warrior_defensivestance");
-		
+		this.setEffectType(BUFF);
 	}
 	
 	@Override

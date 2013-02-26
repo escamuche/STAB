@@ -3,18 +3,18 @@ package com.stab.data.actions.player;
 import com.stab.data.StabConstants;
 import com.stab.model.action.TargetAction;
 import com.stab.model.basic.token.PhysicalToken;
-import com.stab.model.events.common.ConsoleMessage;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
-import com.stab.model.info.trait.Effect;
-import com.stab.model.info.trait.Modifier;
 import com.stab.util.Roll;
 
 public class Kill extends TargetAction{
 	
 	public static final String ID="Kill";
 
+	
+	
+	
 
 	@Override
 	public boolean execute(Info yo, Info target) {
@@ -91,10 +91,13 @@ public class Kill extends TargetAction{
      setRange(1);
      setTargetClass(PhysicalToken.class);
      setResource("actions/ability_steelmelee");
+     this.setEffectType(DAMAGE);
 	}
 
-	public static void main(String[] args) {
-
+	
+	@Override
+	public int getEffectValue(BaseInfo i) {
+		return i.getAttributeValue(StabConstants.DAMAGE);
 	}
 	
 
