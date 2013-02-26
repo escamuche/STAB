@@ -14,8 +14,7 @@ import com.stab.util.Roll;
 public class Kill extends TargetAction{
 	
 	public static final String ID="Kill";
-	public boolean critico=false;
-	public boolean pifia=false;
+
 
 	@Override
 	public boolean execute(Info yo, Info target) {
@@ -23,36 +22,42 @@ public class Kill extends TargetAction{
 		BaseInfo elqueMata = (BaseInfo)yo;
 		
 		int ac = aMatar.getValue(StabConstants.ARMOR);
-		int dado = Roll.d20()+1;
+		int dado = Roll.d20();
 		int dañobase=elqueMata.getValue(StabConstants.DAMAGE);
+		int hit=elqueMata.getValue(StabConstants.TOHIT);
+		boolean critico=false;
+		boolean pifia=false;
 		System.out.println(dado + " en el dado!");
 		
 		
 		if (dado == 20) {
 			System.out.println("Posibilidad de Critico!");
-			int confir=Roll.d20();
-			int caconfir=elqueMata.getValue(StabConstants.TOHIT) + confir;
-			if(ac <= caconfir) {
-			dañobase=dañobase*2;
-		    critico=true;
-		    System.out.println("Critico!!!");
-			   }
+			int confirc=Roll.d20();
+			int caconfirc=hit + confirc;
+			if(ac <= caconfirc) {
+				dañobase=dañobase*2;
+				critico=true;
+				System.out.println("Critico!!!");
+			   	}
 			else{
 				System.out.println("Fallaste la confirmacion!");
+				}
 			}
-			}
+		
 		
 		if (dado == 1) {
 			System.out.println("Posibilidad de Pifia!");
-		    int confir=Roll.d20();
-		    int caconfir=elqueMata.getValue(StabConstants.TOHIT) + confir;
-		    if(ac <= caconfir) {
-	        System.out.println("Casi!");
-		   }
-		else{
-			System.out.println("Pifia!!!");
-			pifia=true;
-		    }
+		    int confirp=Roll.d20();
+		    int caconfirp=hit + confirp;
+		    if(ac <= caconfirp) {
+		    	System.out.println("Casi!");
+		    	}
+		    	else{
+		    		System.out.println("Pifia!!!");
+		    		pifia=true;
+		    		}
+			}
+		
 		
 		int dar = elqueMata.getValue(StabConstants.TOHIT) + dado;
 		System.out.println("Impactas a armadura " + dar);
@@ -64,14 +69,14 @@ public class Kill extends TargetAction{
 				return false;				
 							}
 		           //das y no es pifia
-						Damage d= new Damage(elqueMata.getValue(StabConstants.DAMAGE), Damage.SLASHING_DAMAGE,yo);
+						Damage d= new Damage(dañobase, Damage.SLASHING_DAMAGE,yo);
 						aMatar.apply(d);
 						System.out.println(d.getAmount()+" de daño");
 						return true;	
 		}
 			else { // si no das a ca
 				if (critico == true) { //pero es critico
-					Damage d= new Damage(elqueMata.getValue(StabConstants.DAMAGE), Damage.SLASHING_DAMAGE,yo);
+					Damage d= new Damage(dañobase, Damage.SLASHING_DAMAGE,yo);
 					aMatar.apply(d);
 					System.out.println(d.getAmount()+" de daño");
 					return true;	
@@ -80,8 +85,6 @@ public class Kill extends TargetAction{
 				System.out.println("Fallas el golpe");
 				return false;	
 		    }
-		}
-		return critico;
 		}
 	
 	public Kill() {
