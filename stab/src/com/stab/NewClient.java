@@ -34,12 +34,7 @@ public class NewClient extends  StabClient {
 
 
 	public static void main(String[] args) {
-		
-		int[] v=new int[22];
-		for (int f=0;f<10000;f++)
-			v[Roll.d20()]++;
-		for (int f=0;f<22;f++)				
-			System.out.println(f+":"+v[f]);
+	
 		
 		NewClient client=new NewClient();
 		client.start();

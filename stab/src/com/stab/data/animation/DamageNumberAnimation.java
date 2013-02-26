@@ -7,6 +7,7 @@ import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.BaseInfo;
+import com.tien.princess.engine.Resources;
 import com.tien.princess.engine.sprite.base.FloatingText;
 
 public class DamageNumberAnimation extends Animation{
@@ -24,13 +25,15 @@ public class DamageNumberAnimation extends Animation{
 			
 		Token_sprite s=AnimUtils.getSprite(getSource());
 		
-		 FloatingText ft=new FloatingText();
+		 FloatingText ft=new FloatingText(1000);
 		 ft.setText(getParam(0));
 		 ft.setTextColor(Color.red);
-		 ft.setPos(s.getX(),s.getY());
+		 ft.setFont(Resources.INSTANCE.getFont(Resources.BOLD_FONT));
+		 ft.setPos(s.getX()+s.getWidth()/2,s.getY()+16);
 		 ft.setSize(64,64);
-		//((GameScreen)s.getScreen()).add(ft);
-		 //WIP
+		 ft.setSpeed(0, -0.03f);
+		((GameScreen)s.getScreen()).add(ft);
+		
 	}
 	
 	
