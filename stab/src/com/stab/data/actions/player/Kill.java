@@ -14,6 +14,8 @@ import com.stab.util.Roll;
 public class Kill extends TargetAction{
 	
 	public static final String ID="Kill";
+	public boolean critico=false;
+	public boolean pifia=false;
 
 	@Override
 	public boolean execute(Info yo, Info target) {
@@ -22,8 +24,6 @@ public class Kill extends TargetAction{
 		
 		int ac = aMatar.getValue(StabConstants.ARMOR);
 		int dado = Roll.d20();
-		boolean critico=false;
-		boolean pifia=false;
 		int dañobase=elqueMata.getValue(StabConstants.DAMAGE);
 		
 		Modifier critical= Modifier.createMod(StabConstants.DAMAGE, +dañobase);
@@ -45,7 +45,7 @@ public class Kill extends TargetAction{
 	
 		if (ac <= dar) { //si das a ca
 			
-			if (pifia = true) { //pero es pifia
+			if (pifia == true) { //pero es pifia
 				elqueMata.getScene().sendMessage(ConsoleMessage.ERROR, "Fallas el golpe");
 				return false;				
 							}
@@ -56,7 +56,7 @@ public class Kill extends TargetAction{
 						return true;	
 		}
 			else { // si no das a ca
-				if (critico=true) { //pero es critico
+				if (critico == true) { //pero es critico
 					Damage d= new Damage(elqueMata.getValue(StabConstants.DAMAGE), Damage.SLASHING_DAMAGE,yo);
 					aMatar.apply(d);
 					elqueMata.getScene().sendMessage(ConsoleMessage.WARNING, d.getAmount()+" de daño");
