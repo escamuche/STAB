@@ -12,7 +12,9 @@ public class Attack extends Applicable{
 	public static final int MISS = 10;
 	public static final int CRITICAL= 5;
 	public static final int BOTCH = 11;
-	
+
+	//En un futuro añadir o reutilizar los que hay para "le has dado a una imagen" o "fallo por concealment", etc
+	//Añadir tambien si ha sido CA, dodge, cover, parry o block lo que ha parado el ataque (con vistas a animacion)
 	
 	public Attack(BaseInfo instigator) {
 		super(instigator);

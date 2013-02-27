@@ -1,9 +1,14 @@
 package com.stab.data.adventure;
 
 import com.stab.adventure.Adventure;
+import com.stab.common.events.DefaultRule;
+import com.stab.data.info.props.Dummy;
 import com.stab.data.utils.DefaultBlockData;
 import com.stab.model.basic.scenes.Choice;
 import com.stab.model.basic.scenes.Narration;
+import com.stab.model.basic.scenes.event.InfoDestroyed;
+import com.stab.model.basic.scenes.event.condition.InfoIsClass;
+import com.stab.model.basic.scenes.event.response.VictoryResponse;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 import com.stab.model.basic.scenes.map.TileMapScene;
 
@@ -38,6 +43,7 @@ public class TestAdventure extends Adventure{
 		c.setText("Acompañais a la anciana hasta su casa en las afueras. Aparentemente, tiene una plaga de ratas en su sótano, y os pagará generosamente si acabais con ellas, siempre y cuando ninguna consiga escapar. El sótano tiene dos accesos, uno por las escaleras de la casa y otro por una trampilla en el exterior. Seria recomendable dividirse para evitar que escapen.");
 		c.addOption("Bajar por las escaleras de la casa","BATTLE.stairs");
 		c.addOption("Acceder desde la trampilla exterior","BATTLE.cellar");
+		//c.addOption("Marcharse","VICTORY");
 		this.addScene(c);
 		
 		TileMapScene ms=new DefaultTileMapScene();
@@ -46,7 +52,20 @@ public class TestAdventure extends Adventure{
 		ms.setTiles(DefaultTileMapScene.DEFAULT,"newtiles");
 		ms.setProperties(DefaultTileMapScene.DEFAULT, DefaultBlockData.ID);
 		ms.setTag("BATTLE");
+		
+		DefaultRule r=new DefaultRule();
+		r.setEvent(InfoDestroyed.class);
+		r.addCondition(new InfoIsClass(Dummy.class));
+		r.addResponse(new VictoryResponse(0,"VICTORY"));
+		ms.addRule(r);
 		this.addScene(ms);
+		
+		Narration n2=new Narration();
+		n2.createContents();
+		n2.setTag("VICTORY");
+		n2.setText("Victoria! todos los dummy han sido eliminados!");
+		n2.setNext(null);
+		this.addScene(n2);
 	}
 	
 }
