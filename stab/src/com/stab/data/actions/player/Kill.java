@@ -91,6 +91,7 @@ public class Kill extends TargetAction{
      setRange(1);
      setTargetClass(PhysicalToken.class);
      setResource("actions/ability_steelmelee");
+     setName("Attack");
      this.setEffectType(DAMAGE);
 	}
 
