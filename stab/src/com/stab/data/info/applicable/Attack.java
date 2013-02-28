@@ -28,7 +28,8 @@ public class Attack extends Applicable{
 		
 		int ac = aMatar.getValue(StabConstants.ARMOR);
 		int dado = Roll.d20();
-		int dañobase=elqueMata.getValue(StabConstants.DAMAGE);
+
+
 		int hit=elqueMata.getValue(StabConstants.TOHIT);
 		System.out.println(dado + " en el dado!");
 		
@@ -38,7 +39,6 @@ public class Attack extends Applicable{
 			int confirc=Roll.d20();
 			int caconfirc=hit + confirc;
 			if(ac <= caconfirc) {
-				dañobase=dañobase*2;
 				System.out.println("Critico!!!");
 				setResult(CRITICAL);
 			   	}
