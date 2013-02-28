@@ -1,12 +1,12 @@
 package com.stab.data.actions.player;
 
 import com.stab.data.StabConstants;
+import com.stab.data.info.applicable.Attack;
 import com.stab.model.action.TargetAction;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
-import com.stab.util.Roll;
 
 public class Kill extends TargetAction{
 	
@@ -18,7 +18,48 @@ public class Kill extends TargetAction{
 
 	@Override
 	public boolean execute(Info yo, Info target) {
-		BaseInfo aMatar = (BaseInfo)target;
+		
+		BaseInfo Atacante = (BaseInfo)yo;
+		BaseInfo Atacado = (BaseInfo)target;
+		int dañobase=Atacante.getValue(StabConstants.DAMAGE);
+		
+		Attack ataque = new Attack(Atacante);
+		Atacado.apply(ataque);
+		
+		if (ataque.hits()) {
+			
+			Damage d= new Damage(dañobase, Damage.SLASHING_DAMAGE,yo);
+			Atacado.apply(d);
+			System.out.println(d.getAmount()+" de daño");
+			return true;	
+		}
+		
+		if (ataque.isCritical()) {
+			
+			dañobase=dañobase*2;
+			Damage d= new Damage(dañobase, Damage.SLASHING_DAMAGE,yo);
+			Atacado.apply(d);
+			System.out.println(d.getAmount()+" de daño");
+			return true;	
+			
+		}
+		
+		if (ataque.isBotch()) {
+			
+			System.out.println("Pero mira que eres torpe!");
+		    return false;
+		}
+		
+		return true;
+		
+	}
+		/*else {
+			
+			System.out.println("Fallaste!");
+			return false;
+		}
+	}
+		/*BaseInfo aMatar = (BaseInfo)target;
 		BaseInfo elqueMata = (BaseInfo)yo;
 		
 		int ac = aMatar.getValue(StabConstants.ARMOR);
@@ -85,7 +126,7 @@ public class Kill extends TargetAction{
 				System.out.println("Fallas el golpe");
 				return false;	
 		    }
-		}
+		} */
 	
 	public Kill() {
      setRange(1);
