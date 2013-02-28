@@ -30,7 +30,7 @@ public class Kill extends TargetAction{
 			
 			Damage d= new Damage(dañobase, Damage.SLASHING_DAMAGE,yo);
 			Atacado.apply(d);
-			System.out.println(d.getAmount()+" de daño");
+			System.out.println(d.getFinalAmount()+" de daño");
 			return true;	
 		}
 		
@@ -39,7 +39,7 @@ public class Kill extends TargetAction{
 			dañobase=dañobase*2;
 			Damage d= new Damage(dañobase, Damage.SLASHING_DAMAGE,yo);
 			Atacado.apply(d);
-			System.out.println(d.getAmount()+" de daño");
+			System.out.println(d.getFinalAmount()+" de daño");
 			return true;	
 			
 		}

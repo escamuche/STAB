@@ -68,11 +68,10 @@ public class Attack extends Applicable{
 		System.out.println("Impactas a armadura " + dar);
 	
 		if (ac <= dar) { //si das a ca
-			
-			setResult(MISS);
+			setResult(HIT);
 		}
 		else{
-			setResult(HIT);
+			setResult(MISS);
 		}
 					
 	}
