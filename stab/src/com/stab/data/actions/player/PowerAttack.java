@@ -8,6 +8,7 @@ import com.stab.model.events.common.ConsoleMessage;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.trait.Effect;
 import com.stab.model.info.trait.Modifier;
+import com.stab.model.info.trait.Trait;
 import com.stab.model.request.basic.ActionRequest;
 
 public class PowerAttack extends SelfAction {
@@ -27,20 +28,23 @@ public class PowerAttack extends SelfAction {
 		Modifier dañopoweratt= Modifier.createMod(StabConstants.DAMAGE, +2);
 		Modifier tohitpoweratt=Modifier.createMod(StabConstants.TOHIT, -1);
 		
+		if(self.hasTrait("buffdaño") == true) {
+			return false;
+		}
+		else {
+			
 		self.playAnimation(DefendAnimation.ID);
 		self.sendMessage(ConsoleMessage.SUCCESS, self.getText()+" activa power attack");
-		self.getScene().sendMessage(ConsoleMessage.WARNING, "Bono de daño: " + dañopoweratt);
-		self.getScene().sendMessage(ConsoleMessage.WARNING, "Negativo a dar: " + tohitpoweratt);
-
 		
 		Effect buffdañoround = Effect.createRound("buffdaño", dañopoweratt, tohitpoweratt);
 		self.addTrait(buffdañoround);
 		
+		System.out.println("Bono de daño: " + self.getValue(StabConstants.DAMAGE));
+		System.out.println("Bono a dar: " + self.getValue(StabConstants.TOHIT));
 
-		
 		return true;
+		}
 	}
-	
 	@Override
 	public boolean shouldEndTurn(ActionRequest ar, boolean success) {
 		return false;
