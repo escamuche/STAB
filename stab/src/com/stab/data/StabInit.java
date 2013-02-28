@@ -10,6 +10,7 @@ import com.stab.data.adventure.TestAdventure;
 import com.stab.data.animation.CloseDoorAnimation;
 import com.stab.data.animation.DamageNumberAnimation;
 import com.stab.data.animation.OpenDoorAnimation;
+import com.stab.data.animation.TestAnimation;
 import com.stab.data.animation.WalkAnimation;
 import com.stab.data.info.player.WarriorCharacter;
 import com.stab.data.info.props.Barrel;
@@ -82,6 +83,7 @@ public class StabInit {
 		of.setMapping(OpenDoorAnimation.class);
 		of.setMapping(CloseDoorAnimation.class);
 		of.setMapping(DamageNumberAnimation.class);
+		of.setMapping(TestAnimation.class);
 	}
 	
 	static void initActions(){
