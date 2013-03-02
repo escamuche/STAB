@@ -1,4 +1,4 @@
-package com.stab.data.actions.player;
+package com.stab.data.actions.player.feats;
 
 
 import com.stab.data.StabConstants;

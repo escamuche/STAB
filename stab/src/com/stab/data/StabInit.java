@@ -4,9 +4,10 @@ import com.stab.adventure.AdventureLibrary;
 import com.stab.client.ClientEntityManager;
 import com.stab.common.fw.ServiceManager;
 import com.stab.data.actions.player.DefendAction;
-import com.stab.data.actions.player.ExpertiseAction;
 import com.stab.data.actions.player.Kill;
-import com.stab.data.actions.player.PowerAttack;
+import com.stab.data.actions.player.RangeAttack;
+import com.stab.data.actions.player.feats.Expertise;
+import com.stab.data.actions.player.feats.PowerAttack;
 import com.stab.data.adventure.TestAdventure;
 import com.stab.data.animation.CloseDoorAnimation;
 import com.stab.data.animation.DamageNumberAnimation;
@@ -95,7 +96,8 @@ public class StabInit {
 		getActionLibrary().getAction(InteractAction.ID).setResource("actions/inv_gizmo_02");
 		getActionLibrary().register(new Kill());
 		getActionLibrary().register(new PowerAttack());
-		getActionLibrary().register(new ExpertiseAction());
+		getActionLibrary().register(new Expertise());
+		getActionLibrary().register(new RangeAttack());
 	}
 	
 	
