@@ -14,6 +14,7 @@ import com.stab.data.animation.DamageNumberAnimation;
 import com.stab.data.animation.EffectAddAnimation;
 import com.stab.data.animation.EffectRemoveAnimation;
 import com.stab.data.animation.OpenDoorAnimation;
+import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.WalkAnimation;
 import com.stab.data.info.player.WarriorCharacter;
 import com.stab.data.info.props.Barrel;
@@ -88,6 +89,7 @@ public class StabInit {
 		of.setMapping(DamageNumberAnimation.class);
 		of.setMapping(EffectAddAnimation.class);
 		of.setMapping(EffectRemoveAnimation.class);
+		of.setMapping(ShootProyectileAnimation.class);
 	}
 	
 	static void initActions(){

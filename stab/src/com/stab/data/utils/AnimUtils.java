@@ -1,5 +1,6 @@
 package com.stab.data.utils;
 
+import com.stab.client.slick.AbstractGameScreen;
 import com.stab.client.slick.base.updaters.SyncState;
 import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.model.basic.token.Token;
@@ -20,5 +21,9 @@ public class AnimUtils {
 	
 	public static void playSound(){
 		
+	}
+
+	public static AbstractGameScreen getScreen(Token source) {
+		return (AbstractGameScreen)getSprite(source).getScreen();
 	}
 }

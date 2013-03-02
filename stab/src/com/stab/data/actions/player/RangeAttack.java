@@ -1,6 +1,7 @@
 package com.stab.data.actions.player;
 
 import com.stab.data.StabConstants;
+import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.info.applicable.Attack;
 import com.stab.model.action.TargetAction;
 import com.stab.model.basic.token.PhysicalToken;
@@ -28,9 +29,13 @@ public class RangeAttack extends TargetAction{
 		
 		if (ataque.hits()) {
 			
+			Atacante.playAnimationOn(ShootProyectileAnimation.ID, Atacado.getToken(), "effects/arrow");
+			
 			Damage d= new Damage(dañobase, Damage.PIERCING_DAMAGE,yo);
 			Atacado.apply(d);
 			System.out.println(d.getFinalAmount()+" de daño");
+			
+			
 			return true;	
 		}
 		
