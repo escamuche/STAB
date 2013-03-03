@@ -38,7 +38,7 @@ public class ShootProyectileAnimation extends OnTargetAnimation{
 		
 		float speed=0.2f;
 		long time=(long)(origin.distance(target)/speed);
-	/*	System.out.println("From "+origin+" to "+target);
+	/**/System.out.println("From "+origin+" to "+target);
 		System.out.println("TIME:"+time +" = DISTANCE "+(origin.distance(target)+" / SPEED "+speed));
 		System.out.println("IMAGEN: "+img);/**/
 		img="effects/arrow";
@@ -53,7 +53,7 @@ public class ShootProyectileAnimation extends OnTargetAnimation{
 		AnimUtils.getScreen(getSource()).add(icon);
 	}
 	
-	
+	/*
 	protected Point getOriginPoint(){
 		Token_sprite s=AnimUtils.getSprite(getSource());
 		Point p=new Point((int)(s.getX()+s.getWidth()/2),(int)(s.getY()+s.getHeight()/2));
@@ -64,6 +64,6 @@ public class ShootProyectileAnimation extends OnTargetAnimation{
 		Token_sprite t=AnimUtils.getSprite(getTarget());
 		Point p=new Point((int)(t.getX()+t.getWidth()/2),(int)(t.getY()+t.getHeight()/2));;
 		return p;
-	}
+	}/**/
 	
 }

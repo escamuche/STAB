@@ -1,6 +1,7 @@
 package com.stab.data.actions.player;
 
 import com.stab.data.StabConstants;
+import com.stab.data.animation.MissProyectileAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.info.applicable.Attack;
 import com.stab.model.action.TargetAction;
@@ -30,7 +31,8 @@ public class RangeAttack extends TargetAction{
 		if (ataque.hits()) {
 			
 			Atacante.playAnimationOn(ShootProyectileAnimation.ID, Atacado.getToken(), "effects/arrow");
-			
+			if (ataque.isCritical())
+				dañobase=dañobase*2;
 			Damage d= new Damage(dañobase, Damage.PIERCING_DAMAGE,yo);
 			Atacado.apply(d);
 			System.out.println(d.getFinalAmount()+" de daño");
@@ -39,23 +41,16 @@ public class RangeAttack extends TargetAction{
 			return true;	
 		}
 		
-		if (ataque.isCritical()) {
-			
-			dañobase=dañobase*2;
-			Damage d= new Damage(dañobase, Damage.PIERCING_DAMAGE,yo);
-			Atacado.apply(d);
-			System.out.println(d.getFinalAmount()+" de daño");
-			return true;	
-			
-		}
+	
 		
 		if (ataque.isBotch()) {
 			
 			System.out.println("Pero mira que eres torpe!");
-		    return false;
+		  
 		}
 		
-		return true;
+		Atacante.playAnimationOn(MissProyectileAnimation.ID, Atacado.getToken(), "effects/arrow");
+		return false;
 		
 	}
 	
