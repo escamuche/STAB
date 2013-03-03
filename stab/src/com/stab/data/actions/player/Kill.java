@@ -1,6 +1,7 @@
 package com.stab.data.actions.player;
 
 import com.stab.data.StabConstants;
+import com.stab.data.animation.SwingAnimation;
 import com.stab.data.info.applicable.Attack;
 import com.stab.model.action.TargetAction;
 import com.stab.model.basic.token.PhysicalToken;
@@ -25,6 +26,8 @@ public class Kill extends TargetAction{
 		
 		Attack ataque = new Attack(Atacante);
 		Atacado.apply(ataque);
+		
+		yo.playAnimationOn(SwingAnimation.ID, target.getToken(), "effects/sword");
 		
 		if (ataque.hits()) {
 			
