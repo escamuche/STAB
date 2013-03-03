@@ -3,6 +3,7 @@ package com.stab.data.info.player;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.WarriorActionSet;
+import com.stab.util.Roll;
 
 
 public class WarriorCharacter extends PathfinderCharacter{
@@ -17,12 +18,15 @@ public static final String ID="WARRIOR_INFO";
 		setActionSet(new WarriorActionSet());
 		setResource("tokenWarrior");
 		setText("Warrior1");
+		
 		this.setMaxHp(15);
 		this.setAttribute(StabConstants.TOHIT,4);
 		this.setAttribute(StabConstants.ARMOR,14);
-		this.setAttribute(StabConstants.DAMAGE,7);
+		this.setAttribute(StabConstants.DAMAGE,9);
 		this.setAttribute(StabConstants.SAVING,4);
 		this.setAttribute(StabConstants.EXPERIENCE,0);
+		this.setAttribute(StabConstants.TOHITRANGED,2);
+		this.setAttribute(StabConstants.DAMAGERANGED,4);
 		
 		 
 	}

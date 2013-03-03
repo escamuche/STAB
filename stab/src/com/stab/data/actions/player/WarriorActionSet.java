@@ -6,6 +6,7 @@ import com.stab.model.action.BasicActionSet;
 import com.stab.model.action.base.EmptyAction;
 import com.stab.model.action.base.InteractAction;
 
+
 public class WarriorActionSet extends BasicActionSet {
 
 	public WarriorActionSet() {
@@ -17,7 +18,7 @@ public class WarriorActionSet extends BasicActionSet {
 		this.setAction(Kill.ID, 10);
 		this.setAction(PowerAttack.ID, 16);
 		this.setAction(Expertise.ID, 17);
-		this.setAction(RangeAttack.ID, 11);
+		this.setAction(RangedKill.ID, 11);
 	
 	}
 	

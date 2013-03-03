@@ -1,18 +1,16 @@
 package com.stab.data.actions.player;
 
 import com.stab.data.StabConstants;
-import com.stab.data.animation.MissProyectileAnimation;
-import com.stab.data.animation.ShootProyectileAnimation;
-import com.stab.data.info.applicable.Attack;
+import com.stab.data.info.applicable.RangedAttack;
 import com.stab.model.action.TargetAction;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 
-public class RangeAttack extends TargetAction{
+public class RangedKill extends TargetAction{
 	
-	public static final String ID="RangeAttack";
+	public static final String ID="RangedKill";
 
 	
 	
@@ -23,49 +21,51 @@ public class RangeAttack extends TargetAction{
 		
 		BaseInfo Atacante = (BaseInfo)yo;
 		BaseInfo Atacado = (BaseInfo)target;
-		int dañobase=Atacante.getValue(StabConstants.DAMAGE);
+		int dañobase=Atacante.getValue(StabConstants.DAMAGERANGED);
 		
-		Attack ataque = new Attack(Atacante);
+		RangedAttack ataque = new RangedAttack(Atacante);
 		Atacado.apply(ataque);
 		
 		if (ataque.hits()) {
 			
-			Atacante.playAnimationOn(ShootProyectileAnimation.ID, Atacado.getToken(), "effects/arrow");
-			if (ataque.isCritical())
-				dañobase=dañobase*2;
 			Damage d= new Damage(dañobase, Damage.PIERCING_DAMAGE,yo);
 			Atacado.apply(d);
 			System.out.println(d.getFinalAmount()+" de daño");
-			
-			
 			return true;	
 		}
 		
-	
+		if (ataque.isCritical()) {
+			
+			dañobase=dañobase*2;
+			Damage d= new Damage(dañobase, Damage.PIERCING_DAMAGE,yo);
+			Atacado.apply(d);
+			System.out.println(d.getFinalAmount()+" de daño");
+			return true;	
+			
+		}
 		
 		if (ataque.isBotch()) {
 			
 			System.out.println("Pero mira que eres torpe!");
-		  
+		    return false;
 		}
 		
-		Atacante.playAnimationOn(MissProyectileAnimation.ID, Atacado.getToken(), "effects/arrow");
-		return false;
+		return true;
 		
 	}
 	
-	public RangeAttack() {
+	public RangedKill() {
      setRange(6);
      setTargetClass(PhysicalToken.class);
      setResource("actions/ability_hunter_focusfire");
-     setName("RangeAttack");
+     setName("RangedAttack");
      this.setEffectType(DAMAGE);
 	}
 
 	
 	@Override
 	public int getEffectValue(BaseInfo i) {
-		return i.getAttributeValue(StabConstants.DAMAGE);
+		return i.getAttributeValue(StabConstants.DAMAGERANGED);
 	}
 	
 

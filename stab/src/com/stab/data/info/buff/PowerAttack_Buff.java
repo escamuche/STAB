@@ -10,6 +10,7 @@ public class PowerAttack_Buff extends Buff {
 	
 	public PowerAttack_Buff() {
 		//setUnique(true);//no hace falta, por defecto los buffs son unicos
+		
 		this.setAnimIcon("actions/ability_backstab");					//Icono para la animacion
 		this.setSound("HolyCast");										//Sonido para la animacion
 		this.setResource("actions/ability_backstab");                   //El icono para la barra o para pintar los buffs en algun sitio

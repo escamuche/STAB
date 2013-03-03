@@ -5,7 +5,7 @@ import com.stab.client.ClientEntityManager;
 import com.stab.common.fw.ServiceManager;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.Kill;
-import com.stab.data.actions.player.RangeAttack;
+import com.stab.data.actions.player.RangedKill;
 import com.stab.data.actions.player.feats.Expertise;
 import com.stab.data.actions.player.feats.PowerAttack;
 import com.stab.data.adventure.TestAdventure;
@@ -101,7 +101,7 @@ public class StabInit {
 		getActionLibrary().register(new Kill());
 		getActionLibrary().register(new PowerAttack());
 		getActionLibrary().register(new Expertise());
-		getActionLibrary().register(new RangeAttack());
+		getActionLibrary().register(new RangedKill());
 	}
 	
 	
