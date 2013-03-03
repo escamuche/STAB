@@ -18,8 +18,8 @@ public class Dummy extends Obstacle {
 		setResource("dummy");
 		setText("");
 		this.setAttribute(StabConstants.ARMOR,12);
-		this.setActionSet(new WarriorActionSet());
-		this.setCurrentAI(new DefaultAIPackage());
+	//	this.setActionSet(new WarriorActionSet());
+	//	this.setCurrentAI(new DefaultAIPackage());
 	}
 	
 	@Override
