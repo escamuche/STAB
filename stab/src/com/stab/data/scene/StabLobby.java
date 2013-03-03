@@ -1,6 +1,7 @@
 package com.stab.data.scene;
 
 import com.stab.data.info.player.WarriorCharacter;
+import com.stab.data.info.player.WizardCharacter;
 import com.stab.model.Player;
 import com.stab.model.Scene;
 import com.stab.model.basic.scenes.Lobby;
@@ -47,7 +48,7 @@ public class StabLobby  extends Scene{
 		i.setAction("wizard");
 //		i.setText("Wizard");
 		i.setMargin(10);
-		i.setDisabled(true);
+//		i.setDisabled(true);
 		add(i);
 		i=new Button();
 		i.setPos(630+120,200);
@@ -68,13 +69,23 @@ public class StabLobby  extends Scene{
 	@Override
 	public void playerOption(Player player, String option) {
 		player.setIcon(option);
+		Character infowarrior=new WarriorCharacter();
+		Character infowizard=new WizardCharacter();
+		
+		if(option.equals("Warrior")) {
 		player.setIcon("tokens/tokenWarrior");
-		Character info=new WarriorCharacter();
+		player.addInfo(infowarrior);
+		infowarrior.setText(player.getName());
+		}
 		
-		info.setText(player.getName());
-		
+		if(option.equals("Wizard")) {
+			player.setIcon("tokens/tokenWizard");
+			player.addInfo(infowizard);	
+			infowizard.setText(player.getName());
+			}
+//		info.setText(player.getName());
 	
-		player.addInfo(info);
+//		player.addInfo(info);
 		
 		
 		//player.setCharacter(info);
