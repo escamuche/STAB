@@ -19,12 +19,10 @@ public class Expertise_Buff extends Buff {
 	
 		Modifier caexpertise= Modifier.createMod(StabConstants.ARMOR, +1);
 		Modifier tohitexpertise=Modifier.createMod(StabConstants.TOHIT, -1);
+		Modifier tohitrangedexpertise=Modifier.createMod(StabConstants.TOHITRANGED, -1);
 		
 		addTrait(caexpertise);
 		addTrait(tohitexpertise);
-	}
-	
-	
-	
-	
+		addTrait(tohitrangedexpertise);
+		}
 }
