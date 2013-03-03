@@ -36,13 +36,15 @@ public class ShootProyectileAnimation extends OnTargetAnimation{
 		icon.setPos(origin);
 		icon.setSize(64,64);
 		
-		float speed=0.2f;
+		float speed=0.3f;
+		//TODO: leef speed de params tambien
+		
 		long time=(long)(origin.distance(target)/speed);
-	/**/System.out.println("From "+origin+" to "+target);
+	/*System.out.println("From "+origin+" to "+target);
 		System.out.println("TIME:"+time +" = DISTANCE "+(origin.distance(target)+" / SPEED "+speed));
 		System.out.println("IMAGEN: "+img);/**/
-		img="effects/arrow";
-		System.out.println("Angle: "+getAngle()+" = "+ ((float)Math.toDegrees(getAngle())));
+	//	img="effects/arrow";
+	//	System.out.println("Angle: "+getAngle()+" = "+ ((float)Math.toDegrees(getAngle())));
 		icon.setPainter(Resources.INSTANCE.getImage(img),Constants.CENTERED);
 		//icon.setPainter(Color.red);
 		((ValuePainter)icon.getPainter()).setRotation((float)Math.toDegrees(getAngle()));
