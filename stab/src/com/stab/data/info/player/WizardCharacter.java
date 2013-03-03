@@ -2,33 +2,33 @@ package com.stab.data.info.player;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.DefendAction;
-import com.stab.data.actions.player.WarriorActionSet;
+import com.stab.data.actions.player.WizardActionSet;
 
 
-public class WarriorCharacter extends PathfinderCharacter{
+public class WizardCharacter extends PathfinderCharacter{
 
 	
-public static final String ID="WARRIOR_INFO";
+public static final String ID="WIZARD_INFO";
 	
 	
 	@Override
 	public void init() {
 		super.init();
-		setActionSet(new WarriorActionSet());
-		setResource("tokenWarrior");
-		setText("Warrior1");
+		setActionSet(new WizardActionSet());
+		setResource("tokenWizard");
+		setText("Wizard1");
 		
-		this.setMaxHp(15);
-		this.setAttribute(StabConstants.TOHIT,4);
-		this.setAttribute(StabConstants.ARMOR,14);
-		this.setAttribute(StabConstants.DAMAGE,9);
-		this.setAttribute(StabConstants.SAVING,4);
+		this.setMaxHp(7);
+		this.setAttribute(StabConstants.TOHIT,1);
+		this.setAttribute(StabConstants.ARMOR,12);
+		this.setAttribute(StabConstants.DAMAGE,3);
+		this.setAttribute(StabConstants.SAVING,6);
 		this.setAttribute(StabConstants.EXPERIENCE,0);
 		this.setAttribute(StabConstants.TOHITRANGED,2);
 		this.setAttribute(StabConstants.DAMAGERANGED,4);
-		
-		 
-	}
+		this.setEp(10);
+		this.setAttribute(StabConstants.DC,15);
+		}
 	
 	
 	@Override
@@ -44,4 +44,3 @@ public static final String ID="WARRIOR_INFO";
 	}
 	
 }
-	

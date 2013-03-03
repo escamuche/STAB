@@ -10,5 +10,6 @@ public class StabConstants {
 	public static final String SAVING = "SAVING";
 	public static final String TOHITRANGED="TOHITRANGED";
 	public static final String DAMAGERANGED="DAMAGERANGED";
-		
+	public static final String DC="DC";	
+
 }

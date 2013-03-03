@@ -8,6 +8,7 @@ import com.stab.data.actions.player.Kill;
 import com.stab.data.actions.player.RangedKill;
 import com.stab.data.actions.player.feats.Expertise;
 import com.stab.data.actions.player.feats.PowerAttack;
+import com.stab.data.actions.player.spells.MagicMissile;
 import com.stab.data.adventure.TestAdventure;
 import com.stab.data.animation.CloseDoorAnimation;
 import com.stab.data.animation.DamageNumberAnimation;
@@ -18,6 +19,7 @@ import com.stab.data.animation.OpenDoorAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.WalkAnimation;
 import com.stab.data.info.player.WarriorCharacter;
+import com.stab.data.info.player.WizardCharacter;
 import com.stab.data.info.props.Barrel;
 import com.stab.data.info.props.Crate;
 import com.stab.data.info.props.Dummy;
@@ -78,6 +80,7 @@ public class StabInit {
 		of.setMapping(WoodenDoor.class);
 		of.setMapping(Barrel.class);
 		of.setMapping(Dummy.class);
+		of.setMapping(WizardCharacter.class);
 		
 		
 		
@@ -102,6 +105,7 @@ public class StabInit {
 		getActionLibrary().register(new PowerAttack());
 		getActionLibrary().register(new Expertise());
 		getActionLibrary().register(new RangedKill());
+		getActionLibrary().register(new MagicMissile());
 	}
 	
 	
