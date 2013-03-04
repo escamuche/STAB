@@ -13,6 +13,7 @@ import com.stab.data.actions.player.spells.CureLight;
 import com.stab.data.actions.player.spells.MagicMissile;
 import com.stab.data.actions.player.spells.Shield;
 import com.stab.data.adventure.TestAdventure;
+import com.stab.data.adventure.Zombies;
 import com.stab.data.animation.CloseDoorAnimation;
 import com.stab.data.animation.DamageNumberAnimation;
 import com.stab.data.animation.EffectAddAnimation;
@@ -74,8 +75,10 @@ public class StabInit {
 	static void initAdventures(){
 		ServiceManager.getService(AdventureLibrary.class).clear();
 		
-		TestAdventure t=new TestAdventure();
-		ServiceManager.getService(AdventureLibrary.class).register(t);
+	//	TestAdventure t=new TestAdventure();
+	//	ServiceManager.getService(AdventureLibrary.class).register(t);
+		Zombies z=new Zombies();
+		ServiceManager.getService(AdventureLibrary.class).register(z);
 	}
 	
 	
