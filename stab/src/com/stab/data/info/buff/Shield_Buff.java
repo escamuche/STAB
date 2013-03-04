@@ -32,8 +32,8 @@ public class Shield_Buff extends Buff implements Attends<MagicMissileAttack>{
 	}
 
 	@Override
-	public boolean canAttend(Class arg0) {
-		return true;
+	public boolean canAttend(Applicable a) {
+		return a instanceof MagicMissileAttack;
 	}
 
 

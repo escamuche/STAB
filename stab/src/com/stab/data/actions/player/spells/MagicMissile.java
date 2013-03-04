@@ -1,5 +1,6 @@
 package com.stab.data.actions.player.spells;
 
+import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.info.applicable.MagicAttack;
 import com.stab.model.action.TargetAction;
 import com.stab.model.basic.token.PhysicalToken;
@@ -25,6 +26,8 @@ public class MagicMissile extends TargetAction{
 		MagicAttack ataque = new MagicAttack(Atacante);
 		Atacado.apply(ataque);
 		
+	//	Atacante.playAnimationOn(ShootProyectileAnimation.ID, Atacado.getToken(), "PARTICLE#explosion");
+		
 		if (ataque.hits()) {
 			
 			Damage d= new Damage(dañobase, Damage.FIRE_DAMAGE,yo);
@@ -34,6 +37,7 @@ public class MagicMissile extends TargetAction{
 		}
 		
 		else {
+		
 			Damage d = new Damage(dañobase/2, Damage.FIRE_DAMAGE,yo);
 			Atacado.apply(d);
 			System.out.println(d.getFinalAmount()+" de daño");

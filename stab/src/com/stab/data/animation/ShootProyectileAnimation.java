@@ -2,6 +2,7 @@ package com.stab.data.animation;
 
 import java.awt.Point;
 
+import com.stab.client.slick.base.util.PaintUtils;
 import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.common.Constants;
 import com.stab.data.animation.state.MoveToPointState;
@@ -45,7 +46,8 @@ public class ShootProyectileAnimation extends OnTargetAnimation{
 		System.out.println("IMAGEN: "+img);/**/
 	//	img="effects/arrow";
 	//	System.out.println("Angle: "+getAngle()+" = "+ ((float)Math.toDegrees(getAngle())));
-		icon.setPainter(Resources.INSTANCE.getImage(img),Constants.CENTERED);
+		//icon.setPainter(Resources.INSTANCE.getImage(img),Constants.CENTERED);
+		icon.setPainter(PaintUtils.getPainter(img));
 		//icon.setPainter(Color.red);
 		((ValuePainter)icon.getPainter()).setRotation((float)Math.toDegrees(getAngle()));
 		MoveToPointState st=new MoveToPointState(target,time);
