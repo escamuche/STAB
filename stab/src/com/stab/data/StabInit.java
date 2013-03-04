@@ -17,7 +17,9 @@ import com.stab.data.animation.EffectRemoveAnimation;
 import com.stab.data.animation.MissProyectileAnimation;
 import com.stab.data.animation.OpenDoorAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
+import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.WalkAnimation;
+import com.stab.data.info.monster.Zombie;
 import com.stab.data.info.player.WarriorCharacter;
 import com.stab.data.info.player.WizardCharacter;
 import com.stab.data.info.props.Barrel;
@@ -81,6 +83,7 @@ public class StabInit {
 		of.setMapping(Barrel.class);
 		of.setMapping(Dummy.class);
 		of.setMapping(WizardCharacter.class);
+		of.setMapping(Zombie.class);
 		
 		
 		
@@ -95,6 +98,7 @@ public class StabInit {
 		of.setMapping(EffectRemoveAnimation.class);
 		of.setMapping(ShootProyectileAnimation.class);
 		of.setMapping(MissProyectileAnimation.class);
+		of.setMapping(SwingAnimation.class);
 	}
 	
 	static void initActions(){
