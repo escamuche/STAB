@@ -19,7 +19,7 @@ public class CureLight extends TargetAction{
 		BaseInfo Atacado = (BaseInfo)target;
 		int hpactuales = Atacado.getHp();
 		
-		Atacado.setHp(hpactuales+dañobase);
+		Atacado.setHp(hpactuales+dañobase); //Cambiar por un Heal
 		
 		return true;
 		}

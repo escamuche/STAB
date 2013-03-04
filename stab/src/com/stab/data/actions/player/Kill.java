@@ -41,6 +41,7 @@ public class Kill extends TargetAction{
 			
 			dañobase=dañobase*2;
 			Damage d= new Damage(dañobase, Damage.SLASHING_DAMAGE,yo);
+			d.setCritical(true);
 			Atacado.apply(d);
 			System.out.println(d.getFinalAmount()+" de daño");
 			return true;	

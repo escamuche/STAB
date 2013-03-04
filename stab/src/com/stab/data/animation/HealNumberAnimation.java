@@ -10,12 +10,12 @@ import com.stab.model.info.BaseInfo;
 import com.tien.princess.engine.Resources;
 import com.tien.princess.engine.sprite.base.FloatingText;
 
-public class DamageNumberAnimation extends Animation{
+public class HealNumberAnimation extends Animation{
 	
-	public static final String ID=BaseInfo.RECEIVE_DAMAGE_ANIMATION;
+	public static final String ID=BaseInfo.RECEIVE_HEAL_ANIMATION;
 
 
-	public DamageNumberAnimation() {
+	public HealNumberAnimation() {
 		setBlocking(false);
 	}
 	
@@ -27,10 +27,10 @@ public class DamageNumberAnimation extends Animation{
 		
 		 FloatingText ft=new FloatingText(1000);
 		 ft.setText(getParam(0));
-		 ft.setTextColor(Color.red);
+		 ft.setTextColor(Color.green);
 		 ft.setFont(Resources.INSTANCE.getFont(Resources.BOLD_FONT));
 		 
-		 if (getBooleanParam(2))
+		 if (getBooleanParam(1))
 			 ft.setFont(Resources.INSTANCE.getFont(Resources.BIG_BOLD_FONT));
 		 
 		 ft.setPos(s.getX()+s.getWidth()/2,s.getY()+16);

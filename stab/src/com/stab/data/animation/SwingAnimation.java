@@ -20,7 +20,7 @@ public class SwingAnimation extends OnTargetAnimation{
 	
 	public SwingAnimation() {
 		setBlocking(true);
-		setTime(600);
+		setTime(500);
 	}
 	
 	@Override
@@ -42,12 +42,11 @@ public class SwingAnimation extends OnTargetAnimation{
 		
 		double a=getAngle()-Math.toRadians(120);
 		
-		System.out.println("Angle:"+a+" "+Math.toDegrees(a));
 	
 		icon.setPainter(Resources.INSTANCE.getImage(img),Constants.CENTERED);
 	
-		Simple2PointValueProvider sp= new Simple2PointValueProvider(-120,+120);
-		sp.setDisp((float)Math.toDegrees(getAngle()));
+		Simple2PointValueProvider sp= new Simple2PointValueProvider(0,240);
+		sp.setDisp((float)Math.toDegrees(getAngle())-120);
 		sp.setMax(getTime());
 		
 		((ValuePainter)icon.getPainter()).setRotation(sp);
