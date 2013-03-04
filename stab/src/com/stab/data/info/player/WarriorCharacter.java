@@ -18,13 +18,13 @@ public static final String ID="WARRIOR_INFO";
 		setResource("tokenWarrior");
 		setText("Warrior1");
 		
-		this.setMaxHp(15);
-		this.setAttribute(StabConstants.TOHIT,4);
-		this.setAttribute(StabConstants.ARMOR,14);
+		this.setMaxHp(13);
+		this.setAttribute(StabConstants.TOHIT,5);
+		this.setAttribute(StabConstants.ARMOR,15);
 		this.setAttribute(StabConstants.DAMAGE,9);
-		this.setAttribute(StabConstants.SAVING,4);
+		this.setAttribute(StabConstants.SAVING,3);
 		this.setAttribute(StabConstants.EXPERIENCE,0);
-		this.setAttribute(StabConstants.TOHITRANGED,2);
+		this.setAttribute(StabConstants.TOHITRANGED,3);
 		this.setAttribute(StabConstants.DAMAGERANGED,4);
 		
 		 

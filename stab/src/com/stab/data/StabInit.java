@@ -76,10 +76,10 @@ public class StabInit {
 	static void initAdventures(){
 		ServiceManager.getService(AdventureLibrary.class).clear();
 		
-		TestAdventure t=new TestAdventure();
-		ServiceManager.getService(AdventureLibrary.class).register(t);
-	//	Zombies z=new Zombies();
-	//	ServiceManager.getService(AdventureLibrary.class).register(z);
+	//	TestAdventure t=new TestAdventure();
+	//	ServiceManager.getService(AdventureLibrary.class).register(t);
+		Zombies z=new Zombies();
+		ServiceManager.getService(AdventureLibrary.class).register(z);
 	}
 	
 	
