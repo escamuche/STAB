@@ -1,5 +1,6 @@
 package com.stab.data.scene;
 
+import com.stab.data.info.player.ClericCharacter;
 import com.stab.data.info.player.WarriorCharacter;
 import com.stab.data.info.player.WizardCharacter;
 import com.stab.model.Player;
@@ -58,7 +59,7 @@ public class StabLobby  extends Scene{
 //		i.setMode(Constants.BANNER);
 //		i.setText("Cleric");
 		i.setMargin(10);
-		i.setDisabled(true);
+//		i.setDisabled(true);
 		add(i);
 	
 		Music m=new Music();
@@ -68,9 +69,12 @@ public class StabLobby  extends Scene{
 	
 	@Override
 	public void playerOption(Player player, String option) {
+		
 		player.setIcon(option);
+		
 		Character infowarrior=new WarriorCharacter();
 		Character infowizard=new WizardCharacter();
+		Character infocleric=new ClericCharacter();
 		
 		if(option.equals("warrior")) {
 		player.setIcon("tokens/tokenWarrior");
@@ -82,6 +86,12 @@ public class StabLobby  extends Scene{
 			player.setIcon("tokens/tokenWizard");
 			player.addInfo(infowizard);	
 			infowizard.setText(player.getName());
+			}
+		
+		if(option.equals("cleric")) {
+			player.setIcon("tokens/tokenCleric");
+			player.addInfo(infocleric);	
+			infocleric.setText(player.getName());
 			}
 //		info.setText(player.getName());
 	

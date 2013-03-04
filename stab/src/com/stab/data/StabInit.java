@@ -8,6 +8,8 @@ import com.stab.data.actions.player.Kill;
 import com.stab.data.actions.player.RangedKill;
 import com.stab.data.actions.player.feats.Expertise;
 import com.stab.data.actions.player.feats.PowerAttack;
+import com.stab.data.actions.player.spells.Bless;
+import com.stab.data.actions.player.spells.CureLight;
 import com.stab.data.actions.player.spells.MagicMissile;
 import com.stab.data.adventure.TestAdventure;
 import com.stab.data.animation.CloseDoorAnimation;
@@ -20,6 +22,7 @@ import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.WalkAnimation;
 import com.stab.data.info.monster.Zombie;
+import com.stab.data.info.player.ClericCharacter;
 import com.stab.data.info.player.WarriorCharacter;
 import com.stab.data.info.player.WizardCharacter;
 import com.stab.data.info.props.Barrel;
@@ -84,6 +87,7 @@ public class StabInit {
 		of.setMapping(Dummy.class);
 		of.setMapping(WizardCharacter.class);
 		of.setMapping(Zombie.class);
+		of.setMapping(ClericCharacter.class);
 		
 		
 		
@@ -110,6 +114,8 @@ public class StabInit {
 		getActionLibrary().register(new Expertise());
 		getActionLibrary().register(new RangedKill());
 		getActionLibrary().register(new MagicMissile());
+		getActionLibrary().register(new CureLight());
+		getActionLibrary().register(new Bless());
 	}
 	
 	
