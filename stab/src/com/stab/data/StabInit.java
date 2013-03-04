@@ -3,6 +3,7 @@ package com.stab.data;
 import com.stab.adventure.AdventureLibrary;
 import com.stab.client.ClientEntityManager;
 import com.stab.common.fw.ServiceManager;
+import com.stab.data.actions.monster.ZombieClawAction;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.Kill;
 import com.stab.data.actions.player.RangedKill;
@@ -75,10 +76,10 @@ public class StabInit {
 	static void initAdventures(){
 		ServiceManager.getService(AdventureLibrary.class).clear();
 		
-	//	TestAdventure t=new TestAdventure();
-	//	ServiceManager.getService(AdventureLibrary.class).register(t);
-		Zombies z=new Zombies();
-		ServiceManager.getService(AdventureLibrary.class).register(z);
+		TestAdventure t=new TestAdventure();
+		ServiceManager.getService(AdventureLibrary.class).register(t);
+	//	Zombies z=new Zombies();
+	//	ServiceManager.getService(AdventureLibrary.class).register(z);
 	}
 	
 	
@@ -123,6 +124,7 @@ public class StabInit {
 		getActionLibrary().register(new CureLight());
 		getActionLibrary().register(new Bless());
 		getActionLibrary().register(new Shield());
+		getActionLibrary().register(new ZombieClawAction());
 	}
 	
 	

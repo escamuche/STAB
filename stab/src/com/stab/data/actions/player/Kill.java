@@ -27,7 +27,7 @@ public class Kill extends TargetAction{
 		Attack ataque = new Attack(Atacante);
 		Atacado.apply(ataque);
 		
-		yo.playAnimationOn(SwingAnimation.ID, target.getToken(), "effects/sword");
+		yo.playAnimationOn(SwingAnimation.ID, target.getToken(), getSwingImage(Atacante));
 		
 		if (ataque.hits()) {
 			
@@ -54,10 +54,14 @@ public class Kill extends TargetAction{
 		    return false;
 		}
 		
-		return true;
+		return false;
 		
 	}
 	
+	protected String getSwingImage(BaseInfo atacante) {
+		return "effects/sword";
+	}
+
 	public Kill() {
      setRange(1);
      setTargetClass(PhysicalToken.class);
