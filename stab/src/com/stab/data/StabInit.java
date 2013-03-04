@@ -11,6 +11,7 @@ import com.stab.data.actions.player.feats.PowerAttack;
 import com.stab.data.actions.player.spells.Bless;
 import com.stab.data.actions.player.spells.CureLight;
 import com.stab.data.actions.player.spells.MagicMissile;
+import com.stab.data.actions.player.spells.Shield;
 import com.stab.data.adventure.TestAdventure;
 import com.stab.data.animation.CloseDoorAnimation;
 import com.stab.data.animation.DamageNumberAnimation;
@@ -118,6 +119,7 @@ public class StabInit {
 		getActionLibrary().register(new MagicMissile());
 		getActionLibrary().register(new CureLight());
 		getActionLibrary().register(new Bless());
+		getActionLibrary().register(new Shield());
 	}
 	
 	

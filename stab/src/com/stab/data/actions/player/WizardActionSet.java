@@ -2,6 +2,7 @@ package com.stab.data.actions.player;
 
 
 import com.stab.data.actions.player.spells.MagicMissile;
+import com.stab.data.actions.player.spells.Shield;
 import com.stab.model.action.BasicActionSet;
 import com.stab.model.action.base.EmptyAction;
 import com.stab.model.action.base.InteractAction;
@@ -19,6 +20,7 @@ public class WizardActionSet extends BasicActionSet {
 		this.setAction(Kill.ID, 10);
 		this.setAction(MagicMissile.ID, 12);
 		this.setAction(RangedKill.ID, 11);
+		this.setAction(Shield.ID,17);
 		
 	}
 	

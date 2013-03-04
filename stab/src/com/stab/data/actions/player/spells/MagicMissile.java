@@ -53,7 +53,7 @@ public class MagicMissile extends TargetAction{
 	
 	@Override
 	public int getEffectValue(BaseInfo i) {
-		return 10;
+		return 8;
 	}
 	
 
