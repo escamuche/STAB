@@ -72,13 +72,13 @@ public class StabLobby  extends Scene{
 		Character infowarrior=new WarriorCharacter();
 		Character infowizard=new WizardCharacter();
 		
-		if(option.equals("Warrior")) {
+		if(option.equals("warrior")) {
 		player.setIcon("tokens/tokenWarrior");
 		player.addInfo(infowarrior);
 		infowarrior.setText(player.getName());
 		}
 		
-		if(option.equals("Wizard")) {
+		if(option.equals("wizard")) {
 			player.setIcon("tokens/tokenWizard");
 			player.addInfo(infowizard);	
 			infowizard.setText(player.getName());

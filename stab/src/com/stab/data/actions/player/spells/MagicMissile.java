@@ -32,9 +32,13 @@ public class MagicMissile extends TargetAction{
 			System.out.println(d.getFinalAmount()+" de daño");
 			return true;	
 		}
-	
 		
-		return true;
+		else {
+			Damage d = new Damage(dañobase/2, Damage.FIRE_DAMAGE,yo);
+			Atacado.apply(d);
+			System.out.println(d.getFinalAmount()+" de daño");
+			return false;	
+		}
 		
 	}
 	

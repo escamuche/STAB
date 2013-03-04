@@ -1,6 +1,8 @@
 package com.stab.data.actions.player;
 
 import com.stab.data.StabConstants;
+import com.stab.data.animation.MissProyectileAnimation;
+import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.info.applicable.RangedAttack;
 import com.stab.model.action.TargetAction;
 import com.stab.model.basic.token.PhysicalToken;
@@ -28,6 +30,7 @@ public class RangedKill extends TargetAction{
 		
 		if (ataque.hits()) {
 			
+			Atacante.playAnimationOn(ShootProyectileAnimation.ID, Atacado.getToken(), "effects/arrow");
 			Damage d= new Damage(dañobase, Damage.PIERCING_DAMAGE,yo);
 			Atacado.apply(d);
 			System.out.println(d.getFinalAmount()+" de daño");
@@ -36,6 +39,7 @@ public class RangedKill extends TargetAction{
 		
 		if (ataque.isCritical()) {
 			
+			Atacante.playAnimationOn(ShootProyectileAnimation.ID, Atacado.getToken(), "effects/arrow");
 			dañobase=dañobase*2;
 			Damage d= new Damage(dañobase, Damage.PIERCING_DAMAGE,yo);
 			Atacado.apply(d);
@@ -50,7 +54,8 @@ public class RangedKill extends TargetAction{
 		    return false;
 		}
 		
-		return true;
+		Atacante.playAnimationOn(MissProyectileAnimation.ID, Atacado.getToken(), "effects/arrow");
+		return false;
 		
 	}
 	

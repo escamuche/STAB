@@ -17,7 +17,8 @@ public class WizardActionSet extends BasicActionSet {
 		this.setAction(InteractAction.ID,18);
 		this.setAction(DefendAction.ID,19);
 		this.setAction(Kill.ID, 10);
-		this.setAction(MagicMissile.ID, 11);
+		this.setAction(MagicMissile.ID, 12);
+		this.setAction(RangedKill.ID, 11);
 		
 	}
 	
