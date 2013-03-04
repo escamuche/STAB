@@ -4,23 +4,21 @@ import com.stab.model.action.TargetAction;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.info.applicable.base.Heal;
 import com.stab.util.Roll;
 
 public class CureLight extends TargetAction{
 	
 	public static final String ID="CureLight";
-	int dañobase=Roll.d8()+1;
-	
-	
+
 
 	@Override
 	public boolean execute(Info yo, Info target) {
 		
 		BaseInfo Atacado = (BaseInfo)target;
-		int hpactuales = Atacado.getHp();
-		
-		Atacado.setHp(hpactuales+dañobase); //Cambiar por un Heal
-		
+		int dañobase=Roll.d8()+1;
+		Heal heal = new Heal(dañobase, Atacado);
+		Atacado.apply(heal);
 		return true;
 		}
 	
@@ -35,7 +33,7 @@ public class CureLight extends TargetAction{
 	
 	@Override
 	public int getEffectValue(BaseInfo i) {
-		return dañobase;
+		return 5;
 	}
 	
 

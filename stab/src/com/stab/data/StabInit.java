@@ -16,6 +16,7 @@ import com.stab.data.animation.CloseDoorAnimation;
 import com.stab.data.animation.DamageNumberAnimation;
 import com.stab.data.animation.EffectAddAnimation;
 import com.stab.data.animation.EffectRemoveAnimation;
+import com.stab.data.animation.HealNumberAnimation;
 import com.stab.data.animation.MissProyectileAnimation;
 import com.stab.data.animation.OpenDoorAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
@@ -98,6 +99,7 @@ public class StabInit {
 		of.setMapping(OpenDoorAnimation.class);
 		of.setMapping(CloseDoorAnimation.class);
 		of.setMapping(DamageNumberAnimation.class);
+		of.setMapping(HealNumberAnimation.class);
 		of.setMapping(EffectAddAnimation.class);
 		of.setMapping(EffectRemoveAnimation.class);
 		of.setMapping(ShootProyectileAnimation.class);
