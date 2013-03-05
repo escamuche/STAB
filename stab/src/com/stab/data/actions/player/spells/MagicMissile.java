@@ -1,12 +1,13 @@
 package com.stab.data.actions.player.spells;
 
 import com.stab.data.animation.ShootProyectileAnimation;
-import com.stab.data.info.applicable.MagicAttack;
+import com.stab.data.info.applicable.ReflexAttack;
 import com.stab.model.action.TargetAction;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
+import com.stab.util.Roll;
 
 public class MagicMissile extends TargetAction{
 	
@@ -21,15 +22,14 @@ public class MagicMissile extends TargetAction{
 		
 		BaseInfo Atacante = (BaseInfo)yo;
 		BaseInfo Atacado = (BaseInfo)target;
-		int dañobase=10;
+		int dañobase=Roll.d4()+1;
 		
-		MagicAttack ataque = new MagicAttack(Atacante);
+		ReflexAttack ataque = new ReflexAttack(Atacante);
 		Atacado.apply(ataque);
 		
 		Atacante.playAnimationOn(ShootProyectileAnimation.ID, Atacado.getToken(), "PARTICLE#magicmissile");
 		
 		if (ataque.hits()) {
-			
 			Damage d= new Damage(dañobase, Damage.FIRE_DAMAGE,yo);
 			Atacado.apply(d);
 			System.out.println(d.getFinalAmount()+" de daño");
@@ -57,7 +57,7 @@ public class MagicMissile extends TargetAction{
 	
 	@Override
 	public int getEffectValue(BaseInfo i) {
-		return 8;
+		return 3;
 	}
 	
 
