@@ -1,8 +1,9 @@
 package com.stab.data.info.player;
 
-import com.stab.data.StabConstants;
+
+
+import com.stab.data.info.BasicAttributes;
 import com.stab.model.info.base.Character;
-import com.stab.model.info.trait.Attribute;
 
 public class PathfinderCharacter extends Character {
 	
@@ -12,7 +13,13 @@ public static final String ID="PATH_INFO";
 	@Override
 	public void init() {
 		super.init();
-		Attribute tohit=new Attribute(StabConstants.TOHIT,0);
+		this.addTrait(new BasicAttributes());
+		this.setMaxMovePoints(6);
+	    this.setMaxActionPoints(1);
+	}
+}
+		
+		/*Attribute tohit=new Attribute(StabConstants.TOHIT,0);
 		this.addTrait(tohit);
 		Attribute armor=new Attribute(StabConstants.ARMOR,10);
 		this.addTrait(armor);
@@ -29,8 +36,4 @@ public static final String ID="PATH_INFO";
 	    this.setMaxMovePoints(6);
 	    this.setMaxActionPoints(1);
 	    Attribute strenght=new Attribute(StabConstants.STRENGHT,0);
-		this.addTrait(strenght);
-	}
-	
-
-}
+		this.addTrait(strenght);*/

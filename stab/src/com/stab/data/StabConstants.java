@@ -119,7 +119,7 @@ public class StabConstants {
 	public static final String SPELLKNOWN8="SPELLKNOWN8";
 	public static final String SPELLKNOWN9="SPELLKNOWN9";
 	
-	
+	public static final String LEVEL="LEVEL";
 	
 	
 	

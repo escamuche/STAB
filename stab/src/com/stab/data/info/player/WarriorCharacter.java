@@ -3,6 +3,7 @@ package com.stab.data.info.player;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.WarriorActionSet;
+import com.stab.model.info.trait.Modifier;
 
 
 public class WarriorCharacter extends PathfinderCharacter{
@@ -19,15 +20,25 @@ public static final String ID="WARRIOR_INFO";
 		setText("Warrior1");
 		
 		this.setMaxHp(13);
-		this.setAttribute(StabConstants.TOHIT,5);
-		this.setAttribute(StabConstants.ARMOR,15);
-		this.setAttribute(StabConstants.DAMAGE,4);
+		this.setAttribute(StabConstants.TOHIT,1);
+		this.setAttribute(StabConstants.DAMAGE,0);
 		this.setAttribute(StabConstants.SAVING,3);
 		this.setAttribute(StabConstants.EXPERIENCE,0);
-		this.setAttribute(StabConstants.TOHITRANGED,3);
-		this.setAttribute(StabConstants.DAMAGERANGED,4);
+		this.setAttribute(StabConstants.TOHITRANGED,1);
+		this.setAttribute(StabConstants.DAMAGERANGED,0);
+		this.setAttribute(StabConstants.DEXTERITY, 12);
+		this.setAttribute(StabConstants.STRENGHT, 16);
+		this.setAttribute(StabConstants.CONSTITUTION, 14);
+		this.setAttribute(StabConstants.CHARISMA, 8);
 		
-		 
+		this.addTrait(Modifier.createMod(StabConstants.ARMOR,"ARMADURA",4));
+		
+		
+		System.out.println("Dexterity: " + this.getValue(StabConstants.DEXTERITY));
+		System.out.println("Armor: " + this.getValue(StabConstants.ARMOR));
+		System.out.println("Tohit: "  + this.getValue(StabConstants.TOHIT));
+		System.out.println("Tohitranged: " + this.getValue(StabConstants.TOHITRANGED));
+		System.out.println("Damage: " + this.getValue(StabConstants.DAMAGE));
 	}
 	
 	
