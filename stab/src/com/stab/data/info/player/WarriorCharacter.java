@@ -21,7 +21,7 @@ public static final String ID="WARRIOR_INFO";
 		this.setMaxHp(13);
 		this.setAttribute(StabConstants.TOHIT,5);
 		this.setAttribute(StabConstants.ARMOR,15);
-		this.setAttribute(StabConstants.DAMAGE,9);
+		this.setAttribute(StabConstants.DAMAGE,4);
 		this.setAttribute(StabConstants.SAVING,3);
 		this.setAttribute(StabConstants.EXPERIENCE,0);
 		this.setAttribute(StabConstants.TOHITRANGED,3);

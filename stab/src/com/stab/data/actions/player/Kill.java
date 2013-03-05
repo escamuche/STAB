@@ -8,6 +8,7 @@ import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
+import com.stab.util.Roll;
 
 public class Kill extends TargetAction{
 	
@@ -22,7 +23,7 @@ public class Kill extends TargetAction{
 		
 		BaseInfo Atacante = (BaseInfo)yo;
 		BaseInfo Atacado = (BaseInfo)target;
-		int dañobase=Atacante.getValue(StabConstants.DAMAGE);
+		int dañobase=getBaseDamage(Atacante);
 		
 		Attack ataque = new Attack(Atacante);
 		Atacado.apply(ataque);
@@ -60,6 +61,10 @@ public class Kill extends TargetAction{
 	
 	protected String getSwingImage(BaseInfo atacante) {
 		return "effects/sword";
+	}
+	
+	protected int getBaseDamage(BaseInfo Atacante) {
+		return Roll.d8()+Atacante.getAttributeValue(StabConstants.DAMAGE);
 	}
 
 	public Kill() {

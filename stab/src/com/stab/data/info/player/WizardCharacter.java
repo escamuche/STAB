@@ -21,7 +21,7 @@ public static final String ID="WIZARD_INFO";
 		this.setMaxHp(6);
 		this.setAttribute(StabConstants.TOHIT,1);
 		this.setAttribute(StabConstants.ARMOR,12);
-		this.setAttribute(StabConstants.DAMAGE,3);
+		this.setAttribute(StabConstants.DAMAGE,0);
 		this.setAttribute(StabConstants.SAVING,5);
 		this.setAttribute(StabConstants.EXPERIENCE,0);
 		this.setAttribute(StabConstants.TOHITRANGED,3);

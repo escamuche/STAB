@@ -4,9 +4,11 @@ import com.stab.adventure.AdventureLibrary;
 import com.stab.client.ClientEntityManager;
 import com.stab.common.fw.ServiceManager;
 import com.stab.data.actions.monster.ZombieClawAction;
+import com.stab.data.actions.player.ClericBasicMelee;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.Kill;
 import com.stab.data.actions.player.RangedKill;
+import com.stab.data.actions.player.WizardBasicMelee;
 import com.stab.data.actions.player.feats.Expertise;
 import com.stab.data.actions.player.feats.PowerAttack;
 import com.stab.data.actions.player.spells.Bless;
@@ -125,6 +127,8 @@ public class StabInit {
 		getActionLibrary().register(new Bless());
 		getActionLibrary().register(new Shield());
 		getActionLibrary().register(new ZombieClawAction());
+		getActionLibrary().register(new ClericBasicMelee());
+		getActionLibrary().register(new WizardBasicMelee());
 	}
 	
 	

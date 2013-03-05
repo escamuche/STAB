@@ -21,7 +21,7 @@ public static final String ID="CLERIC_INFO";
 		this.setMaxHp(10);
 		this.setAttribute(StabConstants.TOHIT,2);
 		this.setAttribute(StabConstants.ARMOR,15);
-		this.setAttribute(StabConstants.DAMAGE,6);
+		this.setAttribute(StabConstants.DAMAGE,1);
 		this.setAttribute(StabConstants.SAVING,5);
 		this.setAttribute(StabConstants.EXPERIENCE,0);
 		this.setAttribute(StabConstants.TOHITRANGED,2);

@@ -17,10 +17,11 @@ public class ClericActionSet extends BasicActionSet {
 		
 		this.setAction(InteractAction.ID,18);
 		this.setAction(DefendAction.ID,19);
-		this.setAction(Kill.ID, 10);
+		this.setAction(ClericBasicMelee.ID, 10);
 		this.setAction(Bless.ID, 12);
 		this.setAction(RangedKill.ID, 11);
 		this.setAction(CureLight.ID, 13);
+	
 		
 	}
 }

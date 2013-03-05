@@ -20,7 +20,7 @@ public class Zombie extends Creature {
 		setFaction(1);
 		this.setAttribute(StabConstants.ARMOR,12);
 		this.setAttribute(StabConstants.TOHIT,2);
-		this.setAttribute(StabConstants.DAMAGE,6);
+		this.setAttribute(StabConstants.DAMAGE,1);
 		this.setCurrentAI(new DefaultAIPackage());
 	}
 	
