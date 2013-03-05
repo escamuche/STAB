@@ -26,7 +26,7 @@ public class MagicMissile extends TargetAction{
 		MagicAttack ataque = new MagicAttack(Atacante);
 		Atacado.apply(ataque);
 		
-	//	Atacante.playAnimationOn(ShootProyectileAnimation.ID, Atacado.getToken(), "PARTICLE#explosion");
+		Atacante.playAnimationOn(ShootProyectileAnimation.ID, Atacado.getToken(), "PARTICLE#magicmissile");
 		
 		if (ataque.hits()) {
 			
