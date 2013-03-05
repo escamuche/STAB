@@ -7,7 +7,7 @@ public class StabConstants {
 	public static final String ARMOR="ARMOR";
 	public static final String EXPERIENCE="EXPERIENCE";
 	public static final String DAMAGE = "DAMAGE";
-	public static final String SAVING = "SAVING";
+	public static final String SAVING = "SAVING";   //Saving se queda obsoleto
 	public static final String TOHITRANGED="TOHITRANGED";
 	public static final String DAMAGERANGED="DAMAGERANGED";
 	public static final String DC="DC";	
@@ -17,32 +17,37 @@ public class StabConstants {
 	public static final String INTELIGENCE="INTELIGENCE";
 	public static final String WISDOM="WISDOM";
 	public static final String CHARISMA="CHARISMA";
-	public static final String DAMAGEREDUCTION="DAMAGEREDUCTION";
-	public static final String ARMORBONUSAC="ARMORBONUSAC";
-	public static final String SHIELDBONUSAC="SHIELDBONUSAC";
-	public static final String DEXMODAC="DEXMODAC";
-	public static final String SIZEMODAC="SIZEMODAC";
-	public static final String NATURALARMOR="NATURALARMOR";
-	public static final String DEFLECTIONMODAC="DEFLECTIONMODAC";
-	public static final String MISCMODAC="MISCMODAC";
-	public static final String DEXMODINITIATIVE="DEXMODINITIATIVE";
-	public static final String MISCMODINITIATIVE="MISCMODINITIATIVE";
+	public static final String DAMAGEREDUCTION="DAMAGEREDUCTION"; //Este mejor como trait attends<Damage>
+	//public static final String ARMORBONUSAC="ARMORBONUSAC";	      //Estos son modificadores
+	//public static final String SHIELDBONUSAC="SHIELDBONUSAC";
+	//public static final String DEXMODAC="DEXMODAC";
+	//public static final String SIZEMODAC="SIZEMODAC";
+	//public static final String NATURALARMOR="NATURALARMOR";
+	//public static final String DEFLECTIONMODAC="DEFLECTIONMODAC";
+	//public static final String MISCMODAC="MISCMODAC";
+	//public static final String DEXMODINITIATIVE="DEXMODINITIATIVE";
+	//public static final String MISCMODINITIATIVE="MISCMODINITIATIVE";
 	public static final String BASESPEED="BASESPEED";
 	public static final String ARMORMODSPEED="ARMORMODSPEED";
-	public static final String TOUCHAC="TOUCHAC";
-	public static final String FLATFOOTEDAC="FLATFOOTEDAC";
-	public static final String FORTITUDESAVE="FORTITUDESAVE";
+	
+	//public static final String TOUCHAC="TOUCHAC";               //Esto mejor pensarselo
+	//public static final String FLATFOOTEDAC="FLATFOOTEDAC";
+	
+	public static final String FORTITUDESAVE="FORTITUDESAVE";    //Esto requiere separar magicalAttack en 3
 	public static final String REFLEXSAVE="REFLEXSAVE";
 	public static final String WILLSAVE="WILLSAVE";
 	public static final String BAB="BAB";
 	public static final String SPELLRESISTANCE="SPELLRESISTANCE";
 	public static final String CMB="CMB";
-	public static final String CMDTRIP="CMDTRIP";
-	public static final String CMDBULLRUSH="CMDBULLRUSH";
-	public static final String CMDDISARM="CMDDISARM";
-	public static final String CMDGRAPPLE="CMDGRAPPLE";
-	public static final String CMDOVERRUN="CMDOVERRUN";
-	public static final String CMDSUNDER="CMDSUNDER";
+	
+	//public static final String CMDTRIP="CMDTRIP";	///Esto mejor por trait implements Attend<BullRush>
+	//public static final String CMDBULLRUSH="CMDBULLRUSH";
+	//public static final String CMDDISARM="CMDDISARM";
+	//public static final String CMDGRAPPLE="CMDGRAPPLE";
+	//public static final String CMDOVERRUN="CMDOVERRUN";
+	//public static final String CMDSUNDER="CMDSUNDER";
+	
+	//En una primera aproximacion meteria solo los basicos
 	public static final String ACROBATICS="ACROBATICS";
 	public static final String APPRAISE="APPRAISE";
 	public static final String BLUFF="BLUFF";
@@ -91,13 +96,19 @@ public class StabConstants {
 	public static final String SURVIVAL="SURVIVAL";
 	public static final String SWIMSKILL="SWIMSKILL";
 	public static final String USEMAGICDEVICE="USEMAGICDEVICE";
-	public static final String LIGHTLOAD="LIGHTLOAD";
-	public static final String MEDIUMLOAD="MEDIUMLOAD";
-	public static final String HEAVYLOAD="HEAVYLOAD";
+	
+	
+	//public static final String LIGHTLOAD="LIGHTLOAD";   //Esto tiene que ir calculado
+	//public static final String MEDIUMLOAD="MEDIUMLOAD";
+	//public static final String HEAVYLOAD="HEAVYLOAD";
+	
+	//Podemos empezar solo con gold?
 	public static final String MONEYPLATINUM="MONEYPLATINUM";
 	public static final String MONEYGOLD="MONEYGOLD";
 	public static final String MONEYSILVER="MONEYSILVER";
 	public static final String MONEYCOPPER="MONEYCOPPER";
+	
+	
 	public static final String SPELLKNOWN1="SPELLKNOWN1";
 	public static final String SPELLKNOWN2="SPELLKNOWN2";
 	public static final String SPELLKNOWN3="SPELLKNOWN3";
