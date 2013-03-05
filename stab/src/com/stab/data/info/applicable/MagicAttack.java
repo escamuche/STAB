@@ -26,21 +26,51 @@ public class MagicAttack extends Applicable{
 		BaseInfo aMatar = getTarget();
 		BaseInfo elqueMata = (BaseInfo) getInstigator();
 		
-		int save = aMatar.getValue(StabConstants.SAVING);
+		int ac = aMatar.getValue(StabConstants.ARMOR);
+		int hit = elqueMata.getValue(StabConstants.TOHITRANGED);
 		int dado = Roll.d20();
-		int saveroll=save+dado;
-		int dc=elqueMata.getValue(StabConstants.DC);
+		int dar=hit+dado;
 		
-		if (saveroll < dc) {
-			setResult(HIT);
+		if (dado == 20) {
+			System.out.println("Posibilidad de Critico!");
+			int confirc=Roll.d20();
+			int caconfirc=hit + confirc;
+			if(ac <= caconfirc) {
+				System.out.println("Critico!!!");
+				setResult(CRITICAL);
+			   	}
+			else{
+				System.out.println("Fallaste la confirmacion!");
+				setResult(HIT);
+				}
 			}
 		
-
-    	else{
-		    setResult(MISS);
+		
+		if (dado == 1) {
+			System.out.println("Posibilidad de Pifia!");
+		    int confirp=Roll.d20();
+		    int caconfirp=hit + confirp;
+		    if(ac <= caconfirp) {
+		    	System.out.println("Casi!");
+		    	setResult(MISS);
+		    	}
+		    	else{
+		    		System.out.println("Pifia!!!");
+		    		setResult(BOTCH);
 		    		}
 			}
 		
+		
+		System.out.println("Impactas a armadura " + dar);
+	
+		if (ac <= dar) { //si das a ca
+			setResult(HIT);
+		}
+		else{
+			setResult(MISS);
+		}
+					
+	}
 	
 	public boolean hits(){
 		return getResult()==HIT || getResult()==CRITICAL;
