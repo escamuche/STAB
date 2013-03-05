@@ -26,7 +26,7 @@ public class FortitudeAttack extends Applicable{
 		int save = aMatar.getValue(StabConstants.FORTITUDESAVE);
 		int dado = Roll.d20();
 		int saveroll=save+dado;
-		int dc=elqueMata.getValue(StabConstants.DC);
+		int dc = elqueMata.getValue(StabConstants.DC);
 		
 		if (saveroll < dc) {
 			setResult(HIT);

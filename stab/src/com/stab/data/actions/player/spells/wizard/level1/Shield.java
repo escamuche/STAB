@@ -1,4 +1,4 @@
-package com.stab.data.actions.player.spells;
+package com.stab.data.actions.player.spells.wizard.level1;
 
 import com.stab.data.info.buff.Shield_Buff;
 import com.stab.model.action.TargetAction;

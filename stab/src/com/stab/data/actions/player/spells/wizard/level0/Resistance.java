@@ -1,6 +1,5 @@
-package com.stab.data.actions.player.spells;
+package com.stab.data.actions.player.spells.wizard.level0;
 
-import com.stab.data.info.buff.Bless_Buff;
 import com.stab.data.info.buff.ResistanceBuff;
 import com.stab.model.action.TargetAction;
 import com.stab.model.basic.token.PhysicalToken;

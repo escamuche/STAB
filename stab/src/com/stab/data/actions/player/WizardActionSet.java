@@ -1,8 +1,8 @@
 package com.stab.data.actions.player;
 
 
-import com.stab.data.actions.player.spells.MagicMissile;
-import com.stab.data.actions.player.spells.Shield;
+import com.stab.data.actions.player.spells.wizard.level1.MagicMissile;
+import com.stab.data.actions.player.spells.wizard.level1.Shield;
 import com.stab.model.action.BasicActionSet;
 import com.stab.model.action.base.EmptyAction;
 import com.stab.model.action.base.InteractAction;
