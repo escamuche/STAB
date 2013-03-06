@@ -24,6 +24,7 @@ public class Zombie extends Creature {
 		this.setAttribute(StabConstants.TOHIT,2);
 		this.setAttribute(StabConstants.DAMAGE,1);*/
 		this.setCurrentAI(new DefaultAIPackage());
+		 this.setBloodeffEct("PARTICLE#greenblood");
 	}
 	
 }

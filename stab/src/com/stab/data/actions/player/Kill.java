@@ -29,26 +29,19 @@ public class Kill extends TargetAction{
 		Atacado.apply(ataque);
 		
 		yo.playAnimationOn(SwingAnimation.ID, target.getToken(), getSwingImage(Atacante));
-		
+		sleep(500);
 		if (ataque.hits()) {
-			
+			if (ataque.isCritical())
+				dañobase=dañobase*2;
 			Damage d= new Damage(dañobase, Damage.SLASHING_DAMAGE,yo);
 			Atacado.apply(d);
 			System.out.println(d.getFinalAmount()+" de daño");
+			sleep(500);
 			return true;	
 		}
 		
-		if (ataque.isCritical()) {
-			
-			dañobase=dañobase*2;
-			Damage d= new Damage(dañobase, Damage.SLASHING_DAMAGE,yo);
-			d.setCritical(true);
-			Atacado.apply(d);
-			System.out.println(d.getFinalAmount()+" de daño");
-			return true;	
-			
-		}
 		
+		sleep(500);
 		if (ataque.isBotch()) {
 			
 			System.out.println("Pero mira que eres torpe!");

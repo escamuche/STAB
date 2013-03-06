@@ -17,6 +17,7 @@ import com.stab.data.actions.player.spells.wizard.level1.MagicMissile;
 import com.stab.data.actions.player.spells.wizard.level1.Shield;
 import com.stab.data.adventure.TestAdventure;
 import com.stab.data.adventure.Zombies;
+import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.animation.CloseDoorAnimation;
 import com.stab.data.animation.DamageNumberAnimation;
 import com.stab.data.animation.EffectAddAnimation;
@@ -114,6 +115,7 @@ public class StabInit {
 		of.setMapping(ShootProyectileAnimation.class);
 		of.setMapping(MissProyectileAnimation.class);
 		of.setMapping(SwingAnimation.class);
+		of.setMapping(BasicSparkAnimation.class);
 	}
 	
 	static void initActions(){

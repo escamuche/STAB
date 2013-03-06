@@ -22,6 +22,9 @@ public class BasicSparkAnimation extends Animation {
 	public void start() {
 		super.start();
 		String img=getParam(0);
+		int t=getIntParam(1);
+		if (t!=0)
+			setTime(t);
 		Token_sprite s=AnimUtils.getSprite(getSource());
 		StateSprite icon=new StateSprite();
 		icon.setPos(getOriginPoint());
