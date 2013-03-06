@@ -25,6 +25,7 @@ import com.stab.data.animation.EffectRemoveAnimation;
 import com.stab.data.animation.HealNumberAnimation;
 import com.stab.data.animation.MissProyectileAnimation;
 import com.stab.data.animation.OpenDoorAnimation;
+import com.stab.data.animation.ShakeAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.WalkAnimation;
@@ -116,6 +117,7 @@ public class StabInit {
 		of.setMapping(MissProyectileAnimation.class);
 		of.setMapping(SwingAnimation.class);
 		of.setMapping(BasicSparkAnimation.class);
+		of.setMapping(ShakeAnimation.class);
 	}
 	
 	static void initActions(){

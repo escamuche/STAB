@@ -16,7 +16,7 @@ public class TestAnimState extends BasicAnimState{
 	public void enter(Sprite sprite) {
 		super.enter(sprite);
 		
-		((ValuePainter)sprite.getPainter()).setLog(true);
+	//	((ValuePainter)sprite.getPainter()).setLog(true);
 	/*	
 		Simple2PointValueProvider val= new Simple2PointValueProvider();
 		//val.setScale(-1);
