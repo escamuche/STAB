@@ -4,18 +4,18 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTile;
 import com.stab.model.info.Info;
 
-public class BurningHands extends SpellOnTile{
+public class SilentImage extends SpellOnTile{
 
-	public static final String ID="BURNINGHANDS";
+	public static final String ID="SILENTIMAGE";
 	
-	public BurningHands() {
+	public SilentImage() {
 	     
 		 setLevel(1);
 		 setCasterClass(StabConstants.WIZARDCASTER);
-		 setRange(1);
+		 setRange(88);
 	     setResource("actions/ability_mage_arcanebarrage");
-	     setName("BurningHands");
-	     this.setEffectType(DAMAGE);
+	     setName("SilentImage");
+	     this.setEffectType(SPECIAL);
 		}
 
 
