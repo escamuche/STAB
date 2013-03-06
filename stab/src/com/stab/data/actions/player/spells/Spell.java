@@ -8,5 +8,6 @@ public interface Spell {
 	public int getLevel();
 	public String getAttribute();
 	public int getDC(BaseInfo caster);
+	public String getCasterClass();
 	
 }

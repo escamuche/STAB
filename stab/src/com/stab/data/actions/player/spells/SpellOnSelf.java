@@ -1,5 +1,6 @@
 package com.stab.data.actions.player.spells;
 
+import com.stab.data.StabConstants;
 import com.stab.model.action.SelfAction;
 import com.stab.model.info.BaseInfo;
 
@@ -7,6 +8,7 @@ public abstract class SpellOnSelf extends SelfAction  implements Spell {
 
 	int level=0;
 	String attribute;
+	String casterClass;
 	
 	public void setLevel(int level) {
 		this.level = level;
@@ -14,7 +16,7 @@ public abstract class SpellOnSelf extends SelfAction  implements Spell {
 	public int getLevel() {
 		return level;
 	}
-	public void setAttribute(String attribute) {
+	private void setAttribute(String attribute) {
 		this.attribute = attribute;
 	}
 	@Override
@@ -36,5 +38,19 @@ public abstract class SpellOnSelf extends SelfAction  implements Spell {
 			return false;
 		return super.validateActor(i);
 	}
+	public void setCasterClass(String casterClass) {
+		this.casterClass = casterClass;
+		if (casterClass.equals(casterClass.equals(StabConstants.WIZARDCASTER)))
+			setAttribute(StabConstants.INTELIGENCE);
+		if (casterClass.equals(StabConstants.CLERICCASTER)||casterClass.equals(StabConstants.DRUIDCASTER)||casterClass.equals(StabConstants.RANGERCASTER))
+			setAttribute(StabConstants.WISDOM);
+		if (casterClass.equals(StabConstants.BARDCASTER)||casterClass.equals(StabConstants.SORCERERCASTER)||casterClass.equals(StabConstants.PALADINCASTER))
+			setAttribute(StabConstants.CHARISMA);
+	}
+	@Override
+	public String getCasterClass() {
+		return casterClass;
+	}
+	
 	
 }

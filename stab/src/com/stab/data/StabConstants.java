@@ -123,7 +123,11 @@ public class StabConstants {
 	public static final String LEVEL="LEVEL";
 	public static final String WIZARDCASTER="WIZARDCASTER";
 	public static final String CLERICCASTER="CLERICCASTER";
-	
+	public static final String BARDCASTER="BARDCASTER";
+	public static final String DRUIDCASTER="DRUIDCASTER";
+	public static final String PALADINCASTER="PALADINCASTER";
+	public static final String SORCERERCASTER="SORCERERCASTER";
+	public static final String RANGERCASTER="RANGERCASTER";
 	
 	
 	
