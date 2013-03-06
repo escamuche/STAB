@@ -2,6 +2,7 @@ package com.stab.data.animation;
 
 import java.awt.Point;
 
+import com.stab.client.slick.base.util.PaintUtils;
 import com.stab.common.Constants;
 import com.stab.common.value.Simple2PointValueProvider;
 import com.stab.data.utils.AnimUtils;
@@ -43,7 +44,7 @@ public class SwingAnimation extends OnTargetAnimation{
 		double a=getAngle()-Math.toRadians(120);
 		
 	
-		icon.setPainter(Resources.INSTANCE.getImage(img),Constants.CENTERED);
+		icon.setPainter(PaintUtils.getPainter(img));
 	
 		Simple2PointValueProvider sp= new Simple2PointValueProvider(0,240);
 		sp.setDisp((float)Math.toDegrees(getAngle())-120);

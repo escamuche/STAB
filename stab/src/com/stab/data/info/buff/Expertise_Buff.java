@@ -11,6 +11,7 @@ public class Expertise_Buff extends Buff {
 	public Expertise_Buff() {
 	
 		this.setAnimIcon("actions/ability_warrior_safeguard");				
+	//	this.setAnimIcon("PARTICLE#test#res/particles/ability_backstab");
 		this.setSound("HolyCast");
 		this.setResource("actions/ability_warrior_safeguard");                  
 		this.setName("Expertise");
