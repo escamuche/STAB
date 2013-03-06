@@ -1,5 +1,7 @@
 package com.stab.data.actions.player.spells.wizard.level0;
 
+import com.stab.data.StabConstants;
+import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.info.applicable.MagicAttack;
 import com.stab.model.action.TargetAction;
@@ -9,7 +11,7 @@ import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.util.Roll;
 
-public class RayFrost extends TargetAction{
+public class RayFrost extends SpellOnTarget{
 	
 	public static final String ID="RAYFROST";
 
@@ -38,6 +40,8 @@ public class RayFrost extends TargetAction{
 		return false;
 	}
 	public RayFrost() {
+		setLevel(0);
+		setCasterClass(StabConstants.WIZARDCASTER);
      setRange(6);
      setTargetClass(PhysicalToken.class);
      setResource("actions/ability_mage_arcanebarrage");

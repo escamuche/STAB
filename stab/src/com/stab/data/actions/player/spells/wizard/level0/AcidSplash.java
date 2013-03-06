@@ -1,18 +1,18 @@
 package com.stab.data.actions.player.spells.wizard.level0;
 
+import com.stab.data.StabConstants;
+import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.info.applicable.MagicAttack;
-import com.stab.model.action.TargetAction;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.util.Roll;
 
-public class AcidSplash extends TargetAction{
+public class AcidSplash extends SpellOnTarget{
 	
 	public static final String ID="ACIDSPLASH";
-
 	
 	
 	
@@ -39,7 +39,10 @@ public class AcidSplash extends TargetAction{
 	}
 	
 	public AcidSplash() {
-     setRange(6);
+     
+	 setLevel(0);
+	 setCasterClass(StabConstants.WIZARDCASTER);
+	 setRange(6);
      setTargetClass(PhysicalToken.class);
      setResource("actions/ability_mage_arcanebarrage");
      setName("AcidSplash");
