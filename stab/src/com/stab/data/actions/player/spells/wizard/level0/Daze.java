@@ -15,7 +15,7 @@ public class Daze extends TargetAction{
 		
 		BaseInfo Atacado = (BaseInfo)target;
 		
-		Daze_Debuff buff = new Daze_Debuff(Atacado);
+		Daze_Debuff buff = new Daze_Debuff();
 		Atacado.addTrait(buff);
 		
 		return true;

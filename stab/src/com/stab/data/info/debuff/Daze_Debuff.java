@@ -7,7 +7,7 @@ public class Daze_Debuff extends Buff {
 
 	public static final String ID="DAZE_DEBUFF";
 	
-	public Daze_Debuff(BaseInfo atacado) {
+	public Daze_Debuff() {
 	
 		
 		this.setAnimIcon("actions/ability_druid_naturalperfection");				
@@ -17,5 +17,12 @@ public class Daze_Debuff extends Buff {
 		
 		this.setTime(1);
 		//falta crear un estado stun
+		}
+	
+		@Override
+		public void turnStarts() {
+			this.getTarget().setTurnDone(true);
+			super.turnStarts();
+		
 		}
 }
