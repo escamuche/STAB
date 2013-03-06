@@ -128,8 +128,19 @@ public class StabConstants {
 	public static final String PALADINCASTER="PALADINCASTER";
 	public static final String SORCERERCASTER="SORCERERCASTER";
 	public static final String RANGERCASTER="RANGERCASTER";
-	
-	
-	
-
+	public static final String LUCKMOD="LUCKMOD";
+	public static final String SACREDMOD="SACREDMOD";
+	public static final String COMPETENCEMOD="COMPETENCEMOD";
+	public static final String DODGEMOD="DODGEMOD";
+	public static final String NATURALARMORMOD="NATURALARMORMOD";
+	public static final String DEFLECTIONMOD="DEFLECTIONMOD";
+	public static final String INSIGHTMOD="INSIGHTMOD";
+	public static final String ENHANCEMENTMOD="ENHANCEMENTMOD";
+	public static final String SHIELDMOD="SHIELDMOD";
+	public static final String ARMORMOD="ARMORMOD";
+	public static final String SIZEMOD="SIZEMOD";
+	public static final String RACIALMOD="RACIALMOD";
+	public static final String MISCELANEOMOD="MISCELANEOMOD";
+	public static final String AGEMOD="AGEMOD";
+	public static final String MORALMOD="MORALMOD";
 }
