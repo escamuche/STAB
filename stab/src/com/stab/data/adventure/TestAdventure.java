@@ -20,6 +20,7 @@ public class TestAdventure extends Adventure{
 		setMinLevel(1);
 		setMaxLevel(1);
 		setMinPlayers(1);
+		//setMinPlayers(2);
 		setMaxPlayers(5);
 		setAuthor("TestAdventure");
 		setDescription("A desperate woman needs help clearing her cellar of rats. Where else did you expect to begin?");
@@ -52,6 +53,7 @@ public class TestAdventure extends Adventure{
 		ms.setTiles(DefaultTileMapScene.DEFAULT,"newtiles");
 		ms.setProperties(DefaultTileMapScene.DEFAULT, DefaultBlockData.ID);
 		ms.setTag("BATTLE");
+		ms.setWaitsForAll(true);
 		
 		DefaultRule r=new DefaultRule();
 		r.setEvent(InfoDestroyed.class);
