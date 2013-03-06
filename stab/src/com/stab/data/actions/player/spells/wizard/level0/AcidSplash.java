@@ -22,7 +22,7 @@ public class AcidSplash extends SpellOnTarget{
 		
 		BaseInfo Atacante = (BaseInfo)yo;
 		BaseInfo Atacado = (BaseInfo)target;
-		int dañobase=Roll.d4();
+		int dañobase=Roll.d3();
 		
 		MagicAttack ataque = new MagicAttack(Atacante);
 		Atacado.apply(ataque);

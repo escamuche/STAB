@@ -1,12 +1,13 @@
 package com.stab.data.actions.player.spells.wizard.level1;
 
+import com.stab.data.StabConstants;
+import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.info.buff.MageArmor_Buff;
-import com.stab.model.action.TargetAction;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 
-public class MageArmor extends TargetAction{
+public class MageArmor extends SpellOnTarget{
 	
 	public static final String ID="MageArmor";
 
@@ -22,7 +23,9 @@ public class MageArmor extends TargetAction{
 		}
 	
 	public MageArmor() {
-     setRange(1);
+		setLevel(1);
+		setCasterClass(StabConstants.WIZARDCASTER);
+		setRange(1);
      setTargetClass(PhysicalToken.class);
      setResource("actions/ability_shaman_watershield");
      setName("MageArmor");
