@@ -22,8 +22,8 @@ public class Bless_Buff extends Buff {
 		Modifier tohit=Modifier.createMod(StabConstants.TOHIT, +1);
 		Modifier saves=Modifier.createMod(StabConstants.SAVING, +1);
 		
-		atacado.addTrait(tohit);
-		atacado.addTrait(saves);
+		addTrait(tohit);
+		addTrait(saves);
 		
 		}
 }

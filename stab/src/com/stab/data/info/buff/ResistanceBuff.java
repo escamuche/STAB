@@ -23,9 +23,9 @@ public class ResistanceBuff extends Buff {
 		Modifier refsave=Modifier.createMod(StabConstants.REFLEXSAVE, +1);
 		Modifier willsave=Modifier.createMod(StabConstants.WILLSAVE, +1);
 		
-		Bufado.addTrait(fortsave);
-		Bufado.addTrait(refsave);
-		Bufado.addTrait(willsave);
+		addTrait(fortsave);
+		addTrait(refsave);
+		addTrait(willsave);
 		
 		}
 }

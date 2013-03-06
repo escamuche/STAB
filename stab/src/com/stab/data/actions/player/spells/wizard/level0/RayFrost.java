@@ -29,13 +29,14 @@ public class RayFrost extends TargetAction{
 		
 		Atacante.playAnimationOn(ShootProyectileAnimation.ID, Atacado.getToken(), "PARTICLE#magicmissile");
 		
-		
+		if(ataque.hits()) {
 		Damage d= new Damage(dañobase, Damage.COLD_DAMAGE,yo);
 		Atacado.apply(d);
 		System.out.println(d.getFinalAmount()+" de daño");
 		return true;	
 		}
-	
+		return false;
+	}
 	public RayFrost() {
      setRange(6);
      setTargetClass(PhysicalToken.class);

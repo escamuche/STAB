@@ -121,6 +121,9 @@ public class StabConstants {
 	public static final String CASTERLEVEL="CASTERLEVEL";
 	
 	public static final String LEVEL="LEVEL";
+	public static final String WIZARDCASTER="WIZARDCASTER";
+	public static final String CLERICCASTER="CLERICCASTER";
+	
 	
 	
 	

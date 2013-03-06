@@ -5,21 +5,23 @@ import com.stab.model.info.BaseInfo;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.Buff;
 
-public class MageArmor_Buff extends Buff {
+public class TrueStrike_Buff extends Buff {
 
-	public static final String ID="MAGEARMOR_BUFF";
+	public static final String ID="TRUESTRIKE_BUFF";
 	
-	public MageArmor_Buff(BaseInfo atacante) {
+	public TrueStrike_Buff(BaseInfo atacante) {
 	
 		
 		this.setAnimIcon("actions/ability_shaman_watershield");				
 		this.setSound("HolyCast");
 		this.setResource("actions/ability_shaman_watershield");                  
-		this.setName("MageArmor");
+		this.setName("TrueStrike");
 		
-		this.setTime(60);
+		this.setTime(1);
 	
-		Modifier ca=Modifier.createMod(StabConstants.ARMOR, +4);
-		addTrait(ca);
+		Modifier hit=Modifier.createMod(StabConstants.TOHIT, +20);
+		Modifier hitranged=Modifier.createMod(StabConstants.TOHITRANGED, +20);
+		addTrait(hit);
+		addTrait(hitranged);
 		}
 }

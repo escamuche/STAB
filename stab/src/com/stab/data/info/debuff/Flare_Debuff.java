@@ -2,7 +2,6 @@ package com.stab.data.info.debuff;
 
 import com.stab.data.StabConstants;
 import com.stab.data.animation.ShootProyectileAnimation;
-import com.stab.data.info.applicable.FortitudeAttack;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.Buff;
@@ -20,14 +19,9 @@ public class Flare_Debuff extends Buff {
 		this.setName("Flare");
 		
 		this.setTime(10);
-		FortitudeAttack ataque = new FortitudeAttack(atacado);
-		atacado.apply(ataque);
-		
 		atacado.playAnimationOn(ShootProyectileAnimation.ID, atacado.getToken(), "PARTICLE#magicmissile");
 	
-		if(ataque.hits()) {
 		Modifier tohit=Modifier.createMod(StabConstants.TOHIT, -1);
-		atacado.addTrait(tohit);
-		}
+		addTrait(tohit);
 	}
 }

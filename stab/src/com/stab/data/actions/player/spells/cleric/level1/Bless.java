@@ -1,4 +1,4 @@
-package com.stab.data.actions.player.spells;
+package com.stab.data.actions.player.spells.cleric.level1;
 
 import com.stab.data.info.buff.Bless_Buff;
 import com.stab.model.action.TargetAction;

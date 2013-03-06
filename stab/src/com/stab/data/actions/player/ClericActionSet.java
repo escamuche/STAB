@@ -1,8 +1,8 @@
 package com.stab.data.actions.player;
 
 
-import com.stab.data.actions.player.spells.Bless;
-import com.stab.data.actions.player.spells.CureLight;
+import com.stab.data.actions.player.spells.cleric.level1.Bless;
+import com.stab.data.actions.player.spells.cleric.level1.CureLight;
 import com.stab.model.action.BasicActionSet;
 import com.stab.model.action.base.EmptyAction;
 import com.stab.model.action.base.InteractAction;
