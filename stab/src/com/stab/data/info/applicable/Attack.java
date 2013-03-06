@@ -16,8 +16,16 @@ public class Attack extends Applicable{
 	//En un futuro añadir o reutilizar los que hay para "le has dado a una imagen" o "fallo por concealment", etc
 	//Añadir tambien si ha sido CA, dodge, cover, parry o block lo que ha parado el ataque (con vistas a animacion)
 	
+	int modificador=0;  //Modificador particular para este ataque. Las clases que Attends<Attack> iran añadiendo 
+						//Modificadores (ej:  proteccion contra el mal, que representa un +2 a la ca, se aplica como ponerle un +2 a 
+						//la ca que tiene que dar. 
+	
 	public Attack(BaseInfo instigator) {
 		super(instigator);
+	}
+	
+	public void addModifier(int m){
+		modificador+=m;
 	}
 
 
@@ -29,6 +37,7 @@ public class Attack extends Applicable{
 		int ac = aMatar.getValue(StabConstants.ARMOR);
 		int dado = Roll.d20();
 
+		ac=ac+modificador; //Modificador impuesto por los Attend
 
 		int hit=elqueMata.getValue(StabConstants.TOHIT);
 		System.out.println(dado + " en el dado!");
