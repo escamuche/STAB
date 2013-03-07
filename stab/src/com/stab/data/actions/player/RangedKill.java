@@ -31,7 +31,7 @@ public class RangedKill extends TargetAction{
 		
 		if (ataque.hits()) {
 			
-			Atacante.playAnimationOn(ShootProyectileAnimation.ID, Atacado.getToken(), "effects/arrow");
+			sleep(Atacante.playAnimationOn(ShootProyectileAnimation.ID, Atacado.getToken(), "effects/arrow"));
 			Damage d= new Damage(dañobase, Damage.PIERCING_DAMAGE,yo);
 			Atacado.apply(d);
 			System.out.println(d.getFinalAmount()+" de daño");
@@ -40,7 +40,7 @@ public class RangedKill extends TargetAction{
 		
 		if (ataque.isCritical()) {
 			
-			Atacante.playAnimationOn(ShootProyectileAnimation.ID, Atacado.getToken(), "effects/arrow");
+			sleep(Atacante.playAnimationOn(ShootProyectileAnimation.ID, Atacado.getToken(), "effects/arrow"));
 			dañobase=dañobase*2;
 			Damage d= new Damage(dañobase, Damage.PIERCING_DAMAGE,yo);
 			d.setCritical(true);
@@ -56,7 +56,7 @@ public class RangedKill extends TargetAction{
 		    return false;
 		}
 		
-		Atacante.playAnimationOn(MissProyectileAnimation.ID, Atacado.getToken(), "effects/arrow");
+		sleep(Atacante.playAnimationOn(MissProyectileAnimation.ID, Atacado.getToken(), "effects/arrow"));
 		return false;
 		
 	}
