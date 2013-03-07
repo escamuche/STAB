@@ -31,8 +31,4 @@ public class PowerAttack_Buff extends Buff {
 		addTrait(dañopoweratt);
 		addTrait(tohitpoweratt);
 	}
-	
-	
-	
-	
 }

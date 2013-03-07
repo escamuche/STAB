@@ -90,4 +90,6 @@ public class RangedAttack extends Applicable{
 	public boolean isBotch(){
 		return getResult()==BOTCH;
 	}
+	
+	
 }

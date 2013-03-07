@@ -9,6 +9,7 @@ import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
+import com.stab.util.Roll;
 
 public class RangedKill extends TargetAction{
 	
@@ -68,6 +69,9 @@ public class RangedKill extends TargetAction{
      this.setEffectType(DAMAGE);
 	}
 
+	protected int getBaseDamage(BaseInfo Atacante) {
+		return Roll.d8()+Atacante.getAttributeValue(StabConstants.DAMAGE);
+	}
 	
 	@Override
 	public int getEffectValue(BaseInfo i) {
