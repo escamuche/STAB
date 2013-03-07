@@ -33,6 +33,8 @@ public class CharacterSheet extends InfoDataScene{
 	Text reflex;
 	Text will;
 	
+	Button spells;
+	Button feats;
 	Button finish;
 	
 	
@@ -46,7 +48,7 @@ public class CharacterSheet extends InfoDataScene{
 		setLayout("--");
 		
 		Text t1=  new Text();
-		t1.setText("Nombre: ");
+		t1.setText("Nombre:       ");
 		t1.setPos(Constants.BEGIN,Constants.NEXT);  //BEGIN = al comienzo de la linea (o de la pantalla si es vertical) NEXT= a continuacion del ultimo componente
 		t1.setSize(Constants.CONTENT,Constants.CONTENT); //Content: el tamaño que ocupe lo que necesite (ej: lo necesario para pintar el texto o imagen
 		addGUI(t1);
@@ -58,7 +60,7 @@ public class CharacterSheet extends InfoDataScene{
 		addGUI(nombre);
 		
 		Text t2=  new Text();
-		t2.setText("Clase: ");
+		t2.setText("Clase:        ");
 		t2.setPos(Constants.BEGIN,Constants.NEXT);  //BEGIN = al comienzo de la linea (o de la pantalla si es vertical) NEXT= a continuacion del ultimo componente
 		t2.setSize(Constants.CONTENT,Constants.CONTENT); //Content: el tamaño que ocupe lo que necesite (ej: lo necesario para pintar el texto o imagen
 		addGUI(t2);
@@ -70,7 +72,7 @@ public class CharacterSheet extends InfoDataScene{
 		addGUI(clase);
 		
 		Text t3=  new Text();
-		t3.setText("Armadura: ");
+		t3.setText("Armadura:     ");
 		t3.setPos(Constants.BEGIN,Constants.NEXT);  //BEGIN = al comienzo de la linea (o de la pantalla si es vertical) NEXT= a continuacion del ultimo componente
 		t3.setSize(Constants.CONTENT,Constants.CONTENT); //Content: el tamaño que ocupe lo que necesite (ej: lo necesario para pintar el texto o imagen
 		addGUI(t3);
@@ -81,136 +83,154 @@ public class CharacterSheet extends InfoDataScene{
 		addGUI(armor);
 		
 		Text t4=  new Text();
-		t4.setText("BAB: ");
+		t4.setText("Bono a dar:   ");
 		t4.setPos(Constants.BEGIN,Constants.NEXT);  //BEGIN = al comienzo de la linea (o de la pantalla si es vertical) NEXT= a continuacion del ultimo componente
 		t4.setSize(Constants.CONTENT,Constants.CONTENT); //Content: el tamaño que ocupe lo que necesite (ej: lo necesario para pintar el texto o imagen
 		addGUI(t4);
 		
 		bab= new Text();
 		bab.setText("--");
-		t1.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		bab.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
 		bab.setSize(Constants.FILL,Constants.CONTENT);
 		addGUI(bab);
 		
 		Text t5=  new Text();
-		t5.setText("Daño: ");
+		t5.setText("Daño:         ");
 		t5.setPos(Constants.BEGIN,Constants.NEXT);  //BEGIN = al comienzo de la linea (o de la pantalla si es vertical) NEXT= a continuacion del ultimo componente
 		t5.setSize(Constants.CONTENT,Constants.CONTENT); //Content: el tamaño que ocupe lo que necesite (ej: lo necesario para pintar el texto o imagen
 		addGUI(t5);
 		
 		daño= new Text();
 		daño.setText("--");
-		t1.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		daño.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
 		daño.setSize(Constants.FILL,Constants.CONTENT);
 		addGUI(daño);
 		
 		Text t6=  new Text();
-		t6.setText("Fortitude: ");
+		t6.setText("Fortitude:    ");
 		t6.setPos(Constants.BEGIN,Constants.NEXT);  //BEGIN = al comienzo de la linea (o de la pantalla si es vertical) NEXT= a continuacion del ultimo componente
 		t6.setSize(Constants.CONTENT,Constants.CONTENT); //Content: el tamaño que ocupe lo que necesite (ej: lo necesario para pintar el texto o imagen
 		addGUI(t6);
 		
 		fortitude= new Text();
 		fortitude.setText("--");
-		t1.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		fortitude.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
 		fortitude.setSize(Constants.FILL,Constants.CONTENT);
 		addGUI(fortitude);
 		
 		Text t7=  new Text();
-		t7.setText("Reflex: ");
+		t7.setText("Reflex:       ");
 		t7.setPos(Constants.BEGIN,Constants.NEXT);  //BEGIN = al comienzo de la linea (o de la pantalla si es vertical) NEXT= a continuacion del ultimo componente
 		t7.setSize(Constants.CONTENT,Constants.CONTENT); //Content: el tamaño que ocupe lo que necesite (ej: lo necesario para pintar el texto o imagen
 		addGUI(t7);
 		
 		reflex= new Text();
 		reflex.setText("--");
-		t1.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		reflex.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
 		reflex.setSize(Constants.FILL,Constants.CONTENT);
 		addGUI(reflex);
 		
 		Text t8=  new Text();
-		t8.setText("Will: ");
+		t8.setText("Will:         ");
 		t8.setPos(Constants.BEGIN,Constants.NEXT);  //BEGIN = al comienzo de la linea (o de la pantalla si es vertical) NEXT= a continuacion del ultimo componente
 		t8.setSize(Constants.CONTENT,Constants.CONTENT); //Content: el tamaño que ocupe lo que necesite (ej: lo necesario para pintar el texto o imagen
 		addGUI(t8);
 		
 		will= new Text();
 		will.setText("--");
-		t1.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		will.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
 		will.setSize(Constants.FILL,Constants.CONTENT);
 		addGUI(will);
 		
 		Text t9=  new Text();
-		t9.setText("Fuerza:");
+		t9.setText("Fuerza:       ");
 		t9.setPos(Constants.BEGIN,Constants.NEXT);  //BEGIN = al comienzo de la linea (o de la pantalla si es vertical) NEXT= a continuacion del ultimo componente
 		t9.setSize(Constants.CONTENT,Constants.CONTENT); //Content: el tamaño que ocupe lo que necesite (ej: lo necesario para pintar el texto o imagen
 		addGUI(t9);
 		
 		fuerza= new Text();
 		fuerza.setText("--");
-		t1.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		fuerza.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
 		fuerza.setSize(Constants.FILL,Constants.CONTENT);
 		addGUI(fuerza);
 		
 		Text t10=  new Text();
-		t10.setText("Destreza:");
+		t10.setText("Destreza:     ");
 		t10.setPos(Constants.BEGIN,Constants.NEXT);  //BEGIN = al comienzo de la linea (o de la pantalla si es vertical) NEXT= a continuacion del ultimo componente
 		t10.setSize(Constants.CONTENT,Constants.CONTENT); //Content: el tamaño que ocupe lo que necesite (ej: lo necesario para pintar el texto o imagen
 		addGUI(t10);
 		
 		destreza= new Text();
 		destreza.setText("--");
-		t1.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		destreza.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
 		destreza.setSize(Constants.FILL,Constants.CONTENT);
 		addGUI(destreza);
 		
 		Text t11=  new Text();
-		t11.setText("Constitucion:");
+		t11.setText("Constitucion: ");
 		t11.setPos(Constants.BEGIN,Constants.NEXT);  //BEGIN = al comienzo de la linea (o de la pantalla si es vertical) NEXT= a continuacion del ultimo componente
 		t11.setSize(Constants.CONTENT,Constants.CONTENT); //Content: el tamaño que ocupe lo que necesite (ej: lo necesario para pintar el texto o imagen
 		addGUI(t11);
 		
 		constitucion= new Text();
 		constitucion.setText("--");
-		t1.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		constitucion.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
 		constitucion.setSize(Constants.FILL,Constants.CONTENT);
 		addGUI(constitucion);
 		
 		Text t12=  new Text();
-		t12.setText("Inteligencia:");
+		t12.setText("Inteligencia: ");
 		t12.setPos(Constants.BEGIN,Constants.NEXT);  //BEGIN = al comienzo de la linea (o de la pantalla si es vertical) NEXT= a continuacion del ultimo componente
 		t12.setSize(Constants.CONTENT,Constants.CONTENT); //Content: el tamaño que ocupe lo que necesite (ej: lo necesario para pintar el texto o imagen
 		addGUI(t12);
 		
 		inteligencia= new Text();
 		inteligencia.setText("--");
-		t1.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		inteligencia.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
 		inteligencia.setSize(Constants.FILL,Constants.CONTENT);
 		addGUI(inteligencia);
 		
 		Text t13=  new Text();
-		t13.setText("Sabiduria:");
+		t13.setText("Sabiduria:    ");
 		t13.setPos(Constants.BEGIN,Constants.NEXT);  //BEGIN = al comienzo de la linea (o de la pantalla si es vertical) NEXT= a continuacion del ultimo componente
 		t13.setSize(Constants.CONTENT,Constants.CONTENT); //Content: el tamaño que ocupe lo que necesite (ej: lo necesario para pintar el texto o imagen
 		addGUI(t13);
 		
 		sabiduria= new Text();
 		sabiduria.setText("--");
-		t1.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		sabiduria.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
 		sabiduria.setSize(Constants.FILL,Constants.CONTENT);
 		addGUI(sabiduria);
 		
 		Text t14=  new Text();
-		t14.setText("Carisma:");
+		t14.setText("Carisma:      ");
 		t14.setPos(Constants.BEGIN,Constants.NEXT);  //BEGIN = al comienzo de la linea (o de la pantalla si es vertical) NEXT= a continuacion del ultimo componente
 		t14.setSize(Constants.CONTENT,Constants.CONTENT); //Content: el tamaño que ocupe lo que necesite (ej: lo necesario para pintar el texto o imagen
 		addGUI(t14);
 		
 		carisma= new Text();
 		carisma.setText("--");
-		t1.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		carisma.setPos(Constants.NEXT,Constants.PREVIOUS);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
 		carisma.setSize(Constants.FILL,Constants.CONTENT);
 		addGUI(carisma);
+		
+		spells=new Button();
+		spells.setText("Conjuros");
+		spells.setIcon("ui/point");
+		spells.setMode(Label.LABEL);  //Hay varios tipos de boton, indicando la posicion del texto y el icono
+		//spells.setAction("CONTINUAR"); //Esta accion nos llegara a playerOption cuando lo pulse
+		spells.setPos(Constants.BEGIN,Constants.NEXT); //Middle= en la mitad del ancho. End= al final del todo
+		spells.setSize(Constants.PERCENT+10,Constants.CONTENT); //Percent + X = tanto por ciento del ancho total
+		addGUI(spells);
+		
+		feats=new Button();
+		feats.setText("Feats");
+		feats.setIcon("ui/point");
+		feats.setMode(Label.LABEL);  //Hay varios tipos de boton, indicando la posicion del texto y el icono
+		//feats.setAction("CONTINUAR"); //Esta accion nos llegara a playerOption cuando lo pulse
+		feats.setPos(Constants.NEXT,Constants.PREVIOUS); //Middle= en la mitad del ancho. End= al final del todo
+		feats.setSize(Constants.PERCENT+10,Constants.CONTENT); //Percent + X = tanto por ciento del ancho total
+		addGUI(feats);
 		
 		finish=new Button();
 		finish.setText("Continuar");
@@ -241,7 +261,7 @@ public class CharacterSheet extends InfoDataScene{
 					clase.setText("Mago");
 		
 		armor.setText(""+((BaseInfo) i).getValue(StabConstants.ARMOR));
-		bab.setText(""+((BaseInfo) i).getValue(StabConstants.BAB));
+		bab.setText(""+((BaseInfo) i).getValue(StabConstants.TOHIT));
 		daño.setText(""+((BaseInfo) i).getValue(StabConstants.DAMAGE));
 		fuerza.setText(""+((BaseInfo) i).getValue(StabConstants.STRENGHT));
 		destreza.setText(""+((BaseInfo) i).getValue(StabConstants.DEXTERITY));

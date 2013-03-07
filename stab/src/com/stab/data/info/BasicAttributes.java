@@ -16,6 +16,7 @@ public class BasicAttributes extends CompoundTrait{
 		this.addTrait(new Attribute(StabConstants.CHARISMA,10));
 		this.addTrait(new Attribute(StabConstants.TOHIT,0));
 		this.addTrait(new Attribute(StabConstants.TOHITRANGED,0));
+		this.addTrait(new Attribute(StabConstants.BAB,0));
 		this.addTrait(new Attribute(StabConstants.DAMAGE,0));
 		this.addTrait(new Attribute(StabConstants.DAMAGERANGED,0));
 		this.addTrait(new Attribute(StabConstants.ARMOR,10));

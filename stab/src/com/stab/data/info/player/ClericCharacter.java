@@ -3,6 +3,7 @@ package com.stab.data.info.player;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.ClericActionSet;
 import com.stab.data.actions.player.DefendAction;
+import com.stab.model.info.trait.Modifier;
 
 
 public class ClericCharacter extends PathfinderCharacter{
@@ -19,15 +20,17 @@ public static final String ID="CLERIC_INFO";
 		setText("Cleric1");
 		
 		this.setMaxHp(10);
-		this.setAttribute(StabConstants.TOHIT,2);
-		this.setAttribute(StabConstants.ARMOR,15);
-		this.setAttribute(StabConstants.DAMAGE,1);
-		this.setAttribute(StabConstants.SAVING,5);
-		this.setAttribute(StabConstants.EXPERIENCE,0);
-		this.setAttribute(StabConstants.TOHITRANGED,2);
-		this.setAttribute(StabConstants.DAMAGERANGED,4);
 		this.setEp(10);
 		this.setAttribute(StabConstants.DC,14);
+		this.setAttribute(StabConstants.STRENGHT, 12);
+		this.setAttribute(StabConstants.CONSTITUTION, 14);
+		this.setAttribute(StabConstants.CHARISMA, 12);
+		this.setAttribute(StabConstants.WISDOM, 16);
+		this.setAttribute(StabConstants.FORTITUDESAVE, 2);
+		this.setAttribute(StabConstants.WILLSAVE, 2);
+		
+		this.addTrait(Modifier.createMod(StabConstants.ARMOR,"ARMADURA",3));
+		this.addTrait(Modifier.createMod(StabConstants.ARMOR,"SHIELD",2));
 		}
 	
 	

@@ -18,16 +18,13 @@ public static final String ID="WIZARD_INFO";
 		setResource("tokenWizard");
 		setText("Wizard1");
 		
-		this.setMaxHp(6);
-		this.setAttribute(StabConstants.TOHIT,1);
-		this.setAttribute(StabConstants.ARMOR,12);
-		this.setAttribute(StabConstants.DAMAGE,0);
-		this.setAttribute(StabConstants.SAVING,5);
-		this.setAttribute(StabConstants.EXPERIENCE,0);
-		this.setAttribute(StabConstants.TOHITRANGED,3);
-		this.setAttribute(StabConstants.DAMAGERANGED,4);
 		this.setEp(10);
-		this.setAttribute(StabConstants.DC,15);
+		this.setMaxHp(7);
+		this.setAttribute(StabConstants.STRENGHT, 8);
+		this.setAttribute(StabConstants.CONSTITUTION, 12);
+		this.setAttribute(StabConstants.DEXTERITY, 14);
+		this.setAttribute(StabConstants.INTELIGENCE, 16);
+		this.setAttribute(StabConstants.WILLSAVE, 2);
 		}
 	
 	

@@ -21,8 +21,6 @@ public static final String ID="WARRIOR_INFO";
 		
 		this.setMaxHp(13);
 		this.setAttribute(StabConstants.TOHIT,1);
-		//this.setAttribute(StabConstants.SAVING,3);
-		//this.setAttribute(StabConstants.EXPERIENCE,0);
 		this.setAttribute(StabConstants.TOHITRANGED,1);
 		this.setAttribute(StabConstants.DEXTERITY, 12);
 		this.setAttribute(StabConstants.STRENGHT, 16);
@@ -32,15 +30,6 @@ public static final String ID="WARRIOR_INFO";
 		
 		this.addTrait(Modifier.createMod(StabConstants.ARMOR,"ARMADURA",4));
 		this.addTrait(Modifier.createMod(StabConstants.ARMOR,"SHIELD",2));
-		
-		System.out.println("Dexterity: " + this.getValue(StabConstants.DEXTERITY));
-		System.out.println("Armor: " + this.getValue(StabConstants.ARMOR));
-		System.out.println("Tohit: "  + this.getValue(StabConstants.TOHIT));
-		System.out.println("Tohitranged: " + this.getValue(StabConstants.TOHITRANGED));
-		System.out.println("Damage: " + this.getValue(StabConstants.DAMAGE));
-		System.out.println("Fortitude: " + this.getValue(StabConstants.FORTITUDESAVE));
-		System.out.println("Reflex: " + this.getValue(StabConstants.REFLEXSAVE));
-		System.out.println("Will: " + this.getValue(StabConstants.WILLSAVE));
 	}
 	
 	
