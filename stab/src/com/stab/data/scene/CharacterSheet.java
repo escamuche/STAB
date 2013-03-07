@@ -19,7 +19,18 @@ public class CharacterSheet extends InfoDataScene{
 	
 	Text nombre;
 	Text clase;
-	
+	Text armor;
+	Text bab;
+	Text daño;
+	Text fuerza;
+	Text destreza;
+	Text constitucion;
+	Text inteligencia;
+	Text sabiduria;
+	Text carisma;
+	Text fortitude;
+	Text reflex;
+	Text will;
 	
 	Button finish;
 	
@@ -50,14 +61,77 @@ public class CharacterSheet extends InfoDataScene{
 		clase.setSize(Constants.FILL,Constants.CONTENT); //FILL -> ocupar todo lo que pueda
 		addGUI(clase);
 		
-		finish=new Button();
-		finish.setText("Continuar");
-		finish.setIcon("ui/point");
-		finish.setMode(Label.LABEL);  //Hay varios tipos de boton, indicando la posicion del texto y el icono
-		finish.setAction("CONTINUAR"); //Esta accion nos llegara a playerOption cuando lo pulse
-		finish.setPos(Constants.MIDDLE,Constants.END); //Middle= en la mitad del ancho. End= al final del todo
-		finish.setSize(Constants.PERCENT+50,Constants.CONTENT); //Percent + X = tanto por ciento del ancho total
-		addGUI(finish);
+		armor = new Text();
+		armor.setPos(Constants.NEXT,Constants.PREVIOUS );//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		armor.setSize(Constants.FILL,Constants.CONTENT);
+		addGUI(armor);
+		
+		bab= new Text();
+		bab.setText("--");
+		bab.setPos(Constants.NEXT,Constants.PREVIOUS );//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		bab.setSize(Constants.FILL,Constants.CONTENT);
+		addGUI(bab);
+		
+		daño= new Text();
+		daño.setText("--");
+		daño.setPos(Constants.NEXT,Constants.PREVIOUS );//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		daño.setSize(Constants.FILL,Constants.CONTENT);
+		addGUI(daño);
+		
+		fortitude= new Text();
+		fortitude.setText("--");
+		fortitude.setPos(Constants.NEXT,Constants.PREVIOUS );//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		fortitude.setSize(Constants.FILL,Constants.CONTENT);
+		addGUI(fortitude);
+		
+		reflex= new Text();
+		reflex.setText("--");
+		reflex.setPos(Constants.NEXT,Constants.PREVIOUS );//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		reflex.setSize(Constants.FILL,Constants.CONTENT);
+		addGUI(reflex);
+		
+		will= new Text();
+		will.setText("--");
+		will.setPos(Constants.NEXT,Constants.PREVIOUS );//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		will.setSize(Constants.FILL,Constants.CONTENT);
+		addGUI(will);
+		
+		fuerza= new Text();
+		fuerza.setText("--");
+		fuerza.setPos(Constants.NEXT,Constants.PREVIOUS );//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		fuerza.setSize(Constants.FILL,Constants.CONTENT);
+		addGUI(fuerza);
+		
+		destreza= new Text();
+		destreza.setText("--");
+		destreza.setPos(Constants.NEXT,Constants.PREVIOUS );//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		destreza.setSize(Constants.FILL,Constants.CONTENT);
+		addGUI(destreza);
+		
+		constitucion= new Text();
+		constitucion.setText("--");
+		constitucion.setPos(Constants.NEXT,Constants.PREVIOUS );//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		constitucion.setSize(Constants.FILL,Constants.CONTENT);
+		addGUI(constitucion);
+		
+		inteligencia= new Text();
+		inteligencia.setText("--");
+		inteligencia.setPos(Constants.NEXT,Constants.PREVIOUS );//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		inteligencia.setSize(Constants.FILL,Constants.CONTENT);
+		addGUI(inteligencia);
+		
+		sabiduria= new Text();
+		sabiduria.setText("--");
+		sabiduria.setPos(Constants.NEXT,Constants.PREVIOUS );//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		sabiduria.setSize(Constants.FILL,Constants.CONTENT);
+		addGUI(sabiduria);
+		
+		carisma= new Text();
+		carisma.setText("--");
+		carisma.setPos(Constants.NEXT,Constants.PREVIOUS );//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		carisma.setSize(Constants.FILL,Constants.CONTENT);
+		addGUI(carisma);
+		
 		
 		doLayout();  //Acabar con doLayout() para que organize la pantalla
 	}
@@ -67,14 +141,53 @@ public class CharacterSheet extends InfoDataScene{
 		PathfinderCharacter pc=(PathfinderCharacter)i;
 		
 		nombre.setText(i.getResource());
-		if (i instanceof WarriorCharacter)
+		if (i instanceof WarriorCharacter) {
 			clase.setText("Guerrero");
+			armor.setText(StabConstants.ARMOR);
+			bab.setText(StabConstants.BAB);
+			daño.setText(StabConstants.DAMAGE);
+			fuerza.setText(StabConstants.STRENGHT);
+			destreza.setText(StabConstants.DEXTERITY);
+			constitucion.setText(StabConstants.CONSTITUTION);
+			inteligencia.setText(StabConstants.INTELIGENCE);
+			sabiduria.setText(StabConstants.WISDOM);
+			carisma.setText(StabConstants.CHARISMA);
+			fortitude.setText(StabConstants.FORTITUDESAVE);
+			reflex.setText(StabConstants.REFLEXSAVE);
+			will.setText(StabConstants.WILLSAVE);
+		}
 		else
-			if (i instanceof ClericCharacter)
+			if (i instanceof ClericCharacter) {
 				clase.setText("Clérigo");
+				armor.setText(StabConstants.ARMOR);
+				bab.setText(StabConstants.BAB);
+				daño.setText(StabConstants.DAMAGE);
+				fuerza.setText(StabConstants.STRENGHT);
+				destreza.setText(StabConstants.DEXTERITY);
+				constitucion.setText(StabConstants.CONSTITUTION);
+				inteligencia.setText(StabConstants.INTELIGENCE);
+				sabiduria.setText(StabConstants.WISDOM);
+				carisma.setText(StabConstants.CHARISMA);
+				fortitude.setText(StabConstants.FORTITUDESAVE);
+				reflex.setText(StabConstants.REFLEXSAVE);
+				will.setText(StabConstants.WILLSAVE);
+			}
 			else
-				if (i instanceof WizardCharacter)
+				if (i instanceof WizardCharacter) {
 					clase.setText("Mago");
+					armor.setText(StabConstants.ARMOR);
+					bab.setText(StabConstants.BAB);
+					daño.setText(StabConstants.DAMAGE);
+					fuerza.setText(StabConstants.STRENGHT);
+					destreza.setText(StabConstants.DEXTERITY);
+					constitucion.setText(StabConstants.CONSTITUTION);
+					inteligencia.setText(StabConstants.INTELIGENCE);
+					sabiduria.setText(StabConstants.WISDOM);
+					carisma.setText(StabConstants.CHARISMA);
+					fortitude.setText(StabConstants.FORTITUDESAVE);
+					reflex.setText(StabConstants.REFLEXSAVE);
+					will.setText(StabConstants.WILLSAVE);
+				}
 	}
 	
 	@Override
