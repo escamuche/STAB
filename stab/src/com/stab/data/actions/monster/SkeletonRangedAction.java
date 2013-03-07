@@ -9,6 +9,7 @@ import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
+import com.stab.model.request.basic.ActionRequest;
 
 public class SkeletonRangedAction extends TargetAction{
 	
@@ -16,7 +17,7 @@ public class SkeletonRangedAction extends TargetAction{
 
 	
 	
-	
+
 
 	@Override
 	public boolean execute(Info yo, Info target) {

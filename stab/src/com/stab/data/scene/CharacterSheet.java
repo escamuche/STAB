@@ -42,6 +42,7 @@ public class CharacterSheet extends InfoDataScene{
 		setMusic(null);
 		setMargin(60,70);
 		setGap(5,15);
+		setLayout("--");
 		
 		Text t1=  new Text();
 		t1.setText("Nombre:");
@@ -62,7 +63,7 @@ public class CharacterSheet extends InfoDataScene{
 		addGUI(clase);
 		
 		armor = new Text();
-		armor.setPos(Constants.NEXT,Constants.PREVIOUS );//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
+		armor.setPos(Constants.BEGIN,Constants.NEXT);//Next para que vaya a continuacion del ultimo componente en la X, Previous, para que este a la altura del anterior componente
 		armor.setSize(Constants.FILL,Constants.CONTENT);
 		addGUI(armor);
 		
