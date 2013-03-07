@@ -11,6 +11,7 @@ import com.stab.model.basic.scenes.InfoDataScene;
 import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.Label;
 import com.stab.model.basic.ui.Text;
+import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 
 public class CharacterSheet extends InfoDataScene{
@@ -239,18 +240,18 @@ public class CharacterSheet extends InfoDataScene{
 				if (i instanceof WizardCharacter)
 					clase.setText("Mago");
 		
-		armor.setText("i.getValue(StabConstants.ARMOR)");
-		bab.setText("i.getValue(StabConstants.BAB)");
-		daño.setText("i.getValue(StabConstants.DAMAGE)");
-		fuerza.setText("i.getValue(StabConstants.STRENGHT)");
-		destreza.setText("i.getValue(StabConstants.DEXTERITY)");
-		constitucion.setText("i.getValue(StabConstants.CONSTITUTION)");
-		inteligencia.setText("i.getValue(StabConstants.INTELIGENCE)");
-		sabiduria.setText("i.getValue(StabConstants.WISDOM)");
-		carisma.setText("i.getValue(StabConstants.CHARISMA)");
-		fortitude.setText("i.getValue(StabConstants.FORTITUDESAVE)");
-		reflex.setText("i.getValue(StabConstants.REFLEXSAVE)");
-		will.setText("i.getValue(StabConstants.WILLSAVE)");
+		armor.setText(""+((BaseInfo) i).getValue(StabConstants.ARMOR));
+		bab.setText(""+((BaseInfo) i).getValue(StabConstants.BAB));
+		daño.setText(""+((BaseInfo) i).getValue(StabConstants.DAMAGE));
+		fuerza.setText(""+((BaseInfo) i).getValue(StabConstants.STRENGHT));
+		destreza.setText(""+((BaseInfo) i).getValue(StabConstants.DEXTERITY));
+		constitucion.setText(""+((BaseInfo) i).getValue(StabConstants.CONSTITUTION));
+		inteligencia.setText(""+((BaseInfo) i).getValue(StabConstants.INTELIGENCE));
+		sabiduria.setText(""+((BaseInfo) i).getValue(StabConstants.WISDOM));
+		carisma.setText(""+((BaseInfo) i).getValue(StabConstants.CHARISMA));
+		fortitude.setText(""+((BaseInfo) i).getValue(StabConstants.FORTITUDESAVE));
+		reflex.setText(""+((BaseInfo) i).getValue(StabConstants.REFLEXSAVE));
+		will.setText(""+((BaseInfo) i).getValue(StabConstants.WILLSAVE));
 	}
 	
 	@Override
