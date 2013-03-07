@@ -3,6 +3,7 @@ package com.stab.data;
 import com.stab.adventure.AdventureLibrary;
 import com.stab.client.ClientEntityManager;
 import com.stab.common.fw.ServiceManager;
+import com.stab.data.actions.monster.SkeletonRangedAction;
 import com.stab.data.actions.monster.ZombieClawAction;
 import com.stab.data.actions.player.ClericBasicMelee;
 import com.stab.data.actions.player.DefendAction;
@@ -29,6 +30,7 @@ import com.stab.data.animation.ShakeAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.WalkAnimation;
+import com.stab.data.info.monster.EsqueletoArquero;
 import com.stab.data.info.monster.Zombie;
 import com.stab.data.info.player.ClericCharacter;
 import com.stab.data.info.player.WarriorCharacter;
@@ -100,6 +102,7 @@ public class StabInit {
 		of.setMapping(WizardCharacter.class);
 		of.setMapping(Zombie.class);
 		of.setMapping(ClericCharacter.class);
+		of.setMapping(EsqueletoArquero.class);
 		
 		
 		
@@ -135,6 +138,7 @@ public class StabInit {
 		getActionLibrary().register(new ZombieClawAction());
 		getActionLibrary().register(new ClericBasicMelee());
 		getActionLibrary().register(new WizardBasicMelee());
+		getActionLibrary().register(new SkeletonRangedAction());
 	}
 	
 	

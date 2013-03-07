@@ -1,8 +1,6 @@
 package com.stab.data.info.props;
 
 import com.stab.data.StabConstants;
-import com.stab.data.actions.player.WarriorActionSet;
-import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.info.base.Obstacle;
 
 public class Dummy extends Obstacle {

@@ -1,13 +1,13 @@
 package com.stab.data.scene;
 
 import com.stab.common.Constants;
+import com.stab.data.StabConstants;
 import com.stab.data.info.player.ClericCharacter;
 import com.stab.data.info.player.PathfinderCharacter;
 import com.stab.data.info.player.WarriorCharacter;
 import com.stab.data.info.player.WizardCharacter;
 import com.stab.model.Player;
 import com.stab.model.basic.scenes.InfoDataScene;
-import com.stab.model.basic.scenes.Tavern;
 import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.Label;
 import com.stab.model.basic.ui.Text;

@@ -1,6 +1,5 @@
 package com.stab.data.info.debuff;
 
-import com.stab.model.info.BaseInfo;
 import com.stab.model.info.trait.base.Buff;
 
 public class Daze_Debuff extends Buff {
