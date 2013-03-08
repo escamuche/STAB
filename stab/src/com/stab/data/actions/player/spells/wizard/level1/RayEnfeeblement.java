@@ -20,7 +20,7 @@ public class RayEnfeeblement extends SpellOnTarget{
 		setCasterClass(StabConstants.WIZARDCASTER);
 		setRange(6);
      setTargetClass(PhysicalToken.class);
-     setResource("actions/ability_shaman_watershield");
+     setResource("actions/rayenfeeblement");
      setName("RayEnfeblement");
      this.setEffectType(DEBUFF);
 	}

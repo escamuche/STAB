@@ -12,9 +12,9 @@ public class Bless_Buff extends Buff {
 	public Bless_Buff(BaseInfo atacado) {
 	
 		
-		this.setAnimIcon("actions/ability_druid_naturalperfection");				
+		this.setAnimIcon("actions/bless");				
 		this.setSound("HolyCast");
-		this.setResource("actions/ability_druid_naturalperfection");                  
+		this.setResource("actions/bless");                  
 		this.setName("Bless");
 		
 		this.setTime(10);

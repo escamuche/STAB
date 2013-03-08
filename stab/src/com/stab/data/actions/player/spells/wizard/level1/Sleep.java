@@ -13,7 +13,7 @@ public class Sleep extends SpellOnTile{
 		 setLevel(1);
 		 setCasterClass(StabConstants.WIZARDCASTER);
 		 setRange(22);
-	     setResource("actions/ability_mage_arcanebarrage");
+	     setResource("actions/sleep");
 	     setName("Sleep");
 	     this.setEffectType(DEBUFF);
 		}

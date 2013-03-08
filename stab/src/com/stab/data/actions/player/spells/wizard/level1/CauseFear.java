@@ -19,7 +19,7 @@ public class CauseFear extends SpellOnTarget{
 		setCasterClass(StabConstants.WIZARDCASTER);
 		setRange(6);
      setTargetClass(PhysicalToken.class);
-     setResource("actions/ability_shaman_watershield");
+     setResource("actions/causefear");
      setName("CauseFear");
      this.setEffectType(DEBUFF);
 	}

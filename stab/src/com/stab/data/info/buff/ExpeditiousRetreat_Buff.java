@@ -12,15 +12,12 @@ public class ExpeditiousRetreat_Buff extends Buff {
 	public ExpeditiousRetreat_Buff(BaseInfo caster) {
 	
 		
-		this.setAnimIcon("actions/ability_shaman_watershield");				
+		this.setAnimIcon("expeditiousretreat");				
 		this.setSound("HolyCast");
-		this.setResource("actions/ability_shaman_watershield");                  
+		this.setResource("expeditiousretreat");                  
 		this.setName("Expeditious Retreat");
 		
 		this.setTime(10);
 	
-		int mov=caster.getActionPoints();
-		/*Modifier speed=Modifier.createMod(mov,mov*2);
-		addTrait(speed);*/
 		}
 }

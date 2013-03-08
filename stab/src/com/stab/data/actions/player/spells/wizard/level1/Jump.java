@@ -12,7 +12,7 @@ public class Jump extends SpellOnTarget {
 		setLevel(1);
 		setCasterClass(StabConstants.WIZARDCASTER);
 		 setRange(1);
-     setResource("actions/ability_druid_naturalperfection");
+     setResource("actions/jump");
      setName("Jump");
      this.setEffectType(BUFF);
 	}
