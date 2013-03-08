@@ -1,6 +1,9 @@
 package com.stab.data.actions.player;
 
 
+import com.stab.data.actions.player.spells.cleric.level0.Guidance;
+import com.stab.data.actions.player.spells.cleric.level0.ResistanceCleric;
+import com.stab.data.actions.player.spells.cleric.level1.Bane;
 import com.stab.data.actions.player.spells.cleric.level1.Bless;
 import com.stab.data.actions.player.spells.cleric.level1.CureLight;
 import com.stab.model.action.BasicActionSet;
@@ -21,7 +24,9 @@ public class ClericActionSet extends BasicActionSet {
 		this.setAction(Bless.ID, 12);
 		this.setAction(RangedKill.ID, 11);
 		this.setAction(CureLight.ID, 13);
-	
+		this.setAction(ResistanceCleric.ID, 16);
+		this.setAction(Guidance.ID, 15);
+		this.setAction(Bane.ID, 14);
 		
 	}
 }

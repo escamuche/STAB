@@ -12,6 +12,9 @@ import com.stab.data.actions.player.RangedKill;
 import com.stab.data.actions.player.WizardBasicMelee;
 import com.stab.data.actions.player.feats.Expertise;
 import com.stab.data.actions.player.feats.PowerAttack;
+import com.stab.data.actions.player.spells.cleric.level0.Guidance;
+import com.stab.data.actions.player.spells.cleric.level0.ResistanceCleric;
+import com.stab.data.actions.player.spells.cleric.level1.Bane;
 import com.stab.data.actions.player.spells.cleric.level1.Bless;
 import com.stab.data.actions.player.spells.cleric.level1.CureLight;
 import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
@@ -169,8 +172,12 @@ public class StabInit {
 		getActionLibrary().register(new TrueStrike());
 		getActionLibrary().register(new EnlargePerson());
 		
+		getActionLibrary().register(new Guidance());
+		getActionLibrary().register(new ResistanceCleric());
+		
 		getActionLibrary().register(new CureLight());
 		getActionLibrary().register(new Bless());
+		getActionLibrary().register(new Bane());
 		
 	
 	}

@@ -6,7 +6,7 @@ import com.stab.model.info.BaseInfo;
 
 
 public class DetectPoison extends SpellOnSelf{
-	public static final String ID="DETECTPOISON";
+	public static final String ID="DETECTPOISON_WIZARD";
 
 	public DetectPoison() {
 	     

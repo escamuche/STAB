@@ -1,4 +1,4 @@
-package com.stab.data.actions.player.spells.wizard.level0;
+package com.stab.data.actions.player.spells.cleric.level0;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
@@ -7,9 +7,9 @@ import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 
-public class Resistance extends SpellOnTarget{
+public class ResistanceCleric extends SpellOnTarget{
 	
-	public static final String ID="RESISTANCE";
+	public static final String ID="RESISTANCE_CLERIC";
 
 	@Override
 	public boolean execute(Info yo, Info target) {
@@ -22,9 +22,9 @@ public class Resistance extends SpellOnTarget{
 		return true;
 		}
 	
-	public Resistance() {
+	public ResistanceCleric() {
 		setLevel(0);
-		setCasterClass(StabConstants.WIZARDCASTER);
+		setCasterClass(StabConstants.CLERICCASTER);
      setRange(1);
      setTargetClass(PhysicalToken.class);
      setResource("actions/nightshield");

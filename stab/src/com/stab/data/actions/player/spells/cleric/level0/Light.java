@@ -1,4 +1,4 @@
-package com.stab.data.actions.player.spells.wizard.level0;
+package com.stab.data.actions.player.spells.cleric.level0;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
@@ -7,7 +7,7 @@ import com.stab.model.info.Info;
 
 public class Light extends SpellOnTarget{
 	
-	public static final String ID="LIGHT_WIZARD";
+	public static final String ID="LIGHT_CLERIC";
 
 	@Override
 	public boolean execute(Info yo, Info target) {
@@ -16,7 +16,7 @@ public class Light extends SpellOnTarget{
 	
 	public Light() {
 		setLevel(0);
-		setCasterClass(StabConstants.WIZARDCASTER);
+		setCasterClass(StabConstants.CLERICCASTER);
 		setRange(1);
 		setTargetClass(PhysicalToken.class);
 		setResource("actions/ability_druid_naturalperfection");

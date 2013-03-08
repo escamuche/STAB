@@ -31,6 +31,23 @@ public class PrayerBook extends InfoDataScene{
 		t2.setSize(Constants.FILL,Constants.CONTENT);
 		addGUI(t2);
 		
+		Button guidance=new Button();
+		guidance.setText("Guidance");
+		guidance.setIcon("ui/point");
+		guidance.setMode(Label.LABEL); 
+	    //bless.setAction(""); 
+		guidance.setPos(Constants.BEGIN,Constants.NEXT); 
+		guidance.setSize(Constants.PERCENT+20,Constants.CONTENT); 
+		addGUI(guidance);
+		
+		Button resistance=new Button();
+		resistance.setText("Resistance");
+		resistance.setIcon("ui/point");
+		resistance.setMode(Label.LABEL); 
+	    //bless.setAction(""); 
+		resistance.setPos(Constants.NEXT,Constants.PREVIOUS); 
+		resistance.setSize(Constants.PERCENT+20,Constants.CONTENT); 
+		addGUI(resistance);
 		
 		Text t3=new Text();
 		t3.setText("NIVEL 1");
@@ -42,7 +59,7 @@ public class PrayerBook extends InfoDataScene{
 		curelight.setText("Cure Light");
 		curelight.setIcon("ui/point");
 		curelight.setMode(Label.LABEL);  
-	    //magearmor.setAction(""); 
+	    //curelight.setAction(""); 
 		curelight.setPos(Constants.BEGIN,Constants.NEXT); 
 		curelight.setSize(Constants.PERCENT+20,Constants.CONTENT); 
 		addGUI(curelight);
@@ -51,10 +68,19 @@ public class PrayerBook extends InfoDataScene{
 		bless.setText("Bless");
 		bless.setIcon("ui/point");
 		bless.setMode(Label.LABEL); 
-	    //shield.setAction(""); 
+	    //bless.setAction(""); 
 		bless.setPos(Constants.NEXT,Constants.PREVIOUS); 
 		bless.setSize(Constants.PERCENT+20,Constants.CONTENT); 
 		addGUI(bless);
+		
+		Button bane=new Button();
+		bane.setText("Bane");
+		bane.setIcon("ui/point");
+		bane.setMode(Label.LABEL); 
+	    //bless.setAction(""); 
+		bane.setPos(Constants.NEXT,Constants.PREVIOUS); 
+		bane.setSize(Constants.PERCENT+20,Constants.CONTENT); 
+		addGUI(bane);
 		
 		Button finish=new Button();
 		finish.setText("Continuar");
