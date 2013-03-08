@@ -19,7 +19,7 @@ public class ProtectionEvil extends SpellOnTarget{
 		setCasterClass(StabConstants.WIZARDCASTER);
 		setRange(1);
      setTargetClass(PhysicalToken.class);
-     setResource("actions/ability_shaman_watershield");
+     setResource("actions/protectionevil");
      setName("ProtectionEvil");
      this.setEffectType(BUFF);
 	}

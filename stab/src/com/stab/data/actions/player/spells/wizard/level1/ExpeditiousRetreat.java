@@ -11,7 +11,7 @@ public class ExpeditiousRetreat extends SpellOnSelf{
 	public ExpeditiousRetreat() {
 		setLevel(1);
 		setCasterClass(StabConstants.WIZARDCASTER);
-     setResource("actions/ability_druid_naturalperfection");
+     setResource("actions/expeditiousretreat");
      setName("ExpeditiousRetreat");
      this.setEffectType(BUFF);
 	}

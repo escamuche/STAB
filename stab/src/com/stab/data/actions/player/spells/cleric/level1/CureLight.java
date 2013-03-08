@@ -25,7 +25,7 @@ public class CureLight extends TargetAction{
 	public CureLight() {
      setRange(1);
      setTargetClass(PhysicalToken.class);
-     setResource("actions/ability_rogue_imrovedrecuperate");
+     setResource("actions/curelightwounds");
      setName("CureLight");
      this.setEffectType(HEAL);
 	}

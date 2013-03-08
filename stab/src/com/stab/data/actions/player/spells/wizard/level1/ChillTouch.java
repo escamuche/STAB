@@ -14,7 +14,7 @@ import com.stab.util.Roll;
 
 public class ChillTouch extends SpellOnTarget{
 	
-	public static final String ID="CHILDTOUCH";
+	public static final String ID="CHILLTOUCH";
 	
 	
 	
@@ -55,8 +55,8 @@ public class ChillTouch extends SpellOnTarget{
 	 setCasterClass(StabConstants.WIZARDCASTER);
 	 setRange(1);
      setTargetClass(PhysicalToken.class);
-     setResource("actions/ability_mage_arcanebarrage");
-     setName("ShockingGrasp");
+     setResource("actions/chilltouch");
+     setName("Chill Touch");
      this.setEffectType(DAMAGE);
 	}
 

@@ -19,7 +19,7 @@ public class CharmPerson extends SpellOnTarget{
 		setCasterClass(StabConstants.WIZARDCASTER);
 		setRange(6);
      setTargetClass(PhysicalToken.class);
-     setResource("actions/ability_shaman_watershield");
+     setResource("actions/charmperson");
      setName("CharmPerson");
      this.setEffectType(DEBUFF);
 	}

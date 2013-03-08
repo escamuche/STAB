@@ -11,7 +11,7 @@ public class Shield extends SpellOnSelf{
 	
 	public Shield() {
      //setRange(4);
-     setResource("actions/ability_shaman_watershield");
+     setResource("actions/shield");
      setName("Shield");
      this.setEffectType(BUFF);
      this.setCasterClass(StabConstants.WIZARDCASTER);

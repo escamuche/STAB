@@ -12,9 +12,9 @@ public class MageArmor_Buff extends Buff {
 	public MageArmor_Buff(BaseInfo atacante) {
 	
 		
-		this.setAnimIcon("actions/ability_shaman_watershield");				
+		this.setAnimIcon("actions/magearmor");				
 		this.setSound("HolyCast");
-		this.setResource("actions/ability_shaman_watershield");                  
+		this.setResource("actions/magearmor");                  
 		this.setName("MageArmor");
 		
 		this.setTime(60);

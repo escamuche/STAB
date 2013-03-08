@@ -43,7 +43,7 @@ public class RayFrost extends SpellOnTarget{
 		setCasterClass(StabConstants.WIZARDCASTER);
      setRange(6);
      setTargetClass(PhysicalToken.class);
-     setResource("actions/rayfrost");
+     setResource("actions/niaccoldray");
      setName("RayFrost");
      this.setEffectType(DAMAGE);
 	}
