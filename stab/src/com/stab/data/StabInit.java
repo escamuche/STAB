@@ -20,6 +20,7 @@ import com.stab.data.actions.player.spells.wizard.level0.OpenClose;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.actions.player.spells.wizard.level0.Resistance;
 import com.stab.data.actions.player.spells.wizard.level1.ChillTouch;
+import com.stab.data.actions.player.spells.wizard.level1.EnlargePerson;
 import com.stab.data.actions.player.spells.wizard.level1.MageArmor;
 import com.stab.data.actions.player.spells.wizard.level1.MagicMissile;
 import com.stab.data.actions.player.spells.wizard.level1.Shield;
@@ -163,6 +164,7 @@ public class StabInit {
 		getActionLibrary().register(new MageArmor());
 		getActionLibrary().register(new ChillTouch());
 		getActionLibrary().register(new TrueStrike());
+		getActionLibrary().register(new EnlargePerson());
 		}
 	
 	
