@@ -71,6 +71,7 @@ public class StabLobby  extends Scene{
 	public void playerOption(Player player, String option) {
 		
 		player.setIcon(option);
+		player.removeAllInfo();
 		
 		Character infowarrior=new WarriorCharacter();
 		Character infowizard=new WizardCharacter();
