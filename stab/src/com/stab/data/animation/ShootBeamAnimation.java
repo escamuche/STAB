@@ -13,7 +13,7 @@ import com.tien.princess.engine.sprite.common.states.BasicAnimState;
 
 public class ShootBeamAnimation extends OnTargetAnimation{
 
-	public static final String ID="SHOOTPROYECTILE_ANIMATION";
+	public static final String ID="SHOOTBEAM_ANIMATION";
 	
 	public ShootBeamAnimation() {
 		setBlocking(true);
