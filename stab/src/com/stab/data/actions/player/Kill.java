@@ -33,7 +33,7 @@ public class Kill extends TargetAction{
 		if (ataque.hits()) {
 			if (ataque.isCritical())
 				dañobase=dañobase*2;
-			Damage d= new Damage(dañobase, Damage.SLASHING_DAMAGE,yo);
+			Damage d= new Damage(dañobase, getTypeDamage(Atacante),yo);
 			Atacado.apply(d);
 			System.out.println(d.getFinalAmount()+" de daño");
 			sleep(500);
@@ -58,6 +58,10 @@ public class Kill extends TargetAction{
 	
 	protected int getBaseDamage(BaseInfo Atacante) {
 		return Roll.d8()+Atacante.getAttributeValue(StabConstants.DAMAGE);
+	}
+	
+	protected int getTypeDamage(BaseInfo Atacante) {
+		return Damage.SLASHING_DAMAGE;
 	}
 
 	public Kill() {

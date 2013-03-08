@@ -3,6 +3,7 @@ package com.stab.data.actions.player;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.Kill;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.applicable.base.Damage;
 import com.stab.util.Roll;
 
 public class WizardBasicMelee extends Kill {
@@ -16,6 +17,11 @@ public class WizardBasicMelee extends Kill {
 	public WizardBasicMelee() {
 		setResource("actions/baston");
 	}
+	
+	@Override
+	protected int getTypeDamage(BaseInfo Atacante) {
+		return Damage.IMPACT_DAMAGE;
+		}
 	
 	@Override
 	protected int getBaseDamage(BaseInfo Atacante) {
