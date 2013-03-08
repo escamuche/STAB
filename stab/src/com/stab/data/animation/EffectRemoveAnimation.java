@@ -26,11 +26,10 @@ public class EffectRemoveAnimation  extends Animation {
 		String img=getParam(0);
 		Token_sprite s=AnimUtils.getSprite(getSource());
 		StateSprite icon=new StateSprite();
-		icon.setPos(s.getX()+s.getWidth()/2,s.getY()-32);
+		icon.setPos(s.getCenter());
 		icon.setSize(64,64);
-	//	icon.setSpeed(0, -0.03f);
-		icon.setPainter(PaintUtils.getPainter(img));
-	//	icon.setState(new TestAnimState(this.getTime()));
+	//	icon.setSpeed(0, -0.05f);
+		icon.setPainter(PaintUtils.getPainter("PARTICLE#buffOff#"+img));
 		icon.setState(new BasicAnimState(this.getTime()));
 		((GameScreen)s.getScreen()).add(icon);
 	}

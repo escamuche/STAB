@@ -3,13 +3,11 @@ package com.stab.data.animation;
 import com.stab.client.slick.GameScreen;
 import com.stab.client.slick.base.util.PaintUtils;
 import com.stab.client.slick.base.visualobjects.token.Token_sprite;
-import com.stab.common.Constants;
-import com.stab.data.animation.state.TestAnimState;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.trait.base.VisualEffect;
-import com.tien.princess.engine.Resources;
 import com.tien.princess.engine.sprite.StateSprite;
+import com.tien.princess.engine.sprite.common.states.BasicAnimState;
 
 public class EffectAddAnimation  extends Animation {
 
@@ -17,7 +15,7 @@ public class EffectAddAnimation  extends Animation {
 	
 	public EffectAddAnimation() {
 		setBlocking(true);
-		setTime(1000);
+		setTime(1200);
 	}
 	
 	@Override
@@ -26,11 +24,11 @@ public class EffectAddAnimation  extends Animation {
 		String img=getParam(0);
 		Token_sprite s=AnimUtils.getSprite(getSource());
 		StateSprite icon=new StateSprite();
-		icon.setPos(s.getX()+s.getWidth()/2,s.getY()+16);
+		icon.setPos(s.getCenter());
 		icon.setSize(64,64);
-		icon.setSpeed(0, -0.05f);
-		icon.setPainter(PaintUtils.getPainter(img));
-		icon.setState(new TestAnimState(this.getTime()));
+	//	icon.setSpeed(0, -0.05f);
+		icon.setPainter(PaintUtils.getPainter("PARTICLE#buffOn#"+img));
+		icon.setState(new BasicAnimState(this.getTime()));
 		((GameScreen)s.getScreen()).add(icon);
 	}
 }
