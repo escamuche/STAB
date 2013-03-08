@@ -14,9 +14,16 @@ import com.stab.data.actions.player.feats.Expertise;
 import com.stab.data.actions.player.feats.PowerAttack;
 import com.stab.data.actions.player.spells.cleric.level1.Bless;
 import com.stab.data.actions.player.spells.cleric.level1.CureLight;
+import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
+import com.stab.data.actions.player.spells.wizard.level0.Flare;
+import com.stab.data.actions.player.spells.wizard.level0.OpenClose;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
+import com.stab.data.actions.player.spells.wizard.level0.Resistance;
+import com.stab.data.actions.player.spells.wizard.level1.ChillTouch;
+import com.stab.data.actions.player.spells.wizard.level1.MageArmor;
 import com.stab.data.actions.player.spells.wizard.level1.MagicMissile;
 import com.stab.data.actions.player.spells.wizard.level1.Shield;
+import com.stab.data.actions.player.spells.wizard.level1.TrueStrike;
 import com.stab.data.adventure.TestAdventure;
 import com.stab.data.adventure.Zombies;
 import com.stab.data.animation.BasicSparkAnimation;
@@ -131,34 +138,32 @@ public class StabInit {
 	}
 	
 	static void initActions(){
-		
+		//accciones
 		getActionLibrary().register(new DefendAction());
 		getActionLibrary().getAction(InteractAction.ID).setResource("actions/inv_gizmo_02");
 		getActionLibrary().register(new Kill());
-		getActionLibrary().register(new PowerAttack());
-		getActionLibrary().register(new Expertise());
 		getActionLibrary().register(new RangedKill());
-		getActionLibrary().register(new MagicMissile());
-		getActionLibrary().register(new CureLight());
-		getActionLibrary().register(new Bless());
-		getActionLibrary().register(new Shield());
 		getActionLibrary().register(new ZombieClawAction());
 		getActionLibrary().register(new ClericBasicMelee());
 		getActionLibrary().register(new WizardBasicMelee());
 		getActionLibrary().register(new SkeletonRangedAction());
-		
-		
+		//feats
+		getActionLibrary().register(new PowerAttack());
+		getActionLibrary().register(new Expertise());
+		//conjuros
+		getActionLibrary().register(new MagicMissile());
+		getActionLibrary().register(new CureLight());
+		getActionLibrary().register(new Bless());
+		getActionLibrary().register(new Shield());
 		getActionLibrary().register(new RayFrost());
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		getActionLibrary().register(new AcidSplash());
+		getActionLibrary().register(new Flare());
+		getActionLibrary().register(new OpenClose());
+		getActionLibrary().register(new Resistance());
+		getActionLibrary().register(new MageArmor());
+		getActionLibrary().register(new ChillTouch());
+		getActionLibrary().register(new TrueStrike());
+		}
 	
 	
 	public static ActionLibrary getActionLibrary(){

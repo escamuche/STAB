@@ -23,8 +23,8 @@ public class OpenClose extends SpellOnTarget{
 		setCasterClass(StabConstants.WIZARDCASTER);
      setRange(6);
      setTargetClass(DoorToken.class);
-     setResource("actions/ability_druid_naturalperfection");
-     setName("Flare");
+     setResource("actions/openclose");
+     setName("Open/Close");
      this.setEffectType(BUFF);
 	}
 }

@@ -31,7 +31,7 @@ public class Flare extends SpellOnTarget{
 		setCasterClass(StabConstants.WIZARDCASTER);
      setRange(6);
      setTargetClass(PhysicalToken.class);
-     setResource("actions/ability_druid_naturalperfection");
+     setResource("actions/flare");
      setName("Flare");
      this.setEffectType(BUFF);
 	}

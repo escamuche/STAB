@@ -27,7 +27,7 @@ public class Resistance extends SpellOnTarget{
 		setCasterClass(StabConstants.WIZARDCASTER);
      setRange(1);
      setTargetClass(PhysicalToken.class);
-     setResource("actions/ability_druid_naturalperfection");
+     setResource("actions/resistance");
      setName("Resistance");
      this.setEffectType(BUFF);
 	}

@@ -19,7 +19,7 @@ public class MageArmor_Buff extends Buff {
 		
 		this.setTime(60);
 	
-		Modifier ca=Modifier.createMod(StabConstants.ARMOR, +4);
+		Modifier ca=Modifier.createMod(StabConstants.ARMOR,StabConstants.ARMORMOD,+4);
 		addTrait(ca);
 		}
 }

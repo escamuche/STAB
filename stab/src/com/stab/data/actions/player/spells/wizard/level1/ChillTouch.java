@@ -5,13 +5,14 @@ import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.info.applicable.FortitudeAttack;
 import com.stab.data.info.applicable.MagicAttack;
+import com.stab.data.info.debuff.ChillTouch_Debuff;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.util.Roll;
 
-public class ChildTouch extends SpellOnTarget{
+public class ChillTouch extends SpellOnTarget{
 	
 	public static final String ID="CHILDTOUCH";
 	
@@ -37,8 +38,9 @@ public class ChildTouch extends SpellOnTarget{
 		if(ataque.hits()) {
 			FortitudeAttack ataque2 = new FortitudeAttack(Atacante);
 			Atacado.apply(ataque2);
-			if(ataque.hits()){
-				//falta un ChildTouch_Debuff que le quite 1 de fuerza
+			if(ataque2.hits()){
+				ChillTouch_Debuff chilltouch = new ChillTouch_Debuff(Atacado);
+				Atacado.addTrait(chilltouch);
 			}
 		return true;
 		}
@@ -46,9 +48,8 @@ public class ChildTouch extends SpellOnTarget{
 	}
 	
 	// falta el tema de panicked a undeads...
-	// y la duracion 1 golpe/nivel (cargas)
 	
-	public ChildTouch() {
+	public ChillTouch() {
      
 	 setLevel(1);
 	 setCasterClass(StabConstants.WIZARDCASTER);

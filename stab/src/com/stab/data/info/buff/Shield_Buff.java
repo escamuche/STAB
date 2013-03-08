@@ -22,7 +22,7 @@ public class Shield_Buff extends Buff implements Attends<MagicMissileAttack>{
 		
 		this.setTime(10);
 	
-		Modifier ca=Modifier.createMod(StabConstants.ARMOR, +4);
+		Modifier ca=Modifier.createMod(StabConstants.ARMOR,StabConstants.SHIELDMOD,+4);
 		addTrait(ca);
 		}
 

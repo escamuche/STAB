@@ -6,22 +6,21 @@ import com.stab.model.info.BaseInfo;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.Buff;
 
-public class Flare_Debuff extends Buff {
+public class ChillTouch_Debuff extends Buff {
 
-	public static final String ID="FLARE_DEBUFF";
+	public static final String ID="CHILDTOUCH_DEBUFF";
 	
-	public Flare_Debuff(BaseInfo atacado) {
+	public ChillTouch_Debuff(BaseInfo atacado) {
 	
-		
-		this.setAnimIcon("actions/flare");				
+		this.setAnimIcon("actions/chilltouch");				
 		this.setSound("HolyCast");
-		this.setResource("actions/flare");                  
-		this.setName("Flare");
+		this.setResource("actions/childtouch");                  
+		this.setName("ChildTouch");
 		
-		this.setTime(10);
+		this.setPermanent();
 		atacado.playAnimationOn(ShootProyectileAnimation.ID, atacado.getToken(), "PARTICLE#magicmissile");
 	
-		Modifier tohit=Modifier.createMod(StabConstants.TOHIT, -1);
+		Modifier tohit=Modifier.createMod(StabConstants.STRENGHT, -1);
 		addTrait(tohit);
 	}
 }

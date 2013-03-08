@@ -19,8 +19,8 @@ public class TrueStrike_Buff extends Buff {
 		
 		this.setTime(1);
 	
-		Modifier hit=Modifier.createMod(StabConstants.TOHIT, +20);
-		Modifier hitranged=Modifier.createMod(StabConstants.TOHITRANGED, +20);
+		Modifier hit=Modifier.createMod(StabConstants.TOHIT,StabConstants.INSIGHTMOD,+20);
+		Modifier hitranged=Modifier.createMod(StabConstants.TOHITRANGED,StabConstants.INSIGHTMOD,+20);
 		addTrait(hit);
 		addTrait(hitranged);
 		}

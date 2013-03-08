@@ -18,15 +18,7 @@ public class StabConstants {
 	public static final String WISDOM="WISDOM";
 	public static final String CHARISMA="CHARISMA";
 	public static final String DAMAGEREDUCTION="DAMAGEREDUCTION"; //Este mejor como trait attends<Damage>
-	//public static final String ARMORBONUSAC="ARMORBONUSAC";	      //Estos son modificadores
-	//public static final String SHIELDBONUSAC="SHIELDBONUSAC";
-	//public static final String DEXMODAC="DEXMODAC";
-	//public static final String SIZEMODAC="SIZEMODAC";
-	//public static final String NATURALARMOR="NATURALARMOR";
-	//public static final String DEFLECTIONMODAC="DEFLECTIONMODAC";
-	//public static final String MISCMODAC="MISCMODAC";
-	//public static final String DEXMODINITIATIVE="DEXMODINITIATIVE";
-	//public static final String MISCMODINITIATIVE="MISCMODINITIATIVE";
+
 	public static final String BASESPEED="BASESPEED";
 	public static final String ARMORMODSPEED="ARMORMODSPEED";
 	
@@ -143,4 +135,5 @@ public class StabConstants {
 	public static final String MISCELANEOMOD="MISCELANEOMOD";
 	public static final String AGEMOD="AGEMOD";
 	public static final String MORALMOD="MORALMOD";
+	public static final String RESISTANCEMOD="RESISTANCEMOD";
 }

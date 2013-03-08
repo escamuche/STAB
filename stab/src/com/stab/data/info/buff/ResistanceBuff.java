@@ -19,7 +19,7 @@ public class ResistanceBuff extends Buff {
 		
 		this.setTime(10);
 	
-		Modifier fortsave=Modifier.createMod(StabConstants.FORTITUDESAVE, +1);
+		Modifier fortsave=Modifier.createMod(StabConstants.FORTITUDESAVE,StabConstants.RESISTANCEMOD,+1);
 		Modifier refsave=Modifier.createMod(StabConstants.REFLEXSAVE, +1);
 		Modifier willsave=Modifier.createMod(StabConstants.WILLSAVE, +1);
 		
