@@ -42,6 +42,8 @@ import com.stab.data.info.props.Crate;
 import com.stab.data.info.props.Dummy;
 import com.stab.data.info.props.WoodenDoor;
 import com.stab.data.scene.CharacterSheet;
+import com.stab.data.scene.Feats;
+import com.stab.data.scene.SpellBook;
 import com.stab.data.scene.StabLobby;
 import com.stab.data.utils.DefaultBlockData;
 import com.stab.fw.BasicObjectFactory;
@@ -96,6 +98,8 @@ public class StabInit {
 		of= new BasicObjectFactory();
 		of.setMapping(StabLobby.class);
 		of.setMapping(CharacterSheet.class);
+		of.setMapping(SpellBook.class);
+		of.setMapping(Feats.class);
 		of.setMapping(WarriorCharacter.class);
 		of.setMapping(Crate.class);
 		of.setMapping(WoodenDoor.class);
