@@ -2,7 +2,7 @@ package com.stab.data.actions.player.spells.wizard.level0;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
-import com.stab.data.animation.ShootProyectileAnimation;
+import com.stab.data.animation.ShootBeamAnimation;
 import com.stab.data.info.applicable.MagicAttack;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
@@ -28,13 +28,13 @@ public class RayFrost extends SpellOnTarget{
 		MagicAttack ataque = new MagicAttack(Atacante);
 		Atacado.apply(ataque);
 		
-		Atacante.playAnimationOn(ShootProyectileAnimation.ID, Atacado.getToken(), "PARTICLE#magicmissile");
+		sleep(Atacante.playAnimationOn(ShootBeamAnimation.ID, Atacado.getToken(), "PARTICLE#rayOfFrost"));
 		
 		if(ataque.hits()) {
-		Damage d= new Damage(dañobase, Damage.COLD_DAMAGE,yo);
-		Atacado.apply(d);
-		System.out.println(d.getFinalAmount()+" de daño");
-		return true;	
+			Damage d= new Damage(dañobase, Damage.COLD_DAMAGE,yo);
+			Atacado.apply(d);
+			System.out.println(d.getFinalAmount()+" de daño");
+			return true;	
 		}
 		return false;
 	}

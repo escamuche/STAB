@@ -1,5 +1,6 @@
 package com.stab.data.actions.player.spells.wizard.level1;
 
+import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.data.info.buff.Shield_Buff;
 import com.stab.model.info.BaseInfo;
@@ -13,6 +14,7 @@ public class Shield extends SpellOnSelf{
      setResource("actions/ability_shaman_watershield");
      setName("Shield");
      this.setEffectType(BUFF);
+     this.setCasterClass(StabConstants.WIZARDCASTER);
 	}
 
 	@Override

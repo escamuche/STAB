@@ -1,6 +1,7 @@
 package com.stab.data.actions.player;
 
 
+import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.actions.player.spells.wizard.level1.MagicMissile;
 import com.stab.data.actions.player.spells.wizard.level1.Shield;
 import com.stab.model.action.BasicActionSet;
@@ -22,6 +23,7 @@ public class WizardActionSet extends BasicActionSet {
 		this.setAction(RangedKill.ID, 11);
 		this.setAction(Shield.ID,17);
 		
+		this.setAction(RayFrost.ID, 13);
 	}
 	
 	

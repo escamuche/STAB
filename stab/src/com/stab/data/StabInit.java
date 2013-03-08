@@ -14,6 +14,7 @@ import com.stab.data.actions.player.feats.Expertise;
 import com.stab.data.actions.player.feats.PowerAttack;
 import com.stab.data.actions.player.spells.cleric.level1.Bless;
 import com.stab.data.actions.player.spells.cleric.level1.CureLight;
+import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.actions.player.spells.wizard.level1.MagicMissile;
 import com.stab.data.actions.player.spells.wizard.level1.Shield;
 import com.stab.data.adventure.TestAdventure;
@@ -27,6 +28,7 @@ import com.stab.data.animation.HealNumberAnimation;
 import com.stab.data.animation.MissProyectileAnimation;
 import com.stab.data.animation.OpenDoorAnimation;
 import com.stab.data.animation.ShakeAnimation;
+import com.stab.data.animation.ShootBeamAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.WalkAnimation;
@@ -121,6 +123,7 @@ public class StabInit {
 		of.setMapping(SwingAnimation.class);
 		of.setMapping(BasicSparkAnimation.class);
 		of.setMapping(ShakeAnimation.class);
+		of.setMapping(ShootBeamAnimation.class);
 	}
 	
 	static void initActions(){
@@ -139,6 +142,9 @@ public class StabInit {
 		getActionLibrary().register(new ClericBasicMelee());
 		getActionLibrary().register(new WizardBasicMelee());
 		getActionLibrary().register(new SkeletonRangedAction());
+		
+		
+		getActionLibrary().register(new RayFrost());
 	}
 	
 	

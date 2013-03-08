@@ -43,7 +43,7 @@ public abstract class SpellOnTarget extends TargetAction implements Spell {
 	
 	public void setCasterClass(String casterClass) {
 		this.casterClass = casterClass;
-		if (casterClass.equals(casterClass.equals(StabConstants.WIZARDCASTER)))
+		if (casterClass.equals(StabConstants.WIZARDCASTER))
 			setAttribute(StabConstants.INTELIGENCE);
 		if (casterClass.equals(StabConstants.CLERICCASTER)||casterClass.equals(StabConstants.DRUIDCASTER)||casterClass.equals(StabConstants.RANGERCASTER))
 			setAttribute(StabConstants.WISDOM);
