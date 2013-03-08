@@ -232,6 +232,15 @@ public class CharacterSheet extends InfoDataScene{
 		feats.setSize(Constants.PERCENT+10,Constants.CONTENT); //Percent + X = tanto por ciento del ancho total
 		addGUI(feats);
 		
+		Button atras=new Button();
+		atras.setText("Atras");
+		atras.setIcon("ui/point");
+		atras.setMode(Label.LABEL);  
+		atras.setAction("ATRAS"); 
+		atras.setPos(Constants.BEGIN,Constants.END); 
+		atras.setSize(Constants.PERCENT+15,Constants.CONTENT); 
+		addGUI(atras);
+		
 		finish=new Button();
 		finish.setText("Continuar");
 		finish.setIcon("ui/point");
@@ -284,11 +293,16 @@ public class CharacterSheet extends InfoDataScene{
 			travelToScene(player,null); //Esto nos llevara a la taverna
 			
 		if ("SPELLS".equals(option))
+			if(this.getInfo() instanceof WizardCharacter)
 			travelToScene(player,SpellBook.ID);
+				if(this.getInfo() instanceof ClericCharacter)
+					travelToScene(player,PrayerBook.ID);
 			
 		if ("FEATS".equals(option))
 			travelToScene(player,Feats.ID);
 		
+		if ("ATRAS".equals(option))
+			travelToScene(player,StabLobby.ID);
 	}
 	
 }

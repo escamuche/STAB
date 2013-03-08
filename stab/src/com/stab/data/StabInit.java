@@ -24,6 +24,7 @@ import com.stab.data.actions.player.spells.wizard.level1.EnlargePerson;
 import com.stab.data.actions.player.spells.wizard.level1.MageArmor;
 import com.stab.data.actions.player.spells.wizard.level1.MagicMissile;
 import com.stab.data.actions.player.spells.wizard.level1.Shield;
+import com.stab.data.actions.player.spells.wizard.level1.ShockingGrasp;
 import com.stab.data.actions.player.spells.wizard.level1.TrueStrike;
 import com.stab.data.adventure.TestAdventure;
 import com.stab.data.adventure.Zombies;
@@ -51,6 +52,7 @@ import com.stab.data.info.props.Dummy;
 import com.stab.data.info.props.WoodenDoor;
 import com.stab.data.scene.CharacterSheet;
 import com.stab.data.scene.Feats;
+import com.stab.data.scene.PrayerBook;
 import com.stab.data.scene.SpellBook;
 import com.stab.data.scene.StabLobby;
 import com.stab.data.utils.DefaultBlockData;
@@ -117,6 +119,7 @@ public class StabInit {
 		of.setMapping(Zombie.class);
 		of.setMapping(ClericCharacter.class);
 		of.setMapping(EsqueletoArquero.class);
+		of.setMapping(PrayerBook.class);
 		
 		
 		
@@ -152,20 +155,25 @@ public class StabInit {
 		getActionLibrary().register(new PowerAttack());
 		getActionLibrary().register(new Expertise());
 		//conjuros
-		getActionLibrary().register(new MagicMissile());
-		getActionLibrary().register(new CureLight());
-		getActionLibrary().register(new Bless());
-		getActionLibrary().register(new Shield());
-		getActionLibrary().register(new RayFrost());
 		getActionLibrary().register(new AcidSplash());
 		getActionLibrary().register(new Flare());
 		getActionLibrary().register(new OpenClose());
+		getActionLibrary().register(new RayFrost());
 		getActionLibrary().register(new Resistance());
+		
 		getActionLibrary().register(new MageArmor());
+		getActionLibrary().register(new Shield());
+		getActionLibrary().register(new ShockingGrasp());
+		getActionLibrary().register(new MagicMissile());
 		getActionLibrary().register(new ChillTouch());
 		getActionLibrary().register(new TrueStrike());
 		getActionLibrary().register(new EnlargePerson());
-		}
+		
+		getActionLibrary().register(new CureLight());
+		getActionLibrary().register(new Bless());
+		
+	
+	}
 	
 	
 	public static ActionLibrary getActionLibrary(){

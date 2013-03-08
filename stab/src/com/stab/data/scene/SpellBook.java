@@ -34,46 +34,46 @@ public class SpellBook extends InfoDataScene{
 		Button acidsplash=new Button();
 	    acidsplash.setText("Acid Splash");
 	    acidsplash.setIcon("ui/point");
-	    acidsplash.setMode(Label.LABEL);  //Hay varios tipos de boton, indicando la posicion del texto y el icono
-	    //acidsplash.setAction(""); //Esta accion nos llegara a playerOption cuando lo pulse
-	    acidsplash.setPos(Constants.BEGIN,Constants.NEXT); //Middle= en la mitad del ancho. End= al final del todo
-	    acidsplash.setSize(Constants.PERCENT+20,Constants.CONTENT); //Percent + X = tanto por ciento del ancho total
+	    acidsplash.setMode(Label.LABEL);  
+	    //acidsplash.setAction(""); 
+	    acidsplash.setPos(Constants.BEGIN,Constants.NEXT); 
+	    acidsplash.setSize(Constants.PERCENT+20,Constants.CONTENT); 
 		addGUI(acidsplash);
 		
 		Button flare=new Button();
 		flare.setText("Flare");
 		flare.setIcon("ui/point");
-		flare.setMode(Label.LABEL);  //Hay varios tipos de boton, indicando la posicion del texto y el icono
-	    //flare.setAction(""); //Esta accion nos llegara a playerOption cuando lo pulse
-		flare.setPos(Constants.NEXT,Constants.PREVIOUS); //Middle= en la mitad del ancho. End= al final del todo
-		flare.setSize(Constants.PERCENT+20,Constants.CONTENT); //Percent + X = tanto por ciento del ancho total
+		flare.setMode(Label.LABEL);  
+	    //flare.setAction(""); 
+		flare.setPos(Constants.NEXT,Constants.PREVIOUS); 
+		flare.setSize(Constants.PERCENT+20,Constants.CONTENT); 
 		addGUI(flare);
 		
 		Button openclose=new Button();
 		openclose.setText("Open/Close");
 		openclose.setIcon("ui/point");
-		openclose.setMode(Label.LABEL);  //Hay varios tipos de boton, indicando la posicion del texto y el icono
-	    //openclose.setAction(""); //Esta accion nos llegara a playerOption cuando lo pulse
-		openclose.setPos(Constants.NEXT,Constants.PREVIOUS); //Middle= en la mitad del ancho. End= al final del todo
-		openclose.setSize(Constants.PERCENT+20,Constants.CONTENT); //Percent + X = tanto por ciento del ancho total
+		openclose.setMode(Label.LABEL);  
+	    //openclose.setAction(""); 
+		openclose.setPos(Constants.NEXT,Constants.PREVIOUS); 
+		openclose.setSize(Constants.PERCENT+20,Constants.CONTENT); 
 		addGUI(openclose);
 		
 		Button rayfrost=new Button();
 		rayfrost.setText("Ray of Frost");
 		rayfrost.setIcon("ui/point");
-		rayfrost.setMode(Label.LABEL);  //Hay varios tipos de boton, indicando la posicion del texto y el icono
-	    //rayfrost.setAction(""); //Esta accion nos llegara a playerOption cuando lo pulse
-		rayfrost.setPos(Constants.NEXT,Constants.PREVIOUS); //Middle= en la mitad del ancho. End= al final del todo
-		rayfrost.setSize(Constants.PERCENT+20,Constants.CONTENT); //Percent + X = tanto por ciento del ancho total
+		rayfrost.setMode(Label.LABEL);  
+	    //rayfrost.setAction(""); 
+		rayfrost.setPos(Constants.NEXT,Constants.PREVIOUS); 
+		rayfrost.setSize(Constants.PERCENT+20,Constants.CONTENT); 
 		addGUI(rayfrost);
 		
 		Button resistance=new Button();
 		resistance.setText("Resistance");
 		resistance.setIcon("ui/point");
-		resistance.setMode(Label.LABEL);  //Hay varios tipos de boton, indicando la posicion del texto y el icono
-	    //resistance.setAction(""); //Esta accion nos llegara a playerOption cuando lo pulse
-		resistance.setPos(Constants.NEXT,Constants.PREVIOUS); //Middle= en la mitad del ancho. End= al final del todo
-		resistance.setSize(Constants.PERCENT+20,Constants.CONTENT); //Percent + X = tanto por ciento del ancho total
+		resistance.setMode(Label.LABEL);  
+	    //resistance.setAction(""); 
+		resistance.setPos(Constants.NEXT,Constants.PREVIOUS); 
+		resistance.setSize(Constants.PERCENT+20,Constants.CONTENT); 
 		addGUI(resistance);
 		
 		Text t3=new Text();
@@ -85,46 +85,82 @@ public class SpellBook extends InfoDataScene{
 		Button magearmor=new Button();
 		magearmor.setText("Mage Armor");
 		magearmor.setIcon("ui/point");
-		magearmor.setMode(Label.LABEL);  //Hay varios tipos de boton, indicando la posicion del texto y el icono
-	    //magearmor.setAction(""); //Esta accion nos llegara a playerOption cuando lo pulse
-		magearmor.setPos(Constants.BEGIN,Constants.NEXT); //Middle= en la mitad del ancho. End= al final del todo
-		magearmor.setSize(Constants.PERCENT+20,Constants.CONTENT); //Percent + X = tanto por ciento del ancho total
+		magearmor.setMode(Label.LABEL);  
+	    //magearmor.setAction(""); 
+		magearmor.setPos(Constants.BEGIN,Constants.NEXT); 
+		magearmor.setSize(Constants.PERCENT+20,Constants.CONTENT); 
 		addGUI(magearmor);
 		
 		Button shield=new Button();
 		shield.setText("Shield");
 		shield.setIcon("ui/point");
-		shield.setMode(Label.LABEL);  //Hay varios tipos de boton, indicando la posicion del texto y el icono
-	    //shield.setAction(""); //Esta accion nos llegara a playerOption cuando lo pulse
-		shield.setPos(Constants.NEXT,Constants.PREVIOUS); //Middle= en la mitad del ancho. End= al final del todo
-		shield.setSize(Constants.PERCENT+20,Constants.CONTENT); //Percent + X = tanto por ciento del ancho total
+		shield.setMode(Label.LABEL); 
+	    //shield.setAction(""); 
+		shield.setPos(Constants.NEXT,Constants.PREVIOUS); 
+		shield.setSize(Constants.PERCENT+20,Constants.CONTENT); 
 		addGUI(shield);
 		
 		Button shockinggrasp=new Button();
 		shockinggrasp.setText("Shocking Grasp");
 		shockinggrasp.setIcon("ui/point");
-		shockinggrasp.setMode(Label.LABEL);  //Hay varios tipos de boton, indicando la posicion del texto y el icono
-	    //shockinggrasp.setAction(""); //Esta accion nos llegara a playerOption cuando lo pulse
-		shockinggrasp.setPos(Constants.NEXT,Constants.PREVIOUS); //Middle= en la mitad del ancho. End= al final del todo
-		shockinggrasp.setSize(Constants.PERCENT+20,Constants.CONTENT); //Percent + X = tanto por ciento del ancho total
+		shockinggrasp.setMode(Label.LABEL);  
+	    //shockinggrasp.setAction(""); 
+		shockinggrasp.setPos(Constants.NEXT,Constants.PREVIOUS); 
+		shockinggrasp.setSize(Constants.PERCENT+20,Constants.CONTENT); 
 		addGUI(shockinggrasp);
+		
+		Button magicmissile=new Button();
+		magicmissile.setText("Magic Missile");
+		magicmissile.setIcon("ui/point");
+		magicmissile.setMode(Label.LABEL); 
+	    //magicmissile.setAction(""); 
+		magicmissile.setPos(Constants.NEXT,Constants.PREVIOUS); 
+		magicmissile.setSize(Constants.PERCENT+20,Constants.CONTENT); 
+		addGUI(magicmissile);
+		
+		Button chill=new Button();
+		chill.setText("Chill Touch");
+		chill.setIcon("ui/point");
+		chill.setMode(Label.LABEL); 
+	    //chill.setAction(""); 
+		chill.setPos(Constants.NEXT,Constants.PREVIOUS); 
+		chill.setSize(Constants.PERCENT+20,Constants.CONTENT); 
+		addGUI(chill);
+		
+		Button strike=new Button();
+		strike.setText("True Strike");
+		strike.setIcon("ui/point");
+		strike.setMode(Label.LABEL); 
+	    //strike.setAction(""); 
+		strike.setPos(Constants.BEGIN,Constants.NEXT); 
+		strike.setSize(Constants.PERCENT+20,Constants.CONTENT); 
+		addGUI(strike);
+	
+		Button enlarge=new Button();
+		enlarge.setText("Enlarge Person");
+		enlarge.setIcon("ui/point");
+		enlarge.setMode(Label.LABEL); 
+	    //enlarge.setAction(""); 
+		enlarge.setPos(Constants.NEXT,Constants.PREVIOUS); 
+		enlarge.setSize(Constants.PERCENT+20,Constants.CONTENT); 
+		addGUI(enlarge);
 		
 		Button finish=new Button();
 		finish.setText("Continuar");
 		finish.setIcon("ui/point");
-		finish.setMode(Label.LABEL);  //Hay varios tipos de boton, indicando la posicion del texto y el icono
-		finish.setAction("CONTINUAR"); //Esta accion nos llegara a playerOption cuando lo pulse
-		finish.setPos(Constants.MIDDLE,Constants.END); //Middle= en la mitad del ancho. End= al final del todo
-		finish.setSize(Constants.PERCENT+50,Constants.CONTENT); //Percent + X = tanto por ciento del ancho total
+		finish.setMode(Label.LABEL);  
+		finish.setAction("CONTINUAR"); 
+		finish.setPos(Constants.MIDDLE,Constants.END); 
+		finish.setSize(Constants.PERCENT+50,Constants.CONTENT); 
 		addGUI(finish);
 		
 		Button atras=new Button();
 		atras.setText("Atras");
 		atras.setIcon("ui/point");
-		atras.setMode(Label.LABEL);  //Hay varios tipos de boton, indicando la posicion del texto y el icono
-		atras.setAction("CONTINUAR"); //Esta accion nos llegara a playerOption cuando lo pulse
-		atras.setPos(Constants.BEGIN,Constants.END); //Middle= en la mitad del ancho. End= al final del todo
-		atras.setSize(Constants.PERCENT+15,Constants.CONTENT); //Percent + X = tanto por ciento del ancho total
+		atras.setMode(Label.LABEL);  
+		atras.setAction("ATRAS"); 
+		atras.setPos(Constants.BEGIN,Constants.END); 
+		atras.setSize(Constants.PERCENT+15,Constants.CONTENT); 
 		addGUI(atras);
 		
 		doLayout();
@@ -139,8 +175,8 @@ public class SpellBook extends InfoDataScene{
 		if ("CONTINUAR".equals(option))
 			travelToScene(player,null);
 		
-			if ("ATRAS".equals(option))
-				travelToScene(player,CharacterSheet.ID);
+		if ("ATRAS".equals(option))
+			travelToScene(player,CharacterSheet.ID);
 		
 	}
 
