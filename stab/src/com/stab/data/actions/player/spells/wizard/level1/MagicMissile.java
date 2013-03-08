@@ -34,7 +34,7 @@ public class MagicMissile extends SpellOnTarget{
 		setCasterClass(StabConstants.WIZARDCASTER);
      setRange(22);
      setTargetClass(PhysicalToken.class);
-     setResource("actions/ability_mage_arcanebarrage");
+     setResource("actions/magicmissile");
      setName("MagicMissile");
      this.setEffectType(DAMAGE);
 	}

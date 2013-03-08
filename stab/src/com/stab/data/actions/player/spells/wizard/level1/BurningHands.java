@@ -13,7 +13,7 @@ public class BurningHands extends SpellOnTile{
 		 setLevel(1);
 		 setCasterClass(StabConstants.WIZARDCASTER);
 		 setRange(1);
-	     setResource("actions/ability_mage_arcanebarrage");
+	     setResource("actions/burninghands");
 	     setName("BurningHands");
 	     this.setEffectType(DAMAGE);
 		}

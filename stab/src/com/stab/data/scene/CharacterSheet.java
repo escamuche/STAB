@@ -280,13 +280,13 @@ public class CharacterSheet extends InfoDataScene{
 		//Aqui otras posibilidades (Ej: añadir un trait al pulsar un boton, etc)
 		//Altamente recomendable llamar a refreshInfo si se cambia cualquier cosa en el info
 		
-		if ("CONTINUAR".equals(option));
+		if ("CONTINUAR".equals(option))
 			travelToScene(player,null); //Esto nos llevara a la taverna
 			
-		if ("SPELLS".equals(option));
+		if ("SPELLS".equals(option))
 			travelToScene(player,SpellBook.ID);
 			
-		if ("FEATS".equals(option));
+		if ("FEATS".equals(option))
 			travelToScene(player,Feats.ID);
 		
 	}

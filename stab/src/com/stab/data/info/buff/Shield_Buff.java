@@ -15,9 +15,9 @@ public class Shield_Buff extends Buff implements Attends<MagicMissileAttack>{
 	public Shield_Buff(BaseInfo atacante) {
 	
 		
-		this.setAnimIcon("actions/ability_shaman_watershield");				
+		this.setAnimIcon("actions/shield");				
 		this.setSound("HolyCast");
-		this.setResource("actions/ability_shaman_watershield");                  
+		this.setResource("actions/shield");                  
 		this.setName("Shield");
 		
 		this.setTime(10);

@@ -13,7 +13,7 @@ public class Hypnotism extends SpellOnTile{
 		 setLevel(1);
 		 setCasterClass(StabConstants.WIZARDCASTER);
 		 setRange(6);
-	     setResource("actions/ability_mage_arcanebarrage");
+	     setResource("actions/hypnotism");
 	     setName("Hypnotism");
 	     this.setEffectType(DEBUFF);
 		}

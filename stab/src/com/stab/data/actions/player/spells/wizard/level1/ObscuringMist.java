@@ -13,7 +13,7 @@ public class ObscuringMist extends SpellOnTile{
 		 setLevel(1);
 		 setCasterClass(StabConstants.WIZARDCASTER);
 		 setRange(4);
-	     setResource("actions/ability_mage_arcanebarrage");
+	     setResource("actions/obscuringmist");
 	     setName("ObscuringMist");
 	     this.setEffectType(SPECIAL);
 		}

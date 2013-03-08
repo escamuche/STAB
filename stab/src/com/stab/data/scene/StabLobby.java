@@ -100,7 +100,7 @@ public class StabLobby  extends Scene{
 		
 		//player.setCharacter(info);
 	
-		travelToScene(player,null);
+		travelToScene(player,CharacterSheet.ID);
 	}
 	
 }

@@ -24,7 +24,7 @@ public class Bless extends TargetAction{
 	public Bless() {
      setRange(4);
      setTargetClass(PhysicalToken.class);
-     setResource("actions/ability_druid_naturalperfection");
+     setResource("actions/bless");
      setName("Bless");
      this.setEffectType(BUFF);
 	}

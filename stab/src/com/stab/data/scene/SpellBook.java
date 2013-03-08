@@ -118,6 +118,15 @@ public class SpellBook extends InfoDataScene{
 		finish.setSize(Constants.PERCENT+50,Constants.CONTENT); //Percent + X = tanto por ciento del ancho total
 		addGUI(finish);
 		
+		Button atras=new Button();
+		atras.setText("Atras");
+		atras.setIcon("ui/point");
+		atras.setMode(Label.LABEL);  //Hay varios tipos de boton, indicando la posicion del texto y el icono
+		atras.setAction("CONTINUAR"); //Esta accion nos llegara a playerOption cuando lo pulse
+		atras.setPos(Constants.BEGIN,Constants.END); //Middle= en la mitad del ancho. End= al final del todo
+		atras.setSize(Constants.PERCENT+15,Constants.CONTENT); //Percent + X = tanto por ciento del ancho total
+		addGUI(atras);
+		
 		doLayout();
 	}
 	
@@ -127,8 +136,11 @@ public class SpellBook extends InfoDataScene{
 		//Aqui otras posibilidades (Ej: añadir un trait al pulsar un boton, etc)
 		//Altamente recomendable llamar a refreshInfo si se cambia cualquier cosa en el info
 		
-		if ("CONTINUAR".equals(option));
-			travelToScene(player,CharacterSheet.ID);
+		if ("CONTINUAR".equals(option))
+			travelToScene(player,null);
+		
+			if ("ATRAS".equals(option))
+				travelToScene(player,CharacterSheet.ID);
 		
 	}
 

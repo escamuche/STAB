@@ -12,9 +12,9 @@ public class ResistanceBuff extends Buff {
 	public ResistanceBuff(BaseInfo Bufado) {
 	
 		
-		this.setAnimIcon("actions/ability_druid_naturalperfection");				
+		this.setAnimIcon("actions/nightshield");				
 		this.setSound("HolyCast");
-		this.setResource("actions/ability_druid_naturalperfection");                  
+		this.setResource("actions/nightshield");                  
 		this.setName("Resistance");
 		
 		this.setTime(10);

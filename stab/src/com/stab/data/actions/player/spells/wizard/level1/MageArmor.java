@@ -27,7 +27,7 @@ public class MageArmor extends SpellOnTarget{
 		setCasterClass(StabConstants.WIZARDCASTER);
 		setRange(1);
      setTargetClass(PhysicalToken.class);
-     setResource("actions/ability_shaman_watershield");
+     setResource("actions/magearmor");
      setName("MageArmor");
      this.setEffectType(BUFF);
 	}

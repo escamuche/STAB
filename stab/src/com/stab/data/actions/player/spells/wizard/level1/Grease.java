@@ -13,7 +13,7 @@ public class Grease extends SpellOnTile{
 		 setLevel(1);
 		 setCasterClass(StabConstants.WIZARDCASTER);
 		 setRange(6);
-	     setResource("actions/ability_mage_arcanebarrage");
+	     setResource("actions/grease");
 	     setName("Grease");
 	     this.setEffectType(SPECIAL);
 		}

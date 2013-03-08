@@ -44,7 +44,7 @@ public class ShockingGrasp extends SpellOnTarget{
 	 setCasterClass(StabConstants.WIZARDCASTER);
 	 setRange(1);
      setTargetClass(PhysicalToken.class);
-     setResource("actions/ability_mage_arcanebarrage");
+     setResource("actions/shockinggrasp");
      setName("ShockingGrasp");
      this.setEffectType(DAMAGE);
 	}
