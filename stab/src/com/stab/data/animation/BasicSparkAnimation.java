@@ -2,11 +2,11 @@ package com.stab.data.animation;
 
 import com.stab.client.slick.GameScreen;
 import com.stab.client.slick.base.util.PaintUtils;
+import com.stab.client.slick.base.visualobjects.StabSprite;
 import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.trait.base.VisualEffect;
-import com.tien.princess.engine.sprite.StateSprite;
 import com.tien.princess.engine.sprite.common.states.BasicAnimState;
 
 public class BasicSparkAnimation extends Animation {
@@ -26,7 +26,7 @@ public class BasicSparkAnimation extends Animation {
 		if (t!=0)
 			setTime(t);
 		Token_sprite s=AnimUtils.getSprite(getSource());
-		StateSprite icon=new StateSprite();
+		StabSprite icon=new StabSprite();
 		icon.setPos(getOriginPoint());
 		icon.setSize(64,64);
 		icon.setPainter(PaintUtils.getPainter(img));

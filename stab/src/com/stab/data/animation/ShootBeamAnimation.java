@@ -31,7 +31,7 @@ public class ShootBeamAnimation extends OnTargetAnimation{
 		Point origin=getOriginPoint();
 		Point target=getTargetPoint();
 		
-		StateSprite icon=new StateSprite();
+		StateSprite icon=new StateSprite();  //No es stabsprite para saltarse la comprobacion de visible
 		icon.setPos(origin);
 		icon.setSize(64,64);
 		
