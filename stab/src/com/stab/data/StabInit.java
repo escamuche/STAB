@@ -17,6 +17,8 @@ import com.stab.data.actions.player.spells.cleric.level0.ResistanceCleric;
 import com.stab.data.actions.player.spells.cleric.level1.Bane;
 import com.stab.data.actions.player.spells.cleric.level1.Bless;
 import com.stab.data.actions.player.spells.cleric.level1.CureLight;
+import com.stab.data.actions.player.spells.cleric.level1.DivineFavor;
+import com.stab.data.actions.player.spells.cleric.level1.Doom;
 import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
 import com.stab.data.actions.player.spells.wizard.level0.Flare;
 import com.stab.data.actions.player.spells.wizard.level0.OpenClose;
@@ -63,6 +65,7 @@ import com.stab.fw.BasicObjectFactory;
 import com.stab.fw.EntityManager;
 import com.stab.model.action.ActionLibrary;
 import com.stab.model.action.base.InteractAction;
+import com.stab.model.info.trait.Modifier;
 
 public class StabInit {
 
@@ -178,6 +181,8 @@ public class StabInit {
 		getActionLibrary().register(new CureLight());
 		getActionLibrary().register(new Bless());
 		getActionLibrary().register(new Bane());
+		getActionLibrary().register(new DivineFavor());
+		getActionLibrary().register(new Doom());
 		
 	
 	}
