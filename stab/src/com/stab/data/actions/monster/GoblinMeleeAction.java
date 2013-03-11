@@ -1,21 +1,22 @@
 package com.stab.data.actions.monster;
 
 import com.stab.data.StabConstants;
-import com.stab.data.actions.player.RangedKill;
+import com.stab.data.actions.player.Kill;
 import com.stab.model.info.BaseInfo;
 import com.stab.util.Roll;
 
-public class SkeletonRangedAction extends RangedKill {
+public class GoblinMeleeAction extends Kill {
 	
-	public static final String ID="SKELETONRANGED_ATTACK";
+	public static final String ID="GOBLINGMELEE_ATTACK";
 	
 	protected String getSwingImage(BaseInfo atacante) {
-		return "effects/arrow";
+		return "effects/zombieclaw";
 	}
 	
 	@Override
 	protected int getBaseDamage(BaseInfo Atacante) {
-		return Roll.d6()+Atacante.getAttributeValue(StabConstants.DAMAGERANGED);
+		
+		return Roll.d4()+Atacante.getAttributeValue(StabConstants.DAMAGE);
 	}
 
 }

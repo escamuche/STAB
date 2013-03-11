@@ -136,4 +136,6 @@ public class StabConstants {
 	public static final String AGEMOD="AGEMOD";
 	public static final String MORALMOD="MORALMOD";
 	public static final String RESISTANCEMOD="RESISTANCEMOD";
+	public static final String INICIATIVEMOD="INICIATIVEMOD";
+	public static final String XP="XP";
 }

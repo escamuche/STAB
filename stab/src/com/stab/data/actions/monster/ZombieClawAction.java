@@ -16,7 +16,7 @@ public class ZombieClawAction extends Kill {
 	@Override
 	protected int getBaseDamage(BaseInfo Atacante) {
 		
-		return Roll.d4()+Atacante.getAttributeValue(StabConstants.DAMAGE);
+		return Roll.d6()+Atacante.getAttributeValue(StabConstants.DAMAGE);
 	}
 
 }

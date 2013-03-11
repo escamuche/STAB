@@ -8,6 +8,5 @@ public class RangedMonsterActionSet extends BasicActionSet {
 
 	public RangedMonsterActionSet() {
 		this.addAction(SkeletonRangedAction.ID);
-	//	this.addAction(ZombieClawAction.ID);
 	}
 }
