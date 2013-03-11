@@ -4,6 +4,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.monster.GoblinMeleeAction;
 import com.stab.data.info.BasicAttributes;
 import com.stab.data.info.buff.ImprovedInitiative_Buff;
+import com.stab.model.action.BasicActionSet;
 import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Modifier;
@@ -18,7 +19,11 @@ public class Goblin extends Creature {
 		setMaxMovePoints(6);
 		setMaxHp(6);
 		healFully();
-		this.setActionSet(new MeleeMonsterActionSet());
+		
+		this.setActionSet(new BasicActionSet());
+		this.getActionSet().addAction(GoblinMeleeAction.ID);
+		
+		
 		setResource("goblin");
 		setText("Goblin");
 		setFaction(1);

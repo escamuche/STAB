@@ -3,7 +3,7 @@ package com.stab.data.adventure;
 import com.stab.adventure.Adventure;
 import com.stab.common.events.DefaultRule;
 import com.stab.data.info.props.Dummy;
-import com.stab.data.utils.DefaultBlockData;
+import com.stab.data.utils.StabBlockData;
 import com.stab.model.basic.scenes.Choice;
 import com.stab.model.basic.scenes.Narration;
 import com.stab.model.basic.scenes.event.InfoDestroyed;
@@ -50,8 +50,8 @@ public class TestAdventure extends Adventure{
 		TileMapScene ms=new DefaultTileMapScene();
 		ms.createContents();
 		ms.loadTiled("map2", 0, 0);
-		ms.setTiles(DefaultTileMapScene.DEFAULT,"newtiles");
-		ms.setProperties(DefaultTileMapScene.DEFAULT, DefaultBlockData.ID);
+		ms.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
+		ms.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
 		ms.setTag("BATTLE");
 		ms.setWaitsForAll(true);
 		

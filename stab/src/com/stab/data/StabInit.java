@@ -64,11 +64,11 @@ import com.stab.data.scene.PrayerBook;
 import com.stab.data.scene.SpellBook;
 import com.stab.data.scene.StabLobby;
 import com.stab.data.utils.DefaultBlockData;
+import com.stab.data.utils.StabBlockData;
 import com.stab.fw.BasicObjectFactory;
 import com.stab.fw.EntityManager;
 import com.stab.model.action.ActionLibrary;
 import com.stab.model.action.base.InteractAction;
-import com.stab.model.info.trait.Modifier;
 
 public class StabInit {
 
@@ -134,6 +134,7 @@ public class StabInit {
 		
 		//BlockData
 		of.setMapping(DefaultBlockData.class);
+		of.setMapping(StabBlockData.class);
 		//Animations
 		of.setMapping(WalkAnimation.class);
 		of.setMapping(OpenDoorAnimation.class);
