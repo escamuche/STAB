@@ -1,5 +1,6 @@
 package com.stab.data.actions.player.spells.cleric.level1;
 
+import com.stab.data.StabConstants;
 import com.stab.data.info.debuff.Bane_Debuff;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
@@ -25,6 +26,7 @@ public class Bane extends SpellOnTarget {
      setRange(10);
      setTargetClass(PhysicalToken.class);
      setResource("actions/bane");
+     this.setCasterClass(StabConstants.CLERICCASTER);
      setName("Bane");
      this.setEffectType(DEBUFF);
 	}

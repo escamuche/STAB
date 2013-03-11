@@ -292,10 +292,13 @@ public class CharacterSheet extends InfoDataScene{
 		if ("CONTINUAR".equals(option))
 			travelToScene(player,null); //Esto nos llevara a la taverna
 			
-		if ("SPELLS".equals(option))
+		if ("SPELLS".equals(option)) {
 			if(this.getInfo() instanceof WizardCharacter)
 			travelToScene(player,SpellBook.ID);
-				if(this.getInfo() instanceof ClericCharacter)
+		}
+		
+		
+		if(this.getInfo() instanceof ClericCharacter)
 					travelToScene(player,PrayerBook.ID);
 			
 		if ("FEATS".equals(option))
