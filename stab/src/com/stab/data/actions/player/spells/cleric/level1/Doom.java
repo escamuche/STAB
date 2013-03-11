@@ -1,5 +1,6 @@
 package com.stab.data.actions.player.spells.cleric.level1;
 
+import com.stab.data.StabConstants;
 import com.stab.data.info.applicable.WillAttack;
 import com.stab.data.info.debuff.Doom_Debuff;
 import com.stab.model.basic.token.PhysicalToken;
@@ -29,6 +30,7 @@ public class Doom extends SpellOnTarget {
      setTargetClass(PhysicalToken.class);
      setResource("actions/doom");
      setName("Doom");
+     this.setCasterClass(StabConstants.CLERICCASTER);
      this.setEffectType(DEBUFF);
 	}
 

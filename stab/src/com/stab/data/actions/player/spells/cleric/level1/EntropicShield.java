@@ -1,24 +1,26 @@
 package com.stab.data.actions.player.spells.cleric.level1;
 
+import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.model.info.BaseInfo;
 
-public class DetectUndead extends SpellOnSelf{
+public class EntropicShield extends SpellOnSelf{
 	
-	public static final String ID="DETECTUNDEAD";
+	public static final String ID="ENTROPICSHIELD";
 
 	
-	public DetectUndead() {
+	public EntropicShield() {
      setRange(1);
      setResource("actions/bless");
-     setName("Detect Undead");
-     this.setEffectType(SPECIAL);
+     this.setCasterClass(StabConstants.CLERICCASTER);
+     setName("Entropic Shield");
+     this.setEffectType(BUFF);
 	}
 
 
 	@Override
 	public boolean execute(BaseInfo arg0) {
-		// TODO Auto-generated method stub
+		//EntropicShield_Buff = new EntropicShield_Buff();
 		return false;
 	}
 

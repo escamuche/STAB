@@ -3,27 +3,19 @@ package com.stab.data.actions.player.spells.cleric.level1;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.model.basic.token.PhysicalToken;
-import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
-import com.stab.model.info.applicable.base.Heal;
-import com.stab.util.Roll;
 
-public class CureLight extends SpellOnTarget{
+public class HideUndeads extends SpellOnTarget{
 	
-	public static final String ID="CURELIGHT_CLERIC";
+	public static final String ID="HIDEUNDEADS";
 
 
 	@Override
 	public boolean execute(Info yo, Info target) {
-		
-		BaseInfo Atacado = (BaseInfo)target;
-		int dañobase=Roll.d8()+1;
-		Heal heal = new Heal(dañobase, Atacado);
-		Atacado.apply(heal);
-		return true;
+		return false;
 		}
 	
-	public CureLight() {
+	public HideUndeads() {
      setRange(1);
      setTargetClass(PhysicalToken.class);
      setResource("actions/curelightwounds");
@@ -31,12 +23,4 @@ public class CureLight extends SpellOnTarget{
      setName("CureLight");
      this.setEffectType(HEAL);
 	}
-
-	
-	@Override
-	public int getEffectValue(BaseInfo i) {
-		return 5;
-	}
-	
-
 }

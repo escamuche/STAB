@@ -19,6 +19,7 @@ import com.stab.data.actions.player.spells.cleric.level1.Bless;
 import com.stab.data.actions.player.spells.cleric.level1.CureLight;
 import com.stab.data.actions.player.spells.cleric.level1.DivineFavor;
 import com.stab.data.actions.player.spells.cleric.level1.Doom;
+import com.stab.data.actions.player.spells.cleric.level1.InflictLight;
 import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
 import com.stab.data.actions.player.spells.wizard.level0.Flare;
 import com.stab.data.actions.player.spells.wizard.level0.OpenClose;
@@ -183,6 +184,7 @@ public class StabInit {
 		getActionLibrary().register(new Bane());
 		getActionLibrary().register(new DivineFavor());
 		getActionLibrary().register(new Doom());
+		getActionLibrary().register(new InflictLight());
 		
 	
 	}
