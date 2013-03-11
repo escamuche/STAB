@@ -1,4 +1,4 @@
-package com.stab.data.actions.player.spells.wizard.level1;
+package com.stab.data.actions.player.spells.cleric.level1;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
@@ -6,11 +6,11 @@ import com.stab.model.info.Info;
 
 public class MagicWeapon extends SpellOnTarget {
 	
-	public static final String ID="MAGICWEAPON_WIZARD";
+	public static final String ID="MAGICWEAPON_CLERIC";
 	
 	public MagicWeapon() {
 		setLevel(1);
-		setCasterClass(StabConstants.WIZARDCASTER);
+		setCasterClass(StabConstants.CLERICCASTER);
 		 setRange(1);
      setResource("actions/ability_druid_naturalperfection");
      setName("MagicWeapon");

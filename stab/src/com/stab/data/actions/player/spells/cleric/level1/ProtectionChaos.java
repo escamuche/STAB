@@ -1,4 +1,4 @@
-package com.stab.data.actions.player.spells.wizard.level1;
+package com.stab.data.actions.player.spells.cleric.level1;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
@@ -7,7 +7,7 @@ import com.stab.model.info.Info;
 
 public class ProtectionChaos extends SpellOnTarget{
 	
-	public static final String ID="PROTECTIONCHAOS_WIZARD";
+	public static final String ID="PROTECTIONCHAOS_CLERIC";
 
 	@Override
 	public boolean execute(Info yo, Info target) {
@@ -16,11 +16,11 @@ public class ProtectionChaos extends SpellOnTarget{
 	
 	public ProtectionChaos() {
 		setLevel(1);
-		setCasterClass(StabConstants.WIZARDCASTER);
+		setCasterClass(StabConstants.CLERICCASTER);
 		setRange(1);
      setTargetClass(PhysicalToken.class);
      setResource("actions/ability_shaman_watershield");
-     setName("ProtectionChaos");
+     setName("Protection Chaos");
      this.setEffectType(BUFF);
 	}
 }

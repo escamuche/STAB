@@ -7,7 +7,7 @@ import com.stab.model.info.Info;
 
 public class ProtectionLaw extends SpellOnTarget{
 	
-	public static final String ID="PROTECTIONLAW";
+	public static final String ID="PROTECTIONLAW_WIZARD";
 
 	@Override
 	public boolean execute(Info yo, Info target) {
