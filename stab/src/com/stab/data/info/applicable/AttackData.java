@@ -26,16 +26,17 @@ public class AttackData extends Applicable {
 	
 	String animationType;
 	String animationIcon;
-	ArrayList<Damage> damage;
-	ArrayList<Damage> critdamage;
+	Damage baseDamage;
+	ArrayList<Applicable> damage;
+	ArrayList<Applicable> critdamage;
 	Attack attack;
 	
 	public AttackData(BaseInfo instigator,BaseInfo target) {
 		super(instigator);
 		//Valores por defecto de ejemplo
 		animationType=SwingAnimation.ID;
-		damage= new ArrayList<Damage>();
-		critdamage= new ArrayList<Damage>();
+		damage= new ArrayList<Applicable>();
+		critdamage= new ArrayList<Applicable>();
 		this.target=target;
 		attack=createAttack();
 	}
@@ -82,25 +83,28 @@ public class AttackData extends Applicable {
 	}
 	
 	
-	public List<Damage> getDamage(boolean b) {
-		ArrayList<Damage> list=new ArrayList<Damage>();
+	public List<Applicable> getDamage(boolean b) {
+		ArrayList<Applicable> list=new ArrayList<Applicable>();
 		list.addAll(getDamage());
 		if (b){
 			list.addAll(getCritDamage());
-			return Damage.collapse(list);
+			//return Damage.collapse(list);
+			return list;
 		}
 		return list;
 	}
 	
-	public List<Damage> getDamage() {
-		return Damage.collapse(damage);
+	public List<Applicable> getDamage() {
+		//return Damage.collapse(damage);
+		return damage;
 	}
 	public void addCritDamage(Damage d){  //Para añadir daño extra en critico (ej: flaming burst)
 		critdamage.add(d);
 		d.setInstigator(this.getInstigator());
 	}
 	
-	public List<Damage> getCritDamage() {
-		return Damage.collapse(critdamage);
+	public List<Applicable> getCritDamage() {
+		//return Damage.collapse(critdamage);
+		return critdamage;
 	}
 }

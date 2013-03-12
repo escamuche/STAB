@@ -8,7 +8,7 @@ import com.stab.model.action.TargetAction;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
-import com.stab.model.info.applicable.base.Damage;
+import com.stab.model.info.applicable.Applicable;
 
 public class MeleeStrikeAction extends TargetAction{
 	
@@ -35,9 +35,9 @@ public class MeleeStrikeAction extends TargetAction{
 		sleep(500);
 		
 		if (ataque.hits()) {
-			for (Damage d:ad.getDamage(ataque.isCritical())){
+			for (Applicable d:ad.getDamage(ataque.isCritical())){
 				atacado.apply(d);
-				System.out.println(d.getFinalAmount()+" de daño (tipo "+d.getType()+")");
+				//System.out.println(d.getFinalAmount()+" de daño (tipo "+d.getType()+")");
 			}
 			sleep(500);
 			return true;	
