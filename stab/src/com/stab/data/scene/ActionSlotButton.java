@@ -34,6 +34,7 @@ public class ActionSlotButton extends Button {
 		this.action = action;
 		this.setIcon(action.getResource());
 		this.setText(action.getName());
+		//System.out.println("ACtion "+this.slot+" "+action.getName()+" "+action.getResource());
 	}
 	
 	public Action getAssociatedAction(){

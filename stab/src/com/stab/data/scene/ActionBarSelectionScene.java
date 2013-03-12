@@ -32,7 +32,7 @@ public class ActionBarSelectionScene extends InfoDataScene{
 				b.setButtonType(Button.RADIO);
 				b.setButtonGroup("ACTIONBAR");
 				b.setSlot(f);
-				if (f==0)
+				if (f==10)
 					b.setPos(Constants.BEGIN,Constants.NEXT_MAX);
 				else
 					b.setPos(Constants.NEXT,Constants.PREVIOUS);

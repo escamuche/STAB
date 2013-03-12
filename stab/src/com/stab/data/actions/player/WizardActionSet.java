@@ -24,7 +24,7 @@ import com.stab.model.action.base.InteractAction;
 public class WizardActionSet extends BasicActionSet {
 
 	public WizardActionSet() {
-		for (int f=0;f<10;f++)
+		for (int f=0;f<24;f++)
 			this.addAction(EmptyAction.ID);
 		
 		
@@ -45,7 +45,7 @@ public class WizardActionSet extends BasicActionSet {
 		this.setAction(RayFrost.ID, 23);
 		this.setAction(Resistance.ID, 24);
 		this.setAction(ChillTouch.ID, 25);
-		this.setAction(EnlargePerson.ID, 26);
+	//	this.setAction(EnlargePerson.ID, 26);
 		this.setAction(ExpeditiousRetreat.ID, 27);
 		this.setAction(MageArmor.ID, 28);
 		this.setAction(MagicMissile.ID, 29);

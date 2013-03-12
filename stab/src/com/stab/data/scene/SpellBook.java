@@ -5,6 +5,7 @@ import com.stab.model.Player;
 import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.Label;
 import com.stab.model.basic.ui.Text;
+import com.stab.model.info.Info;
 
 public class SpellBook extends ActionBarSelectionScene{
 	
@@ -13,7 +14,7 @@ public class SpellBook extends ActionBarSelectionScene{
 	public void createContents() {
 		super.createContents();
 		
-		createActionBar();
+		
 		setBackground("ui/scroll$S");
 		setMusic(null);
 		setMargin(60,70);
@@ -29,9 +30,19 @@ public class SpellBook extends ActionBarSelectionScene{
 		
 		
 		for(int b=20;b<34;b++) {
-		ActionSlotButton boton=createButton(b);
-		addGUI(boton);
+			ActionSlotButton boton=createButton(b);
+			if (b==20 || b==25 || b==30)
+				boton.setPos(Constants.BEGIN,Constants.NEXT_MAX);
+			addGUI(boton);
 		}
+		
+		Text t2=new Text();
+		t2.setText(" ");
+		t2.setPos(Constants.BEGIN,Constants.NEXT);
+		t2.setSize(0,120);
+		addGUI(t2);
+		
+		createActionBar();
 		
 		/*Text t2=new Text();
 		t2.setText("LEVEL 0");
@@ -173,6 +184,8 @@ public class SpellBook extends ActionBarSelectionScene{
 		
 		doLayout();
 	}
+	
+	
 	
 	@Override
 	public void playerOption(Player player, String option) {
