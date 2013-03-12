@@ -24,31 +24,24 @@ public class RangedKill extends TargetAction{
 		
 		BaseInfo Atacante = (BaseInfo)yo;
 		BaseInfo Atacado = (BaseInfo)target;
-		int dañobase=Atacante.getValue(StabConstants.DAMAGERANGED);
+		int dañobase=getBaseDamage(Atacante);
 		
 		RangedAttack ataque = new RangedAttack(Atacante);
 		Atacado.apply(ataque);
 		
-		if (ataque.hits()) {
-			
-			sleep(Atacante.playAnimationOn(ShootProyectileAnimation.ID, Atacado.getToken(), "effects/arrow"));
-			Damage d= new Damage(dañobase, Damage.PIERCING_DAMAGE,yo);
-			Atacado.apply(d);
-			System.out.println(d.getFinalAmount()+" de daño");
-			return true;	
-		}
 		
-		if (ataque.isCritical()) {
+		if (ataque.hits()) {
+			if (ataque.isCritical()) {
+				dañobase=dañobase*2;
+			}
 			
 			sleep(Atacante.playAnimationOn(ShootProyectileAnimation.ID, Atacado.getToken(), "effects/arrow"));
-			dañobase=dañobase*2;
-			Damage d= new Damage(dañobase, Damage.PIERCING_DAMAGE,yo);
-			d.setCritical(true);
+			Damage d= new Damage(dañobase, getTypeDamage(Atacante),yo);
 			Atacado.apply(d);
 			System.out.println(d.getFinalAmount()+" de daño");
 			return true;	
-			
 		}
+	
 		
 		if (ataque.isBotch()) {
 			
@@ -70,7 +63,12 @@ public class RangedKill extends TargetAction{
 	}
 
 	protected int getBaseDamage(BaseInfo Atacante) {
-		return Roll.d8()+Atacante.getAttributeValue(StabConstants.DAMAGE);
+		return Roll.d8()+Atacante.getAttributeValue(StabConstants.DAMAGERANGED);
+	}
+	
+	
+	protected int getTypeDamage(BaseInfo Atacante) {
+		return Damage.PIERCING_DAMAGE;
 	}
 	
 	@Override

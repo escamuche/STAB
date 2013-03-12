@@ -30,14 +30,18 @@ public class Kill extends TargetAction{
 		
 		yo.playAnimationOn(SwingAnimation.ID, target.getToken(), getSwingImage(Atacante));
 		sleep(500);
+		
 		if (ataque.hits()) {
-			if (ataque.isCritical())
+			if (ataque.isCritical()) {
 				dañobase=dañobase*2;
-			Damage d= new Damage(dañobase, getTypeDamage(Atacante),yo);
-			Atacado.apply(d);
-			System.out.println(d.getFinalAmount()+" de daño");
-			sleep(500);
-			return true;	
+			}
+
+				Damage d = new Damage(dañobase, getTypeDamage(Atacante),yo);
+				Atacado.apply(d);
+				System.out.println(d.getFinalAmount()+" de daño");
+				sleep(500);
+				return true;
+			
 		}
 		
 		
