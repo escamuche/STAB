@@ -31,13 +31,13 @@ public class WizardActionSet extends BasicActionSet {
 		this.setAction(InteractAction.ID,18);
 		this.setAction(DefendAction.ID,19);
 		this.setAction(WizardBasicMelee.ID, 10);
-		this.setAction(MagicMissile.ID, 12);
+		/*this.setAction(MagicMissile.ID, 12);
 		this.setAction(AcidSplash.ID, 14);
 		this.setAction(Shield.ID,11);
 		this.setAction(Flare.ID,15);
 		this.setAction(RayFrost.ID, 13);
 		this.setAction(OpenClose.ID,16);
-		this.setAction(Resistance.ID,17);
+		this.setAction(Resistance.ID,17);*/
 		
 		this.setAction(AcidSplash.ID, 20);
 		this.setAction(Flare.ID, 21);

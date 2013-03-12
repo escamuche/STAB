@@ -26,18 +26,19 @@ public class SpellBook extends ActionBarSelectionScene{
 		t1.setSize(Constants.FILL,Constants.CONTENT);
 		addGUI(t1);
 	
-		Text t2=new Text();
-		t2.setText("LEVEL 0");
-		t2.setPos(Constants.BEGIN,Constants.NEXT);
-		t2.setSize(Constants.FILL,Constants.CONTENT);
-		addGUI(t2);
+		
 		
 		for(int b=20;b<34;b++) {
 		ActionSlotButton boton=createButton(b);
 		addGUI(boton);
 		}
 		
-		/*acidsplash=new Button();
+		/*Text t2=new Text();
+		t2.setText("LEVEL 0");
+		t2.setPos(Constants.BEGIN,Constants.NEXT);
+		t2.setSize(Constants.FILL,Constants.CONTENT);
+		addGUI(t2); 
+		acidsplash=new Button();
 	    acidsplash.setText("Acid Splash");
 	    acidsplash.setIcon("ui/point");
 	    acidsplash.setMode(Label.LABEL);  
