@@ -1,4 +1,4 @@
-package com.stab.data.actions.player.feats;
+package com.stab.data.actions.feats;
 
 import com.stab.data.info.buff.ImprovedInitiative_Buff;
 import com.stab.model.info.BaseInfo;

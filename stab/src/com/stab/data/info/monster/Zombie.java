@@ -3,8 +3,10 @@ package com.stab.data.info.monster;
 import com.stab.data.StabConstants;
 import com.stab.data.info.BasicAttributes;
 import com.stab.data.info.buff.Toughness_Buff;
+import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Modifier;
+import com.stab.model.info.trait.base.DamageReduction;
 
 public class Zombie extends Creature {
 
@@ -14,7 +16,7 @@ public class Zombie extends Creature {
 	public void init() {
 		super.init();
 		setMaxMovePoints(6);
-		setMaxHp(9);
+		setMaxHp(12);
 		healFully();
 		this.setActionSet(new MeleeMonsterActionSet());
 		setResource("zombie");
@@ -28,13 +30,15 @@ public class Zombie extends Creature {
 		this.setAttribute(StabConstants.STRENGHT,17);
 		this.setAttribute(StabConstants.DAMAGE,+1);
 		
+		this.addTrait(new DamageReduction(Damage.PIERCING_DAMAGE, 5));
+		this.addTrait(new DamageReduction(Damage.IMPACT_DAMAGE, 5));
 		
 		
 		Modifier natural = new Modifier().createMod(StabConstants.ARMOR,StabConstants.NATURALARMORMOD,+2);
-		Toughness_Buff buff = new Toughness_Buff(this);
+		//Toughness_Buff buff = new Toughness_Buff(this);
 		
 		this.addTrait(natural);
-		this.addTrait(buff);
+		//this.addTrait(buff);
 
 	//	this.setCurrentAI(new DefaultAIPackage());
 		this.setCurrentAI(new ZombieAIPackage());

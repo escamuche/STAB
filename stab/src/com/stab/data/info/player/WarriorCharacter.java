@@ -1,8 +1,10 @@
 package com.stab.data.info.player;
 
 import com.stab.data.StabConstants;
+import com.stab.data.actions.feats.Expertise;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.WarriorActionSet;
+import com.stab.data.info.feat.combat.Expertise_Feat;
 import com.stab.model.info.trait.Modifier;
 
 
@@ -30,6 +32,9 @@ public static final String ID="WARRIOR_INFO";
 		
 		this.addTrait(Modifier.createMod(StabConstants.ARMOR,"ARMADURA",4));
 		this.addTrait(Modifier.createMod(StabConstants.ARMOR,"SHIELD",2));
+		
+		this.addTrait(new Expertise_Feat());
+		this.getActionSet().setAction(Expertise.ID, 17);
 	}
 	
 	

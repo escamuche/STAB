@@ -1,6 +1,6 @@
 package com.stab.data.info.feat.combat;
 
-import com.stab.data.actions.player.feats.Expertise;
+import com.stab.data.actions.feats.Expertise;
 import com.stab.data.info.feat.CombatFeat;
 import com.stab.model.info.BaseInfo;
 

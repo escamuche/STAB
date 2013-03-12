@@ -4,9 +4,11 @@ import com.stab.data.StabConstants;
 import com.stab.data.info.BasicAttributes;
 import com.stab.data.info.buff.ImprovedInitiative_Buff;
 import com.stab.model.ai.DefaultAIPackage;
+import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.Modifier;
+import com.stab.model.info.trait.base.DamageReduction;
 
 public class EsqueletoArquero extends Creature {
 
@@ -35,6 +37,8 @@ public class EsqueletoArquero extends Creature {
 		this.addTrait(armor);
 		this.addTrait(armornatural);
 		
+		this.addTrait(new DamageReduction(Damage.SLASHING_DAMAGE, 5));
+		this.addTrait(new DamageReduction(Damage.PIERCING_DAMAGE, 5));
 		
 
 		

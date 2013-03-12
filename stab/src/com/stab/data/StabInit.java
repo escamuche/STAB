@@ -3,6 +3,8 @@ package com.stab.data;
 import com.stab.adventure.AdventureLibrary;
 import com.stab.client.ClientEntityManager;
 import com.stab.common.fw.ServiceManager;
+import com.stab.data.actions.feats.Expertise;
+import com.stab.data.actions.feats.PowerAttack;
 import com.stab.data.actions.monster.SkeletonRangedAction;
 import com.stab.data.actions.monster.ZombieClawAction;
 import com.stab.data.actions.player.ClericBasicMelee;
@@ -10,8 +12,6 @@ import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.Kill;
 import com.stab.data.actions.player.RangedKill;
 import com.stab.data.actions.player.WizardBasicMelee;
-import com.stab.data.actions.player.feats.Expertise;
-import com.stab.data.actions.player.feats.PowerAttack;
 import com.stab.data.actions.player.spells.cleric.level0.Guidance;
 import com.stab.data.actions.player.spells.cleric.level0.ResistanceCleric;
 import com.stab.data.actions.player.spells.cleric.level1.Bane;
@@ -49,7 +49,9 @@ import com.stab.data.animation.ShootBeamAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.WalkAnimation;
+import com.stab.data.info.monster.DireRat;
 import com.stab.data.info.monster.EsqueletoArquero;
+import com.stab.data.info.monster.Kobold;
 import com.stab.data.info.monster.Zombie;
 import com.stab.data.info.player.ClericCharacter;
 import com.stab.data.info.player.WarriorCharacter;
@@ -129,7 +131,8 @@ public class StabInit {
 		of.setMapping(ClericCharacter.class);
 		of.setMapping(EsqueletoArquero.class);
 		of.setMapping(PrayerBook.class);
-		
+		of.setMapping(DireRat.class);
+		of.setMapping(Kobold.class);
 		
 		
 		//BlockData
