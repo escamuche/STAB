@@ -2,7 +2,7 @@ package com.stab.data.info.monster;
 
 import com.stab.data.StabConstants;
 import com.stab.data.info.BasicAttributes;
-import com.stab.data.info.buff.ImprovedInitiative_Buff;
+import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.base.Creature;
@@ -29,11 +29,10 @@ public class EsqueletoArquero extends Creature {
 		this.addTrait(new Attribute(StabConstants.DEXTERITY,14));
 		this.addTrait(new Attribute(StabConstants.WILLSAVE,+2));
 		this.addTrait(new Attribute(StabConstants.XP,135));
-		ImprovedInitiative_Buff ini = new ImprovedInitiative_Buff(this);
+		this.addTrait(new ImprovedInitiative_Feat());
 		Modifier armor=Modifier.createMod(StabConstants.ARMOR,StabConstants.ARMORMOD, +2);
 		Modifier armornatural=Modifier.createMod(StabConstants.ARMOR,StabConstants.NATURALARMORMOD, +2);
 		
-		this.addTrait(ini);
 		this.addTrait(armor);
 		this.addTrait(armornatural);
 		

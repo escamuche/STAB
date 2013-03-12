@@ -5,15 +5,15 @@ import com.stab.data.info.feat.CombatFeat;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.trait.Modifier;
 
-public class SkillFocusPerception_Feat extends CombatFeat{
+public class ImprovedInitiative_Feat extends CombatFeat{
 	
-	public static final String ID="SKILLFOCUSPERCEPTION_FEAT";  //No se si sera necesario por ahora no lo es
+	public static final String ID="IMPROVEDINITIATIVE_FEAT";
 
 	
 	
-	public SkillFocusPerception_Feat() {
+	public ImprovedInitiative_Feat() {
 		
-			Modifier buff=Modifier.createMod(StabConstants.PERCEPTION,+3);
+			Modifier buff=Modifier.createMod(StabConstants.INICIATIVEMOD,+4);
 			addTrait(buff);
 		
 			}
@@ -22,13 +22,13 @@ public class SkillFocusPerception_Feat extends CombatFeat{
 	@Override
 	public void applyTo(BaseInfo baseInfo) {
 		super.applyTo(baseInfo);
-		grantAction(baseInfo, SkillFocusPerception_Feat.ID);
+		grantAction(baseInfo, ImprovedInitiative_Feat.ID);
 	}
 	
 	@Override
 	public void removeFrom(BaseInfo baseInfo) {
 		super.removeFrom(baseInfo);
-		removeAction(baseInfo, SkillFocusPerception_Feat.ID);
+		removeAction(baseInfo, ImprovedInitiative_Feat.ID);
 	}
 	
 }

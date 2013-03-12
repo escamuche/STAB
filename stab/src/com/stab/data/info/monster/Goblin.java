@@ -3,7 +3,7 @@ package com.stab.data.info.monster;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.monster.GoblinMeleeAction;
 import com.stab.data.info.BasicAttributes;
-import com.stab.data.info.buff.ImprovedInitiative_Buff;
+import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.model.action.BasicActionSet;
 import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.info.base.Creature;
@@ -28,6 +28,7 @@ public class Goblin extends Creature {
 		setText("Goblin");
 		setFaction(1);
 		this.addTrait(new BasicAttributes());
+		this.addTrait(new ImprovedInitiative_Feat());
 		
 		this.setAttribute(StabConstants.XP,135);
 		this.setAttribute(StabConstants.FORTITUDESAVE,+2);
@@ -45,10 +46,8 @@ public class Goblin extends Creature {
 		Modifier hit = new Modifier().createMod(StabConstants.TOHIT,StabConstants.SIZEMOD,+1);
 		Modifier hitranged = new Modifier().createMod(StabConstants.TOHITRANGED,StabConstants.SIZEMOD,+1);
 	
-		ImprovedInitiative_Buff buff = new ImprovedInitiative_Buff(this);
 		
 		this.addTrait(armor);
-		this.addTrait(buff);
 		this.addTrait(size);
 		this.addTrait(hit);
 		this.addTrait(hitranged);

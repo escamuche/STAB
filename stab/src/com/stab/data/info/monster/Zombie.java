@@ -2,7 +2,6 @@ package com.stab.data.info.monster;
 
 import com.stab.data.StabConstants;
 import com.stab.data.info.BasicAttributes;
-import com.stab.data.info.buff.Toughness_Buff;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Modifier;
@@ -35,10 +34,9 @@ public class Zombie extends Creature {
 		
 		
 		Modifier natural = new Modifier().createMod(StabConstants.ARMOR,StabConstants.NATURALARMORMOD,+2);
-		//Toughness_Buff buff = new Toughness_Buff(this);
 		
 		this.addTrait(natural);
-		//this.addTrait(buff);
+		
 
 	//	this.setCurrentAI(new DefaultAIPackage());
 		this.setCurrentAI(new ZombieAIPackage());
