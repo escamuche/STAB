@@ -28,6 +28,9 @@ public class Attack extends Applicable{
 		modificador+=m;
 	}
 
+	public int getModifier() {
+		return modificador;
+	}
 
 	@Override
 	public void apply() {
