@@ -1,11 +1,10 @@
 package com.stab.data.info.feat.general;
 
 import com.stab.data.StabConstants;
-import com.stab.data.info.feat.CombatFeat;
-import com.stab.model.info.BaseInfo;
+import com.stab.data.info.feat.Feat;
 import com.stab.model.info.trait.Modifier;
 
-public class ImprovedInitiative_Feat extends CombatFeat{
+public class ImprovedInitiative_Feat extends Feat{
 	
 	public static final String ID="IMPROVEDINITIATIVE_FEAT";
 
@@ -17,18 +16,5 @@ public class ImprovedInitiative_Feat extends CombatFeat{
 			addTrait(buff);
 		
 			}
-		
-	
-	@Override
-	public void applyTo(BaseInfo baseInfo) {
-		super.applyTo(baseInfo);
-		grantAction(baseInfo, ImprovedInitiative_Feat.ID);
-	}
-	
-	@Override
-	public void removeFrom(BaseInfo baseInfo) {
-		super.removeFrom(baseInfo);
-		removeAction(baseInfo, ImprovedInitiative_Feat.ID);
-	}
 	
 }

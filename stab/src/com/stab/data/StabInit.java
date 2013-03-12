@@ -60,6 +60,7 @@ import com.stab.data.info.props.Barrel;
 import com.stab.data.info.props.Crate;
 import com.stab.data.info.props.Dummy;
 import com.stab.data.info.props.WoodenDoor;
+import com.stab.data.scene.ActionSlotButton;
 import com.stab.data.scene.CharacterSheet;
 import com.stab.data.scene.Feats;
 import com.stab.data.scene.PrayerBook;
@@ -133,6 +134,7 @@ public class StabInit {
 		of.setMapping(PrayerBook.class);
 		of.setMapping(DireRat.class);
 		of.setMapping(Kobold.class);
+		of.setMapping(ActionSlotButton.class);
 		
 		
 		//BlockData

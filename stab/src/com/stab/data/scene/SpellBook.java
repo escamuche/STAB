@@ -2,17 +2,18 @@ package com.stab.data.scene;
 
 import com.stab.common.Constants;
 import com.stab.model.Player;
-import com.stab.model.basic.scenes.InfoDataScene;
 import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.Label;
 import com.stab.model.basic.ui.Text;
 
-public class SpellBook extends InfoDataScene{
+public class SpellBook extends ActionBarSelectionScene{
 	
 	public static final String ID="SPELLBOOK_SCENE";
 	
 	public void createContents() {
 		super.createContents();
+		
+		createActionBar();
 		setBackground("ui/scroll$S");
 		setMusic(null);
 		setMargin(60,70);
@@ -162,6 +163,7 @@ public class SpellBook extends InfoDataScene{
 		atras.setPos(Constants.BEGIN,Constants.END); 
 		atras.setSize(Constants.PERCENT+15,Constants.CONTENT); 
 		addGUI(atras);
+		
 		
 		doLayout();
 	}

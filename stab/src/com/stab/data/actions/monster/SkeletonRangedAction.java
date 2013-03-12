@@ -17,5 +17,4 @@ public class SkeletonRangedAction extends RangedKill {
 	protected int getBaseDamage(BaseInfo Atacante) {
 		return Roll.d6()+Atacante.getAttributeValue(StabConstants.DAMAGERANGED);
 	}
-
 }
