@@ -35,7 +35,7 @@ public class ActionBarSelectionScene extends InfoDataScene{
 				if (f==0)
 					b.setPos(Constants.BEGIN,Constants.NEXT_MAX);
 				else
-					b.setPos(Constants.NEXT,Constants.NEXT);
+					b.setPos(Constants.NEXT,Constants.PREVIOUS);
 				addGUI(b);
 		}
 	}

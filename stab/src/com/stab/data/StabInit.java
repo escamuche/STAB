@@ -2,6 +2,9 @@ package com.stab.data;
 
 import com.stab.adventure.AdventureLibrary;
 import com.stab.client.ClientEntityManager;
+import com.stab.client.VisualEngine;
+import com.stab.client.slick.StabVisualEngine;
+import com.stab.client.slick.base.visualobjects.Button_sprite;
 import com.stab.common.fw.ServiceManager;
 import com.stab.data.actions.feats.Expertise;
 import com.stab.data.actions.feats.PowerAttack;
@@ -86,6 +89,11 @@ public class StabInit {
 			cm.registerFactory(of);
 		else{
 			
+		}
+		
+		StabVisualEngine sv=(StabVisualEngine)ServiceManager.getService(VisualEngine.class);
+		if (sv!=null){
+			sv.getFactory().setMapping(ActionSlotButton.ID,Button_sprite.class);
 		}
 	}
 
