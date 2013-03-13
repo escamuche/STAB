@@ -45,7 +45,7 @@ public class WizardActionSet extends BasicActionSet {
 		this.setAction(RayFrost.ID, 23);
 		this.setAction(Resistance.ID, 24);
 		this.setAction(ChillTouch.ID, 25);
-	//	this.setAction(EnlargePerson.ID, 26);
+		this.setAction(EnlargePerson.ID, 26);
 		this.setAction(ExpeditiousRetreat.ID, 27);
 		this.setAction(MageArmor.ID, 28);
 		this.setAction(MagicMissile.ID, 29);
@@ -53,7 +53,7 @@ public class WizardActionSet extends BasicActionSet {
 		this.setAction(ReducePerson.ID, 31);
 		this.setAction(Shield.ID, 32);
 		this.setAction(ShockingGrasp.ID, 33);
-		this.setAction(TrueStrike.ID, 34);
+	//	this.setAction(TrueStrike.ID, 34);
 		
 	}
 }

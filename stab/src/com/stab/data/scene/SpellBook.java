@@ -34,7 +34,7 @@ public class SpellBook extends ActionBarSelectionScene{
 			if (b==20 || b==25 || b==30)
 				boton.setPos(Constants.BEGIN,Constants.NEXT_MAX);
 			addGUI(boton);
-		}
+			}
 		
 		Text t2=new Text();
 		t2.setText(" ");

@@ -12,9 +12,9 @@ public class TrueStrike_Buff extends Buff {
 	public TrueStrike_Buff(BaseInfo caster) {
 	
 		
-		this.setAnimIcon("actions/ability_shaman_watershield");				
+		this.setAnimIcon("actions/truestrike");				
 		this.setSound("HolyCast");
-		this.setResource("actions/ability_shaman_watershield");                  
+		this.setResource("actions/truestrike");                  
 		this.setName("TrueStrike");
 		
 		this.setTime(1);

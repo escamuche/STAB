@@ -32,8 +32,11 @@ import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.actions.player.spells.wizard.level0.Resistance;
 import com.stab.data.actions.player.spells.wizard.level1.ChillTouch;
 import com.stab.data.actions.player.spells.wizard.level1.EnlargePerson;
+import com.stab.data.actions.player.spells.wizard.level1.ExpeditiousRetreat;
 import com.stab.data.actions.player.spells.wizard.level1.MageArmor;
 import com.stab.data.actions.player.spells.wizard.level1.MagicMissile;
+import com.stab.data.actions.player.spells.wizard.level1.RayEnfeeblement;
+import com.stab.data.actions.player.spells.wizard.level1.ReducePerson;
 import com.stab.data.actions.player.spells.wizard.level1.Shield;
 import com.stab.data.actions.player.spells.wizard.level1.ShockingGrasp;
 import com.stab.data.actions.player.spells.wizard.level1.TrueStrike;
@@ -191,6 +194,9 @@ public class StabInit {
 		getActionLibrary().register(new ChillTouch());
 		getActionLibrary().register(new TrueStrike());
 		getActionLibrary().register(new EnlargePerson());
+		getActionLibrary().register(new ExpeditiousRetreat());
+		getActionLibrary().register(new RayEnfeeblement());
+		getActionLibrary().register(new ReducePerson());
 		
 		getActionLibrary().register(new Guidance());
 		getActionLibrary().register(new ResistanceCleric());

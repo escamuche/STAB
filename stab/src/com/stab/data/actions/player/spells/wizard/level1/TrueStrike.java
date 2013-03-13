@@ -13,7 +13,7 @@ public class TrueStrike extends SpellOnSelf{
 
 		setLevel(1);
 		setCasterClass(StabConstants.WIZARDCASTER);
-     setResource("actions/ability_shaman_watershield");
+     setResource("actions/truestrike");
      setName("TrueStrike");
      this.setEffectType(BUFF);
 	}
