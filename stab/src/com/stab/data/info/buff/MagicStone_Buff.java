@@ -13,10 +13,10 @@ public class MagicStone_Buff extends Buff {
 	
 	public MagicStone_Buff(BaseInfo caster) {
 	
-		this.setAnimIcon("actions/divinefavor");				
+		this.setAnimIcon("actions/magicstone");				
 		this.setSound("HolyCast");
-		this.setResource("actions/divinefavor");                  
-		this.setName("Divine Favor");
+		this.setResource("actions/magicstone");                  
+		this.setName("Magic Stone");
 		
 		this.setTime(1);
 	
