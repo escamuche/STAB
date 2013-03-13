@@ -11,8 +11,8 @@ public class MagicStone extends SpellOnSelf{
 	public static final String ID="MAGICSTONE";
 	
 	public MagicStone() {
-     setResource("actions/divinefavor");
-     setName("Divine Favor");
+     setResource("actions/magicstone");
+     setName("MagicStone");
      this.setEffectType(BUFF);
      this.setCasterClass(StabConstants.CLERICCASTER);
 	}

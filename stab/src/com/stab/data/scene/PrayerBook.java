@@ -2,12 +2,11 @@ package com.stab.data.scene;
 
 import com.stab.common.Constants;
 import com.stab.model.Player;
-import com.stab.model.basic.scenes.InfoDataScene;
 import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.Label;
 import com.stab.model.basic.ui.Text;
 
-public class PrayerBook extends InfoDataScene{
+public class PrayerBook extends ActionBarSelectionScene{
 	
 	public static final String ID="PRAYERBOOK_SCENE";
 	
@@ -24,8 +23,23 @@ public class PrayerBook extends InfoDataScene{
 		t1.setPos(Constants.MIDDLE,Constants.BEGIN);
 		t1.setSize(Constants.FILL,Constants.CONTENT);
 		addGUI(t1);
-	
+		
+		for(int b=20;b<34;b++) {
+			ActionSlotButton boton=createButton(b);
+			if (b==20 || b==25 || b==30)
+				boton.setPos(Constants.BEGIN,Constants.NEXT_MAX);
+			addGUI(boton);
+			}
+		
 		Text t2=new Text();
+		t2.setText(" ");
+		t2.setPos(Constants.BEGIN,Constants.NEXT);
+		t2.setSize(0,120);
+		addGUI(t2);
+		
+		createActionBar();
+	
+		/*Text t2=new Text();
 		t2.setText("LEVEL 0");
 		t2.setPos(Constants.BEGIN,Constants.NEXT);
 		t2.setSize(Constants.FILL,Constants.CONTENT);
@@ -80,7 +94,7 @@ public class PrayerBook extends InfoDataScene{
 	    //bless.setAction(""); 
 		bane.setPos(Constants.NEXT,Constants.PREVIOUS); 
 		bane.setSize(Constants.PERCENT+20,Constants.CONTENT); 
-		addGUI(bane);
+		addGUI(bane);*/
 		
 		Button finish=new Button();
 		finish.setText("Continuar");
