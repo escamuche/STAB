@@ -20,6 +20,11 @@ public class RangedAttack extends Applicable{
 		super(instigator);
 	}
 
+	@Override
+	public void validate() {
+		// TODO Auto-generated method stub
+		
+	}
 
 	@Override
 	public void apply() {

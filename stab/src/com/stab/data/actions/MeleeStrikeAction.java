@@ -35,8 +35,9 @@ public class MeleeStrikeAction extends TargetAction{
 		sleep(500);
 		
 		if (ataque.hits()) {
-			for (Applicable d:ad.getDamage(ataque.isCritical())){
+			for (Applicable d:ad.getEffects(ataque.isCritical())){
 				atacado.apply(d);
+				
 				//System.out.println(d.getFinalAmount()+" de daño (tipo "+d.getType()+")");
 			}
 			sleep(500);

@@ -2,6 +2,7 @@ package com.stab.data.info.applicable;
 
 import com.stab.data.StabConstants;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.util.Roll;
 
@@ -17,8 +18,13 @@ public class Attack extends Applicable{
 	//Añadir tambien si ha sido CA, dodge, cover, parry o block lo que ha parado el ataque (con vistas a animacion)
 	
 	int modificador=0;  //Modificador particular para este ataque. Las clases que Attends<Attack> iran añadiendo 
-						//Modificadores (ej:  proteccion contra el mal, que representa un +2 a la ca, se aplica como ponerle un +2 a 
-						//la ca que tiene que dar. 
+						//Modificadores (ej:  proteccion contra el mal, que representa un +2 a la ca, se aplica como ponerle un -2 a 
+						//la tirada
+	
+	int critRange=1;   //Rango de critico
+	int confirmMod=0;  //Bono a confirmar
+	int ac=10;	  //La ca a dar
+	int hit=0;   //El bono a la tirada
 	
 	public Attack(BaseInfo instigator) {
 		super(instigator);
@@ -31,25 +37,47 @@ public class Attack extends Applicable{
 	public int getModifier() {
 		return modificador;
 	}
+	
+	public void setCritRange(int critRange) {
+		this.critRange = critRange;
+	}
+	public void setConfirmMod(int confirmMod) {
+		this.confirmMod = confirmMod;
+	}
+	public void setAC(int ac) {
+		this.ac = ac;
+	}
+	
+	@Override
+	public void setInstigator(Info instigator) {
+		super.setInstigator(instigator);
+		hit=((BaseInfo)instigator).getValue(StabConstants.TOHIT);
+	}
+	
+	@Override
+	public void setTarget(BaseInfo target) {
+		super.setTarget(target);
+		setAC(target.getValue(StabConstants.ARMOR));
+	}
 
 	@Override
 	public void apply() {
 		BaseInfo aMatar = getTarget();
 		BaseInfo elqueMata = (BaseInfo) getInstigator();
 		
-		int ac = aMatar.getValue(StabConstants.ARMOR);
+		
 		int dado = Roll.d20();
 
-		ac=ac+modificador; //Modificador impuesto por los Attend
+		ac=ac; 
 
-		int hit=elqueMata.getValue(StabConstants.TOHIT);
+		hit=hit+modificador;
 		System.out.println(dado + " en el dado!");
 		
 		
-		if (dado == 20) {
+		if (dado >= (21-critRange)) {
 			System.out.println("Posibilidad de Critico!");
 			int confirc=Roll.d20();
-			int caconfirc=hit + confirc;
+			int caconfirc=hit + confirc+ confirmMod;
 			if(ac <= caconfirc) {
 				System.out.println("Critico!!!");
 				setResult(CRITICAL);
@@ -64,7 +92,7 @@ public class Attack extends Applicable{
 		if (dado == 1) {
 			System.out.println("Posibilidad de Pifia!");
 		    int confirp=Roll.d20();
-		    int caconfirp=hit + confirp;
+		    int caconfirp=hit + confirp+ confirmMod;
 		    if(ac <= caconfirp) {
 		    	System.out.println("Casi!");
 		    	setResult(MISS);
@@ -101,5 +129,10 @@ public class Attack extends Applicable{
 	}
 	public boolean isBotch(){
 		return getResult()==BOTCH;
+	}
+	
+	@Override
+	public void validate() {
+		
 	}
 }
