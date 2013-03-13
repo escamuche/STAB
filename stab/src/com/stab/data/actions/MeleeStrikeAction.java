@@ -28,18 +28,21 @@ public class MeleeStrikeAction extends TargetAction{
 		atacante.apply(ad); //Esto calcula todos los bonos, daño etc
 		
 		Attack ataque = ad.getAttack();  //Esto nos da el ataque, ya preparado
-		atacado.apply(ataque);
+		atacado.check(ataque);
 		
 		//Aqui viene la animacion ((Sale del AD, pero por ahora esta fija) (y falta comprobar si hit, parry, etc)
 		yo.playAnimationOn(SwingAnimation.ID, target.getToken(), ad.getAnimationIcon());
 		sleep(500);
 		
 		if (ataque.hits()) {
+			ataque.apply();
+			/*
 			for (Applicable d:ad.getEffects(ataque.isCritical())){
 				atacado.apply(d);
 				
 				//System.out.println(d.getFinalAmount()+" de daño (tipo "+d.getType()+")");
 			}
+			/**/
 			sleep(500);
 			return true;	
 		}
