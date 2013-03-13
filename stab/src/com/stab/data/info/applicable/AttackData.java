@@ -75,6 +75,7 @@ public class AttackData extends Applicable {
 	public Attack getAttack(){
 		attack.setInstigator(getInstigator());
 		attack.setCritRange(critRange);
+		attack.setAttackData(this);
 		return attack;
 	}
 	
