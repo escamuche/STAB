@@ -28,6 +28,32 @@ public class BasicWeapon extends Weapon {
 	}
 	
 	
+	public BasicWeapon(String name,int numberofDice, int dice, int baseDamageType, 
+			 String animationIcon, String animationType){
+		this(name,numberofDice,dice,baseDamageType,1,2,animationIcon,animationType);
+	}
+	
+	public BasicWeapon(String name,int numberofDice, int dice, int baseDamageType, int critRange,
+			 String animationIcon, String animationType){
+		this(name,numberofDice,dice,baseDamageType,critRange,2,animationIcon,animationType);
+	}
+	
+	public BasicWeapon(String name,int numberofDice, int dice, int baseDamageType, int critRange,
+			int critMultiplier, String animationIcon, String animationType) {
+		this();
+		this.setName(name);
+		this.dice = dice;
+		this.dices = numberofDice;
+		this.baseDamageType = baseDamageType;
+		this.critRange = critRange;
+		this.critMultiplier = critMultiplier;
+		this.animationIcon = animationIcon;
+		this.animationType = animationType;
+	}
+
+
+
+
 	@Override
 	public void attend(AttackData app) {
 		super.attend(app);
