@@ -21,6 +21,8 @@ public static final String ID="CLERIC_INFO";
 		
 		this.setMaxHp(10);
 		this.setEp(10);
+		this.healFully();
+		this.fillEnergy();
 		this.setAttribute(StabConstants.DC,14);
 		this.setAttribute(StabConstants.STRENGHT, 12);
 		this.setAttribute(StabConstants.CONSTITUTION, 14);

@@ -120,6 +120,7 @@ public class StabConstants {
 	public static final String PALADINCASTER="PALADINCASTER";
 	public static final String SORCERERCASTER="SORCERERCASTER";
 	public static final String RANGERCASTER="RANGERCASTER";
+	
 	public static final String LUCKMOD="LUCKMOD";
 	public static final String SACREDMOD="SACREDMOD";
 	public static final String COMPETENCEMOD="COMPETENCEMOD";

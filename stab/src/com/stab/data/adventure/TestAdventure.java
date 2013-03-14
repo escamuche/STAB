@@ -47,8 +47,9 @@ public class TestAdventure extends Adventure{
 		//c.addOption("Marcharse","VICTORY");
 		this.addScene(c);
 		
-		TileMapScene ms=new DefaultTileMapScene();
+		DefaultTileMapScene ms=new DefaultTileMapScene();
 		ms.createContents();
+		ms.createMap(24,16);
 		ms.loadTiled("map2", 0, 0);
 		ms.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
 		ms.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);

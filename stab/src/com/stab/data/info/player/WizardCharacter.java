@@ -20,6 +20,8 @@ public static final String ID="WIZARD_INFO";
 		
 		this.setEp(10);
 		this.setMaxHp(7);
+		this.healFully();
+		this.fillEnergy();
 		this.setAttribute(StabConstants.STRENGHT, 8);
 		this.setAttribute(StabConstants.CONSTITUTION, 12);
 		this.setAttribute(StabConstants.DEXTERITY, 14);

@@ -22,6 +22,8 @@ public static final String ID="WARRIOR_INFO";
 		setText("Warrior1");
 		
 		this.setMaxHp(13);
+		this.healFully();
+		this.fillEnergy();
 		this.setAttribute(StabConstants.TOHIT,1);
 		this.setAttribute(StabConstants.TOHITRANGED,1);
 		this.setAttribute(StabConstants.DEXTERITY, 12);

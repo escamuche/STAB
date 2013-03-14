@@ -46,8 +46,9 @@ public class Zombies extends Adventure{
 		//c.addOption("Marcharse","VICTORY");
 		this.addScene(c);
 		
-		TileMapScene ms=new DefaultTileMapScene();
+		DefaultTileMapScene ms=new DefaultTileMapScene();
 		ms.createContents();
+		ms.createMap(24,16);
 		ms.loadTiled("zombies", 0, 0);
 		ms.setTiles(DefaultTileMapScene.DEFAULT,"newtiles");
 		ms.setProperties(DefaultTileMapScene.DEFAULT, DefaultBlockData.ID);
