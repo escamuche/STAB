@@ -57,6 +57,8 @@ import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.WalkAnimation;
 import com.stab.data.info.monster.DireRat;
 import com.stab.data.info.monster.EsqueletoArquero;
+import com.stab.data.info.monster.Goblin;
+import com.stab.data.info.monster.GoblinShaman;
 import com.stab.data.info.monster.Kobold;
 import com.stab.data.info.monster.Zombie;
 import com.stab.data.info.player.ClericCharacter;
@@ -146,7 +148,8 @@ public class StabInit {
 		of.setMapping(DireRat.class);
 		of.setMapping(Kobold.class);
 		of.setMapping(ActionSlotButton.class);
-		
+		of.setMapping(Goblin.class);
+		of.setMapping(GoblinShaman.class);
 		
 		//BlockData
 		of.setMapping(DefaultBlockData.class);
