@@ -40,6 +40,7 @@ import com.stab.data.actions.player.spells.wizard.level1.ReducePerson;
 import com.stab.data.actions.player.spells.wizard.level1.Shield;
 import com.stab.data.actions.player.spells.wizard.level1.ShockingGrasp;
 import com.stab.data.actions.player.spells.wizard.level1.TrueStrike;
+import com.stab.data.adventure.ColiseoAdventure;
 import com.stab.data.adventure.TestAdventure;
 import com.stab.data.adventure.Zombies;
 import com.stab.data.animation.BasicSparkAnimation;
@@ -126,6 +127,9 @@ public class StabInit {
 		ServiceManager.getService(AdventureLibrary.class).register(t);
 		Zombies z=new Zombies();
 		ServiceManager.getService(AdventureLibrary.class).register(z);
+		ColiseoAdventure c=new ColiseoAdventure();
+		ServiceManager.getService(AdventureLibrary.class).register(c);
+		
 	}
 	
 	

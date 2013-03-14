@@ -20,7 +20,7 @@ public class Zombie extends Creature {
 		this.setActionSet(new MeleeMonsterActionSet());
 		setResource("zombie");
 		setText("Zombie");
-		setFaction(1);
+		setFaction(4);
 		this.addTrait(new BasicAttributes());
 		
 		this.setAttribute(StabConstants.XP,200);
