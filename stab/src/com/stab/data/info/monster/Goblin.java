@@ -51,8 +51,9 @@ public class Goblin extends Creature {
 		this.addTrait(size);
 		this.addTrait(hit);
 		this.addTrait(hitranged);
-
-		this.setCurrentAI(new DefaultAIPackage());
+		DefaultAIPackage ai=new DefaultAIPackage();
+		ai.setLog(true);
+		this.setCurrentAI(ai);
 			
 		this.setBloodeffEct("PARTICLE#redblood");
 	}
