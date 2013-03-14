@@ -24,7 +24,7 @@ public class CureLight extends SpellOnTarget{
 		}
 	
 	public CureLight() {
-     setRange(1);
+     setRange(6);
      setTargetClass(PhysicalToken.class);
      setResource("actions/curelightwounds");
      this.setCasterClass(StabConstants.CLERICCASTER);

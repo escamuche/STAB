@@ -3,6 +3,7 @@ package com.stab.data.info.monster;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.monster.GoblinMeleeAction;
 import com.stab.data.actions.player.spells.cleric.level1.CureLight;
+import com.stab.data.actions.player.spells.wizard.level1.MagicMissile;
 import com.stab.data.info.BasicAttributes;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.model.action.BasicActionSet;
@@ -24,7 +25,7 @@ public class GoblinShaman extends Creature {
 		this.setActionSet(new BasicActionSet());
 		this.getActionSet().addAction(GoblinMeleeAction.ID);
 		this.getActionSet().addAction(CureLight.ID);
-		
+		this.getActionSet().addAction(MagicMissile.ID);
 		
 		setResource("goblinshaman");
 		setText("Goblin Shaman");

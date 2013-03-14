@@ -8,6 +8,7 @@ import com.stab.client.slick.base.visualobjects.Button_sprite;
 import com.stab.common.fw.ServiceManager;
 import com.stab.data.actions.feats.Expertise;
 import com.stab.data.actions.feats.PowerAttack;
+import com.stab.data.actions.monster.GoblinMeleeAction;
 import com.stab.data.actions.monster.SkeletonRangedAction;
 import com.stab.data.actions.monster.ZombieClawAction;
 import com.stab.data.actions.player.ClericBasicMelee;
@@ -184,6 +185,7 @@ public class StabInit {
 		getActionLibrary().register(new ClericBasicMelee());
 		getActionLibrary().register(new WizardBasicMelee());
 		getActionLibrary().register(new SkeletonRangedAction());
+		getActionLibrary().register(new GoblinMeleeAction());
 		//feats
 		getActionLibrary().register(new PowerAttack());
 		getActionLibrary().register(new Expertise());

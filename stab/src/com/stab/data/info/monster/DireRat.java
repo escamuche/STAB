@@ -1,6 +1,7 @@
 package com.stab.data.info.monster;
 
 import com.stab.data.StabConstants;
+import com.stab.data.actions.monster.GoblinMeleeAction;
 import com.stab.data.info.BasicAttributes;
 import com.stab.data.info.feat.general.SkillFocusPerception_Feat;
 import com.stab.model.action.BasicActionSet;
@@ -20,7 +21,7 @@ public class DireRat extends Creature {
 		healFully();
 		
 		this.setActionSet(new BasicActionSet());
-		//this.getActionSet().addAction(GoblinMeleeAction.ID);
+		this.getActionSet().addAction(GoblinMeleeAction.ID);
 		
 		
 		setResource("direrat");

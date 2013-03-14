@@ -26,7 +26,7 @@ public class Goblin extends Creature {
 		
 		setResource("goblin");
 		setText("Goblin");
-		setFaction(0);
+		setFaction(2);
 		this.addTrait(new BasicAttributes());
 		this.addTrait(new ImprovedInitiative_Feat());
 		

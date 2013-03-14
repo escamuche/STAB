@@ -7,7 +7,7 @@ import com.stab.util.Roll;
 
 public class GoblinMeleeAction extends Kill {
 	
-	public static final String ID="GOBLINGMELEE_ATTACK";
+	public static final String ID="GOBLINMELEE_ATTACK";
 	
 	protected String getSwingImage(BaseInfo atacante) {
 		return "effects/zombieclaw";
