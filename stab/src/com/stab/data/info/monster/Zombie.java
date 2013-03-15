@@ -29,8 +29,8 @@ public class Zombie extends Creature {
 		this.setAttribute(StabConstants.STRENGHT,17);
 		this.setAttribute(StabConstants.DAMAGE,+1);
 		
-		this.addTrait(new DamageReduction(Damage.PIERCING_DAMAGE, 5));
-		this.addTrait(new DamageReduction(Damage.IMPACT_DAMAGE, 5));
+		//this.addTrait(new DamageReduction(Damage.PIERCING_DAMAGE, 5));
+		//this.addTrait(new DamageReduction(Damage.IMPACT_DAMAGE, 5));
 		
 		
 		Modifier natural = new Modifier().createMod(StabConstants.ARMOR,StabConstants.NATURALARMORMOD,+2);

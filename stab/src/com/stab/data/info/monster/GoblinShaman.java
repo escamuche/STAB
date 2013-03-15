@@ -59,9 +59,4 @@ public class GoblinShaman extends Creature {
 			
 		this.setBloodeffEct("PARTICLE#redblood");
 	}
-	
-	/*@Override
-	MeleeMonsterActionSet(){
-		this.addAction(GoblinMeleeAction.ID);
-	}*/
 }
