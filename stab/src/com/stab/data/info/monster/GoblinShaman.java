@@ -40,6 +40,7 @@ public class GoblinShaman extends Creature {
 		this.setAttribute(StabConstants.STRENGHT,11);
 		this.setAttribute(StabConstants.DEXTERITY,15);
 		this.setAttribute(StabConstants.CONSTITUTION,12);
+		this.setAttribute(StabConstants.INTELIGENCE,14);
 		this.setAttribute(StabConstants.WISDOM,14);
 		this.setAttribute(StabConstants.CHARISMA,6);
 		
