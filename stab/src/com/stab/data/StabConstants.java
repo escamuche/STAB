@@ -2,7 +2,7 @@ package com.stab.data;
 
 public class StabConstants {
 
-	
+	public static final String SIZE="SIZE";
 	public static final String TOHIT="TOHIT";
 	public static final String ARMOR="ARMOR";
 	public static final String EXPERIENCE="EXPERIENCE";
@@ -139,4 +139,16 @@ public class StabConstants {
 	public static final String RESISTANCEMOD="RESISTANCEMOD";
 	public static final String INICIATIVEMOD="INICIATIVEMOD";
 	public static final String XP="XP";
+	
+	
+	public static final int FINE_SIZE=0;
+	public static final int DIMINUTE_SIZE=1;
+	public static final int TINY_SIZE=2;
+	public static final int SMALL_SIZE=3;
+	public static final int MEDIUM_SIZE=4;
+	public static final int LARGE_SIZE=5;
+	public static final int HUGE_SIZE=6;
+	public static final int GARGANTUAN_SIZE=7;
+	public static final int COLOSSAL_SIZE=8;
+	
 }

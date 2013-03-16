@@ -10,7 +10,7 @@ import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.DamageReduction;
 
-public class EsqueletoArquero extends Creature {
+public class EsqueletoArquero extends Monster {
 
 	public static final String ID="ESQUELETOARQUERO_INFO";
 	
@@ -24,7 +24,7 @@ public class EsqueletoArquero extends Creature {
 		setResource("skeleto");
 		setText("EsqueletoArquero");
 		setFaction(1);
-		this.addTrait(new BasicAttributes());
+	
 		this.addTrait(new Attribute(StabConstants.STRENGHT,15));
 		this.addTrait(new Attribute(StabConstants.DEXTERITY,14));
 		this.addTrait(new Attribute(StabConstants.WILLSAVE,+2));

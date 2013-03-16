@@ -8,7 +8,7 @@ import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Modifier;
 
-public class Kobold extends Creature {
+public class Kobold extends Monster {
 
 	public static final String ID="KOBOLD_INFO";
 	
@@ -26,7 +26,7 @@ public class Kobold extends Creature {
 		setResource("kobold");
 		setText("Kobold");
 		setFaction(1);
-		this.addTrait(new BasicAttributes());
+		
 		
 		this.setAttribute(StabConstants.XP,100);
 		this.setAttribute(StabConstants.FORTITUDESAVE,+2);

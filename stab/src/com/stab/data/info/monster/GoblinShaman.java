@@ -11,7 +11,7 @@ import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Modifier;
 
-public class GoblinShaman extends Creature {
+public class GoblinShaman extends Monster {
 
 	public static final String ID="GOBLINSHAMAN_INFO";
 	
@@ -30,7 +30,7 @@ public class GoblinShaman extends Creature {
 		setResource("goblinshaman");
 		setText("Goblin Shaman");
 		setFaction(2);
-		this.addTrait(new BasicAttributes());
+	
 		this.addTrait(new ImprovedInitiative_Feat());
 		
 		this.setAttribute(StabConstants.XP,135);

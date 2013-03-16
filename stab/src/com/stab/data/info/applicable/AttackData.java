@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.stab.data.animation.SwingAnimation;
+import com.stab.data.info.equipment.Weapon;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.base.Damage;
 
@@ -24,6 +24,7 @@ public class AttackData extends Applicable {
 
 	
 	BaseInfo target;
+	Weapon weapon;
 	
 	String animationType;
 	String animationIcon;
@@ -37,10 +38,11 @@ public class AttackData extends Applicable {
 	int critRange;
 	int critMultiplier;
 	
-	public AttackData(BaseInfo instigator,BaseInfo target) {
+	public AttackData(BaseInfo instigator,Weapon weapon,BaseInfo target) {
 		super(instigator);
 		//Valores por defecto de ejemplo
 		animationType=SwingAnimation.ID;
+		this.weapon=weapon;
 		onDamage= new ArrayList<Applicable>();
 		onCrit= new ArrayList<Applicable>();
 		this.target=target;
@@ -49,6 +51,12 @@ public class AttackData extends Applicable {
 		baseDamageType=Damage.SLASHING_DAMAGE;
 		critRange=1;
 		critMultiplier=2;
+	}
+	
+	
+	
+	public Weapon getWeapon() {
+		return weapon;
 	}
 
 	public Attack createAttack(){

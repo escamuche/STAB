@@ -7,7 +7,7 @@ import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.DamageReduction;
 
-public class Zombie extends Creature {
+public class Zombie extends Monster {
 
 	public static final String ID="ZOMBIE_INFO";
 	
@@ -21,8 +21,7 @@ public class Zombie extends Creature {
 		setResource("zombie");
 		setText("Zombie");
 		setFaction(1);
-		this.addTrait(new BasicAttributes());
-		
+			
 		this.setAttribute(StabConstants.XP,200);
 		this.setAttribute(StabConstants.WILLSAVE,+3);
 		this.setAttribute(StabConstants.TOHIT,+1);

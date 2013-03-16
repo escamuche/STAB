@@ -9,7 +9,7 @@ import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Modifier;
 
-public class DireRat extends Creature {
+public class DireRat extends Monster {
 
 	public static final String ID="DIRERAT_INFO";
 	
@@ -27,7 +27,6 @@ public class DireRat extends Creature {
 		setResource("direrat");
 		setText("Dire Rat");
 		setFaction(1);
-		this.addTrait(new BasicAttributes());
 		
 		this.setAttribute(StabConstants.XP,135);
 		this.setAttribute(StabConstants.FORTITUDESAVE,+2);

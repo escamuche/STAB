@@ -4,11 +4,11 @@ import com.stab.data.StabConstants;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.info.applicable.Attack;
 import com.stab.data.info.applicable.AttackData;
+import com.stab.data.info.equipment.Weapon;
 import com.stab.model.action.TargetAction;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
-import com.stab.model.info.applicable.Applicable;
 
 public class MeleeStrikeAction extends TargetAction{
 	
@@ -24,7 +24,9 @@ public class MeleeStrikeAction extends TargetAction{
 		BaseInfo atacante = (BaseInfo)yo;
 		BaseInfo atacado = (BaseInfo)target;
 
-		AttackData ad=new AttackData(atacante,atacado);
+		Weapon arma=null;
+		
+		AttackData ad=new AttackData(atacante,arma,atacado);
 		atacante.apply(ad); //Esto calcula todos los bonos, daño etc
 		
 		Attack ataque = ad.getAttack();  //Esto nos da el ataque, ya preparado

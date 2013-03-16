@@ -9,7 +9,7 @@ import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Modifier;
 
-public class Goblin extends Creature {
+public class Goblin extends Monster {
 
 	public static final String ID="GOBLIN_INFO";
 	
