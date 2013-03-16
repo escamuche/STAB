@@ -1,5 +1,7 @@
 package com.stab.data;
 
+
+
 import com.stab.adventure.AdventureLibrary;
 import com.stab.client.ClientEntityManager;
 import com.stab.client.VisualEngine;
@@ -57,6 +59,7 @@ import com.stab.data.animation.ShootBeamAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.WalkAnimation;
+import com.stab.data.info.BasicAttributes;
 import com.stab.data.info.monster.DireRat;
 import com.stab.data.info.monster.EsqueletoArquero;
 import com.stab.data.info.monster.Goblin;
@@ -82,6 +85,8 @@ import com.stab.fw.BasicObjectFactory;
 import com.stab.fw.EntityManager;
 import com.stab.model.action.ActionLibrary;
 import com.stab.model.action.base.InteractAction;
+import com.stab.model.info.trait.Attribute;
+import com.stab.model.info.trait.Trait;
 
 public class StabInit {
 
@@ -218,7 +223,9 @@ public class StabInit {
 		getActionLibrary().register(new InflictLight());
 		getActionLibrary().register(new MagicStone());
 		getActionLibrary().register(new ShieldFaith());
+		
 	
+		
 	}
 	
 	
