@@ -59,7 +59,7 @@ import com.stab.data.animation.ShootBeamAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.WalkAnimation;
-import com.stab.data.info.BasicAttributes;
+import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.monster.DireRat;
 import com.stab.data.info.monster.EsqueletoArquero;
 import com.stab.data.info.monster.Goblin;
@@ -85,13 +85,12 @@ import com.stab.fw.BasicObjectFactory;
 import com.stab.fw.EntityManager;
 import com.stab.model.action.ActionLibrary;
 import com.stab.model.action.base.InteractAction;
-import com.stab.model.info.trait.Attribute;
-import com.stab.model.info.trait.Trait;
 
 public class StabInit {
 
 	static BasicObjectFactory of=null; 
 	
+	static WeaponFactory wf;
 	
 	
 	public static void clientInit(){
@@ -178,6 +177,9 @@ public class StabInit {
 		of.setMapping(BasicSparkAnimation.class);
 		of.setMapping(ShakeAnimation.class);
 		of.setMapping(ShootBeamAnimation.class);
+		
+		
+		wf=new WeaponFactory();
 	}
 	
 	static void initActions(){
@@ -232,4 +234,10 @@ public class StabInit {
 	public static ActionLibrary getActionLibrary(){
 		return ActionLibrary.getActionLibrary();
 	}
+	
+	
+	public static WeaponFactory getWeaponFactory(){
+		return wf;
+	}
+	
 }
