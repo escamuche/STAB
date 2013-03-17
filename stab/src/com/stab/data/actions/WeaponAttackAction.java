@@ -1,13 +1,18 @@
 package com.stab.data.actions;
 
 import com.stab.data.StabConstants;
+import com.stab.data.animation.MissProyectileAnimation;
+import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.info.applicable.Attack;
 import com.stab.data.info.applicable.AttackData;
+import com.stab.data.info.equipment.BasicWeapon;
 import com.stab.data.info.equipment.HumanoidGear;
+import com.stab.data.info.equipment.RangedWeapon;
 import com.stab.data.info.equipment.Weapon;
 import com.stab.model.action.TargetAction;
 import com.stab.model.basic.token.PhysicalToken;
+import com.stab.model.basic.token.Token;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.base.Creature;
@@ -19,7 +24,21 @@ public class WeaponAttackAction extends TargetAction{
 
 	
 	
+	@Override
+	public int getRange(BaseInfo i) {
 	
+		Weapon arma=null;
+		arma=getWeapon(i);
+		if (arma instanceof RangedWeapon ){
+			RangedWeapon r=(RangedWeapon)arma;
+			return r.getMaxRange();
+		}
+		if (arma instanceof BasicWeapon){
+			//Enun futuro, el reach de i
+			return 1; 
+		}
+		return super.getRange(i);
+	}
 
 	@Override
 	public boolean execute(Info yo, Info target) {
@@ -43,20 +62,16 @@ public class WeaponAttackAction extends TargetAction{
 		Attack ataque = ad.getAttack();  //Esto nos da el ataque, ya preparado
 		atacado.check(ataque);
 		
-		//Aqui viene la animacion ((Sale del AD, pero por ahora esta fija) (y falta comprobar si hit, parry, etc)
-		yo.playAnimationOn(ad.getAnimationType(), target.getToken(), ad.getAnimationIcon());
-		
-		sleep(500);
+		if (ataque.hits())
+			playHitAnimation(ad,atacante,target.getToken());
+		else
+			playMissAnimation(ad,atacante,target.getToken());
+	
+	
 		
 		if (ataque.hits()) {
 			ataque.apply();
-			/*
-			for (Applicable d:ad.getEffects(ataque.isCritical())){
-				atacado.apply(d);
-				
-				//System.out.println(d.getFinalAmount()+" de daño (tipo "+d.getType()+")");
-			}
-			/**/
+	
 			sleep(500);
 			return true;	
 		}
@@ -74,6 +89,25 @@ public class WeaponAttackAction extends TargetAction{
 	}
 	
 	
+	private void playMissAnimation(AttackData ad,BaseInfo origin, Token target) {
+		
+		if (SwingAnimation.ID.equals(ad.getAnimationType())){
+			origin.playAnimationOn(SwingAnimation.ID,target,ad.getAnimationIcon());
+		}
+		if (ShootProyectileAnimation.ID.equals(ad.getAnimationType())){
+			origin.playAnimationOn(ShootProyectileAnimation.ID,target,ad.getAnimationIcon());
+		}
+	}
+
+	private void playHitAnimation(AttackData ad,BaseInfo origin, Token target) {
+		if (SwingAnimation.ID.equals(ad.getAnimationType())){
+			origin.playAnimationOn(SwingAnimation.ID,target,ad.getAnimationIcon());
+		}
+		if (ShootProyectileAnimation.ID.equals(ad.getAnimationType())){
+			origin.playAnimationOn(MissProyectileAnimation.ID,target,ad.getAnimationIcon());
+		}
+	}
+
 	protected Weapon getWeapon(BaseInfo atacante) {
 		
 		if (atacante instanceof Creature){

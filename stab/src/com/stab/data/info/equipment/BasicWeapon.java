@@ -23,9 +23,25 @@ public class BasicWeapon extends Weapon {
 	String animationIcon;
 	String animationType;
 	
+	
+	boolean twoHanded;
+	
 	public BasicWeapon() {
 		this.setPriority(10);  //Prioridad base para las armas.  Los overrides usaran una posterior, y los encantamientos tambien
-		this.setSlots(HumanoidGear.MAINHAND);
+		setTwoHanded(false);
+	}
+	
+	
+	public void setTwoHanded(boolean twoHanded) {
+		this.twoHanded = twoHanded;
+		if (twoHanded)
+			setSlots(HumanoidGear.BOTHHANDS);
+		else
+			setSlots(HumanoidGear.MAINHAND,HumanoidGear.OFFHAND);
+	}
+	
+	public boolean isTwoHanded() {
+		return twoHanded;
 	}
 	
 	
@@ -124,5 +140,7 @@ public class BasicWeapon extends Weapon {
 	public int getBaseDamageType() {
 		return baseDamageType;
 	}
+	
+	
 	
 }
