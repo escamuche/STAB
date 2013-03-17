@@ -1,8 +1,10 @@
 package com.stab.data.info.player;
 
 import com.stab.data.StabConstants;
+import com.stab.data.StabInit;
 import com.stab.data.actions.player.ClericActionSet;
 import com.stab.data.actions.player.DefendAction;
+import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.model.info.trait.Modifier;
 
 
@@ -33,6 +35,9 @@ public static final String ID="CLERIC_INFO";
 		
 		this.addTrait(Modifier.createMod(StabConstants.ARMOR,"ARMADURA",3));
 		this.addTrait(Modifier.createMod(StabConstants.ARMOR,"SHIELD",2));
+		
+		this.equip(StabInit.getWeaponFactory().getWeapon("QUARTERSTAFF"), HumanoidGear.BOTHHANDS);
+		
 		}
 	
 	

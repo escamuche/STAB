@@ -11,14 +11,7 @@ import com.stab.common.fw.ServiceManager;
 import com.stab.data.actions.WeaponAttackAction;
 import com.stab.data.actions.feats.Expertise;
 import com.stab.data.actions.feats.PowerAttack;
-import com.stab.data.actions.monster.GoblinMeleeAction;
-import com.stab.data.actions.monster.SkeletonRangedAction;
-import com.stab.data.actions.monster.ZombieClawAction;
-import com.stab.data.actions.player.ClericBasicMelee;
 import com.stab.data.actions.player.DefendAction;
-import com.stab.data.actions.player.Kill;
-import com.stab.data.actions.player.RangedKill;
-import com.stab.data.actions.player.WizardBasicMelee;
 import com.stab.data.actions.player.spells.cleric.level0.Guidance;
 import com.stab.data.actions.player.spells.cleric.level0.ResistanceCleric;
 import com.stab.data.actions.player.spells.cleric.level1.Bane;
@@ -187,13 +180,6 @@ public class StabInit {
 		//accciones
 		getActionLibrary().register(new DefendAction());
 		getActionLibrary().getAction(InteractAction.ID).setResource("actions/inv_gizmo_02");
-		getActionLibrary().register(new Kill());
-		getActionLibrary().register(new RangedKill());
-		getActionLibrary().register(new ZombieClawAction());
-		getActionLibrary().register(new ClericBasicMelee());
-		getActionLibrary().register(new WizardBasicMelee());
-		getActionLibrary().register(new SkeletonRangedAction());
-		getActionLibrary().register(new GoblinMeleeAction());
 		getActionLibrary().register(new WeaponAttackAction());
 		//feats
 		getActionLibrary().register(new PowerAttack());

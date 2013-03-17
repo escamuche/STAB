@@ -1,6 +1,7 @@
 package com.stab.data.actions.player;
 
 
+import com.stab.data.actions.WeaponAttackAction;
 import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
 import com.stab.data.actions.player.spells.wizard.level0.Flare;
 import com.stab.data.actions.player.spells.wizard.level0.OpenClose;
@@ -27,10 +28,10 @@ public class WizardActionSet extends BasicActionSet {
 		for (int f=0;f<24;f++)
 			this.addAction(EmptyAction.ID);
 		
-		
+		this.setAction(WeaponAttackAction.ID, 10);
 		this.setAction(InteractAction.ID,18);
 		this.setAction(DefendAction.ID,19);
-		this.setAction(WizardBasicMelee.ID, 10);
+		//this.setAction(WizardBasicMelee.ID, 10);
 		/*this.setAction(MagicMissile.ID, 12);
 		this.setAction(AcidSplash.ID, 14);
 		this.setAction(Shield.ID,11);

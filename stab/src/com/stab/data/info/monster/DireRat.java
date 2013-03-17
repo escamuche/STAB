@@ -1,13 +1,11 @@
 package com.stab.data.info.monster;
 
 import com.stab.data.StabConstants;
-import com.stab.data.actions.monster.GoblinMeleeAction;
-import com.stab.data.info.BasicAttributes;
+import com.stab.data.StabInit;
+import com.stab.data.info.equipment.HumanoidGear;
+import com.stab.data.info.equipment.Weapon;
 import com.stab.data.info.feat.general.SkillFocusPerception_Feat;
-import com.stab.model.action.BasicActionSet;
 import com.stab.model.ai.DefaultAIPackage;
-import com.stab.model.info.base.Creature;
-import com.stab.model.info.trait.Modifier;
 
 public class DireRat extends Monster {
 
@@ -20,9 +18,7 @@ public class DireRat extends Monster {
 		setMaxHp(5);
 		healFully();
 		
-		this.setActionSet(new BasicActionSet());
-		this.getActionSet().addAction(GoblinMeleeAction.ID);
-		
+			
 		
 		setResource("direrat");
 		setText("Dire Rat");
@@ -36,12 +32,13 @@ public class DireRat extends Monster {
 		this.setAttribute(StabConstants.CONSTITUTION,13);
 		this.setAttribute(StabConstants.WISDOM,13);
 		this.setAttribute(StabConstants.CHARISMA,4);
+		this.setAttribute(StabConstants.SIZE,StabConstants.SMALL_SIZE);
 		
-		Modifier size = new Modifier().createMod(StabConstants.ARMOR,StabConstants.SIZEMOD,+1);
-		Modifier hit = new Modifier().createMod(StabConstants.TOHIT,StabConstants.SIZEMOD,+1);
+	//	Modifier size = new Modifier().createMod(StabConstants.ARMOR,StabConstants.SIZEMOD,+1);
+	//	Modifier hit = new Modifier().createMod(StabConstants.TOHIT,StabConstants.SIZEMOD,+1);
 	
-		this.addTrait(size);
-		this.addTrait(hit);
+	//	this.addTrait(size);
+	//	this.addTrait(hit);
 
 		this.setCurrentAI(new DefaultAIPackage());
 			
@@ -50,6 +47,10 @@ public class DireRat extends Monster {
 		//falta special:Filth fever
 		
 		this.setBloodeffEct("PARTICLE#redblood");
+		
+		Weapon bite=StabInit.getWeaponFactory().getWeapon("SMALLBITE");
+		
+		this.equip(bite, HumanoidGear.MAINHAND);
 	}
 	
 	/*@Override

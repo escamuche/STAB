@@ -1,8 +1,12 @@
 package com.stab.data.info.player;
 
 import com.stab.data.StabConstants;
+import com.stab.data.StabInit;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.WizardActionSet;
+import com.stab.data.info.equipment.HumanoidGear;
+import com.stab.data.info.equipment.Weapon;
+import com.stab.data.info.equipment.traits.FlamingWeapon;
 
 
 public class WizardCharacter extends PathfinderCharacter{
@@ -27,6 +31,10 @@ public static final String ID="WIZARD_INFO";
 		this.setAttribute(StabConstants.DEXTERITY, 14);
 		this.setAttribute(StabConstants.INTELIGENCE, 16);
 		this.setAttribute(StabConstants.WILLSAVE, 2);
+		
+		
+		this.equip(StabInit.getWeaponFactory().getWeapon("QUARTERSTAFF"), HumanoidGear.BOTHHANDS);
+		
 		}
 	
 	

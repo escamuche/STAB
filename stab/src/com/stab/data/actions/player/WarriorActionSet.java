@@ -16,11 +16,11 @@ public class WarriorActionSet extends BasicActionSet {
 		
 		this.setAction(InteractAction.ID,18);
 		this.setAction(DefendAction.ID,19);
-		this.setAction(Kill.ID, 10);
+		//this.setAction(Kill.ID, 10);
 		this.setAction(PowerAttack.ID, 16);
 		//this.setAction(Expertise.ID, 17);
-		this.setAction(RangedKill.ID, 11);
+		//this.setAction(RangedKill.ID, 11);
 	
-		this.setAction(WeaponAttackAction.ID, 13);
+		this.setAction(WeaponAttackAction.ID, 10);
 	}	
 }

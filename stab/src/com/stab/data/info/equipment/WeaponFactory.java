@@ -27,6 +27,15 @@ public class WeaponFactory extends TraitFactory{
 		BasicWeapon w;
 		
 		
+		//Armas de criaturas
+		w=new BasicWeapon("Claw",1,6,Damage.SLASHING_DAMAGE,"effects/zombieclaw",SwingAnimation.ID);
+		register("MEDIUMCLAW",w);
+		w=new BasicWeapon("Bite",1,4,Damage.PIERCING_DAMAGE,"effects/zombieclaw",SwingAnimation.ID);
+		register("SMALLBITE",w);
+		
+		//Aramas
+		
+		
 		w=new BasicWeapon("gauntlet",1,3,Damage.IMPACT_DAMAGE,"effects/sword",SwingAnimation.ID);
 		register("GAUNTLET",w);
 		
@@ -63,19 +72,23 @@ public class WeaponFactory extends TraitFactory{
 		w=new BasicWeapon("longspear",1,8,Damage.PIERCING_DAMAGE,"effects/sword",SwingAnimation.ID);
 		register("LONGSPEAR",w);
 		
-		w=new BasicWeapon("quarterstaff",1,6,Damage.IMPACT_DAMAGE,"effects/sword",SwingAnimation.ID);
+		w=new BasicWeapon("quarterstaff",1,6,Damage.IMPACT_DAMAGE,"effects/WizardAttack",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("QUARTERSTAFF",w);
 		
 		w=new BasicWeapon("spear",1,8,Damage.PIERCING_DAMAGE,1,3,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("SPEAR",w);
 		 
 		w=new RangedWeapon("blowgun",1,2,Damage.PIERCING_DAMAGE,"effects/sword",ShootProyectileAnimation.ID);
 		register("BLOWGUN",w);
 		
 		w=new RangedWeapon("heavycrossbow",1,10,Damage.PIERCING_DAMAGE,2,2,"effects/sword",ShootProyectileAnimation.ID);
+		w.setTwoHanded(true);
 		register("HEAVYCROSSBOW",w);
 		
 		w=new RangedWeapon("lightcrossbow",1,8,Damage.PIERCING_DAMAGE,2,2,"effects/arrow",ShootProyectileAnimation.ID);
+		w.setTwoHanded(true);
 		register("LIGHTCROSSBOW",w);
 		
 		w=new RangedWeapon("dart",1,4,Damage.PIERCING_DAMAGE,"effects/sword",ShootProyectileAnimation.ID);
@@ -151,48 +164,63 @@ public class WeaponFactory extends TraitFactory{
 		register("WARHAMMER",w);
 		
 		w=new BasicWeapon("falchion",2,4,Damage.SLASHING_DAMAGE,3,2,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("FALCHION",w);
 		
 		w=new BasicWeapon("glaive",1,10,Damage.SLASHING_DAMAGE,1,3,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("GLAIVE",w);
 		
 		w=new BasicWeapon("greataxe",1,12,Damage.SLASHING_DAMAGE,1,3,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("GREATAXE",w);
 		
 		w=new BasicWeapon("greatclub",1,10,Damage.IMPACT_DAMAGE,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("GREATCLUB",w);
 		
 		w=new BasicWeapon("heavyflail",1,10,Damage.IMPACT_DAMAGE,2,2,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("HEAVYFLAIL",w);
 		
 		w=new BasicWeapon("greatsword",2,6,Damage.SLASHING_DAMAGE,2,2,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("GREATSWORD",w);
 		
 		w=new BasicWeapon("guisarme",2,4,Damage.SLASHING_DAMAGE,1,3,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("GUISARME",w);
 		
 		w=new BasicWeapon("halberd",1,10,Damage.PIERCING_DAMAGE,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("HALBERD",w);
 		
 		w=new BasicWeapon("lance",1,8,Damage.PIERCING_DAMAGE,1,3,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("LANCE",w);
 		
 		w=new BasicWeapon("ranseur",2,4,Damage.PIERCING_DAMAGE,1,3,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("RANSEUR",w);
 		
 		w=new BasicWeapon("scythe",2,4,Damage.SLASHING_DAMAGE,1,4,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("SCYTHE",w);
 		
 		w=new RangedWeapon("longbow",1,8,Damage.PIERCING_DAMAGE,1,3,"effects/arrow",ShootProyectileAnimation.ID);
+		w.setTwoHanded(true);
 		register("LONGBOW",w);
 		
 		w=new RangedWeapon("compositelongbow",1,8,Damage.PIERCING_DAMAGE,1,3,"effects/arrow",ShootProyectileAnimation.ID);
+		w.setTwoHanded(true);
 		register("COMPOSITELONGBOW",w);
 	
 		w=new RangedWeapon("shortbow",1,6,Damage.PIERCING_DAMAGE,1,3,"effects/arrow",ShootProyectileAnimation.ID);
+		w.setTwoHanded(true);
 		register("SHORTBOW",w);
 	
 		w=new RangedWeapon("compositeshortbow",1,6,Damage.PIERCING_DAMAGE,1,3,"effects/arrow",ShootProyectileAnimation.ID);
+		w.setTwoHanded(true);
 		register("COMPOSITESHORTBOW",w);
 	
 		w=new BasicWeapon("kama",1,6,Damage.SLASHING_DAMAGE,"effects/sword",SwingAnimation.ID);
@@ -211,48 +239,59 @@ public class WeaponFactory extends TraitFactory{
 		register("BASTARDSWORD",w);
 		
 		w=new BasicWeapon("dwarvenwaraxe",1,10,Damage.SLASHING_DAMAGE,1,3,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("DWARVENAXE",w);
 
 		w=new BasicWeapon("whip",1,3,Damage.SLASHING_DAMAGE,"effects/sword",SwingAnimation.ID);
 		register("WHIP",w);
 	
 		w=new BasicWeapon("orcdoubleaxe",1,8,Damage.SLASHING_DAMAGE,1,3,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("ORCDOUBLEAXE",w);
 	
 		w=new BasicWeapon("spikedchain",2,4,Damage.PIERCING_DAMAGE,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("SPIKEDCHAIN",w);
 	
 		w=new BasicWeapon("elvencurveblade",1,10,Damage.SLASHING_DAMAGE,3,2,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("ELVENCURVEBLADE",w);
 		
 		w=new BasicWeapon("direflail",1,8,Damage.IMPACT_DAMAGE,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("DIREFLAIL",w);
 		
 		w=new BasicWeapon("gnomehookedhammer",1,6,Damage.PIERCING_DAMAGE,1,4,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("GNOMEHOOKEDHAMMER",w);
 		
 		w=new BasicWeapon("twobladedsword",1,8,Damage.SLASHING_DAMAGE,2,2,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("TWOBLADEDSWORD",w);
 		
 		w=new BasicWeapon("dwarvenurgrosh",1,8,Damage.PIERCING_DAMAGE,1,3,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("DWARVENURGROSH",w);
 		
 		w=new BasicWeapon("bolas",1,4,Damage.IMPACT_DAMAGE,"effects/sword",SwingAnimation.ID);
-		register("KUKRI",w);
+		register("BOLAS",w);
 		
 		w=new RangedWeapon("handcrossbow",1,4,Damage.PIERCING_DAMAGE,2,2,"effects/sword",SwingAnimation.ID);
 		register("HANDCROSSBOW",w);
 		
 		w=new RangedWeapon("repeatingheavycrossbow",1,10,Damage.PIERCING_DAMAGE,2,2,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("REPEATINGHEAVYCROSSBOW",w);
 		
 		w=new RangedWeapon("repeatinglightcrossbow",1,8,Damage.PIERCING_DAMAGE,2,2,"effects/arrow",ShootProyectileAnimation.ID);
+		w.setTwoHanded(true);
 		register("REPEATINGLIGHTCROSSBOW",w);
 		
 		w=new RangedWeapon("shuriken",1,2,Damage.PIERCING_DAMAGE,"effects/sword",ShootProyectileAnimation.ID);
 		register("SHURIKEN",w);
 		
 		w=new BasicWeapon("halflingslingstaff",1,8,Damage.IMPACT_DAMAGE,1,3,"effects/sword",SwingAnimation.ID);
+		w.setTwoHanded(true);
 		register("HALFLINGSLINGSTAFF",w);	
 		
 	}

@@ -1,7 +1,9 @@
 package com.stab.data.info.monster;
 
 import com.stab.data.StabConstants;
+import com.stab.data.StabInit;
 import com.stab.data.info.BasicAttributes;
+import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Modifier;
@@ -17,7 +19,6 @@ public class Zombie extends Monster {
 		setMaxMovePoints(6);
 		setMaxHp(12);
 		healFully();
-		this.setActionSet(new MeleeMonsterActionSet());
 		setResource("zombie");
 		setText("Zombie");
 		setFaction(1);
@@ -42,6 +43,8 @@ public class Zombie extends Monster {
 		
 		
 		this.setBloodeffEct("PARTICLE#greenblood");
+		
+		this.equip(StabInit.getWeaponFactory().getWeapon("MEDIUMCLAW"), HumanoidGear.MAINHAND);
 	}
 	
 }

@@ -1,14 +1,12 @@
 package com.stab.data.info.monster;
 
 import com.stab.data.StabConstants;
-import com.stab.data.actions.monster.GoblinMeleeAction;
+import com.stab.data.StabInit;
 import com.stab.data.actions.player.spells.cleric.level1.CureLight;
 import com.stab.data.actions.player.spells.wizard.level1.MagicMissile;
-import com.stab.data.info.BasicAttributes;
+import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
-import com.stab.model.action.BasicActionSet;
 import com.stab.model.ai.DefaultAIPackage;
-import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Modifier;
 
 public class GoblinShaman extends Monster {
@@ -22,8 +20,7 @@ public class GoblinShaman extends Monster {
 		setMaxHp(6);
 		healFully();
 		
-		this.setActionSet(new BasicActionSet());
-		this.getActionSet().addAction(GoblinMeleeAction.ID);
+	
 		this.getActionSet().addAction(CureLight.ID);
 		this.getActionSet().addAction(MagicMissile.ID);
 		
@@ -43,18 +40,19 @@ public class GoblinShaman extends Monster {
 		this.setAttribute(StabConstants.INTELIGENCE,14);
 		this.setAttribute(StabConstants.WISDOM,14);
 		this.setAttribute(StabConstants.CHARISMA,6);
+		this.setAttribute(StabConstants.SIZE,StabConstants.SMALL_SIZE);
 		
 		Modifier armor = new Modifier().createMod(StabConstants.ARMOR,StabConstants.ARMORMOD,+2);
-		Modifier shield = new Modifier().createMod(StabConstants.ARMOR,StabConstants.SHIELDMOD,+1);
-		Modifier size = new Modifier().createMod(StabConstants.ARMOR,StabConstants.SIZEMOD,+1);
-		Modifier hit = new Modifier().createMod(StabConstants.TOHIT,StabConstants.SIZEMOD,+1);
-		Modifier hitranged = new Modifier().createMod(StabConstants.TOHITRANGED,StabConstants.SIZEMOD,+1);
+	//	Modifier shield = new Modifier().createMod(StabConstants.ARMOR,StabConstants.SHIELDMOD,+1);
+	//	Modifier size = new Modifier().createMod(StabConstants.ARMOR,StabConstants.SIZEMOD,+1);
+	//	Modifier hit = new Modifier().createMod(StabConstants.TOHIT,StabConstants.SIZEMOD,+1);
+	//	Modifier hitranged = new Modifier().createMod(StabConstants.TOHITRANGED,StabConstants.SIZEMOD,+1);
 	
 		
 		this.addTrait(armor);
-		this.addTrait(size);
-		this.addTrait(hit);
-		this.addTrait(hitranged);
+	//	this.addTrait(size);
+	//	this.addTrait(hit);
+	//	this.addTrait(hitranged);
 
 		DefaultAIPackage ai=new DefaultAIPackage();
 		ai.setLog(true);
@@ -62,5 +60,7 @@ public class GoblinShaman extends Monster {
 		
 			
 		this.setBloodeffEct("PARTICLE#redblood");
+		
+		this.equip(StabInit.getWeaponFactory().getWeapon("QUARTERSTAFF"), HumanoidGear.BOTHHANDS);
 	}
 }

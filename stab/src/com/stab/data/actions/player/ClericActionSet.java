@@ -1,6 +1,7 @@
 package com.stab.data.actions.player;
 
 
+import com.stab.data.actions.WeaponAttackAction;
 import com.stab.data.actions.player.spells.cleric.level0.Guidance;
 import com.stab.data.actions.player.spells.cleric.level0.ResistanceCleric;
 import com.stab.data.actions.player.spells.cleric.level1.Bane;
@@ -22,10 +23,10 @@ public class ClericActionSet extends BasicActionSet {
 		for (int f=0;f<20;f++)
 			this.addAction(EmptyAction.ID);
 		
-		
+		this.setAction(WeaponAttackAction.ID, 10);
 		this.setAction(InteractAction.ID,18);
 		this.setAction(DefendAction.ID,19);
-		this.setAction(ClericBasicMelee.ID, 10);
+	//	this.setAction(ClericBasicMelee.ID, 10);
 		/*this.setAction(Bless.ID, 12);
 		this.setAction(Doom.ID, 16);
 		this.setAction(CureLight.ID, 11);

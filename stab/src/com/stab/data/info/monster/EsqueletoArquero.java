@@ -1,7 +1,9 @@
 package com.stab.data.info.monster;
 
 import com.stab.data.StabConstants;
+import com.stab.data.StabInit;
 import com.stab.data.info.BasicAttributes;
+import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.info.applicable.base.Damage;
@@ -20,8 +22,7 @@ public class EsqueletoArquero extends Monster {
 		setMaxMovePoints(6);
 		setMaxHp(4);
 		healFully();
-		this.setActionSet(new RangedMonsterActionSet());
-		setResource("skeleto");
+	setResource("skeleto");
 		setText("EsqueletoArquero");
 		setFaction(1);
 	
@@ -46,6 +47,8 @@ public class EsqueletoArquero extends Monster {
 		
 		
 		this.setBloodeffEct("PARTICLE#greenblood");
+		
+		this.equip(StabInit.getWeaponFactory().getWeapon("LONGBOW"), HumanoidGear.BOTHHANDS);
 	}
 	
 }
