@@ -1,7 +1,7 @@
 package com.stab.data.info.buff;
 
 import com.stab.data.StabConstants;
-import com.stab.data.info.applicable.MagicMissileAttack;
+import com.stab.data.info.applicable.magic.MagicMissileAttack;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;

@@ -1,7 +1,7 @@
 package com.stab.data.actions.player.spells.cleric.level1;
 
 import com.stab.data.StabConstants;
-import com.stab.data.info.applicable.WillAttack;
+import com.stab.data.info.applicable.magic.WillAttack;
 import com.stab.data.info.debuff.Doom_Debuff;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;

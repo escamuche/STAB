@@ -1,11 +1,11 @@
-package com.stab.data.info.applicable;
+package com.stab.data.info.applicable.magic;
 
 import com.stab.data.StabConstants;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.util.Roll;
 
-public class WillAttack extends Applicable{
+public class ReflexAttack extends Applicable{
 
 	
 	public static final int HIT = 0;
@@ -16,7 +16,7 @@ public class WillAttack extends Applicable{
 	//En un futuro añadir o reutilizar los que hay para "le has dado a una imagen" o "fallo por concealment", etc
 	//Añadir tambien si ha sido CA, dodge, cover, parry o block lo que ha parado el ataque (con vistas a animacion)
 	
-	public WillAttack(BaseInfo instigator) {
+	public ReflexAttack(BaseInfo instigator) {
 		super(instigator);
 	}
 
@@ -31,7 +31,7 @@ public class WillAttack extends Applicable{
 		BaseInfo aMatar = getTarget();
 		BaseInfo elqueMata = (BaseInfo) getInstigator();
 		
-		int save = aMatar.getValue(StabConstants.SAVING);
+		int save = aMatar.getValue(StabConstants.REFLEXSAVE);
 		int dado = Roll.d20();
 		int saveroll=save+dado;
 		int dc=elqueMata.getValue(StabConstants.DC);
@@ -62,3 +62,4 @@ public class WillAttack extends Applicable{
 		return getResult()==BOTCH;
 	}
 }
+

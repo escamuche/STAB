@@ -4,7 +4,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.info.applicable.Attack;
-import com.stab.data.info.applicable.FortitudeAttack;
+import com.stab.data.info.applicable.magic.FortitudeAttack;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;

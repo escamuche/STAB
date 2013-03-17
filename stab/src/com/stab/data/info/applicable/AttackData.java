@@ -25,6 +25,7 @@ public class AttackData extends Applicable {
 	
 	BaseInfo target;
 	Weapon weapon;
+	String slot;
 	
 	String animationType;
 	String animationIcon;
@@ -53,7 +54,12 @@ public class AttackData extends Applicable {
 		critMultiplier=2;
 	}
 	
-	
+	public void setSlot(String slot) {
+		this.slot = slot;
+	}
+	public String getSlot() {
+		return slot;
+	}
 	
 	public Weapon getWeapon() {
 		return weapon;

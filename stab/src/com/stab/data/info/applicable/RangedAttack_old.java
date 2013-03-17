@@ -5,7 +5,7 @@ import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.util.Roll;
 
-public class ReflexAttack extends Applicable{
+public class RangedAttack_old extends Applicable{
 
 	
 	public static final int HIT = 0;
@@ -16,7 +16,7 @@ public class ReflexAttack extends Applicable{
 	//En un futuro añadir o reutilizar los que hay para "le has dado a una imagen" o "fallo por concealment", etc
 	//Añadir tambien si ha sido CA, dodge, cover, parry o block lo que ha parado el ataque (con vistas a animacion)
 	
-	public ReflexAttack(BaseInfo instigator) {
+	public RangedAttack_old(BaseInfo instigator) {
 		super(instigator);
 	}
 
@@ -31,21 +31,55 @@ public class ReflexAttack extends Applicable{
 		BaseInfo aMatar = getTarget();
 		BaseInfo elqueMata = (BaseInfo) getInstigator();
 		
-		int save = aMatar.getValue(StabConstants.REFLEXSAVE);
+		int ac = aMatar.getValue(StabConstants.ARMOR);
 		int dado = Roll.d20();
-		int saveroll=save+dado;
-		int dc=elqueMata.getValue(StabConstants.DC);
+
+
+		int hit=elqueMata.getValue(StabConstants.TOHITRANGED);
+		System.out.println(dado + " en el dado!");
 		
-		if (saveroll < dc) {
-			setResult(HIT);
+		
+		if (dado == 20) {
+			System.out.println("Posibilidad de Critico!");
+			int confirc=Roll.d20();
+			int caconfirc=hit + confirc;
+			if(ac <= caconfirc) {
+				System.out.println("Critico!!!");
+				setResult(CRITICAL);
+			   	}
+			else{
+				System.out.println("Fallaste la confirmacion!");
+				setResult(HIT);
+				}
 			}
 		
-
-    	else{
-		    setResult(MISS);
+		
+		if (dado == 1) {
+			System.out.println("Posibilidad de Pifia!");
+		    int confirp=Roll.d20();
+		    int caconfirp=hit + confirp;
+		    if(ac <= caconfirp) {
+		    	System.out.println("Casi!");
+		    	setResult(MISS);
+		    	}
+		    	else{
+		    		System.out.println("Pifia!!!");
+		    		setResult(BOTCH);
 		    		}
 			}
 		
+		
+		int dar = elqueMata.getValue(StabConstants.TOHITRANGED) + dado;
+		System.out.println("Impactas a armadura " + dar);
+	
+		if (ac <= dar) { //si das a ca
+			setResult(HIT);
+		}
+		else{
+			setResult(MISS);
+		}
+					
+	}
 	
 	public boolean hits(){
 		return getResult()==HIT || getResult()==CRITICAL;
@@ -61,5 +95,6 @@ public class ReflexAttack extends Applicable{
 	public boolean isBotch(){
 		return getResult()==BOTCH;
 	}
+	
+	
 }
-

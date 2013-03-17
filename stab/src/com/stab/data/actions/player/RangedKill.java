@@ -3,7 +3,7 @@ package com.stab.data.actions.player;
 import com.stab.data.StabConstants;
 import com.stab.data.animation.MissProyectileAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
-import com.stab.data.info.applicable.RangedAttack;
+import com.stab.data.info.applicable.RangedAttack_old;
 import com.stab.model.action.TargetAction;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
@@ -26,7 +26,7 @@ public class RangedKill extends TargetAction{
 		BaseInfo Atacado = (BaseInfo)target;
 		int dañobase=getBaseDamage(Atacante);
 		
-		RangedAttack ataque = new RangedAttack(Atacante);
+		RangedAttack_old ataque = new RangedAttack_old(Atacante);
 		Atacado.apply(ataque);
 		
 		

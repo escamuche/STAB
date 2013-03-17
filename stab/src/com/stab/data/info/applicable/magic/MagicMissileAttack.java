@@ -1,4 +1,4 @@
-package com.stab.data.info.applicable;
+package com.stab.data.info.applicable.magic;
 
 import com.stab.model.info.BaseInfo;
 

@@ -2,9 +2,9 @@ package com.stab.data.info.applicable;
 
 import com.stab.model.info.BaseInfo;
 
-public class RangedAttack  extends Attack {
+public class TouchAttack extends Attack {
 
-	public RangedAttack(BaseInfo instigator) {
+	public TouchAttack(BaseInfo instigator) {
 		super(instigator);
 	}
 
