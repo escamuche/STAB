@@ -3,6 +3,7 @@ package com.stab.data.animation;
 import java.awt.Point;
 
 import com.stab.client.slick.base.util.PaintUtils;
+import com.stab.client.slick.base.visualobjects.LightSprite;
 import com.stab.client.slick.base.visualobjects.StabSprite;
 import com.stab.data.animation.state.MoveToPointState;
 import com.stab.data.utils.AnimUtils;
@@ -31,6 +32,9 @@ public class ShootProyectileAnimation extends OnTargetAnimation{
 		Point target=getTargetPoint();
 		
 		StabSprite icon=new StabSprite();
+		
+		icon=new LightSprite();
+		
 		icon.setPos(origin);
 		icon.setSize(64,64);
 		
