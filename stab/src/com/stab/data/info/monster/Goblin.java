@@ -57,8 +57,4 @@ public class Goblin extends Monster {
 		
 	}
 	
-	/*@Override
-	MeleeMonsterActionSet(){
-		this.addAction(GoblinMeleeAction.ID);
-	}*/
 }

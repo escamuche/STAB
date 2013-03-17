@@ -59,6 +59,7 @@ import com.stab.data.info.monster.EsqueletoArquero;
 import com.stab.data.info.monster.Goblin;
 import com.stab.data.info.monster.GoblinShaman;
 import com.stab.data.info.monster.Kobold;
+import com.stab.data.info.monster.SkeletalChampion;
 import com.stab.data.info.monster.Zombie;
 import com.stab.data.info.player.ClericCharacter;
 import com.stab.data.info.player.WarriorCharacter;
@@ -153,6 +154,7 @@ public class StabInit {
 		of.setMapping(ActionSlotButton.class);
 		of.setMapping(Goblin.class);
 		of.setMapping(GoblinShaman.class);
+		of.setMapping(SkeletalChampion.class);
 		
 		//BlockData
 		of.setMapping(DefaultBlockData.class);

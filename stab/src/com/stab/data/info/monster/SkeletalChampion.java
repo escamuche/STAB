@@ -1,0 +1,67 @@
+package com.stab.data.info.monster;
+
+import com.stab.data.StabConstants;
+import com.stab.data.StabInit;
+import com.stab.data.info.BasicAttributes;
+import com.stab.data.info.equipment.HumanoidGear;
+import com.stab.data.info.feat.combat.PowerAttack_Feat;
+import com.stab.data.info.feat.combat.WeaponFocus_Feat;
+import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
+import com.stab.model.info.applicable.base.Damage;
+import com.stab.model.info.base.Creature;
+import com.stab.model.info.trait.Modifier;
+import com.stab.model.info.trait.base.DamageReduction;
+import com.stab.model.info.trait.base.Equipment;
+
+public class SkeletalChampion extends Monster {
+
+	public static final String ID="SKELETALCHAMPION_INFO";
+	
+	@Override
+	public void init() {
+		super.init();
+		setMaxMovePoints(6);
+		setMaxHp(17);
+		healFully();
+	
+		setResource("skeletalchampion");
+		setText("Skeletal Champion");
+		setFaction(1);
+			
+		this.setAttribute(StabConstants.XP,600);
+		this.setAttribute(StabConstants.WILLSAVE,+3);
+		this.setAttribute(StabConstants.FORTITUDESAVE,+3);
+		this.setAttribute(StabConstants.TOHIT,+2);
+		this.setAttribute(StabConstants.STRENGHT,17);
+		this.setAttribute(StabConstants.DEXTERITY,13);
+		this.setAttribute(StabConstants.INTELIGENCE,9);
+		this.setAttribute(StabConstants.CHARISMA,12);
+		
+		//this.addTrait(new DamageReduction(Damage.PIERCING_DAMAGE, 5));
+		//this.addTrait(new DamageReduction(Damage.IMPACT_DAMAGE, 5));
+		
+		
+		Modifier natural = new Modifier().createMod(StabConstants.ARMOR,StabConstants.NATURALARMORMOD,+2);
+		this.addTrait(natural);
+		
+		Modifier armor = new Modifier().createMod(StabConstants.ARMOR,StabConstants.ARMORMOD,+6);
+		this.addTrait(armor);
+		
+		Modifier shield = new Modifier().createMod(StabConstants.ARMOR,StabConstants.SHIELDMOD,+2);
+		this.addTrait(shield);
+		
+		this.addTrait(new ImprovedInitiative_Feat());
+		this.addTrait(new PowerAttack_Feat());
+		this.addTrait(new WeaponFocus_Feat());
+		
+		this.equip(StabInit.getWeaponFactory().getWeapon("LONGSWORD"), HumanoidGear.MAINHAND);
+		
+
+	//	this.setCurrentAI(new DefaultAIPackage());
+		this.setCurrentAI(new ZombieAIPackage());
+		
+		
+		this.setBloodeffEct("PARTICLE#greenblood");
+	}
+	
+}
