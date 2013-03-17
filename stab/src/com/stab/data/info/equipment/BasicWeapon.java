@@ -25,6 +25,7 @@ public class BasicWeapon extends Weapon {
 	
 	public BasicWeapon() {
 		this.setPriority(10);  //Prioridad base para las armas.  Los overrides usaran una posterior, y los encantamientos tambien
+		this.setSlots(HumanoidGear.MAINHAND);
 	}
 	
 	

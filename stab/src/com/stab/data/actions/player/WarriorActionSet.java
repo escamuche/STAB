@@ -1,5 +1,6 @@
 package com.stab.data.actions.player;
 
+import com.stab.data.actions.WeaponAttackAction;
 import com.stab.data.actions.feats.Expertise;
 import com.stab.data.actions.feats.PowerAttack;
 import com.stab.model.action.BasicActionSet;
@@ -20,5 +21,6 @@ public class WarriorActionSet extends BasicActionSet {
 		//this.setAction(Expertise.ID, 17);
 		this.setAction(RangedKill.ID, 11);
 	
+		this.setAction(WeaponAttackAction.ID, 13);
 	}	
 }

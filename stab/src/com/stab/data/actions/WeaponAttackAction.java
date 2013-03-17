@@ -4,13 +4,16 @@ import com.stab.data.StabConstants;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.info.applicable.Attack;
 import com.stab.data.info.applicable.AttackData;
+import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.Weapon;
 import com.stab.model.action.TargetAction;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.info.base.Creature;
+import com.stab.model.info.trait.base.Equipment;
 
-public class MeleeStrikeAction extends TargetAction{
+public class WeaponAttackAction extends TargetAction{
 	
 	public static final String ID="MELEE_STRIKE_ACTION";
 
@@ -26,6 +29,14 @@ public class MeleeStrikeAction extends TargetAction{
 
 		Weapon arma=null;
 		
+		arma=getWeapon(atacante);
+		if (arma==null){
+			System.out.println("No hay arma!");
+			return false;
+		}
+		
+		//TODO: ver como se rellena el slot!
+		
 		AttackData ad=new AttackData(atacante,arma,atacado);
 		atacante.apply(ad); //Esto calcula todos los bonos, daño etc
 		
@@ -33,7 +44,8 @@ public class MeleeStrikeAction extends TargetAction{
 		atacado.check(ataque);
 		
 		//Aqui viene la animacion ((Sale del AD, pero por ahora esta fija) (y falta comprobar si hit, parry, etc)
-		yo.playAnimationOn(SwingAnimation.ID, target.getToken(), ad.getAnimationIcon());
+		yo.playAnimationOn(ad.getAnimationType(), target.getToken(), ad.getAnimationIcon());
+		
 		sleep(500);
 		
 		if (ataque.hits()) {
@@ -62,7 +74,18 @@ public class MeleeStrikeAction extends TargetAction{
 	}
 	
 	
-	public MeleeStrikeAction() {
+	protected Weapon getWeapon(BaseInfo atacante) {
+		
+		if (atacante instanceof Creature){
+			Creature c=(Creature)atacante;
+			Equipment e= c.getEquipment(HumanoidGear.MAINHAND);
+			if (e instanceof Weapon)
+				return (Weapon)e;
+		}
+		return null;
+	}
+	
+	public WeaponAttackAction() {
      setRange(1);
      setTargetClass(PhysicalToken.class);
      setResource("actions/ability_steelmelee");

@@ -25,7 +25,7 @@ public class AttackData extends Applicable {
 	
 	BaseInfo target;
 	Weapon weapon;
-	String slot;
+	String slot; 
 	
 	String animationType;
 	String animationIcon;

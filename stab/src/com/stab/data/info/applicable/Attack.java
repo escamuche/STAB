@@ -138,6 +138,7 @@ public class Attack extends AdvancedRollApplicable{
 		return false;
 	}
 	
+
 	
 	
 	public boolean hits(){
@@ -164,6 +165,13 @@ public class Attack extends AdvancedRollApplicable{
 				//System.out.println(d.getFinalAmount()+" de daño (tipo "+d.getType()+")");
 			}
 		
+	}
+	
+	@Override
+	public void validate() {
+	
+		super.validate();
+		System.out.println("Ataque: "+this.getClass().getSimpleName()+" con "+ad.getWeapon().getName()+"  roll "+getRollResult()+" + "+getModifier()+"   against "+getTargetNumber()+"  result: "+getResult()+" (hits:"+hits()+" critical: "+isCritical()+" botch: "+isBotch()+")");
 	}
 	
 	@Override
