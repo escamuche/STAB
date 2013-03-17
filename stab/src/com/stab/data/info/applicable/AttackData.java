@@ -39,6 +39,8 @@ public class AttackData extends Applicable {
 	int critRange;
 	int critMultiplier;
 	
+	boolean filled;
+	
 	public AttackData(BaseInfo instigator,Weapon weapon,BaseInfo target) {
 		super(instigator);
 		//Valores por defecto de ejemplo
@@ -52,6 +54,15 @@ public class AttackData extends Applicable {
 		baseDamageType=Damage.SLASHING_DAMAGE;
 		critRange=1;
 		critMultiplier=2;
+		filled=false;
+	}
+	
+	public void setFilled(boolean filled) {
+		this.filled = filled;
+	}
+	
+	public boolean isFilled() {
+		return filled;
 	}
 	
 	public void setSlot(String slot) {
@@ -151,6 +162,8 @@ public class AttackData extends Applicable {
 		if (crit)
 			num=num*getCritMultiplier();
 		Damage d=new Damage(num,getBaseDamageType(),getInstigator());
+		if (crit)
+			d.setCritical(true);
 		return d;
 	}
 	

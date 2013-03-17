@@ -5,7 +5,9 @@ import com.stab.data.StabInit;
 import com.stab.data.actions.feats.Expertise;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.WarriorActionSet;
+import com.stab.data.info.equipment.FlamingWeapon;
 import com.stab.data.info.equipment.HumanoidGear;
+import com.stab.data.info.equipment.Weapon;
 import com.stab.data.info.feat.combat.Expertise_Feat;
 import com.stab.model.info.trait.Modifier;
 
@@ -40,7 +42,10 @@ public static final String ID="WARRIOR_INFO";
 		this.addTrait(new Expertise_Feat());
 		this.getActionSet().setAction(Expertise.ID, 17);
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("LONGSWORD"), HumanoidGear.MAINHAND);
+		
+		Weapon w=StabInit.getWeaponFactory().getWeapon("LONGSWORD");
+		w.addTrait(new FlamingWeapon());
+		this.equip(w, HumanoidGear.MAINHAND);
 	}
 	
 	

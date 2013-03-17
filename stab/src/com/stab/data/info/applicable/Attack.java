@@ -5,6 +5,7 @@ import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.AdvancedRollApplicable;
 import com.stab.model.info.applicable.Applicable;
+import com.stab.model.info.applicable.base.Damage;
 import com.stab.util.Roll;
 
 public class Attack extends AdvancedRollApplicable{
@@ -162,7 +163,10 @@ public class Attack extends AdvancedRollApplicable{
 		if (getAttackData()!=null)
 			for (Applicable d:getAttackData().getEffects(isCritical())){
 				getTarget().apply(d);
-				//System.out.println(d.getFinalAmount()+" de daño (tipo "+d.getType()+")");
+				if (d instanceof Damage)
+					 System.out.println("Aplicando daño: "+((Damage)d).getFinalAmount()+" de daño (tipo "+((Damage)d).getType()+")");
+				else
+					System.out.println("Aplicando "+d.getClass().getSimpleName());
 			}
 		
 	}

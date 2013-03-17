@@ -66,7 +66,7 @@ public class BasicWeapon extends Weapon {
 		app.setAnimationIcon(animationIcon);
 		app.setAnimationType(animationType);
 		
-		//mirar los traits anidados? o eso ya se hacia automaticamente, creo
+		//los traits anidados ya se comprueban automaticamente.
 		
 	}
 

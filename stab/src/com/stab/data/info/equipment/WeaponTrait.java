@@ -5,7 +5,7 @@ import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.trait.Trait;
 
-public class WeaponTrait extends Trait implements Attends<AttackData>{
+public abstract class WeaponTrait extends Trait implements Attends<AttackData>{
 
 	@Override
 	public boolean canAttend(Applicable a) {
@@ -17,10 +17,5 @@ public class WeaponTrait extends Trait implements Attends<AttackData>{
 		return true;
 	}
 
-	@Override
-	public void attend(AttackData app) {
-		
-		
-	}
-
+	
 }

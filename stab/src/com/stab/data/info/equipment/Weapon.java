@@ -18,7 +18,7 @@ public abstract class Weapon extends Equipment implements Attends<AttackData>{
 
 	@Override
 	public void attend(AttackData app) {
-		
+		app.setFilled(true);
 	}
 
 	

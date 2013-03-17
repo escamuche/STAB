@@ -16,7 +16,8 @@ public class DamageNumberAnimation extends Animation{
 
 
 	public DamageNumberAnimation() {
-		setBlocking(false);
+		setBlocking(true);
+		setTime(200);
 	}
 	
 	@Override
