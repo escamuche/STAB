@@ -89,7 +89,7 @@ public class WeaponAttackAction extends TargetAction{
 	}
 	
 	
-	private void playMissAnimation(AttackData ad,BaseInfo origin, Token target) {
+	private void playHitAnimation(AttackData ad,BaseInfo origin, Token target) {
 		
 		if (SwingAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(SwingAnimation.ID,target,ad.getAnimationIcon());
@@ -99,7 +99,7 @@ public class WeaponAttackAction extends TargetAction{
 		}
 	}
 
-	private void playHitAnimation(AttackData ad,BaseInfo origin, Token target) {
+	private void playMissAnimation(AttackData ad,BaseInfo origin, Token target) {
 		if (SwingAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(SwingAnimation.ID,target,ad.getAnimationIcon());
 		}

@@ -65,6 +65,7 @@ import com.stab.data.info.player.ClericCharacter;
 import com.stab.data.info.player.WarriorCharacter;
 import com.stab.data.info.player.WizardCharacter;
 import com.stab.data.info.props.Barrel;
+import com.stab.data.info.props.Brazier;
 import com.stab.data.info.props.Crate;
 import com.stab.data.info.props.Dummy;
 import com.stab.data.info.props.WoodenDoor;
@@ -155,6 +156,8 @@ public class StabInit {
 		of.setMapping(Goblin.class);
 		of.setMapping(GoblinShaman.class);
 		of.setMapping(SkeletalChampion.class);
+		
+		of.setMapping(Brazier.class);
 		
 		//BlockData
 		of.setMapping(DefaultBlockData.class);
