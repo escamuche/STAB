@@ -71,7 +71,6 @@ public class WeaponAttackAction extends TargetAction{
 		
 		if (ataque.hits()) {
 			ataque.apply();
-	
 			sleep(500);
 			return true;	
 		}
@@ -93,18 +92,20 @@ public class WeaponAttackAction extends TargetAction{
 		
 		if (SwingAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(SwingAnimation.ID,target,ad.getAnimationIcon());
+			sleep(500);
 		}
 		if (ShootProyectileAnimation.ID.equals(ad.getAnimationType())){
-			origin.playAnimationOn(ShootProyectileAnimation.ID,target,ad.getAnimationIcon());
+			sleep(origin.playAnimationOn(ShootProyectileAnimation.ID,target,ad.getAnimationIcon()));
 		}
 	}
 
 	private void playMissAnimation(AttackData ad,BaseInfo origin, Token target) {
 		if (SwingAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(SwingAnimation.ID,target,ad.getAnimationIcon());
+			sleep(500);
 		}
 		if (ShootProyectileAnimation.ID.equals(ad.getAnimationType())){
-			origin.playAnimationOn(MissProyectileAnimation.ID,target,ad.getAnimationIcon());
+			sleep(origin.playAnimationOn(MissProyectileAnimation.ID,target,ad.getAnimationIcon()));
 		}
 	}
 

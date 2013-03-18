@@ -55,7 +55,7 @@ public class GoblinShaman extends Monster {
 	//	this.addTrait(hitranged);
 
 		DefaultAIPackage ai=new DefaultAIPackage();
-		ai.setLog(true);
+	//	ai.setLog(true);
 		this.setCurrentAI(ai);
 		
 			

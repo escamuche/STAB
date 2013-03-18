@@ -10,6 +10,8 @@ public class FlamingWeapon extends WeaponTrait {
 	@Override
 	public void attend(AttackData app) {
 		app.addOnDamage(new RolledDamage(6, 0, Damage.FIRE_DAMAGE, null));
+		String s=app.getAnimationIcon();
+		app.setAnimationIcon("PARTICLE#flamingStrike#"+s);
 	}
 	
 }

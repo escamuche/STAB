@@ -2,12 +2,9 @@ package com.stab.data.info.monster;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
-import com.stab.data.info.BasicAttributes;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
-import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.info.applicable.base.Damage;
-import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.DamageReduction;
@@ -43,7 +40,9 @@ public class EsqueletoArquero extends Monster {
 
 		
 	//	this.setCurrentAI(new DefaultAIPackage());
-		this.setCurrentAI(new ZombieAIPackage());
+		ZombieAIPackage ai=new ZombieAIPackage();
+		ai.setLog(true);
+		this.setCurrentAI(ai);
 		
 		
 		this.setBloodeffEct("PARTICLE#greenblood");
