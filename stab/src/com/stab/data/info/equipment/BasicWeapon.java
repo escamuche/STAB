@@ -1,6 +1,8 @@
 package com.stab.data.info.equipment;
 
+import com.stab.data.StabConstants;
 import com.stab.data.info.applicable.AttackData;
+import com.stab.model.info.BaseInfo;
 import com.stab.util.Roll;
 
 /**
@@ -96,7 +98,12 @@ public class BasicWeapon extends Weapon {
 	}
 
 	protected int getDamageModifier(AttackData app) {
-		return 0;
+		BaseInfo i=(BaseInfo)app.getInstigator();
+		int d=i.getValue(StabConstants.DAMAGE);
+		if (isTwoHanded()) //Realmente, comprobar si esta en both hands
+			d=(int)(d*1.5);
+		//Mirar si esta en la off hand y meter menos daño
+		return d;
 	}
 
 

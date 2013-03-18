@@ -3,8 +3,8 @@ package com.stab.data.animation;
 import java.awt.Point;
 
 import com.stab.client.slick.base.util.PaintUtils;
-import com.stab.client.slick.base.visualobjects.LightSprite;
 import com.stab.client.slick.base.visualobjects.StabSprite;
+import com.stab.data.animation.sprite.SpawnTrailUpdater;
 import com.stab.data.animation.state.MoveToPointState;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTargetAnimation;
@@ -33,7 +33,9 @@ public class ShootProyectileAnimation extends OnTargetAnimation{
 		
 		StabSprite icon=new StabSprite();
 		
-		icon=new LightSprite();
+	//	icon=new LightSprite();
+		
+		
 		
 		icon.setPos(origin);
 		icon.setSize(64,64);
@@ -53,9 +55,15 @@ public class ShootProyectileAnimation extends OnTargetAnimation{
 		((ValuePainter)icon.getPainter()).setRotation((float)Math.toDegrees(getAngle()));
 		MoveToPointState st=new MoveToPointState(target,time);
 		st.setTimed(time, StateSet.DESTROYED);
+		
+		//st.addUpdater(new SpawnTrailUpdater());
+		
 		icon.setState(st);
 		setTime(time);
 		AnimUtils.getScreen(getSource()).add(icon);
+		
+		
+		
 	}
 	
 	/*

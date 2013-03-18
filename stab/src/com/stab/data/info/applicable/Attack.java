@@ -22,14 +22,24 @@ public class Attack extends AdvancedRollApplicable{
 	
 	int confirmMod=0;  //Bono a confirmar
 	
+	boolean touch;
+	
 	public Attack(BaseInfo instigator) {
 		super(instigator);
 		setDice(20);
 		setCritRange(1);
 		setBotchRange(1);
 		ad=null;
+		touch=false;
 	}
 	
+	
+	public void setTouch(boolean touch) {
+		this.touch = touch;
+	}
+	public boolean isTouch() {
+		return touch;
+	}
 	
 	public void setAttackData(AttackData ad) {
 		this.ad = ad;
@@ -59,7 +69,13 @@ public class Attack extends AdvancedRollApplicable{
 	@Override
 	public void setTarget(BaseInfo target) {
 		super.setTarget(target);
-		setTargetNumber(target.getValue(StabConstants.ARMOR));
+		if (isTouch()){
+			setTargetNumber(target.getValue(StabConstants.ARMOR));
+		}
+		else{
+			setTargetNumber(target.getValue(StabConstants.ARMOR));
+		}
+			
 	}
 
 	/*

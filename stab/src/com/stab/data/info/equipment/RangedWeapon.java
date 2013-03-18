@@ -38,4 +38,9 @@ public class RangedWeapon extends BasicWeapon {
 		return maxRange;
 	}
 	
+	@Override
+	protected int getDamageModifier(AttackData app) {
+		return 0;
+	}
+	
 }
