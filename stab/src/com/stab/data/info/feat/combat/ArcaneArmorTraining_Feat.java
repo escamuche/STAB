@@ -13,6 +13,7 @@ public class ArcaneArmorTraining_Feat extends CombatFeat{
 	
 	public ArcaneArmorTraining_Feat() {
 		this.addRequiredTrait(LightArmorProficiency_Feat.ID);
+		//this.addRequiredAttribute(caster lvl 3);
 			}
 	
 }

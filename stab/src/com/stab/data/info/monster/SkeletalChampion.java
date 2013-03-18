@@ -7,6 +7,7 @@ import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.combat.PowerAttack_Feat;
 import com.stab.data.info.feat.combat.WeaponFocus_Feat;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
+import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Modifier;
@@ -31,7 +32,7 @@ public class SkeletalChampion extends Monster {
 		this.setAttribute(StabConstants.XP,600);
 		this.setAttribute(StabConstants.WILLSAVE,+3);
 		this.setAttribute(StabConstants.FORTITUDESAVE,+3);
-		this.setAttribute(StabConstants.TOHIT,+2);
+		this.setAttribute(StabConstants.TOHIT,+3);
 		this.setAttribute(StabConstants.STRENGHT,17);
 		this.setAttribute(StabConstants.DEXTERITY,13);
 		this.setAttribute(StabConstants.INTELIGENCE,9);
@@ -58,7 +59,9 @@ public class SkeletalChampion extends Monster {
 		
 
 	//	this.setCurrentAI(new DefaultAIPackage());
-		this.setCurrentAI(new ZombieAIPackage());
+		ZombieAIPackage ai=new ZombieAIPackage();
+		ai.setLog(true);
+		this.setCurrentAI(ai);
 		
 		
 		this.setBloodeffEct("PARTICLE#greenblood");

@@ -12,6 +12,7 @@ public class HeavyArmorProficiency_Feat extends Feat{
 	
 	public HeavyArmorProficiency_Feat() {
 		this.addRequiredTrait(MediumArmorProficiency_Feat.ID);
+		this.addRequiredTrait(LightArmorProficiency_Feat.ID);
 			}
 	
 }
