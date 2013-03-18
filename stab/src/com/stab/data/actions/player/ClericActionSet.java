@@ -27,13 +27,12 @@ public class ClericActionSet extends BasicActionSet {
 		this.setAction(InteractAction.ID,18);
 		this.setAction(DefendAction.ID,19);
 	//	this.setAction(ClericBasicMelee.ID, 10);
-		/*this.setAction(Bless.ID, 12);
+		/**/this.setAction(Bless.ID, 12);
 		this.setAction(Doom.ID, 16);
 		this.setAction(CureLight.ID, 11);
 		this.setAction(ShieldFaith.ID, 13);
 		this.setAction(MagicStone.ID, 14);
-		this.setAction(RangedKill.ID, 17);
-		this.setAction(DivineFavor.ID,15);*/
+		this.setAction(DivineFavor.ID,15);/**/
 		
 		this.setAction(Guidance.ID,20);
 		this.setAction(ResistanceCleric.ID,21);

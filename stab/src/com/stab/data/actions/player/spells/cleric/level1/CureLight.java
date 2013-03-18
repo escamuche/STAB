@@ -6,6 +6,7 @@ import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Heal;
+import com.stab.model.info.trait.base.VisualEffect;
 import com.stab.util.Roll;
 
 public class CureLight extends SpellOnTarget{
@@ -19,6 +20,8 @@ public class CureLight extends SpellOnTarget{
 		BaseInfo Atacado = (BaseInfo)target;
 		int dañobase=Roll.d8()+1;
 		Heal heal = new Heal(dañobase, Atacado);
+		Atacado.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#Healing");
+		sleep(500);
 		Atacado.apply(heal);
 		return true;
 		}
