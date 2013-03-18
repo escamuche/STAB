@@ -17,15 +17,12 @@ import com.stab.model.action.base.EmptyAction;
 import com.stab.model.action.base.InteractAction;
 
 
-public class ClericActionSet extends BasicActionSet {
+public class ClericActionSet extends PathfinderActionSet {
 
 	public ClericActionSet() {
 		for (int f=0;f<20;f++)
 			this.addAction(EmptyAction.ID);
 		
-		this.setAction(WeaponAttackAction.ID, 10);
-		this.setAction(InteractAction.ID,18);
-		this.setAction(DefendAction.ID,19);
 	//	this.setAction(ClericBasicMelee.ID, 10);
 		/**/this.setAction(Bless.ID, 12);
 		this.setAction(Doom.ID, 16);

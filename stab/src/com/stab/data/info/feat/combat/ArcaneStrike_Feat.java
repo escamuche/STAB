@@ -11,7 +11,9 @@ public class ArcaneStrike_Feat extends CombatFeat{
 	
 	
 	public ArcaneStrike_Feat() {
-	
-			}
+		
+	//	this.addRequiredTrait(casterlevel 1);
+		
+	}
 	
 }

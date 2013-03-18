@@ -11,6 +11,7 @@ public class AcrobaticSteps_Feats extends Feat{
 	
 	
 	public AcrobaticSteps_Feats() {
+		this.addRequiredAttribute(StabConstants.DEXTERITY, 15);
 		this.addRequiredTrait(NimbleMoves_Feat.ID);
 			}
 	

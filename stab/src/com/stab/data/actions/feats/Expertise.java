@@ -16,7 +16,7 @@ public class Expertise extends SelfAction {
 		
 		this.setName("Expertise");
 		this.setResource("actions/ability_warrior_safeguard");
-		this.setUsableByAI(false);
+		//this.setUsableByAI(false);
 	
 	}
 	

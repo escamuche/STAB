@@ -12,6 +12,8 @@ public class AlignmentChannel_Feat extends Feat{
 	
 	public AlignmentChannel_Feat() {
 	
-			}
+		//this.addRequiredTrait(ChannelEnergyAbility.ID);
+		
+	}
 	
 }
