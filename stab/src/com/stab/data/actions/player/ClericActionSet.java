@@ -17,27 +17,26 @@ import com.stab.model.action.base.EmptyAction;
 public class ClericActionSet extends PathfinderActionSet {
 
 	public ClericActionSet() {
-		for (int f=0;f<20;f++)
-			this.addAction(EmptyAction.ID);
 		
-	//	this.setAction(ClericBasicMelee.ID, 10);
-		/**/this.setAction(Bless.ID, 12);
-		this.setAction(Doom.ID, 16);
-		this.setAction(CureLight.ID, 11);
-		this.setAction(ShieldFaith.ID, 13);
-		this.setAction(MagicStone.ID, 14);
-		this.setAction(DivineFavor.ID,15);/**/
 		
-		this.setAction(Guidance.ID,20);
-		this.setAction(ResistanceCleric.ID,21);
-		this.setAction(Bane.ID,22);
-		this.setAction(Bless.ID,23);
-		this.setAction(CureLight.ID,24);
-		this.setAction(DivineFavor.ID,25);
-		this.setAction(Doom.ID,26);
-		this.setAction(InflictLight.ID,27);
-		this.setAction(MagicStone.ID,28);
-		this.setAction(ShieldFaith.ID,29);
+		this.addAction(Guidance.ID);
+		this.addAction(ResistanceCleric.ID);
+		this.addAction(Bane.ID);
+		this.addAction(Bless.ID);
+		this.addAction(CureLight.ID);
+		this.addAction(DivineFavor.ID);
+		this.addAction(Doom.ID);
+		this.addAction(InflictLight.ID);
+		this.addAction(MagicStone.ID);
+		this.addAction(ShieldFaith.ID);
+		
+		
+		/**/this.setAction(Bless.ID, 2);
+		this.setAction(Doom.ID, 6);
+		this.setAction(CureLight.ID, 1);
+		this.setAction(ShieldFaith.ID, 3);
+		this.setAction(MagicStone.ID, 4);
+		this.setAction(DivineFavor.ID,5);/**/
 		
 	}
 }

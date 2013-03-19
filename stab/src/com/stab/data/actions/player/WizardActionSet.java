@@ -20,33 +20,34 @@ import com.stab.model.action.base.EmptyAction;
 public class WizardActionSet extends PathfinderActionSet {
 
 	public WizardActionSet() {
-		for (int f=0;f<24;f++)
-			this.addAction(EmptyAction.ID);
+		
+		
+		
+		this.addAction(AcidSplash.ID);
+		this.addAction(Flare.ID);
+		this.addAction(OpenClose.ID);
+		this.addAction(RayFrost.ID);
+		this.addAction(Resistance.ID);
+		this.addAction(ChillTouch.ID);
+		this.addAction(EnlargePerson.ID);
+		this.addAction(ExpeditiousRetreat.ID);
+		this.addAction(MageArmor.ID);
+		this.addAction(MagicMissile.ID);
+		this.addAction(RayEnfeeblement.ID);
+		this.addAction(ReducePerson.ID);
+		this.addAction(Shield.ID);
+		this.addAction(ShockingGrasp.ID);
+	//	this.setAction(TrueStrike.ID, 34);
+		
 		
 		//this.setAction(WizardBasicMelee.ID, 10);
-		/**/this.setAction(MagicMissile.ID, 12);
-		this.setAction(AcidSplash.ID, 14);
-		this.setAction(Shield.ID,11);
-		this.setAction(Flare.ID,15);
-		this.setAction(RayFrost.ID, 13);
-		this.setAction(OpenClose.ID,16);
-		this.setAction(Resistance.ID,17);/**/
-		
-		this.setAction(AcidSplash.ID, 20);
-		this.setAction(Flare.ID, 21);
-		this.setAction(OpenClose.ID, 22);
-		this.setAction(RayFrost.ID, 23);
-		this.setAction(Resistance.ID, 24);
-		this.setAction(ChillTouch.ID, 25);
-		this.setAction(EnlargePerson.ID, 26);
-		this.setAction(ExpeditiousRetreat.ID, 27);
-		this.setAction(MageArmor.ID, 28);
-		this.setAction(MagicMissile.ID, 29);
-		this.setAction(RayEnfeeblement.ID, 30);
-		this.setAction(ReducePerson.ID, 31);
-		this.setAction(Shield.ID, 32);
-		this.setAction(ShockingGrasp.ID, 33);
-	//	this.setAction(TrueStrike.ID, 34);
+				/**/this.setAction(MagicMissile.ID, 2);
+				this.setAction(AcidSplash.ID, 4);
+				this.setAction(Shield.ID,1);
+				this.setAction(Flare.ID,5);
+				this.setAction(RayFrost.ID, 3);
+				this.setAction(OpenClose.ID,6);
+				this.setAction(Resistance.ID,7);/**/
 		
 	}
 }

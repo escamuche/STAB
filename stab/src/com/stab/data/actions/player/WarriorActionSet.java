@@ -17,8 +17,11 @@ import com.stab.data.info.feat.general.SkillFocusPerception_Feat;
 public class WarriorActionSet extends PathfinderActionSet {
 
 	public WarriorActionSet() {
-		for (int f=0;f<32;f++) {
-			
+		
+		
+		/*   Eso son feats, no acciones
+		 
+		
 			this.setAction(Dodge_Feat.ID, 20);
 			this.setAction(Expertise_Feat.ID, 21);
 			this.setAction(PowerAttack_Feat.ID, 22);
@@ -31,8 +34,8 @@ public class WarriorActionSet extends PathfinderActionSet {
 			this.setAction(DeftHands_Feat.ID, 29);
 			this.setAction(ImprovedInitiative_Feat.ID, 30);
 			this.setAction(SkillFocusPerception_Feat.ID, 31);
+		/**/
 		
-		
-		}
+	
 	}	
 }

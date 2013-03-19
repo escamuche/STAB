@@ -9,12 +9,14 @@ import com.stab.model.action.base.InteractAction;
 public class PathfinderActionSet extends BasicActionSet {
 
 	public PathfinderActionSet() {
-		for (int f=0;f<10;f++)
-			this.addAction(EmptyAction.ID);
 		
-		this.setAction(InteractAction.ID,18);
-		this.setAction(DefendAction.ID,19);
-		this.setAction(WeaponAttackAction.ID, 10);
+		this.addAction(WeaponAttackAction.ID);
+		
+		
+		this.setAction(WeaponAttackAction.ID, 0);
+		this.setAction(InteractAction.ID,8);
+		this.setAction(DefendAction.ID,9);
+		
 		
 	}	
 }
