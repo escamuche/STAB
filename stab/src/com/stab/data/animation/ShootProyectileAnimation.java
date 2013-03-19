@@ -3,8 +3,8 @@ package com.stab.data.animation;
 import java.awt.Point;
 
 import com.stab.client.slick.base.util.PaintUtils;
+import com.stab.client.slick.base.visualobjects.LightSprite;
 import com.stab.client.slick.base.visualobjects.StabSprite;
-import com.stab.data.animation.sprite.SpawnTrailUpdater;
 import com.stab.data.animation.state.MoveToPointState;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTargetAnimation;
@@ -33,9 +33,10 @@ public class ShootProyectileAnimation extends OnTargetAnimation{
 		
 		StabSprite icon=new StabSprite();
 		
-	//	icon=new LightSprite();
-		
-		
+		if (img.indexOf("magicmissile")!=-1){
+			icon=new LightSprite();
+			((LightSprite)icon).setLightIntensity(60);
+		}
 		
 		icon.setPos(origin);
 		icon.setSize(64,64);
