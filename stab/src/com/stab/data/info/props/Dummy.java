@@ -2,6 +2,7 @@ package com.stab.data.info.props;
 
 import com.stab.data.StabConstants;
 import com.stab.model.info.base.Obstacle;
+import com.stab.model.info.trait.Modifier;
 
 public class Dummy extends Obstacle {
 
@@ -15,7 +16,8 @@ public class Dummy extends Obstacle {
 		healFully();
 		setResource("dummy");
 		setText("");
-		this.setAttribute(StabConstants.ARMOR,12);
+		this.addTrait(Modifier.createMod(StabConstants.ARMORDEFENSE,StabConstants.ARMORMOD,2));
+	
 	//	this.setActionSet(new WarriorActionSet());
 	//	this.setCurrentAI(new DefaultAIPackage());
 	}

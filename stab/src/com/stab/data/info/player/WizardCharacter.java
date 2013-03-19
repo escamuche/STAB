@@ -39,7 +39,7 @@ public static final String ID="WIZARD_INFO";
 		
 		Equipment brazalete = new Equipment();
 		brazalete.setSlots(HumanoidGear.BRACERS);
-		brazalete.addTrait(Modifier.createMod(StabConstants.ARMOR,StabConstants.ARMORMOD,+4));
+		brazalete.addTrait(Modifier.createMod(StabConstants.ARMORDEFENSE,StabConstants.ARMORMOD,+4));
 		this.equip(brazalete, HumanoidGear.BRACERS);
 		}
 	

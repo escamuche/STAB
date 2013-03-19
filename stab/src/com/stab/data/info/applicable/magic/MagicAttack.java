@@ -31,7 +31,7 @@ public class MagicAttack extends Applicable{
 		BaseInfo aMatar = getTarget();
 		BaseInfo elqueMata = (BaseInfo) getInstigator();
 		
-		int ac = aMatar.getValue(StabConstants.ARMOR);
+		int ac = aMatar.getValue(StabConstants.AC);
 		int hit = elqueMata.getValue(StabConstants.TOHITRANGED);
 		int dado = Roll.d20();
 		int dar=hit+dado;

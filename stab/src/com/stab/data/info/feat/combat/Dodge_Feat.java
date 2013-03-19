@@ -14,7 +14,7 @@ public class Dodge_Feat extends CombatFeat{
 		
 		this.addRequiredAttribute(StabConstants.DEXTERITY, 13);
 		
-		Modifier buff1=Modifier.createMod(StabConstants.ARMOR,StabConstants.DODGEMOD,+1);
+		Modifier buff1=Modifier.createMod(StabConstants.ACTIVEDEFENSE,StabConstants.DODGEMOD,+1);
 		addTrait(buff1);
 		
 			}

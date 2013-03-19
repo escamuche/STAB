@@ -1,7 +1,9 @@
 package com.stab.data.info.equipment;
 
+import com.stab.data.StabConstants;
 import com.stab.data.info.applicable.AttackData;
 import com.stab.data.info.applicable.RangedAttack;
+import com.stab.model.info.BaseInfo;
 
 public class RangedWeapon extends BasicWeapon {
 
@@ -40,7 +42,10 @@ public class RangedWeapon extends BasicWeapon {
 	
 	@Override
 	protected int getDamageModifier(AttackData app) {
-		return 0;
+		BaseInfo i=(BaseInfo)app.getInstigator();
+		int d=i.getValue(StabConstants.DAMAGERANGED);
+		//TODO: las armas thrown van por damage, ojo!
+		return d;
 	}
 	
 }

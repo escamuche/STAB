@@ -269,7 +269,7 @@ public class CharacterSheet extends InfoDataScene{
 				if (i instanceof WizardCharacter)
 					clase.setText("Mago");
 		
-		armor.setText(""+((BaseInfo) i).getValue(StabConstants.ARMOR));
+		armor.setText(""+((BaseInfo) i).getValue(StabConstants.AC));
 		bab.setText(""+((BaseInfo) i).getValue(StabConstants.TOHIT));
 		daño.setText(""+((BaseInfo) i).getValue(StabConstants.DAMAGE));
 		fuerza.setText(""+((BaseInfo) i).getValue(StabConstants.STRENGHT));

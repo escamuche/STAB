@@ -38,8 +38,8 @@ public static final String ID="WARRIOR_INFO";
 		this.setAttribute(StabConstants.CHARISMA, 8);
 		this.setAttribute(StabConstants.FORTITUDESAVE, 2);
 		
-		this.addTrait(Modifier.createMod(StabConstants.ARMOR,"ARMADURA",4));
-		this.addTrait(Modifier.createMod(StabConstants.ARMOR,"SHIELD",2));
+		this.addTrait(Modifier.createMod(StabConstants.ARMORDEFENSE,StabConstants.ARMORMOD,4));
+		this.addTrait(Modifier.createMod(StabConstants.SHIELDDEFENSE,StabConstants.SHIELDMOD,2));
 		
 		this.addTrait(new Expertise_Feat());
 		this.getActionSet().setAction(Expertise.ID, 17);
