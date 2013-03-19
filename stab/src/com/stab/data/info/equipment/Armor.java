@@ -9,20 +9,22 @@ public class Armor extends Equipment {
 	public static final int LIGHT_ARMOR=1;
 	public static final int MEDIUM_ARMOR=2;
 	public static final int HEAVY_ARMOR=3;
+	public static final int SHIELD=4;
 	
 	int CA;
 	int maxDex;
 	int penalty;
 	int category;
+	int failure;
 	
 	
 	
 	
-	
-	public Armor(String name,int cA, int maxDex, int penalty, int category) {
+	public Armor(String name,int cA, int maxDex, int penalty, int category,int fail) {
 		super();
 		setName(name);
 		CA = cA;
+		failure=fail;
 		this.maxDex = maxDex;
 		this.penalty = penalty;
 		this.category = category;
@@ -56,7 +58,12 @@ public class Armor extends Equipment {
 	public void setCategory(int category) {
 		this.category = category;
 	}
-	
+	public int getFailure() {
+		return failure;
+	}
+	public void setFailure(int failure) {
+		this.failure = failure;
+	}
 	
 
 }
