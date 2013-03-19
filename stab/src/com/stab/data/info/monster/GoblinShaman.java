@@ -25,7 +25,7 @@ public class GoblinShaman extends Monster {
 		
 		setResource("goblinshaman");
 		setText("Goblin Shaman");
-		setFaction(2);
+		setFaction(1);
 	
 		this.addTrait(new ImprovedInitiative_Feat());
 		

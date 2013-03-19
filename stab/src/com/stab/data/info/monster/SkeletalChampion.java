@@ -27,7 +27,7 @@ public class SkeletalChampion extends Monster {
 	
 		setResource("skeletalchampion");
 		setText("Skeletal Champion");
-		setFaction(1);
+		setFaction(2);
 			
 		this.setAttribute(StabConstants.XP,600);
 		this.setAttribute(StabConstants.WILLSAVE,+3);
