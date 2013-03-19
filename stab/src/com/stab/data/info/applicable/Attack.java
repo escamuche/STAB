@@ -70,10 +70,18 @@ public class Attack extends AdvancedRollApplicable{
 	public void setTarget(BaseInfo target) {
 		super.setTarget(target);
 		if (isTouch()){
-			setTargetNumber(target.getValue(StabConstants.ARMOR));
+			int i=target.getValue(StabConstants.PASSIVEDEFENSE);
+			//TODO: comprobaciones unaware, flatfooted, etc
+			i=i+target.getValue(StabConstants.ACTIVEDEFENSE);
+			setTargetNumber(i);
 		}
 		else{
-			setTargetNumber(target.getValue(StabConstants.ARMOR));
+			int i=target.getValue(StabConstants.PASSIVEDEFENSE);
+			i=i+target.getValue(StabConstants.ARMORDEFENSE);
+			i=i+target.getValue(StabConstants.SHIELDDEFENSE);
+			//TODO: comprobaciones unaware, flatfooted, etc
+			i=i+target.getValue(StabConstants.ACTIVEDEFENSE);
+			setTargetNumber(i);
 		}
 			
 	}

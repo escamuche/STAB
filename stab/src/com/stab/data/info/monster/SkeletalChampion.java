@@ -42,13 +42,13 @@ public class SkeletalChampion extends Monster {
 		//this.addTrait(new DamageReduction(Damage.IMPACT_DAMAGE, 5));
 		
 		
-		Modifier natural = new Modifier().createMod(StabConstants.ARMOR,StabConstants.NATURALARMORMOD,+2);
+		Modifier natural = new Modifier().createMod(StabConstants.ARMORDEFENSE,StabConstants.NATURALARMORMOD,+2);
 		this.addTrait(natural);
 		
-		Modifier armor = new Modifier().createMod(StabConstants.ARMOR,StabConstants.ARMORMOD,+6);
+		Modifier armor = new Modifier().createMod(StabConstants.ARMORDEFENSE,StabConstants.ARMORMOD,+6);
 		this.addTrait(armor);
 		
-		Modifier shield = new Modifier().createMod(StabConstants.ARMOR,StabConstants.SHIELDMOD,+2);
+		Modifier shield = new Modifier().createMod(StabConstants.SHIELDDEFENSE,StabConstants.SHIELDMOD,+2);
 		this.addTrait(shield);
 		
 		this.addTrait(new ImprovedInitiative_Feat());

@@ -34,8 +34,8 @@ public class Goblin extends Monster {
 		this.setAttribute(StabConstants.CHARISMA,6);
 		this.setAttribute(StabConstants.SIZE,StabConstants.SMALL_SIZE);
 		
-		Modifier armor = new Modifier().createMod(StabConstants.ARMOR,StabConstants.ARMORMOD,+2);
-		Modifier shield = new Modifier().createMod(StabConstants.ARMOR,StabConstants.SHIELDMOD,+1);
+		Modifier armor = new Modifier().createMod(StabConstants.ARMORDEFENSE,StabConstants.ARMORMOD,+2);
+		Modifier shield = new Modifier().createMod(StabConstants.ARMORDEFENSE,StabConstants.SHIELDMOD,+1);
 	
 		this.addTrait(armor);
 		

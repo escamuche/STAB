@@ -28,8 +28,8 @@ public class EsqueletoArquero extends Monster {
 		this.addTrait(new Attribute(StabConstants.WILLSAVE,+2));
 		this.addTrait(new Attribute(StabConstants.XP,135));
 		this.addTrait(new ImprovedInitiative_Feat());
-		Modifier armor=Modifier.createMod(StabConstants.ARMOR,StabConstants.ARMORMOD, +2);
-		Modifier armornatural=Modifier.createMod(StabConstants.ARMOR,StabConstants.NATURALARMORMOD, +2);
+		Modifier armor=Modifier.createMod(StabConstants.ARMORDEFENSE,StabConstants.ARMORMOD, +2);
+		Modifier armornatural=Modifier.createMod(StabConstants.ARMORDEFENSE,StabConstants.NATURALARMORMOD, +2);
 		
 		this.addTrait(armor);
 		this.addTrait(armornatural);

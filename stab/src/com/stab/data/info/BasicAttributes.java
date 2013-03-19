@@ -2,6 +2,7 @@ package com.stab.data.info;
 
 import com.stab.data.StabConstants;
 import com.stab.model.info.trait.Attribute;
+import com.stab.model.info.trait.AttributeBasedModifier;
 import com.stab.model.info.trait.CompoundTrait;
 
 public class BasicAttributes extends CompoundTrait{
@@ -24,7 +25,7 @@ public class BasicAttributes extends CompoundTrait{
 		this.addTrait(new Attribute(StabConstants.PASSIVEDEFENSE,10));
 		
 		//Estos 4 puede que desaparezcan y sean sustituidos por valores calculados.
-		this.addTrait(new PathfinderAttributeBonus(StabConstants.ARMOR,StabConstants.DEXTERITY));
+		this.addTrait(new DexLimitedBonusModifier(StabConstants.ACTIVEDEFENSE));
 		this.addTrait(new PathfinderAttributeBonus(StabConstants.DAMAGE,StabConstants.STRENGHT));
 		this.addTrait(new PathfinderAttributeBonus(StabConstants.TOHIT,StabConstants.STRENGHT));
 		this.addTrait(new PathfinderAttributeBonus(StabConstants.TOHITRANGED,StabConstants.DEXTERITY));
@@ -39,6 +40,12 @@ public class BasicAttributes extends CompoundTrait{
 		this.addTrait(new SizeModifier(StabConstants.TOHITRANGED,+1));
 		//falta el bono a cmb, fly, stealth
 		
+		
+		//Por simplificar para los logs, CA calculada
+		this.addTrait(new AttributeBasedModifier(StabConstants.AC,StabConstants.PASSIVEDEFENSE));
+		this.addTrait(new AttributeBasedModifier(StabConstants.AC,StabConstants.ACTIVEDEFENSE));
+		this.addTrait(new AttributeBasedModifier(StabConstants.AC,StabConstants.ARMORDEFENSE));
+		this.addTrait(new AttributeBasedModifier(StabConstants.AC,StabConstants.SHIELDDEFENSE));
 	}
 
 }

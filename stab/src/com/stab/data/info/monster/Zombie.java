@@ -33,7 +33,7 @@ public class Zombie extends Monster {
 		//this.addTrait(new DamageReduction(Damage.IMPACT_DAMAGE, 5));
 		
 		
-		Modifier natural = new Modifier().createMod(StabConstants.ARMOR,StabConstants.NATURALARMORMOD,+2);
+		Modifier natural = new Modifier().createMod(StabConstants.ARMORDEFENSE,StabConstants.NATURALARMORMOD,+2);
 		
 		this.addTrait(natural);
 		

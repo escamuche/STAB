@@ -31,7 +31,7 @@ public class Expertise extends SelfAction {
 			
 		self.addTrait(buff);
 		
-		System.out.println("Bono de armadura: " + self.getValue(StabConstants.ARMOR));
+		System.out.println("Bono de armadura: " + self.getValue(StabConstants.AC));
 		System.out.println("Bono a dar: " + self.getValue(StabConstants.TOHIT));
 
 		return true;

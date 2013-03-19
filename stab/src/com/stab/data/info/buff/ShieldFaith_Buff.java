@@ -19,7 +19,7 @@ public class ShieldFaith_Buff extends Buff {
 		
 		this.setTime(10);
 	
-		Modifier ca=Modifier.createMod(StabConstants.ARMOR,StabConstants.DEFLECTIONMOD,+2);
+		Modifier ca=Modifier.createMod(StabConstants.ARMORDEFENSE,StabConstants.DEFLECTIONMOD,+2);
 		addTrait(ca);
 		}
 }

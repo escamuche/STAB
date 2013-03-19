@@ -38,8 +38,8 @@ public class Kobold extends Monster {
 		this.setAttribute(StabConstants.CHARISMA,8);
 		this.setAttribute(StabConstants.SIZE,StabConstants.SMALL_SIZE);
 		
-		Modifier armor = new Modifier().createMod(StabConstants.ARMOR,StabConstants.ARMORMOD,+2);
-		Modifier natural = new Modifier().createMod(StabConstants.ARMOR,StabConstants.NATURALARMORMOD,+1);
+		Modifier armor = new Modifier().createMod(StabConstants.ARMORDEFENSE,StabConstants.ARMORMOD,+2);
+		Modifier natural = new Modifier().createMod(StabConstants.ARMORDEFENSE,StabConstants.NATURALARMORMOD,+1);
 		//Modifier size = new Modifier().createMod(StabConstants.ARMOR,StabConstants.SIZEMOD,+1);
 		//Modifier hit = new Modifier().createMod(StabConstants.TOHIT,StabConstants.SIZEMOD,+1);
 		//Modifier hitranged = new Modifier().createMod(StabConstants.TOHITRANGED,StabConstants.SIZEMOD,+1);

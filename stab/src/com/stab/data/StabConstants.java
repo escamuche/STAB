@@ -123,7 +123,7 @@ public class StabConstants {
 	public static final String LUCKMOD="LUCKMOD";
 	public static final String SACREDMOD="SACREDMOD";
 	public static final String COMPETENCEMOD="COMPETENCEMOD";
-	public static final String DODGEMOD="DODGEMOD";
+	public static final String DODGEMOD=null; //Para que se trate como untyped y se acumule
 	public static final String NATURALARMORMOD="NATURALARMORMOD";
 	public static final String DEFLECTIONMOD="DEFLECTIONMOD";
 	public static final String INSIGHTMOD="INSIGHTMOD";
@@ -143,6 +143,7 @@ public class StabConstants {
 	public static final String ACTIVEDEFENSE="ACTIVEDEFENSE";
 	public static final String SHIELDDEFENSE="SHIELDDEFENSE";
 	public static final String ARMORDEFENSE="ARMORDEFENSE";
+	public static final String AC="AC";  //CA calculada, para ayudar a los logs
 	
 	public static final String ARMORCHECKPENALTY="ARMORCHECKPENALTY";
 	public static final String SPELLFAILURE="SPELLFAILURE";
