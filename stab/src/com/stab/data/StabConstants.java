@@ -139,6 +139,14 @@ public class StabConstants {
 	public static final String INICIATIVEMOD="INICIATIVEMOD";
 	public static final String XP="XP";
 	
+	public static final String PASSIVEDEFENSE="PASSIVEDEFENSE";
+	public static final String ACTIVEDEFENSE="ACTIVEDEFENSE";
+	public static final String SHIELDDEFENSE="SHIELDDEFENSE";
+	public static final String ARMORDEFENSE="ARMORDEFENSE";
+	
+	public static final String ARMORCHECKPENALTY="ARMORCHECKPENALTY";
+	public static final String SPELLFAILURE="SPELLFAILURE";
+	public static final String DEXLIMIT="DEXLIMIT";
 	
 	public static final int FINE_SIZE=0;
 	public static final int DIMINUTE_SIZE=1;

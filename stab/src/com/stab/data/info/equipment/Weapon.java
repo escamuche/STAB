@@ -1,8 +1,6 @@
 package com.stab.data.info.equipment;
 
-import com.stab.data.info.applicable.Attack;
 import com.stab.data.info.applicable.AttackData;
-import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.trait.base.Equipment;

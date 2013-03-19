@@ -10,7 +10,6 @@ import com.stab.model.basic.scenes.event.InfoDestroyed;
 import com.stab.model.basic.scenes.event.condition.InfoIsClass;
 import com.stab.model.basic.scenes.event.response.VictoryResponse;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
-import com.stab.model.basic.scenes.map.TileMapScene;
 
 public class ColiseoAdventure extends Adventure{
 	

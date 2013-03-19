@@ -1,6 +1,5 @@
 package com.stab.data.info.equipment;
 
-import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.Equipment;
 
 public class Armor extends Equipment {

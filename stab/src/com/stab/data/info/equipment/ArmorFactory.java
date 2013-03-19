@@ -1,7 +1,5 @@
 package com.stab.data.info.equipment;
 
-import com.stab.data.animation.SwingAnimation;
-import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.base.TraitFactory;
 
 public class ArmorFactory extends TraitFactory{

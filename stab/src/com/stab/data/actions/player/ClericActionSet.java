@@ -1,7 +1,6 @@
 package com.stab.data.actions.player;
 
 
-import com.stab.data.actions.WeaponAttackAction;
 import com.stab.data.actions.player.spells.cleric.level0.Guidance;
 import com.stab.data.actions.player.spells.cleric.level0.ResistanceCleric;
 import com.stab.data.actions.player.spells.cleric.level1.Bane;
@@ -12,9 +11,7 @@ import com.stab.data.actions.player.spells.cleric.level1.Doom;
 import com.stab.data.actions.player.spells.cleric.level1.InflictLight;
 import com.stab.data.actions.player.spells.cleric.level1.MagicStone;
 import com.stab.data.actions.player.spells.cleric.level1.ShieldFaith;
-import com.stab.model.action.BasicActionSet;
 import com.stab.model.action.base.EmptyAction;
-import com.stab.model.action.base.InteractAction;
 
 
 public class ClericActionSet extends PathfinderActionSet {

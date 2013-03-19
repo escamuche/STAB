@@ -1,8 +1,6 @@
 package com.stab.data.info.buff;
 
-import com.stab.data.StabConstants;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.Buff;
 
 public class EntropicShield_Buff extends Buff {

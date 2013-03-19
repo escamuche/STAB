@@ -1,7 +1,6 @@
 package com.stab.data.actions.player;
 
 
-import com.stab.data.actions.WeaponAttackAction;
 import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
 import com.stab.data.actions.player.spells.wizard.level0.Flare;
 import com.stab.data.actions.player.spells.wizard.level0.OpenClose;
@@ -16,11 +15,7 @@ import com.stab.data.actions.player.spells.wizard.level1.RayEnfeeblement;
 import com.stab.data.actions.player.spells.wizard.level1.ReducePerson;
 import com.stab.data.actions.player.spells.wizard.level1.Shield;
 import com.stab.data.actions.player.spells.wizard.level1.ShockingGrasp;
-import com.stab.data.actions.player.spells.wizard.level1.TrueStrike;
-import com.stab.model.action.BasicActionSet;
 import com.stab.model.action.base.EmptyAction;
-import com.stab.model.action.base.InteractAction;
-
 
 public class WizardActionSet extends PathfinderActionSet {
 

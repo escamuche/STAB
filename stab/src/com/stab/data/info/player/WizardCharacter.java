@@ -7,6 +7,8 @@ import com.stab.data.actions.player.WizardActionSet;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.Weapon;
 import com.stab.data.info.equipment.traits.FlamingWeapon;
+import com.stab.model.info.trait.Modifier;
+import com.stab.model.info.trait.base.Equipment;
 
 
 public class WizardCharacter extends PathfinderCharacter{
@@ -35,6 +37,10 @@ public static final String ID="WIZARD_INFO";
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("QUARTERSTAFF"), HumanoidGear.BOTHHANDS);
 		
+		Equipment brazalete = new Equipment();
+		brazalete.setSlots(HumanoidGear.BRACERS);
+		brazalete.addTrait(Modifier.createMod(StabConstants.ARMOR,StabConstants.ARMORMOD,+4));
+		this.equip(brazalete, HumanoidGear.BRACERS);
 		}
 	
 	

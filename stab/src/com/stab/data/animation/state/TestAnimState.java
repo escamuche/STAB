@@ -1,7 +1,5 @@
 package com.stab.data.animation.state;
 
-import com.stab.common.value.Simple2PointValueProvider;
-import com.stab.common.value.SineValueProvider;
 import com.tien.princess.engine.sprite.Sprite;
 import com.tien.princess.engine.sprite.common.painters.ValuePainter;
 import com.tien.princess.engine.sprite.common.states.BasicAnimState;

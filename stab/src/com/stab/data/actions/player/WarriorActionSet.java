@@ -1,9 +1,5 @@
 package com.stab.data.actions.player;
 
-import com.stab.data.actions.WeaponAttackAction;
-import com.stab.data.actions.feats.Expertise;
-import com.stab.data.actions.feats.PowerAttack;
-import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
 import com.stab.data.info.feat.combat.Dodge_Feat;
 import com.stab.data.info.feat.combat.Expertise_Feat;
 import com.stab.data.info.feat.combat.PowerAttack_Feat;
@@ -16,9 +12,6 @@ import com.stab.data.info.feat.general.Deceitful_Feat;
 import com.stab.data.info.feat.general.DeftHands_Feat;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.data.info.feat.general.SkillFocusPerception_Feat;
-import com.stab.model.action.BasicActionSet;
-import com.stab.model.action.base.EmptyAction;
-import com.stab.model.action.base.InteractAction;
 
 
 public class WarriorActionSet extends PathfinderActionSet {

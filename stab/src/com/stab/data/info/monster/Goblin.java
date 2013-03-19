@@ -18,8 +18,6 @@ public class Goblin extends Monster {
 		setMaxHp(6);
 		healFully();
 		
-		
-		
 		setResource("goblin");
 		setText("Goblin");
 		setFaction(2);
@@ -38,15 +36,9 @@ public class Goblin extends Monster {
 		
 		Modifier armor = new Modifier().createMod(StabConstants.ARMOR,StabConstants.ARMORMOD,+2);
 		Modifier shield = new Modifier().createMod(StabConstants.ARMOR,StabConstants.SHIELDMOD,+1);
-	//	Modifier size = new Modifier().createMod(StabConstants.ARMOR,StabConstants.SIZEMOD,+1);
-	//	Modifier hit = new Modifier().createMod(StabConstants.TOHIT,StabConstants.SIZEMOD,+1);
-	//	Modifier hitranged = new Modifier().createMod(StabConstants.TOHITRANGED,StabConstants.SIZEMOD,+1);
 	
-		
 		this.addTrait(armor);
-	//	this.addTrait(size);
-	//	this.addTrait(hit);
-	//	this.addTrait(hitranged);
+		
 		DefaultAIPackage ai=new DefaultAIPackage();
 		
 		this.setCurrentAI(ai);
