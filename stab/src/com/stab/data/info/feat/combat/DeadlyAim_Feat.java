@@ -11,7 +11,8 @@ public class DeadlyAim_Feat extends CombatFeat{
 	
 	
 	public DeadlyAim_Feat() {
-		
+		this.addRequiredAttribute(StabConstants.DEXTERITY, 13);
+		this.addRequiredAttribute(StabConstants.BAB, 1);
 			}
 	
 }

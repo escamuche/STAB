@@ -12,6 +12,7 @@ public class CraftArmsArmor_Feat extends ItemCreationFeat{
 	
 	public CraftArmsArmor_Feat() {
 		
+		this.addRequiredAttribute(StabConstants.CASTERLEVEL, 5);
 			}
 	
 }

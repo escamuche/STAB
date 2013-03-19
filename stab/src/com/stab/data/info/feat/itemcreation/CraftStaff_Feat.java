@@ -12,6 +12,7 @@ public class CraftStaff_Feat extends ItemCreationFeat{
 	
 	public CraftStaff_Feat() {
 		
+		this.addRequiredAttribute(StabConstants.CASTERLEVEL, 11);
 			}
 	
 }

@@ -12,6 +12,9 @@ public class WeaponFocus_Feat extends CombatFeat{
 	
 	public WeaponFocus_Feat() {
 		
+		this.addRequiredAttribute(StabConstants.BAB, 1);
+		//this.addRequiredTrait(periciaarma);
+		
 		Modifier buff1=Modifier.createMod(StabConstants.TOHIT,+1);
 		Modifier buff2=Modifier.createMod(StabConstants.TOHITRANGED,+1);
 		addTrait(buff1);

@@ -12,6 +12,7 @@ public class DoubleSlice_Feat extends CombatFeat{
 	
 	public DoubleSlice_Feat() {
 		
+		this.addRequiredAttribute(StabConstants.DEXTERITY, 15);
 		this.addRequiredTrait(TwoWeaponFighting_Feat.ID);
 		
 			}

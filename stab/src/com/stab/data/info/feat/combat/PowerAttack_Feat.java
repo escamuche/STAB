@@ -14,7 +14,7 @@ public class PowerAttack_Feat extends CombatFeat{
 	
 	
 	public PowerAttack_Feat() {
-		
+		this.addRequiredAttribute(StabConstants.STRENGHT, 13);
 			}
 	
 	@Override

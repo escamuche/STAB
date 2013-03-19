@@ -12,6 +12,7 @@ public class CraftRod_Feat extends ItemCreationFeat{
 	
 	public CraftRod_Feat() {
 		
+		this.addRequiredAttribute(StabConstants.CASTERLEVEL, 9);
 			}
 	
 }

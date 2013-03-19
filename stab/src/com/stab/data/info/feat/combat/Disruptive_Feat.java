@@ -11,6 +11,8 @@ public class Disruptive_Feat extends CombatFeat{
 	
 	
 	public Disruptive_Feat() {
+		
+		//this.addRequiredAttribute(fighter, 6);
 			}
 	
 }

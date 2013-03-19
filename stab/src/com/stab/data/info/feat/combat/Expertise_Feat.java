@@ -1,5 +1,6 @@
 package com.stab.data.info.feat.combat;
 
+import com.stab.data.StabConstants;
 import com.stab.data.actions.feats.Expertise;
 import com.stab.data.info.feat.CombatFeat;
 import com.stab.model.info.BaseInfo;
@@ -11,8 +12,8 @@ public class Expertise_Feat extends CombatFeat{
 	
 	
 	public Expertise_Feat() {
-		//Aqui iran los requisitos (por ahora solo se ppuede pedir que tenga ciertos traits, aun no valores de atributos)
-		//Ej: addRequiredTrait()
+		
+		this.addRequiredAttribute(StabConstants.INTELIGENCE, 13);
 	}
 	
 	@Override

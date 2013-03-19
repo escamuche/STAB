@@ -4,15 +4,15 @@ import com.stab.data.StabConstants;
 import com.stab.data.info.feat.ItemCreationFeat;
 import com.stab.model.info.trait.Modifier;
 
-public class BrewPotion_Feat extends ItemCreationFeat{
+public class ForgeRing_Feat extends ItemCreationFeat{
 	
-	public static final String ID="BREWPOTION_FEAT";
+	public static final String ID="FORGERING_FEAT";
 
 	
 	
-	public BrewPotion_Feat() {
+	public ForgeRing_Feat() {
 		
-		this.addRequiredAttribute(StabConstants.CASTERLEVEL, 3);
+		this.addRequiredAttribute(StabConstants.CASTERLEVEL, 7);
 			}
 	
 }

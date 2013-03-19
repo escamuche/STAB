@@ -12,6 +12,7 @@ public class CraftWand_Feat extends ItemCreationFeat{
 	
 	public CraftWand_Feat() {
 		
+		this.addRequiredAttribute(StabConstants.CASTERLEVEL, 5);
 			}
 	
 }

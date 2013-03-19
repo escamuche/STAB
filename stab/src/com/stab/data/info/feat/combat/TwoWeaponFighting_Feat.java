@@ -12,6 +12,8 @@ public class TwoWeaponFighting_Feat extends CombatFeat{
 	
 	public TwoWeaponFighting_Feat() {
 		
-			}
+		this.addRequiredAttribute(StabConstants.DEXTERITY, 15);
+			
+	}
 	
 }

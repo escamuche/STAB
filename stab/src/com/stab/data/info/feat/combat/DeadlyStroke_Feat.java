@@ -15,6 +15,8 @@ public class DeadlyStroke_Feat extends CombatFeat{
 		this.addRequiredTrait(GreaterWeaponFocus_Feat.ID);
 		this.addRequiredTrait(ShatterDefenses_Feat.ID);
 		this.addRequiredTrait(WeaponFocus_Feat.ID);
+		this.addRequiredAttribute(StabConstants.BAB, 11);
+		//this.addRequiredTrait(pericia arma);
 			}
 	
 }

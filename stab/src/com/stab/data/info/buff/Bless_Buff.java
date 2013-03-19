@@ -20,10 +20,14 @@ public class Bless_Buff extends Buff {
 		this.setTime(10);
 	
 		Modifier tohit=Modifier.createMod(StabConstants.TOHIT,StabConstants.SACREDMOD, +1);
-		Modifier saves=Modifier.createMod(StabConstants.SAVING,StabConstants.SACREDMOD, +1);
+		Modifier savef=Modifier.createMod(StabConstants.FORTITUDESAVE,StabConstants.SACREDMOD, +1);
+		Modifier saver=Modifier.createMod(StabConstants.REFLEXSAVE,StabConstants.SACREDMOD, +1);
+		Modifier savew=Modifier.createMod(StabConstants.WILLSAVE,StabConstants.SACREDMOD, +1);
 		
 		addTrait(tohit);
-		addTrait(saves);
+		addTrait(savef);
+		addTrait(saver);
+		addTrait(savew);
 		
 		}
 }

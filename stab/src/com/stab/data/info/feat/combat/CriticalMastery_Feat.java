@@ -11,7 +11,10 @@ public class CriticalMastery_Feat extends CombatFeat{
 	
 	
 	public CriticalMastery_Feat() {
+		
 		this.addRequiredTrait(CriticalFocus_Feat.ID);
-			}
+		//this.addRequiredTrait(any 2 critical feats...);
+		//this.addRequiredAttribute(fighter, 14);
+	}
 	
 }

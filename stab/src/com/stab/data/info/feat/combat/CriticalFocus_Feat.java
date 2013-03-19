@@ -12,6 +12,8 @@ public class CriticalFocus_Feat extends CombatFeat{
 	
 	public CriticalFocus_Feat() {
 		
-			}
+		this.addRequiredAttribute(StabConstants.BAB, 9);
+			 
+	}
 	
 }

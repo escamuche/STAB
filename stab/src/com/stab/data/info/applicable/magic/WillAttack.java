@@ -31,7 +31,7 @@ public class WillAttack extends Applicable{
 		BaseInfo aMatar = getTarget();
 		BaseInfo elqueMata = (BaseInfo) getInstigator();
 		
-		int save = aMatar.getValue(StabConstants.SAVING);
+		int save = aMatar.getValue(StabConstants.WILLSAVE);
 		int dado = Roll.d20();
 		int saveroll=save+dado;
 		int dc=elqueMata.getValue(StabConstants.DC);

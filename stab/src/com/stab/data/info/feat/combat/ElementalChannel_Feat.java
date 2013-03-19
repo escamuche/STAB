@@ -12,7 +12,7 @@ public class ElementalChannel_Feat extends CombatFeat{
 	
 	public ElementalChannel_Feat() {
 			
-	
+		//this.addRequiredTrait(channelenergy);
 	}
 	
 }

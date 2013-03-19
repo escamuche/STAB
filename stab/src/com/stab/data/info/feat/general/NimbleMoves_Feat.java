@@ -12,6 +12,8 @@ public class NimbleMoves_Feat extends Feat{
 	
 	public NimbleMoves_Feat() {
 		
+		this.addRequiredAttribute(StabConstants.DEXTERITY, 13);
+		
 			}
 	
 }

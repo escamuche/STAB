@@ -11,7 +11,9 @@ public class ChannelSmite_Feat extends CombatFeat{
 	
 	
 	public ChannelSmite_Feat() {
+	
+	//	this.addRequiredTrait(channel smite);
 		
-			}
+	}
 	
 }

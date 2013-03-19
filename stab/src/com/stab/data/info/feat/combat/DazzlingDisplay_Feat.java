@@ -12,6 +12,7 @@ public class DazzlingDisplay_Feat extends CombatFeat{
 	
 	public DazzlingDisplay_Feat() {
 		this.addRequiredTrait(WeaponFocus_Feat.ID);
+		//this.addRequiredTrait(pericia arma);
 			}
 	
 }

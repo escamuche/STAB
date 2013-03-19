@@ -12,6 +12,9 @@ public class ShatterDefenses_Feat extends CombatFeat{
 	
 	
 	public ShatterDefenses_Feat() {
-		
+		this.addRequiredTrait(WeaponFocus_Feat.ID);
+		this.addRequiredTrait(DazzlingDisplay_Feat.ID);
+		this.addRequiredAttribute(StabConstants.BAB, 6);
+		//this.addRequiredTrait(periciaarma);
 			}
 }
