@@ -38,32 +38,25 @@ public class SkeletalChampion extends Monster {
 		this.setAttribute(StabConstants.INTELIGENCE,9);
 		this.setAttribute(StabConstants.CHARISMA,12);
 		
-		//this.addTrait(new DamageReduction(Damage.PIERCING_DAMAGE, 5));
-		//this.addTrait(new DamageReduction(Damage.IMPACT_DAMAGE, 5));
+		this.addTrait(new DamageReduction(Damage.PIERCING_DAMAGE, 5));
+		this.addTrait(new DamageReduction(Damage.IMPACT_DAMAGE, 5));
 		
 		
 		Modifier natural = new Modifier().createMod(StabConstants.ARMOR,StabConstants.NATURALARMORMOD,+2);
 		this.addTrait(natural);
-		
-		Modifier armor = new Modifier().createMod(StabConstants.ARMOR,StabConstants.ARMORMOD,+6);
-		this.addTrait(armor);
-		
-		Modifier shield = new Modifier().createMod(StabConstants.ARMOR,StabConstants.SHIELDMOD,+2);
-		this.addTrait(shield);
 		
 		this.addTrait(new ImprovedInitiative_Feat());
 		this.addTrait(new PowerAttack_Feat());
 		this.addTrait(new WeaponFocus_Feat());
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("LONGSWORD"), HumanoidGear.MAINHAND);
-		
+		this.equip(StabInit.getArmorFactory().getArmor("BREASTPLATE"), HumanoidGear.ARMOR);
+		this.equip(StabInit.getArmorFactory().getArmor("HEAVYSTEELSHIELD"), HumanoidGear.OFFHAND);
 
-	//	this.setCurrentAI(new DefaultAIPackage());
 		ZombieAIPackage ai=new ZombieAIPackage();
 		ai.setLog(true);
 		this.setCurrentAI(ai);
-		
-		
+				
 		this.setBloodeffEct("PARTICLE#greenblood");
 	}
 	

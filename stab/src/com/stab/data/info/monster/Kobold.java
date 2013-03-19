@@ -38,17 +38,9 @@ public class Kobold extends Monster {
 		this.setAttribute(StabConstants.CHARISMA,8);
 		this.setAttribute(StabConstants.SIZE,StabConstants.SMALL_SIZE);
 		
-		Modifier armor = new Modifier().createMod(StabConstants.ARMOR,StabConstants.ARMORMOD,+2);
 		Modifier natural = new Modifier().createMod(StabConstants.ARMOR,StabConstants.NATURALARMORMOD,+1);
-		//Modifier size = new Modifier().createMod(StabConstants.ARMOR,StabConstants.SIZEMOD,+1);
-		//Modifier hit = new Modifier().createMod(StabConstants.TOHIT,StabConstants.SIZEMOD,+1);
-		//Modifier hitranged = new Modifier().createMod(StabConstants.TOHITRANGED,StabConstants.SIZEMOD,+1);
 		
-		this.addTrait(armor);
 		this.addTrait(natural);
-		//this.addTrait(size);
-	//	this.addTrait(hit);
-		//this.addTrait(hitranged);
 		
 		this.addTrait(new SkillFocusPerception_Feat());
 
@@ -56,11 +48,7 @@ public class Kobold extends Monster {
 			
 		this.setBloodeffEct("PARTICLE#redblood");
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("SHORTSWORD"), HumanoidGear.MAINHAND);
+		this.equip(StabInit.getWeaponFactory().getWeapon("SPEAR"), HumanoidGear.BOTHHANDS);
+		this.equip(StabInit.getArmorFactory().getArmor("LIGHTLEATHER"), HumanoidGear.ARMOR);
 	}
-	
-	/*@Override
-	MeleeMonsterActionSet(){
-		this.addAction(GoblinMeleeAction.ID);
-	}*/
 }

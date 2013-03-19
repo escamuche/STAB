@@ -34,10 +34,9 @@ public class Goblin extends Monster {
 		this.setAttribute(StabConstants.CHARISMA,6);
 		this.setAttribute(StabConstants.SIZE,StabConstants.SMALL_SIZE);
 		
-		Modifier armor = new Modifier().createMod(StabConstants.ARMOR,StabConstants.ARMORMOD,+2);
-		Modifier shield = new Modifier().createMod(StabConstants.ARMOR,StabConstants.SHIELDMOD,+1);
-	
-		this.addTrait(armor);
+		//Modifier armor = new Modifier().createMod(StabConstants.ARMOR,StabConstants.ARMORMOD,+2);
+		//Modifier shield = new Modifier().createMod(StabConstants.ARMOR,StabConstants.SHIELDMOD,+1);
+		//this.addTrait(armor);
 		
 		DefaultAIPackage ai=new DefaultAIPackage();
 		
@@ -46,6 +45,8 @@ public class Goblin extends Monster {
 		this.setBloodeffEct("PARTICLE#redblood");
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("SHORTSWORD"), HumanoidGear.MAINHAND);
+		this.equip(StabInit.getArmorFactory().getArmor("LIGHTLEATHER"), HumanoidGear.ARMOR);
+		this.equip(StabInit.getArmorFactory().getArmor("LIGHTWOODENSHIELD"), HumanoidGear.OFFHAND);
 		
 	}
 	

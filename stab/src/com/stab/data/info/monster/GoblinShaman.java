@@ -19,7 +19,6 @@ public class GoblinShaman extends Monster {
 		setMaxMovePoints(6);
 		setMaxHp(6);
 		healFully();
-		
 	
 		this.getActionSet().addAction(CureLight.ID);
 		this.getActionSet().addAction(MagicMissile.ID);
@@ -41,26 +40,14 @@ public class GoblinShaman extends Monster {
 		this.setAttribute(StabConstants.WISDOM,14);
 		this.setAttribute(StabConstants.CHARISMA,6);
 		this.setAttribute(StabConstants.SIZE,StabConstants.SMALL_SIZE);
-		
-		Modifier armor = new Modifier().createMod(StabConstants.ARMOR,StabConstants.ARMORMOD,+2);
-	//	Modifier shield = new Modifier().createMod(StabConstants.ARMOR,StabConstants.SHIELDMOD,+1);
-	//	Modifier size = new Modifier().createMod(StabConstants.ARMOR,StabConstants.SIZEMOD,+1);
-	//	Modifier hit = new Modifier().createMod(StabConstants.TOHIT,StabConstants.SIZEMOD,+1);
-	//	Modifier hitranged = new Modifier().createMod(StabConstants.TOHITRANGED,StabConstants.SIZEMOD,+1);
-	
-		
-		this.addTrait(armor);
-	//	this.addTrait(size);
-	//	this.addTrait(hit);
-	//	this.addTrait(hitranged);
 
 		DefaultAIPackage ai=new DefaultAIPackage();
 	//	ai.setLog(true);
 		this.setCurrentAI(ai);
-		
 			
 		this.setBloodeffEct("PARTICLE#redblood");
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("QUARTERSTAFF"), HumanoidGear.BOTHHANDS);
+		this.equip(StabInit.getArmorFactory().getArmor("LIGHTLEATHER"), HumanoidGear.ARMOR);
 	}
 }

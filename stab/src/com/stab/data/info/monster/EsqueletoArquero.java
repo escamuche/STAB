@@ -20,7 +20,7 @@ public class EsqueletoArquero extends Monster {
 		setMaxHp(4);
 		healFully();
 	setResource("skeleto");
-		setText("EsqueletoArquero");
+		setText("Esqueleto Arquero");
 		setFaction(1);
 	
 		this.addTrait(new Attribute(StabConstants.STRENGHT,15));
@@ -28,10 +28,10 @@ public class EsqueletoArquero extends Monster {
 		this.addTrait(new Attribute(StabConstants.WILLSAVE,+2));
 		this.addTrait(new Attribute(StabConstants.XP,135));
 		this.addTrait(new ImprovedInitiative_Feat());
-		Modifier armor=Modifier.createMod(StabConstants.ARMOR,StabConstants.ARMORMOD, +2);
+		//Modifier armor=Modifier.createMod(StabConstants.ARMOR,StabConstants.ARMORMOD, +2);
 		Modifier armornatural=Modifier.createMod(StabConstants.ARMOR,StabConstants.NATURALARMORMOD, +2);
 		
-		this.addTrait(armor);
+		//this.addTrait(armor);
 		this.addTrait(armornatural);
 		
 		this.addTrait(new DamageReduction(Damage.SLASHING_DAMAGE, 5));
@@ -47,7 +47,9 @@ public class EsqueletoArquero extends Monster {
 		
 		this.setBloodeffEct("PARTICLE#greenblood");
 		
+		
 		this.equip(StabInit.getWeaponFactory().getWeapon("LONGBOW"), HumanoidGear.BOTHHANDS);
+		this.equip(StabInit.getArmorFactory().getArmor("STUDDEDLEATHER"), HumanoidGear.ARMOR);
 	}
 	
 }
