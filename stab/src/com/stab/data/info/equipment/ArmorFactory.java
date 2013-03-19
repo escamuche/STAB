@@ -27,7 +27,7 @@ public class ArmorFactory extends TraitFactory{
 		
 		
 		
-		a=new Armor("leather armor",2,8,0,Armor.LIGHT_ARMOR);
+		a=new Armor("leather armor",2,8,0,Armor.LIGHT_ARMOR,5);
 		register("LIGHTLEATHER",a);
 		
 	}
