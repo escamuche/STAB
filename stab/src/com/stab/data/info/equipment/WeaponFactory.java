@@ -3,6 +3,7 @@ package com.stab.data.info.equipment;
 import com.stab.data.animation.ShootBeamAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
+import com.stab.data.animation.ThrustAnimation;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.base.TraitFactory;
 
@@ -241,7 +242,7 @@ public class WeaponFactory extends TraitFactory{
 		w=new BasicWeapon("starknife",1,4,Damage.PIERCING_DAMAGE,"effects/sword",SwingAnimation.ID);
 		register(STARKNIFE,w);
 		
-		w=new BasicWeapon("shortsword",1,6,Damage.PIERCING_DAMAGE,2,2,"effects/sword",SwingAnimation.ID);
+		w=new BasicWeapon("shortsword",1,6,Damage.PIERCING_DAMAGE,2,2,"effects/sword",ThrustAnimation.ID);
 		register(SHORTSWORD,w);
 		
 		w=new BasicWeapon("battleaxe",1,8,Damage.SLASHING_DAMAGE,1,3,"effects/sword",SwingAnimation.ID);

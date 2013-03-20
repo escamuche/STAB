@@ -8,6 +8,7 @@ import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.WarriorActionSet;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.Weapon;
+import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.equipment.traits.FlamingWeapon;
 import com.stab.data.info.feat.combat.Expertise_Feat;
 import com.stab.data.info.feat.combat.PowerAttack_Feat;
@@ -49,7 +50,9 @@ public static final String ID="WARRIOR_INFO";
 		
 		Weapon w=StabInit.getWeaponFactory().getWeapon("LONGSWORD");
 		w.addTrait(new FlamingWeapon());
-		this.equip(w, HumanoidGear.MAINHAND);
+	//	this.equip(w, HumanoidGear.MAINHAND);
+		
+		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.SHORTSWORD));
 	}
 	
 	

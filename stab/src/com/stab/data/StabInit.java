@@ -52,6 +52,7 @@ import com.stab.data.animation.ShakeAnimation;
 import com.stab.data.animation.ShootBeamAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
+import com.stab.data.animation.ThrustAnimation;
 import com.stab.data.animation.WalkAnimation;
 import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.EquipmentFactory;
@@ -179,6 +180,7 @@ public class StabInit {
 		of.setMapping(BasicSparkAnimation.class);
 		of.setMapping(ShakeAnimation.class);
 		of.setMapping(ShootBeamAnimation.class);
+		of.setMapping(ThrustAnimation.class);
 		
 		
 		wf=new WeaponFactory();

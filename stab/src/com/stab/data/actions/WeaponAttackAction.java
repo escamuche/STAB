@@ -4,6 +4,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.animation.MissProyectileAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
+import com.stab.data.animation.ThrustAnimation;
 import com.stab.data.info.applicable.Attack;
 import com.stab.data.info.applicable.AttackData;
 import com.stab.data.info.equipment.BasicWeapon;
@@ -93,20 +94,36 @@ public class WeaponAttackAction extends TargetAction{
 		if (SwingAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(SwingAnimation.ID,target,ad.getAnimationIcon());
 			sleep(500);
+			return;
 		}
 		if (ShootProyectileAnimation.ID.equals(ad.getAnimationType())){
 			sleep(origin.playAnimationOn(ShootProyectileAnimation.ID,target,ad.getAnimationIcon()));
+			return;
 		}
+		if (ThrustAnimation.ID.equals(ad.getAnimationType())){
+			origin.playAnimationOn(ThrustAnimation.ID,target,ad.getAnimationIcon());
+			sleep(500);
+			return;
+		}
+		sleep(origin.playAnimation(ad.getAnimationType(),target,ad.getAnimationIcon()));
 	}
 
 	private void playMissAnimation(AttackData ad,BaseInfo origin, Token target) {
 		if (SwingAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(SwingAnimation.ID,target,ad.getAnimationIcon());
 			sleep(500);
+			return;
 		}
 		if (ShootProyectileAnimation.ID.equals(ad.getAnimationType())){
 			sleep(origin.playAnimationOn(MissProyectileAnimation.ID,target,ad.getAnimationIcon()));
+			return;
 		}
+		if (ThrustAnimation.ID.equals(ad.getAnimationType())){
+			origin.playAnimationOn(ThrustAnimation.ID,target,ad.getAnimationIcon());
+			sleep(500);
+			return;
+		}
+		sleep(origin.playAnimation(ad.getAnimationType(),target,ad.getAnimationIcon()));
 	}
 
 	protected Weapon getWeapon(BaseInfo atacante) {
