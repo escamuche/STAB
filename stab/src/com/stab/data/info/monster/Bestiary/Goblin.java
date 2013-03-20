@@ -4,11 +4,12 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
+import com.stab.data.info.monster.Humanoid;
 import com.stab.data.info.monster.Monster;
 import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.info.trait.Modifier;
 
-public class Goblin extends Monster {
+public class Goblin extends Humanoid {
 
 	public static final String ID="GOBLIN_INFO";
 	
@@ -25,7 +26,6 @@ public class Goblin extends Monster {
 		this.addTrait(new ImprovedInitiative_Feat());
 		
 		this.setAttribute(StabConstants.XP,135);
-		this.setAttribute(StabConstants.FORTITUDESAVE,+2);
 		this.setAttribute(StabConstants.TOHIT,+1);
 		this.setAttribute(StabConstants.TOHITRANGED,+1);
 		this.setAttribute(StabConstants.STRENGHT,11);
@@ -34,6 +34,7 @@ public class Goblin extends Monster {
 		this.setAttribute(StabConstants.WISDOM,9);
 		this.setAttribute(StabConstants.CHARISMA,6);
 		this.setAttribute(StabConstants.SIZE,StabConstants.SMALL_SIZE);
+		this.setAttribute(StabConstants.HITDICENUMBER, 1);
 		
 		DefaultAIPackage ai=new DefaultAIPackage();
 		

@@ -2,16 +2,14 @@ package com.stab.data.info.monster.Bestiary;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
-import com.stab.data.info.BasicAttributes;
 import com.stab.data.info.equipment.HumanoidGear;
-import com.stab.data.info.monster.Monster;
+import com.stab.data.info.monster.Undead;
 import com.stab.data.info.monster.ZombieAIPackage;
 import com.stab.model.info.applicable.base.Damage;
-import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.DamageReduction;
 
-public class Zombie extends Monster {
+public class Zombie extends Undead {
 
 	public static final String ID="ZOMBIE_INFO";
 	
@@ -26,10 +24,9 @@ public class Zombie extends Monster {
 		setFaction(1);
 			
 		this.setAttribute(StabConstants.XP,200);
-		this.setAttribute(StabConstants.WILLSAVE,+3);
 		this.setAttribute(StabConstants.TOHIT,+1);
 		this.setAttribute(StabConstants.STRENGHT,17);
-		this.setAttribute(StabConstants.DAMAGE,+1);
+		this.setAttribute(StabConstants.HITDICENUMBER, 1);
 		
 		this.addTrait(new DamageReduction(Damage.PIERCING_DAMAGE, 5));
 		this.addTrait(new DamageReduction(Damage.IMPACT_DAMAGE, 5));
@@ -46,7 +43,7 @@ public class Zombie extends Monster {
 		
 		this.setBloodeffEct("PARTICLE#greenblood");
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("MEDIUMCLAW"), HumanoidGear.MAINHAND);
+		this.equip(StabInit.getWeaponFactory().getWeapon("MEDIUMSLAM"), HumanoidGear.BOTHHANDS);
 	}
 	
 }

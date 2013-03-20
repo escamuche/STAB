@@ -5,11 +5,10 @@ import com.stab.data.StabInit;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.Weapon;
 import com.stab.data.info.feat.general.SkillFocusPerception_Feat;
-import com.stab.data.info.monster.Monster;
-import com.stab.data.info.monster.monstertraits.AnimalTraits;
+import com.stab.data.info.monster.Animal;
 import com.stab.model.ai.DefaultAIPackage;
 
-public class DireRat extends Monster {
+public class DireRat extends Animal {
 
 	public static final String ID="DIRERAT_INFO";
 	

@@ -8,6 +8,7 @@ import com.stab.data.info.feat.combat.PowerAttack_Feat;
 import com.stab.data.info.feat.combat.WeaponFocus_Feat;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.data.info.monster.Monster;
+import com.stab.data.info.monster.Undead;
 import com.stab.data.info.monster.ZombieAIPackage;
 import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.info.applicable.base.Damage;
@@ -16,7 +17,7 @@ import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.DamageReduction;
 import com.stab.model.info.trait.base.Equipment;
 
-public class SkeletalChampion extends Monster {
+public class SkeletalChampion extends Undead {
 
 	public static final String ID="SKELETALCHAMPION_INFO";
 	
@@ -32,13 +33,12 @@ public class SkeletalChampion extends Monster {
 		setFaction(2);
 			
 		this.setAttribute(StabConstants.XP,600);
-		this.setAttribute(StabConstants.WILLSAVE,+3);
-		this.setAttribute(StabConstants.FORTITUDESAVE,+3);
 		this.setAttribute(StabConstants.TOHIT,+3);
 		this.setAttribute(StabConstants.STRENGHT,17);
 		this.setAttribute(StabConstants.DEXTERITY,13);
 		this.setAttribute(StabConstants.INTELIGENCE,9);
 		this.setAttribute(StabConstants.CHARISMA,12);
+		this.setAttribute(StabConstants.HITDICENUMBER, 3);
 		
 		this.addTrait(new DamageReduction(Damage.PIERCING_DAMAGE, 5));
 		this.addTrait(new DamageReduction(Damage.IMPACT_DAMAGE, 5));

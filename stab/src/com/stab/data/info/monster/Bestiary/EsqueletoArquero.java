@@ -5,13 +5,14 @@ import com.stab.data.StabInit;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.data.info.monster.Monster;
+import com.stab.data.info.monster.Undead;
 import com.stab.data.info.monster.ZombieAIPackage;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.DamageReduction;
 
-public class EsqueletoArquero extends Monster {
+public class EsqueletoArquero extends Undead {
 
 	public static final String ID="ESQUELETOARQUERO_INFO";
 	

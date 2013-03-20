@@ -44,8 +44,11 @@ public class WeaponFactory extends TraitFactory{
 		register("MEDIUMCLAW",w);
 		w=new BasicWeapon("Bite",1,4,Damage.PIERCING_DAMAGE,"effects/zombieclaw",SwingAnimation.ID);
 		register("SMALLBITE",w);
+		w=new BasicWeapon("Slam",1,6,Damage.IMPACT_DAMAGE,"effects/zombieclaw",SwingAnimation.ID);
+		w.setTwoHanded(true);
+		register("MEDIUMSLAM",w);
 		
-		//Aramas
+		//Armas
 		
 		
 		w=new BasicWeapon("gauntlet",1,3,Damage.IMPACT_DAMAGE,"effects/sword",SwingAnimation.ID);

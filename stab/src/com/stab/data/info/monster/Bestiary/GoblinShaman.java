@@ -6,11 +6,12 @@ import com.stab.data.actions.player.spells.cleric.level1.CureLight;
 import com.stab.data.actions.player.spells.wizard.level1.MagicMissile;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
+import com.stab.data.info.monster.Humanoid;
 import com.stab.data.info.monster.Monster;
 import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.info.trait.Modifier;
 
-public class GoblinShaman extends Monster {
+public class GoblinShaman extends Humanoid {
 
 	public static final String ID="GOBLINSHAMAN_INFO";
 	
@@ -31,9 +32,6 @@ public class GoblinShaman extends Monster {
 		this.addTrait(new ImprovedInitiative_Feat());
 		
 		this.setAttribute(StabConstants.XP,135);
-		this.setAttribute(StabConstants.FORTITUDESAVE,+2);
-		this.setAttribute(StabConstants.TOHIT,+1);
-		this.setAttribute(StabConstants.TOHITRANGED,+1);
 		this.setAttribute(StabConstants.STRENGHT,11);
 		this.setAttribute(StabConstants.DEXTERITY,15);
 		this.setAttribute(StabConstants.CONSTITUTION,12);
@@ -41,7 +39,8 @@ public class GoblinShaman extends Monster {
 		this.setAttribute(StabConstants.WISDOM,14);
 		this.setAttribute(StabConstants.CHARISMA,6);
 		this.setAttribute(StabConstants.SIZE,StabConstants.SMALL_SIZE);
-
+		this.setAttribute(StabConstants.HITDICENUMBER, 1);
+		
 		DefaultAIPackage ai=new DefaultAIPackage();
 	//	ai.setLog(true);
 		this.setCurrentAI(ai);

@@ -5,13 +5,14 @@ import com.stab.data.StabInit;
 import com.stab.data.info.BasicAttributes;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.SkillFocusPerception_Feat;
+import com.stab.data.info.monster.Humanoid;
 import com.stab.data.info.monster.Monster;
 import com.stab.model.action.BasicActionSet;
 import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Modifier;
 
-public class Kobold extends Monster {
+public class Kobold extends Humanoid {
 
 	public static final String ID="KOBOLD_INFO";
 	
@@ -30,7 +31,6 @@ public class Kobold extends Monster {
 		
 		
 		this.setAttribute(StabConstants.XP,100);
-		this.setAttribute(StabConstants.FORTITUDESAVE,+2);
 		this.setAttribute(StabConstants.TOHIT,+1);
 		this.setAttribute(StabConstants.TOHITRANGED,+1);
 		this.setAttribute(StabConstants.STRENGHT,9);
@@ -38,7 +38,7 @@ public class Kobold extends Monster {
 		this.setAttribute(StabConstants.WISDOM,9);
 		this.setAttribute(StabConstants.CHARISMA,8);
 		this.setAttribute(StabConstants.SIZE,StabConstants.SMALL_SIZE);
-		
+		this.setAttribute(StabConstants.HITDICENUMBER, 1);
 
 		Modifier natural = new Modifier().createMod(StabConstants.ARMORDEFENSE,StabConstants.NATURALARMORMOD,+1);
 		
