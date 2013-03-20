@@ -39,4 +39,17 @@ public class Monster extends Creature {
 		return super.equip(e);
 	}
 	
+	
+	public void rollHp(){
+		if (StabConstants.USEMAXHPFORMONSTERS){
+			int hp=getValue(StabConstants.HITDICENUMBER)*getValue(StabConstants.HITDICETYPE);
+			setMaxHp(hp);
+			healFully();
+		}else{
+			int hp=Roll.roll(getValue(StabConstants.HITDICENUMBER),getValue(StabConstants.HITDICETYPE));
+			setMaxHp(hp);
+			healFully();
+		}
+		
+	}
 }

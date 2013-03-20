@@ -20,15 +20,20 @@ public class BasicAttributes extends CompoundTrait{
 		this.addTrait(new Attribute(StabConstants.BAB,0));
 		this.addTrait(new Attribute(StabConstants.DAMAGE,0));
 		this.addTrait(new Attribute(StabConstants.DAMAGERANGED,0));
-		//this.addTrait(new Attribute(StabConstants.ARMOR,10));
 		this.addTrait(new Attribute(StabConstants.SIZE,StabConstants.MEDIUM_SIZE));
 		this.addTrait(new Attribute(StabConstants.PASSIVEDEFENSE,10));
+		
+		
+		this.addTrait(new PathfinderAttributeBonus(StabConstants.MAXHP,StabConstants.CONSTITUTION));
+		
 		
 		//Estos 4 puede que desaparezcan y sean sustituidos por valores calculados.
 		this.addTrait(new DexLimitedBonusModifier(StabConstants.ACTIVEDEFENSE));
 		this.addTrait(new PathfinderAttributeBonus(StabConstants.DAMAGE,StabConstants.STRENGHT));
 		this.addTrait(new PathfinderAttributeBonus(StabConstants.TOHIT,StabConstants.STRENGHT));
 		this.addTrait(new PathfinderAttributeBonus(StabConstants.TOHITRANGED,StabConstants.DEXTERITY));
+		this.addTrait(new AttributeBasedModifier(StabConstants.TOHIT,StabConstants.BAB));
+		this.addTrait(new AttributeBasedModifier(StabConstants.TOHITRANGED,StabConstants.BAB));
 		
 		this.addTrait(new PathfinderAttributeBonus(StabConstants.FORTITUDESAVE,StabConstants.CONSTITUTION));
 		this.addTrait(new PathfinderAttributeBonus(StabConstants.REFLEXSAVE,StabConstants.DEXTERITY));

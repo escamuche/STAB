@@ -29,5 +29,26 @@ public static final String ID="PATH_INFO";
 		setInitiative(Roll.d20()+getValue(StabConstants.INICIATIVEMOD));
 	}
 	
+	@Override
+	public void setMaxHp(int maxHp) {
+		setAttribute(StabConstants.MAXHP,maxHp);
+		super.setMaxHp(maxHp);
+	}
+	
+	@Override
+	public int getMaxHp() {
+		return getValue(StabConstants.MAXHP);
+	}
+	
+	@Override
+	public void setMaxEp(int maxHp) {
+		setAttribute(StabConstants.MAXMP,maxHp);
+		super.setMaxHp(maxHp);
+	}
+	
+	@Override
+	public int getMaxEp() {
+		return getValue(StabConstants.MAXMP);
+	}
 }
 	

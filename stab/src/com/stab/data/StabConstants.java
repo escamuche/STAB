@@ -1,7 +1,16 @@
 package com.stab.data;
 
 public class StabConstants {
+	
+	
+	//Constantes de comportamiento
+	
+	public static final boolean USEMAXHPFORMONSTERS=true;
 
+	
+	//Atributos
+	public static final String MAXHP="MAXHP";
+	public static final String MAXMP="MAXMP";
 	public static final String SIZE="SIZE";
 	public static final String TOHIT="TOHIT";
 	public static final String ARMOR="ARMOR";
