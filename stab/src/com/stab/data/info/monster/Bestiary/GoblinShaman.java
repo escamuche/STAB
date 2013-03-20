@@ -1,4 +1,4 @@
-package com.stab.data.info.monster;
+package com.stab.data.info.monster.Bestiary;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
@@ -6,6 +6,7 @@ import com.stab.data.actions.player.spells.cleric.level1.CureLight;
 import com.stab.data.actions.player.spells.wizard.level1.MagicMissile;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
+import com.stab.data.info.monster.Monster;
 import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.info.trait.Modifier;
 

@@ -5,9 +5,9 @@ import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.AttributeBasedModifier;
 import com.stab.model.info.trait.CompoundTrait;
 
-public class UndeadTraits extends CompoundTrait {
+public class AberrationTraits extends CompoundTrait {
 	
-	public UndeadTraits() {
+	public AberrationTraits() {
 	
 		this.addTrait(new Attribute(StabConstants.HITDICETYPE,8));
 		this.addTrait(new AttributeBasedModifier(StabConstants.BAB,StabConstants.HITDICENUMBER,0.75f));
@@ -15,6 +15,7 @@ public class UndeadTraits extends CompoundTrait {
 		this.addTrait(new AttributeBasedModifier(StabConstants.REFLEXSAVE,StabConstants.HITDICENUMBER,0.33f));
 		this.addTrait(new AttributeBasedModifier(StabConstants.WILLSAVE,StabConstants.HITDICENUMBER,0.50f));
 		this.addTrait(new Attribute(StabConstants.WILLSAVE,+2));
-	
+		
+		
 	}
 }

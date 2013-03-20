@@ -1,9 +1,11 @@
-package com.stab.data.info.monster;
+package com.stab.data.info.monster.Bestiary;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
+import com.stab.data.info.monster.Monster;
+import com.stab.data.info.monster.ZombieAIPackage;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.Modifier;
@@ -25,8 +27,9 @@ public class EsqueletoArquero extends Monster {
 	
 		this.addTrait(new Attribute(StabConstants.STRENGHT,15));
 		this.addTrait(new Attribute(StabConstants.DEXTERITY,14));
-		this.addTrait(new Attribute(StabConstants.WILLSAVE,+2));
 		this.addTrait(new Attribute(StabConstants.XP,135));
+		this.addTrait(new Attribute(StabConstants.HITDICENUMBER, 1));
+		
 		this.addTrait(new ImprovedInitiative_Feat());
 		
 		Modifier armornatural=Modifier.createMod(StabConstants.ARMORDEFENSE,StabConstants.NATURALARMORMOD, +2);

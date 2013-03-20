@@ -159,4 +159,8 @@ public class StabConstants {
 	public static final int GARGANTUAN_SIZE=7;
 	public static final int COLOSSAL_SIZE=8;
 	
+	public static final String HITDICETYPE="HITDICETYPE";
+	public static final String HITDICENUMBER="HITDICENUMBER";
+		
+	
 }

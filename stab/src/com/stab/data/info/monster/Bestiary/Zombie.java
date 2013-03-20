@@ -1,9 +1,11 @@
-package com.stab.data.info.monster;
+package com.stab.data.info.monster.Bestiary;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.info.BasicAttributes;
 import com.stab.data.info.equipment.HumanoidGear;
+import com.stab.data.info.monster.Monster;
+import com.stab.data.info.monster.ZombieAIPackage;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Modifier;
