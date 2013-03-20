@@ -16,6 +16,12 @@ import com.stab.util.Roll;
 public class BasicWeapon extends Weapon {
 
 	
+	public static final int SIMPLE=0;
+	public static final int MARTIAL=1;
+	public static final int EXOTIC=2;
+	public static final int NATURAL=3;
+	public static final int SPECIAL=4;  //Ray y touch (para spells)
+	
 	int dice; 
 	int dices;
 	int baseDamageType;
@@ -25,12 +31,17 @@ public class BasicWeapon extends Weapon {
 	String animationIcon;
 	String animationType;
 	
+	int category;
 	
 	boolean twoHanded;
+	
+	String baseWeapon;
 	
 	public BasicWeapon() {
 		this.setPriority(10);  //Prioridad base para las armas.  Los overrides usaran una posterior, y los encantamientos tambien
 		setTwoHanded(false);
+		category=SIMPLE;
+		baseWeapon=null;
 	}
 	
 	
@@ -44,6 +55,20 @@ public class BasicWeapon extends Weapon {
 	
 	public boolean isTwoHanded() {
 		return twoHanded;
+	}
+	
+	public void setCategory(int category) {
+		this.category = category;
+	}
+	public int getCategory() {
+		return category;
+	}
+	
+	public void setBaseWeapon(String baseWeapon) {
+		this.baseWeapon = baseWeapon;
+	}
+	public String getBaseWeapon() {
+		return baseWeapon;
 	}
 	
 	
@@ -149,5 +174,30 @@ public class BasicWeapon extends Weapon {
 	}
 	
 	
+	/*
+	public boolean isProficient(BaseInfo i){
+		switch(category){
+			case SIMPLE: if (i.hasTrait( ID del trait de pericia con armas simples ))
+						return true;
+						break;
+			case MARTIAL: if (i.hasTrait( ... ))
+				return true;
+				break;
+			case NATURAL: if (i.hasTrait( ... ))
+				return true;
+				break;
+			case SPECIAL: if (i.hasTrait( ... ))
+				return true;
+				break;
+		}
+		//Si no, buscar el trait especifico
+		
+		for (Trait t:i.getTraits(TraitPericiaEnUnArma.class)
+				if (t.getWeapon().equals(this.getBaseWeapon()))
+					return true;
+		return false;
+		
+	}
+	/**/
 	
 }

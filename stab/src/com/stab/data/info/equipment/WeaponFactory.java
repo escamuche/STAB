@@ -3,6 +3,7 @@ package com.stab.data.info.equipment;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.model.info.applicable.base.Damage;
+import com.stab.model.info.trait.Trait;
 import com.stab.model.info.trait.base.TraitFactory;
 
 public class WeaponFactory extends TraitFactory{
@@ -19,6 +20,17 @@ public class WeaponFactory extends TraitFactory{
 		return null;
 	}
 	
+	
+	
+	public void register(String id, Weapon w) {
+		super.register(id, w);
+		if (w instanceof BasicWeapon){
+			BasicWeapon bw=((BasicWeapon)w);
+			if (bw.getBaseWeapon()==null)
+				bw.setBaseWeapon(id);
+			//TODO: en un futuro, icono a partir de eso mismo
+		}
+	}
 	
 	
 	public  void init(){
