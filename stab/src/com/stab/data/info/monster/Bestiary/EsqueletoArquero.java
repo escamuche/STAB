@@ -20,9 +20,9 @@ public class EsqueletoArquero extends Undead {
 	public void init() {
 		super.init();
 		setMaxMovePoints(6);
-		setMaxHp(4);
-		healFully();
-	setResource("skeleto");
+		this.rollHp();
+		
+		setResource("skeleto");
 		setText("Esqueleto Arquero");
 		setFaction(1);
 	

@@ -16,8 +16,7 @@ public class DireRat extends Animal {
 	public void init() {
 		super.init();
 		setMaxMovePoints(8);
-		setMaxHp(5);
-		healFully();
+		this.rollHp();
 		
 			
 		

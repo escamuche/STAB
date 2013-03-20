@@ -25,8 +25,7 @@ public class SkeletalChampion extends Undead {
 	public void init() {
 		super.init();
 		setMaxMovePoints(6);
-		setMaxHp(17);
-		healFully();
+		this.rollHp();
 	
 		setResource("skeletalchampion");
 		setText("Skeletal Champion");

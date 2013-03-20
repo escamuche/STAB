@@ -20,8 +20,7 @@ public class Kobold extends Humanoid {
 	public void init() {
 		super.init();
 		setMaxMovePoints(6);
-		setMaxHp(5);
-		healFully();
+		this.rollHp();
 		
 		
 		

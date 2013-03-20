@@ -17,8 +17,8 @@ public class Zombie extends Undead {
 	public void init() {
 		super.init();
 		setMaxMovePoints(6);
-		setMaxHp(12);
-		healFully();
+		this.rollHp();
+		
 		setResource("zombie");
 		setText("Zombie");
 		setFaction(1);

@@ -17,8 +17,7 @@ public class Goblin extends Humanoid {
 	public void init() {
 		super.init();
 		setMaxMovePoints(6);
-		setMaxHp(6);
-		healFully();
+		this.rollHp();
 		
 		setResource("goblin");
 		setText("Goblin");

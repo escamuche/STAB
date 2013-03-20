@@ -19,8 +19,7 @@ public class GoblinShaman extends Humanoid {
 	public void init() {
 		super.init();
 		setMaxMovePoints(6);
-		setMaxHp(6);
-		healFully();
+		this.rollHp();
 	
 		this.getActionSet().addAction(CureLight.ID);
 		this.getActionSet().addAction(MagicMissile.ID);
