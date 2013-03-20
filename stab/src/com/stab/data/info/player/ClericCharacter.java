@@ -33,8 +33,8 @@ public static final String ID="CLERIC_INFO";
 		this.setAttribute(StabConstants.FORTITUDESAVE, 2);
 		this.setAttribute(StabConstants.WILLSAVE, 2);
 		
-		this.addTrait(Modifier.createMod(StabConstants.ARMORDEFENSE,StabConstants.ARMORMOD,3));
-		this.addTrait(Modifier.createMod(StabConstants.SHIELDDEFENSE,StabConstants.SHIELDMOD,2));
+		this.addTrait(new Modifier(StabConstants.ARMORDEFENSE,StabConstants.ARMORMOD,3));
+		this.addTrait(new Modifier(StabConstants.SHIELDDEFENSE,StabConstants.SHIELDMOD,2));
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("QUARTERSTAFF"), HumanoidGear.BOTHHANDS);
 		

@@ -34,7 +34,7 @@ public class Kobold extends Humanoid {
 		this.setAttribute(StabConstants.SIZE,StabConstants.SMALL_SIZE);
 		this.setAttribute(StabConstants.HITDICENUMBER, 1);
 
-		Modifier natural = new Modifier().createMod(StabConstants.ARMORDEFENSE,StabConstants.NATURALARMORMOD,+1);
+		Modifier natural = new Modifier(StabConstants.ARMORDEFENSE,StabConstants.NATURALARMORMOD,+1);
 		
 		this.addTrait(natural);
 		

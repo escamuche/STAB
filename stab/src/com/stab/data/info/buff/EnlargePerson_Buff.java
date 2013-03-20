@@ -19,10 +19,10 @@ public class EnlargePerson_Buff extends Buff {
 		
 		this.setTime(10);
 	
-		Modifier tohit=Modifier.createMod(StabConstants.TOHIT,-1);
-		Modifier armor=Modifier.createMod(StabConstants.ARMORMOD,-1);
-		Modifier fuerza=Modifier.createMod(StabConstants.STRENGHT,StabConstants.SIZEMOD,+2);
-		Modifier destreza=Modifier.createMod(StabConstants.DEXTERITY,StabConstants.SIZEMOD,-2);
+		Modifier tohit=new Modifier(StabConstants.TOHIT,-1);
+		Modifier armor=new Modifier(StabConstants.ARMORMOD,-1);
+		Modifier fuerza=new Modifier(StabConstants.STRENGHT,StabConstants.SIZEMOD,+2);
+		Modifier destreza=new Modifier(StabConstants.DEXTERITY,StabConstants.SIZEMOD,-2);
 		
 		addTrait(tohit);
 		addTrait(armor);

@@ -31,18 +31,18 @@ public class Armor extends Equipment {
 		this.category = category;
 		if (category==SHIELD){
 			this.setSlots(HumanoidGear.OFFHAND);
-			this.addTrait(Modifier.createMod(StabConstants.ARMORDEFENSE,StabConstants.SHIELDMOD, CA));
-			//this.addTrait(Modifier.createMod(StabConstants.DEXLIMIT,StabConstants.SHIELDMOD, maxDex));
+			this.addTrait(new Modifier(StabConstants.ARMORDEFENSE,StabConstants.SHIELDMOD, CA));
+			//this.addTrait(new Modifier(StabConstants.DEXLIMIT,StabConstants.SHIELDMOD, maxDex));
 			//ya veremos que hacer con el towershield
-			this.addTrait(Modifier.createMod(StabConstants.ARMORCHECKPENALTY,StabConstants.SHIELDMOD, penalty));
-			this.addTrait(Modifier.createMod(StabConstants.SPELLFAILURE,StabConstants.SHIELDMOD, failure));
+			this.addTrait(new Modifier(StabConstants.ARMORCHECKPENALTY,StabConstants.SHIELDMOD, penalty));
+			this.addTrait(new Modifier(StabConstants.SPELLFAILURE,StabConstants.SHIELDMOD, failure));
 		}
 		else{
 			this.setSlots(HumanoidGear.ARMOR);
-			this.addTrait(Modifier.createMod(StabConstants.ARMORDEFENSE,StabConstants.ARMORMOD, CA));
-			this.addTrait(Modifier.createMod(StabConstants.DEXLIMIT,StabConstants.ARMORMOD, maxDex));
-			this.addTrait(Modifier.createMod(StabConstants.ARMORCHECKPENALTY,StabConstants.ARMORMOD, penalty));
-			this.addTrait(Modifier.createMod(StabConstants.SPELLFAILURE,StabConstants.ARMORMOD, failure));
+			this.addTrait(new Modifier(StabConstants.ARMORDEFENSE,StabConstants.ARMORMOD, CA));
+			this.addTrait(new Modifier(StabConstants.DEXLIMIT,StabConstants.ARMORMOD, maxDex));
+			this.addTrait(new Modifier(StabConstants.ARMORCHECKPENALTY,StabConstants.ARMORMOD, penalty));
+			this.addTrait(new Modifier(StabConstants.SPELLFAILURE,StabConstants.ARMORMOD, failure));
 		}
 	
 		

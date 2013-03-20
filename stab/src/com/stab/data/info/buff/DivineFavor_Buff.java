@@ -19,10 +19,10 @@ public class DivineFavor_Buff extends Buff {
 		
 		this.setTime(10);
 	
-		Modifier tohit=Modifier.createMod(StabConstants.TOHIT,StabConstants.LUCKMOD, +1);
-		Modifier tohitranged=Modifier.createMod(StabConstants.TOHITRANGED,StabConstants.LUCKMOD, +1);
-		Modifier damage=Modifier.createMod(StabConstants.DAMAGE,StabConstants.LUCKMOD, +1);
-		Modifier damageranged=Modifier.createMod(StabConstants.DAMAGERANGED,StabConstants.LUCKMOD, +1);
+		Modifier tohit=new Modifier(StabConstants.TOHIT,StabConstants.LUCKMOD, +1);
+		Modifier tohitranged=new Modifier(StabConstants.TOHITRANGED,StabConstants.LUCKMOD, +1);
+		Modifier damage=new Modifier(StabConstants.DAMAGE,StabConstants.LUCKMOD, +1);
+		Modifier damageranged=new Modifier(StabConstants.DAMAGERANGED,StabConstants.LUCKMOD, +1);
 		
 		addTrait(tohit);
 		addTrait(tohitranged);

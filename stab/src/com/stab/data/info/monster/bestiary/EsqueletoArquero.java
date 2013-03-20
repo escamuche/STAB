@@ -31,7 +31,7 @@ public class EsqueletoArquero extends Undead {
 		
 		this.addTrait(new ImprovedInitiative_Feat());
 		
-		Modifier armornatural=Modifier.createMod(StabConstants.ARMORDEFENSE,StabConstants.NATURALARMORMOD, +2);
+		Modifier armornatural=new Modifier(StabConstants.ARMORDEFENSE,StabConstants.NATURALARMORMOD, +2);
 		this.addTrait(armornatural);
 		
 		this.addTrait(new DamageReduction(Damage.SLASHING_DAMAGE, 5));

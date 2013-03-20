@@ -19,8 +19,8 @@ public class MagicStone_Buff extends Buff {
 		
 		this.setTime(1);
 	
-		Modifier tohitranged=Modifier.createMod(StabConstants.TOHITRANGED,StabConstants.ENHANCEMENTMOD, +1);
-		Modifier damageranged=Modifier.createMod(StabConstants.DAMAGERANGED,StabConstants.ENHANCEMENTMOD,Roll.d6()+2);
+		Modifier tohitranged=new Modifier(StabConstants.TOHITRANGED,StabConstants.ENHANCEMENTMOD, +1);
+		Modifier damageranged=new Modifier(StabConstants.DAMAGERANGED,StabConstants.ENHANCEMENTMOD,Roll.d6()+2);
 		
 		
 		addTrait(tohitranged);

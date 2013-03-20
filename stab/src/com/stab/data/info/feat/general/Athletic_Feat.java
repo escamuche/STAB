@@ -12,8 +12,8 @@ public class Athletic_Feat extends Feat{
 	
 	public Athletic_Feat() {
 		
-			Modifier buff1=Modifier.createMod(StabConstants.CLIMB,+2);
-			Modifier buff2=Modifier.createMod(StabConstants.SWIMSKILL,+2);
+			Modifier buff1=new Modifier(StabConstants.CLIMB,+2);
+			Modifier buff2=new Modifier(StabConstants.SWIMSKILL,+2);
 			addTrait(buff1);
 			addTrait(buff2);
 		

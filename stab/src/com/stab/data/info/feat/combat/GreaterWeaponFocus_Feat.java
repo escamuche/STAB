@@ -17,8 +17,8 @@ public class GreaterWeaponFocus_Feat extends CombatFeat{
 		//this.addRequiredTrait(periciaarma);
 		//this.addRequiredAttribute(fighter, 8);
 		
-		Modifier buff1=Modifier.createMod(StabConstants.TOHIT,+1);
-		Modifier buff2=Modifier.createMod(StabConstants.TOHITRANGED,+1);
+		Modifier buff1=new Modifier(StabConstants.TOHIT,+1);
+		Modifier buff2=new Modifier(StabConstants.TOHITRANGED,+1);
 		addTrait(buff1);
 		addTrait(buff2);
 		

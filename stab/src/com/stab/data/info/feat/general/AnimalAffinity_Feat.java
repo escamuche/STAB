@@ -12,8 +12,8 @@ public class AnimalAffinity_Feat extends Feat{
 	
 	public AnimalAffinity_Feat() {
 		
-			Modifier buff1=Modifier.createMod(StabConstants.HANDLEANIMAL,+2);
-			Modifier buff2=Modifier.createMod(StabConstants.RIDE,+2);
+			Modifier buff1=new Modifier(StabConstants.HANDLEANIMAL,+2);
+			Modifier buff2=new Modifier(StabConstants.RIDE,+2);
 			addTrait(buff1);
 			addTrait(buff2);
 		

@@ -12,9 +12,9 @@ public class PointBlankShot extends MetamagicFeat{
 	
 	public PointBlankShot() {
 			
-		Modifier hit = Modifier.createMod(StabConstants.TOHITRANGED,1);
+		Modifier hit = new Modifier(StabConstants.TOHITRANGED,1);
 		this.addTrait(hit);
-		Modifier damage = Modifier.createMod(StabConstants.DAMAGERANGED,1);
+		Modifier damage = new Modifier(StabConstants.DAMAGERANGED,1);
 		this.addTrait(damage);
 	
 	}

@@ -18,9 +18,9 @@ public class Expertise_Buff extends Buff {
 		
 		this.setPermanent();
 	
-		Modifier caexpertise= Modifier.createMod(StabConstants.ACTIVEDEFENSE,StabConstants.DODGEMOD, +1);
-		Modifier tohitexpertise=Modifier.createMod(StabConstants.TOHIT,-1);
-		Modifier tohitrangedexpertise=Modifier.createMod(StabConstants.TOHITRANGED, -1);
+		Modifier caexpertise= new Modifier(StabConstants.ACTIVEDEFENSE,StabConstants.DODGEMOD, +1);
+		Modifier tohitexpertise=new Modifier(StabConstants.TOHIT,-1);
+		Modifier tohitrangedexpertise=new Modifier(StabConstants.TOHITRANGED, -1);
 		
 		addTrait(caexpertise);
 		addTrait(tohitexpertise);

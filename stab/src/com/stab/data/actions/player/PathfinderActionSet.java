@@ -10,6 +10,7 @@ public class PathfinderActionSet extends BasicActionSet {
 	public PathfinderActionSet() {
 		
 		this.addAction(WeaponAttackAction.ID);
+		this.addAction(DefendAction.ID);
 		
 		
 		this.setAction(WeaponAttackAction.ID, 0);

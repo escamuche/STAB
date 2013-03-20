@@ -12,8 +12,8 @@ public class Alertness_Feat extends Feat{
 	
 	public Alertness_Feat() {
 		
-			Modifier buff1=Modifier.createMod(StabConstants.PERCEPTION,+2);
-			Modifier buff2=Modifier.createMod(StabConstants.SENSEMOTIVE,+2);
+			Modifier buff1=new Modifier(StabConstants.PERCEPTION,+2);
+			Modifier buff2=new Modifier(StabConstants.SENSEMOTIVE,+2);
 			addTrait(buff1);
 			addTrait(buff2);
 		

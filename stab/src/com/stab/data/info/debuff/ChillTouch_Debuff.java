@@ -20,7 +20,7 @@ public class ChillTouch_Debuff extends Buff {
 		this.setPermanent();
 		atacado.playAnimationOn(ShootProyectileAnimation.ID, atacado.getToken(), "PARTICLE#magicmissile");
 	
-		Modifier tohit=Modifier.createMod(StabConstants.STRENGHT, -1);
+		Modifier tohit=new Modifier(StabConstants.STRENGHT, -1);
 		addTrait(tohit);
 	}
 }

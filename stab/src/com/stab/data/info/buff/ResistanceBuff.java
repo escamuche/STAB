@@ -19,9 +19,9 @@ public class ResistanceBuff extends Buff {
 		
 		this.setTime(10);
 	
-		Modifier fortsave=Modifier.createMod(StabConstants.FORTITUDESAVE,StabConstants.RESISTANCEMOD,+1);
-		Modifier refsave=Modifier.createMod(StabConstants.REFLEXSAVE, +1);
-		Modifier willsave=Modifier.createMod(StabConstants.WILLSAVE, +1);
+		Modifier fortsave=new Modifier(StabConstants.FORTITUDESAVE,StabConstants.RESISTANCEMOD,+1);
+		Modifier refsave=new Modifier(StabConstants.REFLEXSAVE, +1);
+		Modifier willsave=new Modifier(StabConstants.WILLSAVE, +1);
 		
 		addTrait(fortsave);
 		addTrait(refsave);

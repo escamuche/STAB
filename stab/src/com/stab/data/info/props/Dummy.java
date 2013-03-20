@@ -16,7 +16,7 @@ public class Dummy extends Obstacle {
 		healFully();
 		setResource("dummy");
 		setText("");
-		this.addTrait(Modifier.createMod(StabConstants.ARMORDEFENSE,StabConstants.ARMORMOD,2));
+		this.addTrait(new Modifier(StabConstants.ARMORDEFENSE,StabConstants.ARMORMOD,2));
 	
 	//	this.setActionSet(new WarriorActionSet());
 	//	this.setCurrentAI(new DefaultAIPackage());

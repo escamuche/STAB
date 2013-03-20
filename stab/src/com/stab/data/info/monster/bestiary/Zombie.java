@@ -30,7 +30,7 @@ public class Zombie extends Undead {
 		this.addTrait(new DamageReduction(Damage.IMPACT_DAMAGE, 5));
 		
 		
-		Modifier natural = new Modifier().createMod(StabConstants.ARMORDEFENSE,StabConstants.NATURALARMORMOD,+2);
+		Modifier natural = new Modifier(StabConstants.ARMORDEFENSE,StabConstants.NATURALARMORMOD,+2);
 		
 		this.addTrait(natural);
 		

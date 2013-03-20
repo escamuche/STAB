@@ -12,7 +12,7 @@ public class SkillFocusPerception_Feat extends Feat{
 	
 	public SkillFocusPerception_Feat() {
 		
-			Modifier buff=Modifier.createMod(StabConstants.PERCEPTION,+3);
+			Modifier buff=new Modifier(StabConstants.PERCEPTION,+3);
 			addTrait(buff);
 		
 			}

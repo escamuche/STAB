@@ -12,7 +12,7 @@ public class GreatFortitude_Feat extends CombatFeat{
 	
 	public GreatFortitude_Feat() {
 			
-		Modifier save = new Modifier().createMod(StabConstants.FORTITUDESAVE, +2);
+		Modifier save = new Modifier(StabConstants.FORTITUDESAVE, +2);
 		this.addTrait(save);
 	
 	}

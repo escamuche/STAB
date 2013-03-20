@@ -12,8 +12,8 @@ public class DeftHands_Feat extends Feat{
 	
 	public DeftHands_Feat() {
 		
-			Modifier buff1=Modifier.createMod(StabConstants.DISABLEDEVICES,+2);
-			Modifier buff2=Modifier.createMod(StabConstants.SLEIGHTOFHAND,+2);
+			Modifier buff1=new Modifier(StabConstants.DISABLEDEVICES,+2);
+			Modifier buff2=new Modifier(StabConstants.SLEIGHTOFHAND,+2);
 			addTrait(buff1);
 			addTrait(buff2);
 		

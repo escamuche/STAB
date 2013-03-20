@@ -25,8 +25,8 @@ public class PowerAttack_Buff extends Buff {
 		
 		
 		//Modificadores que aporta
-		Modifier dañopoweratt= Modifier.createMod(StabConstants.DAMAGE, +2);
-		Modifier tohitpoweratt=Modifier.createMod(StabConstants.TOHIT, -1);
+		Modifier dañopoweratt= new Modifier(StabConstants.DAMAGE, +2);
+		Modifier tohitpoweratt=new Modifier(StabConstants.TOHIT, -1);
 		
 		addTrait(dañopoweratt);
 		addTrait(tohitpoweratt);

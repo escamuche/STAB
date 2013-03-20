@@ -19,10 +19,10 @@ public class Guidance_Buff extends Buff {
 		
 		this.setTime(1);
 	
-		Modifier tohit=Modifier.createMod(StabConstants.TOHIT,StabConstants.COMPETENCEMOD, +1);
-		Modifier fsave=Modifier.createMod(StabConstants.FORTITUDESAVE,StabConstants.COMPETENCEMOD, +1);
-		Modifier rsave=Modifier.createMod(StabConstants.REFLEXSAVE,StabConstants.COMPETENCEMOD, +1);
-		Modifier wsave=Modifier.createMod(StabConstants.WILLSAVE,StabConstants.COMPETENCEMOD, +1);
+		Modifier tohit=new Modifier(StabConstants.TOHIT,StabConstants.COMPETENCEMOD, +1);
+		Modifier fsave=new Modifier(StabConstants.FORTITUDESAVE,StabConstants.COMPETENCEMOD, +1);
+		Modifier rsave=new Modifier(StabConstants.REFLEXSAVE,StabConstants.COMPETENCEMOD, +1);
+		Modifier wsave=new Modifier(StabConstants.WILLSAVE,StabConstants.COMPETENCEMOD, +1);
 		
 		addTrait(tohit);
 		addTrait(fsave);

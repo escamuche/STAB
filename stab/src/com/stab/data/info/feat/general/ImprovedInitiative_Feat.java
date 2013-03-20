@@ -12,7 +12,7 @@ public class ImprovedInitiative_Feat extends Feat{
 	
 	public ImprovedInitiative_Feat() {
 		
-			Modifier buff=Modifier.createMod(StabConstants.INICIATIVEMOD,+4);
+			Modifier buff=new Modifier(StabConstants.INICIATIVEMOD,+4);
 			addTrait(buff);
 		
 			}

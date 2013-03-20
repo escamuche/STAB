@@ -12,8 +12,8 @@ public class Deceitful_Feat extends Feat{
 	
 	public Deceitful_Feat() {
 		
-		Modifier buff1=Modifier.createMod(StabConstants.BLUFF,+2);
-		Modifier buff2=Modifier.createMod(StabConstants.DISGUISE,+2);
+		Modifier buff1=new Modifier(StabConstants.BLUFF,+2);
+		Modifier buff2=new Modifier(StabConstants.DISGUISE,+2);
 		addTrait(buff1);
 		addTrait(buff2);
 		

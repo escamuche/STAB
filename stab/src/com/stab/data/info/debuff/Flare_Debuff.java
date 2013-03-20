@@ -21,7 +21,7 @@ public class Flare_Debuff extends Buff {
 		this.setTime(10);
 		atacado.playAnimationOn(ShootProyectileAnimation.ID, atacado.getToken(), "PARTICLE#magicmissile");
 	
-		Modifier tohit=Modifier.createMod(StabConstants.TOHIT, -1);
+		Modifier tohit=new Modifier(StabConstants.TOHIT, -1);
 		addTrait(tohit);
 	}
 }

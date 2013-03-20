@@ -21,13 +21,13 @@ public class Doom_Debuff extends Buff {
 		this.setTime(10);
 		atacado.playAnimationOn(ShootProyectileAnimation.ID, atacado.getToken(), "PARTICLE#magicmissile");
 	
-		Modifier tohit=Modifier.createMod(StabConstants.TOHIT, -2);
-		Modifier tohitranged=Modifier.createMod(StabConstants.TOHITRANGED, -2);
-		Modifier damage=Modifier.createMod(StabConstants.DAMAGE, -2);
-		Modifier damageranged=Modifier.createMod(StabConstants.DAMAGERANGED, -2);
-		Modifier savef=Modifier.createMod(StabConstants.FORTITUDESAVE, -2);
-		Modifier saver=Modifier.createMod(StabConstants.REFLEXSAVE, -2);
-		Modifier savew=Modifier.createMod(StabConstants.WILLSAVE, -2);
+		Modifier tohit=new Modifier(StabConstants.TOHIT, -2);
+		Modifier tohitranged=new Modifier(StabConstants.TOHITRANGED, -2);
+		Modifier damage=new Modifier(StabConstants.DAMAGE, -2);
+		Modifier damageranged=new Modifier(StabConstants.DAMAGERANGED, -2);
+		Modifier savef=new Modifier(StabConstants.FORTITUDESAVE, -2);
+		Modifier saver=new Modifier(StabConstants.REFLEXSAVE, -2);
+		Modifier savew=new Modifier(StabConstants.WILLSAVE, -2);
 		
 		addTrait(tohit);
 		addTrait(tohitranged);
