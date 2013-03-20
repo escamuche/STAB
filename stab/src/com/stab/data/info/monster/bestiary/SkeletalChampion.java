@@ -2,20 +2,15 @@ package com.stab.data.info.monster.bestiary;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
-import com.stab.data.info.BasicAttributes;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.combat.PowerAttack_Feat;
 import com.stab.data.info.feat.combat.WeaponFocus_Feat;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
-import com.stab.data.info.monster.Monster;
 import com.stab.data.info.monster.Undead;
 import com.stab.data.info.monster.ZombieAIPackage;
-import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.info.applicable.base.Damage;
-import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.DamageReduction;
-import com.stab.model.info.trait.base.Equipment;
 
 public class SkeletalChampion extends Undead {
 
@@ -31,7 +26,6 @@ public class SkeletalChampion extends Undead {
 		setFaction(2);
 			
 		this.setAttribute(StabConstants.XP,600);
-		this.setAttribute(StabConstants.TOHIT,+3);
 		this.setAttribute(StabConstants.STRENGHT,17);
 		this.setAttribute(StabConstants.DEXTERITY,13);
 		this.setAttribute(StabConstants.INTELIGENCE,9);

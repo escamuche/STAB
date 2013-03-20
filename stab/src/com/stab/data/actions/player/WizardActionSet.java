@@ -15,7 +15,6 @@ import com.stab.data.actions.player.spells.wizard.level1.RayEnfeeblement;
 import com.stab.data.actions.player.spells.wizard.level1.ReducePerson;
 import com.stab.data.actions.player.spells.wizard.level1.Shield;
 import com.stab.data.actions.player.spells.wizard.level1.ShockingGrasp;
-import com.stab.model.action.base.EmptyAction;
 
 public class WizardActionSet extends PathfinderActionSet {
 

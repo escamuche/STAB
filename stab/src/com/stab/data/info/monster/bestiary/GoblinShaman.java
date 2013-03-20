@@ -7,9 +7,7 @@ import com.stab.data.actions.player.spells.wizard.level1.MagicMissile;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.data.info.monster.Humanoid;
-import com.stab.data.info.monster.Monster;
 import com.stab.model.ai.DefaultAIPackage;
-import com.stab.model.info.trait.Modifier;
 
 public class GoblinShaman extends Humanoid {
 

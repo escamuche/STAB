@@ -5,7 +5,6 @@ import com.stab.model.Player;
 import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.Label;
 import com.stab.model.basic.ui.Text;
-import com.stab.model.info.Info;
 
 public class SpellBook extends ActionBarSelectionScene{
 	

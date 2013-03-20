@@ -1,12 +1,12 @@
 package com.stab.data.actions.player.spells.cleric.level1;
 
 import com.stab.data.StabConstants;
+import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.info.applicable.magic.WillAttack;
 import com.stab.data.info.debuff.Doom_Debuff;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
-import com.stab.data.actions.player.spells.SpellOnTarget;
 
 public class Doom extends SpellOnTarget {
 	

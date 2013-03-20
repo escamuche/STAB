@@ -2,14 +2,10 @@ package com.stab.data.info.monster.bestiary;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
-import com.stab.data.info.BasicAttributes;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.SkillFocusPerception_Feat;
 import com.stab.data.info.monster.Humanoid;
-import com.stab.data.info.monster.Monster;
-import com.stab.model.action.BasicActionSet;
 import com.stab.model.ai.DefaultAIPackage;
-import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Modifier;
 
 public class Kobold extends Humanoid {

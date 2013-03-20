@@ -3,7 +3,6 @@ package com.stab.data.animation;
 import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.data.animation.state.ShakeState;
 import com.stab.data.utils.AnimUtils;
-import com.stab.model.action.base.WalkToAction;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.trait.base.VisualEffect;
 

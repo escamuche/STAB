@@ -4,7 +4,6 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
-import com.stab.data.info.monster.Monster;
 import com.stab.data.info.monster.Undead;
 import com.stab.data.info.monster.ZombieAIPackage;
 import com.stab.model.info.applicable.base.Damage;

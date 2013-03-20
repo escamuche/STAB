@@ -1,17 +1,5 @@
 package com.stab.data.actions.player;
 
-import com.stab.data.info.feat.combat.Dodge_Feat;
-import com.stab.data.info.feat.combat.Expertise_Feat;
-import com.stab.data.info.feat.combat.PowerAttack_Feat;
-import com.stab.data.info.feat.combat.WeaponFocus_Feat;
-import com.stab.data.info.feat.general.Acrobatic_Feat;
-import com.stab.data.info.feat.general.Alertness_Feat;
-import com.stab.data.info.feat.general.AnimalAffinity_Feat;
-import com.stab.data.info.feat.general.Athletic_Feat;
-import com.stab.data.info.feat.general.Deceitful_Feat;
-import com.stab.data.info.feat.general.DeftHands_Feat;
-import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
-import com.stab.data.info.feat.general.SkillFocusPerception_Feat;
 
 
 public class WarriorActionSet extends PathfinderActionSet {

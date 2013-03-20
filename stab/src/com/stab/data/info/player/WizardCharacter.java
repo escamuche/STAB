@@ -5,8 +5,6 @@ import com.stab.data.StabInit;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.WizardActionSet;
 import com.stab.data.info.equipment.HumanoidGear;
-import com.stab.data.info.equipment.Weapon;
-import com.stab.data.info.equipment.traits.FlamingWeapon;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.Equipment;
 

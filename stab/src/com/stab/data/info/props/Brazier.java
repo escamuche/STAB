@@ -1,7 +1,6 @@
 package com.stab.data.info.props;
 
 import com.stab.model.info.base.LightDecoration;
-import com.stab.model.info.base.Obstacle;
 
 public class Brazier extends LightDecoration {
 
