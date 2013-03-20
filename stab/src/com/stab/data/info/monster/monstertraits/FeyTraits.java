@@ -1,7 +1,6 @@
 package com.stab.data.info.monster.monstertraits;
 
 import com.stab.data.StabConstants;
-import com.stab.data.info.feat.general.NaturalWeaponProficiency_Feat;
 import com.stab.data.info.feat.general.SimpleWeaponProficiency_Feat;
 import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.AttributeBasedModifier;

@@ -7,7 +7,6 @@ import com.stab.data.info.feat.general.NaturalWeaponProficiency_Feat;
 import com.stab.data.info.feat.general.SimpleWeaponProficiency_Feat;
 import com.stab.data.info.feat.general.WeaponProficiency_Feat;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.trait.Trait;
 import com.stab.util.Roll;
 
 /**

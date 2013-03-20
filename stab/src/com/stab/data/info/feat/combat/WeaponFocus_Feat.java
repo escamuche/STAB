@@ -6,7 +6,6 @@ import com.stab.data.info.equipment.BasicWeapon;
 import com.stab.data.info.feat.CombatFeat;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
-import com.stab.model.info.trait.Modifier;
 
 public class WeaponFocus_Feat extends CombatFeat implements Attends<AttackData> {
 	
