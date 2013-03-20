@@ -8,24 +8,24 @@ public class ArmorFactory extends TraitFactory{
 	
 	
 	
-	private static final String TOWERSHIELD = "TOWERSHIELD";
-	private static final String HEAVYSTEELSHIELD = "HEAVYSTEELSHIELD";
-	private static final String HEAVYWOODENSHIELD = "HEAVYWOODENSHIELD";
-	private static final String LIGHTSTEELSHIELD = "LIGHTSTEELSHIELD";
-	private static final String LIGHTWOODENSHIELD = "LIGHTWOODENSHIELD";
-	private static final String BUCKLER = "BUCKLER";
-	private static final String FULLPLATE = "FULLPLATE";
-	private static final String HALFPLATE = "HALFPLATE";
-	private static final String BANDEDMAIL = "BANDEDMAIL";
-	private static final String SPLINTMAIL = "SPLINTMAIL";
-	private static final String BREASTPLATE = "BREASTPLATE";
-	private static final String CHAINMAIL = "CHAINMAIL";
-	private static final String SCALEMAIL = "SCALEMAIL";
-	private static final String HIDE = "HIDE";
-	private static final String CHAINSHIRT = "CHAINSHIRT";
-	private static final String STUDDEDLEATHER = "STUDDEDLEATHER";
-	private static final String LIGHTLEATHER = "LIGHTLEATHER";
-	private static final String PADDED = "PADDED";
+	public static final String TOWERSHIELD = "TOWERSHIELD";
+	public static final String HEAVYSTEELSHIELD = "HEAVYSTEELSHIELD";
+	public static final String HEAVYWOODENSHIELD = "HEAVYWOODENSHIELD";
+	public static final String LIGHTSTEELSHIELD = "LIGHTSTEELSHIELD";
+	public static final String LIGHTWOODENSHIELD = "LIGHTWOODENSHIELD";
+	public static final String BUCKLER = "BUCKLER";
+	public static final String FULLPLATE = "FULLPLATE";
+	public static final String HALFPLATE = "HALFPLATE";
+	public static final String BANDEDMAIL = "BANDEDMAIL";
+	public static final String SPLINTMAIL = "SPLINTMAIL";
+	public static final String BREASTPLATE = "BREASTPLATE";
+	public static final String CHAINMAIL = "CHAINMAIL";
+	public static final String SCALEMAIL = "SCALEMAIL";
+	public static final String HIDE = "HIDE";
+	public static final String CHAINSHIRT = "CHAINSHIRT";
+	public static final String STUDDEDLEATHER = "STUDDEDLEATHER";
+	public static final String LIGHTLEATHER = "LIGHTLEATHER";
+	public static final String PADDED = "PADDED";
 
 
 

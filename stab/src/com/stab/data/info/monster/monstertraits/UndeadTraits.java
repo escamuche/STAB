@@ -1,6 +1,8 @@
 package com.stab.data.info.monster.monstertraits;
 
 import com.stab.data.StabConstants;
+import com.stab.data.info.feat.general.NaturalWeaponProficiency_Feat;
+import com.stab.data.info.feat.general.SimpleWeaponProficiency_Feat;
 import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.AttributeBasedModifier;
 import com.stab.model.info.trait.CompoundTrait;
@@ -16,5 +18,7 @@ public class UndeadTraits extends CompoundTrait {
 		this.addTrait(new AttributeBasedModifier(StabConstants.WILLSAVE,StabConstants.HITDICENUMBER,0.50f));
 		this.addTrait(new Attribute(StabConstants.WILLSAVE,+2));
 	
+		this.addTrait(new NaturalWeaponProficiency_Feat());
+		this.addTrait(new SimpleWeaponProficiency_Feat());
 	}
 }

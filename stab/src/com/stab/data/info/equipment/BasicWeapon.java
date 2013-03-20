@@ -2,7 +2,12 @@ package com.stab.data.info.equipment;
 
 import com.stab.data.StabConstants;
 import com.stab.data.info.applicable.AttackData;
+import com.stab.data.info.feat.general.MartialWeaponProficiency_Feat;
+import com.stab.data.info.feat.general.NaturalWeaponProficiency_Feat;
+import com.stab.data.info.feat.general.SimpleWeaponProficiency_Feat;
+import com.stab.data.info.feat.general.WeaponProficiency_Feat;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.trait.Trait;
 import com.stab.util.Roll;
 
 /**
@@ -174,25 +179,24 @@ public class BasicWeapon extends Weapon {
 	}
 	
 	
-	/*
+	
 	public boolean isProficient(BaseInfo i){
 		switch(category){
-			case SIMPLE: if (i.hasTrait( ID del trait de pericia con armas simples ))
+			case SIMPLE: if (i.hasTrait( SimpleWeaponProficiency_Feat.ID ))
 						return true;
 						break;
-			case MARTIAL: if (i.hasTrait( ... ))
+			case MARTIAL: if (i.hasTrait( MartialWeaponProficiency_Feat.ID ))
 				return true;
 				break;
-			case NATURAL: if (i.hasTrait( ... ))
+			case NATURAL: if (i.hasTrait( NaturalWeaponProficiency_Feat.ID ))
 				return true;
 				break;
-			case SPECIAL: if (i.hasTrait( ... ))
+			case SPECIAL:
 				return true;
-				break;
 		}
 		//Si no, buscar el trait especifico
 		
-		for (Trait t:i.getTraits(TraitPericiaEnUnArma.class)
+		for (WeaponProficiency_Feat t:i.getTraits(WeaponProficiency_Feat.class))
 				if (t.getWeapon().equals(this.getBaseWeapon()))
 					return true;
 		return false;

@@ -1,6 +1,7 @@
 package com.stab.data.info.monster.monstertraits;
 
 import com.stab.data.StabConstants;
+import com.stab.data.info.feat.general.NaturalWeaponProficiency_Feat;
 import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.AttributeBasedModifier;
 import com.stab.model.info.trait.CompoundTrait;
@@ -16,5 +17,7 @@ public class VerminTraits extends CompoundTrait {
 		this.addTrait(new AttributeBasedModifier(StabConstants.WILLSAVE,StabConstants.HITDICENUMBER,0.33f));
 		this.addTrait(new Attribute(StabConstants.FORTITUDESAVE,+2));
 	
+		this.addTrait(new NaturalWeaponProficiency_Feat());
+		
 	}
 }

@@ -3,6 +3,7 @@ package com.stab.data.info.monster.bestiary;
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.info.equipment.HumanoidGear;
+import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.combat.PowerAttack_Feat;
 import com.stab.data.info.feat.combat.WeaponFocus_Feat;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
@@ -42,7 +43,7 @@ public class SkeletalChampion extends Undead {
 		
 		this.addTrait(new ImprovedInitiative_Feat());
 		this.addTrait(new PowerAttack_Feat());
-		this.addTrait(new WeaponFocus_Feat());
+		this.addTrait(new WeaponFocus_Feat(WeaponFactory.LONGSWORD));
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("LONGSWORD"), HumanoidGear.MAINHAND);
 		this.equip(StabInit.getArmorFactory().getArmor("BREASTPLATE"), HumanoidGear.ARMOR);
