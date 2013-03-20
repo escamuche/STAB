@@ -4,7 +4,8 @@ import com.stab.data.info.monster.monstertraits.AberrationTraits;
 
 public class Aberration extends Monster{
 	
-	public Aberration() {
+	public void init() {
+		super.init();
 		
 		this.addTrait(new AberrationTraits());
 		

@@ -5,7 +5,8 @@ import com.stab.data.info.monster.monstertraits.UndeadTraits;
 
 public class Undead extends Monster{
 	
-	public Undead() {
+	public void init() {
+		super.init();
 		
 		this.addTrait(new UndeadTraits());
 		

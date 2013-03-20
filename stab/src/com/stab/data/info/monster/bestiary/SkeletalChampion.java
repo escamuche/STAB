@@ -25,7 +25,6 @@ public class SkeletalChampion extends Undead {
 	public void init() {
 		super.init();
 		setMaxMovePoints(6);
-		this.rollHp();
 	
 		setResource("skeletalchampion");
 		setText("Skeletal Champion");
@@ -60,6 +59,8 @@ public class SkeletalChampion extends Undead {
 		this.setCurrentAI(ai);
 				
 		this.setBloodeffEct("PARTICLE#greenblood");
+		this.rollHp();
+		
 	}
 	
 }

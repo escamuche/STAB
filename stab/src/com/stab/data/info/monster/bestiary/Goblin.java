@@ -17,7 +17,6 @@ public class Goblin extends Humanoid {
 	public void init() {
 		super.init();
 		setMaxMovePoints(6);
-		this.rollHp();
 		
 		setResource("goblin");
 		setText("Goblin");
@@ -44,6 +43,9 @@ public class Goblin extends Humanoid {
 		this.equip(StabInit.getWeaponFactory().getWeapon("SHORTSWORD"), HumanoidGear.MAINHAND);
 		this.equip(StabInit.getArmorFactory().getArmor("LIGHTLEATHER"), HumanoidGear.ARMOR);
 		this.equip(StabInit.getArmorFactory().getArmor("LIGHTWOODENSHIELD"), HumanoidGear.OFFHAND);
+		
+		
+		this.rollHp();
 		
 	}
 	

@@ -5,8 +5,8 @@ import com.stab.data.info.monster.monstertraits.MonstrousHumanoidTraits;
 
 public class MonstrousHumanoid extends Monster{
 	
-	public MonstrousHumanoid() {
-		
+	public void init() {
+		super.init();
 		this.addTrait(new MonstrousHumanoidTraits());
 		
 	}

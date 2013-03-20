@@ -20,7 +20,6 @@ public class Kobold extends Humanoid {
 	public void init() {
 		super.init();
 		setMaxMovePoints(6);
-		this.rollHp();
 		
 		
 		
@@ -51,5 +50,8 @@ public class Kobold extends Humanoid {
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("SPEAR"), HumanoidGear.BOTHHANDS);
 		this.equip(StabInit.getArmorFactory().getArmor("LIGHTLEATHER"), HumanoidGear.ARMOR);
+		
+		this.rollHp();
+		
 	}
 }

@@ -5,7 +5,8 @@ import com.stab.data.info.monster.monstertraits.PlantTraits;
 
 public class Plant extends Monster{
 	
-	public Plant() {
+	public void init() {
+		super.init();
 		
 		this.addTrait(new PlantTraits());
 		

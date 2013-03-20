@@ -5,7 +5,8 @@ import com.stab.data.info.monster.monstertraits.OutsiderTraits;
 
 public class Outsider extends Monster{
 	
-	public Outsider() {
+	public void init() {
+		super.init();
 		
 		this.addTrait(new OutsiderTraits());
 		

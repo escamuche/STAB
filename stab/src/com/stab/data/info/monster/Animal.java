@@ -4,8 +4,8 @@ import com.stab.data.info.monster.monstertraits.AnimalTraits;
 
 public class Animal extends Monster{
 	
-	public Animal() {
-		
+	public void init() {
+		super.init();
 		this.addTrait(new AnimalTraits());
 		
 	}

@@ -5,8 +5,8 @@ import com.stab.data.info.monster.monstertraits.FeyTraits;
 
 public class Fey extends Monster{
 	
-	public Fey() {
-		
+	public void init() {
+		super.init();
 		this.addTrait(new FeyTraits());
 		
 	}

@@ -19,7 +19,6 @@ public class GoblinShaman extends Humanoid {
 	public void init() {
 		super.init();
 		setMaxMovePoints(6);
-		this.rollHp();
 	
 		this.getActionSet().addAction(CureLight.ID);
 		this.getActionSet().addAction(MagicMissile.ID);
@@ -48,5 +47,8 @@ public class GoblinShaman extends Humanoid {
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("QUARTERSTAFF"), HumanoidGear.BOTHHANDS);
 		this.equip(StabInit.getArmorFactory().getArmor("LIGHTLEATHER"), HumanoidGear.ARMOR);
+		
+		this.rollHp();
+		
 	}
 }

@@ -5,8 +5,8 @@ import com.stab.data.info.monster.monstertraits.MagicalBeastTraits;
 
 public class MagicalBeast extends Monster{
 	
-	public MagicalBeast() {
-		
+	public void init() {
+		super.init();
 		this.addTrait(new MagicalBeastTraits());
 		
 	}
