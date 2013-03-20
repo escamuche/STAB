@@ -43,7 +43,7 @@ public class Zombie extends Undead {
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("MEDIUMSLAM"), HumanoidGear.BOTHHANDS);
 		
-		this.rollHp();
+		
 	
 		
 	}

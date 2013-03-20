@@ -59,7 +59,7 @@ public class SkeletalChampion extends Undead {
 		this.setCurrentAI(ai);
 				
 		this.setBloodeffEct("PARTICLE#greenblood");
-		this.rollHp();
+		
 		
 	}
 	

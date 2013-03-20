@@ -44,6 +44,6 @@ public class DireRat extends Animal {
 		
 		this.equip(bite, HumanoidGear.MAINHAND);
 		
-		this.rollHp();
+		
 	}
 }

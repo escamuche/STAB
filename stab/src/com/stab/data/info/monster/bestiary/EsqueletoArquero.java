@@ -52,7 +52,7 @@ public class EsqueletoArquero extends Undead {
 		this.equip(StabInit.getWeaponFactory().getWeapon("LONGBOW"), HumanoidGear.BOTHHANDS);
 		this.equip(StabInit.getArmorFactory().getArmor("STUDDEDLEATHER"), HumanoidGear.ARMOR);
 		
-		this.rollHp();
+		
 		
 	}
 	

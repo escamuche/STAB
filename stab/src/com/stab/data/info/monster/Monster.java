@@ -20,6 +20,9 @@ public class Monster extends Creature {
 		this.setGear(new HumanoidGear());   //si, si, ya, ya. ya lo separaremos en varias clases por tipo de monstruo
 	}
 	
+	public void postInit(){
+		rollHp();
+	}
 	
 	@Override
 	public void rollInitiative() {
@@ -40,7 +43,7 @@ public class Monster extends Creature {
 	}
 	
 	
-	public void rollHp(){
+	private void rollHp(){
 		if (StabConstants.USEMAXHPFORMONSTERS){
 			int hp=getValue(StabConstants.HITDICENUMBER)*getValue(StabConstants.HITDICETYPE);
 			setMaxHp(hp);

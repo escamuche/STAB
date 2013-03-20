@@ -45,7 +45,7 @@ public class Goblin extends Humanoid {
 		this.equip(StabInit.getArmorFactory().getArmor("LIGHTWOODENSHIELD"), HumanoidGear.OFFHAND);
 		
 		
-		this.rollHp();
+		
 		
 	}
 	

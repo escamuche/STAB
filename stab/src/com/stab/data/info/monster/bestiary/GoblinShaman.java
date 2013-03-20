@@ -48,7 +48,7 @@ public class GoblinShaman extends Humanoid {
 		this.equip(StabInit.getWeaponFactory().getWeapon("QUARTERSTAFF"), HumanoidGear.BOTHHANDS);
 		this.equip(StabInit.getArmorFactory().getArmor("LIGHTLEATHER"), HumanoidGear.ARMOR);
 		
-		this.rollHp();
+	
 		
 	}
 }
