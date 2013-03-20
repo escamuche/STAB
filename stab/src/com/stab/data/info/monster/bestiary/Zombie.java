@@ -1,4 +1,4 @@
-package com.stab.data.info.monster.Bestiary;
+package com.stab.data.info.monster.bestiary;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
@@ -17,8 +17,6 @@ public class Zombie extends Undead {
 	public void init() {
 		super.init();
 		setMaxMovePoints(6);
-		this.rollHp();
-		
 		setResource("zombie");
 		setText("Zombie");
 		setFaction(1);
@@ -44,6 +42,10 @@ public class Zombie extends Undead {
 		this.setBloodeffEct("PARTICLE#greenblood");
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("MEDIUMSLAM"), HumanoidGear.BOTHHANDS);
+		
+		this.rollHp();
+		
+		
 	}
 	
 }

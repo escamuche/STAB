@@ -1,4 +1,4 @@
-package com.stab.data.info.monster.Bestiary;
+package com.stab.data.info.monster.bestiary;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
@@ -16,7 +16,7 @@ public class DireRat extends Animal {
 	public void init() {
 		super.init();
 		setMaxMovePoints(8);
-		this.rollHp();
+		
 		
 			
 		
@@ -43,5 +43,7 @@ public class DireRat extends Animal {
 		Weapon bite=StabInit.getWeaponFactory().getWeapon("SMALLBITE");
 		
 		this.equip(bite, HumanoidGear.MAINHAND);
+		
+		this.rollHp();
 	}
 }

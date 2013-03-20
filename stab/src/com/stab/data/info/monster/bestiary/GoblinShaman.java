@@ -1,4 +1,4 @@
-package com.stab.data.info.monster.Bestiary;
+package com.stab.data.info.monster.bestiary;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;

@@ -1,4 +1,4 @@
-package com.stab.data.info.monster.Bestiary;
+package com.stab.data.info.monster.bestiary;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
@@ -20,7 +20,6 @@ public class EsqueletoArquero extends Undead {
 	public void init() {
 		super.init();
 		setMaxMovePoints(6);
-		this.rollHp();
 		
 		setResource("skeleto");
 		setText("Esqueleto Arquero");
@@ -52,6 +51,9 @@ public class EsqueletoArquero extends Undead {
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("LONGBOW"), HumanoidGear.BOTHHANDS);
 		this.equip(StabInit.getArmorFactory().getArmor("STUDDEDLEATHER"), HumanoidGear.ARMOR);
+		
+		this.rollHp();
+		
 	}
 	
 }
