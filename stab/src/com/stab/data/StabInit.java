@@ -54,6 +54,7 @@ import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.WalkAnimation;
 import com.stab.data.info.equipment.ArmorFactory;
+import com.stab.data.info.equipment.EquipmentFactory;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.monster.bestiary.DireRat;
 import com.stab.data.info.monster.bestiary.EsqueletoArquero;
@@ -89,6 +90,7 @@ public class StabInit {
 	
 	static WeaponFactory wf;
 	static ArmorFactory af;
+	static EquipmentFactory ef;
 	
 	public static void clientInit(){
 		initializeData();
@@ -181,6 +183,7 @@ public class StabInit {
 		
 		wf=new WeaponFactory();
 		af=new ArmorFactory();
+		ef=new EquipmentFactory();
 	}
 	
 	static void initActions(){
@@ -238,5 +241,7 @@ public class StabInit {
 	public static ArmorFactory getArmorFactory(){
 		return af;
 	}
-	
+	public static EquipmentFactory getEquipmentFactory(){
+		return ef;
+	}
 }

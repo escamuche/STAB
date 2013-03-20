@@ -1,9 +1,9 @@
 package com.stab.data.info.equipment;
 
+import com.stab.data.animation.ShootBeamAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.model.info.applicable.base.Damage;
-import com.stab.model.info.trait.Trait;
 import com.stab.model.info.trait.base.TraitFactory;
 
 public class WeaponFactory extends TraitFactory{
@@ -91,6 +91,10 @@ public class WeaponFactory extends TraitFactory{
 	private static final String MEDIUMSLAM = "MEDIUMSLAM";
 	private static final String SMALLBITE = "SMALLBITE";
 	private static final String MEDIUMCLAW = "MEDIUMCLAW";
+	
+	private static final String RAY = "RAY";
+	private static final String MISSILE = "MISSILE";
+	private static final String TOUCH = "TOUCH";
 
 
 	public Weapon getWeapon(String id){
@@ -119,6 +123,17 @@ public class WeaponFactory extends TraitFactory{
 		
 		BasicWeapon w;
 		
+		
+		//Para hechizos
+		w=new BasicWeapon("Ray",0,1,Damage.GENERIC_DAMAGE,"",ShootBeamAnimation.ID);
+		w.setCategory(BasicWeapon.SPECIAL);
+		register(RAY,w);
+		w=new BasicWeapon("Missile",0,1,Damage.GENERIC_DAMAGE,"",ShootProyectileAnimation.ID);
+		w.setCategory(BasicWeapon.SPECIAL);
+		register(MISSILE,w);
+		w=new BasicWeapon("Touch",0,1,Damage.GENERIC_DAMAGE,"",SwingAnimation.ID);
+		w.setCategory(BasicWeapon.SPECIAL);
+		register(TOUCH,w);
 		
 		//Armas de criaturas
 		w=new BasicWeapon("Claw",1,6,Damage.SLASHING_DAMAGE,"effects/zombieclaw",SwingAnimation.ID);
