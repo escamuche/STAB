@@ -6,6 +6,7 @@ import com.stab.data.actions.feats.Expertise;
 import com.stab.data.actions.feats.PowerAttack;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.WarriorActionSet;
+import com.stab.data.info.equipment.EquipmentFactory;
 import com.stab.data.info.equipment.Weapon;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.equipment.traits.FlamingWeapon;
@@ -52,7 +53,8 @@ public static final String ID="WARRIOR_INFO";
 	//	this.equip(w, HumanoidGear.MAINHAND);
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.SHORTSWORD));
-		
+		this.equip(EquipmentFactory.TORCH);
+				
 		
 		//ehum.... warrior se jubila entonces. pobre. nunca fue el mismo despues de perder sus poderes destructores de dummys
 	}
