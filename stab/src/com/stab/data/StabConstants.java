@@ -109,6 +109,7 @@ public class StabConstants {
 	public static final String MONEYCOPPER="MONEYCOPPER";
 	
 	
+	public static final String SPELLKNOWN0="SPELLKNOWN0";
 	public static final String SPELLKNOWN1="SPELLKNOWN1";
 	public static final String SPELLKNOWN2="SPELLKNOWN2";
 	public static final String SPELLKNOWN3="SPELLKNOWN3";

@@ -4,13 +4,13 @@ import com.stab.data.StabConstants;
 import com.stab.data.info.feat.MetamagicFeat;
 import com.stab.model.info.trait.Modifier;
 
-public class PointBlankShot extends MetamagicFeat{
+public class PointBlankShot_Feat extends MetamagicFeat{
 	
 	public static final String ID="POINTBLANKSHOT_FEAT";
 
 	
 	
-	public PointBlankShot() {
+	public PointBlankShot_Feat() {
 			
 		Modifier hit = new Modifier(StabConstants.TOHITRANGED,1);
 		this.addTrait(hit);

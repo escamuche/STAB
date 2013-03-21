@@ -41,10 +41,7 @@ public class Zombie extends Undead {
 		
 		this.setBloodeffEct("PARTICLE#greenblood");
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("MEDIUMSLAM"), HumanoidGear.BOTHHANDS);
-		
-		
-	
+		this.equip(StabInit.getWeaponFactory().getWeapon("MEDIUMSLAM"), HumanoidGear.BOTHHANDS);	
 		
 	}
 	

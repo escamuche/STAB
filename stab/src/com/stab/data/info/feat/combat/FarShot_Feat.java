@@ -10,7 +10,7 @@ public class FarShot_Feat extends MetamagicFeat{
 	
 	public FarShot_Feat() {
 			
-		this.addRequiredTrait(PointBlankShot.ID);
+		this.addRequiredTrait(PointBlankShot_Feat.ID);
 	
 	}
 	
