@@ -53,8 +53,9 @@ public static final String ID="ROGUE_INFO";
 
 		
 		/* Habilidades especiales
-		 * SneakAttack 1d6
-		 * Trapfinding
+		 * SneakAttack 1d6					hace falta la comprobacion de flanked en attack
+		 * Trapfinding						hacen falta trampas, sneak y unas cuantas cosas primero,
+		 * 									pero sera una accion de search que haga tiradas de search contra todo lo que tenga en LOS
 		 * 
 		 */
 	}

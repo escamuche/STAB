@@ -50,9 +50,15 @@ public static final String ID="BARBARIAN_INFO";
 		this.setAttribute(StabConstants.SURVIVAL, 5);
 		this.setAttribute(StabConstants.SWIMSKILL, 5);
 		
+		
+		//POLAMOLDEDIO!   las constantes! las constantes!   ...getArmorFactory().getArmor( WeaponFActory.BREASTPLATE )  XDDDDDD
+		
+		//Bueno que? una scene de lobby nueva ya, no?
+		
 		/* habilidades especiales
-		 * Rage
-		 * Fast Movement
+		 * Rage							- haremos un buff que se puede activar o desactivar con +2 a fue y a a con, y que te cure 2*level hp
+		 * 								 (el max sube con la con). en el remove, ha de quitarte esa vida, ponerte fatigued y meter un cooldown (asi probamos cooldown) 
+		 * Fast Movement				- buff permanente que en turnstart mira tu categoria de armadura y te añade move points si es apropiado
 		 * 
 		 */
 	}

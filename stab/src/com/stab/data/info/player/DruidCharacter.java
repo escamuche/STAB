@@ -48,6 +48,9 @@ public static final String ID="DRUID_INFO";
 		this.equip(StabInit.getWeaponFactory().getWeapon("SPEAR"), HumanoidGear.BOTHHANDS);
 		this.equip(StabInit.getArmorFactory().getArmor("HIDE"), HumanoidGear.ARMOR);
 		
+		
+		//Aqui ni comentar nada, no? :D
+		
 	}
 	
 	

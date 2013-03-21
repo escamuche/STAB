@@ -57,8 +57,8 @@ public static final String ID="SORCERER_INFO";
 		this.equip(StabInit.getWeaponFactory().getWeapon("QUARTERSTAFF"), HumanoidGear.BOTHHANDS);
 		
 		/* habilidades especiales
-		 * 
-		 * Bloodline power
+		 * 							hay que ir pensando esa tabla de coste de pm por nivel...
+		 * Bloodline power			traits.
 		 */
 		
 	}

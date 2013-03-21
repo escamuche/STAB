@@ -51,9 +51,9 @@ public static final String ID="RANGER_INFO";
 		this.equip(StabInit.getWeaponFactory().getWeapon("LONGBOW"), HumanoidGear.MAINHAND);
 		
 		/* Habilidades especiales
-		 * Favored Enemy 1
-		 * Track
-		 * Will Empathy
+		 * Favored Enemy 1				Esto, tal cual es un attends<attackDAta>. Ojo hacer un trait con parametro, para que acepte la clase
+		 * Track						deja que me piense lo de las huellas, que suena interesante 
+		 * Will Empathy					primero ai animal
 		 */
 	}
 	

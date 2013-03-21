@@ -58,6 +58,10 @@ public static final String ID="WIZARD_INFO";
 		brazalete.setSlots(HumanoidGear.BRACERS);
 		brazalete.addTrait(new Modifier(StabConstants.ARMORDEFENSE,StabConstants.ARMORMOD,+4));
 		this.equip(brazalete, HumanoidGear.BRACERS);*/
+		
+		
+		//Lo del familiar.... miedo me da
+		
 		}
 	
 	

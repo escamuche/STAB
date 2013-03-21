@@ -52,6 +52,9 @@ public static final String ID="WARRIOR_INFO";
 	//	this.equip(w, HumanoidGear.MAINHAND);
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.SHORTSWORD));
+		
+		
+		//ehum.... warrior se jubila entonces. pobre. nunca fue el mismo despues de perder sus poderes destructores de dummys
 	}
 	
 	

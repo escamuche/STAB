@@ -48,9 +48,9 @@ public static final String ID="CLERIC_INFO";
 		this.equip(StabInit.getArmorFactory().getArmor("CHAINMAIL"), HumanoidGear.ARMOR);
 		
 		/* Faltan habilidades especiales:
-		 * Aura
-		 * Channel energy 1d6
-		 * Domains
+		 * Aura								ya veremos como
+		 * Channel energy 1d6				sera una self action que afecta de area. solo falta la parte de calcular los targets para poder hacerla
+		 * Domains							seran traits, probablemente con algun grantAction
 		 */
 	}
 	

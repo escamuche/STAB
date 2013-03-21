@@ -56,9 +56,9 @@ public static final String ID="MONK_INFO";
 		
 		this.addTrait(new PathfinderAttributeBonus(StabConstants.ARMOR,StabConstants.WISDOM));
 		
-		/* Habilidades especiales
+		/* Habilidades especiales			Esto... vendra en un dlc, no?
 		 * Flurry of Blows
-		 * Stunning Fist
+		 * Stunning Fist					Como el feat
 		 * Unarmed Strike
 		 */
 	}

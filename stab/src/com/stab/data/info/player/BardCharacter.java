@@ -52,12 +52,12 @@ public static final String ID="BARD_INFO";
 		this.equip(StabInit.getArmorFactory().getArmor("STUDDEDLEATHER"), HumanoidGear.ARMOR);
 		
 		/* habilidades especiales
-		 * Bardic Knowledge
-		 * Bardic Performance
-		 * Countersong
-		 * Distraction
-		 * Fascinate
-		 * Inspire Courage +1
+		 * Bardic Knowledge				por ahora nada claro
+		 * Bardic Performance			esto.... po que?
+		 * Countersong					probablemente genere un aura que de un buff que attends MAgicEffect o algo asi
+		 * Distraction					esto..... po cualo?
+		 * Fascinate					esto..... po como
+		 * Inspire Courage +1			una accion extendida (aun faltan) que cada turno ponga un buff(de 1 turno) a todos los aliados en rango
 		 */
 		
 	}
