@@ -1,20 +1,20 @@
 package com.stab.data.actions.player;
 
 
-import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
 import com.stab.data.actions.player.spells.wizard.level0.Flare;
 import com.stab.data.actions.player.spells.wizard.level0.OpenClose;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.actions.player.spells.wizard.level0.Resistance;
+import com.stab.data.actions.player.spells.wizard.level0.unfinished.AcidSplash;
 import com.stab.data.actions.player.spells.wizard.level1.ChillTouch;
 import com.stab.data.actions.player.spells.wizard.level1.EnlargePerson;
-import com.stab.data.actions.player.spells.wizard.level1.ExpeditiousRetreat;
 import com.stab.data.actions.player.spells.wizard.level1.MageArmor;
 import com.stab.data.actions.player.spells.wizard.level1.MagicMissile;
-import com.stab.data.actions.player.spells.wizard.level1.RayEnfeeblement;
-import com.stab.data.actions.player.spells.wizard.level1.ReducePerson;
 import com.stab.data.actions.player.spells.wizard.level1.Shield;
 import com.stab.data.actions.player.spells.wizard.level1.ShockingGrasp;
+import com.stab.data.actions.player.spells.wizard.level1.unfinished.ExpeditiousRetreat;
+import com.stab.data.actions.player.spells.wizard.level1.unfinished.RayEnfeeblement;
+import com.stab.data.actions.player.spells.wizard.level1.unfinished.ReducePerson;
 
 public class WizardActionSet extends PathfinderActionSet {
 

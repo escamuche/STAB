@@ -9,6 +9,8 @@ import com.stab.model.info.trait.CompoundTrait;
 
 public class UndeadTraits extends CompoundTrait {
 	
+	public static final String ID="UNDEADTRAITS";
+	
 	public UndeadTraits() {
 	
 		this.addTrait(new Attribute(StabConstants.HITDICETYPE,8));
