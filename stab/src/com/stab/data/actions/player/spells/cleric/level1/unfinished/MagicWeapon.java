@@ -1,7 +1,10 @@
-package com.stab.data.actions.player.spells.cleric.level1;
+package com.stab.data.actions.player.spells.cleric.level1.unfinished;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
+import com.stab.data.info.buff.Bless_Buff;
+import com.stab.data.info.equipment.WeaponFactory;
+import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 
 public class MagicWeapon extends SpellOnTarget {
@@ -18,8 +21,14 @@ public class MagicWeapon extends SpellOnTarget {
 	}
 
 	@Override
-	public boolean execute(Info arg0, Info arg1) {
-		// falta MagicWeapon_buff
-		return false;
+	public boolean execute(Info yo, Info target) {
+		
+		/* Como le digo que me de el arma equipada del target?
+		BaseInfo weapon = (BaseInfo)target;
+		MagicWeapon_Buff buff = new MagicWeapon_Buff(weapon);
+		weapon.addTrait(buff);
+		/**/
+		
+		return true;
 	}
 }

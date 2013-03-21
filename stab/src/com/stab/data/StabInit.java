@@ -64,7 +64,16 @@ import com.stab.data.info.monster.bestiary.GoblinShaman;
 import com.stab.data.info.monster.bestiary.Kobold;
 import com.stab.data.info.monster.bestiary.SkeletalChampion;
 import com.stab.data.info.monster.bestiary.Zombie;
+import com.stab.data.info.player.BarbarianCharacter;
+import com.stab.data.info.player.BardCharacter;
 import com.stab.data.info.player.ClericCharacter;
+import com.stab.data.info.player.DruidCharacter;
+import com.stab.data.info.player.FighterCharacter;
+import com.stab.data.info.player.MonkCharacter;
+import com.stab.data.info.player.PaladinCharacter;
+import com.stab.data.info.player.RangerCharacter;
+import com.stab.data.info.player.RogueCharacter;
+import com.stab.data.info.player.SorcererCharacter;
 import com.stab.data.info.player.WarriorCharacter;
 import com.stab.data.info.player.WizardCharacter;
 import com.stab.data.info.props.Barrel;
@@ -140,32 +149,51 @@ public class StabInit {
 	
 	static void createFactory(){
 		of= new BasicObjectFactory();
+		
+		//scenes
 		of.setMapping(StabLobby.class);
 		of.setMapping(CharacterSheet.class);
 		of.setMapping(SpellBook.class);
 		of.setMapping(Feats.class);
+		of.setMapping(PrayerBook.class);
+		
+		//personajes
 		of.setMapping(WarriorCharacter.class);
+		of.setMapping(WizardCharacter.class);
+		of.setMapping(ClericCharacter.class);
+		of.setMapping(BarbarianCharacter.class);
+		of.setMapping(BardCharacter.class);
+		of.setMapping(DruidCharacter.class);
+		of.setMapping(FighterCharacter.class);
+		of.setMapping(MonkCharacter.class);
+		of.setMapping(PaladinCharacter.class);
+		of.setMapping(RangerCharacter.class);
+		of.setMapping(RogueCharacter.class);
+		of.setMapping(SorcererCharacter.class);
+		
+		//objetos
 		of.setMapping(Crate.class);
 		of.setMapping(WoodenDoor.class);
 		of.setMapping(Barrel.class);
 		of.setMapping(Dummy.class);
-		of.setMapping(WizardCharacter.class);
+		of.setMapping(Brazier.class);
+		
+		//criaturas
 		of.setMapping(Zombie.class);
-		of.setMapping(ClericCharacter.class);
 		of.setMapping(EsqueletoArquero.class);
-		of.setMapping(PrayerBook.class);
 		of.setMapping(DireRat.class);
 		of.setMapping(Kobold.class);
-		of.setMapping(ActionSlotButton.class);
 		of.setMapping(Goblin.class);
 		of.setMapping(GoblinShaman.class);
 		of.setMapping(SkeletalChampion.class);
 		
-		of.setMapping(Brazier.class);
+		//botones
+		of.setMapping(ActionSlotButton.class);
 		
 		//BlockData
 		of.setMapping(DefaultBlockData.class);
 		of.setMapping(StabBlockData.class);
+		
 		//Animations
 		of.setMapping(WalkAnimation.class);
 		of.setMapping(OpenDoorAnimation.class);
@@ -193,9 +221,11 @@ public class StabInit {
 		getActionLibrary().register(new DefendAction());
 		getActionLibrary().getAction(InteractAction.ID).setResource("actions/inv_gizmo_02");
 		getActionLibrary().register(new WeaponAttackAction());
+		
 		//feats
 		getActionLibrary().register(new PowerAttack());
 		getActionLibrary().register(new Expertise());
+		
 		//conjuros
 		getActionLibrary().register(new AcidSplash());
 		getActionLibrary().register(new Flare());

@@ -32,10 +32,10 @@ public class Bane extends SpellOnTarget {
 	}
 
 	
-	/*@Override
+	@Override
 	public int getEffectValue(BaseInfo i) {
-		return dañobase;
-	}*/
+		return 5;
+	}
 	
 
 }

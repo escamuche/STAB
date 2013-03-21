@@ -1,4 +1,4 @@
-package com.stab.data.actions.player.spells.cleric.level0;
+package com.stab.data.actions.player.spells.cleric.level0.unfinished;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;

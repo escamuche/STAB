@@ -31,4 +31,9 @@ public class ResistanceCleric extends SpellOnTarget{
      setName("Resistance");
      this.setEffectType(BUFF);
 	}
+	
+	@Override
+	public int getEffectValue(BaseInfo i) {
+		return 3;
+	}
 }

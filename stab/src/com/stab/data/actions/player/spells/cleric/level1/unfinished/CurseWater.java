@@ -1,4 +1,4 @@
-package com.stab.data.actions.player.spells.cleric.level1;
+package com.stab.data.actions.player.spells.cleric.level1.unfinished;
 
 import com.stab.model.action.TargetAction;
 import com.stab.model.basic.token.PhysicalToken;

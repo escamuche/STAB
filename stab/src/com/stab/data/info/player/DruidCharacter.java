@@ -50,6 +50,13 @@ public static final String ID="DRUID_INFO";
 		
 		
 		//Aqui ni comentar nada, no? :D
+		/* ya va, ya va
+		 * 
+		 * Nature Bond
+		 * Nature sense
+		 * Wild Empathy
+		 */
+		
 		
 	}
 	

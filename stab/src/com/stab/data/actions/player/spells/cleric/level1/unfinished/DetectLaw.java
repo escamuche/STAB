@@ -1,17 +1,17 @@
-package com.stab.data.actions.player.spells.cleric.level1;
+package com.stab.data.actions.player.spells.cleric.level1.unfinished;
 
 import com.stab.model.action.SelfAction;
 import com.stab.model.info.BaseInfo;
 
-public class DetectChaos extends SelfAction{
+public class DetectLaw extends SelfAction{
 	
-	public static final String ID="DETECTCHAOS";
+	public static final String ID="DETECTLAW";
 
 	
-	public DetectChaos() {
+	public DetectLaw() {
      setRange(1);
      setResource("actions/bless");
-     setName("Bless Water");
+     setName("Detect Law");
      this.setEffectType(SPECIAL);
 	}
 

@@ -1,19 +1,19 @@
-package com.stab.data.actions.player.spells.cleric.level0;
+package com.stab.data.actions.player.spells.cleric.level1.unfinished;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.model.info.BaseInfo;
 
 
-public class DetectMagic extends SpellOnSelf{
-	public static final String ID="DETECTMAGIC_CLERIC";
+public class EndureElements extends SpellOnSelf{
+	public static final String ID="ENDUREELEMENTS_CLERIC";
 
-	public DetectMagic() {
+	public EndureElements() {
 	     
-		 setLevel(0);
+		 setLevel(1);
 		 setCasterClass(StabConstants.CLERICCASTER);
 	     setResource("actions/ability_mage_arcanebarrage");
-	     setName("DetectMagic");
+	     setName("Endure Elements");
 	     this.setEffectType(BUFF);
 		}
 

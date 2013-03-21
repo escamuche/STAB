@@ -14,9 +14,9 @@ public class Guidance extends SpellOnTarget{
 	@Override
 	public boolean execute(Info yo, Info target) {
 		
-		BaseInfo bufado = new BaseInfo();
+		BaseInfo Bufado = (BaseInfo)target;
 		Guidance_Buff buff = new Guidance_Buff((BaseInfo) target);
-		bufado.addTrait(buff);
+		Bufado.addTrait(buff);
 		return true;
 	
 	}
@@ -30,4 +30,10 @@ public class Guidance extends SpellOnTarget{
      setName("Guidance");
      this.setEffectType(BUFF);
 	}
+	
+	@Override
+	public int getEffectValue(BaseInfo i) {
+		return 3;
+	}
+	
 }

@@ -5,7 +5,9 @@ import com.stab.data.StabInit;
 import com.stab.data.actions.feats.PowerAttack;
 import com.stab.data.actions.player.BarbarianActionSet;
 import com.stab.data.actions.player.DefendAction;
+import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.HumanoidGear;
+import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.combat.Cleave_Feat;
 import com.stab.data.info.feat.combat.PowerAttack_Feat;
 
@@ -41,19 +43,14 @@ public static final String ID="BARBARIAN_INFO";
 		this.addTrait(new Cleave_Feat());
 		//this.getActionSet().setAction(Cleave.ID, 18);
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("GREATSWORD"), HumanoidGear.BOTHHANDS);
-		this.equip(StabInit.getArmorFactory().getArmor("BREASTPLATE"), HumanoidGear.ARMOR);
+		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.GREATAXE), HumanoidGear.BOTHHANDS);
+		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.BREASTPLATE), HumanoidGear.ARMOR);
 		
 		this.setAttribute(StabConstants.CLIMB, 5);
 		this.setAttribute(StabConstants.KNOWLEDGENATURE, 4);
 		this.setAttribute(StabConstants.PERCEPTION, 5);
 		this.setAttribute(StabConstants.SURVIVAL, 5);
 		this.setAttribute(StabConstants.SWIMSKILL, 5);
-		
-		
-		//POLAMOLDEDIO!   las constantes! las constantes!   ...getArmorFactory().getArmor( WeaponFActory.BREASTPLATE )  XDDDDDD
-		
-		//Bueno que? una scene de lobby nueva ya, no?
 		
 		/* habilidades especiales
 		 * Rage							- haremos un buff que se puede activar o desactivar con +2 a fue y a a con, y que te cure 2*level hp

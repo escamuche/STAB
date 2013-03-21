@@ -4,6 +4,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.PaladinActionSet;
+import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.combat.DazzlingDisplay_Feat;
@@ -43,11 +44,9 @@ public static final String ID="PALADIN_INFO";
 		this.addTrait(new DazzlingDisplay_Feat());
 		this.addTrait(new WeaponFocus_Feat(WeaponFactory.LONGSWORD));
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("LONGSWORD"), HumanoidGear.BOTHHANDS);
-		
-		this.equip(StabInit.getArmorFactory().getArmor("BANDED"), HumanoidGear.ARMOR);
-		this.equip(StabInit.getWeaponFactory().getWeapon("LONGSWORD"), HumanoidGear.MAINHAND);
-		this.equip(StabInit.getArmorFactory().getArmor("HEAVYWOODENSHIELD"), HumanoidGear.OFFHAND);
+		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.BANDEDMAIL), HumanoidGear.ARMOR);
+		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.LONGSWORD), HumanoidGear.MAINHAND);
+		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.HEAVYWOODENSHIELD), HumanoidGear.OFFHAND);
 		
 		/* Habilidades especiales
 		 * Aura of Good					lo mismo que todo, aura centrada que da buff cada turno
