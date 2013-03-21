@@ -41,7 +41,7 @@ public class EsqueletoArquero extends Undead {
 		
 	//	this.setCurrentAI(new DefaultAIPackage());
 		ZombieAIPackage ai=new ZombieAIPackage();
-		ai.setLog(true);
+	//	ai.setLog(true);
 		this.setCurrentAI(ai);
 		
 		

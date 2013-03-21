@@ -227,8 +227,8 @@ public class StabLobby  extends Scene{
 	
 //		player.addInfo(info);
 		
-		
-		//player.setCharacter(info);
+	//	player.discardInfo();
+	//	player.addInfo(new WarriorCharacter());
 	
 		travelToScene(player,CharacterSheet.ID);
 	}
