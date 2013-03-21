@@ -23,10 +23,11 @@ public class BleedCondition extends Debuff {
 		
 		
 		this.setName("Bleed");
+		this.setPermanent();
 		
 		int healroll = Roll.d20() + target.getValue(StabConstants.HEALSKILL);
 		if(healroll>14) 
-			this.setTime(0);
+			target.removeTrait(this.getId());
 			else{
 				Damage d = new Damage(amount,Damage.BLEED_DAMAGE,target);
 				target.apply(d);

@@ -36,6 +36,7 @@ public static final String ID="BARBARIAN_INFO";
 		this.setAttribute(StabConstants.WISDOM, 12);
 		this.setAttribute(StabConstants.CHARISMA, 8);
 		this.setAttribute(StabConstants.FORTITUDESAVE, 2);
+		this.setAttribute(StabConstants.RAGEROUNDS, 4);
 		
 		this.addTrait(new PowerAttack_Feat());
 		this.getActionSet().setAction(PowerAttack.ID, 17);
