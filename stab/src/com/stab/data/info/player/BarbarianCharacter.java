@@ -41,13 +41,13 @@ public static final String ID="BARBARIAN_INFO";
 		this.setAttribute(StabConstants.RAGEROUNDS, 4);
 		
 		this.addTrait(new PowerAttack_Feat());
-		this.getActionSet().setAction(PowerAttack.ID, 17);
+		this.getActionSet().setAction(PowerAttack.ID, 7);
 		
 		this.addTrait(new Cleave_Feat());
-		//this.getActionSet().setAction(Cleave.ID, 18);
+		//this.getActionSet().setAction(Cleave.ID, 4);
 		
 		this.addTrait(new Rage_Ability());
-		this.getActionSet().setAction(Rage.ID, 13);
+		this.getActionSet().setAction(Rage.ID, 6);
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.GREATAXE), HumanoidGear.BOTHHANDS);
 		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.BREASTPLATE), HumanoidGear.ARMOR);
