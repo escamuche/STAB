@@ -60,7 +60,7 @@ public static final String ID="BARBARIAN_INFO";
 		
 		/* habilidades especiales
 		 * 
-		 * Rage							- haremos un buff que se puede activar o desactivar con +2 a fue y a a con, y que te cure 2*level hp
+		 * Rage			DONE			- haremos un buff que se puede activar o desactivar con +2 a fue y a a con, y que te cure 2*level hp
 		 * 								 (el max sube con la con). en el remove, ha de quitarte esa vida, ponerte fatigued y meter un cooldown (asi probamos cooldown) 
 		 * Fast Movement				- buff permanente que en turnstart mira tu categoria de armadura y te añade move points si es apropiado
 		 * 
