@@ -48,10 +48,10 @@ public class Rage_Buff extends Buff {
 	
 	@Override
 	public void turnStarts() { //lo comprueba al principio de cada turno
-		super.turnStarts();
 		rounds ++; //suma 1 al numero de rounds gastados
 		BaseInfo i = getTarget(); //sacamos un baseinfo de la manga para aplicarle los atributos
 		int j = i.getValue(StabConstants.RAGEROUNDSSPENT);
 		i.setAttribute(StabConstants.RAGEROUNDSSPENT, j+1); //y los aplicamos
+		super.turnStarts(); //esto es para q no desaparezca el baseinfo al principio del turno
 	}
 }

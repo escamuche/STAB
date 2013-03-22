@@ -16,7 +16,7 @@ public class PowerAttack extends SelfAction {
 	public PowerAttack() {
 		this.setName("Power");
 		this.setResource("actions/ability_backstab");
-		//this.setUsableByAI(false);
+		this.setUsableByAI(false);
 	
 	}
 	
