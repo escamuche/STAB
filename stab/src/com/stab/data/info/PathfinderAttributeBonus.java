@@ -4,9 +4,12 @@ import com.stab.model.info.trait.AttributeBasedModifier;
 
 
 public class PathfinderAttributeBonus extends AttributeBasedModifier {
-
-	public PathfinderAttributeBonus(String target, String from) {
-		super(target, from);
+	
+	public PathfinderAttributeBonus(String target, String from){
+		this(target,from,false);
+	}
+	public PathfinderAttributeBonus(String target, String from,boolean useOnlyBase) {
+		super(target, from,useOnlyBase);
 	}
 
 	@Override
