@@ -25,6 +25,7 @@ public class HealAction extends SelfAction{
 			int healroll = Roll.d20() + self.getValue(StabConstants.HEALSKILL);
 			if(healroll>14) { 
 				self.removeTrait(BleedCondition.ID);
+				self.removeTrait(HealAction.ID);
 				return true;
 			}
 			
