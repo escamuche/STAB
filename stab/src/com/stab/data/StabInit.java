@@ -18,6 +18,7 @@ import com.stab.data.actions.player.spells.cleric.level0.Guidance;
 import com.stab.data.actions.player.spells.cleric.level0.ResistanceCleric;
 import com.stab.data.actions.player.spells.cleric.level1.Bane;
 import com.stab.data.actions.player.spells.cleric.level1.Bless;
+import com.stab.data.actions.player.spells.cleric.level1.Command;
 import com.stab.data.actions.player.spells.cleric.level1.CureLight;
 import com.stab.data.actions.player.spells.cleric.level1.DivineFavor;
 import com.stab.data.actions.player.spells.cleric.level1.Doom;
@@ -25,11 +26,14 @@ import com.stab.data.actions.player.spells.cleric.level1.EntropicShield;
 import com.stab.data.actions.player.spells.cleric.level1.InflictLight;
 import com.stab.data.actions.player.spells.cleric.level1.MagicStone;
 import com.stab.data.actions.player.spells.cleric.level1.ShieldFaith;
+import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
+import com.stab.data.actions.player.spells.wizard.level0.Daze;
 import com.stab.data.actions.player.spells.wizard.level0.Flare;
 import com.stab.data.actions.player.spells.wizard.level0.OpenClose;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.actions.player.spells.wizard.level0.Resistance;
-import com.stab.data.actions.player.spells.wizard.level0.unfinished.AcidSplash;
+import com.stab.data.actions.player.spells.wizard.level0.TouchFatigue;
+import com.stab.data.actions.player.spells.wizard.level1.CharmPerson;
 import com.stab.data.actions.player.spells.wizard.level1.ChillTouch;
 import com.stab.data.actions.player.spells.wizard.level1.EnlargePerson;
 import com.stab.data.actions.player.spells.wizard.level1.MageArmor;
@@ -96,7 +100,6 @@ import com.stab.fw.BasicObjectFactory;
 import com.stab.fw.EntityManager;
 import com.stab.model.action.ActionLibrary;
 import com.stab.model.action.base.InteractAction;
-import com.stab.model.info.applicable.base.Heal;
 
 public class StabInit {
 
@@ -238,6 +241,8 @@ public class StabInit {
 		getActionLibrary().register(new OpenClose());
 		getActionLibrary().register(new RayFrost());
 		getActionLibrary().register(new Resistance());
+		getActionLibrary().register(new Daze());
+		getActionLibrary().register(new TouchFatigue());
 		
 		getActionLibrary().register(new MageArmor());
 		getActionLibrary().register(new Shield());
@@ -250,6 +255,7 @@ public class StabInit {
 		getActionLibrary().register(new RayEnfeeblement());
 		getActionLibrary().register(new ReducePerson());
 		getActionLibrary().register(new EntropicShield());
+		getActionLibrary().register(new CharmPerson());
 		
 		getActionLibrary().register(new Guidance());
 		getActionLibrary().register(new ResistanceCleric());
@@ -262,7 +268,8 @@ public class StabInit {
 		getActionLibrary().register(new InflictLight());
 		getActionLibrary().register(new MagicStone());
 		getActionLibrary().register(new ShieldFaith());
-		
+		getActionLibrary().register(new EntropicShield());
+		getActionLibrary().register(new Command());
 	
 		
 	}

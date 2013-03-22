@@ -8,8 +8,11 @@ import com.stab.model.info.trait.CompoundTrait;
 
 public class HumanoidTraits extends CompoundTrait {
 	
+	public static final String ID="HUMANOIDTRAITS";
+	
 	public HumanoidTraits() {
 	
+		
 		this.addTrait(new Attribute(StabConstants.HITDICETYPE,8));
 		this.addTrait(new AttributeBasedModifier(StabConstants.BAB,StabConstants.HITDICENUMBER,0.75f));
 		this.addTrait(new AttributeBasedModifier(StabConstants.FORTITUDESAVE,StabConstants.HITDICENUMBER,0.33f));

@@ -8,6 +8,8 @@ import com.stab.model.info.trait.CompoundTrait;
 
 public class MonstrousHumanoidTraits extends CompoundTrait {
 	
+	public static final String ID="MONSTROUSHUMANOIDTRAITS";
+	
 	public MonstrousHumanoidTraits() {
 	
 		this.addTrait(new Attribute(StabConstants.HITDICETYPE,10));
