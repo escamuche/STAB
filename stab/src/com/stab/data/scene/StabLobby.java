@@ -1,5 +1,6 @@
 package com.stab.data.scene;
 
+import com.stab.common.Constants;
 import com.stab.data.info.player.BarbarianCharacter;
 import com.stab.data.info.player.BardCharacter;
 import com.stab.data.info.player.ClericCharacter;

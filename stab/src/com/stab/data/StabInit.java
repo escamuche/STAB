@@ -8,10 +8,12 @@ import com.stab.client.VisualEngine;
 import com.stab.client.slick.StabVisualEngine;
 import com.stab.client.slick.base.visualobjects.Button_sprite;
 import com.stab.common.fw.ServiceManager;
+import com.stab.data.actions.HealAction;
 import com.stab.data.actions.WeaponAttackAction;
 import com.stab.data.actions.feats.Expertise;
 import com.stab.data.actions.feats.PowerAttack;
 import com.stab.data.actions.player.DefendAction;
+import com.stab.data.actions.player.abilities.Rage;
 import com.stab.data.actions.player.spells.cleric.level0.Guidance;
 import com.stab.data.actions.player.spells.cleric.level0.ResistanceCleric;
 import com.stab.data.actions.player.spells.cleric.level1.Bane;
@@ -93,6 +95,7 @@ import com.stab.fw.BasicObjectFactory;
 import com.stab.fw.EntityManager;
 import com.stab.model.action.ActionLibrary;
 import com.stab.model.action.base.InteractAction;
+import com.stab.model.info.applicable.base.Heal;
 
 public class StabInit {
 
@@ -221,6 +224,8 @@ public class StabInit {
 		getActionLibrary().register(new DefendAction());
 		getActionLibrary().getAction(InteractAction.ID).setResource("actions/inv_gizmo_02");
 		getActionLibrary().register(new WeaponAttackAction());
+		getActionLibrary().register(new Rage());
+		getActionLibrary().register(new HealAction());
 		
 		//feats
 		getActionLibrary().register(new PowerAttack());

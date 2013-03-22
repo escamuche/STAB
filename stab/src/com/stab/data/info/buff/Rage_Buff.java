@@ -17,6 +17,7 @@ public class Rage_Buff extends Buff {
 		this.setSound("HolyCast");
 		this.setResource("actions/rage");                  
 		this.setName("Rage");
+		this.setUnique(true);
 			
 			Modifier cons=new Modifier(StabConstants.CONSTITUTION,StabConstants.MORALMOD,+4);
 			Modifier stre=new Modifier(StabConstants.STRENGHT,StabConstants.MORALMOD, +4);
@@ -33,7 +34,7 @@ public class Rage_Buff extends Buff {
 	@Override
 	public void applyTo(BaseInfo baseInfo) {
 		super.applyTo(baseInfo);
-		baseInfo.heal(8, false);  //se mete aqui para q solo cure cuando te aplique el buff
+		baseInfo.heal(2, false);  //se mete aqui para q solo cure cuando te aplique el buff
 	}
 	
 	@Override
