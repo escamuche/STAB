@@ -13,6 +13,7 @@ import com.stab.util.Roll;
 public class BlindCondition extends Debuff  implements Attends<AttackData> {
 
 	public static final String ID="BLINDEDCONDITION_DEBUFF";
+	
 	BaseInfo i = getTarget();
 	int moddex = i.getAttributeValue(StabConstants.DEXTERITY);
 	Modifier ac=new Modifier(StabConstants.PASSIVEDEFENSE, -2);
@@ -48,9 +49,7 @@ public class BlindCondition extends Debuff  implements Attends<AttackData> {
 	public void attend(AttackData arg0) {
 		int roll = Roll.d2();
 		if (roll == 1)
-			arg0.setResult(Attack.MISS);
-		
-		
+			arg0.setResult(Attack.MISS);	
 	}
 
 	@Override

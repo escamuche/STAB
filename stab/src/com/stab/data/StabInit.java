@@ -21,6 +21,7 @@ import com.stab.data.actions.player.spells.cleric.level1.Bless;
 import com.stab.data.actions.player.spells.cleric.level1.CureLight;
 import com.stab.data.actions.player.spells.cleric.level1.DivineFavor;
 import com.stab.data.actions.player.spells.cleric.level1.Doom;
+import com.stab.data.actions.player.spells.cleric.level1.EntropicShield;
 import com.stab.data.actions.player.spells.cleric.level1.InflictLight;
 import com.stab.data.actions.player.spells.cleric.level1.MagicStone;
 import com.stab.data.actions.player.spells.cleric.level1.ShieldFaith;
@@ -248,6 +249,7 @@ public class StabInit {
 		getActionLibrary().register(new ExpeditiousRetreat());
 		getActionLibrary().register(new RayEnfeeblement());
 		getActionLibrary().register(new ReducePerson());
+		getActionLibrary().register(new EntropicShield());
 		
 		getActionLibrary().register(new Guidance());
 		getActionLibrary().register(new ResistanceCleric());

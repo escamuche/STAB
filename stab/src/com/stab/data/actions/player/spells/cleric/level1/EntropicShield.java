@@ -1,7 +1,8 @@
-package com.stab.data.actions.player.spells.cleric.level1.unfinished;
+package com.stab.data.actions.player.spells.cleric.level1;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
+import com.stab.data.info.buff.EntropicShield_Buff;
 import com.stab.model.info.BaseInfo;
 
 public class EntropicShield extends SpellOnSelf{
@@ -19,16 +20,17 @@ public class EntropicShield extends SpellOnSelf{
 
 
 	@Override
-	public boolean execute(BaseInfo arg0) {
-		//EntropicShield_Buff = new EntropicShield_Buff();
-		return false;
+	public boolean execute(BaseInfo target) {
+		EntropicShield_Buff buff = new EntropicShield_Buff(target);
+		target.addTrait(buff);
+		return true;
 	}
 
 	
-	/*@Override
+	@Override
 	public int getEffectValue(BaseInfo i) {
-		return dañobase;
-	}*/
+		return 5;
+	}
 	
 
 }
