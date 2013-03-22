@@ -5,11 +5,13 @@ import com.stab.data.StabInit;
 import com.stab.data.actions.feats.PowerAttack;
 import com.stab.data.actions.player.BarbarianActionSet;
 import com.stab.data.actions.player.DefendAction;
+import com.stab.data.actions.player.abilities.Rage;
 import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.combat.Cleave_Feat;
 import com.stab.data.info.feat.combat.PowerAttack_Feat;
+import com.stab.data.info.player.abilities.Rage_Ability;
 
 
 public class BarbarianCharacter extends PathfinderCharacter{
@@ -44,6 +46,9 @@ public static final String ID="BARBARIAN_INFO";
 		this.addTrait(new Cleave_Feat());
 		//this.getActionSet().setAction(Cleave.ID, 18);
 		
+		this.addTrait(new Rage_Ability());
+		this.getActionSet().setAction(Rage.ID, 13);
+		
 		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.GREATAXE), HumanoidGear.BOTHHANDS);
 		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.BREASTPLATE), HumanoidGear.ARMOR);
 		
@@ -54,6 +59,7 @@ public static final String ID="BARBARIAN_INFO";
 		this.setAttribute(StabConstants.SWIMSKILL, 5);
 		
 		/* habilidades especiales
+		 * 
 		 * Rage							- haremos un buff que se puede activar o desactivar con +2 a fue y a a con, y que te cure 2*level hp
 		 * 								 (el max sube con la con). en el remove, ha de quitarte esa vida, ponerte fatigued y meter un cooldown (asi probamos cooldown) 
 		 * Fast Movement				- buff permanente que en turnstart mira tu categoria de armadura y te añade move points si es apropiado

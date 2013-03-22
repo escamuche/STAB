@@ -1,10 +1,8 @@
 package com.stab.data.info.debuff.condition;
 
 import com.stab.data.StabConstants;
-import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.base.Damage;
-import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.Debuff;
 import com.stab.util.Roll;
 

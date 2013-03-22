@@ -10,7 +10,6 @@ import com.stab.data.info.player.PaladinCharacter;
 import com.stab.data.info.player.RangerCharacter;
 import com.stab.data.info.player.RogueCharacter;
 import com.stab.data.info.player.SorcererCharacter;
-import com.stab.data.info.player.WarriorCharacter;
 import com.stab.data.info.player.WizardCharacter;
 import com.stab.model.Player;
 import com.stab.model.Scene;

@@ -2,10 +2,8 @@ package com.stab.data.actions.player.spells.cleric.level1.unfinished;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
-import com.stab.data.info.buff.MagicWeapon_Buff;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.Weapon;
-import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.base.Creature;

@@ -1,7 +1,6 @@
 package com.stab.data.info.debuff.condition;
 
 import com.stab.data.StabConstants;
-import com.stab.model.info.BaseInfo;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.Debuff;
 
@@ -9,7 +8,7 @@ public class FatiguedCondition extends Debuff {
 
 	public static final String ID="FATIGUEDCONDITION_DEBUFF";
 	
-	public FatiguedCondition(BaseInfo target) {
+	public FatiguedCondition() {
 		
 		this.setName("Fatigued");
 		

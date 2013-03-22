@@ -2,7 +2,6 @@ package com.stab.data.actions.player.spells.cleric.level0.unfinished;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
-import com.stab.data.info.buff.ResistanceBuff;
 import com.stab.data.info.debuff.Bleed_Debuff;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;

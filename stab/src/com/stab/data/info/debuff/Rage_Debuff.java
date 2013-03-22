@@ -2,23 +2,30 @@ package com.stab.data.info.debuff;
 
 import com.stab.data.info.debuff.condition.FatiguedCondition;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.applicable.base.Damage;
+import com.stab.model.info.trait.base.Debuff;
 
-public class Rage_Debuff extends Buff {
+public class Rage_Debuff extends Debuff {
 
 	public static final String ID="RAGE_DEBUFF";
 	
-	public Rage_Debuff(BaseInfo self) {
+	public Rage_Debuff() {
 	
 		
 		this.setAnimIcon("actions/rage");				
 		this.setSound("HolyCast");
 		this.setResource("actions/rage");                  
 		this.setName("Rage");
+
 		
-		this.setTime(2);
-	
-		FatiguedCondition debuff = new FatiguedCondition(self);
-		addTrait(debuff);
+		FatiguedCondition debuff = new FatiguedCondition(); 
+		addTrait(debuff);	
 	}
+	
+	@Override
+	public void applyTo(BaseInfo baseInfo) {
+			super.applyTo(baseInfo);
+			baseInfo.receiveDamage(8, Damage.GENERIC_DAMAGE, false); //igual que el heal se pone aqui para que solo se aplique cuando te ponen el debuff
+	}
+	
 }
