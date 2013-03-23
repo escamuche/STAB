@@ -1,7 +1,8 @@
-package com.stab.data.actions.player.spells.wizard.level1.unfinished;
+package com.stab.data.actions.player.spells.wizard.level1;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
+import com.stab.data.info.buff.Identify_Buff;
 import com.stab.model.info.BaseInfo;
 
 public class Identify extends SpellOnSelf{
@@ -18,8 +19,11 @@ public class Identify extends SpellOnSelf{
 	}
 
 	@Override
-	public boolean execute(BaseInfo arg0) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean execute(BaseInfo caster) {
+		
+		Identify_Buff buff = new Identify_Buff(caster);
+		caster.addTrait(buff);
+		return true;
+	
 	}
 }

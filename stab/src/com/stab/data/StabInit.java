@@ -36,12 +36,14 @@ import com.stab.data.actions.player.spells.wizard.level0.TouchFatigue;
 import com.stab.data.actions.player.spells.wizard.level1.CharmPerson;
 import com.stab.data.actions.player.spells.wizard.level1.ChillTouch;
 import com.stab.data.actions.player.spells.wizard.level1.EnlargePerson;
+import com.stab.data.actions.player.spells.wizard.level1.ExpeditiousRetreat;
+import com.stab.data.actions.player.spells.wizard.level1.Identify;
+import com.stab.data.actions.player.spells.wizard.level1.Jump;
 import com.stab.data.actions.player.spells.wizard.level1.MageArmor;
 import com.stab.data.actions.player.spells.wizard.level1.MagicMissile;
 import com.stab.data.actions.player.spells.wizard.level1.Shield;
 import com.stab.data.actions.player.spells.wizard.level1.ShockingGrasp;
 import com.stab.data.actions.player.spells.wizard.level1.TrueStrike;
-import com.stab.data.actions.player.spells.wizard.level1.unfinished.ExpeditiousRetreat;
 import com.stab.data.actions.player.spells.wizard.level1.unfinished.RayEnfeeblement;
 import com.stab.data.actions.player.spells.wizard.level1.unfinished.ReducePerson;
 import com.stab.data.adventure.ColiseoAdventure;
@@ -256,7 +258,10 @@ public class StabInit {
 		getActionLibrary().register(new ReducePerson());
 		getActionLibrary().register(new EntropicShield());
 		getActionLibrary().register(new CharmPerson());
-		
+		getActionLibrary().register(new ExpeditiousRetreat());
+		getActionLibrary().register(new Identify());
+		getActionLibrary().register(new Jump());
+	
 		getActionLibrary().register(new Guidance());
 		getActionLibrary().register(new ResistanceCleric());
 		

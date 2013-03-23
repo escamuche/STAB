@@ -1,7 +1,8 @@
-package com.stab.data.actions.player.spells.wizard.level1.unfinished;
+package com.stab.data.actions.player.spells.wizard.level1;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
+import com.stab.data.info.buff.ExpeditiousRetreat_Buff;
 import com.stab.model.info.BaseInfo;
 
 public class ExpeditiousRetreat extends SpellOnSelf{
@@ -17,8 +18,10 @@ public class ExpeditiousRetreat extends SpellOnSelf{
 	}
 
 	@Override
-	public boolean execute(BaseInfo arg0) {
-		// falta ExpeditiousRetreat_Buff
-		return false;
+	public boolean execute(BaseInfo self) {
+		
+		ExpeditiousRetreat_Buff buff = new ExpeditiousRetreat_Buff(self);
+		self.addTrait(buff);
+		return true;
 	}
 }

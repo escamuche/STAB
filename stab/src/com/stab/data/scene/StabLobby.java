@@ -1,6 +1,5 @@
 package com.stab.data.scene;
 
-import com.stab.common.Constants;
 import com.stab.data.info.player.BarbarianCharacter;
 import com.stab.data.info.player.BardCharacter;
 import com.stab.data.info.player.ClericCharacter;
@@ -53,7 +52,7 @@ public class StabLobby  extends Scene{
 		add(i);
 		
 		i=new Button();
-		i.setPos(170+40,200);
+		i.setPos(170+35,200);
 		i.setSize(140,200);
 		i.setIcon("bard$S");
 		i.setAction("bard");
@@ -63,7 +62,7 @@ public class StabLobby  extends Scene{
 //		i.setDisabled(true);
 		add(i);
 		i=new Button();
-		i.setPos(310+80,200);
+		i.setPos(310+70,200);
 		i.setSize(140,200);
 		i.setIcon("cleric$S");
 		i.setAction("cleric");
@@ -72,7 +71,7 @@ public class StabLobby  extends Scene{
 //		i.setDisabled(true);
 		add(i);
 		i=new Button();
-		i.setPos(450+120,200);
+		i.setPos(450+105,200);
 		i.setSize(140,200);
 		i.setIcon("druid$S");
 		i.setAction("druid");
@@ -83,7 +82,7 @@ public class StabLobby  extends Scene{
 		add(i);
 	
 		i=new Button();
-		i.setPos(690+80,200);
+		i.setPos(690+20,200);
 		i.setSize(140,200);
 		i.setIcon("fighter$S");
 		i.setAction("fighter");
@@ -91,7 +90,7 @@ public class StabLobby  extends Scene{
 		add(i);
 		
 		i=new Button();
-		i.setPos(830+80,200);
+		i.setPos(830+40,200);
 		i.setSize(140,200);
 		i.setIcon("monk$S");
 		i.setAction("monk");
@@ -99,7 +98,7 @@ public class StabLobby  extends Scene{
 		add(i);
 		
 		i=new Button();
-		i.setPos(30,440);
+		i.setPos(40,440);
 		i.setSize(140,200);
 		i.setIcon("paladin$S");
 		i.setAction("paladin");
@@ -107,7 +106,7 @@ public class StabLobby  extends Scene{
 		add(i);
 		
 		i=new Button();
-		i.setPos(170+40,440);
+		i.setPos(170+50,440);
 		i.setSize(140,200);
 		i.setIcon("ranger$S");
 		i.setAction("ranger");
@@ -115,7 +114,7 @@ public class StabLobby  extends Scene{
 		add(i);
 		
 		i=new Button();
-		i.setPos(310+80,440);
+		i.setPos(310+100,440);
 		i.setSize(140,200);
 		i.setIcon("rogue$S");
 		i.setAction("rogue");
@@ -123,7 +122,7 @@ public class StabLobby  extends Scene{
 		add(i);
 		
 		i=new Button();
-		i.setPos(450+120,440);
+		i.setPos(450+150,440);
 		i.setSize(140,200);
 		i.setIcon("sorcerer$S");
 		i.setAction("sorcerer");
@@ -131,7 +130,7 @@ public class StabLobby  extends Scene{
 		add(i);
 		
 		i=new Button();
-		i.setPos(590+160,440);
+		i.setPos(590+200,440);
 		i.setSize(140,200);
 		i.setIcon("wizard$S");
 		i.setAction("wizard");
