@@ -4,6 +4,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.WizardActionSet;
+import com.stab.data.info.equipment.EquipmentFactory;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.Alertness_Feat;
 import com.stab.data.info.feat.general.CombatCasting_Feat;
@@ -53,6 +54,8 @@ public static final String ID="WIZARD_INFO";
 		this.addTrait(new ScribeScroll_Feat());
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("QUARTERSTAFF"), HumanoidGear.BOTHHANDS);
+		
+		this.equip(EquipmentFactory.TORCH);
 		
 		/*Equipment brazalete = new Equipment();
 		brazalete.setSlots(HumanoidGear.BRACERS);

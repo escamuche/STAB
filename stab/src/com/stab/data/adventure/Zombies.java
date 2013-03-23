@@ -4,6 +4,7 @@ import com.stab.adventure.Adventure;
 import com.stab.common.events.DefaultRule;
 import com.stab.data.info.props.Dummy;
 import com.stab.data.utils.DefaultBlockData;
+import com.stab.data.utils.StabBlockData;
 import com.stab.model.basic.scenes.Choice;
 import com.stab.model.basic.scenes.Narration;
 import com.stab.model.basic.scenes.event.InfoDestroyed;
@@ -40,17 +41,22 @@ public class Zombies extends Adventure{
 		c.createContents();
 		c.setTag("CHOICE");
 		c.setText("Jovenes guerreros, una vez una persona sabia dijo que todo aventurero empezo su carrera con una espada flacida y un zombie estatico. Espadas teneis, y debeis dejar a todos los zombies estaticos, asi demostrareis vuestra valia como adultos y lo que es mejor, mis guerreros podran hacer apuestas. No remoloneeis y bajar por una de las escaleras a vuestro destino.");
-		c.addOption("Bajar por las escaleras de la derecha","BATTLE.stairs");
-		c.addOption("Bajar por las escaleras de la izquierda","BATTLE.stairs2");
+	//	c.addOption("Bajar por las escaleras de la derecha","BATTLE.stairs");
+	//	c.addOption("Bajar por las escaleras de la izquierda","BATTLE.stairs2");
+		c.addOption("Bajar por las escaleras","BATTLE.Entrance");
 		//c.addOption("Marcharse","VICTORY");
 		this.addScene(c);
 		
 		DefaultTileMapScene ms=new DefaultTileMapScene();
 		ms.createContents();
-		ms.createMap(24,16);
-		ms.loadTiled("zombies", 0, 0);
-		ms.setTiles(DefaultTileMapScene.DEFAULT,"newtiles");
-		ms.setProperties(DefaultTileMapScene.DEFAULT, DefaultBlockData.ID);
+		//ms.createMap(24,16);
+		//ms.loadTiled("zombies", 0, 0);
+		//ms.setTiles(DefaultTileMapScene.DEFAULT,"newtiles");
+		//ms.setProperties(DefaultTileMapScene.DEFAULT, DefaultBlockData.ID);
+		ms.createMap(64,64);
+		ms.loadTiled("big", 0, 0);
+		ms.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
+		ms.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
 		ms.setTag("BATTLE");
 		
 		DefaultRule r=new DefaultRule();
