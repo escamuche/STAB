@@ -6,6 +6,7 @@ import com.stab.data.actions.player.spells.wizard.level0.Flare;
 import com.stab.data.actions.player.spells.wizard.level0.OpenClose;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.actions.player.spells.wizard.level0.Resistance;
+import com.stab.data.actions.player.spells.wizard.level0.unfinished.DancingLights;
 import com.stab.data.actions.player.spells.wizard.level1.ChillTouch;
 import com.stab.data.actions.player.spells.wizard.level1.EnlargePerson;
 import com.stab.data.actions.player.spells.wizard.level1.ExpeditiousRetreat;
@@ -38,10 +39,11 @@ public class WizardActionSet extends PathfinderActionSet {
 		this.addAction(ShockingGrasp.ID);
 	//	this.setAction(TrueStrike.ID, 34);
 		
+		this.addAction(DancingLights.ID);
 		
 		//this.setAction(WizardBasicMelee.ID, 10);
 				/**/this.setAction(MagicMissile.ID, 2);
-				this.setAction(AcidSplash.ID, 4);
+				this.setAction(DancingLights.ID, 4);
 				this.setAction(Shield.ID,1);
 				this.setAction(Flare.ID,5);
 				this.setAction(RayFrost.ID, 3);

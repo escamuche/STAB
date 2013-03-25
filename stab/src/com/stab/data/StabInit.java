@@ -33,6 +33,7 @@ import com.stab.data.actions.player.spells.wizard.level0.OpenClose;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.actions.player.spells.wizard.level0.Resistance;
 import com.stab.data.actions.player.spells.wizard.level0.TouchFatigue;
+import com.stab.data.actions.player.spells.wizard.level0.unfinished.DancingLights;
 import com.stab.data.actions.player.spells.wizard.level1.CharmPerson;
 import com.stab.data.actions.player.spells.wizard.level1.ChillTouch;
 import com.stab.data.actions.player.spells.wizard.level1.EnlargePerson;
@@ -238,6 +239,7 @@ public class StabInit {
 		getActionLibrary().register(new Expertise());
 		
 		//conjuros
+		getActionLibrary().register(new DancingLights());
 		getActionLibrary().register(new AcidSplash());
 		getActionLibrary().register(new Flare());
 		getActionLibrary().register(new OpenClose());

@@ -2,6 +2,7 @@ package com.stab.data.actions.player.spells.wizard.level0.unfinished;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTile;
+import com.stab.data.info.props.Crate;
 import com.stab.model.info.Info;
 
 public class DancingLights extends SpellOnTile{
@@ -20,8 +21,11 @@ public class DancingLights extends SpellOnTile{
 
 
 	@Override
-	public boolean execute(Info arg0, int arg1, int arg2) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean execute(Info i, int x, int y) {
+		
+		Crate b=new Crate();
+		b.setPos(x,y);
+		i.getScene().add(b);
+		return true;
 	}
 }
