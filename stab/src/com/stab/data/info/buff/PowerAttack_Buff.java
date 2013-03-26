@@ -8,7 +8,7 @@ public class PowerAttack_Buff extends Buff {
 
 	public static final String ID="POWER_ATTACK_BUFF";
 	
-	public PowerAttack_Buff() {
+	public PowerAttack_Buff(int bab) {
 		//setUnique(true);//no hace falta, por defecto los buffs son unicos
 		
 		this.setAnimIcon("actions/ability_backstab");					//Icono para la animacion
@@ -25,10 +25,13 @@ public class PowerAttack_Buff extends Buff {
 		
 		
 		//Modificadores que aporta
-		Modifier dañopoweratt= new Modifier(StabConstants.DAMAGE, +2);
-		Modifier tohitpoweratt=new Modifier(StabConstants.TOHIT, -1);
 		
-		addTrait(dañopoweratt);
-		addTrait(tohitpoweratt);
+		int v = (bab/4)+1;
+		Modifier daño = new Modifier(StabConstants.DAMAGE, v*2);
+		Modifier hit = new Modifier(StabConstants.TOHIT, v);
+		addTrait(daño);
+		addTrait(hit);
+		
+		
 	}
 }

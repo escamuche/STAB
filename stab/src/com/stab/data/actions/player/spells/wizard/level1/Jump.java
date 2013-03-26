@@ -24,10 +24,10 @@ public class Jump extends SpellOnTarget {
 		
 		BaseInfo buffed = (BaseInfo)target;
 		BaseInfo self = (BaseInfo) caster;
-		int time= self.getValue(StabConstants.CASTERLEVEL)*10;
-		Jump_Buff buff = new Jump_Buff(self,buffed);
+		int cl= self.getValue(StabConstants.CASTERLEVEL);
+		Jump_Buff buff = new Jump_Buff(cl);
 		
-		buff.setTime(time);
+		buff.setTime(cl*10);
 		if(buffed.hasTrait(Jump_Buff.ID) == false)
 			buffed.addTrait(buff);
 		else

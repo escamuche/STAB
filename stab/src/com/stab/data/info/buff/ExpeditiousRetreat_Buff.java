@@ -5,7 +5,7 @@ import com.stab.model.info.trait.base.Buff;
 
 public class ExpeditiousRetreat_Buff extends Buff {
 
-	public static final String ID="TRUESTRIKE_BUFF";
+	public static final String ID="EXPEDITIOUSRETREAT_BUFF";
 	BaseInfo self = new BaseInfo();
 	int mov = 0;
 	

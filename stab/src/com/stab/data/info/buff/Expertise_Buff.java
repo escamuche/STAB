@@ -8,7 +8,7 @@ public class Expertise_Buff extends Buff {
 
 	public static final String ID="EXPERTISE_BUFF";
 	
-	public Expertise_Buff() {
+	public Expertise_Buff(int bab) {
 	
 		this.setAnimIcon("actions/ability_warrior_safeguard");				
 	//	this.setAnimIcon("PARTICLE#test#res/particles/ability_backstab");
@@ -17,13 +17,12 @@ public class Expertise_Buff extends Buff {
 		this.setName("Expertise");
 		
 		this.setPermanent();
-	
-		Modifier caexpertise= new Modifier(StabConstants.ACTIVEDEFENSE,StabConstants.DODGEMOD, +1);
-		Modifier tohitexpertise=new Modifier(StabConstants.TOHIT,-1);
-		Modifier tohitrangedexpertise=new Modifier(StabConstants.TOHITRANGED, -1);
 		
-		addTrait(caexpertise);
-		addTrait(tohitexpertise);
-		addTrait(tohitrangedexpertise);
-		}
+		int v = (bab/4)+1;
+		Modifier daño = new Modifier(StabConstants.DAMAGE, v*2);
+		Modifier hit = new Modifier(StabConstants.TOHIT, v);
+		addTrait(daño);
+		addTrait(hit);
+		
+	}
 }

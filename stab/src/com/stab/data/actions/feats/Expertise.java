@@ -10,7 +10,7 @@ public class Expertise extends SelfAction {
 	
 	public static final String ID="EXPERTISE";
 
-	Expertise_Buff buff = new Expertise_Buff();
+	
 	
 	public Expertise() {
 		
@@ -23,6 +23,8 @@ public class Expertise extends SelfAction {
 	@Override
 	public boolean execute(BaseInfo self) {
 	
+		int bab = self.getValue(StabConstants.BAB);
+		Expertise_Buff buff = new Expertise_Buff(bab);
 		if(self.hasTrait(buff.getId()) == true) {
 			self.removeTrait(buff.getId());
 			return false;
@@ -30,9 +32,6 @@ public class Expertise extends SelfAction {
 		else {
 			
 		self.addTrait(buff);
-		
-		System.out.println("Bono de armadura: " + self.getValue(StabConstants.AC));
-		System.out.println("Bono a dar: " + self.getValue(StabConstants.TOHIT));
 
 		return true;
 		}

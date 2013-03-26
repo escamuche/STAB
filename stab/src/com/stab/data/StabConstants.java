@@ -119,7 +119,15 @@ public class StabConstants {
 	public static final String SPELLKNOWN7="SPELLKNOWN7";
 	public static final String SPELLKNOWN8="SPELLKNOWN8";
 	public static final String SPELLKNOWN9="SPELLKNOWN9";
+	
 	public static final String CASTERLEVEL="CASTERLEVEL";
+	public static final String CASTERLEVELBARD="CASTERLEVELBARD";
+	public static final String CASTERLEVELCLERIC="CASTERLEVELCLERIC";
+	public static final String CASTERLEVELDRUID="CASTERLEVELDRUID";
+	public static final String CASTERLEVELPALADIN="CASTERLEVELPALADIN";
+	public static final String CASTERLEVELRANGER="CASTERLEVELRANGER";
+	public static final String CASTERLEVELSORCERER="CASTERLEVELSORCERER";
+	public static final String CASTERLEVELWIZARD="CASTERLEVELWIZARD";
 	
 	public static final String LEVEL="LEVEL";
 	public static final String WIZARDCASTER="WIZARDCASTER";
@@ -174,5 +182,10 @@ public class StabConstants {
 	
 	public static final String RAGEROUNDS="RAGEROUNDS";
 	public static final String RAGEROUNDSSPENT="RAGEROUNDSSPENT";	
+	
+	public static final String RANGETOUCH="RANGETOUCH";
+	public static final String RANGECLOSE="RANGECLOSE";
+	public static final String RANGEMEDIUM="RANGEMEDIUM";
+	public static final String RANGELARGE="RANGELARGE";
 	
 }

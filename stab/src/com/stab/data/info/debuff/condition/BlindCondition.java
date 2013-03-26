@@ -3,9 +3,9 @@ package com.stab.data.info.debuff.condition;
 import com.stab.data.StabConstants;
 import com.stab.data.info.applicable.Attack;
 import com.stab.data.info.applicable.AttackData;
-import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
+import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.Debuff;
 import com.stab.util.Roll;
@@ -14,35 +14,25 @@ public class BlindCondition extends Debuff  implements Attends<AttackData> {
 
 	public static final String ID="BLINDEDCONDITION_DEBUFF";
 	
-	BaseInfo i = getTarget();
-	int moddex = i.getAttributeValue(StabConstants.DEXTERITY);
-	Modifier ac=new Modifier(StabConstants.PASSIVEDEFENSE, -2);
-	Modifier acdexa = new Modifier(StabConstants.ACTIVEDEFENSE, -moddex);
-	Modifier acdexp = new Modifier(StabConstants.PASSIVEDEFENSE, -moddex);
-	int mov = i.getActionPoints();
-	
 	
 	public BlindCondition() {
 		
 		this.setName("Blinded");
 		
-		addTrait(ac);
-		addTrait(acdexa);
-		addTrait(acdexp);
+		Modifier ac=new Modifier(StabConstants.PASSIVEDEFENSE, -2);
 		
-		i.setActionPoints(mov/2);
+		addTrait(ac);
+		
 		
 	}
 	
-	 @Override
-	public void end() {
-		 
-		 removeTrait(ac);
-		 removeTrait(acdexa);
-		 removeTrait(acdexp); 
-		 i.setActionPoints(mov);
-		 super.end();
-		 
+	@Override
+	public void turnStarts() {
+		
+		Creature i = (Creature) getTarget();
+		int mov = i.getMovePoints();
+		i.setMovePoints(mov/2);
+		super.turnStarts();
 	}
 
 	@Override
@@ -54,6 +44,9 @@ public class BlindCondition extends Debuff  implements Attends<AttackData> {
 
 	@Override
 	public boolean canAttend(Applicable arg0) {
+		if(arg0 instanceof AttackData)
+			return true;
+		else
 		return false;
 	}
 }

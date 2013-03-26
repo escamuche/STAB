@@ -2,11 +2,10 @@ package com.stab.data.actions.player.spells.cleric.level0;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
+import com.stab.data.info.buff.Virtue_Buff;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
-import com.stab.model.info.applicable.base.Heal;
-import com.stab.model.info.trait.base.VisualEffect;
 
 public class Virtue extends SpellOnTarget{
 	
@@ -17,12 +16,11 @@ public class Virtue extends SpellOnTarget{
 		
 		
 		BaseInfo t = (BaseInfo)target;
-		t.setAttribute(StabConstants.MAXHP, +1);
-		Heal heal = new Heal(1, t);
-		t.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#Healing");
-		sleep(500);
-		t.apply(heal);
-		//falta que no se puedan acumular los puntos de vida temporales...
+		
+		Virtue_Buff buff = new Virtue_Buff(t);
+		buff.setTime(10);
+		t.addTrait(buff);
+
 		return true;
 	}
 	
