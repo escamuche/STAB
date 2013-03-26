@@ -21,7 +21,7 @@ public class EntropicShield extends SpellOnSelf{
 
 	@Override
 	public boolean execute(BaseInfo target) {
-		EntropicShield_Buff buff = new EntropicShield_Buff(target);
+		EntropicShield_Buff buff = new EntropicShield_Buff();
 		target.addTrait(buff);
 		return true;
 	}

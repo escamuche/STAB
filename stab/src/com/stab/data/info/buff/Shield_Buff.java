@@ -2,7 +2,6 @@ package com.stab.data.info.buff;
 
 import com.stab.data.StabConstants;
 import com.stab.data.info.applicable.magic.MagicMissileAttack;
-import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.trait.Modifier;
@@ -12,15 +11,13 @@ public class Shield_Buff extends Buff implements Attends<MagicMissileAttack>{
 
 	public static final String ID="SHIELD_BUFF";
 	
-	public Shield_Buff(BaseInfo atacante) {
+	public Shield_Buff() {
 	
 		
 		this.setAnimIcon("actions/shield");				
 		this.setSound("HolyCast");
 		this.setResource("actions/shield");                  
 		this.setName("Shield");
-		
-		this.setTime(10);
 	
 		Modifier ca=new Modifier(StabConstants.SHIELDDEFENSE,StabConstants.SHIELDMOD,+4);
 		addTrait(ca);

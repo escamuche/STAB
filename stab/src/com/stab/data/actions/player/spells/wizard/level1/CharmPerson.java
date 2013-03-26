@@ -19,7 +19,7 @@ public class CharmPerson extends SpellOnTarget{
 		BaseInfo self = (BaseInfo) caster;
 		int time = self.getValue(StabConstants.CASTERLEVEL)*60;
 		
-		CharmPerson_Debuff debuff = new CharmPerson_Debuff(d);
+		CharmPerson_Debuff debuff = new CharmPerson_Debuff();
 		debuff.setTime(time);
 		d.addTrait(debuff);
 		return true;

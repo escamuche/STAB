@@ -21,7 +21,7 @@ public class Shield extends SpellOnSelf{
 	public boolean execute(BaseInfo yo) {
 		
 		BaseInfo caster = (BaseInfo)yo;
-		Shield_Buff buff = new Shield_Buff(caster);
+		Shield_Buff buff = new Shield_Buff();
 		caster.addTrait(buff);
 		
 		return true;

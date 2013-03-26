@@ -23,7 +23,7 @@ public class EnlargePerson extends SpellOnTarget {
 	public boolean execute(Info yo, Info target) {
 		
 		BaseInfo buffed= (BaseInfo) target;
-		EnlargePerson_Buff buff = new EnlargePerson_Buff(buffed);
+		EnlargePerson_Buff buff = new EnlargePerson_Buff();
 		buffed.addTrait(buff);
 		return true;
 	}

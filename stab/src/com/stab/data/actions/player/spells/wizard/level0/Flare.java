@@ -19,7 +19,7 @@ public class Flare extends SpellOnTarget{
 		FortitudeAttack ataque=new FortitudeAttack(Atacado);
 		
 		if(ataque.hits()){
-		Flare_Debuff buff = new Flare_Debuff(Atacado);
+		Flare_Debuff buff = new Flare_Debuff();
 		Atacado.addTrait(buff);
 		return true;
 		}

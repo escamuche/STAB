@@ -20,7 +20,7 @@ public class DivineFavor extends SpellOnSelf{
 	public boolean execute(BaseInfo yo) {
 		
 		BaseInfo caster = (BaseInfo)yo;
-		DivineFavor_Buff buff = new DivineFavor_Buff(caster);
+		DivineFavor_Buff buff = new DivineFavor_Buff();
 		caster.addTrait(buff);
 		
 		return true;

@@ -20,7 +20,7 @@ public class ExpeditiousRetreat extends SpellOnSelf{
 	@Override
 	public boolean execute(BaseInfo self) {
 		
-		ExpeditiousRetreat_Buff buff = new ExpeditiousRetreat_Buff(self);
+		ExpeditiousRetreat_Buff buff = new ExpeditiousRetreat_Buff();
 		self.addTrait(buff);
 		return true;
 	}

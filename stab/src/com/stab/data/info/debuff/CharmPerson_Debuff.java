@@ -9,20 +9,19 @@ import com.stab.model.info.trait.base.Debuff;
 public class CharmPerson_Debuff extends Debuff {
 	
 	public static final String ID="CHARMPERSON_DEBUFF";
-	BaseInfo target = new BaseInfo();
+	BaseInfo target = getTarget();
 	
-	public CharmPerson_Debuff(BaseInfo atacado) {
+	public CharmPerson_Debuff() {
 	
-		target=atacado;
 		this.setAnimIcon("actions/charmperson");				
 		this.setSound("HolyCast");
 		this.setResource("actions/charmperson");                  
 		this.setName("Charm Person");
 		
-		atacado.playAnimationOn(ShootProyectileAnimation.ID, atacado.getToken(), "PARTICLE#magicmissile");
+		target.playAnimationOn(ShootProyectileAnimation.ID, target.getToken(), "PARTICLE#magicmissile");
 		
-		if(atacado.hasTrait(HumanoidTraits.ID) || atacado.hasTrait(MonstrousHumanoid.ID))
-			atacado.setFaction(0);
+		if(target.hasTrait(HumanoidTraits.ID) || target.hasTrait(MonstrousHumanoid.ID))
+			target.setFaction(0);
 		
 	}
 	

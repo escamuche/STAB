@@ -21,7 +21,7 @@ public class MagicStone extends SpellOnSelf{
 	public boolean execute(BaseInfo yo) {
 		
 		BaseInfo caster = (BaseInfo)yo;
-		MagicStone_Buff buff = new MagicStone_Buff(caster);
+		MagicStone_Buff buff = new MagicStone_Buff();
 		caster.addTrait(buff);
 		
 		return true;

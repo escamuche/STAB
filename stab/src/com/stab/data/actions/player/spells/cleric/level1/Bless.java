@@ -16,7 +16,7 @@ public class Bless extends SpellOnTarget{
 		
 		BaseInfo Atacado = (BaseInfo)target;
 		
-		Bless_Buff buff = new Bless_Buff(Atacado);
+		Bless_Buff buff = new Bless_Buff();
 		Atacado.addTrait(buff);
 		
 		return true;

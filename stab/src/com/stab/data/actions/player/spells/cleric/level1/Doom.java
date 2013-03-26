@@ -18,7 +18,7 @@ public class Doom extends SpellOnTarget {
 		BaseInfo Atacado = (BaseInfo)target;
 		WillAttack ataque = new WillAttack(Atacado);
 		if(ataque.hits()) {
-			Doom_Debuff debuff = new Doom_Debuff(Atacado);
+			Doom_Debuff debuff = new Doom_Debuff();
 			Atacado.addTrait(debuff);
 			return true;
 			}

@@ -17,7 +17,7 @@ public class Virtue extends SpellOnTarget{
 		
 		BaseInfo t = (BaseInfo)target;
 		
-		Virtue_Buff buff = new Virtue_Buff(t);
+		Virtue_Buff buff = new Virtue_Buff();
 		buff.setTime(10);
 		t.addTrait(buff);
 

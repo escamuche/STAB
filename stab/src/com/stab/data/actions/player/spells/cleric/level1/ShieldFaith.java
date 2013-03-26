@@ -20,7 +20,7 @@ public class ShieldFaith extends SpellOnSelf{
 	public boolean execute(BaseInfo yo) {
 		
 		BaseInfo caster = (BaseInfo)yo;
-		ShieldFaith_Buff buff = new ShieldFaith_Buff(caster);
+		ShieldFaith_Buff buff = new ShieldFaith_Buff();
 		caster.addTrait(buff);
 		
 		return true;

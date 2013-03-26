@@ -10,16 +10,13 @@ public class Doom_Debuff extends Buff {
 
 	public static final String ID="DOOM_DEBUFF";
 	
-	public Doom_Debuff(BaseInfo atacado) {
+	public Doom_Debuff() {
 	
 		
 		this.setAnimIcon("actions/doom");				
 		this.setSound("HolyCast");
 		this.setResource("actions/doom");                  
 		this.setName("Doom");
-		
-		this.setTime(10);
-		atacado.playAnimationOn(ShootProyectileAnimation.ID, atacado.getToken(), "PARTICLE#magicmissile");
 	
 		Modifier tohit=new Modifier(StabConstants.TOHIT, -2);
 		Modifier tohitranged=new Modifier(StabConstants.TOHITRANGED, -2);

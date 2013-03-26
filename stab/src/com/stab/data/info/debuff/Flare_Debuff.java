@@ -10,16 +10,13 @@ public class Flare_Debuff extends Buff {
 
 	public static final String ID="FLARE_DEBUFF";
 	
-	public Flare_Debuff(BaseInfo atacado) {
+	public Flare_Debuff() {
 	
 		
 		this.setAnimIcon("actions/flare");				
 		this.setSound("HolyCast");
 		this.setResource("actions/flare");                  
 		this.setName("Flare");
-		
-		this.setTime(10);
-		atacado.playAnimationOn(ShootProyectileAnimation.ID, atacado.getToken(), "PARTICLE#magicmissile");
 	
 		Modifier tohit=new Modifier(StabConstants.TOHIT, -1);
 		addTrait(tohit);

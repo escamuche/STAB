@@ -16,7 +16,7 @@ public class MageArmor extends SpellOnTarget{
 		
 		BaseInfo caster = (BaseInfo)yo;
 		
-		MageArmor_Buff buff = new MageArmor_Buff(caster);
+		MageArmor_Buff buff = new MageArmor_Buff();
 		caster.addTrait(buff);
 		
 		return true;

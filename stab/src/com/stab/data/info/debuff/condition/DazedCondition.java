@@ -6,6 +6,7 @@ import com.stab.model.info.trait.base.Debuff;
 public class DazedCondition extends Debuff{
 
 	public static final String ID="DAZEDCONDITION_DEBUFF";
+	
 	BaseInfo i = getTarget();
 	
 	public DazedCondition() {

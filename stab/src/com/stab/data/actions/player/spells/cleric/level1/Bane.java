@@ -16,7 +16,7 @@ public class Bane extends SpellOnTarget {
 		
 		BaseInfo Atacado = (BaseInfo)target;
 		
-		Bane_Debuff debuff = new Bane_Debuff(Atacado);
+		Bane_Debuff debuff = new Bane_Debuff();
 		Atacado.addTrait(debuff);
 		
 		return true;

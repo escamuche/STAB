@@ -2,7 +2,6 @@ package com.stab.data.info.buff;
 
 import com.stab.data.info.applicable.Attack;
 import com.stab.data.info.applicable.RangedAttack;
-import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.trait.base.Buff;
@@ -12,7 +11,7 @@ public class EntropicShield_Buff extends Buff implements Attends<RangedAttack> {
 
 	public static final String ID="ENTROPICSHIELD_BUFF";
 	
-	public EntropicShield_Buff(BaseInfo caster) {
+	public EntropicShield_Buff() {
 	
 		
 		this.setAnimIcon("actions/ability_shaman_watershield");				
@@ -20,7 +19,6 @@ public class EntropicShield_Buff extends Buff implements Attends<RangedAttack> {
 		this.setResource("actions/ability_shaman_watershield");                  
 		this.setName("Entropic Shield");
 		
-		this.setTime(10);
 		}
 
 	@Override

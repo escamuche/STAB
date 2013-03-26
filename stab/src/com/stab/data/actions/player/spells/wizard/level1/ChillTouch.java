@@ -39,7 +39,7 @@ public class ChillTouch extends SpellOnTarget{
 			FortitudeAttack ataque2 = new FortitudeAttack(Atacante);
 			Atacado.apply(ataque2);
 			if(ataque2.hits()){
-				ChillTouch_Debuff chilltouch = new ChillTouch_Debuff(Atacado);
+				ChillTouch_Debuff chilltouch = new ChillTouch_Debuff();
 				Atacado.addTrait(chilltouch);
 			}
 		return true;

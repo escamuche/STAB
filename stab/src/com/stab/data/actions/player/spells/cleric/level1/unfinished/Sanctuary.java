@@ -20,7 +20,7 @@ public class Sanctuary extends SpellOnSelf{
 	public boolean execute(BaseInfo yo) {
 		
 		BaseInfo caster = (BaseInfo)yo;
-		Sanctuary_Buff buff = new Sanctuary_Buff(caster);
+		Sanctuary_Buff buff = new Sanctuary_Buff();
 		caster.addTrait(buff);
 		
 		return true;

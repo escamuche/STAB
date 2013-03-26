@@ -10,7 +10,7 @@ public class Virtue_Buff extends Buff {
 
 	public static final String ID="VIRTUE_BUFF";
 	
-	public Virtue_Buff(BaseInfo target) {
+	public Virtue_Buff() {
 	
 		
 		this.setAnimIcon("actions/bless");				
@@ -18,6 +18,7 @@ public class Virtue_Buff extends Buff {
 		this.setResource("actions/bless");                  
 		this.setName("Virtue");
 	
+		BaseInfo target=getTarget();
 		if(target.hasTrait(Virtue_Buff.ID) == true) {
 			
 			Heal h = new Heal(1,target);
@@ -26,17 +27,11 @@ public class Virtue_Buff extends Buff {
 		}
 		
 		else {
-			Modifier virtue = new Modifier(StabConstants.MAXHP, +1);
+			Modifier virtue = new Modifier(StabConstants.MAXHP,"Virtue", +1);
 			Heal h = new Heal(1,target);
 			target.apply(h);
 			target.addTrait(virtue);
 			}
 		}
 	
-	@Override
-	public void end() {
-		BaseInfo c = getTarget();
-		c.setAttribute(StabConstants.MAXHP, -1);
-		super.end();
-	}
 }

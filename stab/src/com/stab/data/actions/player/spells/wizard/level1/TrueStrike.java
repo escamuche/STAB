@@ -22,7 +22,7 @@ public class TrueStrike extends SpellOnSelf{
 	public boolean execute(BaseInfo yo) {
 		
 		BaseInfo caster = (BaseInfo)yo;
-		TrueStrike_Buff buff = new TrueStrike_Buff(caster);
+		TrueStrike_Buff buff = new TrueStrike_Buff();
 		caster.addTrait(buff);
 		return true;
 	}

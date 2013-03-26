@@ -27,7 +27,7 @@ public class Bleed extends SpellOnTarget{
 		
 		BaseInfo Debufed = (BaseInfo)target;
 		
-		Bleed_Debuff debuff = new Bleed_Debuff(Debufed);
+		Bleed_Debuff debuff = new Bleed_Debuff();
 		Debufed.addTrait(debuff);
 		
 		return true;

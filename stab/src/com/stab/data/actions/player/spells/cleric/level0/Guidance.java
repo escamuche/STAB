@@ -15,7 +15,7 @@ public class Guidance extends SpellOnTarget{
 	public boolean execute(Info yo, Info target) {
 		
 		BaseInfo Bufado = (BaseInfo)target;
-		Guidance_Buff buff = new Guidance_Buff((BaseInfo) target);
+		Guidance_Buff buff = new Guidance_Buff();
 		Bufado.addTrait(buff);
 		return true;
 	

@@ -21,7 +21,7 @@ public class Identify extends SpellOnSelf{
 	@Override
 	public boolean execute(BaseInfo caster) {
 		
-		Identify_Buff buff = new Identify_Buff(caster);
+		Identify_Buff buff = new Identify_Buff();
 		caster.addTrait(buff);
 		return true;
 	
