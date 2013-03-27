@@ -3,6 +3,7 @@ package com.stab.data.actions.player.spells.wizard.level1;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.model.basic.token.DoorToken;
+import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.base.Door;
 
@@ -13,6 +14,10 @@ public class HoldPortal extends SpellOnTarget{
 	@Override
 	public boolean execute(Info yo, Info target) {
 		
+		BaseInfo caster = (BaseInfo)yo;
+		int cl = caster.getValue(StabConstants.CASTERLEVEL);
+		
+		setRangeMedium(cl);
 		//Cambiar para que solo cierre. Pendiente tema con llave. Duracion 1 min/level
 		Door Atacado = (Door)target;
 		Atacado.infoInteracts(yo);
@@ -20,12 +25,12 @@ public class HoldPortal extends SpellOnTarget{
 	}
 	
 	public HoldPortal() {
+		
 		setLevel(1);
 		setCasterClass(StabConstants.WIZARDCASTER);
-     setRange(22);
-     setTargetClass(DoorToken.class);
-     setResource("actions/ability_druid_naturalperfection");
-     setName("HoldPortal");
-     this.setEffectType(SPECIAL);
+		setTargetClass(DoorToken.class);
+		setResource("actions/ability_druid_naturalperfection");
+		setName("HoldPortal");
+		this.setEffectType(SPECIAL);
 	}
 }

@@ -10,11 +10,12 @@ public class ExpeditiousRetreat extends SpellOnSelf{
 	public static final String ID="EXPEDITIOUSRETREAT";
 	
 	public ExpeditiousRetreat() {
+		
 		setLevel(1);
 		setCasterClass(StabConstants.WIZARDCASTER);
-     setResource("actions/expeditiousretreat");
-     setName("ExpeditiousRetreat");
-     this.setEffectType(BUFF);
+		setResource("actions/expeditiousretreat");
+		setName("ExpeditiousRetreat");
+		this.setEffectType(BUFF);
 	}
 
 	@Override

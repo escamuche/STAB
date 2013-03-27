@@ -30,6 +30,7 @@ public class InflictLight extends SpellOnTarget{
 		MagicAttack ataque = new MagicAttack(caster);
 		FortitudeAttack save = new FortitudeAttack(atacado);
 		atacado.apply(ataque);
+		atacado.apply(save);
 		
 		caster.playAnimationOn(ShootProyectileAnimation.ID, atacado.getToken(), "PARTICLE#magicmissile");
 		

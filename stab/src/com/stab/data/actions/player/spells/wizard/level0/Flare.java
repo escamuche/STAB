@@ -15,12 +15,17 @@ public class Flare extends SpellOnTarget{
 	@Override
 	public boolean execute(Info yo, Info target) {
 		
-		BaseInfo Atacado = (BaseInfo)target;
-		FortitudeAttack ataque=new FortitudeAttack(Atacado);
+		BaseInfo atacado = (BaseInfo)target;
+		BaseInfo caster = (BaseInfo)yo;
+		int cl = caster.getValue(StabConstants.CASTERLEVEL);
+		
+		setRangeClose(cl);
+		FortitudeAttack ataque=new FortitudeAttack(atacado);
+		atacado.apply(ataque);
 		
 		if(ataque.hits()){
 		Flare_Debuff buff = new Flare_Debuff();
-		Atacado.addTrait(buff);
+		atacado.addTrait(buff);
 		return true;
 		}
 		return false;
@@ -29,10 +34,9 @@ public class Flare extends SpellOnTarget{
 	public Flare() {
 		setLevel(0);
 		setCasterClass(StabConstants.WIZARDCASTER);
-     setRange(6);
-     setTargetClass(PhysicalToken.class);
-     setResource("actions/flare");
-     setName("Flare");
-     this.setEffectType(BUFF);
+		setTargetClass(PhysicalToken.class);
+		setResource("actions/flare");
+		setName("Flare");
+		this.setEffectType(BUFF);
 	}
 }

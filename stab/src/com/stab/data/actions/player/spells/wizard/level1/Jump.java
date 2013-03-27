@@ -13,10 +13,9 @@ public class Jump extends SpellOnTarget {
 	public Jump() {
 		setLevel(1);
 		setCasterClass(StabConstants.WIZARDCASTER);
-		 setRange(1);
-     setResource("actions/jump");
-     setName("Jump");
-     this.setEffectType(BUFF);
+		setResource("actions/jump");
+		setName("Jump");
+		this.setEffectType(BUFF);
 	}
 
 	@Override
@@ -25,6 +24,8 @@ public class Jump extends SpellOnTarget {
 		BaseInfo buffed = (BaseInfo)target;
 		BaseInfo self = (BaseInfo) caster;
 		int cl= self.getValue(StabConstants.CASTERLEVEL);
+		
+		setRangeTouch(self);
 		Jump_Buff buff = new Jump_Buff(cl);
 		
 		buff.setTime(cl*10);

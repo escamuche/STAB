@@ -16,8 +16,10 @@ public class CharmPerson extends SpellOnTarget{
 		
 		BaseInfo d = (BaseInfo) target;
 		BaseInfo self = (BaseInfo) caster;
+		int cl = self.getValue(StabConstants.CASTERLEVEL);
 		int time = self.getValue(StabConstants.CASTERLEVEL)*60;
 		
+		setRangeClose(cl);
 		CharmPerson_Debuff debuff = new CharmPerson_Debuff();
 		debuff.setTime(time);
 		d.addTrait(debuff);
@@ -28,12 +30,6 @@ public class CharmPerson extends SpellOnTarget{
 		
 		setLevel(1);
 		setCasterClass(StabConstants.WIZARDCASTER);
-		
-		//
-		//int rango = (caster.getValue(StabConstants.CASTERLEVEL)/2)+5; hay que pasarle el valor del caster...
-		//setRange(rango);
-		
-		setRange(5);
 		setTargetClass(PhysicalToken.class);
 		setResource("actions/charmperson");
 		setName("CharmPerson");

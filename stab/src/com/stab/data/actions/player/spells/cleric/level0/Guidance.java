@@ -14,6 +14,8 @@ public class Guidance extends SpellOnTarget{
 	@Override
 	public boolean execute(Info yo, Info target) {
 		
+		BaseInfo caster=(BaseInfo)yo;
+		this.setRangeTouch(caster);
 		BaseInfo Bufado = (BaseInfo)target;
 		Guidance_Buff buff = new Guidance_Buff();
 		buff.setTime(10);
@@ -25,7 +27,6 @@ public class Guidance extends SpellOnTarget{
 	public Guidance() {
 		setLevel(0);
 		setCasterClass(StabConstants.CLERICCASTER);
-		setRange(1);
 		setTargetClass(PhysicalToken.class);
 		setResource("actions/flare");
 		setName("Guidance");

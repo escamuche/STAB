@@ -15,6 +15,8 @@ public class ResistanceCleric extends SpellOnTarget{
 	public boolean execute(Info yo, Info target) {
 		
 		BaseInfo Bufado = (BaseInfo)target;
+		BaseInfo caster=(BaseInfo)yo;
+		this.setRangeTouch(caster);
 		
 		ResistanceBuff buff = new ResistanceBuff();
 		buff.setTime(10);
@@ -26,11 +28,10 @@ public class ResistanceCleric extends SpellOnTarget{
 	public ResistanceCleric() {
 		setLevel(0);
 		setCasterClass(StabConstants.CLERICCASTER);
-     setRange(1);
-     setTargetClass(PhysicalToken.class);
-     setResource("actions/nightshield");
-     setName("Resistance");
-     this.setEffectType(BUFF);
+		setTargetClass(PhysicalToken.class);
+		setResource("actions/nightshield");
+		setName("Resistance");
+		this.setEffectType(BUFF);
 	}
 	
 	@Override

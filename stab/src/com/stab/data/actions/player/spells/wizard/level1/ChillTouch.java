@@ -22,25 +22,26 @@ public class ChillTouch extends SpellOnTarget{
 	@Override
 	public boolean execute(Info yo, Info target) {
 		
-		BaseInfo Atacante = (BaseInfo)yo;
-		BaseInfo Atacado = (BaseInfo)target;
+		BaseInfo caster = (BaseInfo)yo;
+		BaseInfo atacado = (BaseInfo)target;
 		int dañobase=Roll.d6();
+		int cl = caster.getValue(StabConstants.CASTERLEVEL);
 		
-		MagicAttack ataque = new MagicAttack(Atacante);
-		Atacado.apply(ataque);
+		setRangeClose(cl);
+		MagicAttack ataque = new MagicAttack(caster);
+		atacado.apply(ataque);
 		
-		Atacante.playAnimationOn(ShootProyectileAnimation.ID, Atacado.getToken(), "PARTICLE#magicmissile");
+		caster.playAnimationOn(ShootProyectileAnimation.ID, atacado.getToken(), "PARTICLE#magicmissile");
 		
 		Damage d= new Damage(dañobase, Damage.UNHOLY_DAMAGE,yo);
-		Atacado.apply(d);
-		System.out.println(d.getFinalAmount()+" de daño");
-		
+		atacado.apply(d);
+			
 		if(ataque.hits()) {
-			FortitudeAttack ataque2 = new FortitudeAttack(Atacante);
-			Atacado.apply(ataque2);
+			FortitudeAttack ataque2 = new FortitudeAttack(caster);
+			atacado.apply(ataque2);
 			if(ataque2.hits()){
 				ChillTouch_Debuff chilltouch = new ChillTouch_Debuff();
-				Atacado.addTrait(chilltouch);
+				atacado.addTrait(chilltouch);
 			}
 		return true;
 		}
@@ -53,7 +54,6 @@ public class ChillTouch extends SpellOnTarget{
      
 	 setLevel(1);
 	 setCasterClass(StabConstants.WIZARDCASTER);
-	 setRange(1);
      setTargetClass(PhysicalToken.class);
      setResource("actions/chilltouch");
      setName("Chill Touch");

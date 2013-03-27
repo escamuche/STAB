@@ -20,7 +20,6 @@ public class TouchFatigue extends SpellOnTarget{
 		
 		setLevel(0);
 		setCasterClass(StabConstants.WIZARDCASTER);
-		setRange(1);
 		setTargetClass(PhysicalToken.class);
 		setResource("actions/ability_druid_naturalperfection");
 		setName("TouchFatigue");
@@ -32,15 +31,16 @@ public class TouchFatigue extends SpellOnTarget{
 		
 		BaseInfo i = (BaseInfo) target;
 		BaseInfo c = (BaseInfo) caster;
+		int cl = c.getValue(StabConstants.CASTERLEVEL);
 		
-		int time= c.getValue(StabConstants.CASTERLEVEL);
 		
+		setRangeTouch(c);
 		MagicAttack attack = new MagicAttack(i);
 		if(attack.hits()) {
 			FortitudeAttack b = new FortitudeAttack(i);
 				if(b.hits()){
 					FatiguedCondition debuff = new FatiguedCondition();
-					debuff.setTime(time);
+					debuff.setTime(cl);
 					i.addTrait(debuff);
 					return true;
 				}

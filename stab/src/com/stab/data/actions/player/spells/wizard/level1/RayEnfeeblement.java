@@ -19,13 +19,20 @@ public class RayEnfeeblement extends SpellOnTarget{
 		
 		BaseInfo caster=(BaseInfo)yo;
 		BaseInfo debuffed = (BaseInfo)target;
-		int bono = (caster.getValue(StabConstants.CASTERLEVEL)/2)+1;
+		int cl = caster.getValue(StabConstants.CASTERLEVEL);
+		
+		int bono = (cl/2)+1;
 		if(bono>5)
 			bono=5;
 		
+		setRangeClose(cl);
 		MagicAttack attack = new MagicAttack(caster);
 		FortitudeAttack save= new FortitudeAttack(caster);
 		int damage = Roll.d6()+bono;
+		
+		debuffed.apply(attack);
+		debuffed.apply(save);
+		
 		
 			if(attack.hits()) {
 				if(save.hits()){
@@ -45,12 +52,12 @@ public class RayEnfeeblement extends SpellOnTarget{
 		}
 	
 	public RayEnfeeblement() {
+		
 		setLevel(1);
 		setCasterClass(StabConstants.WIZARDCASTER);
-		setRange(5);
-     setTargetClass(PhysicalToken.class);
-     setResource("actions/rayenfeeblement");
-     setName("RayEnfeblement");
-     this.setEffectType(DEBUFF);
+		setTargetClass(PhysicalToken.class);
+		setResource("actions/rayenfeeblement");
+		setName("RayEnfeblement");
+		this.setEffectType(DEBUFF);
 	}
 }

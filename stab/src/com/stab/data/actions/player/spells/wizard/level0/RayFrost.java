@@ -21,31 +21,34 @@ public class RayFrost extends SpellOnTarget{
 	@Override
 	public boolean execute(Info yo, Info target) {
 		
-		BaseInfo Atacante = (BaseInfo)yo;
-		BaseInfo Atacado = (BaseInfo)target;
+		
+		BaseInfo atacado = (BaseInfo)target;
+		BaseInfo caster = (BaseInfo)yo;
+		int cl = caster.getValue(StabConstants.CASTERLEVEL);
 		int dañobase=Roll.d3();
 		
-		MagicAttack ataque = new MagicAttack(Atacante);
-		Atacado.apply(ataque);
+		setRangeClose(cl);
+		MagicAttack ataque = new MagicAttack(caster);
+		atacado.apply(ataque);
 		
-		sleep(Atacante.playAnimationOn(ShootBeamAnimation.ID, Atacado.getToken(), "PARTICLE#rayOfFrost"));
+		sleep(caster.playAnimationOn(ShootBeamAnimation.ID, atacado.getToken(), "PARTICLE#rayOfFrost"));
 		
 		if(ataque.hits()) {
 			Damage d= new Damage(dañobase, Damage.COLD_DAMAGE,yo);
-			Atacado.apply(d);
+			atacado.apply(d);
 			System.out.println(d.getFinalAmount()+" de daño");
 			return true;	
 		}
 		return false;
 	}
 	public RayFrost() {
+		
 		setLevel(0);
 		setCasterClass(StabConstants.WIZARDCASTER);
-     setRange(6);
-     setTargetClass(PhysicalToken.class);
-     setResource("actions/niaccoldray");
-     setName("RayFrost");
-     this.setEffectType(DAMAGE);
+		setTargetClass(PhysicalToken.class);
+		setResource("actions/niaccoldray");
+		setName("RayFrost");
+		this.setEffectType(DAMAGE);
 	}
 
 	

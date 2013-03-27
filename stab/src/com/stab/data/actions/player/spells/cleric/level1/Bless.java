@@ -26,7 +26,7 @@ public class Bless extends SpellOnTarget{
 		}
 	
 	public Bless() {
-     setRange(4);
+     setRange(10);
      setTargetClass(PhysicalToken.class);
      setResource("actions/bless");
      setName("Bless");

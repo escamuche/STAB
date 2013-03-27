@@ -21,21 +21,23 @@ public class DisruptUndead extends SpellOnTarget{
 	@Override
 	public boolean execute(Info yo, Info target) {
 		
-		BaseInfo Atacante = (BaseInfo)yo;
-		BaseInfo Atacado = (BaseInfo)target;
+		BaseInfo caster = (BaseInfo)yo;
+		BaseInfo atacado = (BaseInfo)target;
+		int cl = caster.getValue(StabConstants.CASTERLEVEL);
+		setRangeClose(cl);
 		int dañobase=Roll.d6();
 		
 		
-		MagicAttack ataque = new MagicAttack(Atacante);
-		Atacado.apply(ataque);
+		MagicAttack ataque = new MagicAttack(caster);
+		atacado.apply(ataque);
 	
-		Atacante.playAnimationOn(ShootProyectileAnimation.ID, Atacado.getToken(), "PARTICLE#magicmissile");
+		caster.playAnimationOn(ShootProyectileAnimation.ID, atacado.getToken(), "PARTICLE#magicmissile");
 		
-		if(Atacado.getTrait(UndeadTraits.ID) != null){
+		if(atacado.getTrait(UndeadTraits.ID) != null){
 			
 			if(ataque.hits()) {
 					Damage d= new Damage(dañobase, Damage.HOLY_DAMAGE,yo);
-					Atacado.apply(d);
+					atacado.apply(d);
 					System.out.println(d.getFinalAmount()+" de daño");	
 					return true;
 					}
@@ -48,7 +50,6 @@ public class DisruptUndead extends SpellOnTarget{
      
 	 setLevel(0);
 	 setCasterClass(StabConstants.WIZARDCASTER);
-	 setRange(6);
      setTargetClass(PhysicalToken.class);
      setResource("actions/disruptundead");
      setName("DisruptUndead");

@@ -25,13 +25,14 @@ public class Virtue extends SpellOnTarget{
 	}
 	
 	public Virtue() {
+		
 		setLevel(0);
 		setCasterClass(StabConstants.CLERICCASTER);
-     setRange(2);
-     setTargetClass(PhysicalToken.class);
-     setResource("actions/ability_druid_naturalperfection");
-     setName("PurifyFood");
-     this.setEffectType(HEAL);
+		setRange(2);
+		setTargetClass(PhysicalToken.class);
+		setResource("actions/ability_druid_naturalperfection");
+		setName("PurifyFood");
+		this.setEffectType(HEAL);
 	}
 	
 	@Override

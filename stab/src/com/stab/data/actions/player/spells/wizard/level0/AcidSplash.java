@@ -20,18 +20,21 @@ public class AcidSplash extends SpellOnTarget{
 	@Override
 	public boolean execute(Info yo, Info target) {
 		
-		BaseInfo Atacante = (BaseInfo)yo;
-		BaseInfo Atacado = (BaseInfo)target;
+		BaseInfo caster = (BaseInfo)yo;
+		BaseInfo t = (BaseInfo)target;
+		int cl =caster.getValue(StabConstants.CASTERLEVEL);
 		int dañobase=Roll.d3();
 		
-		MagicAttack ataque = new MagicAttack(Atacante);
-		Atacado.apply(ataque);
+		setRangeClose(cl);
 		
-		Atacante.playAnimationOn(ShootProyectileAnimation.ID, Atacado.getToken(), "PARTICLE#magicmissile");
+		MagicAttack ataque = new MagicAttack(caster);
+		t.apply(ataque);
+		
+		caster.playAnimationOn(ShootProyectileAnimation.ID, t.getToken(), "PARTICLE#magicmissile");
 		
 		if(ataque.hits()) {
 		Damage d= new Damage(dañobase, Damage.ACID_DAMAGE,yo);
-		Atacado.apply(d);
+		t.apply(d);
 		System.out.println(d.getFinalAmount()+" de daño");	
 		return true;
 		}
@@ -42,7 +45,6 @@ public class AcidSplash extends SpellOnTarget{
      
 	 setLevel(0);
 	 setCasterClass(StabConstants.WIZARDCASTER);
-	 setRange(6);
      setTargetClass(PhysicalToken.class);
      setResource("actions/acidspray");
      setName("AcidSplash");

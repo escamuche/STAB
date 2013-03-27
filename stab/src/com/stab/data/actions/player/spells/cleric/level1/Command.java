@@ -16,7 +16,6 @@ public class Command extends SpellOnTarget{
 		
 		setLevel(1);
 		setCasterClass(StabConstants.CLERICCASTER);
-		setRange(5);
 		setTargetClass(PhysicalToken.class);
 		setResource("actions/command");
 		setName("Command");
@@ -28,7 +27,10 @@ public class Command extends SpellOnTarget{
 	public boolean execute(Info yo, Info target) {
 		
 		BaseInfo t = (BaseInfo) target;
+		BaseInfo caster=(BaseInfo)yo;
 		DazedCondition d = new DazedCondition();
+		
+		this.setRangeClose(caster.getValue(StabConstants.CASTERLEVEL));
 		d.setTime(1);
 		t.addTrait(d);
 		return true;

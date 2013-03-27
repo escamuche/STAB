@@ -55,4 +55,20 @@ public abstract class SpellOnTarget extends TargetAction implements Spell {
 		return casterClass;
 	}
 	
+	public void setRangeTouch(BaseInfo caster){ //cambiar en un futuro para que sea reach
+		setRange(1);
+	}
+	
+	public void setRangeClose(int cl){
+		setRange(5+(cl/2));
+	}
+	
+	public void setRangeMedium(int cl){
+		setRange(20+(cl*2));
+	}
+	
+	public void setRangeLarge(int cl){
+		setRange(80+(cl*8));
+	}
+	
 }

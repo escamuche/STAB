@@ -17,26 +17,27 @@ public class MagicMissile extends SpellOnTarget{
 	@Override
 	public boolean execute(Info yo, Info target) {
 		
-		BaseInfo Atacante = (BaseInfo)yo;
-		BaseInfo Atacado = (BaseInfo)target;
+		BaseInfo atacado = (BaseInfo)target;
+		BaseInfo caster = (BaseInfo)yo;
+		int cl = caster.getValue(StabConstants.CASTERLEVEL);
 		int dañobase=Roll.d4()+1;
 		
-		Atacante.playAnimationOn(ShootProyectileAnimation.ID, Atacado.getToken(), "PARTICLE#magicmissile");
+		setRangeMedium(cl);
+		caster.playAnimationOn(ShootProyectileAnimation.ID, atacado.getToken(), "PARTICLE#magicmissile");
 		
 		Damage d= new Damage(dañobase, Damage.FIRE_DAMAGE,yo);
-		Atacado.apply(d);
-		System.out.println(d.getFinalAmount()+" de daño");
+		atacado.apply(d);
 		return true;	
 		}
 	
 	public MagicMissile() {
+		
 		setLevel(1);
 		setCasterClass(StabConstants.WIZARDCASTER);
-     setRange(22);
-     setTargetClass(PhysicalToken.class);
-     setResource("actions/magicmissile");
-     setName("MagicMissile");
-     this.setEffectType(DAMAGE);
+		setTargetClass(PhysicalToken.class);
+		setResource("actions/magicmissile");
+		setName("MagicMissile");
+		this.setEffectType(DAMAGE);
 	}
 
 	

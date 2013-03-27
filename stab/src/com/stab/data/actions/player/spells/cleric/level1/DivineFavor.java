@@ -21,6 +21,7 @@ public class DivineFavor extends SpellOnSelf{
 		
 		BaseInfo caster = (BaseInfo)yo;
 		int cl = caster.getValue(StabConstants.CASTERLEVEL);
+		
 		DivineFavor_Buff buff = new DivineFavor_Buff(cl);
 		buff.setTime(10);
 		caster.addTrait(buff);

@@ -3,6 +3,7 @@ package com.stab.data.actions.player.spells.wizard.level0;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.model.basic.token.interfaces.Interactive;
+import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 
 public class MageHand extends SpellOnTarget{
@@ -13,7 +14,6 @@ public class MageHand extends SpellOnTarget{
 	     
 		 setLevel(0);
 		 setCasterClass(StabConstants.WIZARDCASTER);
-		 setRange(6);
 	     setResource("actions/ability_mage_arcanebarrage");
 	     setName("MageHand");
 	     this.setEffectType(SPECIAL);
@@ -23,8 +23,12 @@ public class MageHand extends SpellOnTarget{
 	@Override
 	public boolean execute(Info target, Info yo) {
 		
-		Interactive Atacado = (Interactive)target;
-		Atacado.infoInteracts(yo);
+		BaseInfo caster = (BaseInfo)yo;
+		int cl = caster.getValue(StabConstants.CASTERLEVEL);
+		
+		setRangeClose(cl);
+		Interactive atacado = (Interactive)target;
+		atacado.infoInteracts(yo);
 		return true;
 	}
 }

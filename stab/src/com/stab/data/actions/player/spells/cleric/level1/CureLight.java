@@ -23,9 +23,18 @@ public class CureLight extends SpellOnTarget{
 		
 		BaseInfo atacado = (BaseInfo)target;
 		BaseInfo caster = (BaseInfo)yo;
-		int dañobase=Roll.d8()+1;
+		
+		int cl=caster.getValue(StabConstants.CASTERLEVEL);
+		if(cl>5)
+			cl=5;
+		int dañobase=Roll.d8()+cl;
+		
+		this.setRangeTouch(caster);
 		MagicAttack ataque = new MagicAttack(caster);
 		FortitudeAttack save = new FortitudeAttack(atacado);
+		
+		atacado.apply(ataque);
+		atacado.apply(save);
 		
 		if (atacado.hasTrait(UndeadTraits.ID) == false) {
 			Heal heal = new Heal(dañobase, atacado);
@@ -58,7 +67,7 @@ public class CureLight extends SpellOnTarget{
 		}
 	
 	public CureLight() {
-     setRange(1);
+   
      setTargetClass(PhysicalToken.class);
      setResource("actions/curelightwounds");
      this.setCasterClass(StabConstants.CLERICCASTER);

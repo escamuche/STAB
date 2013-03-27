@@ -15,7 +15,9 @@ public class Resistance extends SpellOnTarget{
 	public boolean execute(Info yo, Info target) {
 		
 		BaseInfo buffed = (BaseInfo)target;
+		BaseInfo caster = (BaseInfo)yo;
 		
+		setRangeTouch(caster);
 		ResistanceBuff buff = new ResistanceBuff();
 		buff.setTime(10);
 		buffed.addTrait(buff);
@@ -24,12 +26,12 @@ public class Resistance extends SpellOnTarget{
 		}
 	
 	public Resistance() {
+		
 		setLevel(0);
 		setCasterClass(StabConstants.WIZARDCASTER);
-     setRange(1);
-     setTargetClass(PhysicalToken.class);
-     setResource("actions/nightshield");
-     setName("Resistance");
-     this.setEffectType(BUFF);
+		setTargetClass(PhysicalToken.class);
+		setResource("actions/nightshield");
+		setName("Resistance");
+		this.setEffectType(BUFF);
 	}
 }

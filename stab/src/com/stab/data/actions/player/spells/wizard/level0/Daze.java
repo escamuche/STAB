@@ -2,6 +2,7 @@ package com.stab.data.actions.player.spells.wizard.level0;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
+import com.stab.data.info.applicable.magic.WillAttack;
 import com.stab.data.info.debuff.condition.DazedCondition;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
@@ -15,7 +16,6 @@ public class Daze extends SpellOnTarget{
 	public Daze() {
 		setLevel(0);
 		setCasterClass(StabConstants.WIZARDCASTER);
-		setRange(6);
 		setTargetClass(PhysicalToken.class);
 		setResource("actions/ability_druid_naturalperfection");
 		setName("Daze");
@@ -25,11 +25,23 @@ public class Daze extends SpellOnTarget{
 	@Override
 	public boolean execute(Info yo, Info target) {
 		
-		BaseInfo Atacado = (BaseInfo)target;
-		DazedCondition buff = new DazedCondition();
-		buff.setTime(1);
-		Atacado.addTrait(buff);
-		return true;
+		BaseInfo atacado = (BaseInfo)target;
+		BaseInfo caster =(BaseInfo)yo;
+		
+		WillAttack save = new WillAttack(caster);
+		atacado.apply(save);
+		int cl = caster.getValue(StabConstants.CASTERLEVEL);
+		setRangeClose(cl);
+		
+		if(save.hits()){
+		
+			DazedCondition buff = new DazedCondition();
+			buff.setTime(1);
+			atacado.addTrait(buff);
+			return true;
+			}
+		else
+			return false;
 		}
 
 	@Override
