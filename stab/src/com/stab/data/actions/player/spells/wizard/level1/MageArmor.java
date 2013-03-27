@@ -17,6 +17,7 @@ public class MageArmor extends SpellOnTarget{
 		BaseInfo caster = (BaseInfo)yo;
 		
 		MageArmor_Buff buff = new MageArmor_Buff();
+		buff.setTime(caster.getValue(StabConstants.CASTERLEVEL)*600);
 		caster.addTrait(buff);
 		
 		return true;

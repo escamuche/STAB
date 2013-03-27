@@ -13,7 +13,7 @@ public class HoldPortal extends SpellOnTarget{
 	@Override
 	public boolean execute(Info yo, Info target) {
 		
-		//Cambiar para que solo cierre. Pendiente tema con llave
+		//Cambiar para que solo cierre. Pendiente tema con llave. Duracion 1 min/level
 		Door Atacado = (Door)target;
 		Atacado.infoInteracts(yo);
 		return true;

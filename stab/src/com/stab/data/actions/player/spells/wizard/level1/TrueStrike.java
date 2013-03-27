@@ -23,6 +23,7 @@ public class TrueStrike extends SpellOnSelf{
 		
 		BaseInfo caster = (BaseInfo)yo;
 		TrueStrike_Buff buff = new TrueStrike_Buff();
+		buff.setTime(1);
 		caster.addTrait(buff);
 		return true;
 	}

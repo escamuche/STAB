@@ -17,6 +17,7 @@ public class ResistanceCleric extends SpellOnTarget{
 		BaseInfo Bufado = (BaseInfo)target;
 		
 		ResistanceBuff buff = new ResistanceBuff();
+		buff.setTime(10);
 		Bufado.addTrait(buff);
 		
 		return true;

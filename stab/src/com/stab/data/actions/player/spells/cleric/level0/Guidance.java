@@ -16,6 +16,7 @@ public class Guidance extends SpellOnTarget{
 		
 		BaseInfo Bufado = (BaseInfo)target;
 		Guidance_Buff buff = new Guidance_Buff();
+		buff.setTime(10);
 		Bufado.addTrait(buff);
 		return true;
 	
@@ -24,11 +25,11 @@ public class Guidance extends SpellOnTarget{
 	public Guidance() {
 		setLevel(0);
 		setCasterClass(StabConstants.CLERICCASTER);
-     setRange(1);
-     setTargetClass(PhysicalToken.class);
-     setResource("actions/flare");
-     setName("Guidance");
-     this.setEffectType(BUFF);
+		setRange(1);
+		setTargetClass(PhysicalToken.class);
+		setResource("actions/flare");
+		setName("Guidance");
+		this.setEffectType(BUFF);
 	}
 	
 	@Override

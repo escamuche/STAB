@@ -15,11 +15,15 @@ public class Doom extends SpellOnTarget {
 	@Override
 	public boolean execute(Info yo, Info target) {
 		
-		BaseInfo Atacado = (BaseInfo)target;
-		WillAttack ataque = new WillAttack(Atacado);
+		BaseInfo atacado = (BaseInfo)target;
+		BaseInfo caster = (BaseInfo)yo;
+		int cl=caster.getValue(StabConstants.CASTERLEVEL);
+		
+		WillAttack ataque = new WillAttack(atacado);
 		if(ataque.hits()) {
 			Doom_Debuff debuff = new Doom_Debuff();
-			Atacado.addTrait(debuff);
+			debuff.setTime(cl*10);
+			atacado.addTrait(debuff);
 			return true;
 			}
 		return false;
@@ -35,10 +39,10 @@ public class Doom extends SpellOnTarget {
 	}
 
 	
-	/*@Override
+	@Override
 	public int getEffectValue(BaseInfo i) {
-		return dañobase;
-	}*/
+		return 10;
+	}
 	
 
 }

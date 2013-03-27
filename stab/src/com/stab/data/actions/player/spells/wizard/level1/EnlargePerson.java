@@ -23,7 +23,9 @@ public class EnlargePerson extends SpellOnTarget {
 	public boolean execute(Info yo, Info target) {
 		
 		BaseInfo buffed= (BaseInfo) target;
+		BaseInfo caster=(BaseInfo) yo;
 		EnlargePerson_Buff buff = new EnlargePerson_Buff();
+		buff.setTime(caster.getValue(StabConstants.CASTERLEVEL)*10);
 		buffed.addTrait(buff);
 		return true;
 	}

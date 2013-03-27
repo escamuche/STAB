@@ -22,6 +22,7 @@ public class Shield extends SpellOnSelf{
 		
 		BaseInfo caster = (BaseInfo)yo;
 		Shield_Buff buff = new Shield_Buff();
+		buff.setTime(caster.getValue(StabConstants.CASTERLEVEL)*10);
 		caster.addTrait(buff);
 		
 		return true;

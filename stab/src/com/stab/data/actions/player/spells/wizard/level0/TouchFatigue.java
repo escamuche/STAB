@@ -31,8 +31,9 @@ public class TouchFatigue extends SpellOnTarget{
 		
 		
 		BaseInfo i = (BaseInfo) target;
-		BaseInfo self = (BaseInfo) caster;
-		int time= self.getValue(StabConstants.CASTERLEVEL);
+		BaseInfo c = (BaseInfo) caster;
+		
+		int time= c.getValue(StabConstants.CASTERLEVEL);
 		
 		MagicAttack attack = new MagicAttack(i);
 		if(attack.hits()) {

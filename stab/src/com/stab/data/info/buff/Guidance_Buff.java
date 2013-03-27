@@ -15,6 +15,8 @@ public class Guidance_Buff extends Buff {
 		this.setSound("HolyCast");
 		this.setResource("actions/bless");                  
 		this.setName("Guidance");
+		
+		this.setCharges(1);
 	
 		Modifier tohit=new Modifier(StabConstants.TOHIT,StabConstants.COMPETENCEMOD, +1);
 		Modifier fsave=new Modifier(StabConstants.FORTITUDESAVE,StabConstants.COMPETENCEMOD, +1);
@@ -25,6 +27,6 @@ public class Guidance_Buff extends Buff {
 		addTrait(fsave);
 		addTrait(rsave);
 		addTrait(wsave);
-		
+				
 		}
 }

@@ -14,10 +14,13 @@ public class Bless extends SpellOnTarget{
 	@Override
 	public boolean execute(Info yo, Info target) {
 		
-		BaseInfo Atacado = (BaseInfo)target;
+		BaseInfo atacado = (BaseInfo)target;
+		BaseInfo caster = (BaseInfo)yo;
+		int cl=caster.getValue(StabConstants.CASTERLEVEL);
 		
 		Bless_Buff buff = new Bless_Buff();
-		Atacado.addTrait(buff);
+		buff.setTime(cl*10);
+		atacado.addTrait(buff);
 		
 		return true;
 		}
@@ -32,10 +35,10 @@ public class Bless extends SpellOnTarget{
 	}
 
 	
-	/*@Override
+	@Override
 	public int getEffectValue(BaseInfo i) {
-		return dañobase;
-	}*/
+		return 10;
+	}
 	
 
 }

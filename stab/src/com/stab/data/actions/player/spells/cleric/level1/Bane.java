@@ -14,10 +14,13 @@ public class Bane extends SpellOnTarget {
 	@Override
 	public boolean execute(Info yo, Info target) {
 		
-		BaseInfo Atacado = (BaseInfo)target;
+		BaseInfo atacado = (BaseInfo)target;
+		BaseInfo caster = (BaseInfo)yo;
+		int cl=caster.getValue(StabConstants.CASTERLEVEL);
 		
 		Bane_Debuff debuff = new Bane_Debuff();
-		Atacado.addTrait(debuff);
+		debuff.setTime(cl*10);
+		atacado.addTrait(debuff);
 		
 		return true;
 		}
@@ -36,6 +39,4 @@ public class Bane extends SpellOnTarget {
 	public int getEffectValue(BaseInfo i) {
 		return 5;
 	}
-	
-
 }

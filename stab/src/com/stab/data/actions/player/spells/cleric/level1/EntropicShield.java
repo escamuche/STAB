@@ -20,10 +20,13 @@ public class EntropicShield extends SpellOnSelf{
 
 
 	@Override
-	public boolean execute(BaseInfo target) {
-		EntropicShield_Buff buff = new EntropicShield_Buff();
-		target.addTrait(buff);
-		return true;
+	public boolean execute(BaseInfo caster) {
+		
+			EntropicShield_Buff buff = new EntropicShield_Buff();
+			buff.setTime(caster.getValue(StabConstants.CASTERLEVEL)*10);
+			caster.addTrait(buff);
+			return true;
+	
 	}
 
 	

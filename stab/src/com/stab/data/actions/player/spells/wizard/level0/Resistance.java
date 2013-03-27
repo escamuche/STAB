@@ -14,10 +14,11 @@ public class Resistance extends SpellOnTarget{
 	@Override
 	public boolean execute(Info yo, Info target) {
 		
-		BaseInfo Bufado = (BaseInfo)target;
+		BaseInfo buffed = (BaseInfo)target;
 		
 		ResistanceBuff buff = new ResistanceBuff();
-		Bufado.addTrait(buff);
+		buff.setTime(10);
+		buffed.addTrait(buff);
 		
 		return true;
 		}

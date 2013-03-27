@@ -8,7 +8,7 @@ public class DivineFavor_Buff extends Buff {
 
 	public static final String ID="DIVINEFAVOR_BUFF";
 	
-	public DivineFavor_Buff() {
+	public DivineFavor_Buff(int cl) {
 	
 		
 		this.setAnimIcon("actions/divinefavor");				
@@ -16,10 +16,14 @@ public class DivineFavor_Buff extends Buff {
 		this.setResource("actions/divinefavor");                  
 		this.setName("Divine Favor");
 	
-		Modifier tohit=new Modifier(StabConstants.TOHIT,StabConstants.LUCKMOD, +1);
-		Modifier tohitranged=new Modifier(StabConstants.TOHITRANGED,StabConstants.LUCKMOD, +1);
-		Modifier damage=new Modifier(StabConstants.DAMAGE,StabConstants.LUCKMOD, +1);
-		Modifier damageranged=new Modifier(StabConstants.DAMAGERANGED,StabConstants.LUCKMOD, +1);
+		int bono = (cl/3)+1;
+		if(bono > 3)
+			bono=3;
+		
+		Modifier tohit=new Modifier(StabConstants.TOHIT,StabConstants.LUCKMOD, bono);
+		Modifier tohitranged=new Modifier(StabConstants.TOHITRANGED,StabConstants.LUCKMOD, bono);
+		Modifier damage=new Modifier(StabConstants.DAMAGE,StabConstants.LUCKMOD, bono);
+		Modifier damageranged=new Modifier(StabConstants.DAMAGERANGED,StabConstants.LUCKMOD, bono);
 		
 		addTrait(tohit);
 		addTrait(tohitranged);
