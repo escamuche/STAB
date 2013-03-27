@@ -67,11 +67,13 @@ import com.stab.data.animation.WalkAnimation;
 import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.EquipmentFactory;
 import com.stab.data.info.equipment.WeaponFactory;
+import com.stab.data.info.monster.bestiary.Couatl;
 import com.stab.data.info.monster.bestiary.DireRat;
 import com.stab.data.info.monster.bestiary.EsqueletoArquero;
 import com.stab.data.info.monster.bestiary.Goblin;
 import com.stab.data.info.monster.bestiary.GoblinShaman;
 import com.stab.data.info.monster.bestiary.Kobold;
+import com.stab.data.info.monster.bestiary.Lich;
 import com.stab.data.info.monster.bestiary.SkeletalChampion;
 import com.stab.data.info.monster.bestiary.Zombie;
 import com.stab.data.info.player.BarbarianCharacter;
@@ -196,6 +198,8 @@ public class StabInit {
 		of.setMapping(Goblin.class);
 		of.setMapping(GoblinShaman.class);
 		of.setMapping(SkeletalChampion.class);
+		of.setMapping(Couatl.class);
+		of.setMapping(Lich.class);
 		
 		//botones
 		of.setMapping(ActionSlotButton.class);

@@ -38,10 +38,8 @@ public class DisruptUndead extends SpellOnTarget{
 			if(ataque.hits()) {
 					Damage d= new Damage(dañobase, Damage.HOLY_DAMAGE,yo);
 					atacado.apply(d);
-					System.out.println(d.getFinalAmount()+" de daño");	
 					return true;
 					}
-				return false;
 				}
 		return false;
 	}
