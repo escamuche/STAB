@@ -57,7 +57,7 @@ public class Couatl extends Outsider {
 		ai.setLog(true);
 		this.setCurrentAI(ai);
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("SMALLBITE"), HumanoidGear.BOTHHANDS);
+		this.equip(StabInit.getWeaponFactory().getWeapon("SMALLBITE"), HumanoidGear.MAINHAND);
 			
 		this.setBloodeffEct("PARTICLE#redblood");
 		
