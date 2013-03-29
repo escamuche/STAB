@@ -30,7 +30,7 @@ public class MagicMissile extends SpellOnTarget{
 		int number=cl+1/2;
 		if (number>5) number=5;
 		
-		caster.playAnimationOn(MagicMissileAnimation.ID, atacado.getToken(), number);
+		sleep(caster.playAnimationOn(MagicMissileAnimation.ID, atacado.getToken(), number));
 		
 		Damage d= new RolledDamage(number,4, Damage.FORCE_DAMAGE,yo);
 		atacado.apply(d);

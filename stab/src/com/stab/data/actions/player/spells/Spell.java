@@ -83,7 +83,7 @@ public class Spell implements SpellData {
 	
 	@Override
 	public int getCasterLevel(BaseInfo caster) {
-		System.out.println("Caster level is "+caster.getAttributeValue(getCasterClass())+" in  "+getCasterClass());
+	//	System.out.println("Caster level is "+caster.getAttributeValue(getCasterClass())+" in  "+getCasterClass());
 		return caster.getValue(getCasterClass());
 	}
 

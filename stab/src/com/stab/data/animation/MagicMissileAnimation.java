@@ -2,17 +2,12 @@ package com.stab.data.animation;
 
 import java.awt.Point;
 
-import com.stab.client.slick.base.util.PaintUtils;
-import com.stab.client.slick.base.visualobjects.LightSprite;
 import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.common.Constants;
 import com.stab.data.animation.sprite.MagicMissileSprite;
-import com.stab.data.animation.state.MoveToPointState;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTargetAnimation;
-import com.tien.princess.engine.Resources;
-import com.tien.princess.engine.sprite.common.painters.ValuePainter;
-import com.tien.princess.engine.sprite.common.states.StateSet;
+import com.stab.util.Roll;
 
 public class MagicMissileAnimation extends OnTargetAnimation{
 
@@ -40,8 +35,8 @@ public class MagicMissileAnimation extends OnTargetAnimation{
 		Point origin=getOriginPoint();
 		Point target=getTargetPoint();
 		
-		float speed=0.3f;
-		long time=(long)(origin.distance(target)/speed);
+		float speed=0.1f;
+		long time=(long)(origin.distance(target)/speed)*2;
 		
 		for (int f=0;f<number;f++){
 		
@@ -52,11 +47,11 @@ public class MagicMissileAnimation extends OnTargetAnimation{
 			else
 				a=a+ang1[f];
 			
-			icon.setR(speed/2);
+			icon.setR(speed+(Roll.d4()/(float)70));
 			icon.setPos(origin);
 			icon.setSize(64,64);
 			icon.setA(a);
-			icon.setRef(AnimUtils.getSprite(getTarget()));
+			icon.setTarget(AnimUtils.getSprite(getTarget()),true);
 //	icon.setPainter(Resources.INSTANCE.getImage("tokens/door"),Constants.CENTER);
 			AnimUtils.getScreen(getSource()).add(icon);
 		}
