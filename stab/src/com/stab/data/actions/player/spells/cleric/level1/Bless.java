@@ -16,7 +16,7 @@ public class Bless extends SpellOnTarget{
 		
 		BaseInfo atacado = (BaseInfo)target;
 		BaseInfo caster = (BaseInfo)yo;
-		int cl=caster.getValue(StabConstants.CASTERLEVEL);
+		int cl=getCasterLevel(caster);
 		
 		Bless_Buff buff = new Bless_Buff();
 		buff.setTime(cl*10);
@@ -26,7 +26,7 @@ public class Bless extends SpellOnTarget{
 		}
 	
 	public Bless() {
-     setRange(10);
+     setRange(CLOSE);
      setTargetClass(PhysicalToken.class);
      setResource("actions/bless");
      setName("Bless");

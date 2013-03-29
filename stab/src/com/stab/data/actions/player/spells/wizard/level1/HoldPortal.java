@@ -15,9 +15,9 @@ public class HoldPortal extends SpellOnTarget{
 	public boolean execute(Info yo, Info target) {
 		
 		BaseInfo caster = (BaseInfo)yo;
-		int cl = caster.getValue(StabConstants.CASTERLEVEL);
+		int cl = getCasterLevel(caster);
 		
-		setRangeMedium(cl);
+		
 		//Cambiar para que solo cierre. Pendiente tema con llave. Duracion 1 min/level
 		Door Atacado = (Door)target;
 		Atacado.infoInteracts(yo);
@@ -32,5 +32,6 @@ public class HoldPortal extends SpellOnTarget{
 		setResource("actions/ability_druid_naturalperfection");
 		setName("HoldPortal");
 		this.setEffectType(SPECIAL);
+		setRange(MEDIUM);
 	}
 }

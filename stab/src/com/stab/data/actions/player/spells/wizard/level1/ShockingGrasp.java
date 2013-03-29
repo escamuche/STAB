@@ -24,7 +24,7 @@ public class ShockingGrasp extends SpellOnTarget{
 		BaseInfo caster = (BaseInfo)yo;
 		int dañobase=Roll.d6();
 		
-		setRangeTouch(caster);
+	
 		MagicAttack ataque = new MagicAttack(caster);
 		atacado.apply(ataque);
 		
@@ -46,6 +46,7 @@ public class ShockingGrasp extends SpellOnTarget{
      setResource("actions/shockinggrasp");
      setName("ShockingGrasp");
      this.setEffectType(DAMAGE);
+ 	setRange(TOUCH);
 	}
 
 	

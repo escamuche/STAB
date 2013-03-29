@@ -23,8 +23,7 @@ public class DisruptUndead extends SpellOnTarget{
 		
 		BaseInfo caster = (BaseInfo)yo;
 		BaseInfo atacado = (BaseInfo)target;
-		int cl = caster.getValue(StabConstants.CASTERLEVEL);
-		setRangeClose(cl);
+		int cl = getCasterLevel(caster);
 		int dañobase=Roll.d6();
 		
 		
@@ -52,6 +51,8 @@ public class DisruptUndead extends SpellOnTarget{
      setResource("actions/disruptundead");
      setName("DisruptUndead");
      this.setEffectType(DAMAGE);
+ 	 setRange(CLOSE);
+	
 	}
 
 	

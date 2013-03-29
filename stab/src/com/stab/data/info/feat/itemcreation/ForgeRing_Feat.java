@@ -11,7 +11,7 @@ public class ForgeRing_Feat extends ItemCreationFeat{
 	
 	public ForgeRing_Feat() {
 		
-		this.addRequiredAttribute(StabConstants.CASTERLEVEL, 7);
+	//	this.addRequiredAttribute(StabConstants.CASTERLEVEL, 7);
 			}
 	
 }

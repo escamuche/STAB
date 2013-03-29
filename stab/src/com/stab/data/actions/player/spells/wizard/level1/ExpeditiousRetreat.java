@@ -22,7 +22,7 @@ public class ExpeditiousRetreat extends SpellOnSelf{
 	public boolean execute(BaseInfo self) {
 		
 		ExpeditiousRetreat_Buff buff = new ExpeditiousRetreat_Buff();
-		buff.setTime(self.getValue(StabConstants.CASTERLEVEL)*10);
+		buff.setTime(getCasterLevel(self)*10);
 		self.addTrait(buff);
 		return true;
 	}

@@ -17,9 +17,9 @@ public class Flare extends SpellOnTarget{
 		
 		BaseInfo atacado = (BaseInfo)target;
 		BaseInfo caster = (BaseInfo)yo;
-		int cl = caster.getValue(StabConstants.CASTERLEVEL);
+		int cl = getCasterLevel(caster);
 		
-		setRangeClose(cl);
+		setRange(CLOSE);
 		FortitudeAttack ataque=new FortitudeAttack(atacado);
 		atacado.apply(ataque);
 		
@@ -38,5 +38,7 @@ public class Flare extends SpellOnTarget{
 		setResource("actions/flare");
 		setName("Flare");
 		this.setEffectType(BUFF);
+		setRange(CLOSE);
+		
 	}
 }

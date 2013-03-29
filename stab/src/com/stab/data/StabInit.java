@@ -56,6 +56,7 @@ import com.stab.data.animation.DamageNumberAnimation;
 import com.stab.data.animation.EffectAddAnimation;
 import com.stab.data.animation.EffectRemoveAnimation;
 import com.stab.data.animation.HealNumberAnimation;
+import com.stab.data.animation.MagicMissileAnimation;
 import com.stab.data.animation.MissProyectileAnimation;
 import com.stab.data.animation.OpenDoorAnimation;
 import com.stab.data.animation.ShakeAnimation;
@@ -92,6 +93,7 @@ import com.stab.data.info.props.Barrel;
 import com.stab.data.info.props.Brazier;
 import com.stab.data.info.props.Crate;
 import com.stab.data.info.props.Dummy;
+import com.stab.data.info.props.StabRandomSpawner;
 import com.stab.data.info.props.WoodenDoor;
 import com.stab.data.scene.ActionSlotButton;
 import com.stab.data.scene.CharacterSheet;
@@ -189,6 +191,7 @@ public class StabInit {
 		of.setMapping(Barrel.class);
 		of.setMapping(Dummy.class);
 		of.setMapping(Brazier.class);
+		of.setMapping(StabRandomSpawner.class);
 		
 		//criaturas
 		of.setMapping(Zombie.class);
@@ -223,6 +226,7 @@ public class StabInit {
 		of.setMapping(ShakeAnimation.class);
 		of.setMapping(ShootBeamAnimation.class);
 		of.setMapping(ThrustAnimation.class);
+		of.setMapping(MagicMissileAnimation.class);
 		
 		
 		wf=new WeaponFactory();
@@ -301,4 +305,12 @@ public class StabInit {
 	public static EquipmentFactory getEquipmentFactory(){
 		return ef;
 	}
+
+	
+	
+	
+	
+	
+	
+	
 }

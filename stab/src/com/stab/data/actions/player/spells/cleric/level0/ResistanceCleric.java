@@ -16,7 +16,6 @@ public class ResistanceCleric extends SpellOnTarget{
 		
 		BaseInfo Bufado = (BaseInfo)target;
 		BaseInfo caster=(BaseInfo)yo;
-		this.setRangeTouch(caster);
 		
 		ResistanceBuff buff = new ResistanceBuff();
 		buff.setTime(10);
@@ -32,6 +31,8 @@ public class ResistanceCleric extends SpellOnTarget{
 		setResource("actions/nightshield");
 		setName("Resistance");
 		this.setEffectType(BUFF);
+		this.setRange(TOUCH);
+		
 	}
 	
 	@Override

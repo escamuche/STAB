@@ -1,5 +1,10 @@
 package com.stab.data;
 
+import java.lang.reflect.Field;
+
+import com.stab.data.info.monster.bestiary.Goblin;
+import com.stab.data.info.monster.bestiary.GoblinShaman;
+
 public class StabConstants {
 	
 	
@@ -120,7 +125,7 @@ public class StabConstants {
 	public static final String SPELLKNOWN8="SPELLKNOWN8";
 	public static final String SPELLKNOWN9="SPELLKNOWN9";
 	
-	public static final String CASTERLEVEL="CASTERLEVEL";
+//	public static final String CASTERLEVEL="CASTERLEVEL";
 	public static final String CASTERLEVELBARD="CASTERLEVELBARD";
 	public static final String CASTERLEVELCLERIC="CASTERLEVELCLERIC";
 	public static final String CASTERLEVELDRUID="CASTERLEVELDRUID";
@@ -187,5 +192,34 @@ public class StabConstants {
 	public static final String RANGECLOSE="RANGECLOSE";
 	public static final String RANGEMEDIUM="RANGEMEDIUM";
 	public static final String RANGELARGE="RANGELARGE";
+	
+	
+	
+	//Tablas de random
+	
+	
+	public static final String RND_GOBLIN="1:NULL;2:"+Goblin.ID+";2:"+GoblinShaman.ID+";1:"+Goblin.ID+","+Goblin.ID+";1:"+Goblin.ID+","+GoblinShaman.ID+";";
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static String getString(String table) {
+		try{
+			Field f=StabConstants.class.getDeclaredField(table);
+			return	f.get(null).toString();
+		}catch(Exception e){
+			e.printStackTrace();
+			System.out.println("No existe la constante "+table);
+		}
+		return null;
+	}
 	
 }

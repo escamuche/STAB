@@ -23,6 +23,7 @@ public static final String ID="PATH_INFO";
 	    this.setMaxActionPoints(1);
 	    this.setBloodeffEct("PARTICLE#redblood");
 	    this.setGear(new HumanoidGear());
+	    this.setOverlay("border");
 	}
 	
 	

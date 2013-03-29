@@ -45,7 +45,7 @@ public static final String ID="SORCERER_INFO";
 		this.setAttribute(StabConstants.SENSEMOTIVE, 1);
 		this.setAttribute(StabConstants.SPELLCRAFT, 5);
 		
-		this.setAttribute(StabConstants.CASTERLEVEL, 1);
+		this.setAttribute(StabConstants.SORCERERCASTER, 1);
 		this.setAttribute(StabConstants.SPELLKNOWN0, 4);
 		this.setAttribute(StabConstants.SPELLKNOWN1, 2);
 		

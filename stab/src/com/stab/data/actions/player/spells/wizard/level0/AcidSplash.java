@@ -22,10 +22,10 @@ public class AcidSplash extends SpellOnTarget{
 		
 		BaseInfo caster = (BaseInfo)yo;
 		BaseInfo t = (BaseInfo)target;
-		int cl =caster.getValue(StabConstants.CASTERLEVEL);
+		int cl =getCasterLevel(caster);
 		int dañobase=Roll.d3();
 		
-		setRangeClose(cl);
+		
 		
 		MagicAttack ataque = new MagicAttack(caster);
 		t.apply(ataque);
@@ -49,6 +49,8 @@ public class AcidSplash extends SpellOnTarget{
      setResource("actions/acidspray");
      setName("AcidSplash");
      this.setEffectType(DAMAGE);
+     setRange(CLOSE);
+     setMedium(MISSILE);
 	}
 
 	

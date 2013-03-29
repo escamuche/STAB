@@ -16,10 +16,10 @@ public class CharmPerson extends SpellOnTarget{
 		
 		BaseInfo d = (BaseInfo) target;
 		BaseInfo self = (BaseInfo) caster;
-		int cl = self.getValue(StabConstants.CASTERLEVEL);
-		int time = self.getValue(StabConstants.CASTERLEVEL)*60;
+		int cl = getCasterLevel(self);
+		int time = cl*60;
 		
-		setRangeClose(cl);
+
 		CharmPerson_Debuff debuff = new CharmPerson_Debuff();
 		debuff.setTime(time);
 		d.addTrait(debuff);
@@ -34,6 +34,7 @@ public class CharmPerson extends SpellOnTarget{
 		setResource("actions/charmperson");
 		setName("CharmPerson");
 		this.setEffectType(DEBUFF);
+		setRange(CLOSE);
 	
 	}
 }

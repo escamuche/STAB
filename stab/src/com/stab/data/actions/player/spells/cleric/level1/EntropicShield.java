@@ -23,7 +23,7 @@ public class EntropicShield extends SpellOnSelf{
 	public boolean execute(BaseInfo caster) {
 		
 			EntropicShield_Buff buff = new EntropicShield_Buff();
-			buff.setTime(caster.getValue(StabConstants.CASTERLEVEL)*10);
+			buff.setTime(getCasterLevel(caster)*10);
 			caster.addTrait(buff);
 			return true;
 	

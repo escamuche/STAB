@@ -64,7 +64,7 @@ public class InflictLight extends SpellOnTarget{
      
 	 setLevel(1);
 	 setCasterClass(StabConstants.CLERICCASTER);
-	 setRange(1);
+	 setRange(TOUCH);
      setTargetClass(PhysicalToken.class);
      setResource("actions/inflictlightwounds");
      setName("Inflict Light Wounds");

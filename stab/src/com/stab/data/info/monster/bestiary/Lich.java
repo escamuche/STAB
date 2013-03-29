@@ -43,7 +43,7 @@ public class Lich extends Humanoid {
 		this.setAttribute(StabConstants.CHARISMA,16);
 		this.setAttribute(StabConstants.SIZE,StabConstants.MEDIUM_SIZE);
 		this.setAttribute(StabConstants.HITDICENUMBER, 11);
-		this.setAttribute(StabConstants.CASTERLEVEL, 11);
+		this.setAttribute(StabConstants.WIZARDCASTER, 11);
 		
 		Modifier armor = new Modifier(StabConstants.ACTIVEDEFENSE,StabConstants.ARMORMOD,+4);
 		Modifier nat = new Modifier(StabConstants.ACTIVEDEFENSE,StabConstants.NATURALARMORMOD,+5);
@@ -54,7 +54,7 @@ public class Lich extends Humanoid {
 		addTrait(def);
 		
 		DefaultAIPackage ai=new DefaultAIPackage();
-		ai.setLog(true);
+//		ai.setLog(true);
 		this.setCurrentAI(ai);
 	
 		this.equip(StabInit.getWeaponFactory().getWeapon("MEDIUMSLAM"), HumanoidGear.BOTHHANDS);

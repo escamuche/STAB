@@ -17,8 +17,7 @@ public class Doom extends SpellOnTarget {
 		
 		BaseInfo atacado = (BaseInfo)target;
 		BaseInfo caster = (BaseInfo)yo;
-		int cl=caster.getValue(StabConstants.CASTERLEVEL);
-		this.setRangeMedium(cl);
+		int cl=getCasterLevel(caster);
 		
 		WillAttack ataque = new WillAttack(atacado);
 		if(ataque.hits()) {
@@ -37,6 +36,7 @@ public class Doom extends SpellOnTarget {
      setName("Doom");
      this.setCasterClass(StabConstants.CLERICCASTER);
      this.setEffectType(DEBUFF);
+     setRange(MEDIUM);
 	}
 
 	

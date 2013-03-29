@@ -50,11 +50,11 @@ public class Couatl extends Outsider {
 		this.setAttribute(StabConstants.CHARISMA,17);
 		this.setAttribute(StabConstants.SIZE,StabConstants.LARGE_SIZE);
 		this.setAttribute(StabConstants.HITDICENUMBER, 12);
-		this.setAttribute(StabConstants.CASTERLEVEL, 9);
+		this.setAttribute(StabConstants.WIZARDCASTER, 9);
 		this.setAttribute(StabConstants.NATURALARMORMOD, 9);
 		
 		DefaultAIPackage ai=new DefaultAIPackage();
-		ai.setLog(true);
+//		ai.setLog(true);
 		this.setCurrentAI(ai);
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("SMALLBITE"), HumanoidGear.MAINHAND);

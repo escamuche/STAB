@@ -23,9 +23,9 @@ public class Jump extends SpellOnTarget {
 		
 		BaseInfo buffed = (BaseInfo)target;
 		BaseInfo self = (BaseInfo) caster;
-		int cl= self.getValue(StabConstants.CASTERLEVEL);
+		int cl= getCasterLevel(self);
 		
-		setRangeTouch(self);
+		setRange(SELF);
 		Jump_Buff buff = new Jump_Buff(cl);
 		
 		buff.setTime(cl*10);

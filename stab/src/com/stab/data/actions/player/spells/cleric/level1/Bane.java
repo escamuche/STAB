@@ -16,7 +16,7 @@ public class Bane extends SpellOnTarget {
 		
 		BaseInfo atacado = (BaseInfo)target;
 		BaseInfo caster = (BaseInfo)yo;
-		int cl=caster.getValue(StabConstants.CASTERLEVEL);
+		int cl=getCasterLevel(caster);
 		
 		Bane_Debuff debuff = new Bane_Debuff();
 		debuff.setTime(cl*10);
@@ -26,7 +26,7 @@ public class Bane extends SpellOnTarget {
 		}
 	
 	public Bane() {
-     setRange(10);
+     setRange(CLOSE);
      setTargetClass(PhysicalToken.class);
      setResource("actions/bane");
      this.setCasterClass(StabConstants.CLERICCASTER);

@@ -15,7 +15,6 @@ public class Guidance extends SpellOnTarget{
 	public boolean execute(Info yo, Info target) {
 		
 		BaseInfo caster=(BaseInfo)yo;
-		this.setRangeTouch(caster);
 		BaseInfo Bufado = (BaseInfo)target;
 		Guidance_Buff buff = new Guidance_Buff();
 		buff.setTime(10);
@@ -31,6 +30,8 @@ public class Guidance extends SpellOnTarget{
 		setResource("actions/flare");
 		setName("Guidance");
 		this.setEffectType(BUFF);
+		this.setRange(TOUCH);
+		
 	}
 	
 	@Override

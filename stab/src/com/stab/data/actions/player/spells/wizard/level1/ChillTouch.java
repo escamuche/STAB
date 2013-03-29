@@ -25,9 +25,9 @@ public class ChillTouch extends SpellOnTarget{
 		BaseInfo caster = (BaseInfo)yo;
 		BaseInfo atacado = (BaseInfo)target;
 		int dañobase=Roll.d6();
-		int cl = caster.getValue(StabConstants.CASTERLEVEL);
+		int cl =getCasterLevel(caster);
 		
-		setRangeClose(cl);
+		
 		MagicAttack ataque = new MagicAttack(caster);
 		atacado.apply(ataque);
 		
@@ -58,6 +58,7 @@ public class ChillTouch extends SpellOnTarget{
      setResource("actions/chilltouch");
      setName("Chill Touch");
      this.setEffectType(DAMAGE);
+     setRange(TOUCH);
 	}
 
 	

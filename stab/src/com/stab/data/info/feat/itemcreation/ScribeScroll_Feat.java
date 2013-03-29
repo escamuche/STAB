@@ -11,7 +11,7 @@ public class ScribeScroll_Feat extends ItemCreationFeat{
 	
 	public ScribeScroll_Feat() {
 		
-		this.addRequiredAttribute(StabConstants.CASTERLEVEL, 1);
+	//	this.addRequiredAttribute(StabConstants.CASTERLEVEL, 1);
 			}
 	
 }

@@ -36,7 +36,8 @@ public class GoblinShaman extends Humanoid {
 		this.setAttribute(StabConstants.CHARISMA,6);
 		this.setAttribute(StabConstants.SIZE,StabConstants.SMALL_SIZE);
 		this.setAttribute(StabConstants.HITDICENUMBER, 1);
-		this.setAttribute(StabConstants.CASTERLEVEL, 1);
+		this.setAttribute(StabConstants.WIZARDCASTER, 1);
+		this.setAttribute(StabConstants.CLERICCASTER, 1);
 		
 		DefaultAIPackage ai=new DefaultAIPackage();
 	//	ai.setLog(true);

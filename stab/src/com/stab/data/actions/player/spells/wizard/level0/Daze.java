@@ -19,7 +19,9 @@ public class Daze extends SpellOnTarget{
 		setTargetClass(PhysicalToken.class);
 		setResource("actions/ability_druid_naturalperfection");
 		setName("Daze");
-		this.setEffectType(BUFF);
+		this.setEffectType(DEBUFF);
+		setRange(CLOSE);
+		
 	}
 
 	@Override
@@ -30,8 +32,7 @@ public class Daze extends SpellOnTarget{
 		
 		WillAttack save = new WillAttack(caster);
 		atacado.apply(save);
-		int cl = caster.getValue(StabConstants.CASTERLEVEL);
-		setRangeClose(cl);
+		int cl =getCasterLevel(caster);
 		
 		if(save.hits()){
 		

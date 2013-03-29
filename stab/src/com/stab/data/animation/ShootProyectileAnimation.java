@@ -5,6 +5,7 @@ import java.awt.Point;
 import com.stab.client.slick.base.util.PaintUtils;
 import com.stab.client.slick.base.visualobjects.LightSprite;
 import com.stab.client.slick.base.visualobjects.StabSprite;
+import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.data.animation.state.MoveToPointState;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTargetAnimation;
@@ -67,7 +68,6 @@ public class ShootProyectileAnimation extends OnTargetAnimation{
 		
 	}
 	
-	/*
 	protected Point getOriginPoint(){
 		Token_sprite s=AnimUtils.getSprite(getSource());
 		Point p=new Point((int)(s.getX()+s.getWidth()/2),(int)(s.getY()+s.getHeight()/2));
@@ -78,6 +78,6 @@ public class ShootProyectileAnimation extends OnTargetAnimation{
 		Token_sprite t=AnimUtils.getSprite(getTarget());
 		Point p=new Point((int)(t.getX()+t.getWidth()/2),(int)(t.getY()+t.getHeight()/2));;
 		return p;
-	}/**/
+	}
 	
 }

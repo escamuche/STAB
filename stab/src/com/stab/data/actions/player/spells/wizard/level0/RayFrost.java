@@ -24,10 +24,10 @@ public class RayFrost extends SpellOnTarget{
 		
 		BaseInfo atacado = (BaseInfo)target;
 		BaseInfo caster = (BaseInfo)yo;
-		int cl = caster.getValue(StabConstants.CASTERLEVEL);
+		int cl = getCasterLevel(caster);
 		int dañobase=Roll.d3();
 		
-		setRangeClose(cl);
+	
 		MagicAttack ataque = new MagicAttack(caster);
 		atacado.apply(ataque);
 		
@@ -49,6 +49,8 @@ public class RayFrost extends SpellOnTarget{
 		setResource("actions/niaccoldray");
 		setName("RayFrost");
 		this.setEffectType(DAMAGE);
+		setRange(CLOSE);
+		setMedium(RAY);
 	}
 
 	

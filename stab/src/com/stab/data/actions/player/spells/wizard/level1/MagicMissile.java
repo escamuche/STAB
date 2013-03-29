@@ -2,7 +2,8 @@ package com.stab.data.actions.player.spells.wizard.level1;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
-import com.stab.data.animation.ShootProyectileAnimation;
+import com.stab.data.animation.MagicMissileAnimation;
+import com.stab.data.info.applicable.RolledDamage;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
@@ -19,16 +20,21 @@ public class MagicMissile extends SpellOnTarget{
 		
 		BaseInfo atacado = (BaseInfo)target;
 		BaseInfo caster = (BaseInfo)yo;
-		int cl = caster.getValue(StabConstants.CASTERLEVEL);
-		int dañobase1=Roll.d4()+1;
+		int cl = getCasterLevel(caster);
+		/*int dañobase1=Roll.d4()+1;
 		int dañobase2=Roll.d4()+1;
 		int dañobase3=Roll.d4()+1;
 		int dañobase4=Roll.d4()+1;
-		int dañobase5=Roll.d4()+1;
+		int dañobase5=Roll.d4()+1;/**/
 		
-		setRangeMedium(cl);
-		caster.playAnimationOn(ShootProyectileAnimation.ID, atacado.getToken(), "PARTICLE#magicmissile");
+		int number=cl+1/2;
+		if (number>5) number=5;
 		
+		caster.playAnimationOn(MagicMissileAnimation.ID, atacado.getToken(), number);
+		
+		Damage d= new RolledDamage(number,4, Damage.FORCE_DAMAGE,yo);
+		atacado.apply(d);
+		/*
 		if(cl<3){
 		Damage d= new Damage(dañobase1, Damage.FORCE_DAMAGE,yo);
 		atacado.apply(d);
@@ -54,7 +60,8 @@ public class MagicMissile extends SpellOnTarget{
 			atacado.apply(d);
 			return true;	
 			}
-		return false;
+			/**/
+		return true;
 		}
 	
 	public MagicMissile() {
@@ -65,6 +72,7 @@ public class MagicMissile extends SpellOnTarget{
 		setResource("actions/magicmissile");
 		setName("MagicMissile");
 		this.setEffectType(DAMAGE);
+		setRange(MEDIUM);
 	}
 
 	

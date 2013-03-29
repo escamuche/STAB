@@ -3,72 +3,104 @@ package com.stab.data.actions.player.spells;
 import com.stab.data.StabConstants;
 import com.stab.model.action.TargetAction;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
-public abstract class SpellOnTarget extends TargetAction implements Spell {
+public abstract class SpellOnTarget extends TargetAction implements SpellData {
 
-	int level=0;
-	String attribute;
-	String casterClass;
+	Spell spell;
 	
-	
+	public SpellOnTarget() {
+		spell=new Spell();
+	}
+
 	public void setLevel(int level) {
-		this.level = level;
+		spell.setLevel(level);
 	}
+
 	public int getLevel() {
-		return level;
+		return spell.getLevel();
 	}
-	
-	private void setAttribute(String attribute) {
-		this.attribute = attribute;
-	}
-	@Override
+
 	public String getAttribute() {
-		return attribute;
+		return spell.getAttribute();
 	}
-	
-	@Override
+
 	public int getDC(BaseInfo caster) {
-		int i=10+getLevel();
-		i=i+(caster.getValue(getAttribute())-10)/2;
-		//Calcular bonos por escuela en base a feats
-		return i;
+		return spell.getDC(caster);
 	}
-	
-	@Override
-	public boolean validateActor(BaseInfo i) {
-		if (i.getValue(getAttribute())<10+getLevel())
-			return false;
-		return super.validateActor(i);
-	}
-	
+
 	public void setCasterClass(String casterClass) {
-		this.casterClass = casterClass;
-		if (casterClass.equals(StabConstants.WIZARDCASTER))
-			setAttribute(StabConstants.INTELIGENCE);
-		if (casterClass.equals(StabConstants.CLERICCASTER)||casterClass.equals(StabConstants.DRUIDCASTER)||casterClass.equals(StabConstants.RANGERCASTER))
-			setAttribute(StabConstants.WISDOM);
-		if (casterClass.equals(StabConstants.BARDCASTER)||casterClass.equals(StabConstants.SORCERERCASTER)||casterClass.equals(StabConstants.PALADINCASTER))
-			setAttribute(StabConstants.CHARISMA);
+		spell.setCasterClass(casterClass);
 	}
-	@Override
+
 	public String getCasterClass() {
-		return casterClass;
+		return spell.getCasterClass();
+	}
+
+	public int getRange(BaseInfo caster) {
+		return spell.getRange(caster);
+	}
+
+	public int getCasterLevel(BaseInfo caster) {
+		return spell.getCasterLevel(caster);
+	}
+
+	public String getSave() {
+		return spell.getSave();
+	}
+
+	public void setSave(String save) {
+		spell.setSave(save);
+	}
+
+	public int getMedium() {
+		return spell.getMedium();
+	}
+
+	public boolean canCast(BaseInfo caster) {
+		return spell.canCast(caster);
+	}
+
+	public int hashCode() {
+		return spell.hashCode();
+	}
+
+	public void setMedium(int medium) {
+		spell.setMedium(medium);
+	}
+
+	public void setAffectedBySR(boolean affectedBySR) {
+		spell.setAffectedBySR(affectedBySR);
+	}
+
+	public boolean isAffectedBySR() {
+		return spell.isAffectedBySR();
+	}
+
+	public boolean isHarmfulFor(Info target) {
+		return spell.isHarmfulFor(target);
 	}
 	
-	public void setRangeTouch(BaseInfo caster){ //cambiar en un futuro para que sea reach
-		setRange(1);
+	public void setRange(int range){
+		spell.setRange(range);
 	}
 	
-	public void setRangeClose(int cl){
-		setRange(5+(cl/2));
-	}
 	
-	public void setRangeMedium(int cl){
-		setRange(20+(cl*2));
-	}
-	
-	public void setRangeLarge(int cl){
-		setRange(80+(cl*8));
+	@Override
+	public int getLosType() {
+		switch(spell.getMedium()){
+			case SELF:
+			case POINT:
+						return IN_RANGE;
+			case TOUCH:
+			case MISSILE:
+			case RAY:
+			case TARGET:
+						return LOS;
+			case SIGHT:
+						return IN_SIGHT;
+		}
+		return super.getLosType();
 	}
 	
 }

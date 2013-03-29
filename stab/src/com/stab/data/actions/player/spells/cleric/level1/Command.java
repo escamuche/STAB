@@ -20,7 +20,7 @@ public class Command extends SpellOnTarget{
 		setResource("actions/command");
 		setName("Command");
 		this.setEffectType(DEBUFF);
-	
+		setRange(CLOSE);
 	}
 	
 	@Override
@@ -30,7 +30,7 @@ public class Command extends SpellOnTarget{
 		BaseInfo caster=(BaseInfo)yo;
 		DazedCondition d = new DazedCondition();
 		
-		this.setRangeClose(caster.getValue(StabConstants.CASTERLEVEL));
+	
 		d.setTime(1);
 		t.addTrait(d);
 		return true;

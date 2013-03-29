@@ -28,7 +28,7 @@ public class Virtue extends SpellOnTarget{
 		
 		setLevel(0);
 		setCasterClass(StabConstants.CLERICCASTER);
-		setRange(2);
+		setRange(CLOSE);
 		setTargetClass(PhysicalToken.class);
 		setResource("actions/ability_druid_naturalperfection");
 		setName("PurifyFood");

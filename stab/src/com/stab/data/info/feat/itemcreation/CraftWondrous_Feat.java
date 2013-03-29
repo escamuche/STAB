@@ -11,7 +11,7 @@ public class CraftWondrous_Feat extends ItemCreationFeat{
 	
 	public CraftWondrous_Feat() {
 		
-		this.addRequiredAttribute(StabConstants.CASTERLEVEL, 3);
+	//	this.addRequiredAttribute(StabConstants.CASTERLEVEL, 3);
 			}
 	
 }

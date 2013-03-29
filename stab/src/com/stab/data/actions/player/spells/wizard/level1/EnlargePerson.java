@@ -16,6 +16,7 @@ public class EnlargePerson extends SpellOnTarget {
 		setResource("actions/enlargeperson");
 		setName("EnlargePerson");
 		this.setEffectType(BUFF);
+		setRange(TOUCH);
 	}
 
 	@Override
@@ -24,9 +25,9 @@ public class EnlargePerson extends SpellOnTarget {
 		BaseInfo buffed= (BaseInfo) target;
 		BaseInfo caster=(BaseInfo) yo;
 		
-		setRangeTouch(caster);
+		
 		EnlargePerson_Buff buff = new EnlargePerson_Buff();
-		buff.setTime(caster.getValue(StabConstants.CASTERLEVEL)*10);
+		buff.setTime(getCasterLevel(caster)*10);
 		buffed.addTrait(buff);
 		return true;
 	}

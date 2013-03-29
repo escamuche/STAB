@@ -17,6 +17,7 @@ public class MageHand extends SpellOnTarget{
 	     setResource("actions/ability_mage_arcanebarrage");
 	     setName("MageHand");
 	     this.setEffectType(SPECIAL);
+	     setRange(CLOSE);
 		}
 
 
@@ -24,9 +25,9 @@ public class MageHand extends SpellOnTarget{
 	public boolean execute(Info target, Info yo) {
 		
 		BaseInfo caster = (BaseInfo)yo;
-		int cl = caster.getValue(StabConstants.CASTERLEVEL);
+		int cl = getCasterLevel(caster);
 		
-		setRangeClose(cl);
+		
 		Interactive atacado = (Interactive)target;
 		atacado.infoInteracts(yo);
 		return true;

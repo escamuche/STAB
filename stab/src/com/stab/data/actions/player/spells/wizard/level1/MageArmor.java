@@ -16,9 +16,9 @@ public class MageArmor extends SpellOnTarget{
 		
 		BaseInfo caster = (BaseInfo)yo;
 		
-		setRangeTouch(caster);
+	
 		MageArmor_Buff buff = new MageArmor_Buff();
-		buff.setTime(caster.getValue(StabConstants.CASTERLEVEL)*600);
+		buff.setTime(getCasterLevel(caster)*600);
 		caster.addTrait(buff);
 		
 		return true;
@@ -31,6 +31,7 @@ public class MageArmor extends SpellOnTarget{
 		setTargetClass(PhysicalToken.class);
 		setResource("actions/magearmor");
 		setName("MageArmor");
-		this.setEffectType(BUFF);
+		setEffectType(BUFF);
+		setRange(TOUCH);
 	}
 }

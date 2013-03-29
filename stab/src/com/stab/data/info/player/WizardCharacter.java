@@ -46,7 +46,7 @@ public static final String ID="WIZARD_INFO";
 		this.setAttribute(StabConstants.SENSEMOTIVE, 1);
 		this.setAttribute(StabConstants.SPELLCRAFT, 5);
 		
-		this.setAttribute(StabConstants.CASTERLEVEL, 1);
+		this.setAttribute(StabConstants.WIZARDCASTER, 1);
 		
 		this.addTrait(new Alertness_Feat());
 		this.addTrait(new CombatCasting_Feat());

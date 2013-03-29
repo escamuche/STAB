@@ -24,6 +24,7 @@ public class TouchFatigue extends SpellOnTarget{
 		setResource("actions/ability_druid_naturalperfection");
 		setName("TouchFatigue");
 		this.setEffectType(DEBUFF);
+		setRange(TOUCH);
 	}
 	@Override
 	public boolean execute(Info caster, Info target) {
@@ -31,10 +32,10 @@ public class TouchFatigue extends SpellOnTarget{
 		
 		BaseInfo i = (BaseInfo) target;
 		BaseInfo c = (BaseInfo) caster;
-		int cl = c.getValue(StabConstants.CASTERLEVEL);
+		int cl = getCasterLevel(i);
 		
 		
-		setRangeTouch(c);
+
 		MagicAttack attack = new MagicAttack(i);
 		if(attack.hits()) {
 			FortitudeAttack b = new FortitudeAttack(i);

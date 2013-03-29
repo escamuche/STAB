@@ -15,9 +15,9 @@ public class OpenClose extends SpellOnTarget{
 	public boolean execute(Info yo, Info target) {
 		
 		BaseInfo caster = (BaseInfo)yo;
-		int cl = caster.getValue(StabConstants.CASTERLEVEL);
+		int cl = getCasterLevel(caster);
 		
-		setRangeClose(cl);
+		
 		Door Atacado = (Door)target;
 		Atacado.infoInteracts(yo);
 		return true;
@@ -30,5 +30,6 @@ public class OpenClose extends SpellOnTarget{
 		setResource("actions/openclose");
 		setName("Open/Close");
 		this.setEffectType(BUFF);
+		setRange(CLOSE);
 	}
 }

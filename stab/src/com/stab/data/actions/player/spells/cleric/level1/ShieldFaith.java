@@ -21,7 +21,7 @@ public class ShieldFaith extends SpellOnSelf{
 		
 		BaseInfo caster = (BaseInfo)yo;
 		ShieldFaith_Buff buff = new ShieldFaith_Buff();
-		buff.setTime(caster.getValue(StabConstants.CASTERLEVEL)*10);
+		buff.setTime(getCasterLevel(caster)*10);
 		caster.addTrait(buff);
 		
 		return true;

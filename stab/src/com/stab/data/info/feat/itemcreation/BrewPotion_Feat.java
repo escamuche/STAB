@@ -11,7 +11,7 @@ public class BrewPotion_Feat extends ItemCreationFeat{
 	
 	public BrewPotion_Feat() {
 		
-		this.addRequiredAttribute(StabConstants.CASTERLEVEL, 3);
-			}
+	//	this.addRequiredAttribute(StabConstants.CASTERLEVEL, 3);
+	}
 	
 }

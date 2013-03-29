@@ -18,6 +18,7 @@ public class Monster extends Creature {
 		this.setActionSet(new MonsterActionSet());
 		this.addTrait(new BasicAttributes());
 		this.setGear(new HumanoidGear());   //si, si, ya, ya. ya lo separaremos en varias clases por tipo de monstruo
+		setOverlay("border");
 	}
 	
 	public void postInit(){

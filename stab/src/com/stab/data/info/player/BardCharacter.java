@@ -32,7 +32,7 @@ public static final String ID="BARD_INFO";
 		this.setAttribute(StabConstants.WISDOM, 8);
 		this.setAttribute(StabConstants.REFLEXSAVE, 2);
 		this.setAttribute(StabConstants.WILLSAVE, 2);
-		this.setAttribute(StabConstants.CASTERLEVEL, 1);
+		this.setAttribute(StabConstants.BARDCASTER, 1);
 		this.setAttribute(StabConstants.SPELLKNOWN1, 2);
 		this.setAttribute(StabConstants.SPELLKNOWN0, 4);
 		

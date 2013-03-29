@@ -14,13 +14,14 @@ public class DivineFavor extends SpellOnSelf{
      setName("Divine Favor");
      this.setEffectType(BUFF);
      this.setCasterClass(StabConstants.CLERICCASTER);
+     
 	}
 
 	@Override
 	public boolean execute(BaseInfo yo) {
 		
 		BaseInfo caster = (BaseInfo)yo;
-		int cl = caster.getValue(StabConstants.CASTERLEVEL);
+		int cl =getCasterLevel(caster);
 		
 		DivineFavor_Buff buff = new DivineFavor_Buff(cl);
 		buff.setTime(10);

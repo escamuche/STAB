@@ -12,7 +12,7 @@ public class DancingLights extends SpellOnTile{
 	     
 		 setLevel(0);
 		 setCasterClass(StabConstants.WIZARDCASTER);
-		 setRange(22);
+		 setRange(CLOSE);
 	     setResource("actions/ability_mage_arcanebarrage");
 	     setName("DancingLights");
 	     this.setEffectType(SPECIAL);

@@ -1,4 +1,4 @@
-package com.stab.data.animation.sprite;
+package com.stab.data.animation.state;
 
 import com.stab.client.slick.base.util.PaintUtils;
 import com.stab.client.slick.base.visualobjects.StabSprite;
