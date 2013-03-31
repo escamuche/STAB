@@ -56,6 +56,7 @@ import com.stab.data.animation.DamageNumberAnimation;
 import com.stab.data.animation.EffectAddAnimation;
 import com.stab.data.animation.EffectRemoveAnimation;
 import com.stab.data.animation.HealNumberAnimation;
+import com.stab.data.animation.LungeAnimation;
 import com.stab.data.animation.MagicMissileAnimation;
 import com.stab.data.animation.MissProyectileAnimation;
 import com.stab.data.animation.OpenDoorAnimation;
@@ -227,6 +228,7 @@ public class StabInit {
 		of.setMapping(ShootBeamAnimation.class);
 		of.setMapping(ThrustAnimation.class);
 		of.setMapping(MagicMissileAnimation.class);
+		of.setMapping(LungeAnimation.class);
 		
 		
 		wf=new WeaponFactory();

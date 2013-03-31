@@ -105,7 +105,7 @@ public class WeaponAttackAction extends TargetAction{
 			sleep(500);
 			return;
 		}
-		sleep(origin.playAnimation(ad.getAnimationType(),target,ad.getAnimationIcon()));
+		sleep(origin.playAnimationOn(ad.getAnimationType(),target,ad.getAnimationIcon()));
 	}
 
 	private void playMissAnimation(AttackData ad,BaseInfo origin, Token target) {
@@ -123,7 +123,7 @@ public class WeaponAttackAction extends TargetAction{
 			sleep(500);
 			return;
 		}
-		sleep(origin.playAnimation(ad.getAnimationType(),target,ad.getAnimationIcon()));
+		sleep(origin.playAnimationOn(ad.getAnimationType(),target,ad.getAnimationIcon()));
 	}
 
 	protected Weapon getWeapon(BaseInfo atacante) {

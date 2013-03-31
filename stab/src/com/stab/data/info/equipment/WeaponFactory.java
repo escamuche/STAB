@@ -1,5 +1,6 @@
 package com.stab.data.info.equipment;
 
+import com.stab.data.animation.LungeAnimation;
 import com.stab.data.animation.ShootBeamAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
@@ -139,7 +140,7 @@ public class WeaponFactory extends TraitFactory{
 		//Armas de criaturas
 		w=new BasicWeapon("Claw",1,6,Damage.SLASHING_DAMAGE,"effects/zombieclaw",SwingAnimation.ID);
 		register(MEDIUMCLAW,w);
-		w=new BasicWeapon("Bite",1,4,Damage.PIERCING_DAMAGE,"effects/zombieclaw",SwingAnimation.ID);
+		w=new BasicWeapon("Bite",1,4,Damage.PIERCING_DAMAGE,"effects/zombieclaw",LungeAnimation.ID);
 		register(SMALLBITE,w);
 		w=new BasicWeapon("Slam",1,6,Damage.IMPACT_DAMAGE,"effects/zombieclaw",SwingAnimation.ID);
 		w.setTwoHanded(true);

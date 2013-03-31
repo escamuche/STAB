@@ -5,6 +5,7 @@ import com.stab.data.StabInit;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.RogueActionSet;
 import com.stab.data.info.equipment.HumanoidGear;
+import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 
 
@@ -51,6 +52,8 @@ public static final String ID="ROGUE_INFO";
 		
 		this.equip(StabInit.getArmorFactory().getArmor("STUDDEDLEATHER"), HumanoidGear.ARMOR);
 
+		
+		
 		
 		/* Habilidades especiales
 		 * SneakAttack 1d6					hace falta la comprobacion de flanked en attack

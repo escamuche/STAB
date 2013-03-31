@@ -4,11 +4,14 @@ import java.awt.Point;
 
 import com.stab.client.slick.base.util.PaintUtils;
 import com.stab.client.slick.base.visualobjects.StabSprite;
-import com.stab.data.animation.state.ThrustState;
+import com.stab.common.value.InterpolatorValueProvider;
+import com.stab.data.animation.state.LungeState;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTargetAnimation;
 import com.tien.princess.engine.sprite.common.painters.ValuePainter;
 import com.tien.princess.engine.sprite.common.states.StateSet;
+import com.tien.princess.engine.sprite.common.states.ValueState;
+import com.tien.princess.engine.sprite.common.updaters.pos.Orbit;
 
 public class ThrustAnimation extends OnTargetAnimation{
 
@@ -16,7 +19,7 @@ public class ThrustAnimation extends OnTargetAnimation{
 	
 	public ThrustAnimation() {
 		setBlocking(false);
-		setTime(500);
+		setTime(1000);
 	}
 	
 	@Override
@@ -49,9 +52,18 @@ public class ThrustAnimation extends OnTargetAnimation{
 		icon.setA(a);
 		icon.setR(0);
 
-		ThrustState st= new ThrustState(1000);
-		st.setTimed(getTime(), StateSet.DESTROYED);
+	//	ThrustState st= new ThrustState(1000);
+		
 
+		
+		ValueState st= new ValueState();
+		st.setTimed(getTime(), StateSet.DESTROYED);
+		
+		InterpolatorValueProvider r= new InterpolatorValueProvider(0,0,200,-16,400,32,600,32,1000,0);
+	//	InterpolatorValueProvider r= new InterpolatorValueProvider(0,0,2000,32,5000,0);
+		st.setRadius(r);
+		st.addUpdater(new Orbit());
+		
 		icon.setState(st);
 		
 		AnimUtils.getScreen(getSource()).add(icon);
