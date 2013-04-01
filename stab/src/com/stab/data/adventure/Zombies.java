@@ -1,15 +1,13 @@
 package com.stab.data.adventure;
 
 import com.stab.adventure.Adventure;
-import com.stab.common.events.DefaultRule;
-import com.stab.data.info.props.Dummy;
-import com.stab.data.utils.DefaultBlockData;
 import com.stab.data.utils.StabBlockData;
 import com.stab.model.basic.scenes.Choice;
 import com.stab.model.basic.scenes.Narration;
-import com.stab.model.basic.scenes.event.InfoDestroyed;
-import com.stab.model.basic.scenes.event.condition.InfoIsClass;
+import com.stab.model.basic.scenes.event.response.DefeatResponse;
 import com.stab.model.basic.scenes.event.response.VictoryResponse;
+import com.stab.model.basic.scenes.event.rule.AllMonstersDeadRule;
+import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 
 public class Zombies extends Adventure{
@@ -59,17 +57,27 @@ public class Zombies extends Adventure{
 		ms.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
 		ms.setTag("BATTLE");
 		
-		DefaultRule r=new DefaultRule();
-		r.setEvent(InfoDestroyed.class);
-		r.addCondition(new InfoIsClass(Dummy.class));
+	//	DefaultRule r=new DefaultRule();
+	//	r.setEvent(InfoDestroyed.class);
+	//	r.addCondition(new InfoIsClass(Dummy.class));
+		AllMonstersDeadRule r=new AllMonstersDeadRule();
 		r.addResponse(new VictoryResponse(0,"VICTORY"));
 		ms.addRule(r);
+		AllPlayersDeadRule r2=new AllPlayersDeadRule();
+		r2.addResponse(new DefeatResponse(0,"DEFEAT"));
+		ms.addRule(r2);
 		this.addScene(ms);
 		
 		Narration n2=new Narration();
 		n2.createContents();
 		n2.setTag("VICTORY");
 		n2.setText("Victoria! Todos los zombies han sido estatizados y montones de guerreros han perdido su dinero por no confiar en vosotros!!!");
+		n2.setNext(null);
+		this.addScene(n2);
+		n2=new Narration();
+		n2.createContents();
+		n2.setTag("DEFEAT");
+		n2.setText("Todos los aventureros han muerto!");
 		n2.setNext(null);
 		this.addScene(n2);
 	}
