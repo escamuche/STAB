@@ -37,7 +37,7 @@ public class Monster extends Creature {
 		if (e==null)
 			e=StabInit.getArmorFactory().getArmor(s);
 		if (e==null)
-			e=StabInit.getEquipmentFactory().getEquipment(s); 
+			e=StabInit.getEquipmentFactory().getItem(s); 
 		if (e==null)
 			return false;
 		return super.equip(e);

@@ -39,13 +39,13 @@ public class BasicWeapon extends Weapon {
 	
 	boolean twoHanded;
 	
-	String baseWeapon;
+	
 	
 	public BasicWeapon() {
 		this.setPriority(10);  //Prioridad base para las armas.  Los overrides usaran una posterior, y los encantamientos tambien
 		setTwoHanded(false);
 		category=SIMPLE;
-		baseWeapon=null;
+		
 	}
 	
 	
@@ -68,12 +68,7 @@ public class BasicWeapon extends Weapon {
 		return category;
 	}
 	
-	public void setBaseWeapon(String baseWeapon) {
-		this.baseWeapon = baseWeapon;
-	}
-	public String getBaseWeapon() {
-		return baseWeapon;
-	}
+	
 	
 	
 	public BasicWeapon(String name,int numberofDice, int dice, int baseDamageType, 
@@ -196,7 +191,7 @@ public class BasicWeapon extends Weapon {
 		//Si no, buscar el trait especifico
 		
 		for (WeaponProficiency_Feat t:i.getTraits(WeaponProficiency_Feat.class))
-				if (t.getWeapon().equals(this.getBaseWeapon()))
+				if (t.getWeapon().equals(this.getBaseItem()))
 					return true;
 		return false;
 		

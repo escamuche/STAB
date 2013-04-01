@@ -33,7 +33,7 @@ public class WeaponFocus_Feat extends CombatFeat implements Attends<AttackData> 
 			AttackData ataque = (AttackData) a;
 			if(ataque.getWeapon() instanceof BasicWeapon){
 				BasicWeapon b = (BasicWeapon) ataque.getWeapon();
-				return (b.getBaseWeapon().equals(weapon));
+				return (b.getBaseItem().equals(weapon));
 				}
 			}
 		return false;

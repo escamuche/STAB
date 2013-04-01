@@ -110,6 +110,7 @@ import com.stab.fw.BasicObjectFactory;
 import com.stab.fw.EntityManager;
 import com.stab.model.action.ActionLibrary;
 import com.stab.model.action.base.InteractAction;
+import com.stab.model.info.trait.base.Equipment;
 
 public class StabInit {
 
@@ -314,7 +315,16 @@ public class StabInit {
 
 	
 	
-	
+	public static Equipment getEquipment(String s){
+		Equipment e= StabInit.getWeaponFactory().getWeapon(s);
+		if (e!=null)
+			return e;
+		e=StabInit.getArmorFactory().getArmor(s);
+		if (e!=null)
+			return e;
+		e=StabInit.getEquipmentFactory().getItem(s); 
+		return e;
+	}
 	
 	
 	

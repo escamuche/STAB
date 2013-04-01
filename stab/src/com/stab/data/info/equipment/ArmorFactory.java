@@ -2,7 +2,7 @@ package com.stab.data.info.equipment;
 
 import com.stab.model.info.trait.base.TraitFactory;
 
-public class ArmorFactory extends TraitFactory{
+public class ArmorFactory extends ItemFactory{
 
 	
 	
@@ -36,6 +36,7 @@ public class ArmorFactory extends TraitFactory{
 		//log
 		return null;
 	}
+	
 	
 	
 	

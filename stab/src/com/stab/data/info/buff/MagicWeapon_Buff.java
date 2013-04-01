@@ -38,8 +38,8 @@ public class MagicWeapon_Buff extends Buff implements Attends<AttackData> {
 		if (a instanceof AttackData) {
 			AttackData ataque = (AttackData) a;
 			if(ataque.getWeapon() instanceof BasicWeapon){
-				BasicWeapon b = (BasicWeapon) ataque.getWeapon();
-				return (b.getBaseWeapon().equals(weapon));
+				//Mirar en su lugar si no es una natural weapon
+				return true;
 				}
 			}
 		return false;

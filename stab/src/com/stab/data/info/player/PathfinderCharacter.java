@@ -6,8 +6,9 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.info.BasicAttributes;
 import com.stab.data.info.equipment.HumanoidGear;
+import com.stab.data.info.equipment.Item;
+import com.stab.model.basic.token.Token;
 import com.stab.model.info.base.Character;
-import com.stab.model.info.trait.Trait;
 import com.stab.model.info.trait.base.Equipment;
 import com.stab.util.Roll;
 
@@ -64,13 +65,43 @@ public static final String ID="PATH_INFO";
 		if (e==null)
 			e=StabInit.getArmorFactory().getArmor(s);
 		if (e==null)
-			e=StabInit.getEquipmentFactory().getEquipment(s); 
+			e=StabInit.getEquipmentFactory().getItem(s); 
 		if (e==null)
 			return false;
-		return super.equip(e);
+		return equip(e);
 	}
 	
 	
+	@Override
+		public boolean equip(Equipment e, String slot) {
+			boolean b=super.equip(e, slot);
+			if (HumanoidGear.MAINHAND.equals(slot)||HumanoidGear.OFFHAND.equals(slot)||HumanoidGear.BOTHHANDS.equals(slot))
+				refreshEquippedGear();
+			return b;
+		}
+	
+	
+	@Override
+		public void initToken(Token token) {
+			super.initToken(token);
+			refreshEquippedGear();
+			
+		}
+	
+	public void refreshEquippedGear(){
+		if (getToken()!=null){
+			String s="";
+			Equipment rh=getEquipment(HumanoidGear.MAINHAND);
+			if (rh instanceof Item)
+				s=((Item)rh).getBaseItem();
+			getToken().setCustomProperty(HumanoidGear.MAINHAND, s);
+			s="";
+			Equipment lh=getEquipment(HumanoidGear.OFFHAND);
+			if (lh instanceof Item)
+				s=((Item)lh).getBaseItem();
+			getToken().setCustomProperty(HumanoidGear.OFFHAND, s);
+		}
+	}
 	
 	@Override
 	public void turnStarts() {

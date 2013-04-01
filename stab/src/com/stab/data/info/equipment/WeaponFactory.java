@@ -8,7 +8,7 @@ import com.stab.data.animation.ThrustAnimation;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.base.TraitFactory;
 
-public class WeaponFactory extends TraitFactory{
+public class WeaponFactory extends ItemFactory{
 
 	
 	
@@ -109,15 +109,6 @@ public class WeaponFactory extends TraitFactory{
 	
 	
 	
-	public void register(String id, Weapon w) {
-		super.register(id, w);
-		if (w instanceof BasicWeapon){
-			BasicWeapon bw=((BasicWeapon)w);
-			if (bw.getBaseWeapon()==null)
-				bw.setBaseWeapon(id);
-			//TODO: en un futuro, icono a partir de eso mismo
-		}
-	}
 	
 	
 	public  void init(){
@@ -155,7 +146,7 @@ public class WeaponFactory extends TraitFactory{
 		w=new BasicWeapon("unarmed",1,3,Damage.IMPACT_DAMAGE,"effects/sword",SwingAnimation.ID);
 		register(UNARMED,w);
 		
-		w=new BasicWeapon("dagger",1,4,Damage.PIERCING_DAMAGE,2,2,"effects/sword",SwingAnimation.ID);
+		w=new BasicWeapon("dagger",1,4,Damage.PIERCING_DAMAGE,2,2,"effects/dagger",ThrustAnimation.ID);
 		register(DAGGER,w);
 		
 		w=new BasicWeapon("punchingdagger",1,4,Damage.PIERCING_DAMAGE,1,3,"effects/sword",SwingAnimation.ID);
@@ -164,7 +155,7 @@ public class WeaponFactory extends TraitFactory{
 		w=new BasicWeapon("spikedgauntlet",1,4,Damage.PIERCING_DAMAGE,"effects/sword",SwingAnimation.ID);
 		register(SPIKEDGAUNTLET,w);
 		
-		w=new BasicWeapon("lightmace",1,6,Damage.IMPACT_DAMAGE,"effects/sword",SwingAnimation.ID);
+		w=new BasicWeapon("lightmace",1,6,Damage.IMPACT_DAMAGE,"effects/lightmace",SwingAnimation.ID);
 		register(LIGHTMACE,w);
 		
 		w=new BasicWeapon("sickle",1,6,Damage.SLASHING_DAMAGE,"effects/sword",SwingAnimation.ID);
@@ -176,7 +167,7 @@ public class WeaponFactory extends TraitFactory{
 		w=new BasicWeapon("heavymace",1,8,Damage.IMPACT_DAMAGE,"effects/sword",SwingAnimation.ID);
 		register(HEAVYMACE,w);
 		
-		w=new BasicWeapon("morningstar",1,8,Damage.IMPACT_DAMAGE,"effects/sword",SwingAnimation.ID);
+		w=new BasicWeapon("morningstar",1,8,Damage.IMPACT_DAMAGE,"effects/morningstar",SwingAnimation.ID);
 		register(MORNINGSTAR,w);
 		
 		w=new BasicWeapon("shortspear",1,6,Damage.PIERCING_DAMAGE,"effects/sword",SwingAnimation.ID);
@@ -213,16 +204,16 @@ public class WeaponFactory extends TraitFactory{
 		w=new RangedWeapon("sling",1,4,Damage.IMPACT_DAMAGE,"effects/sword",ShootProyectileAnimation.ID);
 		register(SLING,w);
 		
-		w=new RangedWeapon("throwingaxe",1,6,Damage.SLASHING_DAMAGE,"effects/sword",ShootProyectileAnimation.ID);
+		w=new RangedWeapon("throwingaxe",1,6,Damage.SLASHING_DAMAGE,"effects/axe",ShootProyectileAnimation.ID);
 		register(THROWINGAXE,w);
 		
-		w=new BasicWeapon("lighthammer",1,4,Damage.IMPACT_DAMAGE,"effects/sword",SwingAnimation.ID);
+		w=new BasicWeapon("lighthammer",1,4,Damage.IMPACT_DAMAGE,"effects/hammer",SwingAnimation.ID);
 		register(LIGHTHAMMER,w);
 		
-		w=new BasicWeapon("handaxe",1,6,Damage.SLASHING_DAMAGE,1,3,"effects/sword",SwingAnimation.ID);
+		w=new BasicWeapon("handaxe",1,6,Damage.SLASHING_DAMAGE,1,3,"effects/axe",SwingAnimation.ID);
 		register(HANDAXE,w);
 		
-		w=new BasicWeapon("kukri",1,4,Damage.SLASHING_DAMAGE,3,2,"effects/sword",SwingAnimation.ID);
+		w=new BasicWeapon("kukri",1,4,Damage.SLASHING_DAMAGE,3,2,"effects/kukri",SwingAnimation.ID);
 		register("KUKRI",w);
 		
 		w=new BasicWeapon("lightpick",1,4,Damage.PIERCING_DAMAGE,1,4,"effects/sword",SwingAnimation.ID);
@@ -243,10 +234,10 @@ public class WeaponFactory extends TraitFactory{
 		w=new BasicWeapon("starknife",1,4,Damage.PIERCING_DAMAGE,"effects/sword",SwingAnimation.ID);
 		register(STARKNIFE,w);
 		
-		w=new BasicWeapon("shortsword",1,6,Damage.PIERCING_DAMAGE,2,2,"effects/sword",ThrustAnimation.ID);
+		w=new BasicWeapon("shortsword",1,6,Damage.PIERCING_DAMAGE,2,2,"effects/shortsword",ThrustAnimation.ID);
 		register(SHORTSWORD,w);
 		
-		w=new BasicWeapon("battleaxe",1,8,Damage.SLASHING_DAMAGE,1,3,"effects/sword",SwingAnimation.ID);
+		w=new BasicWeapon("battleaxe",1,8,Damage.SLASHING_DAMAGE,1,3,"effects/battleaxe",SwingAnimation.ID);
 		register(BATTLEAXE,w);
 		
 		w=new BasicWeapon("flail",1,8,Damage.IMPACT_DAMAGE,"effects/sword",SwingAnimation.ID);
@@ -258,10 +249,10 @@ public class WeaponFactory extends TraitFactory{
 		w=new BasicWeapon("heavypick",1,6,Damage.PIERCING_DAMAGE,1,4,"effects/sword",SwingAnimation.ID);
 		register(HEAVYPICK,w);
 		
-		w=new BasicWeapon("rapier",1,6,Damage.PIERCING_DAMAGE,3,2,"effects/sword",SwingAnimation.ID);
+		w=new BasicWeapon("rapier",1,6,Damage.PIERCING_DAMAGE,3,2,"effects/rapier",ThrustAnimation.ID);
 		register(RAPIER,w);
 		
-		w=new BasicWeapon("scimitar",1,6,Damage.SLASHING_DAMAGE,3,2,"effects/sword",SwingAnimation.ID);
+		w=new BasicWeapon("scimitar",1,6,Damage.SLASHING_DAMAGE,3,2,"effects/scimitar",SwingAnimation.ID);
 		register(SCIMITAR,w);
 		
 		w=new BasicWeapon("heavyshield",1,4,Damage.IMPACT_DAMAGE,"effects/sword",SwingAnimation.ID);
@@ -273,7 +264,7 @@ public class WeaponFactory extends TraitFactory{
 		w=new BasicWeapon("trident",1,8,Damage.PIERCING_DAMAGE,"effects/sword",SwingAnimation.ID);
 		register(TRIDENT,w);
 		
-		w=new BasicWeapon("warhammer",1,8,Damage.IMPACT_DAMAGE,1,3,"effects/sword",SwingAnimation.ID);
+		w=new BasicWeapon("warhammer",1,8,Damage.IMPACT_DAMAGE,1,3,"effects/warhammer",SwingAnimation.ID);
 		register(WARHAMMER,w);
 		
 		w=new BasicWeapon("falchion",2,4,Damage.SLASHING_DAMAGE,3,2,"effects/sword",SwingAnimation.ID);
@@ -284,7 +275,7 @@ public class WeaponFactory extends TraitFactory{
 		w.setTwoHanded(true);
 		register(GLAIVE,w);
 		
-		w=new BasicWeapon("greataxe",1,12,Damage.SLASHING_DAMAGE,1,3,"effects/sword",SwingAnimation.ID);
+		w=new BasicWeapon("greataxe",1,12,Damage.SLASHING_DAMAGE,1,3,"effects/battleaxe",SwingAnimation.ID);
 		w.setTwoHanded(true);
 		register(GREATAXE,w);
 		
@@ -296,7 +287,7 @@ public class WeaponFactory extends TraitFactory{
 		w.setTwoHanded(true);
 		register(HEAVYFLAIL,w);
 		
-		w=new BasicWeapon("greatsword",2,6,Damage.SLASHING_DAMAGE,2,2,"effects/sword",SwingAnimation.ID);
+		w=new BasicWeapon("greatsword",2,6,Damage.SLASHING_DAMAGE,2,2,"effects/bastardsword",SwingAnimation.ID);
 		w.setTwoHanded(true);
 		register(GREATSWORD,w);
 		
@@ -348,7 +339,7 @@ public class WeaponFactory extends TraitFactory{
 		w=new BasicWeapon("siangham",1,6,Damage.PIERCING_DAMAGE,"effects/sword",SwingAnimation.ID);
 		register(SIANGHAM,w);
 		
-		w=new BasicWeapon("bastardsword",1,10,Damage.SLASHING_DAMAGE,2,2,"effects/sword",SwingAnimation.ID);
+		w=new BasicWeapon("bastardsword",1,10,Damage.SLASHING_DAMAGE,2,2,"effects/bastardsword",SwingAnimation.ID);
 		register(BASTARDSWORD,w);
 		
 		w=new BasicWeapon("dwarvenwaraxe",1,10,Damage.SLASHING_DAMAGE,1,3,"effects/sword",SwingAnimation.ID);

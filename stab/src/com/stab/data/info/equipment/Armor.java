@@ -4,7 +4,7 @@ import com.stab.data.StabConstants;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.Equipment;
 
-public class Armor extends Equipment {
+public class Armor extends Item {
 	
 	public static final int NO_ARMOR=0;
 	public static final int LIGHT_ARMOR=1;
