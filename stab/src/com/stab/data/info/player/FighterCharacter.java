@@ -45,7 +45,7 @@ public static final String ID="FIGHTER_INFO";
 		
 		this.addTrait(new Toughness_Feat());
 		this.addTrait(new PowerAttack_Feat());
-		this.getActionSet().setAction(PowerAttack.ID, 16);
+		this.getActionSet().setAction(PowerAttack.ID, 6);
 		this.addTrait(new IronWill_Feat());
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("LONGSWORD"), HumanoidGear.MAINHAND);

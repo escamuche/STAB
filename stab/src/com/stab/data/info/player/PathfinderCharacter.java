@@ -7,6 +7,7 @@ import com.stab.data.StabInit;
 import com.stab.data.info.BasicAttributes;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.model.info.base.Character;
+import com.stab.model.info.trait.Trait;
 import com.stab.model.info.trait.base.Equipment;
 import com.stab.util.Roll;
 
@@ -67,6 +68,27 @@ public static final String ID="PATH_INFO";
 		if (e==null)
 			return false;
 		return super.equip(e);
+	}
+	
+	
+	
+	@Override
+	public void turnStarts() {
+			super.turnStarts();
+			refreshCA();
+	}
+	
+	@Override
+	
+	public void turnEnds() {
+		super.turnEnds();
+		refreshCA();
+	}
+	
+	
+	public void refreshCA(){
+			if (this.getToken()!=null)
+				this.getToken().setCustomProperty(StabConstants.AC, getValue(StabConstants.AC));
 	}
 	
 }

@@ -102,6 +102,8 @@ import com.stab.data.scene.Feats;
 import com.stab.data.scene.PrayerBook;
 import com.stab.data.scene.SpellBook;
 import com.stab.data.scene.StabLobby;
+import com.stab.data.ui.PathfinderTokenCard;
+import com.stab.data.ui.StabActionBar;
 import com.stab.data.utils.DefaultBlockData;
 import com.stab.data.utils.StabBlockData;
 import com.stab.fw.BasicObjectFactory;
@@ -129,6 +131,8 @@ public class StabInit {
 		StabVisualEngine sv=(StabVisualEngine)ServiceManager.getService(VisualEngine.class);
 		if (sv!=null){
 			sv.getFactory().setMapping(ActionSlotButton.ID,Button_sprite.class);
+			sv.getFactory().setMapping(PathfinderTokenCard.class);
+			sv.getFactory().setMapping(StabActionBar.class);
 		}
 	}
 
