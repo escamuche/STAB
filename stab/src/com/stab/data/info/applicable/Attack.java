@@ -1,11 +1,14 @@
 package com.stab.data.info.applicable;
 
+import java.util.ArrayList;
+
 import com.stab.data.StabConstants;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.AdvancedRollApplicable;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.base.Damage;
+import com.stab.model.info.trait.Modifier;
 import com.stab.util.Roll;
 
 public class Attack extends AdvancedRollApplicable{
@@ -63,7 +66,10 @@ public class Attack extends AdvancedRollApplicable{
 	@Override
 	public void setInstigator(Info instigator) {
 		super.setInstigator(instigator);
-		setModifier(((BaseInfo)instigator).getValue(StabConstants.TOHIT));
+		ArrayList<Modifier>list=new ArrayList<Modifier>();
+		list.addAll(((BaseInfo)instigator).getModifiers(StabConstants.TOHIT));
+		list.addAll(getAttackData().getModifiers());
+		setModifier(Modifier.getValue(list));
 	}
 	
 	@Override

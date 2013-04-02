@@ -23,5 +23,12 @@ public class PathfinderUtils {
 		return false;
 		
 	}
+	
+	
+	
+	
+	//no iria nada mal un getWeapon() para saber que arma lleva un info (mirando mainhand, y si no lleva nada offhand), pensandose lo de las
+	//armas naturales, etc.
+	
 
 }

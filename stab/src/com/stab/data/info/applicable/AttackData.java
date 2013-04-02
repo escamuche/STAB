@@ -8,6 +8,7 @@ import com.stab.data.info.equipment.Weapon;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.base.Damage;
+import com.stab.model.info.trait.Modifier;
 
 /**
  * AttackData contiene los datos del ataque a lanzar.
@@ -41,6 +42,9 @@ public class AttackData extends Applicable {
 	
 	boolean filled;
 	
+	ArrayList<Modifier> modifiers;
+	
+	
 	public AttackData(BaseInfo instigator,Weapon weapon,BaseInfo target) {
 		super(instigator);
 		//Valores por defecto de ejemplo
@@ -55,6 +59,7 @@ public class AttackData extends Applicable {
 		critRange=1;
 		critMultiplier=2;
 		filled=false;
+		modifiers=new ArrayList<Modifier>();
 	}
 	
 	public void setFilled(boolean filled) {
@@ -98,9 +103,9 @@ public class AttackData extends Applicable {
 	}
 	
 	public Attack getAttack(){
+		attack.setAttackData(this);
 		attack.setInstigator(getInstigator());
 		attack.setCritRange(critRange);
-		attack.setAttackData(this);
 		return attack;
 	}
 	
@@ -204,4 +209,16 @@ public class AttackData extends Applicable {
 		list.addAll(Damage.collapse(damage));
 		return list;
 	}
+	
+	
+	public void addModifier(Modifier m){
+		modifiers.add(m);
+	}
+
+	
+	public ArrayList<Modifier> getModifiers() {
+		return modifiers;
+	}
+	
+	
 }

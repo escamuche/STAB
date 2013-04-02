@@ -1,6 +1,7 @@
 package com.stab.data.info.equipment;
 
 import com.stab.data.StabConstants;
+import com.stab.data.info.applicable.Attack;
 import com.stab.data.info.applicable.AttackData;
 import com.stab.data.info.feat.general.MartialWeaponProficiency_Feat;
 import com.stab.data.info.feat.general.NaturalWeaponProficiency_Feat;
@@ -197,5 +198,12 @@ public class BasicWeapon extends Weapon {
 		
 	}
 	/**/
+	
+	@Override
+	public void attackDone(Attack attack) {
+		for (WeaponTrait wt:getTraits(WeaponTrait.class))
+			wt.attackDone(attack);
+		super.attackDone(attack);
+	}
 	
 }
