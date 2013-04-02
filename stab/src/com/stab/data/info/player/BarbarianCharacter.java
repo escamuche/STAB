@@ -11,6 +11,7 @@ import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.combat.Cleave_Feat;
 import com.stab.data.info.feat.combat.PowerAttack_Feat;
+import com.stab.data.info.player.abilities.FastMovementBarbarian;
 import com.stab.data.info.player.abilities.Rage_Ability;
 
 
@@ -48,6 +49,8 @@ public static final String ID="BARBARIAN_INFO";
 		
 		this.addTrait(new Rage_Ability());
 		this.getActionSet().setAction(Rage.ID, 6);
+		
+		this.addTrait(new FastMovementBarbarian());
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.GREATAXE), HumanoidGear.BOTHHANDS);
 		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.BREASTPLATE), HumanoidGear.ARMOR);

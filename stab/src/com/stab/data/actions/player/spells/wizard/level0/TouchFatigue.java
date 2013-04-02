@@ -4,7 +4,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.info.applicable.magic.FortitudeAttack;
 import com.stab.data.info.applicable.magic.MagicAttack;
-import com.stab.data.info.buff.Jump_Buff;
+import com.stab.data.info.buff.spells.Jump_Buff;
 import com.stab.data.info.debuff.condition.FatiguedCondition;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;

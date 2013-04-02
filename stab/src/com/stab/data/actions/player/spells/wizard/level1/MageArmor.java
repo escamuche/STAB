@@ -2,7 +2,7 @@ package com.stab.data.actions.player.spells.wizard.level1;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
-import com.stab.data.info.buff.MageArmor_Buff;
+import com.stab.data.info.buff.spells.MageArmor_Buff;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;

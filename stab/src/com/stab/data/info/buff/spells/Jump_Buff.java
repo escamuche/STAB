@@ -1,4 +1,4 @@
-package com.stab.data.info.buff;
+package com.stab.data.info.buff.spells;
 
 import com.stab.data.StabConstants;
 import com.stab.model.info.trait.Modifier;

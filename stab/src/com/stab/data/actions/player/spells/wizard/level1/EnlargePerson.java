@@ -2,7 +2,7 @@ package com.stab.data.actions.player.spells.wizard.level1;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
-import com.stab.data.info.buff.EnlargePerson_Buff;
+import com.stab.data.info.buff.spells.EnlargePerson_Buff;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 
