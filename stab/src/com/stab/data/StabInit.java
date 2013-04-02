@@ -60,9 +60,11 @@ import com.stab.data.animation.LungeAnimation;
 import com.stab.data.animation.MagicMissileAnimation;
 import com.stab.data.animation.MissProyectileAnimation;
 import com.stab.data.animation.OpenDoorAnimation;
+import com.stab.data.animation.RSwingAnimation;
 import com.stab.data.animation.ShakeAnimation;
 import com.stab.data.animation.ShootBeamAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
+import com.stab.data.animation.ShootRotatingProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.ThrustAnimation;
 import com.stab.data.animation.WalkAnimation;
@@ -234,7 +236,8 @@ public class StabInit {
 		of.setMapping(ThrustAnimation.class);
 		of.setMapping(MagicMissileAnimation.class);
 		of.setMapping(LungeAnimation.class);
-		
+		of.setMapping(RSwingAnimation.class);
+		of.setMapping(ShootRotatingProyectileAnimation.class);
 		
 		wf=new WeaponFactory();
 		af=new ArmorFactory();

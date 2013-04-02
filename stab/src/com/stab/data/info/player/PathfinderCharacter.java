@@ -94,11 +94,15 @@ public static final String ID="PATH_INFO";
 			Equipment rh=getEquipment(HumanoidGear.MAINHAND);
 			if (rh instanceof Item)
 				s=((Item)rh).getBaseItem();
+			if (s==null)
+				s="";
 			getToken().setCustomProperty(HumanoidGear.MAINHAND, s);
 			s="";
 			Equipment lh=getEquipment(HumanoidGear.OFFHAND);
 			if (lh instanceof Item)
 				s=((Item)lh).getBaseItem();
+			if (s==null)
+				s="";
 			getToken().setCustomProperty(HumanoidGear.OFFHAND, s);
 		}
 	}
