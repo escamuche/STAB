@@ -69,7 +69,7 @@ public class Attack extends AdvancedRollApplicable{
 		ArrayList<Modifier>list=new ArrayList<Modifier>();
 		list.addAll(((BaseInfo)instigator).getModifiers(StabConstants.TOHIT));
 		list.addAll(getAttackData().getModifiers());
-		setModifier(Modifier.getValue(list));
+		setModifier(Modifier.getValue(list)+getModifier());
 	}
 	
 	@Override

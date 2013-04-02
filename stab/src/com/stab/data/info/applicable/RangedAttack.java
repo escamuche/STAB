@@ -20,7 +20,7 @@ public class RangedAttack  extends Attack {
 		ArrayList<Modifier>list=new ArrayList<Modifier>();
 		list.addAll(((BaseInfo)instigator).getModifiers(StabConstants.TOHITRANGED));
 		list.addAll(getAttackData().getModifiers());
-		setModifier(Modifier.getValue(list));
+		setModifier(Modifier.getValue(list)+getModifier());
 	}
 
 }
