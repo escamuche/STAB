@@ -2,7 +2,7 @@ package com.stab.data.actions.player.spells.cleric.level1;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
-import com.stab.data.info.buff.ShieldFaith_Buff;
+import com.stab.data.info.buff.spells.ShieldFaith_Buff;
 import com.stab.model.info.BaseInfo;
 
 public class ShieldFaith extends SpellOnSelf{

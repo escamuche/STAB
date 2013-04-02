@@ -2,7 +2,7 @@ package com.stab.data.actions.player.spells.cleric.level1.unfinished;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
-import com.stab.data.info.buff.Sanctuary_Buff;
+import com.stab.data.info.buff.spells.Sanctuary_Buff;
 import com.stab.model.info.BaseInfo;
 
 public class Sanctuary extends SpellOnSelf{

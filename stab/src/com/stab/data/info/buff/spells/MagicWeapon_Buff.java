@@ -1,4 +1,4 @@
-package com.stab.data.info.buff;
+package com.stab.data.info.buff.spells;
 
 import com.stab.data.info.applicable.AttackData;
 import com.stab.data.info.equipment.BasicWeapon;

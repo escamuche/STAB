@@ -2,7 +2,7 @@ package com.stab.data.actions.player.spells.cleric.level0;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
-import com.stab.data.info.buff.Virtue_Buff;
+import com.stab.data.info.buff.spells.Virtue_Buff;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
