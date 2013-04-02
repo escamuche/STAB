@@ -1,10 +1,12 @@
 package com.stab.data.actions.player.spells;
 
 import com.stab.data.StabConstants;
+import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.info.applicable.Applicable;
 
-public class Spell implements SpellData {
+public class Spell implements SpellProperties {
 	
 	
 	int level=0;
@@ -134,13 +136,17 @@ public class Spell implements SpellData {
 	}
 	
 	
-	@Override
-	public boolean isHarmfulFor(Info target) {
-		return false;
+
+	
+	
+	
+	public SavingThrowEffect getSavingThrow(BaseInfo caster){
+		if (this.getSave()!=null){
+			SavingThrowEffect e= new SavingThrowEffect(caster,getSave(),getDC(caster));
+			return e;
+		}
+		return null;
 	}
-	
-	
-	
 	
 	
 }

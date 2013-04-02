@@ -4,16 +4,24 @@ import java.util.ArrayList;
 
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.info.applicable.Applicable;
+import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.Modifier;
 
-public abstract class SavingThrowEffect extends SkillRoll {
+public  class SavingThrowEffect extends SkillRoll {
 
 	
 	
 	
 	
 	boolean nullIfSuccess;
+	ArrayList<Applicable> toApplyPass;
 	
+	/**
+	 * Usar esta version si no importa el instigador.
+	 * @param save atributo a tirar
+	 * @param diff dificultad
+	 */
 	public SavingThrowEffect( String save, int diff){
 		this(null, save, diff);
 	}
@@ -29,6 +37,7 @@ public abstract class SavingThrowEffect extends SkillRoll {
 	public SavingThrowEffect(Info instigator, String save, int diff) {
 		super(instigator, save, diff);
 		nullIfSuccess=false;
+		toApplyPass= new ArrayList<Applicable> ();
 	}
 
 	protected void recalcMod(){
@@ -66,6 +75,32 @@ public abstract class SavingThrowEffect extends SkillRoll {
 	
 	public boolean isEvaded(){
 		return getResult()==NEUTRALIZED;
+	}
+	
+	
+	@Override
+	public void apply() {
+		if (isEvaded())
+			return;
+		if (success()){
+			for (Applicable a:toApplyPass)
+				getTarget().apply(a);
+		}else
+			super.apply();
+	}
+	
+	public void addApplicablePass(Applicable a){
+		toApplyPass.add(a);
+	}
+	
+	
+	public void addApplicable(Damage d,boolean halfDamage) {
+		addApplicable(d);
+		if (halfDamage){
+			Damage d2=d.getCopy();
+			d2.setAmount(d.getAmount()/2);
+			addApplicablePass(d2);
+		}
 	}
 	
 }

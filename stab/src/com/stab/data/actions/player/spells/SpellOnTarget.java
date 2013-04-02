@@ -1,11 +1,12 @@
 package com.stab.data.actions.player.spells;
 
 import com.stab.data.StabConstants;
+import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.model.action.TargetAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 
-public abstract class SpellOnTarget extends TargetAction implements SpellData {
+public abstract class SpellOnTarget extends TargetAction implements SpellProperties {
 
 	Spell spell;
 	
@@ -78,7 +79,12 @@ public abstract class SpellOnTarget extends TargetAction implements SpellData {
 	}
 
 	public boolean isHarmfulFor(Info target) {
-		return spell.isHarmfulFor(target);
+		return false;
+	}
+	
+	@Override
+	public SavingThrowEffect getSavingThrow(BaseInfo caster) {
+		return spell.getSavingThrow(caster);
 	}
 	
 	public void setRange(int range){

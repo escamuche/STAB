@@ -1,10 +1,9 @@
 package com.stab.data.actions.player.spells;
 
-import com.stab.model.action.AoE;
+import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.Info;
 
-public interface SpellData {
+public interface SpellProperties {
   
 	//Medio de transmision
 	public static final int SELF=0;  //Solo en el caster (rango 0)
@@ -41,7 +40,7 @@ public interface SpellData {
 	public int getMedium();
 	public boolean canCast(BaseInfo caster);
 	public boolean isAffectedBySR();
-	public boolean isHarmfulFor(Info target);
+	public SavingThrowEffect getSavingThrow(BaseInfo caster);
 	
 	
 	
