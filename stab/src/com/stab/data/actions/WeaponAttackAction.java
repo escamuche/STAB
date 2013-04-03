@@ -145,6 +145,17 @@ public class WeaponAttackAction extends TargetAction{
      this.setEffectType(DAMAGE);
 	}
 
+	@Override
+	public String getResource(BaseInfo info) {
+		Weapon arma=null;
+		arma=getWeapon(info);
+		if (arma==null){
+			System.out.println("No hay arma!");
+			return super.getResource(info);
+		}
+		return arma.getResource();
+	}
+	
 	
 	@Override
 	public int getEffectValue(BaseInfo i) {
