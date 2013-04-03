@@ -98,6 +98,7 @@ import com.stab.data.info.props.Brazier;
 import com.stab.data.info.props.Crate;
 import com.stab.data.info.props.Dummy;
 import com.stab.data.info.props.StabRandomSpawner;
+import com.stab.data.info.props.Statue;
 import com.stab.data.info.props.WoodenDoor;
 import com.stab.data.scene.ActionSlotButton;
 import com.stab.data.scene.CharacterSheet;
@@ -201,6 +202,7 @@ public class StabInit {
 		of.setMapping(Dummy.class);
 		of.setMapping(Brazier.class);
 		of.setMapping(StabRandomSpawner.class);
+		of.setMapping(Statue.class);
 		
 		//criaturas
 		of.setMapping(Zombie.class);
