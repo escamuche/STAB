@@ -1,24 +1,23 @@
 package com.stab.data.info.equipment;
 
-import com.stab.data.info.applicable.Attack;
-import com.stab.data.info.applicable.AttackData;
+import com.stab.data.info.applicable.WeaponAttack;
+import com.stab.model.info.applicable.Affects;
 import com.stab.model.info.applicable.Applicable;
-import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.trait.Trait;
 
-public abstract class WeaponTrait extends Trait implements Attends<AttackData>{
+public abstract class WeaponTrait extends Trait implements Affects<WeaponAttack>{
 
 	@Override
-	public boolean canAttend(Applicable a) {
-		if (!(a instanceof AttackData))
+	public boolean canAffect(Applicable a) {
+		if (!(a instanceof WeaponAttack))
 			return false;
-		AttackData ad=(AttackData)a;
+		WeaponAttack ad=(WeaponAttack)a;
 		if (ad.getWeapon()!=this.getParent())
 			return false;
 		return true;
 	}
 
-	public void attackDone(Attack attack){
+	public void attackDone(WeaponAttack attack){
 		//Nada a priori. las subclases pueden comprobar cosas, pasarselo a sus traits, etc
 	}
 	

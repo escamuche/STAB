@@ -1,13 +1,13 @@
 package com.stab.data.info.buff.spells;
 
 import com.stab.data.info.applicable.Attack;
-import com.stab.data.info.applicable.RangedAttack;
+import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.trait.base.Buff;
 import com.stab.util.Roll;
 
-public class EntropicShield_Buff extends Buff implements Attends<RangedAttack> {
+public class EntropicShield_Buff extends Buff implements Attends<WeaponAttack> {
 
 	public static final String ID="ENTROPICSHIELD_BUFF";
 	
@@ -22,8 +22,8 @@ public class EntropicShield_Buff extends Buff implements Attends<RangedAttack> {
 		}
 
 	@Override
-	public void attend(RangedAttack arg0) {
-
+	public void attend(WeaponAttack arg0) {
+		
 		int i = Roll.d100();
 		if(i <= 20) 
 			arg0.setResult(Attack.MISS);
@@ -32,7 +32,8 @@ public class EntropicShield_Buff extends Buff implements Attends<RangedAttack> {
 
 	@Override
 	public boolean canAttend(Applicable arg0) {
-		// TODO Auto-generated method stub
+		if (arg0 instanceof Attack)
+			return ((Attack)arg0).isRanged();
 		return false;
 	}
 

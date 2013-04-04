@@ -28,6 +28,9 @@ public abstract class SkillRoll extends AdvancedRollApplicable {
 		return skill;
 	}
 	
+	public void setSkill(String skill) {
+		this.skill = skill;
+	}
 	
 	
 	protected void recalcMod(){

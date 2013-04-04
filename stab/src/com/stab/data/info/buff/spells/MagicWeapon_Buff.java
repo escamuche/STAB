@@ -1,13 +1,15 @@
 package com.stab.data.info.buff.spells;
 
-import com.stab.data.info.applicable.AttackData;
+import com.stab.data.StabConstants;
+import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.data.info.equipment.BasicWeapon;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.applicable.Affects;
 import com.stab.model.info.applicable.Applicable;
-import com.stab.model.info.applicable.Attends;
+import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.Buff;
 
-public class MagicWeapon_Buff extends Buff implements Attends<AttackData> {
+public class MagicWeapon_Buff extends Buff implements Affects<WeaponAttack> {
 
 	public static final String ID="MAGICWEAPON_BUFF";
 	String weapon;
@@ -27,19 +29,21 @@ public class MagicWeapon_Buff extends Buff implements Attends<AttackData> {
 		}
 
 	@Override
-	public void attend(AttackData ad) {
-		
-		ad.getAttack().addModifier(+1);
+	public void affect(WeaponAttack ad) {
+		if (ad.isRanged())
+			ad.addModifier(new Modifier(StabConstants.TOHITRANGED,StabConstants.ENHANCEMENTMOD,+1));
+		else
+			ad.addModifier(new Modifier(StabConstants.TOHIT,StabConstants.ENHANCEMENTMOD,+1));
 		
 	}
 
 	@Override
-	public boolean canAttend(Applicable a) {
-		if (a instanceof AttackData) {
-			AttackData ataque = (AttackData) a;
+	public boolean canAffect(Applicable a) {
+		if (a instanceof WeaponAttack) {
+			WeaponAttack ataque = (WeaponAttack) a;
 			if(ataque.getWeapon() instanceof BasicWeapon){
 				//Mirar en su lugar si no es una natural weapon
-				return true;
+				return ((BasicWeapon)ataque.getWeapon()).getCategory()!=BasicWeapon.NATURAL;
 				}
 			}
 		return false;

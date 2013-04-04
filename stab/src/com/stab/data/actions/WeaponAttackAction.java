@@ -5,8 +5,7 @@ import com.stab.data.animation.MissProyectileAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.ThrustAnimation;
-import com.stab.data.info.applicable.Attack;
-import com.stab.data.info.applicable.AttackData;
+import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.data.info.equipment.BasicWeapon;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.RangedWeapon;
@@ -57,28 +56,27 @@ public class WeaponAttackAction extends TargetAction{
 		
 		//TODO: ver como se rellena el slot!
 		
-		AttackData ad=new AttackData(atacante,arma,atacado);
-		atacante.apply(ad); //Esto calcula todos los bonos, daño etc
+		WeaponAttack ad=new WeaponAttack (atacante,arma);
+		atacante.ready(ad); //Esto calcula todos los bonos, daño etc
 		
-		Attack ataque = ad.getAttack();  //Esto nos da el ataque, ya preparado
-		atacado.check(ataque);
+		atacado.check(ad);
 		
-		if (ataque.hits())
+		if (ad.hits())
 			playHitAnimation(ad,atacante,target.getToken());
 		else
 			playMissAnimation(ad,atacante,target.getToken());
 	
 	//Pensarse donde informar al arma.
 		
-		if (ataque.hits()) {
-			ataque.apply();
+		if (ad.hits()) {
+			ad.apply();
 			sleep(500);
 			return true;	
 		}
 		
 		
 		sleep(500);
-		if (ataque.isBotch()) {
+		if (ad.isBotch()) {
 			
 			System.out.println("Pero mira que eres torpe!");
 		    return false;
@@ -89,7 +87,7 @@ public class WeaponAttackAction extends TargetAction{
 	}
 	
 	
-	private void playHitAnimation(AttackData ad,BaseInfo origin, Token target) {
+	private void playHitAnimation(WeaponAttack ad,BaseInfo origin, Token target) {
 		
 		if (SwingAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(SwingAnimation.ID,target,ad.getAnimationIcon());
@@ -108,7 +106,7 @@ public class WeaponAttackAction extends TargetAction{
 		sleep(origin.playAnimationOn(ad.getAnimationType(),target,ad.getAnimationIcon()));
 	}
 
-	private void playMissAnimation(AttackData ad,BaseInfo origin, Token target) {
+	private void playMissAnimation(WeaponAttack ad,BaseInfo origin, Token target) {
 		if (SwingAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(SwingAnimation.ID,target,ad.getAnimationIcon());
 			sleep(500);

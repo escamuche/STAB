@@ -5,34 +5,35 @@ import java.util.ArrayList;
 import com.stab.data.StabConstants;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
-import com.stab.model.info.applicable.AdvancedRollApplicable;
-import com.stab.model.info.applicable.Applicable;
-import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.Modifier;
 import com.stab.util.Roll;
 
-public class Attack extends AdvancedRollApplicable{
+public abstract class Attack extends SkillRoll{
 
 	
 	public static final int HIT = SUCCESS;
 	public static final int MISS = FAIL;
+	public static final int BLOCK = 20;
+	public static final int PARRY = 21;
+	public static final int DODGE = 22;
+	public static final int ARMOR = 23;
+	public static final int COVER = 24;
 
 	//En un futuro añadir o reutilizar los que hay para "le has dado a una imagen" o "fallo por concealment", etc
 	//Añadir tambien si ha sido CA, dodge, cover, parry o block lo que ha parado el ataque (con vistas a animacion)
 	
 
-	AttackData ad;
 	
 	int confirmMod=0;  //Bono a confirmar
 	
 	boolean touch;
+	boolean ranged;
 	
 	public Attack(BaseInfo instigator) {
-		super(instigator);
+		super(instigator,StabConstants.TOHIT,10);
 		setDice(20);
 		setCritRange(1);
 		setBotchRange(1);
-		ad=null;
 		touch=false;
 	}
 	
@@ -44,11 +45,17 @@ public class Attack extends AdvancedRollApplicable{
 		return touch;
 	}
 	
-	public void setAttackData(AttackData ad) {
-		this.ad = ad;
+	public void setRanged(boolean b){
+		ranged=b;
+		if (b){
+			setSkill(StabConstants.TOHITRANGED);
+		}else
+			setSkill(StabConstants.TOHIT);
+		
 	}
-	public AttackData getAttackData() {
-		return ad;
+	
+	public boolean isRanged() {
+		return ranged;
 	}
 	
 	public void setConfirmMod(int confirmMod) {
@@ -63,14 +70,7 @@ public class Attack extends AdvancedRollApplicable{
 		confirmMod+=v;
 	}
 	
-	@Override
-	public void setInstigator(Info instigator) {
-		super.setInstigator(instigator);
-		ArrayList<Modifier>list=new ArrayList<Modifier>();
-		list.addAll(((BaseInfo)instigator).getModifiers(StabConstants.TOHIT));
-		list.addAll(getAttackData().getModifiers());
-		setModifier(Modifier.getValue(list)+getModifier());
-	}
+	
 	
 	@Override
 	public void setTarget(BaseInfo target) {
@@ -190,14 +190,6 @@ public class Attack extends AdvancedRollApplicable{
 
 	@Override
 	public void apply() {
-		if (getAttackData()!=null)
-			for (Applicable d:getAttackData().getEffects(isCritical())){
-				getTarget().apply(d);
-				if (d instanceof Damage)
-					 System.out.println("Aplicando daño: "+((Damage)d).getFinalAmount()+" de daño (tipo "+((Damage)d).getType()+")");
-				else
-					System.out.println("Aplicando "+d.getClass().getSimpleName());
-			}
 		
 	}
 	
@@ -205,12 +197,46 @@ public class Attack extends AdvancedRollApplicable{
 	public void validate() {
 	
 		super.validate();
-		System.out.println("Ataque: "+this.getClass().getSimpleName()+" con "+ad.getWeapon().getName()+"  roll "+getRollResult()+" + "+getModifier()+"   against "+getTargetNumber()+"  result: "+getResult()+" (hits:"+hits()+" critical: "+isCritical()+" botch: "+isBotch()+")");
+		
 	}
 	
+	
+	
+	
+	
+	
 	@Override
-	public void setResult(int result) {
-		super.setResult(result);
+	protected int evalRoll(int roll) {
+		int i= super.evalRoll(roll);
+		//Comprobar blocked, parried, dodged
+		if (misses()){
+			int dif=getTargetNumber()-getRollResult();
+			BaseInfo t=getTarget();
+			//En su momento pensarse COVER
+			int shield=t.getValue(StabConstants.SHIELDDEFENSE);
+			if (dif<=shield)
+				i=BLOCK;
+			else{
+				dif=dif-shield;
+				int active=t.getValue(StabConstants.ACTIVEDEFENSE);
+				if (dif<=active)
+					i=DODGE;
+					//Aqui irira el parry (muy especifico, dependiendo del arma, etc)
+				else{
+					//Armor o simplemente miss
+					dif=dif-active;
+					int armor=t.getValue(StabConstants.PASSIVEDEFENSE);
+					if (dif<=armor)
+						i=ARMOR;
+					else{
+						//MISS
+					}
+				}
+			}
+		}
+		return i;
 	}
+	
+	
 	
 }

@@ -1,8 +1,7 @@
 package com.stab.data.info.equipment;
 
 import com.stab.data.StabConstants;
-import com.stab.data.info.applicable.Attack;
-import com.stab.data.info.applicable.AttackData;
+import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.data.info.feat.general.MartialWeaponProficiency_Feat;
 import com.stab.data.info.feat.general.NaturalWeaponProficiency_Feat;
 import com.stab.data.info.feat.general.SimpleWeaponProficiency_Feat;
@@ -99,8 +98,8 @@ public class BasicWeapon extends Weapon {
 
 
 	@Override
-	public void attend(AttackData app) {
-		super.attend(app);
+	public void affect(WeaponAttack app) {
+		super.affect(app);
 		app.setBaseDamageType(baseDamageType);
 		app.setCritMultiplier(critMultiplier);
 		app.setCritRange(critRange);
@@ -116,13 +115,13 @@ public class BasicWeapon extends Weapon {
 	
 	
 
-	protected int calcDamage(AttackData app){
+	protected int calcDamage(WeaponAttack app){
 		int i=rollDamage();
 		i=i+getDamageModifier(app);
 		return i;
 	}
 
-	protected int getDamageModifier(AttackData app) {
+	protected int getDamageModifier(WeaponAttack app) {
 		BaseInfo i=(BaseInfo)app.getInstigator();
 		int d=i.getValue(StabConstants.DAMAGE);
 		if (isTwoHanded()) //Realmente, comprobar si esta en both hands
@@ -200,7 +199,7 @@ public class BasicWeapon extends Weapon {
 	/**/
 	
 	@Override
-	public void attackDone(Attack attack) {
+	public void attackDone(WeaponAttack attack) {
 		for (WeaponTrait wt:getTraits(WeaponTrait.class))
 			wt.attackDone(attack);
 		super.attackDone(attack);

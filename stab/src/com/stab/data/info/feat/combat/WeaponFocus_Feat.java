@@ -1,13 +1,13 @@
 package com.stab.data.info.feat.combat;
 
 import com.stab.data.StabConstants;
-import com.stab.data.info.applicable.AttackData;
+import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.data.info.equipment.BasicWeapon;
 import com.stab.data.info.feat.CombatFeat;
+import com.stab.model.info.applicable.Affects;
 import com.stab.model.info.applicable.Applicable;
-import com.stab.model.info.applicable.Attends;
 
-public class WeaponFocus_Feat extends CombatFeat implements Attends<AttackData> {
+public class WeaponFocus_Feat extends CombatFeat implements Affects<WeaponAttack> {
 	
 	public static final String ID="WEAPONFOCUS_FEAT";
 
@@ -21,16 +21,16 @@ public class WeaponFocus_Feat extends CombatFeat implements Attends<AttackData> 
 			}
 
 	@Override
-	public void attend(AttackData arg0) {
+	public void affect(WeaponAttack arg0) {
 		
-		arg0.getAttack().addModifier(+1);
+		arg0.addModifier(+1);
 		
 	}
 
 	@Override
-	public boolean canAttend(Applicable a) {
-		if (a instanceof AttackData) {
-			AttackData ataque = (AttackData) a;
+	public boolean canAffect(Applicable a) {
+		if (a instanceof WeaponAttack) {
+			WeaponAttack ataque = (WeaponAttack) a;
 			if(ataque.getWeapon() instanceof BasicWeapon){
 				BasicWeapon b = (BasicWeapon) ataque.getWeapon();
 				return (b.getBaseItem().equals(weapon));

@@ -3,28 +3,18 @@ package com.stab.data.info.applicable;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.stab.data.StabConstants;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.info.equipment.Weapon;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.Modifier;
 
-/**
- * AttackData contiene los datos del ataque a lanzar.
- * Los distintos traits iran rellenandolos segun sea apropiado
- * Habra subclases para ranged attack, etc
- * 
- * Es perfectamente posible que el ataque sea cancelado por un trait (ej: estamos en presa, no podemos hacer un ranged attack, etc)
- * 
- * los traits pueden incluso añadir modificadores al ataque directamente (ej: racial enemy)
- * es posible tambien cambiar el tipo de ataque (pero delicado) ej: un arco con radiant ammo que use ranged touch en vez de ranged attack
- *
- */
-public class AttackData extends Applicable {
 
-	
-	BaseInfo target;
+public class WeaponAttack extends Attack {
+
 	Weapon weapon;
 	String slot; 
 	
@@ -33,41 +23,25 @@ public class AttackData extends Applicable {
 	
 	ArrayList<Applicable> onDamage;
 	ArrayList<Applicable> onCrit;
+	
 	Attack attack;
 	int baseDamage;
 	int baseDamageType;
-	
 	int critRange;
 	int critMultiplier;
 	
-	boolean filled;
-	
-	ArrayList<Modifier> modifiers;
-	
-	
-	public AttackData(BaseInfo instigator,Weapon weapon,BaseInfo target) {
+	public WeaponAttack(BaseInfo instigator,Weapon weapon) {
 		super(instigator);
 		//Valores por defecto de ejemplo
 		animationType=SwingAnimation.ID;
-		this.weapon=weapon;
 		onDamage= new ArrayList<Applicable>();
 		onCrit= new ArrayList<Applicable>();
-		this.target=target;
-		attack=createAttack();
 		baseDamage=0;
 		baseDamageType=Damage.SLASHING_DAMAGE;
-		critRange=1;
-		critMultiplier=2;
-		filled=false;
-		modifiers=new ArrayList<Modifier>();
-	}
-	
-	public void setFilled(boolean filled) {
-		this.filled = filled;
-	}
-	
-	public boolean isFilled() {
-		return filled;
+		setCritRange(1);
+		setCritRange(2);
+		
+		setWeapon(weapon);
 	}
 	
 	public void setSlot(String slot) {
@@ -77,36 +51,16 @@ public class AttackData extends Applicable {
 		return slot;
 	}
 	
+	public void setWeapon(Weapon weapon) {
+		this.weapon = weapon;
+		if (weapon!=null){
+			
+			
+		}
+	}
+	
 	public Weapon getWeapon() {
 		return weapon;
-	}
-
-	public Attack createAttack(){
-		return new Attack((BaseInfo)getInstigator());
-	}
-	
-	@Override
-	public void apply() {
-	}
-	
-	@Override
-	public void validate() {
-	}
-	
-	@Override
-	public BaseInfo getTarget() {
-		return this.target;
-	}
-	
-	public void setAttack(Attack attack) {
-		this.attack = attack;
-	}
-	
-	public Attack getAttack(){
-		attack.setAttackData(this);
-		attack.setInstigator(getInstigator());
-		attack.setCritRange(critRange);
-		return attack;
 	}
 	
 	public void setAnimationIcon(String animationIcon) {
@@ -195,30 +149,29 @@ public class AttackData extends Applicable {
 		return collapse(onCrit);
 	}
 	
-	
-	public static List<Applicable> collapse(List<Applicable> data){
-		ArrayList<Applicable> list=new ArrayList<Applicable>();
-		ArrayList<Damage> damage=new ArrayList<Damage>();
-		
-		for (Applicable a:data){
-			if (a instanceof Damage)
-				damage.add((Damage)a);
+	public void apply() {
+		for (Applicable d:getEffects(isCritical())){
+			getTarget().apply(d);
+			if (d instanceof Damage)
+				 System.out.println("Aplicando daño: "+((Damage)d).getFinalAmount()+" de daño (tipo "+((Damage)d).getType()+")");
 			else
-				list.add(a);
+				System.out.println("Aplicando "+d.getClass().getSimpleName());
 		}
-		list.addAll(Damage.collapse(damage));
-		return list;
+		
+	}
+	
+	@Override
+	public void validate() {
+		super.validate();
+		if (getWeapon()!=null){
+			getWeapon().attackDone(this);
+			System.out.println("Ataque: "+this.getClass().getSimpleName()+" con "+getWeapon().getName()+"  roll "+getRollResult()+" + "+getModifier()+"   against "+getTargetNumber()+"  result: "+getResult()+" (hits:"+hits()+" critical: "+isCritical()+" botch: "+isBotch()+")");
+		}else{
+			System.out.println("Ataque: "+this.getClass().getSimpleName()+" sin arama? roll "+getRollResult()+" + "+getModifier()+"   against "+getTargetNumber()+"  result: "+getResult()+" (hits:"+hits()+" critical: "+isCritical()+" botch: "+isBotch()+")");
+		}
 	}
 	
 	
-	public void addModifier(Modifier m){
-		modifiers.add(m);
-	}
-
-	
-	public ArrayList<Modifier> getModifiers() {
-		return modifiers;
-	}
 	
 	
 }
