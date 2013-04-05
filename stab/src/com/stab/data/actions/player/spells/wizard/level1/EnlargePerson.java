@@ -20,15 +20,14 @@ public class EnlargePerson extends SpellOnTarget {
 	}
 
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		BaseInfo buffed= (BaseInfo) target;
-		BaseInfo caster=(BaseInfo) yo;
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		
 		
 		EnlargePerson_Buff buff = new EnlargePerson_Buff();
 		buff.setTime(getCasterLevel(caster)*10);
-		buffed.addTrait(buff);
+		target.addTrait(buff);
 		return true;
 	}
 }

@@ -3,6 +3,7 @@ package com.stab.data.actions.player.spells.cleric.level0.unfinished;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
 
 public class DetectMagic extends SpellOnSelf{
@@ -20,8 +21,9 @@ public class DetectMagic extends SpellOnSelf{
 
 
 	@Override
-	public boolean execute(BaseInfo arg0) {
-		// TODO Auto-generated method stub
+	public boolean affect(Info instigator,Info target) {
+		BaseInfo self=(BaseInfo)target;
+	
 		return false;
 	}
 }

@@ -23,8 +23,9 @@ public class MagicWeapon extends SpellOnTarget {
 	}
 
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		/* atatatatataaaaaaaaaaaaaaaaaaaaaa
 		BaseInfo weapon = (Creature) target;
 		target.getWeapon(target);

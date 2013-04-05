@@ -18,21 +18,20 @@ public class ShockingGrasp extends SpellOnTarget{
 	
 
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		BaseInfo atacado = (BaseInfo)target;
-		BaseInfo caster = (BaseInfo)yo;
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		int dañobase=Roll.d6();
 		
 	
 		MagicAttack ataque = new MagicAttack(caster);
-		atacado.apply(ataque);
+		target.apply(ataque);
 		
-		caster.playAnimationOn(ShootProyectileAnimation.ID, atacado.getToken(), "PARTICLE#magicmissile");
+		caster.playAnimationOn(ShootProyectileAnimation.ID, target.getToken(), "PARTICLE#magicmissile");
 		
 		if(ataque.hits()) {
-		Damage d= new Damage(dañobase, Damage.ELECTRIC_DAMAGE,yo);
-		atacado.apply(d);
+		Damage d= new Damage(dañobase, Damage.ELECTRIC_DAMAGE,caster);
+		target.apply(d);
 		return true;
 		}
 		return false;

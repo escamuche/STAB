@@ -19,23 +19,21 @@ public class RayFrost extends SpellOnTarget{
 	
 
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		
-		BaseInfo atacado = (BaseInfo)target;
-		BaseInfo caster = (BaseInfo)yo;
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		int cl = getCasterLevel(caster);
 		int dañobase=Roll.d3();
 		
 	
 		MagicAttack ataque = new MagicAttack(caster);
-		atacado.apply(ataque);
+		target.apply(ataque);
 		
-		sleep(caster.playAnimationOn(ShootBeamAnimation.ID, atacado.getToken(), "PARTICLE#rayOfFrost"));
+		sleep(caster.playAnimationOn(ShootBeamAnimation.ID, target.getToken(), "PARTICLE#rayOfFrost"));
 		
 		if(ataque.hits()) {
-			Damage d= new Damage(dañobase, Damage.COLD_DAMAGE,yo);
-			atacado.apply(d);
+			Damage d= new Damage(dañobase, Damage.COLD_DAMAGE,caster);
+			target.apply(d);
 			System.out.println(d.getFinalAmount()+" de daño");
 			return true;	
 		}

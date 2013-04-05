@@ -4,6 +4,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.data.info.buff.spells.EntropicShield_Buff;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
 public class EntropicShield extends SpellOnSelf{
 	
@@ -20,11 +21,13 @@ public class EntropicShield extends SpellOnSelf{
 
 
 	@Override
-	public boolean execute(BaseInfo caster) {
+	public boolean affect(Info instigator,Info receive) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target=(BaseInfo)receive;
 		
 			EntropicShield_Buff buff = new EntropicShield_Buff();
 			buff.setTime(getCasterLevel(caster)*10);
-			caster.addTrait(buff);
+			target.addTrait(buff);
 			return true;
 	
 	}

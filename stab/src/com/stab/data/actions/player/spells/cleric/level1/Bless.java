@@ -12,15 +12,14 @@ public class Bless extends SpellOnTarget{
 	public static final String ID="BLESS";
 
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		BaseInfo atacado = (BaseInfo)target;
-		BaseInfo caster = (BaseInfo)yo;
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		int cl=getCasterLevel(caster);
 		
 		Bless_Buff buff = new Bless_Buff();
 		buff.setTime(cl*10);
-		atacado.addTrait(buff);
+		target.addTrait(buff);
 		
 		return true;
 		}

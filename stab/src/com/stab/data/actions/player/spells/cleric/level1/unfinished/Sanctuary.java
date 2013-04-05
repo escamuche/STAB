@@ -4,6 +4,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.data.info.buff.spells.Sanctuary_Buff;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
 public class Sanctuary extends SpellOnSelf{
 	
@@ -17,11 +18,12 @@ public class Sanctuary extends SpellOnSelf{
 	}
 
 	@Override
-	public boolean execute(BaseInfo yo) {
+	public boolean affect(Info instigator,Info receive) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target=(BaseInfo)receive;
 		
-		BaseInfo caster = (BaseInfo)yo;
 		Sanctuary_Buff buff = new Sanctuary_Buff();
-		caster.addTrait(buff);
+		target.addTrait(buff);
 		
 		return true;
 	}

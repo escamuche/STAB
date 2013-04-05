@@ -17,6 +17,7 @@ public class WeaponAttack extends Attack {
 
 	Weapon weapon;
 	String slot; 
+	BaseInfo target;
 	
 	String animationType;
 	String animationIcon;
@@ -30,7 +31,7 @@ public class WeaponAttack extends Attack {
 	int critRange;
 	int critMultiplier;
 	
-	public WeaponAttack(BaseInfo instigator,Weapon weapon) {
+	public WeaponAttack(BaseInfo instigator,Weapon weapon,BaseInfo target) {
 		super(instigator);
 		//Valores por defecto de ejemplo
 		animationType=SwingAnimation.ID;
@@ -40,7 +41,7 @@ public class WeaponAttack extends Attack {
 		baseDamageType=Damage.SLASHING_DAMAGE;
 		setCritRange(1);
 		setCritRange(2);
-		
+		this.setTarget(target);
 		setWeapon(weapon);
 	}
 	

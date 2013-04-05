@@ -12,14 +12,13 @@ public class ResistanceCleric extends SpellOnTarget{
 	public static final String ID="RESISTANCE_CLERIC";
 
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		BaseInfo Bufado = (BaseInfo)target;
-		BaseInfo caster=(BaseInfo)yo;
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		
 		ResistanceBuff buff = new ResistanceBuff();
 		buff.setTime(10);
-		Bufado.addTrait(buff);
+		target.addTrait(buff);
 		
 		return true;
 		}

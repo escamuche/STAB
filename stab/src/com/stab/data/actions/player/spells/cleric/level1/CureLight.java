@@ -19,10 +19,9 @@ public class CureLight extends SpellOnTarget{
 
 
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		BaseInfo atacado = (BaseInfo)target;
-		BaseInfo caster = (BaseInfo)yo;
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		
 		int cl=getCasterLevel(caster);
 		if(cl>5)
@@ -30,16 +29,16 @@ public class CureLight extends SpellOnTarget{
 		int dañobase=Roll.d8()+cl;
 		
 		MagicAttack ataque = new MagicAttack(caster);
-		FortitudeAttack save = new FortitudeAttack(atacado);
+		FortitudeAttack save = new FortitudeAttack(caster);
 		
-		atacado.apply(ataque);
-		atacado.apply(save);
+		target.apply(ataque);
+		target.apply(save);
 		
-		if (atacado.hasTrait(UndeadTraits.ID) == false) {
-			Heal heal = new Heal(dañobase, atacado);
-			atacado.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#Healing");
+		if (target.hasTrait(UndeadTraits.ID) == false) {
+			Heal heal = new Heal(dañobase, caster);
+			target.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#Healing");
 			sleep(500);
-			atacado.apply(heal);
+			target.apply(heal);
 			this.setEffectType(HEAL);
 			return true;
 			}
@@ -48,13 +47,13 @@ public class CureLight extends SpellOnTarget{
 			
 			if(ataque.hits()) {
 				if(save.hits()){
-					Damage d= new Damage(dañobase, Damage.HOLY_DAMAGE,yo);
-					atacado.apply(d);
+					Damage d= new Damage(dañobase, Damage.HOLY_DAMAGE,caster);
+					target.apply(d);
 					return true;
 					}
 					else {
-						Damage d= new Damage(dañobase/2, Damage.UNHOLY_DAMAGE,yo);
-						atacado.apply(d);
+						Damage d= new Damage(dañobase/2, Damage.UNHOLY_DAMAGE,caster);
+						target.apply(d);
 						System.out.println(d.getFinalAmount()+" de daño");	
 						this.setEffectType(DAMAGE);
 						return false;

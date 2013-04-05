@@ -11,15 +11,13 @@ public class OpenClose extends SpellOnTarget{
 	
 	public static final String ID="OPENCLOSE";
 
-	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		BaseInfo caster = (BaseInfo)yo;
-		int cl = getCasterLevel(caster);
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		
 		
 		Door Atacado = (Door)target;
-		Atacado.infoInteracts(yo);
+		Atacado.infoInteracts(caster);
 		return true;
 	}
 	

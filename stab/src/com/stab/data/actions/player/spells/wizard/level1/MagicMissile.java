@@ -14,19 +14,18 @@ public class MagicMissile extends SpellOnTarget{
 	public static final String ID="MagicMissile";
 	
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		BaseInfo atacado = (BaseInfo)target;
-		BaseInfo caster = (BaseInfo)yo;
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		int cl = getCasterLevel(caster);
 		
 		int number=cl+1/2;
 		if (number>5) number=5;
 		
-		sleep(caster.playAnimationOn(MagicMissileAnimation.ID, atacado.getToken(), number));
+		sleep(caster.playAnimationOn(MagicMissileAnimation.ID, target.getToken(), number));
 		
-		Damage d= new RolledDamage(number,4,number, Damage.FORCE_DAMAGE,yo);
-		atacado.apply(d);
+		Damage d= new RolledDamage(number,4,number, Damage.FORCE_DAMAGE,caster);
+		target.apply(d);
 		
 		return true;
 		}

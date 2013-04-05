@@ -12,15 +12,14 @@ public class Bane extends SpellOnTarget {
 	public static final String ID="BANE";
 
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		BaseInfo atacado = (BaseInfo)target;
-		BaseInfo caster = (BaseInfo)yo;
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		int cl=getCasterLevel(caster);
 		
 		Bane_Debuff debuff = new Bane_Debuff();
 		debuff.setTime(cl*10);
-		atacado.addTrait(debuff);
+		target.addTrait(debuff);
 		
 		return true;
 		}

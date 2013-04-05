@@ -4,6 +4,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.info.buff.Expertise_Buff;
 import com.stab.model.action.SelfAction;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 import com.stab.model.request.basic.ActionRequest;
 
 public class Expertise extends SelfAction {
@@ -21,8 +22,8 @@ public class Expertise extends SelfAction {
 	}
 	
 	@Override
-	public boolean execute(BaseInfo self) {
-	
+	public boolean affect(Info instigator,Info target) {
+		BaseInfo self=(BaseInfo)target;
 		int bab = self.getValue(StabConstants.BAB);
 		Expertise_Buff buff = new Expertise_Buff(bab);
 		if(self.hasTrait(buff.getId()) == true) {

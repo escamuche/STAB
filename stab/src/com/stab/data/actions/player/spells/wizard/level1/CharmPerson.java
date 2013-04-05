@@ -12,17 +12,16 @@ public class CharmPerson extends SpellOnTarget{
 	public static final String ID="CHARMPERSON";
 	
 	@Override
-	public boolean execute(Info caster, Info target) {
-		
-		BaseInfo d = (BaseInfo) target;
-		BaseInfo self = (BaseInfo) caster;
-		int cl = getCasterLevel(self);
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
+		int cl = getCasterLevel(caster);
 		int time = cl*60;
 		
 
 		CharmPerson_Debuff debuff = new CharmPerson_Debuff();
 		debuff.setTime(time);
-		d.addTrait(debuff);
+		target.addTrait(debuff);
 		return true;
 		}
 	

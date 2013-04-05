@@ -3,6 +3,7 @@ package com.stab.data.actions.player.spells.wizard.level1.unfinished;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
 
 public class EndureElements extends SpellOnSelf{
@@ -20,8 +21,9 @@ public class EndureElements extends SpellOnSelf{
 
 
 	@Override
-	public boolean execute(BaseInfo arg0) {
-		// TODO Auto-generated method stub
+	public boolean affect(Info instigator,Info receive) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target=(BaseInfo)receive;
 		return false;
 	}
 }

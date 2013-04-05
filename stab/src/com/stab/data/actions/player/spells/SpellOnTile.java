@@ -107,4 +107,11 @@ public abstract class SpellOnTile extends TileAction implements SpellProperties 
 		}
 		return super.getLosType();
 	}
+	
+	@Override
+	public boolean affect(Info instigator, Info target) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
 }

@@ -19,24 +19,23 @@ public class DisruptUndead extends SpellOnTarget{
 	
 
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		BaseInfo caster = (BaseInfo)yo;
-		BaseInfo atacado = (BaseInfo)target;
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		int cl = getCasterLevel(caster);
 		int dañobase=Roll.d6();
 		
 		
 		MagicAttack ataque = new MagicAttack(caster);
-		atacado.apply(ataque);
+		target.apply(ataque);
 	
-		caster.playAnimationOn(ShootProyectileAnimation.ID, atacado.getToken(), "PARTICLE#magicmissile");
+		caster.playAnimationOn(ShootProyectileAnimation.ID, target.getToken(), "PARTICLE#magicmissile");
 		
-		if(atacado.getTrait(UndeadTraits.ID) != null){
+		if(target.getTrait(UndeadTraits.ID) != null){
 			
 			if(ataque.hits()) {
-					Damage d= new Damage(dañobase, Damage.HOLY_DAMAGE,yo);
-					atacado.apply(d);
+					Damage d= new Damage(dañobase, Damage.HOLY_DAMAGE,caster);
+					target.apply(d);
 					return true;
 					}
 				}

@@ -12,14 +12,13 @@ public class Virtue extends SpellOnTarget{
 	public static final String ID="VIRTUE";
 
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		
-		BaseInfo t = (BaseInfo)target;
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		
 		Virtue_Buff buff = new Virtue_Buff();
 		buff.setTime(10);
-		t.addTrait(buff);
+		target.addTrait(buff);
 
 		return true;
 	}

@@ -21,37 +21,36 @@ public class InflictLight extends SpellOnTarget{
 	
 
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		BaseInfo caster = (BaseInfo)yo;
-		BaseInfo atacado = (BaseInfo)target;
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		int dañobase=Roll.d8()+1;
 		
 		MagicAttack ataque = new MagicAttack(caster);
-		FortitudeAttack save = new FortitudeAttack(atacado);
-		atacado.apply(ataque);
-		atacado.apply(save);
+		FortitudeAttack save = new FortitudeAttack(target);
+		target.apply(ataque);
+		target.apply(save);
 		
-		caster.playAnimationOn(ShootProyectileAnimation.ID, atacado.getToken(), "PARTICLE#magicmissile");
+		caster.playAnimationOn(ShootProyectileAnimation.ID, target.getToken(), "PARTICLE#magicmissile");
 		
-		if(atacado.hasTrait(UndeadTraits.ID) == false) {
+		if(target.hasTrait(UndeadTraits.ID) == false) {
 			if(ataque.hits()) {
 					if(save.hits()){
-						Damage d= new Damage(dañobase, Damage.UNHOLY_DAMAGE,yo);
-						atacado.apply(d);
+						Damage d= new Damage(dañobase, Damage.UNHOLY_DAMAGE,caster);
+						target.apply(d);
 						this.setEffectType(DAMAGE);
 						return true;
 						}
 						else {
-							Damage d= new Damage(dañobase/2, Damage.UNHOLY_DAMAGE,yo);
-							atacado.apply(d);
+							Damage d= new Damage(dañobase/2, Damage.UNHOLY_DAMAGE,caster);
+							target.apply(d);
 							return false;
 							}	
 					}
 						
 				else {
-					Heal d= new Heal(dañobase,yo);
-					atacado.apply(d);
+					Heal d= new Heal(dañobase,caster);
+					target.apply(d);
 					this.setEffectType(HEAL);
 					return true;
 				}

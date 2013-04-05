@@ -41,7 +41,7 @@ public class WeaponAttackAction extends TargetAction{
 	}
 
 	@Override
-	public boolean execute(Info yo, Info target) {
+	public boolean affect(Info yo, Info target) {
 		
 		BaseInfo atacante = (BaseInfo)yo;
 		BaseInfo atacado = (BaseInfo)target;
@@ -56,10 +56,11 @@ public class WeaponAttackAction extends TargetAction{
 		
 		//TODO: ver como se rellena el slot!
 		
-		WeaponAttack ad=new WeaponAttack (atacante,arma);
+		WeaponAttack ad=new WeaponAttack (atacante,arma,atacado);
+
 		atacante.ready(ad); //Esto calcula todos los bonos, daño etc
 		
-		atacado.check(ad);
+		atacado.check(ad); //esti comprueba si da o no, pero sin aplicar el resultado
 		
 		if (ad.hits())
 			playHitAnimation(ad,atacante,target.getToken());

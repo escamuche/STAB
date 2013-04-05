@@ -15,10 +15,9 @@ public class RayEnfeeblement extends SpellOnTarget{
 	public static final String ID="RAYENFEEBLEMENT";
 
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		BaseInfo caster=(BaseInfo)yo;
-		BaseInfo debuffed = (BaseInfo)target;
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		int cl = getCasterLevel(caster);
 		
 		int bono = (cl/2)+1;
@@ -30,21 +29,21 @@ public class RayEnfeeblement extends SpellOnTarget{
 		FortitudeAttack save= new FortitudeAttack(caster);
 		int damage = Roll.d6()+bono;
 		
-		debuffed.apply(attack);
-		debuffed.apply(save);
+		target.apply(attack);
+		target.apply(save);
 		
 		
 			if(attack.hits()) {
 				if(save.hits()){
 					RayEnfeeblement_Debuff debuff = new RayEnfeeblement_Debuff(damage);
 					debuff.setTime(cl);
-					debuffed.addTrait(debuff);
+					target.addTrait(debuff);
 					return true;
 					}
 				else{
 					RayEnfeeblement_Debuff debuff = new RayEnfeeblement_Debuff(damage/2);
 					debuff.setTime(cl);
-					debuffed.addTrait(debuff);
+					target.addTrait(debuff);
 					return false;
 				}
 			}

@@ -12,13 +12,12 @@ public class Guidance extends SpellOnTarget{
 	public static final String ID="GUIDANCE";
 
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		BaseInfo caster=(BaseInfo)yo;
-		BaseInfo Bufado = (BaseInfo)target;
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		Guidance_Buff buff = new Guidance_Buff();
 		buff.setTime(10);
-		Bufado.addTrait(buff);
+		target.addTrait(buff);
 		return true;
 	
 	}

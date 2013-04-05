@@ -5,6 +5,7 @@ import com.stab.data.info.buff.Rage_Buff;
 import com.stab.data.info.debuff.condition.FatiguedCondition;
 import com.stab.model.action.SelfAction;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
 public class Rage extends SelfAction{
 	
@@ -20,22 +21,23 @@ public class Rage extends SelfAction{
 
 
 	@Override
-	public boolean execute(BaseInfo self) {
-		
-		if(self.hasTrait(Rage_Buff.ID)){ //si tiene rabia activa la quita y vuelve
-			self.removeTrait(Rage_Buff.ID);
+	public boolean affect(Info instigator,Info receive) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target=(BaseInfo)receive;
+		if(target.hasTrait(Rage_Buff.ID)){ //si tiene rabia activa la quita y vuelve
+			target.removeTrait(Rage_Buff.ID);
 			return true;
 		}
 		else { //si no la tiene activa seguimos
 			
-			int i = self.getValue(StabConstants.RAGEROUNDS);
-			int j = self.getValue(StabConstants.RAGEROUNDSSPENT);
+			int i = caster.getValue(StabConstants.RAGEROUNDS);
+			int j = caster.getValue(StabConstants.RAGEROUNDSSPENT);
 				if(i-j <=0)   // si no ha gastado todos los round de rabia sigue, si no vuelve
 					return false;
-					if(self.hasTrait(FatiguedCondition.ID)) // por ultimo comprobar que no esta fatigued, si pasa todo sigue
+					if(target.hasTrait(FatiguedCondition.ID)) // por ultimo comprobar que no esta fatigued, si pasa todo sigue
 						return false;
 			Rage_Buff buff = new Rage_Buff(); 
-			self.addTrait(buff); //aplicando el buff
+			target.addTrait(buff); //aplicando el buff
 			buff.setTime(i-j); //el max de duracion es este, los rounds que tienes menos los que gastaste
 			return true;
 		}

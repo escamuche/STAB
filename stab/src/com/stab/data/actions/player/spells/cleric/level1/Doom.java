@@ -13,17 +13,16 @@ public class Doom extends SpellOnTarget {
 	public static final String ID="DOOM";
 
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		BaseInfo atacado = (BaseInfo)target;
-		BaseInfo caster = (BaseInfo)yo;
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		int cl=getCasterLevel(caster);
 		
-		WillAttack ataque = new WillAttack(atacado);
+		WillAttack ataque = new WillAttack(caster);
 		if(ataque.hits()) {
 			Doom_Debuff debuff = new Doom_Debuff();
 			debuff.setTime(cl*10);
-			atacado.addTrait(debuff);
+			target.addTrait(debuff);
 			return true;
 			}
 		return false;

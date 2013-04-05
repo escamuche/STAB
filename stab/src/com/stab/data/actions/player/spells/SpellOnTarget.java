@@ -109,4 +109,10 @@ public abstract class SpellOnTarget extends TargetAction implements SpellPropert
 		return super.getLosType();
 	}
 	
+	@Override
+	public boolean affect(Info instigator, Info target) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
 }

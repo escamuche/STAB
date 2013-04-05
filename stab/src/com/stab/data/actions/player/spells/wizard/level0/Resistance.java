@@ -12,15 +12,13 @@ public class Resistance extends SpellOnTarget{
 	public static final String ID="RESISTANCE";
 
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		BaseInfo buffed = (BaseInfo)target;
-		BaseInfo caster = (BaseInfo)yo;
-		
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		
 		ResistanceBuff buff = new ResistanceBuff();
 		buff.setTime(10);
-		buffed.addTrait(buff);
+		target.addTrait(buff);
 		
 		return true;
 		}

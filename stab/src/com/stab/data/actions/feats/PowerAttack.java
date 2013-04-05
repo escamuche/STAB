@@ -7,6 +7,7 @@ import com.stab.model.action.SelfAction;
 import com.stab.model.action.ToggleableBuffAction;
 import com.stab.model.ai.AbstractPosibleAction;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 import com.stab.model.request.basic.ActionRequest;
 
 public class PowerAttack extends SelfAction implements ToggleableBuffAction {
@@ -23,7 +24,8 @@ public class PowerAttack extends SelfAction implements ToggleableBuffAction {
 	}
 	
 	@Override
-	public boolean execute(BaseInfo self) {
+	public boolean affect(Info instigator,Info target) {
+		BaseInfo self=(BaseInfo)target;
 		
 		int bab = self.getValue(StabConstants.BAB);
 		PowerAttack_Buff buff= new PowerAttack_Buff(bab);

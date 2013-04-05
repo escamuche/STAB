@@ -25,20 +25,19 @@ public class Daze extends SpellOnTarget{
 	}
 
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		BaseInfo atacado = (BaseInfo)target;
-		BaseInfo caster =(BaseInfo)yo;
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		
 		WillAttack save = new WillAttack(caster);
-		atacado.apply(save);
+		target.apply(save);
 		int cl =getCasterLevel(caster);
 		
 		if(save.hits()){
 		
 			DazedCondition buff = new DazedCondition();
 			buff.setTime(1);
-			atacado.addTrait(buff);
+			target.addTrait(buff);
 			return true;
 			}
 		else

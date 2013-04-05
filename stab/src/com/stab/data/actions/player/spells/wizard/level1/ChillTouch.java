@@ -20,28 +20,27 @@ public class ChillTouch extends SpellOnTarget{
 	
 
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		BaseInfo caster = (BaseInfo)yo;
-		BaseInfo atacado = (BaseInfo)target;
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		int dañobase=Roll.d6();
 		int cl =getCasterLevel(caster);
 		
 		
 		MagicAttack ataque = new MagicAttack(caster);
-		atacado.apply(ataque);
+		target.apply(ataque);
 		
-		caster.playAnimationOn(ShootProyectileAnimation.ID, atacado.getToken(), "PARTICLE#magicmissile");
+		caster.playAnimationOn(ShootProyectileAnimation.ID, target.getToken(), "PARTICLE#magicmissile");
 		
-		Damage d= new Damage(dañobase, Damage.UNHOLY_DAMAGE,yo);
-		atacado.apply(d);
+		Damage d= new Damage(dañobase, Damage.UNHOLY_DAMAGE,caster);
+		target.apply(d);
 			
 		if(ataque.hits()) {
 			FortitudeAttack ataque2 = new FortitudeAttack(caster);
-			atacado.apply(ataque2);
+			target.apply(ataque2);
 			if(ataque2.hits()){
 				ChillTouch_Debuff chilltouch = new ChillTouch_Debuff();
-				atacado.addTrait(chilltouch);
+				target.addTrait(chilltouch);
 			}
 		return true;
 		}

@@ -22,14 +22,13 @@ public class MageHand extends SpellOnTarget{
 
 
 	@Override
-	public boolean execute(Info target, Info yo) {
-		
-		BaseInfo caster = (BaseInfo)yo;
-		int cl = getCasterLevel(caster);
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		
 		
 		Interactive atacado = (Interactive)target;
-		atacado.infoInteracts(yo);
+		atacado.infoInteracts(caster);
 		return true;
 	}
 }

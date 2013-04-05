@@ -4,6 +4,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.data.info.buff.spells.ShieldFaith_Buff;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
 public class ShieldFaith extends SpellOnSelf{
 	
@@ -17,12 +18,12 @@ public class ShieldFaith extends SpellOnSelf{
 	}
 
 	@Override
-	public boolean execute(BaseInfo yo) {
-		
-		BaseInfo caster = (BaseInfo)yo;
+	public boolean affect(Info instigator,Info receive) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target=(BaseInfo)receive;
 		ShieldFaith_Buff buff = new ShieldFaith_Buff();
 		buff.setTime(getCasterLevel(caster)*10);
-		caster.addTrait(buff);
+		target.addTrait(buff);
 		
 		return true;
 	}

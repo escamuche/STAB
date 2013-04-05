@@ -4,6 +4,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.data.info.buff.spells.Identify_Buff;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
 public class Identify extends SpellOnSelf{
 	
@@ -19,10 +20,11 @@ public class Identify extends SpellOnSelf{
 	}
 
 	@Override
-	public boolean execute(BaseInfo caster) {
-		
+	public boolean affect(Info instigator,Info receive) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target=(BaseInfo)receive;
 		Identify_Buff buff = new Identify_Buff();
-		caster.addTrait(buff);
+		target.addTrait(buff);
 		return true;
 	
 	}

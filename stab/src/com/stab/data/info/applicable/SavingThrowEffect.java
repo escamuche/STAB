@@ -3,7 +3,6 @@ package com.stab.data.info.applicable;
 import java.util.ArrayList;
 
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.Modifier;
@@ -34,7 +33,7 @@ public  class SavingThrowEffect extends SkillRoll {
 	 * @param save			Que atributo tirar
 	 * @param diff			la dificultad, ya calculada de antemano.
 	 */
-	public SavingThrowEffect(Info instigator, String save, int diff) {
+	public SavingThrowEffect(BaseInfo instigator, String save, int diff) {
 		super(instigator, save, diff);
 		nullIfSuccess=false;
 		toApplyPass= new ArrayList<Applicable> ();
@@ -43,7 +42,7 @@ public  class SavingThrowEffect extends SkillRoll {
 	protected void recalcMod(){
 		ArrayList<Modifier>list=new ArrayList<Modifier>();
 		list.addAll(((BaseInfo)getTarget()).getModifiers(getSkill()));
-		list.addAll(getModifiers());
+		list.addAll(getModifiers(getSkill()));
 		setModifier(Modifier.getValue(list)+getModifier());
 	}
 

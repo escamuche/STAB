@@ -23,12 +23,12 @@ public class Bleed extends SpellOnTarget{
 		}
 
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		BaseInfo Debufed = (BaseInfo)target;
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		
 		Bleed_Debuff debuff = new Bleed_Debuff();
-		Debufed.addTrait(debuff);
+		target.addTrait(debuff);
 		
 		return true;
 	}

@@ -4,6 +4,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.data.info.buff.spells.DivineFavor_Buff;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
 public class DivineFavor extends SpellOnSelf{
 	
@@ -18,14 +19,15 @@ public class DivineFavor extends SpellOnSelf{
 	}
 
 	@Override
-	public boolean execute(BaseInfo yo) {
+	public boolean affect(Info instigator,Info receive) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target=(BaseInfo)receive;
 		
-		BaseInfo caster = (BaseInfo)yo;
 		int cl =getCasterLevel(caster);
 		
 		DivineFavor_Buff buff = new DivineFavor_Buff(cl);
 		buff.setTime(10);
-		caster.addTrait(buff);
+		target.addTrait(buff);
 		
 		return true;
 	}

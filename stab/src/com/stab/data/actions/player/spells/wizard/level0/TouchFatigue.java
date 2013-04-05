@@ -27,22 +27,20 @@ public class TouchFatigue extends SpellOnTarget{
 		setRange(TOUCH);
 	}
 	@Override
-	public boolean execute(Info caster, Info target) {
-		
-		
-		BaseInfo i = (BaseInfo) target;
-		BaseInfo c = (BaseInfo) caster;
-		int cl = getCasterLevel(i);
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
+		int cl = getCasterLevel(caster);
 		
 		
 
-		MagicAttack attack = new MagicAttack(i);
+		MagicAttack attack = new MagicAttack(caster);
 		if(attack.hits()) {
-			FortitudeAttack b = new FortitudeAttack(i);
+			FortitudeAttack b = new FortitudeAttack(caster);
 				if(b.hits()){
 					FatiguedCondition debuff = new FatiguedCondition();
 					debuff.setTime(cl);
-					i.addTrait(debuff);
+					target.addTrait(debuff);
 					return true;
 				}
 		}

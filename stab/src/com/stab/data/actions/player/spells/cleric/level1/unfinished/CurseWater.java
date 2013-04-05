@@ -2,6 +2,7 @@ package com.stab.data.actions.player.spells.cleric.level1.unfinished;
 
 import com.stab.model.action.TargetAction;
 import com.stab.model.basic.token.PhysicalToken;
+import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 
 public class CurseWater extends TargetAction{
@@ -19,10 +20,14 @@ public class CurseWater extends TargetAction{
 
 
 	@Override
-	public boolean execute(Info arg0, Info arg1) {
-		// TODO Auto-generated method stub
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		return false;
 	}
+
+
+	
 
 	
 	/*@Override

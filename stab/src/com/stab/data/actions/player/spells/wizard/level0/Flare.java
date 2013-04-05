@@ -13,19 +13,18 @@ public class Flare extends SpellOnTarget{
 	public static final String ID="FLARE";
 
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		BaseInfo atacado = (BaseInfo)target;
-		BaseInfo caster = (BaseInfo)yo;
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		int cl = getCasterLevel(caster);
 		
-		setRange(CLOSE);
-		FortitudeAttack ataque=new FortitudeAttack(atacado);
-		atacado.apply(ataque);
+	
+		FortitudeAttack ataque=new FortitudeAttack(caster);
+		target.apply(ataque);
 		
 		if(ataque.hits()){
 		Flare_Debuff buff = new Flare_Debuff();
-		atacado.addTrait(buff);
+		target.addTrait(buff);
 		return true;
 		}
 		return false;

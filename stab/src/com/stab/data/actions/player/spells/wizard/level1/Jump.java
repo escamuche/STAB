@@ -19,20 +19,18 @@ public class Jump extends SpellOnTarget {
 	}
 
 	@Override
-	public boolean execute(Info caster, Info target) {
-		
-		BaseInfo buffed = (BaseInfo)target;
-		BaseInfo self = (BaseInfo) caster;
-		int cl= getCasterLevel(self);
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
+		int cl= getCasterLevel(caster);
 		
 		setRange(SELF);
 		Jump_Buff buff = new Jump_Buff(cl);
 		
 		buff.setTime(cl*10);
-		if(buffed.hasTrait(Jump_Buff.ID) == false)
-			buffed.addTrait(buff);
-		else
-			return false;
+		
+		target.addTrait(buff);
+		
 		return true;
 	}
 

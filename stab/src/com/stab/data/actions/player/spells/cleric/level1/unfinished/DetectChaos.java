@@ -2,6 +2,7 @@ package com.stab.data.actions.player.spells.cleric.level1.unfinished;
 
 import com.stab.model.action.SelfAction;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
 public class DetectChaos extends SelfAction{
 	
@@ -17,8 +18,9 @@ public class DetectChaos extends SelfAction{
 
 
 	@Override
-	public boolean execute(BaseInfo arg0) {
-		// TODO Auto-generated method stub
+	public boolean affect(Info instigator,Info receive) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target=(BaseInfo)receive;
 		return false;
 	}
 

@@ -12,14 +12,14 @@ public class MageArmor extends SpellOnTarget{
 	public static final String ID="MageArmor";
 
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		BaseInfo caster = (BaseInfo)yo;
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		
 	
 		MageArmor_Buff buff = new MageArmor_Buff();
 		buff.setTime(getCasterLevel(caster)*600);
-		caster.addTrait(buff);
+		target.addTrait(buff);
 		
 		return true;
 		}

@@ -24,15 +24,14 @@ public class Command extends SpellOnTarget{
 	}
 	
 	@Override
-	public boolean execute(Info yo, Info target) {
-		
-		BaseInfo t = (BaseInfo) target;
-		BaseInfo caster=(BaseInfo)yo;
+	public boolean affect(Info instigator, Info receptor) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target = (BaseInfo)receptor;
 		DazedCondition d = new DazedCondition();
 		
 	
 		d.setTime(1);
-		t.addTrait(d);
+		target.addTrait(d);
 		return true;
 		
 	}

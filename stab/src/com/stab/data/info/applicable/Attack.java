@@ -30,7 +30,7 @@ public abstract class Attack extends SkillRoll{
 	boolean ranged;
 	
 	public Attack(BaseInfo instigator) {
-		super(instigator,StabConstants.TOHIT,10);
+		super(instigator,StabConstants.TOHIT,0);
 		setDice(20);
 		setCritRange(1);
 		setBotchRange(1);
@@ -70,26 +70,24 @@ public abstract class Attack extends SkillRoll{
 		confirmMod+=v;
 	}
 	
-	
-	
 	@Override
-	public void setTarget(BaseInfo target) {
-		super.setTarget(target);
+	protected void recalcTarget() {
+		BaseInfo target=getTarget();
+		int i=10;
 		if (isTouch()){
-			int i=target.getValue(StabConstants.PASSIVEDEFENSE);
+			i=target.getValue(StabConstants.PASSIVEDEFENSE);
 			//TODO: comprobaciones unaware, flatfooted, etc
 			i=i+target.getValue(StabConstants.ACTIVEDEFENSE);
-			setTargetNumber(i);
 		}
 		else{
-			int i=target.getValue(StabConstants.PASSIVEDEFENSE);
+			i=target.getValue(StabConstants.PASSIVEDEFENSE);
 			i=i+target.getValue(StabConstants.ARMORDEFENSE);
 			i=i+target.getValue(StabConstants.SHIELDDEFENSE);
 			//TODO: comprobaciones unaware, flatfooted, etc
 			i=i+target.getValue(StabConstants.ACTIVEDEFENSE);
-			setTargetNumber(i);
 		}
-			
+		i=i+getTargetNumber();
+		setFinalTargetNumber(i);	
 	}
 
 	/*
@@ -210,7 +208,7 @@ public abstract class Attack extends SkillRoll{
 		int i= super.evalRoll(roll);
 		//Comprobar blocked, parried, dodged
 		if (misses()){
-			int dif=getTargetNumber()-getRollResult();
+			int dif=getFinalTargetNumber()-getRollResult();
 			BaseInfo t=getTarget();
 			//En su momento pensarse COVER
 			int shield=t.getValue(StabConstants.SHIELDDEFENSE);

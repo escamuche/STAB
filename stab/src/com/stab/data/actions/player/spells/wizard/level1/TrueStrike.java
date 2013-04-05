@@ -4,6 +4,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.data.info.buff.spells.TrueStrike_Buff;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
 public class TrueStrike extends SpellOnSelf{
 	
@@ -19,12 +20,12 @@ public class TrueStrike extends SpellOnSelf{
 	}
 
 	@Override
-	public boolean execute(BaseInfo yo) {
-		
-		BaseInfo caster = (BaseInfo)yo;
+	public boolean affect(Info instigator,Info receive) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target=(BaseInfo)receive;
 		TrueStrike_Buff buff = new TrueStrike_Buff();
 		buff.setTime(1);
-		caster.addTrait(buff);
+		target.addTrait(buff);
 		return true;
 	}
 }
