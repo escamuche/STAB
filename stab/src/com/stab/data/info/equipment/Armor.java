@@ -31,7 +31,7 @@ public class Armor extends Item {
 		this.category = category;
 		if (category==SHIELD){
 			this.setSlots(HumanoidGear.OFFHAND);
-			this.addTrait(new Modifier(StabConstants.ARMORDEFENSE,StabConstants.SHIELDMOD, CA));
+			this.addTrait(new Modifier(StabConstants.SHIELDDEFENSE,StabConstants.SHIELDMOD, CA));
 			//this.addTrait(new Modifier(StabConstants.DEXLIMIT,StabConstants.SHIELDMOD, maxDex));
 			//ya veremos que hacer con el towershield
 			this.addTrait(new Modifier(StabConstants.ARMORCHECKPENALTY,StabConstants.SHIELDMOD, penalty));

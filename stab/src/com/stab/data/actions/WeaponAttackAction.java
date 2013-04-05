@@ -1,8 +1,11 @@
 package com.stab.data.actions;
 
 import com.stab.data.StabConstants;
+import com.stab.data.animation.BlockAnimation;
 import com.stab.data.animation.MissProyectileAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
+import com.stab.data.animation.SidestepAnimation;
+import com.stab.data.animation.StepBackAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.ThrustAnimation;
 import com.stab.data.info.applicable.WeaponAttack;
@@ -108,13 +111,21 @@ public class WeaponAttackAction extends TargetAction{
 	}
 
 	private void playMissAnimation(WeaponAttack ad,BaseInfo origin, Token target) {
+		if (ad.getResult()==WeaponAttack.BLOCK)
+			playBlockAnimation(ad,origin,target);
+		if (ad.getResult()==WeaponAttack.DODGE)
+			playDodgeAnimation(ad,origin,target);
+		
 		if (SwingAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(SwingAnimation.ID,target,ad.getAnimationIcon());
 			sleep(500);
 			return;
 		}
 		if (ShootProyectileAnimation.ID.equals(ad.getAnimationType())){
-			sleep(origin.playAnimationOn(MissProyectileAnimation.ID,target,ad.getAnimationIcon()));
+			if (ad.getResult()==WeaponAttack.BLOCK)
+				sleep(origin.playAnimationOn(ShootProyectileAnimation.ID,target,ad.getAnimationIcon()));
+			else
+				sleep(origin.playAnimationOn(MissProyectileAnimation.ID,target,ad.getAnimationIcon()));
 			return;
 		}
 		if (ThrustAnimation.ID.equals(ad.getAnimationType())){
@@ -125,6 +136,43 @@ public class WeaponAttackAction extends TargetAction{
 		sleep(origin.playAnimationOn(ad.getAnimationType(),target,ad.getAnimationIcon()));
 	}
 
+	private void playBlockAnimation(WeaponAttack ad,BaseInfo origin, Token target) {
+		String icon=null;
+		if (target.getInfo() instanceof BaseInfo){
+			//icon=((BaseInfo)target.getInfo()).get 
+			icon="effects/woodenshield";
+		}
+		if (icon==null)
+			return;
+		if (icon.length()==0)
+			return;
+		if (SwingAnimation.ID.equals(ad.getAnimationType())){
+			target.playAnimationOn(BlockAnimation.ID,origin.getToken(),icon);
+			return;
+		}
+		if (ShootProyectileAnimation.ID.equals(ad.getAnimationType())){
+			target.playAnimationOn(BlockAnimation.ID,origin.getToken(),icon);
+			return;
+		}
+		if (ThrustAnimation.ID.equals(ad.getAnimationType())){
+			target.playAnimationOn(BlockAnimation.ID,origin.getToken(),icon);
+			return;
+		}
+		
+	}
+	private void playDodgeAnimation(WeaponAttack ad,BaseInfo origin, Token target) {
+		if (SwingAnimation.ID.equals(ad.getAnimationType())){
+			target.playAnimationOn(StepBackAnimation.ID,origin.getToken());
+			return;
+		}
+		if (ShootProyectileAnimation.ID.equals(ad.getAnimationType())){
+			return;
+		}
+		if (ThrustAnimation.ID.equals(ad.getAnimationType())){
+			target.playAnimationOn(SidestepAnimation.ID,origin.getToken());
+			return;
+		}
+	}
 	protected Weapon getWeapon(BaseInfo atacante) {
 		
 		if (atacante instanceof Creature){

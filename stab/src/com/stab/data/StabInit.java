@@ -51,6 +51,7 @@ import com.stab.data.adventure.ColiseoAdventure;
 import com.stab.data.adventure.TestAdventure;
 import com.stab.data.adventure.Zombies;
 import com.stab.data.animation.BasicSparkAnimation;
+import com.stab.data.animation.BlockAnimation;
 import com.stab.data.animation.CloseDoorAnimation;
 import com.stab.data.animation.DamageNumberAnimation;
 import com.stab.data.animation.EffectAddAnimation;
@@ -59,13 +60,14 @@ import com.stab.data.animation.HealNumberAnimation;
 import com.stab.data.animation.LungeAnimation;
 import com.stab.data.animation.MagicMissileAnimation;
 import com.stab.data.animation.MissProyectileAnimation;
-import com.stab.data.animation.MissRotatingProyectileAnimation;
 import com.stab.data.animation.OpenDoorAnimation;
 import com.stab.data.animation.RSwingAnimation;
 import com.stab.data.animation.ShakeAnimation;
 import com.stab.data.animation.ShootBeamAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.ShootRotatingProyectileAnimation;
+import com.stab.data.animation.SidestepAnimation;
+import com.stab.data.animation.StepBackAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.ThrustAnimation;
 import com.stab.data.animation.WalkAnimation;
@@ -241,7 +243,9 @@ public class StabInit {
 		of.setMapping(LungeAnimation.class);
 		of.setMapping(RSwingAnimation.class);
 		of.setMapping(ShootRotatingProyectileAnimation.class);
-		of.setMapping(MissRotatingProyectileAnimation.class);
+		of.setMapping(BlockAnimation.class);
+		of.setMapping(StepBackAnimation.class);
+		of.setMapping(SidestepAnimation.class);
 		
 		
 		

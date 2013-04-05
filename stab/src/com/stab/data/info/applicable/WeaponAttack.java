@@ -166,9 +166,9 @@ public class WeaponAttack extends Attack {
 		super.validate();
 		if (getWeapon()!=null){
 			getWeapon().attackDone(this);
-			System.out.println("Ataque: "+this.getClass().getSimpleName()+" con "+getWeapon().getName()+"  roll "+getRollResult()+" + "+getModifier()+"   against "+getTargetNumber()+"  result: "+getResult()+" (hits:"+hits()+" critical: "+isCritical()+" botch: "+isBotch()+")");
+			System.out.println("Ataque: "+this.getClass().getSimpleName()+" con "+getWeapon().getName()+"  roll "+getRollResult()+" + "+getFinalModifier()+"   against "+getFinalTargetNumber()+"  result: "+getResult()+" (hits:"+hits()+" critical: "+isCritical()+" botch: "+isBotch()+")");
 		}else{
-			System.out.println("Ataque: "+this.getClass().getSimpleName()+" sin arama? roll "+getRollResult()+" + "+getModifier()+"   against "+getTargetNumber()+"  result: "+getResult()+" (hits:"+hits()+" critical: "+isCritical()+" botch: "+isBotch()+")");
+			System.out.println("Ataque: "+this.getClass().getSimpleName()+" sin arma? roll "+getRollResult()+" + "+getFinalModifier()+"   against "+getFinalTargetNumber()+"  result: "+getResult()+" (hits:"+hits()+" critical: "+isCritical()+" botch: "+isBotch()+")");
 		}
 	}
 	

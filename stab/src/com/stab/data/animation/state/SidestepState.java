@@ -16,14 +16,16 @@ public class SidestepState extends ValueState {
 		super.setTimed(700, SyncState.ID);
 		this.a=a;
 		if (Roll.d2()==1)
-			a=a+Math.PI;
+			this.a=this.a+(Math.PI/2);
 		else
-			a=a-Math.PI;
+			this.a=this.a-(Math.PI/2);
 		
 		InterpolatorValueProvider r= new InterpolatorValueProvider(0,0,300,32,600,32,700,0);
 		setRadius(r);
+		setRotation((float)this.a);
 		addUpdater(new Orbit());
 		
+		System.out.println("sidestep: "+Math.toDegrees(a)+" > "+Math.toDegrees(this.a));
 	}
 	
 	@Override
@@ -32,7 +34,7 @@ public class SidestepState extends ValueState {
 		TagPoint p= new TagPoint();
 		p.setPos(sprite.getPos());
 		sprite.setRef(p);
-		sprite.setA(a);
+		//sprite.setA(a);
 	}
 	
 	

@@ -207,31 +207,24 @@ public abstract class Attack extends SkillRoll{
 	protected int evalRoll(int roll) {
 		int i= super.evalRoll(roll);
 		//Comprobar blocked, parried, dodged
-		if (misses()){
+		if (i==MISS){
 			int dif=getFinalTargetNumber()-getRollResult();
 			BaseInfo t=getTarget();
 			//En su momento pensarse COVER
 			int shield=t.getValue(StabConstants.SHIELDDEFENSE);
-			if (dif<=shield)
-				i=BLOCK;
-			else{
-				dif=dif-shield;
-				int active=t.getValue(StabConstants.ACTIVEDEFENSE);
-				if (dif<=active)
-					i=DODGE;
-					//Aqui irira el parry (muy especifico, dependiendo del arma, etc)
-				else{
-					//Armor o simplemente miss
-					dif=dif-active;
-					int armor=t.getValue(StabConstants.PASSIVEDEFENSE);
-					if (dif<=armor)
-						i=ARMOR;
-					else{
-						//MISS
-					}
-				}
+			if (dif<=shield && !isTouch())
+				return BLOCK;
+			dif=dif-shield;
+			int active=t.getValue(StabConstants.ACTIVEDEFENSE);
+			if (dif<=active) //Aqui comprobar isFlatFooted
+			 	return DODGE;
+			dif=dif-active;
+			int armor=t.getValue(StabConstants.ARMORDEFENSE);
+			if (dif<=armor && !isTouch())
+				return ARMOR;
+				
 			}
-		}
+		
 		return i;
 	}
 	

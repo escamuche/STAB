@@ -25,7 +25,6 @@ public interface SpellProperties {
 	public static final int ANYWHERE=5; //100000
 	public static final int FIXED=100; //especial o fijo por conjuro (porbablemente esta constante sobre)
 	
-	//Tipo de elemento afectado... quizas esto deba subir al motor en si mismo
 	
 	
 	

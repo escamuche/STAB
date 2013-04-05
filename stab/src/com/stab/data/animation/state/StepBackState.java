@@ -13,11 +13,12 @@ public class StepBackState extends ValueState {
 	
 	public StepBackState(double a) {
 		super.setTimed(700, SyncState.ID);
-		this.a=a+Math.PI*2;
+		this.a=a+Math.PI;
 		InterpolatorValueProvider r= new InterpolatorValueProvider(0,0,300,32,600,32,700,0);
 		setRadius(r);
+		setRotation((float)this.a);
 		addUpdater(new Orbit());
-		
+		System.out.println("stepback: "+Math.toDegrees(a)+" > "+Math.toDegrees(this.a));
 	}
 	
 	@Override
@@ -26,7 +27,7 @@ public class StepBackState extends ValueState {
 		TagPoint p= new TagPoint();
 		p.setPos(sprite.getPos());
 		sprite.setRef(p);
-		sprite.setA(a);
+		
 	}
 	
 	
