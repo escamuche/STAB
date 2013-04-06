@@ -32,7 +32,7 @@ public class WeaponAttack extends Attack {
 	int critMultiplier;
 	
 	public WeaponAttack(BaseInfo instigator,Weapon weapon,BaseInfo target) {
-		super(instigator);
+		super(instigator,target);
 		//Valores por defecto de ejemplo
 		animationType=SwingAnimation.ID;
 		onDamage= new ArrayList<Applicable>();

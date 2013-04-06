@@ -1,14 +1,11 @@
 package com.stab.data.info.applicable;
 
-import java.util.ArrayList;
-
 import com.stab.data.StabConstants;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.Info;
 import com.stab.model.info.trait.Modifier;
 import com.stab.util.Roll;
 
-public abstract class Attack extends SkillRoll{
+public abstract class Attack extends OpposedSkillRoll{
 
 	
 	public static final int HIT = SUCCESS;
@@ -29,8 +26,8 @@ public abstract class Attack extends SkillRoll{
 	boolean touch;
 	boolean ranged;
 	
-	public Attack(BaseInfo instigator) {
-		super(instigator,StabConstants.TOHIT,0);
+	public Attack(BaseInfo instigator,BaseInfo target) {
+		super(instigator,StabConstants.TOHIT,target,StabConstants.AC);  //Realmente no se usa lo de AC (ver mas abajo en recalcTarget
 		setDice(20);
 		setCritRange(1);
 		setBotchRange(1);
@@ -73,18 +70,15 @@ public abstract class Attack extends SkillRoll{
 	@Override
 	protected void recalcTarget() {
 		BaseInfo target=getTarget();
-		int i=10;
-		if (isTouch()){
-			i=target.getValue(StabConstants.PASSIVEDEFENSE);
+		int i;
+		i=Modifier.getModFrom(StabConstants.PASSIVEDEFENSE,target.getModifiers(StabConstants.PASSIVEDEFENSE),getTargetModifiers(StabConstants.PASSIVEDEFENSE));
+		
+		
 			//TODO: comprobaciones unaware, flatfooted, etc
-			i=i+target.getValue(StabConstants.ACTIVEDEFENSE);
-		}
-		else{
-			i=target.getValue(StabConstants.PASSIVEDEFENSE);
-			i=i+target.getValue(StabConstants.ARMORDEFENSE);
-			i=i+target.getValue(StabConstants.SHIELDDEFENSE);
-			//TODO: comprobaciones unaware, flatfooted, etc
-			i=i+target.getValue(StabConstants.ACTIVEDEFENSE);
+			i=i+Modifier.getModFrom(StabConstants.ACTIVEDEFENSE,target.getModifiers(StabConstants.ACTIVEDEFENSE),getTargetModifiers(StabConstants.ACTIVEDEFENSE));
+		if (!isTouch()){
+			i=i+Modifier.getModFrom(StabConstants.ARMORDEFENSE,target.getModifiers(StabConstants.ARMORDEFENSE),getTargetModifiers(StabConstants.ARMORDEFENSE));
+			i=i+Modifier.getModFrom(StabConstants.SHIELDDEFENSE,target.getModifiers(StabConstants.SHIELDDEFENSE),getTargetModifiers(StabConstants.SHIELDDEFENSE));
 		}
 		i=i+getTargetNumber();
 		setFinalTargetNumber(i);	

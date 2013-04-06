@@ -46,14 +46,15 @@ public abstract class SkillRoll extends AdvancedRollApplicable {
 
 	
 	public Collection<Modifier>getModifiers(String attr){
-		ArrayList<Modifier> list=new ArrayList<Modifier>(); 
+		/*ArrayList<Modifier> list=new ArrayList<Modifier>(); 
 		for (Modifier m:modifiers)
 				if (attr.equals(m.getAttribute()))
 					list.add(m);
-		return list;
+		return list;/**/
+		return Modifier.getModifiers(attr,modifiers);
 	}
 	
-
+	
 	
 	
 	
