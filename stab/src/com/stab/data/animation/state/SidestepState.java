@@ -1,8 +1,8 @@
 package com.stab.data.animation.state;
 
 import com.stab.client.slick.base.updaters.SyncState;
+import com.stab.common.utils.Roll;
 import com.stab.common.value.InterpolatorValueProvider;
-import com.stab.util.Roll;
 import com.tien.princess.engine.sprite.Sprite;
 import com.tien.princess.engine.sprite.base.TagPoint;
 import com.tien.princess.engine.sprite.common.states.ValueState;

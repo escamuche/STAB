@@ -1,8 +1,8 @@
 package com.stab.data.info.applicable;
 
+import com.stab.common.utils.Roll;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
-import com.stab.util.Roll;
 
 public class RolledDamage extends Damage {
 

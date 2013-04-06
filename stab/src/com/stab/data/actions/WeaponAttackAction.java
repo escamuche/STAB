@@ -13,6 +13,7 @@ import com.stab.data.info.equipment.BasicWeapon;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.RangedWeapon;
 import com.stab.data.info.equipment.Weapon;
+import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.action.TargetAction;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.basic.token.Token;
@@ -138,9 +139,10 @@ public class WeaponAttackAction extends TargetAction{
 
 	private void playBlockAnimation(WeaponAttack ad,BaseInfo origin, Token target) {
 		String icon=null;
-		if (target.getInfo() instanceof BaseInfo){
+		if (target.getInfo() instanceof Creature){
 			//icon=((BaseInfo)target.getInfo()).get 
 			icon="effects/woodenshield";
+			icon=PathfinderUtils.getShieldIcon((Creature)target.getInfo());
 		}
 		if (icon==null)
 			return;

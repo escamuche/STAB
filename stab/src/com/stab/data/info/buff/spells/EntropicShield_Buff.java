@@ -1,11 +1,11 @@
 package com.stab.data.info.buff.spells;
 
+import com.stab.common.utils.Roll;
 import com.stab.data.info.applicable.Attack;
 import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.trait.base.Buff;
-import com.stab.util.Roll;
 
 public class EntropicShield_Buff extends Buff implements Attends<WeaponAttack> {
 

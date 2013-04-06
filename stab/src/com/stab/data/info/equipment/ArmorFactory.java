@@ -81,22 +81,22 @@ public class ArmorFactory extends ItemFactory{
 		a=new Armor("full plate armor",9,1,-6,Armor.HEAVY_ARMOR,35);
 		register(FULLPLATE,a);
 	
-		a=new Armor("buckler shield",1,100,-1,Armor.SHIELD,5);
+		a=new Shield("buckler shield",1,100,-1,Armor.SHIELD,5,"effects/woodenshield");
 		register(BUCKLER,a);
 		
-		a=new Armor("light wooden shield",1,100,-1,Armor.SHIELD,5);
+		a=new Shield("light wooden shield",1,100,-1,Armor.SHIELD,5,"effects/woodenshield");
 		register(LIGHTWOODENSHIELD,a);
 		
-		a=new Armor("light steel shield",1,100,-1,Armor.SHIELD,5);
+		a=new Shield("light steel shield",1,100,-1,Armor.SHIELD,5,"effects/metalshield");
 		register(LIGHTSTEELSHIELD,a);
 		
-		a=new Armor("heavy wooden shield",2,100,-2,Armor.SHIELD,15);
+		a=new Shield("heavy wooden shield",2,100,-2,Armor.SHIELD,15,"effects/woodenshield");
 		register(HEAVYWOODENSHIELD,a);
 		
-		a=new Armor("heavy steel shield",2,100,-2,Armor.SHIELD,15);
+		a=new Shield("heavy steel shield",2,100,-2,Armor.SHIELD,15,"effects/metalshield");
 		register(HEAVYSTEELSHIELD,a);
 		
-		a=new Armor("tower shield",4,2,-10,Armor.SHIELD,50);
+		a=new Shield("tower shield",4,2,-10,Armor.SHIELD,50,"effects/metalshield");
 		register(TOWERSHIELD,a);
 	
 	

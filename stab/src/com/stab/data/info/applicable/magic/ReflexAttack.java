@@ -1,9 +1,9 @@
 package com.stab.data.info.applicable.magic;
 
+import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
-import com.stab.util.Roll;
 
 public class ReflexAttack extends Applicable{
 

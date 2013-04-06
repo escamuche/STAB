@@ -1,9 +1,9 @@
 package com.stab.data.info.buff.spells;
 
+import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.Buff;
-import com.stab.util.Roll;
 
 public class MagicStone_Buff extends Buff {
 

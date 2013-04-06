@@ -2,6 +2,7 @@ package com.stab.data.info.player;
 
 
 
+import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.info.BasicAttributes;
@@ -10,7 +11,6 @@ import com.stab.data.info.equipment.Item;
 import com.stab.model.basic.token.Token;
 import com.stab.model.info.base.Character;
 import com.stab.model.info.trait.base.Equipment;
-import com.stab.util.Roll;
 
 public class PathfinderCharacter extends Character {
 	

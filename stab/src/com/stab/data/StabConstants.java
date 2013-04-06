@@ -195,10 +195,9 @@ public class StabConstants {
 	
 	
 	
-	//Tablas de random
 	
 	
-	public static final String RND_GOBLIN="1:NULL;2:"+Goblin.ID+";2:"+GoblinShaman.ID+";1:"+Goblin.ID+","+Goblin.ID+";1:"+Goblin.ID+","+GoblinShaman.ID+";";
+	
 	
 	
 	

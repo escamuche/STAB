@@ -1,5 +1,6 @@
 package com.stab.data.actions.player.spells.cleric.level1;
 
+import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.info.applicable.magic.FortitudeAttack;
@@ -11,7 +12,6 @@ import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.applicable.base.Heal;
 import com.stab.model.info.trait.base.VisualEffect;
-import com.stab.util.Roll;
 
 public class CureLight extends SpellOnTarget{
 	

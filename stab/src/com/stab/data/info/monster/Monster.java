@@ -1,12 +1,12 @@
 package com.stab.data.info.monster;
 
+import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.info.BasicAttributes;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.base.Equipment;
-import com.stab.util.Roll;
 
 public class Monster extends Creature {
 

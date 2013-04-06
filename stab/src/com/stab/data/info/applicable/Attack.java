@@ -1,9 +1,9 @@
 package com.stab.data.info.applicable;
 
+import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.trait.Modifier;
-import com.stab.util.Roll;
 
 public abstract class Attack extends OpposedSkillRoll{
 

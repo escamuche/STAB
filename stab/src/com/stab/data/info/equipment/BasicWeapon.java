@@ -1,5 +1,6 @@
 package com.stab.data.info.equipment;
 
+import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.data.info.feat.general.MartialWeaponProficiency_Feat;
@@ -7,7 +8,6 @@ import com.stab.data.info.feat.general.NaturalWeaponProficiency_Feat;
 import com.stab.data.info.feat.general.SimpleWeaponProficiency_Feat;
 import com.stab.data.info.feat.general.WeaponProficiency_Feat;
 import com.stab.model.info.BaseInfo;
-import com.stab.util.Roll;
 
 /**
  * arma basica, con los datos principales

@@ -4,10 +4,10 @@ import java.awt.Point;
 
 import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.common.Constants;
+import com.stab.common.utils.Roll;
 import com.stab.data.animation.sprite.MagicMissileSprite;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTargetAnimation;
-import com.stab.util.Roll;
 
 public class MagicMissileAnimation extends OnTargetAnimation{
 
