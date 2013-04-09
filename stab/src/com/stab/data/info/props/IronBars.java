@@ -1,5 +1,6 @@
 package com.stab.data.info.props;
 
+import com.stab.model.info.Info;
 import com.stab.model.info.base.Door;
 
 public class IronBars extends Door {
@@ -26,6 +27,21 @@ public class IronBars extends Door {
 		playSound("door_close");
 		setResource("ironBarsOn");
 		super.close();
+	}
+	
+	
+	@Override
+	protected boolean canOpen(Info actor) {
+		if (actor!=this)   //Para solo permitir que se abra por mecanismos
+			return false;
+		return super.canOpen(actor);
+	}
+	
+	@Override
+	protected boolean canClose(Info actor) {
+		if (actor!=this)   //Para solo permitir que se abra por mecanismos
+			return false;
+		return super.canClose(actor);
 	}
 	
 }

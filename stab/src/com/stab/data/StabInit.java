@@ -99,6 +99,7 @@ import com.stab.data.info.props.Barrel;
 import com.stab.data.info.props.Brazier;
 import com.stab.data.info.props.Crate;
 import com.stab.data.info.props.Dummy;
+import com.stab.data.info.props.IronBars;
 import com.stab.data.info.props.StabRandomSpawner;
 import com.stab.data.info.props.Statue;
 import com.stab.data.info.props.WoodenDoor;
@@ -108,6 +109,7 @@ import com.stab.data.scene.Feats;
 import com.stab.data.scene.PrayerBook;
 import com.stab.data.scene.SpellBook;
 import com.stab.data.scene.StabLobby;
+import com.stab.data.tokens.IronBarsToken;
 import com.stab.data.ui.PathfinderTokenCard;
 import com.stab.data.ui.StabActionBar;
 import com.stab.data.utils.DefaultBlockData;
@@ -116,6 +118,7 @@ import com.stab.fw.BasicObjectFactory;
 import com.stab.fw.EntityManager;
 import com.stab.model.action.ActionLibrary;
 import com.stab.model.action.base.InteractAction;
+import com.stab.model.basic.scenes.TokenBasedScene;
 import com.stab.model.info.trait.base.Equipment;
 
 public class StabInit {
@@ -205,6 +208,7 @@ public class StabInit {
 		of.setMapping(Brazier.class);
 		of.setMapping(StabRandomSpawner.class);
 		of.setMapping(Statue.class);
+		of.setMapping(IronBars.class);
 		
 		//criaturas
 		of.setMapping(Zombie.class);
@@ -247,7 +251,9 @@ public class StabInit {
 		of.setMapping(StepBackAnimation.class);
 		of.setMapping(SidestepAnimation.class);
 		
-		
+		//Tokens
+		of.setMapping(IronBarsToken.class);
+		TokenBasedScene.tokenFactory.setMapping(IronBars.ID, IronBarsToken.ID);
 		
 		wf=new WeaponFactory();
 		af=new ArmorFactory();
