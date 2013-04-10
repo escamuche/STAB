@@ -28,6 +28,7 @@ import com.stab.data.actions.player.spells.cleric.level1.MagicStone;
 import com.stab.data.actions.player.spells.cleric.level1.ShieldFaith;
 import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
 import com.stab.data.actions.player.spells.wizard.level0.Daze;
+import com.stab.data.actions.player.spells.wizard.level0.DisruptUndead;
 import com.stab.data.actions.player.spells.wizard.level0.Flare;
 import com.stab.data.actions.player.spells.wizard.level0.OpenClose;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
@@ -311,6 +312,7 @@ public class StabInit {
 		getActionLibrary().register(new ShieldFaith());
 		getActionLibrary().register(new EntropicShield());
 		getActionLibrary().register(new Command());
+		getActionLibrary().register(new DisruptUndead());
 	
 		
 	}

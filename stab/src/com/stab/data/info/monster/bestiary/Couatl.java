@@ -26,7 +26,7 @@ public class Couatl extends Outsider {
 		setMaxMovePoints(12);
 	
 		this.getActionSet().addAction(Daze.ID);
-		//this.getActionSet().addAction(DisruptUndead.ID);
+		this.getActionSet().addAction(DisruptUndead.ID);
 		this.getActionSet().addAction(RayFrost.ID);
 		this.getActionSet().addAction(Resistance.ID);
 		this.getActionSet().addAction(MageArmor.ID);
