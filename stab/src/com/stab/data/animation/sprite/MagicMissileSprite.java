@@ -1,5 +1,7 @@
 package com.stab.data.animation.sprite;
 
+import org.newdawn.slick.Color;
+
 import com.stab.client.slick.base.util.PaintUtils;
 import com.stab.client.slick.base.visualobjects.LightSprite;
 import com.stab.client.slick.base.visualobjects.StabSprite;
@@ -21,6 +23,7 @@ public class MagicMissileSprite extends LightSprite {
 	public MagicMissileSprite(long t) {
 		setLightOn(true);
 		setLightIntensity(24);
+		setLightColor(Color.blue);
 		setPainter(PaintUtils.getPainter("PARTICLE#magicmissile"));
 		
 		BasicAnimState st=new BasicAnimState(t);

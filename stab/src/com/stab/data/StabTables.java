@@ -37,10 +37,10 @@ public class StabTables extends Reference<WeightedTable>{
 		
 		InfosWeightedTable t = new InfosWeightedTable();
 		t.addValue(1, "NULL");
-		t.addValue(2, Goblin.ID);
+	/*	t.addValue(2, Goblin.ID);
 		t.addValue(2, GoblinShaman.ID);
 		t.addValue(1, Goblin.ID,GoblinShaman.ID);
-		t.addValue(1, Goblin.ID,Goblin.ID);
+		t.addValue(1, Goblin.ID,Goblin.ID);/**/
 		register(RND_GOBLIN,t);
 		
 	}

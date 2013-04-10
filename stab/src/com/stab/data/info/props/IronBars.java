@@ -12,7 +12,7 @@ public class IronBars extends Door {
 		setMaxHp(60);
 		setMaxEp(0);
 		healFully();
-		close();
+		setResource("ironBarsOn");
 	}
 	
 	
