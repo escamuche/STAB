@@ -7,6 +7,7 @@ import com.stab.client.ClientEntityManager;
 import com.stab.client.VisualEngine;
 import com.stab.client.slick.StabVisualEngine;
 import com.stab.client.slick.base.visualobjects.Button_sprite;
+import com.stab.client.slick.base.visualobjects.token.ImageToken_sprite;
 import com.stab.common.fw.ServiceManager;
 import com.stab.data.actions.HealAction;
 import com.stab.data.actions.WeaponAttackAction;
@@ -144,6 +145,7 @@ public class StabInit {
 			sv.getFactory().setMapping(ActionSlotButton.ID,Button_sprite.class);
 			sv.getFactory().setMapping(PathfinderTokenCard.class);
 			sv.getFactory().setMapping(StabActionBar.class);
+			sv.getFactory().setMapping(IronBarsToken.ID,ImageToken_sprite.class);
 		}
 	}
 
