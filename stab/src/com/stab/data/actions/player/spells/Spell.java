@@ -17,7 +17,7 @@ public class Spell implements SpellProperties {
 	int medium=TARGET;
 	
 	int range=0;
-	boolean affectedBySR=false;
+	boolean affectedBySR=true;
 	
 	public void setLevel(int level) {
 		this.level = level;

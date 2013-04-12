@@ -20,6 +20,7 @@ public class Bleed extends SpellOnTarget{
 	     setResource("actions/ability_mage_arcanebarrage");
 	     setName("Bleed");
 	     this.setEffectType(DEBUFF);
+	     this.setSave(StabConstants.FORTITUDESAVE);
 		}
 
 	@Override
