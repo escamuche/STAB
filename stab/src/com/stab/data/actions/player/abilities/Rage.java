@@ -24,6 +24,7 @@ public class Rage extends SelfAction{
 	public boolean affect(Info instigator,Info receive) {
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target=(BaseInfo)receive;
+		
 		if(target.hasTrait(Rage_Buff.ID)){ //si tiene rabia activa la quita y vuelve
 			target.removeTrait(Rage_Buff.ID);
 			return true;
