@@ -2,7 +2,7 @@ package com.stab.data.actions.player;
 
 
 import com.stab.data.actions.player.spells.cleric.level0.Guidance;
-import com.stab.data.actions.player.spells.cleric.level0.ResistanceCleric;
+import com.stab.data.actions.player.spells.cleric.level0.Resistance;
 import com.stab.data.actions.player.spells.cleric.level1.Bane;
 import com.stab.data.actions.player.spells.cleric.level1.Bless;
 import com.stab.data.actions.player.spells.cleric.level1.CureLight;
@@ -19,7 +19,7 @@ public class ClericActionSet extends PathfinderActionSet {
 		
 		
 		this.addAction(Guidance.ID);
-		this.addAction(ResistanceCleric.ID);
+		this.addAction(Resistance.ID);
 		this.addAction(Bane.ID);
 		this.addAction(Bless.ID);
 		this.addAction(CureLight.ID);

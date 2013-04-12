@@ -7,7 +7,7 @@ import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 
-public class ResistanceCleric extends SpellOnTarget{
+public class Resistance extends SpellOnTarget{
 	
 	public static final String ID="RESISTANCE_CLERIC";
 
@@ -23,7 +23,7 @@ public class ResistanceCleric extends SpellOnTarget{
 		return true;
 		}
 	
-	public ResistanceCleric() {
+	public Resistance() {
 		setLevel(0);
 		setCasterClass(StabConstants.CLERICCASTER);
 		setTargetClass(PhysicalToken.class);

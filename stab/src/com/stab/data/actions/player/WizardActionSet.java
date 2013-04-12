@@ -5,7 +5,7 @@ import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
 import com.stab.data.actions.player.spells.wizard.level0.Flare;
 import com.stab.data.actions.player.spells.wizard.level0.OpenClose;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
-import com.stab.data.actions.player.spells.wizard.level0.Resistance;
+import com.stab.data.actions.player.spells.wizard.level0.Resistance_Wizard;
 import com.stab.data.actions.player.spells.wizard.level0.unfinished.DancingLights;
 import com.stab.data.actions.player.spells.wizard.level1.ChillTouch;
 import com.stab.data.actions.player.spells.wizard.level1.EnlargePerson;
@@ -27,7 +27,7 @@ public class WizardActionSet extends PathfinderActionSet {
 		this.addAction(Flare.ID);
 		this.addAction(OpenClose.ID);
 		this.addAction(RayFrost.ID);
-		this.addAction(Resistance.ID);
+		this.addAction(Resistance_Wizard.ID);
 		this.addAction(ChillTouch.ID);
 		this.addAction(EnlargePerson.ID);
 		this.addAction(ExpeditiousRetreat.ID);
@@ -48,7 +48,7 @@ public class WizardActionSet extends PathfinderActionSet {
 				this.setAction(Flare.ID,5);
 				this.setAction(RayFrost.ID, 3);
 				this.setAction(OpenClose.ID,6);
-				this.setAction(Resistance.ID,7);/**/
+				this.setAction(Resistance_Wizard.ID,7);/**/
 		
 	}
 }

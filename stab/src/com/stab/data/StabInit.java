@@ -16,7 +16,7 @@ import com.stab.data.actions.feats.PowerAttack;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.abilities.Rage;
 import com.stab.data.actions.player.spells.cleric.level0.Guidance;
-import com.stab.data.actions.player.spells.cleric.level0.ResistanceCleric;
+import com.stab.data.actions.player.spells.cleric.level0.Resistance;
 import com.stab.data.actions.player.spells.cleric.level1.Bane;
 import com.stab.data.actions.player.spells.cleric.level1.Bless;
 import com.stab.data.actions.player.spells.cleric.level1.Command;
@@ -33,7 +33,7 @@ import com.stab.data.actions.player.spells.wizard.level0.DisruptUndead;
 import com.stab.data.actions.player.spells.wizard.level0.Flare;
 import com.stab.data.actions.player.spells.wizard.level0.OpenClose;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
-import com.stab.data.actions.player.spells.wizard.level0.Resistance;
+import com.stab.data.actions.player.spells.wizard.level0.Resistance_Wizard;
 import com.stab.data.actions.player.spells.wizard.level0.TouchFatigue;
 import com.stab.data.actions.player.spells.wizard.level0.unfinished.DancingLights;
 import com.stab.data.actions.player.spells.wizard.level1.CharmPerson;
@@ -281,7 +281,7 @@ public class StabInit {
 		getActionLibrary().register(new Flare());
 		getActionLibrary().register(new OpenClose());
 		getActionLibrary().register(new RayFrost());
-		getActionLibrary().register(new Resistance());
+		getActionLibrary().register(new Resistance_Wizard());
 		getActionLibrary().register(new Daze());
 		getActionLibrary().register(new TouchFatigue());
 		
@@ -302,7 +302,7 @@ public class StabInit {
 		getActionLibrary().register(new Jump());
 	
 		getActionLibrary().register(new Guidance());
-		getActionLibrary().register(new ResistanceCleric());
+		getActionLibrary().register(new Resistance());
 		
 		getActionLibrary().register(new CureLight());
 		getActionLibrary().register(new Bless());
