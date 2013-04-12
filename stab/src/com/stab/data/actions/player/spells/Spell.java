@@ -17,6 +17,7 @@ public class Spell implements SpellProperties {
 	int medium=TARGET;
 	
 	int range=0;
+	int cost=0;
 	boolean affectedBySR=true;
 	
 	public void setLevel(int level) {
@@ -135,9 +136,9 @@ public class Spell implements SpellProperties {
 		return affectedBySR;
 	}
 	
-	
-
-	
+	public int getSPCost(int level){
+		return (level*5)+5;
+	}
 	
 	
 	public SavingThrowEffect getSavingThrow(BaseInfo caster){
