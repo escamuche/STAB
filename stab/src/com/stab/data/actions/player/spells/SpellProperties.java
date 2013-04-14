@@ -39,7 +39,7 @@ public interface SpellProperties {
 	public int getMedium();
 	public boolean canCast(BaseInfo caster);
 	public boolean isAffectedBySR();
-	public SavingThrowEffect getSavingThrow(BaseInfo caster);
+	public SavingThrowEffect getSavingThrow(BaseInfo caster,BaseInfo target);
 	
 	
 	

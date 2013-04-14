@@ -3,8 +3,6 @@ package com.stab.data.actions.player.spells;
 import com.stab.data.StabConstants;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.Info;
-import com.stab.model.info.applicable.Applicable;
 
 public class Spell implements SpellProperties {
 	
@@ -141,9 +139,11 @@ public class Spell implements SpellProperties {
 	}
 	
 	
-	public SavingThrowEffect getSavingThrow(BaseInfo caster){
+	public SavingThrowEffect getSavingThrow(BaseInfo caster,BaseInfo target){
 		if (this.getSave()!=null){
-			SavingThrowEffect e= new SavingThrowEffect(caster,getSave(),getDC(caster));
+			SavingThrowEffect e= new SavingThrowEffect(caster,getSave(),target);
+			int i=getDC(caster);
+			e.setTargetNumber(i);
 			return e;
 		}
 		return null;

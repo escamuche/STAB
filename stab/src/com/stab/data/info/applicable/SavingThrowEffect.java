@@ -7,7 +7,7 @@ import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.Modifier;
 
-public  class SavingThrowEffect extends SkillRoll {
+public  class SavingThrowEffect extends OpposedSkillRoll {
 
 	
 	
@@ -16,14 +16,7 @@ public  class SavingThrowEffect extends SkillRoll {
 	boolean nullIfSuccess;
 	ArrayList<Applicable> toApplyPass;
 	
-	/**
-	 * Usar esta version si no importa el instigador.
-	 * @param save atributo a tirar
-	 * @param diff dificultad
-	 */
-	public SavingThrowEffect( String save, int diff){
-		this(null, save, diff);
-	}
+
 	
 	/**
 	 * 
@@ -33,8 +26,8 @@ public  class SavingThrowEffect extends SkillRoll {
 	 * @param save			Que atributo tirar
 	 * @param diff			la dificultad, ya calculada de antemano.
 	 */
-	public SavingThrowEffect(BaseInfo instigator, String save, int diff) {
-		super(instigator, save, diff);
+	public SavingThrowEffect(BaseInfo instigator, String save, BaseInfo target) {
+		super(instigator, save, target,null);
 		nullIfSuccess=false;
 		toApplyPass= new ArrayList<Applicable> ();
 	}
@@ -44,6 +37,13 @@ public  class SavingThrowEffect extends SkillRoll {
 		list.addAll(((BaseInfo)getTarget()).getModifiers(getSkill()));
 		list.addAll(getModifiers(getSkill()));
 		setModifier(Modifier.getValue(list)+getModifier());
+	}
+	
+	@Override
+	protected void recalcTarget() {
+		ArrayList<Modifier>list=new ArrayList<Modifier>();
+		list.addAll(getTargetModifiers(null));
+		setFinalTargetNumber(Modifier.getValue(list)+getTargetNumber());
 	}
 
 	public void setNullIfSuccess(boolean nullIfSuccess) {

@@ -40,10 +40,11 @@ public class OpposedSkillRoll extends SkillRoll {
 
 	
 	public Collection<Modifier>getTargetModifiers(String attr){
-		ArrayList<Modifier> list=new ArrayList<Modifier>(); 
+		return Modifier.getModifiers(attr,opposedModifiers);
+		/*ArrayList<Modifier> list=new ArrayList<Modifier>(); 
 		for (Modifier m:opposedModifiers)
-				if (attr.equals(m.getAttribute()))
+				if (attr==null || attr.equals(m.getAttribute()))
 					list.add(m);
-		return list;
+		return list;/**/
 	}
 }

@@ -84,8 +84,8 @@ public abstract class SpellOnSelf extends SelfAction  implements SpellProperties
 	}
 	
 	@Override
-	public SavingThrowEffect getSavingThrow(BaseInfo caster) {
-		return spell.getSavingThrow(caster);
+	public SavingThrowEffect getSavingThrow(BaseInfo caster,BaseInfo target) {
+		return spell.getSavingThrow(caster,target);
 	}
 	
 	public void setRange(int range){
