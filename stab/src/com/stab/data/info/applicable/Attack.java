@@ -180,10 +180,7 @@ public abstract class Attack extends OpposedSkillRoll{
 	}
 
 
-	@Override
-	public void apply() {
-		
-	}
+	
 	
 	@Override
 	public void validate() {

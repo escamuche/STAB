@@ -1,7 +1,10 @@
 package com.stab.data.actions.player.spells;
 
 import com.stab.data.StabConstants;
+import com.stab.data.info.applicable.BreakSpellResistance;
+import com.stab.data.info.applicable.OpposedSkillRoll;
 import com.stab.data.info.applicable.SavingThrowEffect;
+import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.model.action.SelfAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
@@ -79,7 +82,13 @@ public abstract class SpellOnSelf extends SelfAction  implements SpellProperties
 		return spell.isAffectedBySR();
 	}
 
-	public boolean isHarmfulFor(Info target) {
+	public boolean isHarmfulFor(Info instigator,Info target) {
+		if (target instanceof BaseInfo){
+			int i=this.getEffectType((BaseInfo)target);
+			if ((i & OFFENSIVE) ==OFFENSIVE )
+				return true;
+		}
+		
 		return false;
 	}
 	
@@ -92,5 +101,103 @@ public abstract class SpellOnSelf extends SelfAction  implements SpellProperties
 		spell.setRange(range);
 	}
 	
+	
+	@Override
+	public boolean execute(BaseInfo self) {
+		// TODO Auto-generated method stub
+		return super.execute(self);
+	}
+	
+	@Override
+	public boolean affect(Info instigator, Info t) {
+		//Este comportamiento estandar es para baseinfos. si es otra cosa, este metodo estara sobreescrito
+		if (!(instigator instanceof BaseInfo))
+			return false;
+		if (!(t instanceof BaseInfo))
+			return false;
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target=(BaseInfo)t;
+		
+		if (isHarmfulFor(instigator,target)){
+			
+			/* esto va fuera de aqui
+			//Primro, resolver ataque
+			WeaponAttack attack=null;
+			switch(spell.getMedium()){
+				case SpellProperties.TOUCH: attack=new WeaponAttack(caster,null,target); break;
+				case SpellProperties.RAY: break;
+				case SpellProperties.MISSILE: break;
+			}
+			if (attack!=null){
+				
+			}
+			/**/
+			
+			//primero, spell resistance
+			if (spell.isAffectedBySR())
+				if (target.getValue(StabConstants.SPELLRESISTANCE)>0){
+					//Tirada de spell resistance
+					 BreakSpellResistance bsr= new BreakSpellResistance(caster, spell.getCasterClass(), target);
+					 bsr.check();
+					 if (bsr.failed()){
+						 playSRFailAnimation(caster, target);
+						 return spellResisted(caster,target);
+					 }
+				}
+			
+			//segundo, resolver tirada de salvacion
+			
+			if (spell.getSave()!=null){
+				SavingThrowEffect st=new SavingThrowEffect(caster, spell.getSave(), target);
+				st.setTargetNumber(spell.getDC(caster));
+				
+				st.check();
+				
+				if (st.isEvaded()){
+					playEvadedAnimation(caster, target);
+					return evadedEffect(caster, target);
+				}
+				if (st.success()){
+					playPartialEffectAnimation(caster, target);
+					return partialEffect(caster, target);
+				}
+				if (st.failed()){
+					playFullEffectAnimation(caster, target);
+					return fullEffect(caster, target);
+				}
+				//No hay mas casos.
+				return false; //por si algo falla horriblemente
+			}
+			//Si no tiene save, fullEffect
+			return fullEffect(caster,target);
+		}
+		//Si no es harmful, considerar que afecta siempre
+		//TODO: mirarse lo de resistencia magica para efectos beneficiosos
+		
+		return fullEffect(caster,target);
+		
+	}
+	
+	protected boolean fullEffect(BaseInfo caster, BaseInfo target) {
+		return true;
+	}
+	protected boolean partialEffect(BaseInfo caster, BaseInfo target) {
+		return true;
+	}
+	protected boolean evadedEffect(BaseInfo caster, BaseInfo target) {
+		return true;
+	}
+	
+	protected boolean spellResisted(BaseInfo caster, BaseInfo target) {
+		return true;
+	}
+	
+	//No olvidarse de playExecuteActionAnimation!
+	protected void playAttackHitAnimation(BaseInfo caster, BaseInfo target){};
+	protected void playAttackMissAnimation(BaseInfo caster, BaseInfo target){};
+	protected void playSRFailAnimation(BaseInfo caster, BaseInfo target){};
+	protected void playFullEffectAnimation(BaseInfo caster, BaseInfo target){};
+	protected void playPartialEffectAnimation(BaseInfo caster, BaseInfo target){};
+	protected void playEvadedAnimation(BaseInfo caster, BaseInfo target){};
 	
 }

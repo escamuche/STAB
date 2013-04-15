@@ -150,7 +150,7 @@ public class WeaponAttack extends Attack {
 		return collapse(onCrit);
 	}
 	
-	public void apply() {
+	public void applyEffects() {
 		for (Applicable d:getEffects(isCritical())){
 			getTarget().apply(d);
 			if (d instanceof Damage)

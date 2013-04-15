@@ -62,9 +62,9 @@ public class WeaponAttackAction extends TargetAction{
 		
 		WeaponAttack ad=new WeaponAttack (atacante,arma,atacado);
 
-		atacante.ready(ad); //Esto calcula todos los bonos, daño etc
-		
-		atacado.check(ad); //esti comprueba si da o no, pero sin aplicar el resultado
+		ad.check();
+		 //Esto calcula todos los bonos, daño etc
+		 //y comprueba si da o no, pero sin aplicar el resultado
 		
 		if (ad.hits())
 			playHitAnimation(ad,atacante,target.getToken());
@@ -74,7 +74,7 @@ public class WeaponAttackAction extends TargetAction{
 	//Pensarse donde informar al arma.
 		
 		if (ad.hits()) {
-			ad.apply();
+			ad.applyEffects();
 			sleep(500);
 			return true;	
 		}

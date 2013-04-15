@@ -27,7 +27,7 @@ public class WillAttack extends Applicable{
 	}
 
 	@Override
-	public void apply() {
+	public void applyEffects() {
 		BaseInfo aMatar = getTarget();
 		BaseInfo elqueMata = (BaseInfo) getInstigator();
 		

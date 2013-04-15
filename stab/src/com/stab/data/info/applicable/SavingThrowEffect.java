@@ -78,14 +78,14 @@ public  class SavingThrowEffect extends OpposedSkillRoll {
 	
 	
 	@Override
-	public void apply() {
+	public void applyEffects() {
 		if (isEvaded())
 			return;
 		if (success()){
 			for (Applicable a:toApplyPass)
 				getTarget().apply(a);
 		}else
-			super.apply();
+			super.applyEffects();
 	}
 	
 	public void addApplicablePass(Applicable a){

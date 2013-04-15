@@ -78,7 +78,13 @@ public abstract class SpellOnTarget extends TargetAction implements SpellPropert
 		return spell.isAffectedBySR();
 	}
 
-	public boolean isHarmfulFor(Info target) {
+	public boolean isHarmfulFor(Info instigator,Info target) {
+		if (target instanceof BaseInfo){
+			int i=this.getEffectType((BaseInfo)target);
+			if ((i & OFFENSIVE) ==OFFENSIVE )
+				return true;
+		}
+		
 		return false;
 	}
 	
