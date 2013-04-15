@@ -1,6 +1,8 @@
 package com.stab.data.actions.feats;
 
 
+import java.awt.Point;
+
 import com.stab.data.StabConstants;
 import com.stab.data.info.buff.PowerAttack_Buff;
 import com.stab.model.action.SelfAction;
@@ -24,7 +26,7 @@ public class PowerAttack extends SelfAction implements ToggleableBuffAction {
 	}
 	
 	@Override
-	public boolean affect(Info instigator,Info target) {
+	public boolean affect(Info instigator,Info target,Point point) {
 		BaseInfo self=(BaseInfo)target;
 		
 		int bab = self.getValue(StabConstants.BAB);

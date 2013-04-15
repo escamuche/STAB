@@ -1,5 +1,7 @@
 package com.stab.data.actions.player.spells.cleric.level1;
 
+import java.awt.Point;
+
 import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
@@ -19,7 +21,7 @@ public class CureLight extends SpellOnTarget{
 
 
 	@Override
-	public boolean affect(Info instigator, Info receptor) {
+	public boolean affect(Info instigator, Info receptor, Point point) {
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target = (BaseInfo)receptor;
 		

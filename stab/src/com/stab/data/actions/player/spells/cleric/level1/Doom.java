@@ -1,5 +1,7 @@
 package com.stab.data.actions.player.spells.cleric.level1;
 
+import java.awt.Point;
+
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.info.applicable.magic.WillAttack;
@@ -13,7 +15,7 @@ public class Doom extends SpellOnTarget {
 	public static final String ID="DOOM";
 
 	@Override
-	public boolean affect(Info instigator, Info receptor) {
+	public boolean affect(Info instigator, Info receptor, Point point) {
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target = (BaseInfo)receptor;
 		int cl=getCasterLevel(caster);

@@ -1,5 +1,7 @@
 package com.stab.data.actions.player.spells.cleric.level1;
 
+import java.awt.Point;
+
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.data.info.buff.spells.DivineFavor_Buff;
@@ -19,7 +21,7 @@ public class DivineFavor extends SpellOnSelf{
 	}
 
 	@Override
-	public boolean affect(Info instigator,Info receive) {
+	public boolean affect(Info instigator,Info receive,Point point) {
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target=(BaseInfo)receive;
 		

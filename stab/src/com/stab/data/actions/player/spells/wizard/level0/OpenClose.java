@@ -1,5 +1,7 @@
 package com.stab.data.actions.player.spells.wizard.level0;
 
+import java.awt.Point;
+
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.model.basic.token.DoorToken;
@@ -11,7 +13,7 @@ public class OpenClose extends SpellOnTarget{
 	
 	public static final String ID="OPENCLOSE";
 
-	public boolean affect(Info instigator, Info receptor) {
+	public boolean affect(Info instigator, Info receptor, Point point) {
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target = (BaseInfo)receptor;
 		

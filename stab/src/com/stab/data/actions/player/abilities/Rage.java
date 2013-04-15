@@ -1,5 +1,7 @@
 package com.stab.data.actions.player.abilities;
 
+import java.awt.Point;
+
 import com.stab.data.StabConstants;
 import com.stab.data.info.buff.Rage_Buff;
 import com.stab.data.info.debuff.condition.FatiguedCondition;
@@ -21,7 +23,7 @@ public class Rage extends SelfAction{
 
 
 	@Override
-	public boolean affect(Info instigator,Info receive) {
+	public boolean affect(Info instigator,Info receive,Point point) {
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target=(BaseInfo)receive;
 		

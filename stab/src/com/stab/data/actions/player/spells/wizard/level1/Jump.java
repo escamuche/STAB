@@ -1,5 +1,7 @@
 package com.stab.data.actions.player.spells.wizard.level1;
 
+import java.awt.Point;
+
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.info.buff.spells.Jump_Buff;
@@ -19,9 +21,9 @@ public class Jump extends SpellOnTarget {
 	}
 
 	@Override
-	public boolean affect(Info instigator, Info receptor) {
+	public boolean affect(Info instigator,Info receptor,Point point) {
 		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target = (BaseInfo)receptor;
+		BaseInfo target=(BaseInfo)receptor;
 		int cl= getCasterLevel(caster);
 		
 		setRange(SELF);

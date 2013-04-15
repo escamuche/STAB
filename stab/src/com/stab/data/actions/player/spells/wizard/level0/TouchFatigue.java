@@ -1,10 +1,11 @@
 package com.stab.data.actions.player.spells.wizard.level0;
 
+import java.awt.Point;
+
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.info.applicable.magic.FortitudeAttack;
 import com.stab.data.info.applicable.magic.MagicAttack;
-import com.stab.data.info.buff.spells.Jump_Buff;
 import com.stab.data.info.debuff.condition.FatiguedCondition;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
@@ -27,7 +28,7 @@ public class TouchFatigue extends SpellOnTarget{
 		setRange(TOUCH);
 	}
 	@Override
-	public boolean affect(Info instigator, Info receptor) {
+	public boolean affect(Info instigator, Info receptor, Point point) {
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target = (BaseInfo)receptor;
 		int cl = getCasterLevel(caster);

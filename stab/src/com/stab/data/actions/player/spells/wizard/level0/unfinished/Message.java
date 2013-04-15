@@ -1,7 +1,10 @@
 package com.stab.data.actions.player.spells.wizard.level0.unfinished;
 
+import java.awt.Point;
+
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTile;
+import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 
 public class Message extends SpellOnTile{
@@ -20,8 +23,9 @@ public class Message extends SpellOnTile{
 
 
 	@Override
-	public boolean execute(Info arg0, int arg1, int arg2) {
-		// TODO Auto-generated method stub
+	public boolean affect(Info instigator,Info receptor,Point point) {
+		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo target=(BaseInfo)receptor;
 		return false;
 	}
 }

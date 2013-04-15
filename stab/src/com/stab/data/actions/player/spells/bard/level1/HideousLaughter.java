@@ -1,5 +1,7 @@
 package com.stab.data.actions.player.spells.bard.level1;
 
+import java.awt.Point;
+
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.model.info.Info;
@@ -20,7 +22,7 @@ public class HideousLaughter extends SpellOnTarget{
 
 
 	@Override
-	public boolean affect(Info arg0, Info arg1) {
+	public boolean affect(Info instigator, Info target,Point point) {
 		// TODO Auto-generated method stub
 		return false;
 	}

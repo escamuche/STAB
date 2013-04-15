@@ -1,5 +1,7 @@
 package com.stab.data.actions;
 
+import java.awt.Point;
+
 import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.data.info.debuff.condition.BleedCondition;
@@ -22,7 +24,7 @@ public class HealAction extends SelfAction{
 	
 	//TODO: campiar por un skillroll
 	@Override
-	public boolean affect(Info instigator,Info receive) {
+	public boolean affect(Info instigator,Info receive,Point point) {
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target=(BaseInfo)receive;
 		if(target.hasTrait(BleedCondition.ID)) {

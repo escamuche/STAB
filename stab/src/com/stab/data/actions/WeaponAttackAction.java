@@ -1,5 +1,7 @@
 package com.stab.data.actions;
 
+import java.awt.Point;
+
 import com.stab.data.StabConstants;
 import com.stab.data.animation.BlockAnimation;
 import com.stab.data.animation.MissProyectileAnimation;
@@ -45,7 +47,7 @@ public class WeaponAttackAction extends TargetAction{
 	}
 
 	@Override
-	public boolean affect(Info yo, Info target) {
+	public boolean affect(Info yo, Info target,Point point) {
 		
 		BaseInfo atacante = (BaseInfo)yo;
 		BaseInfo atacado = (BaseInfo)target;

@@ -1,5 +1,7 @@
 package com.stab.data.actions.player.spells.cleric.level0;
 
+import java.awt.Point;
+
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.info.buff.spells.Guidance_Buff;
@@ -12,7 +14,7 @@ public class Guidance extends SpellOnTarget{
 	public static final String ID="GUIDANCE";
 
 	@Override
-	public boolean affect(Info instigator, Info receptor) {
+	public boolean affect(Info instigator, Info receptor,Point point) {
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target = (BaseInfo)receptor;
 		Guidance_Buff buff = new Guidance_Buff();

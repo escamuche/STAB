@@ -1,5 +1,7 @@
 package com.stab.data.actions.player.spells;
 
+import java.awt.Point;
+
 import com.stab.data.StabConstants;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.model.action.TargetAction;
@@ -116,9 +118,9 @@ public abstract class SpellOnTarget extends TargetAction implements SpellPropert
 	}
 	
 	@Override
-	public boolean affect(Info instigator, Info target) {
+	public boolean affect(Info instigator, Info target,Point point) {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 	
 }

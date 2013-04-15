@@ -1,5 +1,7 @@
 package com.stab.data.actions.player;
 
+import java.awt.Point;
+
 import com.stab.data.animation.DefendAnimation;
 import com.stab.model.action.SelfAction;
 import com.stab.model.events.common.ConsoleMessage;
@@ -20,7 +22,7 @@ public class DefendAction extends SelfAction {
 	}
 	
 	@Override
-	public boolean affect(Info instigator,Info target) {
+	public boolean affect(Info instigator,Info target,Point point) {
 		BaseInfo self=(BaseInfo)target;
 		self.playAnimation(DefendAnimation.ID);
 		self.sendMessage(ConsoleMessage.SUCCESS, self.getText()+" defends");

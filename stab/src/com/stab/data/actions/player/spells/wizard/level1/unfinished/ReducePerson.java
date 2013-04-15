@@ -1,5 +1,7 @@
 package com.stab.data.actions.player.spells.wizard.level1.unfinished;
 
+import java.awt.Point;
+
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.model.info.BaseInfo;
@@ -19,7 +21,7 @@ public class ReducePerson extends SpellOnTarget {
 	}
 
 	@Override
-	public boolean affect(Info instigator, Info receptor) {
+	public boolean affect(Info instigator, Info receptor, Point point) {
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target = (BaseInfo)receptor;
 		return false;

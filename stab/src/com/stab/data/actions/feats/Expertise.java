@@ -1,5 +1,7 @@
 package com.stab.data.actions.feats;
 
+import java.awt.Point;
+
 import com.stab.data.StabConstants;
 import com.stab.data.info.buff.Expertise_Buff;
 import com.stab.model.action.SelfAction;
@@ -22,7 +24,7 @@ public class Expertise extends SelfAction {
 	}
 	
 	@Override
-	public boolean affect(Info instigator,Info target) {
+	public boolean affect(Info instigator,Info target,Point point) {
 		BaseInfo self=(BaseInfo)target;
 		int bab = self.getValue(StabConstants.BAB);
 		Expertise_Buff buff = new Expertise_Buff(bab);

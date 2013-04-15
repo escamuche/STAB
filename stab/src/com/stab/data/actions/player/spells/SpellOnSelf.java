@@ -1,5 +1,7 @@
 package com.stab.data.actions.player.spells;
 
+import java.awt.Point;
+
 import com.stab.data.StabConstants;
 import com.stab.data.info.applicable.BreakSpellResistance;
 import com.stab.data.info.applicable.OpposedSkillRoll;
@@ -102,23 +104,19 @@ public abstract class SpellOnSelf extends SelfAction  implements SpellProperties
 	}
 	
 	
-	@Override
-	public boolean execute(BaseInfo self) {
-		// TODO Auto-generated method stub
-		return super.execute(self);
-	}
+
 	
 	@Override
-	public boolean affect(Info instigator, Info t) {
+	public boolean affect(Info origin,Info t,Point point) {
 		//Este comportamiento estandar es para baseinfos. si es otra cosa, este metodo estara sobreescrito
-		if (!(instigator instanceof BaseInfo))
+		if (!(origin instanceof BaseInfo))
 			return false;
 		if (!(t instanceof BaseInfo))
 			return false;
-		BaseInfo caster=(BaseInfo)instigator;
+		BaseInfo caster=(BaseInfo)origin;
 		BaseInfo target=(BaseInfo)t;
 		
-		if (isHarmfulFor(instigator,target)){
+		if (isHarmfulFor(caster,target)){
 			
 			/* esto va fuera de aqui
 			//Primro, resolver ataque

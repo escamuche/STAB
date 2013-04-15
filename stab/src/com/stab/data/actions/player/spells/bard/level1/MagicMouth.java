@@ -1,5 +1,7 @@
 package com.stab.data.actions.player.spells.bard.level1;
 
+import java.awt.Point;
+
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTile;
 import com.stab.model.info.Info;
@@ -19,7 +21,7 @@ public class MagicMouth extends SpellOnTile{
 
 
 	@Override
-	public boolean execute(Info arg0, int arg1, int arg2) {
+	public boolean affect(Info instigator, Info target,Point point) {
 		// TODO Auto-generated method stub
 		return false;
 	}

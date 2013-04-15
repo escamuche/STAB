@@ -1,5 +1,7 @@
 package com.stab.data.actions.player.spells.cleric.level1;
 
+import java.awt.Point;
+
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.data.info.buff.spells.EntropicShield_Buff;
@@ -21,9 +23,9 @@ public class EntropicShield extends SpellOnSelf{
 
 
 	@Override
-	public boolean affect(Info instigator,Info receive) {
+	public boolean affect(Info instigator,Info receptor,Point point) {
 		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target=(BaseInfo)receive;
+		BaseInfo target=(BaseInfo)receptor;
 		
 			EntropicShield_Buff buff = new EntropicShield_Buff();
 			buff.setTime(getCasterLevel(caster)*10);
