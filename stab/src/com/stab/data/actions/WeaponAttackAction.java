@@ -73,7 +73,6 @@ public class WeaponAttackAction extends TargetAction{
 		else
 			playMissAnimation(ad,atacante,target.getToken());
 	
-	//Pensarse donde informar al arma.
 		
 		if (ad.hits()) {
 			ad.applyEffects();

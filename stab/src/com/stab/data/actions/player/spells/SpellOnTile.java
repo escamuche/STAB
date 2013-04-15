@@ -99,22 +99,7 @@ public abstract class SpellOnTile extends TileAction implements SpellProperties 
 		spell.setRange(range);
 	}
 	
-	@Override
-	public int getLosType() {
-		switch(spell.getMedium()){
-			case SELF:
-			case POINT:
-						return IN_RANGE;
-			case TOUCH:
-			case MISSILE:
-			case RAY:
-			case TARGET:
-						return LOS;
-			case SIGHT:
-						return IN_SIGHT;
-		}
-		return super.getLosType();
-	}
+
 	
 	@Override
 	public boolean affect(Info instigator, Info target,Point point) {

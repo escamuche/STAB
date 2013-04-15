@@ -3,10 +3,11 @@ package com.stab.data.actions.player.spells;
 import java.awt.Point;
 
 import com.stab.data.StabConstants;
+import com.stab.data.actions.WeaponAttackAction;
 import com.stab.data.info.applicable.BreakSpellResistance;
-import com.stab.data.info.applicable.OpposedSkillRoll;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.data.info.applicable.WeaponAttack;
+import com.stab.data.info.equipment.Weapon;
 import com.stab.model.action.SelfAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
@@ -103,7 +104,22 @@ public abstract class SpellOnSelf extends SelfAction  implements SpellProperties
 		spell.setRange(range);
 	}
 	
-	
+	@Override
+	public int getLosType() {
+		switch(spell.getMedium()){
+			case SELF:
+			case POINT:
+						return IN_RANGE;
+			case TOUCH:
+			case MISSILE:
+			case RAY:
+			case TARGET:
+						return LOS;
+			case SIGHT:
+						return IN_SIGHT;
+		}
+		return super.getLosType();
+	}
 
 	
 	@Override
@@ -118,84 +134,96 @@ public abstract class SpellOnSelf extends SelfAction  implements SpellProperties
 		
 		if (isHarmfulFor(caster,target)){
 			
-			/* esto va fuera de aqui
-			//Primro, resolver ataque
-			WeaponAttack attack=null;
-			switch(spell.getMedium()){
-				case SpellProperties.TOUCH: attack=new WeaponAttack(caster,null,target); break;
-				case SpellProperties.RAY: break;
-				case SpellProperties.MISSILE: break;
-			}
-			if (attack!=null){
-				
-			}
-			/**/
+			Weapon w=getWeapon(caster);
+			if (w!=null){
+				//añadir la llamada al spell
 			
-			//primero, spell resistance
-			if (spell.isAffectedBySR())
-				if (target.getValue(StabConstants.SPELLRESISTANCE)>0){
-					//Tirada de spell resistance
-					 BreakSpellResistance bsr= new BreakSpellResistance(caster, spell.getCasterClass(), target);
-					 bsr.check();
-					 if (bsr.failed()){
-						 playSRFailAnimation(caster, target);
-						 return spellResisted(caster,target);
-					 }
-				}
-			
-			//segundo, resolver tirada de salvacion
-			
-			if (spell.getSave()!=null){
-				SavingThrowEffect st=new SavingThrowEffect(caster, spell.getSave(), target);
-				st.setTargetNumber(spell.getDC(caster));
-				
-				st.check();
-				
-				if (st.isEvaded()){
-					playEvadedAnimation(caster, target);
-					return evadedEffect(caster, target);
-				}
-				if (st.success()){
-					playPartialEffectAnimation(caster, target);
-					return partialEffect(caster, target);
-				}
-				if (st.failed()){
-					playFullEffectAnimation(caster, target);
-					return fullEffect(caster, target);
-				}
-				//No hay mas casos.
-				return false; //por si algo falla horriblemente
+			WeaponAttackAction a=(WeaponAttackAction)getActionLibrary().getAction(WeaponAttackAction.ID);
+			boolean b=a.affect(caster, target, point);
+			return b;
 			}
-			//Si no tiene save, fullEffect
-			return fullEffect(caster,target);
+			//Si no se usa un ataque, castear normalmente
+			return fullEffect(caster,target,point);
 		}
 		//Si no es harmful, considerar que afecta siempre
-		//TODO: mirarse lo de resistencia magica para efectos beneficiosos
+		//TODO: mirarse lo de resistencia magica para efectos beneficiosos, tecnicamente se aplica
 		
-		return fullEffect(caster,target);
+		return fullEffect(caster,target,point);
 		
+	}
+
+	public boolean spellAffect(BaseInfo caster, BaseInfo target, Point point, boolean critical){
+		
+		
+		//primero, spell resistance
+		if (spell.isAffectedBySR())
+			if (target.getValue(StabConstants.SPELLRESISTANCE)>0){
+				//Tirada de spell resistance
+				 BreakSpellResistance bsr= new BreakSpellResistance(caster, spell.getCasterClass(), target);
+				 bsr.check();
+				 if (bsr.failed()){
+					
+					 return spellResisted(caster,target,point);
+				 }
+			}
+		
+		//segundo, resolver tirada de salvacion
+		
+		if (spell.getSave()!=null){
+			SavingThrowEffect st=new SavingThrowEffect(caster, spell.getSave(), target);
+			st.setTargetNumber(spell.getDC(caster));
+			
+			st.check();
+			
+			if (st.isEvaded()){
+				
+				return evadedEffect(caster, target,point);
+			}
+			if (st.success()){
+				
+				return partialEffect(caster, target,point);
+			}
+			if (st.failed()){
+			
+				return fullEffect(caster, target,point);
+			}
+			//No hay mas casos.
+			return false; //por si algo falla horriblemente
+		}
+	
+		return fullEffect(caster,target,point);
 	}
 	
-	protected boolean fullEffect(BaseInfo caster, BaseInfo target) {
+	protected boolean fullEffect(BaseInfo caster, BaseInfo target,Point point) {
+		playFullEffectAnimation(caster, target,point);
 		return true;
 	}
-	protected boolean partialEffect(BaseInfo caster, BaseInfo target) {
+	protected boolean partialEffect(BaseInfo caster, BaseInfo target,Point point) {
+		playPartialEffectAnimation(caster, target,point);
 		return true;
 	}
-	protected boolean evadedEffect(BaseInfo caster, BaseInfo target) {
+	protected boolean evadedEffect(BaseInfo caster, BaseInfo target,Point point) {
+		playEvadedAnimation(caster, target,point);
 		return true;
 	}
-	
-	protected boolean spellResisted(BaseInfo caster, BaseInfo target) {
+	protected boolean spellResisted(BaseInfo caster, BaseInfo target,Point point) {
+		 playSRFailAnimation(caster, target,point);
 		return true;
 	}
 	
 	//No olvidarse de playExecuteActionAnimation!
-	protected void playAttackHitAnimation(BaseInfo caster, BaseInfo target){};
-	protected void playAttackMissAnimation(BaseInfo caster, BaseInfo target){};
-	protected void playSRFailAnimation(BaseInfo caster, BaseInfo target){};
-	protected void playFullEffectAnimation(BaseInfo caster, BaseInfo target){};
-	protected void playPartialEffectAnimation(BaseInfo caster, BaseInfo target){};
-	protected void playEvadedAnimation(BaseInfo caster, BaseInfo target){};
+
+	protected void playSRFailAnimation(BaseInfo caster, BaseInfo target,Point point){};
+	protected void playFullEffectAnimation(BaseInfo caster, BaseInfo target,Point point){};
+	protected void playPartialEffectAnimation(BaseInfo caster, BaseInfo target,Point point){};
+	protected void playEvadedAnimation(BaseInfo caster, BaseInfo target,Point point){};
+	
+	
+	protected Weapon getWeapon(BaseInfo caster){
+		switch(spell.getMedium()){
+		
+		}
+		return null;
+	}
 	
 }

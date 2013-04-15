@@ -32,9 +32,6 @@ public class BasicWeapon extends Weapon {
 	int critRange;
 	int critMultiplier;
 	
-	String animationIcon;
-	String animationType;
-	
 	int category;
 	
 	boolean twoHanded;
@@ -140,18 +137,6 @@ public class BasicWeapon extends Weapon {
 		this.dice=dice;
 	}
 	
-	public void setAnimationIcon(String animationIcon) {
-		this.animationIcon = animationIcon;
-	}
-	public String getAnimationIcon() {
-		return animationIcon;
-	}
-	public void setAnimationType(String animationType) {
-		this.animationType = animationType;
-	}
-	public String getAnimationType() {
-		return animationType;
-	}
 	public void setCritMultiplier(int critMultiplier) {
 		this.critMultiplier = critMultiplier;
 	}

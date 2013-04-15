@@ -6,6 +6,9 @@ import com.stab.model.info.applicable.Applicable;
 
 public abstract class Weapon extends Item implements Affects<WeaponAttack>{
 
+	protected String animationIcon;
+	protected String animationType;
+
 	@Override
 	public boolean canAffect(Applicable a) {
 		if (a instanceof WeaponAttack)
@@ -20,6 +23,22 @@ public abstract class Weapon extends Item implements Affects<WeaponAttack>{
 
 	public void attackDone(WeaponAttack attack){
 		//Nada a priori. las subclases pueden comprobar cosas, pasarselo a sus traits, etc
+	}
+
+	public void setAnimationIcon(String animationIcon) {
+		this.animationIcon = animationIcon;
+	}
+
+	public String getAnimationIcon() {
+		return animationIcon;
+	}
+
+	public void setAnimationType(String animationType) {
+		this.animationType = animationType;
+	}
+
+	public String getAnimationType() {
+		return animationType;
 	}
 	
 }
