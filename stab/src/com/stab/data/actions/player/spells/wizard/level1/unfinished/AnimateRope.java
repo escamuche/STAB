@@ -4,18 +4,18 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTile;
 import com.stab.model.info.Info;
 
-public class SummonMonster1 extends SpellOnTile{
+public class AnimateRope extends SpellOnTile{
 
-	public static final String ID="SUMMONMONSTER1_WIZARD";
+	public static final String ID="ANIMATEROPE";
 	
-	public SummonMonster1() {
+	public AnimateRope() {
 	     
 		 setLevel(1);
 		 setCasterClass(StabConstants.WIZARDCASTER);
-		 setRange(6);
-	     setResource("actions/summonmonster1");
-	     setName("SummonMonster1");
-	     this.setEffectType(SPECIAL);
+		 setRange(MEDIUM);
+	     setResource("actions/ability_mage_arcanebarrage");
+	     setName("Animate Rope");
+	     this.setEffectType(DEBUFF);
 		}
 
 

@@ -1,6 +1,7 @@
 package com.stab.data.actions.player.spells.cleric.level1.unfinished;
 
 import com.stab.data.actions.player.spells.SpellOnSelf;
+import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 

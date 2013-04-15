@@ -4,17 +4,17 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTile;
 import com.stab.model.info.Info;
 
-public class ObscuringMist extends SpellOnTile{
+public class Ventriloquism extends SpellOnTile{
 
-	public static final String ID="OBSCURINGMIST_WIZARD";
+	public static final String ID="VENTRILOQUISM";
 	
-	public ObscuringMist() {
+	public Ventriloquism() {
 	     
 		 setLevel(1);
 		 setCasterClass(StabConstants.WIZARDCASTER);
-		 setRange(4);
-	     setResource("actions/obscuringmist");
-	     setName("ObscuringMist");
+		 setRange(CLOSE);
+	     setResource("actions/ability_mage_arcanebarrage");
+	     setName("Ventriloquism");
 	     this.setEffectType(SPECIAL);
 		}
 
