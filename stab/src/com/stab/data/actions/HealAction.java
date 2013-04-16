@@ -5,11 +5,12 @@ import java.awt.Point;
 import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.data.info.debuff.condition.BleedCondition;
+import com.stab.model.action.Action;
 import com.stab.model.action.SelfAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 
-public class HealAction extends SelfAction{
+public class HealAction extends Action implements SelfAction{
 	
 	public static final String ID="HEALACTION";
 	

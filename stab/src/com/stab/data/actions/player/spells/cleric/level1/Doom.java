@@ -32,7 +32,7 @@ public class Doom extends SpellOnTarget {
 	
 	public Doom() {
     
-     setTargetClass(PhysicalToken.class);
+     
      setResource("actions/doom");
      setName("Doom");
      this.setCasterClass(StabConstants.CLERICCASTER);

@@ -55,7 +55,7 @@ public class ChillTouch extends SpellOnTarget{
      
 	 setLevel(1);
 	 setCasterClass(StabConstants.WIZARDCASTER);
-     setTargetClass(PhysicalToken.class);
+     
      setResource("actions/chilltouch");
      setName("Chill Touch");
      this.setEffectType(DAMAGE);

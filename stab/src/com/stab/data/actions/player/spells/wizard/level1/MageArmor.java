@@ -30,7 +30,7 @@ public class MageArmor extends SpellOnTarget{
 		
 		setLevel(1);
 		setCasterClass(StabConstants.WIZARDCASTER);
-		setTargetClass(PhysicalToken.class);
+		
 		setResource("actions/magearmor");
 		setName("MageArmor");
 		setEffectType(BUFF);

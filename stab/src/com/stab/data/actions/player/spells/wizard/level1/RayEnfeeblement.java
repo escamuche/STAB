@@ -56,7 +56,7 @@ public class RayEnfeeblement extends SpellOnTarget{
 		
 		setLevel(1);
 		setCasterClass(StabConstants.WIZARDCASTER);
-		setTargetClass(PhysicalToken.class);
+		
 		setResource("actions/rayenfeeblement");
 		setName("RayEnfeblement");
 		this.setEffectType(DEBUFF);

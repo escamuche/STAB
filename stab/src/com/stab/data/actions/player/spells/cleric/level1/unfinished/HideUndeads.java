@@ -22,7 +22,7 @@ public class HideUndeads extends SpellOnTarget{
 	
 	public HideUndeads() {
      setRange(1);
-     setTargetClass(PhysicalToken.class);
+     
      setResource("actions/curelightwounds");
      this.setCasterClass(StabConstants.CLERICCASTER);
      setName("CureLight");

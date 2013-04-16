@@ -2,19 +2,18 @@ package com.stab.data.actions.player.spells.cleric.level1.unfinished;
 
 import java.awt.Point;
 
-import com.stab.model.action.TargetAction;
-import com.stab.model.basic.token.PhysicalToken;
+import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 
-public class CurseWater extends TargetAction{
+public class CurseWater extends SpellOnSelf{
 	
 	public static final String ID="CURSEWATER";
 
 	
 	public CurseWater() {
      setRange(1);
-     setTargetClass(PhysicalToken.class);
+     
      setResource("actions/bless");
      setName("Curse Water");
      this.setEffectType(SPECIAL);

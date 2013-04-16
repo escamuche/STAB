@@ -48,7 +48,7 @@ public class DisruptUndead extends SpellOnTarget{
      
 	 setLevel(0);
 	 setCasterClass(StabConstants.WIZARDCASTER);
-     setTargetClass(PhysicalToken.class);
+     
      setResource("actions/disruptundead");
      setName("DisruptUndead");
      this.setEffectType(DAMAGE);

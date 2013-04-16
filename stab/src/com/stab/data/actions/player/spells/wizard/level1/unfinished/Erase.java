@@ -23,7 +23,7 @@ public class Erase extends SpellOnTarget{
 		setLevel(1);
 		setCasterClass(StabConstants.WIZARDCASTER);
 		setRange(6);
-     setTargetClass(PhysicalToken.class);
+     
      setResource("actions/ability_shaman_watershield");
      setName("Erase");
      this.setEffectType(DEBUFF);

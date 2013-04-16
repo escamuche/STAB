@@ -36,7 +36,7 @@ public class MagicMissile extends SpellOnTarget{
 		
 		setLevel(1);
 		setCasterClass(StabConstants.WIZARDCASTER);
-		setTargetClass(PhysicalToken.class);
+		
 		setResource("actions/magicmissile");
 		setName("MagicMissile");
 		this.setEffectType(DAMAGE);

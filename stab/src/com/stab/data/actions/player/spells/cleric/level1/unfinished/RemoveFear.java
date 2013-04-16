@@ -23,7 +23,7 @@ public class RemoveFear extends SpellOnTarget{
 		setLevel(1);
 		setCasterClass(StabConstants.CLERICCASTER);
 		setRange(6);
-     setTargetClass(PhysicalToken.class);
+     
      setResource("actions/ability_shaman_watershield");
      setName("Remove Fear");
      this.setEffectType(SPECIAL);

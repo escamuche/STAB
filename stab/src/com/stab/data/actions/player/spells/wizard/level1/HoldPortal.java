@@ -29,7 +29,7 @@ public class HoldPortal extends SpellOnTarget{
 		
 		setLevel(1);
 		setCasterClass(StabConstants.WIZARDCASTER);
-		setTargetClass(DoorToken.class);
+		setTargetTokenClass(DoorToken.class);
 		setResource("actions/ability_druid_naturalperfection");
 		setName("HoldPortal");
 		this.setEffectType(SPECIAL);

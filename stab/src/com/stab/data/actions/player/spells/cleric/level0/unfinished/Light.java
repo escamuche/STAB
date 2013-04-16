@@ -23,7 +23,7 @@ public class Light extends SpellOnTarget{
 		setLevel(0);
 		setCasterClass(StabConstants.CLERICCASTER);
 		setRange(1);
-		setTargetClass(PhysicalToken.class);
+		
 		setResource("actions/ability_druid_naturalperfection");
 		setName("Light");
 		this.setEffectType(BUFF);

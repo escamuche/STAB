@@ -46,7 +46,7 @@ public class AcidSplash extends SpellOnTarget{
      
 	 setLevel(0);
 	 setCasterClass(StabConstants.WIZARDCASTER);
-     setTargetClass(PhysicalToken.class);
+    
      setResource("actions/acidspray");
      setName("AcidSplash");
      this.setEffectType(DAMAGE);

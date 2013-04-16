@@ -23,7 +23,6 @@ public class CauseFear extends SpellOnTarget{
 		setLevel(1);
 		setCasterClass(StabConstants.CLERICCASTER);
 		setRange(6);
-     setTargetClass(PhysicalToken.class);
      setResource("actions/causefear");
      setName("CauseFear");
      this.setEffectType(DEBUFF);

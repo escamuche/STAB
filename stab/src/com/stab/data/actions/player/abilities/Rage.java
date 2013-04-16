@@ -5,11 +5,12 @@ import java.awt.Point;
 import com.stab.data.StabConstants;
 import com.stab.data.info.buff.Rage_Buff;
 import com.stab.data.info.debuff.condition.FatiguedCondition;
+import com.stab.model.action.Action;
 import com.stab.model.action.SelfAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 
-public class Rage extends SelfAction{
+public class Rage extends Action implements SelfAction{
 	
 	public static final String ID="RAGE";
 	

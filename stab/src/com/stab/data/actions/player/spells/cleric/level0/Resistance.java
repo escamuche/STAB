@@ -28,7 +28,7 @@ public class Resistance extends SpellOnTarget{
 	public Resistance() {
 		setLevel(0);
 		setCasterClass(StabConstants.CLERICCASTER);
-		setTargetClass(PhysicalToken.class);
+		
 		setResource("actions/nightshield");
 		setName("Resistance");
 		this.setEffectType(BUFF);

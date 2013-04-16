@@ -4,12 +4,13 @@ import java.awt.Point;
 
 import com.stab.data.StabConstants;
 import com.stab.data.info.buff.Expertise_Buff;
+import com.stab.model.action.Action;
 import com.stab.model.action.SelfAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.request.basic.ActionRequest;
 
-public class Expertise extends SelfAction {
+public class Expertise extends Action implements SelfAction {
 	
 	public static final String ID="EXPERTISE";
 

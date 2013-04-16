@@ -16,32 +16,33 @@ import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.RangedWeapon;
 import com.stab.data.info.equipment.Weapon;
 import com.stab.data.utils.PathfinderUtils;
+import com.stab.model.action.Action;
 import com.stab.model.action.TargetAction;
-import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.basic.token.Token;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.base.Equipment;
 
-public class WeaponAttackAction extends TargetAction{
+public class WeaponAttackAction extends Action implements TargetAction{
 	
 	public static final String ID="MELEE_STRIKE_ACTION";
 
 	
 	
 	@Override
-	public int getRange(BaseInfo i) {
-	
-		Weapon arma=null;
-		arma=getWeapon(i);
-		if (arma instanceof RangedWeapon ){
-			RangedWeapon r=(RangedWeapon)arma;
-			return r.getMaxRange();
-		}
-		if (arma instanceof BasicWeapon){
-			//Enun futuro, el reach de i
-			return 0; 
+	public int getRange(Info i) {
+		if (i instanceof BaseInfo){
+			Weapon arma=null;
+			arma=getWeapon((BaseInfo)i);
+			if (arma instanceof RangedWeapon ){
+				RangedWeapon r=(RangedWeapon)arma;
+				return r.getMaxRange();
+			}
+			if (arma instanceof BasicWeapon){
+				//Enun futuro, el reach de i
+				return 0; 
+			}
 		}
 		return super.getRange(i);
 	}
@@ -188,8 +189,8 @@ public class WeaponAttackAction extends TargetAction{
 	}
 	
 	public WeaponAttackAction() {
-     setRange(1);
-     setTargetClass(PhysicalToken.class);
+     setRange(0);
+     
      setResource("actions/ability_steelmelee");
      setName("Attack");
      this.setEffectType(DAMAGE);

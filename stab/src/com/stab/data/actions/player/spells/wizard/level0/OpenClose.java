@@ -26,7 +26,7 @@ public class OpenClose extends SpellOnTarget{
 	public OpenClose() {
 		setLevel(0);
 		setCasterClass(StabConstants.WIZARDCASTER);
-		setTargetClass(DoorToken.class);
+		setTargetTokenClass(DoorToken.class);
 		setResource("actions/openclose");
 		setName("Open/Close");
 		this.setEffectType(BUFF);

@@ -2,11 +2,11 @@ package com.stab.data.actions.player.spells.cleric.level1.unfinished;
 
 import java.awt.Point;
 
-import com.stab.model.action.SelfAction;
+import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 
-public class DetectGood extends SelfAction{
+public class DetectGood extends SpellOnSelf{
 	
 	public static final String ID="DETECTGOOD";
 

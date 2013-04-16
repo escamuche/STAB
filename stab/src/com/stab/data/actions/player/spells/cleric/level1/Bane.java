@@ -28,7 +28,6 @@ public class Bane extends SpellOnTarget {
 	
 	public Bane() {
      setRange(CLOSE);
-     setTargetClass(PhysicalToken.class);
      setResource("actions/bane");
      this.setCasterClass(StabConstants.CLERICCASTER);
      setName("Bane");

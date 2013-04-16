@@ -21,7 +21,7 @@ public class TouchFatigue extends SpellOnTarget{
 		
 		setLevel(0);
 		setCasterClass(StabConstants.WIZARDCASTER);
-		setTargetClass(PhysicalToken.class);
+		
 		setResource("actions/ability_druid_naturalperfection");
 		setName("TouchFatigue");
 		this.setEffectType(DEBUFF);

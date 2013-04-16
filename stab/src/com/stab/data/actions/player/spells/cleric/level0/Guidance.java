@@ -27,7 +27,7 @@ public class Guidance extends SpellOnTarget{
 	public Guidance() {
 		setLevel(0);
 		setCasterClass(StabConstants.CLERICCASTER);
-		setTargetClass(PhysicalToken.class);
+		
 		setResource("actions/flare");
 		setName("Guidance");
 		this.setEffectType(BUFF);

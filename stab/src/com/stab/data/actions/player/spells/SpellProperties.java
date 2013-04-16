@@ -2,6 +2,7 @@ package com.stab.data.actions.player.spells;
 
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
 public interface SpellProperties {
   
@@ -33,10 +34,11 @@ public interface SpellProperties {
 	public String getAttribute();
 	public int getDC(BaseInfo caster);
 	public String getCasterClass();
-	public int getRange(BaseInfo caster);
+	public int getRange(Info caster);
 	public int getCasterLevel(BaseInfo caster);
 	public String getSave();
 	public int getMedium();
+	public boolean isWeaponChargeSpell();
 	public boolean canCast(BaseInfo caster);
 	public boolean isAffectedBySR();
 	public SavingThrowEffect getSavingThrow(BaseInfo caster,BaseInfo target);

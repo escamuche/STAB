@@ -23,7 +23,7 @@ public class ProtectionChaos extends SpellOnTarget{
 		setLevel(1);
 		setCasterClass(StabConstants.CLERICCASTER);
 		setRange(1);
-     setTargetClass(PhysicalToken.class);
+     
      setResource("actions/ability_shaman_watershield");
      setName("Protection Chaos");
      this.setEffectType(BUFF);

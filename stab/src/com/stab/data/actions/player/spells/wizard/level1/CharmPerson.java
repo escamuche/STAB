@@ -31,7 +31,7 @@ public class CharmPerson extends SpellOnTarget{
 		
 		setLevel(1);
 		setCasterClass(StabConstants.WIZARDCASTER);
-		setTargetClass(PhysicalToken.class);
+		
 		setResource("actions/charmperson");
 		setName("CharmPerson");
 		this.setEffectType(DEBUFF);

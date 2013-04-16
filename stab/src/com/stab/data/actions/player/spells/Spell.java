@@ -1,8 +1,11 @@
 package com.stab.data.actions.player.spells;
 
 import com.stab.data.StabConstants;
+import com.stab.data.StabInit;
 import com.stab.data.info.applicable.SavingThrowEffect;
+import com.stab.data.info.equipment.SpellWeapon;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
 public class Spell implements SpellProperties {
 	
@@ -17,6 +20,9 @@ public class Spell implements SpellProperties {
 	int range=0;
 	int cost=0;
 	boolean affectedBySR=true;
+	
+	String weapon=null;
+	boolean weaponChargeSpell=false;
 	
 	public void setLevel(int level) {
 		this.level = level;
@@ -56,7 +62,11 @@ public class Spell implements SpellProperties {
 	}
 	
 	
-	@Override
+	public int getRange(Info caster) {
+		if (caster instanceof BaseInfo)
+			return getRange((BaseInfo)caster);
+		return 0;
+	}
 	public int getRange(BaseInfo caster) {
 		switch(range){
 			case SELF: return 0;
@@ -115,6 +125,13 @@ public class Spell implements SpellProperties {
 		if (medium==SELF)
 			if (range!=SELF)
 				range=SELF;
+		
+		if (weapon==null)
+			switch(medium){
+			case TOUCH: setWeapon(StabInit.getWeaponFactory().TOUCH);break;
+			case RAY: setWeapon(StabInit.getWeaponFactory().RAY);break;
+			case MISSILE: setWeapon(StabInit.getWeaponFactory().MISSILE);break;
+			}
 	}
 	
 	
@@ -149,5 +166,24 @@ public class Spell implements SpellProperties {
 		return null;
 	}
 	
+	
+	public void setWeapon(String weapon) {
+		this.weapon = weapon;
+	}
+	
+	public SpellWeapon getWeapon() {
+		if (weapon==null)
+			return null;
+		return (SpellWeapon)StabInit.getWeaponFactory().getWeapon(weapon);
+	}
+	
+	@Override
+	public boolean isWeaponChargeSpell() {
+		return weaponChargeSpell;
+	}
+	
+	public void setWeaponChargeSpell(boolean weaponChargeSpell) {
+		this.weaponChargeSpell = weaponChargeSpell;
+	}
 	
 }

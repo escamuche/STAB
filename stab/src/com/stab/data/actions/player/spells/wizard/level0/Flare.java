@@ -35,7 +35,7 @@ public class Flare extends SpellOnTarget{
 	public Flare() {
 		setLevel(0);
 		setCasterClass(StabConstants.WIZARDCASTER);
-		setTargetClass(PhysicalToken.class);
+		
 		setResource("actions/flare");
 		setName("Flare");
 		this.setEffectType(BUFF);

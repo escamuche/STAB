@@ -23,7 +23,7 @@ public class Mending extends SpellOnTarget{
 		setLevel(0);
 		setCasterClass(StabConstants.CLERICCASTER);
      setRange(2);
-     setTargetClass(PhysicalToken.class);
+     
      setResource("actions/ability_druid_naturalperfection");
      setName("Mending");
      this.setEffectType(HEAL);

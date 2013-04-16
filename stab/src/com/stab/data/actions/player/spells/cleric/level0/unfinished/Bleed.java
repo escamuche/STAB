@@ -18,7 +18,6 @@ public class Bleed extends SpellOnTarget{
 		 setLevel(0);
 		 setCasterClass(StabConstants.CLERICCASTER);
 		 setRange(5);
-	     setTargetClass(PhysicalToken.class);
 	     setResource("actions/ability_mage_arcanebarrage");
 	     setName("Bleed");
 	     this.setEffectType(DEBUFF);

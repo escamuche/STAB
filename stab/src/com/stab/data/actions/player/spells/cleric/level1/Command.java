@@ -18,7 +18,7 @@ public class Command extends SpellOnTarget{
 		
 		setLevel(1);
 		setCasterClass(StabConstants.CLERICCASTER);
-		setTargetClass(PhysicalToken.class);
+		
 		setResource("actions/command");
 		setName("Command");
 		this.setEffectType(DEBUFF);

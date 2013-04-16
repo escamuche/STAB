@@ -18,7 +18,7 @@ public class Daze extends SpellOnTarget{
 	public Daze() {
 		setLevel(0);
 		setCasterClass(StabConstants.WIZARDCASTER);
-		setTargetClass(PhysicalToken.class);
+		
 		setResource("actions/ability_druid_naturalperfection");
 		setName("Daze");
 		this.setEffectType(DEBUFF);
