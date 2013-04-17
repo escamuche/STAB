@@ -9,7 +9,8 @@ public class StabBlockData  extends BlockData {
 	
 	public StabBlockData() {
 		 fill(StabBlockProperties.EMPTY,64);
-		 set(StabBlockProperties.SOLID_WALL,2);
+		 set(StabBlockProperties.SOLID_WALL,2,8);
 		 set(StabBlockProperties.EMPTY_TILE,1,9,17,25);
+		 set(StabBlockProperties.GLASS,16);
 	}
 }
