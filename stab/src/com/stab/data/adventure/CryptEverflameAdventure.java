@@ -2,7 +2,7 @@ package com.stab.data.adventure;
 
 import com.stab.adventure.Adventure;
 import com.stab.common.events.DefaultRule;
-import com.stab.data.info.props.Dummy;
+import com.stab.data.info.monster.bestiary.OrcIlu;
 import com.stab.data.utils.StabBlockData;
 import com.stab.model.basic.scenes.Choice;
 import com.stab.model.basic.scenes.Narration;
@@ -109,11 +109,12 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		this.addScene(n4);
 
-		Choice c=new Choice();
-		c.createContents();
-		c.setBackground("ui/crypteverflame_adventure/town");
-		c.setTag("TOWN");
-		c.setText("La campana sobre el cercano templo de Erastil empieza a tocar su cancion " +
+		Narration n5=new Narration();
+		n5.createContents();
+		n5.setBackground("ui/crypteverflame_adventure/town");
+		n5.setTag("TOWN");
+		n5.setNext("TOWN2");
+		n5.setText("La campana sobre el cercano templo de Erastil empieza a tocar su cancion " +
 				"del mediodia, levantando ecos en la silenciosa ciudad de Kassen. Mientras " +
 				"los ecos se extinguen, los primeros aldeanos empiezan a entrar en la plaza, " +
 				"vestidos totalmente de negro como si de un funeral se tratase. Lentamente llenan " +
@@ -129,22 +130,39 @@ public class CryptEverflameAdventure extends Adventure{
 				"protegernos a todos, asi sera ahora tambien. ¿Donde estan los heroes? ¿Donde estan " +
 				"los bravos que se aventuraran hasta la tumba de kassen para volver con la llama " +
 				"que mantendra a esta comunidad a salvo durante otro invierno?' ");
-		c.addOption("¡Aqui esta el heroe que buscais!","BATTLE.Balconada");
-		c.addOption("Avanzar y cojer la mula","BATTLE.Balconada");
-		c.addOption("Avanzar y cojer el farol","BATTLE.Balconada");
+		this.addScene(n5);
+		
+		Choice c=new Choice();
+		c.createContents();
+		c.setBackground("ui/crypteverflame_adventure/town");
+		c.setTag("TOWN2");
+		c.setText("El alcalde hace una pausa para que podais aceptar la mision. Uno a uno " +
+				"tus compañeros y tu os acercais,  Uptal os entrega la mula y la lampara. " +
+				"Antes de partir compruebas el contenido de la mochila, raciones para 5 dias, " +
+				"una tienda de campaña, un saco de dormir de invierno, un odre de agua y un " +
+				"trozo de un mapa. Compruebas que cada uno de tus compañeros tiene otro trozo " +
+				"y despues de un rato conseguir juntarlos todos en un mapa mas grande que os " +
+				"indica vuestro camino. Al terminar vuestros preparativos el alcalde vuelve a " +
+				"hablar, '¡Os presento a los bravos heroes que seguiran los pasos de Kassen para " +
+				"traernos la llama eterna! Algunos de ellos podrian no regresar, pero yo os digo " +
+				"que su sacrificio no sera olvidado. Ir, bravos heroes, y no regreseis sin el fuego " +
+				"eterno.' Tras esto el alcalde señala hacia el sur, en direccion a la tumba de Kassen. " +
+				"Los aldeanos os despiden de forma fria, reflejandose la solemnidad del momento en sus " +
+				"rostros. ");
+		c.addOption("Empezar la aventura!","EVERFLAME1.start");
 		this.addScene(c);
 		
 		DefaultTileMapScene ms=new DefaultTileMapScene();
 		ms.createContents();
-		ms.createMap(24,16);
-		ms.loadTiled("coliseo", 0, 0);
+		ms.createMap(15,15);
+		ms.loadTiled("everflame1", 0, 0);
 		ms.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
 		ms.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
-		ms.setTag("BATTLE");
+		ms.setTag("EVERFLAME1");
 		
 		DefaultRule r=new DefaultRule();
 		r.setEvent(InfoDestroyed.class);
-		r.addCondition(new InfoIsClass(Dummy.class));
+		r.addCondition(new InfoIsClass(OrcIlu.class));
 		r.addResponse(new VictoryResponse(0,"VICTORY"));
 		ms.addRule(r);
 		this.addScene(ms);
