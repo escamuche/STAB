@@ -11,17 +11,28 @@ import com.stab.model.basic.scenes.event.condition.InfoIsClass;
 import com.stab.model.basic.scenes.event.response.VictoryResponse;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 
-public class CryptEverflame extends Adventure{
-	
-
-	public CryptEverflame() {
+public class CryptEverflameAdventure extends Adventure{
+		
+	public CryptEverflameAdventure() {
 		setName("Crypt of Everflame");
 		setMinLevel(1);
 		setMaxLevel(1);
 		setMinPlayers(1);
 		setMaxPlayers(5);
 		setAuthor("Jason Bulmahn");
-		setDescription("Hace casi 200 años, cuando la tierra que llegaria a ser Nirmathas " +
+		setDescription("Los jovenes heroes de la ciudad de Kassen estan listos para su prueba de madurez, una vieja ceremonia en la que tendran que traer una llama encendida en la llama eterna que arde en la tumba del fundador de la ciudad.");
+		setIcon("ui/crypteverflame_adventure/everflame$S");
+	}
+	
+	public void init(){
+		super.init();
+		clearScenes();
+		
+		Narration n1=new Narration();
+		n1.createContents();
+		n1.setTag("BEGIN");
+		n1.setNext("INTRO");
+		n1.setText("Hace casi 200 años, cuando la tierra que llegaria a ser Nirmathas " +
 				"todavia era un vasallo del imperio de Cheliax, el norte del bosque de " +
 				"los colmillos era un lugar salvaje y peligroso. Los cruzados que derrotaron " +
 				"al surrurrante tirano son ahora una distante memoria, y a aquellos que quedaron " +
@@ -30,20 +41,14 @@ public class CryptEverflame extends Adventure{
 				"orcos merodeando a mortales depredadores, haciendolo inseguro para los comerciantes " +
 				"que buscaban comerciar con la creciente comunidad de Skelt en las laderas de las " +
 				"montañas Mindspin en el oeste.");
-	
-		setIcon("everflame$S");
-	}
-	
-	public void init(){
-		super.init();
-		clearScenes();
+		this.addScene(n1);
 		
-		Narration n=new Narration();
-		n.createContents();
-		n.setTag("BEGIN");
-		n.setNext("CHOICE");
-		n.setBackground("ui/kassen");
-		n.setText("Ekat Kassen era un cruzado y buscador de fortuna que llego " +
+		Narration n2=new Narration();
+		n2.createContents();
+		n2.setTag("INTRO");
+		n2.setNext("INTRO2");
+		n2.setBackground("ui/crypteverflame_adventure/kassen");
+		n2.setText("Ekat Kassen era un cruzado y buscador de fortuna que llego " +
 				"a servir a Lastwall en el año 4515 AR. Aunque lucho con distincion, " +
 				"pronto se dio cuenta de que buscaba mas de la vida y dejo la milicia " +
 				"de Lastwall para encontrar su fortuna en otro sitio. " +
@@ -59,8 +64,16 @@ public class CryptEverflame extends Adventure{
 				"los años, Asar se convencio de que Ekat le engaño tras la aventura. Prometiendo " +
 				"grandes fortunas a sus mercenarios, Asar asalto la ciudad durante dos meses. Finalmente " +
 				"los lugareños encontraron el campamento de los mercenarios en una antigua cripta en lo " +
-				"profundo del bosque, y el mismo Ekat fue a lidiar con su antiguo compañero. " +
-				"La batalla fue terriblemente sangrienta, solo unos pocos de la gente de la ciudad volvio " +
+				"profundo del bosque, y el mismo Ekat fue a lidiar con su antiguo compañero.");
+		
+		this.addScene(n2);
+		
+		Narration n3=new Narration();
+		n3.createContents();
+		n3.setTag("INTRO2");
+		n3.setNext("INTRO3");
+		n3.setBackground("ui/crypteverflame_adventure/zone");
+		n3.setText("La batalla fue terriblemente sangrienta, solo unos pocos de la gente de la ciudad volvio " +
 				"para contar lo sucedido. Al final Asar murio y sus mercenarios fueron derrotados, pero " +
 				"Ekat sufrio una herida mortal. Murio dos dias mas tarde el 11 de Neth de 4535 " +
 				"En honor a su amado fundador le enterraron en la antigua cripta, enterrando sus huesos " +
@@ -71,21 +84,54 @@ public class CryptEverflame extends Adventure{
 				"historia de la ciudad, ahora conocida simplemente como Kassen. Los ciudadanos ven el " +
 				"lugar como un memorial de los primeros y duros años. Cada otoño a un puñado de lugareños " +
 				"se les concede el honor de encender la linterna. Muchos lo ven como  una prueba de madurez " +
-				"a la edad adult, un bocado de aventura antes de empezar a a trabajar y casarse. " +
+				"a la edad adulta, probar la aventura antes de empezar a a trabajar y casarse. " +
 				"La aventura empieza como una solemne ceremonia, con los habitantes de Kassen reuniendose " +
 				"para desear suerte a los aventureros, igual que hicieron cuando Kassen fue a enfrentarse " +
-				"con los mercenarios. ");
+				"con los mercenarios. " +
+				"Cuando los aventureros retornan unos pocos dias despues, la ciudad cdelebra una gran fiesta en su honor. " +
+				"Esto tambien marca la ultima celebracion antes de que comience el duro invierno. ");
 		
-		this.addScene(n);
+		this.addScene(n3);
+		
+		Narration n4=new Narration();
+		n4.createContents();
+		n4.setTag("INTRO3");
+		n4.setNext("TOWN");
+		n4.setBackground("ui/crypteverflame_adventure/zone");
+		n4.setText("Estamos a 4 de Neth, los primeros vientos del invierno empiezan a soplar. " +
+				"Este fue el dia, en 5435, en el que Ekat Kassen y sus hombres marcharon al " +
+				"encuentro de Asar y sus mercenarios. Y hoy sera el dia en el que junto con tus " +
+				"amigos marcharas a hacerte adulto. Debes ir a la plaza del pueblo al mediodia " +
+				"tal y como marca la tradicion, para aceptar la busqueda. Debes viajar ligero, " +
+				"llevando solo lo necesario. Cuando llegas a la plaza, esta desierta, excepto " +
+				"por tus compañeros que van apareciendo poco a poco. De pronto la campana de la " +
+				"iglesia empieza a tañir...");
+		
+		this.addScene(n4);
 
 		Choice c=new Choice();
 		c.createContents();
-		c.setTag("CHOICE");
-		c.setText("Cuando los aventureros retornan unos pocos dias despues, la ciudad una gran fiesta en su honor. " +
-				"Esto tambien marca la ultima celebracion antes de que comience el duro invierno. ");
-		c.addOption("Continuar","BATTLE.Balconada");
-		//c.addOption("Bajar por las escaleras de la izquierda","BATTLE.stairs2");
-		c.addOption("Marcharse","VICTORY");
+		c.setBackground("ui/crypteverflame_adventure/town");
+		c.setTag("TOWN");
+		c.setText("La campana sobre el cercano templo de Erastil empieza a tocar su cancion " +
+				"del mediodia, levantando ecos en la silenciosa ciudad de Kassen. Mientras " +
+				"los ecos se extinguen, los primeros aldeanos empiezan a entrar en la plaza, " +
+				"vestidos totalmente de negro como si de un funeral se tratase. Lentamente llenan " +
+				"la plaza, moviendose sobre el duro y frio suelo, sus ojos bajos y " +
+				"murmurando. Despues de un rato un murmullo se eleva de la multitud mientras " +
+				"la gente lentamente abre paso para permitir que el alcalde Uptal entre. El avanza " +
+				"con un farol de bruñida plata en sus manos. Tras el hay un viejo poni cargado con " +
+				"mochilas y provisiones. Cuando alcanza el centro de la muchedumbre el alcalde " +
+				"se para y le habla a la multitud reunida. 'Otra vez el viento del invierno sopla " +
+				"a traves del bosque del colmillo, marcando el final de otro otoño. Hay lobos " +
+				"en el bosque, aullando ante nuestros muros, serpientes en las sombras, esperando " +
+				"golpearnos. Igual que hace 174 años, cuando el mismo Kassen dejo estos muros para " +
+				"protegernos a todos, asi sera ahora tambien. ¿Donde estan los heroes? ¿Donde estan " +
+				"los bravos que se aventuraran hasta la tumba de kassen para volver con la llama " +
+				"que mantendra a esta comunidad a salvo durante otro invierno?' ");
+		c.addOption("¡Aqui esta el heroe que buscais!","BATTLE.Balconada");
+		c.addOption("Avanzar y cojer la mula","BATTLE.Balconada");
+		c.addOption("Avanzar y cojer el farol","BATTLE.Balconada");
 		this.addScene(c);
 		
 		DefaultTileMapScene ms=new DefaultTileMapScene();
@@ -103,12 +149,12 @@ public class CryptEverflame extends Adventure{
 		ms.addRule(r);
 		this.addScene(ms);
 		
-		Narration n2=new Narration();
-		n2.createContents();
-		n2.setTag("VICTORY");
-		n2.setText("Victoria!");
-		n2.setNext(null);
-		this.addScene(n2);
+		Narration n1000=new Narration();
+		n1000.createContents();
+		n1000.setTag("VICTORY");
+		n1000.setText("Victoria!");
+		n1000.setNext(null);
+		this.addScene(n1000);
 	}
 	
 }

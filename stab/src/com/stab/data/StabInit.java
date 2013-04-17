@@ -50,7 +50,7 @@ import com.stab.data.actions.player.spells.wizard.level1.ShockingGrasp;
 import com.stab.data.actions.player.spells.wizard.level1.TrueStrike;
 import com.stab.data.actions.player.spells.wizard.level1.unfinished.ReducePerson;
 import com.stab.data.adventure.ColiseoAdventure;
-import com.stab.data.adventure.CryptEverflame;
+import com.stab.data.adventure.CryptEverflameAdventure;
 import com.stab.data.adventure.TestAdventure;
 import com.stab.data.adventure.Zombies;
 import com.stab.data.animation.BasicSparkAnimation;
@@ -176,7 +176,7 @@ public class StabInit {
 		ServiceManager.getService(AdventureLibrary.class).register(z);
 		ColiseoAdventure c=new ColiseoAdventure();
 		ServiceManager.getService(AdventureLibrary.class).register(c);
-		CryptEverflame e=new CryptEverflame();
+		CryptEverflameAdventure e=new CryptEverflameAdventure();
 		ServiceManager.getService(AdventureLibrary.class).register(e);
 		
 	}
