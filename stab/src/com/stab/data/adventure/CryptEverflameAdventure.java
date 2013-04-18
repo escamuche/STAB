@@ -8,7 +8,10 @@ import com.stab.model.basic.scenes.Choice;
 import com.stab.model.basic.scenes.Narration;
 import com.stab.model.basic.scenes.event.InfoDestroyed;
 import com.stab.model.basic.scenes.event.condition.InfoIsClass;
+import com.stab.model.basic.scenes.event.response.DefeatResponse;
 import com.stab.model.basic.scenes.event.response.VictoryResponse;
+import com.stab.model.basic.scenes.event.rule.AllMonstersDeadRule;
+import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 
 public class CryptEverflameAdventure extends Adventure{
@@ -160,19 +163,75 @@ public class CryptEverflameAdventure extends Adventure{
 		ms.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
 		ms.setTag("EVERFLAME1");
 		
-		DefaultRule r=new DefaultRule();
-		r.setEvent(InfoDestroyed.class);
-		r.addCondition(new InfoIsClass(OrcIlu.class));
+		AllMonstersDeadRule r=new AllMonstersDeadRule();
 		r.addResponse(new VictoryResponse(0,"VICTORY"));
 		ms.addRule(r);
+		AllPlayersDeadRule r2=new AllPlayersDeadRule();
+		r2.addResponse(new DefeatResponse(0,"DEFEAT"));
+		ms.addRule(r2);
 		this.addScene(ms);
 		
-		Narration n1000=new Narration();
-		n1000.createContents();
-		n1000.setTag("VICTORY");
-		n1000.setText("Victoria!");
-		n1000.setNext(null);
-		this.addScene(n1000);
+		Choice c2=new Choice();
+		c2.createContents();
+		c2.setTag("VICTORY");
+		c2.setNext("WOLVES");
+		c2.setText("La dura batalla contra los extraños orcos acaba, dejando una sensacion extraña, por la forma de desaparecer parece" +
+				"claro que estas criaturas no eran mas que ilusiones, pero quien y porque haria algo asi.");
+		c2.addOption("Investigar la zona.", "EVERFLAME1.start");
+		c2.addOption("Ayudar a otro a investigar la zona.", "EVERFLAME1.start");
+		c2.addOption("Continuar el viaje.", "WOLVES");
+		this.addScene(c2);
+		
+		Narration ndefeat=new Narration();
+		ndefeat.createContents();
+		ndefeat.setTag("DEFEAT");
+		ndefeat.setText("Todos los aventureros han muerto!");
+		ndefeat.setNext(null);
+		this.addScene(ndefeat);
+		
+		Choice c3=new Choice();
+		c3.createContents();
+		c3.setBackground("ui/crypteverflame_adventure/town");
+		c3.setTag("WOLVES");
+		c3.setText("Despues de derrotar a los orcos seguis avanzando. Gracias al mapa que llevais es relativamente sencillo encontrar el camino correcto. " +
+				"Despues de todo el dia andando queda poco para que oscurezca. Empezais a buscar un sitio para montar las tiendas mientras las sombras de " +
+				"los arboles se alargan mas y mas, cubriendolo todo y dando un aspecto ominoso al bosque antes placido. Con una sensacion de desasosiego " +
+				"empezais a montar el campamento. ");
+		c3.addOption("Tirar survival para buscar un buen sitio de acampar", "EVERFLAME1.start");
+		c3.addOption("Ayudar a alguien a buscar un sitio", "EVERFLAME1.start");
+		c3.addOption("Acampar en el primer sitio que veas", "EVERFLAME1.start");
+		this.addScene(c3);
+		
+		Choice c4=new Choice();
+		c4.createContents();
+		c4.setBackground("ui/crypteverflame_adventure/town");
+		c4.setTag("WOLVES2");
+		c4.setText("Despues encendeis una pequeña hoguera y empezais a cocinar un estofado con las raciones que hay en " +
+	"vuestras mochilas. Mientras cocinais ois a lo lejos unos aullidos. Al cabo de una hora volveis a oir los aullidos pero ahora mucho mas cerca. " +
+	"Pasa otra media hora...");
+		c4.addOption("Tirar percepcion!", "EVERFLAME1.start");
+		this.addScene(c4);
+		
+		Choice c5 = new Choice();
+		c5.createContents();
+		c5.setBackground("ui/crypteverflame_adventure/town");
+		c5.setTag("WOLVES3");
+		c5.setText("Veis un gran lobo observandoos escondido entre los matorrales. Claramente intenta huir despues de veros, seguramente con la" +
+				"intencion de traer al resto de su manada para atacaros. Debeis actuar rapidamente. ");
+		c5.addOption("Atacar al lobo", "EVERFLAME1.start");
+		c5.addOption("Tirar wild empathy contra el lobo", "WOLVES4");
+		c5.addOption("Dejar que el lobo huya", "EVERFLAME1.start");
+		this.addScene(c5);
+		
+		Narration n6=new Narration();
+		n6.createContents();
+		n6.setBackground("ui/crypteverflame_adventure/town");
+		n6.setTag("WOLVES4");
+		n6.setNext("BANDITS");
+		n6.setText("El lobo se queda escuchandote ladeando la cabeza. Al cabo de un rato se acerca a ti olisqueando tu mano y con un salto " +
+				"desaparece en el bosque. Crees que esta manada no os dara mas problemas, al menos esta noche. El resto de la noche pasa " +
+				"con tranquilidad. ");
+		this.addScene(n6);
+		
 	}
-	
 }
