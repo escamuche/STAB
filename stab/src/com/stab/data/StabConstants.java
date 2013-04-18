@@ -35,10 +35,8 @@ public class StabConstants {
 	public static final String BASESPEED="BASESPEED";
 	public static final String ARMORMODSPEED="ARMORMODSPEED";
 	
-	//public static final String TOUCHAC="TOUCHAC";               //Esto mejor pensarselo
-	//public static final String FLATFOOTEDAC="FLATFOOTEDAC";
 	
-	public static final String FORTITUDESAVE="FORTITUDESAVE";    //Esto requiere separar magicalAttack en 3
+	public static final String FORTITUDESAVE="FORTITUDESAVE";    
 	public static final String REFLEXSAVE="REFLEXSAVE";
 	public static final String WILLSAVE="WILLSAVE";
 	public static final String BAB="BAB";
@@ -103,9 +101,7 @@ public class StabConstants {
 	public static final String USEMAGICDEVICE="USEMAGICDEVICE";
 	
 	
-	//public static final String LIGHTLOAD="LIGHTLOAD";   //Esto tiene que ir calculado
-	//public static final String MEDIUMLOAD="MEDIUMLOAD";
-	//public static final String HEAVYLOAD="HEAVYLOAD";
+	
 	
 	//Podemos empezar solo con gold?
 	public static final String MONEYPLATINUM="MONEYPLATINUM";
@@ -126,14 +122,14 @@ public class StabConstants {
 	public static final String SPELLKNOWN9="SPELLKNOWN9";
 	
 //	public static final String CASTERLEVEL="CASTERLEVEL";
-	public static final String CASTERLEVELBARD="CASTERLEVELBARD";
+/*	public static final String CASTERLEVELBARD="CASTERLEVELBARD";
 	public static final String CASTERLEVELCLERIC="CASTERLEVELCLERIC";
 	public static final String CASTERLEVELDRUID="CASTERLEVELDRUID";
 	public static final String CASTERLEVELPALADIN="CASTERLEVELPALADIN";
 	public static final String CASTERLEVELRANGER="CASTERLEVELRANGER";
 	public static final String CASTERLEVELSORCERER="CASTERLEVELSORCERER";
 	public static final String CASTERLEVELWIZARD="CASTERLEVELWIZARD";
-	
+/**/	
 	public static final String LEVEL="LEVEL";
 	public static final String WIZARDCASTER="WIZARDCASTER";
 	public static final String CLERICCASTER="CLERICCASTER";
@@ -188,11 +184,9 @@ public class StabConstants {
 	public static final String RAGEROUNDS="RAGEROUNDS";
 	public static final String RAGEROUNDSSPENT="RAGEROUNDSSPENT";	
 	
-	public static final String RANGETOUCH="RANGETOUCH";
-	public static final String RANGECLOSE="RANGECLOSE";
-	public static final String RANGEMEDIUM="RANGEMEDIUM";
-	public static final String RANGELARGE="RANGELARGE";
 	
+	
+	public static final String PERCEPTION_DC="PERCEPTION_DC"; //La dificultad para detectarlo con search (trampas, oculto, etc)
 	
 	
 	

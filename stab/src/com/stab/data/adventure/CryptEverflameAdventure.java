@@ -13,10 +13,18 @@ import com.stab.model.basic.scenes.event.response.VictoryResponse;
 import com.stab.model.basic.scenes.event.rule.AllMonstersDeadRule;
 import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
+import com.tien.princess.engine.Resources;
 
 public class CryptEverflameAdventure extends Adventure{
 		
 	public CryptEverflameAdventure() {
+		
+		
+		//INDICAMOS EL DIRECTORIO ADICIONAL DE RECURSOS
+		
+		Resources.INSTANCE.addDir("everflame");
+		
+		
 		setName("Crypt of Everflame");
 		setMinLevel(1);
 		setMaxLevel(1);
