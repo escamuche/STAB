@@ -160,16 +160,16 @@ public class CryptEverflameAdventure extends Adventure{
 				"eterno.' Tras esto el alcalde señala hacia el sur, en direccion a la tumba de Kassen. " +
 				"Los aldeanos os despiden de forma fria, reflejandose la solemnidad del momento en sus " +
 				"rostros. ");
-		c.addOption("Empezar la aventura!","EVERFLAME1.start");
+		c.addOption("Empezar la aventura!","EVERFLAME2.start");
 		this.addScene(c);
 		
 		DefaultTileMapScene ms=new DefaultTileMapScene();
 		ms.createContents();
 		ms.createMap(15,15);
-		ms.loadTiled("everflame1", 0, 0);
+		ms.loadTiled("everflame2", 0, 0);
 		ms.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
 		ms.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
-		ms.setTag("EVERFLAME1");
+		ms.setTag("EVERFLAME2");
 		
 		AllMonstersDeadRule r=new AllMonstersDeadRule();
 		r.addResponse(new VictoryResponse(0,"VICTORY"));
