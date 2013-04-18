@@ -1,13 +1,9 @@
 package com.stab.data.adventure;
 
 import com.stab.adventure.Adventure;
-import com.stab.common.events.DefaultRule;
-import com.stab.data.info.monster.bestiary.OrcIlu;
 import com.stab.data.utils.StabBlockData;
 import com.stab.model.basic.scenes.Choice;
 import com.stab.model.basic.scenes.Narration;
-import com.stab.model.basic.scenes.event.InfoDestroyed;
-import com.stab.model.basic.scenes.event.condition.InfoIsClass;
 import com.stab.model.basic.scenes.event.response.DefeatResponse;
 import com.stab.model.basic.scenes.event.response.VictoryResponse;
 import com.stab.model.basic.scenes.event.rule.AllMonstersDeadRule;
@@ -33,7 +29,7 @@ public class CryptEverflameAdventure extends Adventure{
 		setMaxPlayers(5);
 		setAuthor("Jason Bulmahn");
 		setDescription("Los jovenes heroes de la ciudad de Kassen estan listos para su prueba de madurez, una vieja ceremonia en la que tendran que traer una llama encendida en la llama eterna que arde en la tumba del fundador de la ciudad.");
-		setIcon("ui/crypteverflame_adventure/everflame$S");
+		setIcon("ui/crypteverflame_adventure/everflame");
 	}
 	
 	public void init(){
@@ -165,9 +161,9 @@ public class CryptEverflameAdventure extends Adventure{
 		this.addScene(c);
 		
 		DefaultTileMapScene ms=new DefaultTileMapScene();
-		Backdrop m = new Backdrop();
-		m.setResource("ui/crypteverflame_adventure/map1");
-		ms.add(m);
+		//Backdrop m = new Backdrop();
+		//m.setResource("ui/crypteverflame_adventure/map1");
+		//ms.add(m);
 		ms.createContents();
 		ms.createMap(15,15);
 		ms.loadTiled("everflame2", 0, 0);
