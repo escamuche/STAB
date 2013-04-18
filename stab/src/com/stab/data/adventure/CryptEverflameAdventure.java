@@ -13,6 +13,7 @@ import com.stab.model.basic.scenes.event.response.VictoryResponse;
 import com.stab.model.basic.scenes.event.rule.AllMonstersDeadRule;
 import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
+import com.stab.model.basic.ui.Backdrop;
 import com.tien.princess.engine.Resources;
 
 public class CryptEverflameAdventure extends Adventure{
@@ -164,6 +165,9 @@ public class CryptEverflameAdventure extends Adventure{
 		this.addScene(c);
 		
 		DefaultTileMapScene ms=new DefaultTileMapScene();
+		Backdrop m = new Backdrop();
+		m.setResource("ui/crypteverflame_adventure/map1");
+		ms.add(m);
 		ms.createContents();
 		ms.createMap(15,15);
 		ms.loadTiled("everflame2", 0, 0);
