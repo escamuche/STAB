@@ -30,7 +30,8 @@ public class StabLobby  extends Scene{
 		
 		Backdrop bd=new Backdrop();
 		add(bd);
-		bd.setResource("back/lobby$S");
+		bd.setResource("SHADER#infernal#back/lobby$S");
+	//	bd.setResource("COLOR#blue");
 		Button i=new Button();
 	/*	i.setPos(30,200);
 		i.setSize(200,400);
