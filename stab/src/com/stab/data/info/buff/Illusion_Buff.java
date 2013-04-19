@@ -21,7 +21,7 @@ public class Illusion_Buff extends Buff implements Affects<Attack>, Attends<Atta
 		d.check();
 		if(d.success()){
 			arg0.setResult(Attack.FAIL);
-			instigator.destroy();
+			instigator.die();
 		}
 		else{
 			
@@ -32,8 +32,10 @@ public class Illusion_Buff extends Buff implements Affects<Attack>, Attends<Atta
 
 	@Override
 	public boolean canAffect(Applicable arg0) {
-		// TODO Auto-generated method stub
-		return true;
+		if(arg0 instanceof Attack)
+			return true;
+		else
+			return false;
 	}
 
 	@Override
@@ -45,7 +47,7 @@ public class Illusion_Buff extends Buff implements Affects<Attack>, Attends<Atta
 		d.setTargetNumber(16);
 		d.check();
 		if(d.success()){
-			instigator.destroy();
+			target.die();
 		}
 		
 		else {
@@ -57,8 +59,10 @@ public class Illusion_Buff extends Buff implements Affects<Attack>, Attends<Atta
 
 	@Override
 	public boolean canAttend(Applicable arg0) {
-		// TODO Auto-generated method stub
-		return true;
+		if(arg0 instanceof Attack)
+			return true;
+		else
+			return false;
 	}
 
 }
