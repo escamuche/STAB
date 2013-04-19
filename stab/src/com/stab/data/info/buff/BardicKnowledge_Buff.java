@@ -1,6 +1,7 @@
 package com.stab.data.info.buff;
 
 import com.stab.data.StabConstants;
+import com.stab.data.info.HalfBonusModifier;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.Buff;
@@ -18,8 +19,9 @@ public class BardicKnowledge_Buff extends Buff {
 		this.setUnique(true);
 		
 		BaseInfo b = getTarget();
-		/*
-		int bonus = (b.getValue(StabConstants.BARDCASTER)+1)/2;	
+		
+			/*
+			int bonus = (b.getValue(StabConstants.BARDCASTER)+1)/2;	
 		
 			Modifier arcana=new Modifier(StabConstants.KNOWLEDGEARCANA,+bonus);
 			Modifier dungeon=new Modifier(StabConstants.KNOWLEDGEDUNGEONEERING,+bonus);
