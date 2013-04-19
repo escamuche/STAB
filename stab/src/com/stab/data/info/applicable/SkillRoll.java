@@ -7,7 +7,7 @@ import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.AdvancedRollApplicable;
 import com.stab.model.info.trait.Modifier;
 
-public abstract class SkillRoll extends AdvancedRollApplicable {
+public  class SkillRoll extends AdvancedRollApplicable {
 
 	String skill;
 	ArrayList<Modifier> modifiers;
