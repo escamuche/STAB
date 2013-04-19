@@ -2,6 +2,8 @@ package com.stab.data.adventure;
 
 import com.stab.adventure.Adventure;
 import com.stab.common.Constants;
+import com.stab.data.StabConstants;
+import com.stab.data.ui.RolledSkillOptionButton;
 import com.stab.data.utils.StabBlockData;
 import com.stab.model.basic.scenes.Choice;
 import com.stab.model.basic.scenes.Narration;
@@ -233,7 +235,21 @@ public class CryptEverflameAdventure extends Adventure{
 		t8.setSize(Constants.CONTENT,Constants.CONTENT);
 		c3.addGUI(t8);
 		c3.addOption("Tirar survival para buscar un buen sitio de acampar", "EVERFLAME1.start");
-		c3.addOption("Ayudar a alguien a buscar un sitio", "EVERFLAME1.start");
+		
+		//Ejemplo de rolledSkill
+		RolledSkillOptionButton b= new RolledSkillOptionButton();
+		b.setText("Tirar survival para buscar un buen sitio de acampar");
+		b.setSkill(StabConstants.SURVIVAL);
+		b.setDC(15);
+		b.setResults("escena a la que ir si falla", "escena a la que ir si pasa"); //Si las escenas empiezan por #, eso mueve a todos los jugadores en la escena a la escena indicada
+																					//Esto es aplicable a los casos normales tambien.
+																				    //Ojo que puede que alguien no este en la escena. eso lo vemos mas adelante con scene.setWaitsForAll()
+	//	c3.addOption(b);
+		//Notese  que esto no le pone icono, pero le cambia el tamaño a que ocupe toda la linea
+		//Y esta pendiente de probar, claro :D
+		//RolledOptionButton funciona casi igual
+		
+		c3.addOption("Ayudar a alguien a buscar un sitio", "EVERFLAME1.start");  // Esto va a dar mas guerra, me temo. Deberiamos dejarlo para más adelante.
 		c3.addOption("Acampar en el primer sitio que veas", "EVERFLAME1.start");
 		this.addScene(c3);
 		
