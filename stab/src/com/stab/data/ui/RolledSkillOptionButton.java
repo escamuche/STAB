@@ -53,9 +53,15 @@ public class RolledSkillOptionButton extends RolledOptionButton {
 		BaseInfo roller=determineRoller(actor);
 		if (roller==null)
 			return SkillRoll.FAIL;
-		SkillRoll sk= new SkillRoll(roller, getSkill(), getDC());
+		SkillRoll sk= createRoll(roller);
 		sk.check();
 		return sk.getResult();
+	}
+	
+	
+	protected SkillRoll createRoll(BaseInfo actor) {
+		//Sacado aqui aparte para permitir que una subclase devuelva otro skillRoll (ej: JumpSkillRoll)
+		return new SkillRoll(actor, getSkill(), getDC());
 	}
 
 

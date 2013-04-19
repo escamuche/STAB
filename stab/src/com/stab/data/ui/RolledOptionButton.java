@@ -42,7 +42,7 @@ public class RolledOptionButton  extends Button {
 	
 	@Override
 	protected void performAction(Player actor, String action) {
-		int result=makeRoll(actor);
+		int result=makeRoll(actor); 
 		String r=options.get(result);
 		if (r==null)
 			r=getAction();
