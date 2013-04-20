@@ -45,7 +45,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n1.setTag("BEGIN");
 		n1.setNext("INTRO");
 		Text t1=new Text();
-		n1.setBackground("ui/crypteverflame_adventure/white");
+		n1.setBackground("COLOR#white");
 		Image i = new Image();
 		i.setImage("ui/crypteverflame_adventure/kassen");
 		t1.setText("Hace casi 200 años, cuando la tierra que llegaria a ser Nirmathas " +
@@ -69,7 +69,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n2.setTag("INTRO");
 		n2.setNext("INTRO2");
 		//n2.setBackground("ui/scroll$S");
-		n2.setBackground("ui/crypteverflame_adventure/white");
+		n2.setBackground("COLOR#white");
 		Image i2 = new Image();
 		i2.setImage("ui/crypteverflame_adventure/kassen");
 		Text t2=new Text();
@@ -100,7 +100,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n3.createContents();
 		n3.setTag("INTRO2");
 		n3.setNext("INTRO3");
-		n3.setBackground("ui/crypteverflame_adventure/white");
+		n3.setBackground("COLOR#white");
 		//n3.setBackground("ui/crypteverflame_adventure/zone");
 		Text t3 = new Text();
 		t3.setText("La batalla fue terriblemente sangrienta, solo unos pocos de la gente de la ciudad volvio " +
@@ -128,7 +128,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n4.createContents();
 		n4.setTag("INTRO3");
 		n4.setNext("TOWN");
-		n4.setBackground("ui/crypteverflame_adventure/white");
+		n4.setBackground("COLOR#white");
 		//n4.setBackground("ui/crypteverflame_adventure/zone");
 		Text t4 = new Text();
 		t4.setText("Estamos a 4 de Neth, los primeros vientos del invierno empiezan a soplar. " +
@@ -145,7 +145,7 @@ public class CryptEverflameAdventure extends Adventure{
 
 		Narration n5=new Narration();
 		n5.createContents();
-		n5.setBackground("ui/crypteverflame_adventure/white");
+		n5.setBackground("COLOR#white");
 		//n5.setBackground("ui/crypteverflame_adventure/town");
 		n5.setTag("TOWN");
 		n5.setNext("TOWN2");
@@ -172,7 +172,7 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		Choice c=new Choice();
 		c.createContents();
-		c.setBackground("ui/crypteverflame_adventure/white");
+		c.setBackground("COLOR#white");
 		//c.setBackground("ui/crypteverflame_adventure/town");
 		c.setTag("TOWN2");
 		Text t6 = new Text();
@@ -213,7 +213,7 @@ public class CryptEverflameAdventure extends Adventure{
 		Choice c2=new Choice();
 		c2.createContents();
 		c2.setTag("CHOICE");
-		c2.setBackground("ui/crypteverflame_adventure/white");
+		c2.setBackground("COLOR#white");
 		//c2.setNext("WOLVES");
 		Text t7 = new Text();
 		t7.setText("La dura batalla contra los extraños orcos acaba, dejando una sensacion extraña, por la forma de desaparecer parece" +
@@ -233,7 +233,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n7.createContents();
 		n7.setTag("PERCFAIL");
 		n7.setNext("WOLVES");
-		n7.setBackground("ui/crypteverflame_adventure/white");
+		n7.setBackground("COLOR#white");
 		//n7.setBackground("ui/crypteverflame_adventure/zone");
 		Text t12 = new Text();
 		t7.setText("Buscas por la zona, pero no consigues encontrar nada que te llame la atención. Al cabo de un rato decides continuar con tu camino. ");
@@ -245,7 +245,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n8.createContents();
 		n8.setTag("PERCSUCCESS");
 		n8.setNext("WOLVES");
-		n8.setBackground("ui/crypteverflame_adventure/white");
+		n8.setBackground("COLOR#white");
 		//n8.setBackground("ui/crypteverflame_adventure/zone");
 		Text t13 = new Text();
 		t13.setText("Un olor a tabaco de pipa llama poderosamente tu atención. Despues de un rato pensando lo asocias al tabaco que fuma Holgast, el mago de la aldea. " +
@@ -263,7 +263,7 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		Choice c3=new Choice();
 		c3.createContents();
-		c3.setBackground("ui/crypteverflame_adventure/white");
+		c3.setBackground("COLOR#white");
 		//c3.setBackground("ui/crypteverflame_adventure/town");
 		c3.setTag("WOLVES");
 		Text t8 = new Text();
@@ -295,7 +295,7 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		Choice c4=new Choice();
 		c4.createContents();
-		c4.setBackground("ui/crypteverflame_adventure/white");
+		c4.setBackground("COLOR#white");
 		//c4.setBackground("ui/crypteverflame_adventure/town");
 		c4.setTag("WOLVES2");
 		Text t9 = new Text();
@@ -309,7 +309,7 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		Choice c5 = new Choice();
 		c5.createContents();
-		c5.setBackground("ui/crypteverflame_adventure/town");
+		c5.setBackground("COLOR#white");
 		c5.setTag("WOLVES3");
 		Text t10 = new Text();
 		t10.setText("Veis un gran lobo observandoos escondido entre los matorrales. Claramente intenta huir despues de veros, seguramente con la" +
