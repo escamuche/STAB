@@ -1,6 +1,7 @@
 package com.stab.data.adventure;
 
 import com.stab.adventure.Adventure;
+import com.stab.common.Constants;
 import com.stab.data.utils.StabBlockData;
 import com.stab.model.basic.scenes.Choice;
 import com.stab.model.basic.scenes.Narration;
@@ -9,6 +10,9 @@ import com.stab.model.basic.scenes.event.response.VictoryResponse;
 import com.stab.model.basic.scenes.event.rule.AllMonstersDeadRule;
 import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
+import com.stab.model.basic.ui.Image;
+import com.stab.model.basic.ui.Panel;
+
 
 public class Zombies extends Adventure{
 	
@@ -32,6 +36,22 @@ public class Zombies extends Adventure{
 		n.createContents();
 		n.setTag("BEGIN");
 		n.setNext("CHOICE");
+	
+		Panel tp= new Panel();
+		tp.setPos(Constants.CENTER,Constants.BEGIN);
+		//tp.setSize(Constants.PERCENT+50,Constants.PERCENT+30);
+		tp.setSize(600,200);
+		tp.setBackground("SHADER#infernal");
+		tp.setOverlay("ui/consolefront$B");
+		
+		Image i=n.createImage("tokens/direrat$S");
+		i.setPos(50,50);
+		i.setSize(40, 40);
+		//n.addGUI(i);
+		
+	//	tp.addChild(i);
+		
+		n.addGUI(tp);
 		n.setText("El gran Khan surge de su tienda y os mira con mirada penetrante. Os ha convocado a su presencia por algun motivo desconocido para vosotros y tras estudiaros largamente habla con voz rotunda y grave: ");
 		this.addScene(n);
 
