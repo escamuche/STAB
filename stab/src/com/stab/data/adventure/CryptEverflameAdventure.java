@@ -33,7 +33,7 @@ public class CryptEverflameAdventure extends Adventure{
 		setMaxPlayers(5);
 		setAuthor("Jason Bulmahn");
 		setDescription("Los jovenes heroes de la ciudad de Kassen estan listos para su prueba de madurez, una vieja ceremonia en la que tendran que traer una llama encendida en la llama eterna que arde en la tumba del fundador de la ciudad.");
-		setIcon("ui/crypteverflame_adventure/everflame");
+		setIcon("everflame");
 	}
 	
 	public void init(){
@@ -45,9 +45,9 @@ public class CryptEverflameAdventure extends Adventure{
 		n1.setTag("BEGIN");
 		n1.setNext("INTRO");
 		Text t1=new Text();
-		n1.setBackground("ui/crypteverflame_adventure/white");
+		n1.setBackground("white");
 		Image i = new Image();
-		i.setImage("ui/crypteverflame_adventure/kassen");
+		i.setImage("kassen");
 		t1.setText("Hace casi 200 años, cuando la tierra que llegaria a ser Nirmathas " +
 				"todavia era un vasallo del imperio de Cheliax, el norte del bosque de " +
 				"los colmillos era un lugar salvaje y peligroso. Los cruzados que derrotaron " +
@@ -69,9 +69,9 @@ public class CryptEverflameAdventure extends Adventure{
 		n2.setTag("INTRO");
 		n2.setNext("INTRO2");
 		//n2.setBackground("ui/scroll$S");
-		n2.setBackground("ui/crypteverflame_adventure/white");
+		n2.setBackground("white");
 		Image i2 = new Image();
-		i2.setImage("ui/crypteverflame_adventure/kassen");
+		i2.setImage("kassen");
 		Text t2=new Text();
 		t2.setText("Ekat Kassen era un cruzado y buscador de fortuna que llego " +
 				"a servir a Lastwall en el año 4515 AR. Aunque lucho con distincion, " +
@@ -100,8 +100,8 @@ public class CryptEverflameAdventure extends Adventure{
 		n3.createContents();
 		n3.setTag("INTRO2");
 		n3.setNext("INTRO3");
-		n3.setBackground("ui/crypteverflame_adventure/white");
-		//n3.setBackground("ui/crypteverflame_adventure/zone");
+		n3.setBackground("white");
+		//n3.setBackground("zone");
 		Text t3 = new Text();
 		t3.setText("La batalla fue terriblemente sangrienta, solo unos pocos de la gente de la ciudad volvio " +
 				"para contar lo sucedido. Al final Asar murio y sus mercenarios fueron derrotados, pero " +
@@ -128,8 +128,8 @@ public class CryptEverflameAdventure extends Adventure{
 		n4.createContents();
 		n4.setTag("INTRO3");
 		n4.setNext("TOWN");
-		n4.setBackground("ui/crypteverflame_adventure/white");
-		//n4.setBackground("ui/crypteverflame_adventure/zone");
+		n4.setBackground("white");
+		//n4.setBackground("zone");
 		Text t4 = new Text();
 		t4.setText("Estamos a 4 de Neth, los primeros vientos del invierno empiezan a soplar. " +
 				"Este fue el dia, en 5435, en el que Ekat Kassen y sus hombres marcharon al " +
@@ -145,8 +145,8 @@ public class CryptEverflameAdventure extends Adventure{
 
 		Narration n5=new Narration();
 		n5.createContents();
-		n5.setBackground("ui/crypteverflame_adventure/white");
-		//n5.setBackground("ui/crypteverflame_adventure/town");
+		n5.setBackground("white");
+		//n5.setBackground("town");
 		n5.setTag("TOWN");
 		n5.setNext("TOWN2");
 		Text t5 = new Text();
@@ -172,8 +172,8 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		Choice c=new Choice();
 		c.createContents();
-		c.setBackground("ui/crypteverflame_adventure/white");
-		//c.setBackground("ui/crypteverflame_adventure/town");
+		c.setBackground("white");
+		//c.setBackground("town");
 		c.setTag("TOWN2");
 		Text t6 = new Text();
 		t6.setText("El alcalde hace una pausa para que podais aceptar la mision. Uno a uno " +
@@ -213,10 +213,10 @@ public class CryptEverflameAdventure extends Adventure{
 		Choice c2=new Choice();
 		c2.createContents();
 		c2.setTag("CHOICE");
-		c2.setBackground("ui/crypteverflame_adventure/white");
+		c2.setBackground("white");
 		//c2.setNext("WOLVES");
 		Text t7 = new Text();
-		t7.setText("La dura batalla contra los extraños orcos acaba, dejando una sensacion extraña, por la forma de desaparecer parece" +
+		t7.setText("La dura batalla contra los extraños orcos acaba, dejando una sensacion extraña, por la forma de desaparecer parece " +
 				"claro que estas criaturas no eran mas que ilusiones, pero quien y porque haria algo asi.");
 		t7.setSize(Constants.CONTENT,Constants.CONTENT);
 		c2.addGUI(t7);
@@ -228,13 +228,13 @@ public class CryptEverflameAdventure extends Adventure{
 		c2.addOption("Continuar el viaje.", "WOLVES");
 		c2.addGUI(rs);
 		this.addScene(c2);
-		
+	/*	
 		Narration n7=new Narration();
 		n7.createContents();
 		n7.setTag("PERCFAIL");
 		n7.setNext("WOLVES");
-		n7.setBackground("ui/crypteverflame_adventure/white");
-		//n7.setBackground("ui/crypteverflame_adventure/zone");
+		n7.setBackground("white");
+		//n7.setBackground("zone");
 		Text t12 = new Text();
 		t7.setText("Buscas por la zona, pero no consigues encontrar nada que te llame la atención. Al cabo de un rato decides continuar con tu camino. ");
 		t7.setSize(Constants.CONTENT,Constants.CONTENT);
@@ -245,8 +245,8 @@ public class CryptEverflameAdventure extends Adventure{
 		n8.createContents();
 		n8.setTag("PERCSUCCESS");
 		n8.setNext("WOLVES");
-		n8.setBackground("ui/crypteverflame_adventure/white");
-		//n8.setBackground("ui/crypteverflame_adventure/zone");
+		n8.setBackground("white");
+		//n8.setBackground("zone");
 		Text t13 = new Text();
 		t13.setText("Un olor a tabaco de pipa llama poderosamente tu atención. Despues de un rato pensando lo asocias al tabaco que fuma Holgast, el mago de la aldea. " +
 				"Mientras vas meditando sobre ello decides continuar tu viaje.");
@@ -254,17 +254,11 @@ public class CryptEverflameAdventure extends Adventure{
 		n8.addGUI(t12);
 		this.addScene(n8);
 		
-		Narration ndefeat=new Narration();
-		ndefeat.createContents();
-		ndefeat.setTag("DEFEAT");
-		ndefeat.setText("Todos los aventureros han muerto!");
-		ndefeat.setNext(null);
-		this.addScene(ndefeat);
-		
+	
 		Choice c3=new Choice();
 		c3.createContents();
-		c3.setBackground("ui/crypteverflame_adventure/white");
-		//c3.setBackground("ui/crypteverflame_adventure/town");
+		c3.setBackground("white");
+		//c3.setBackground("town");
 		c3.setTag("WOLVES");
 		Text t8 = new Text();
 		t8.setText("Despues de derrotar a los orcos seguis avanzando. Gracias al mapa que llevais es relativamente sencillo encontrar el camino correcto. " +
@@ -295,8 +289,8 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		Choice c4=new Choice();
 		c4.createContents();
-		c4.setBackground("ui/crypteverflame_adventure/white");
-		//c4.setBackground("ui/crypteverflame_adventure/town");
+		c4.setBackground("white");
+		//c4.setBackground("town");
 		c4.setTag("WOLVES2");
 		Text t9 = new Text();
 		t9.setText("Despues encendeis una pequeña hoguera y empezais a cocinar un estofado con las raciones que hay en " +
@@ -309,7 +303,7 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		Choice c5 = new Choice();
 		c5.createContents();
-		c5.setBackground("ui/crypteverflame_adventure/town");
+		c5.setBackground("town");
 		c5.setTag("WOLVES3");
 		Text t10 = new Text();
 		t10.setText("Veis un gran lobo observandoos escondido entre los matorrales. Claramente intenta huir despues de veros, seguramente con la" +
@@ -323,7 +317,7 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		Narration n9=new Narration();
 		n9.createContents();
-		n9.setBackground("ui/crypteverflame_adventure/town");
+		n9.setBackground("town");
 		n9.setTag("WOLVES4");
 		n9.setNext("BANDITS");
 		Text t11 = new Text();
@@ -333,6 +327,12 @@ public class CryptEverflameAdventure extends Adventure{
 		t11.setSize(Constants.CONTENT,Constants.CONTENT);
 		n9.addGUI(t11);
 		this.addScene(n9);
-		
+		*/
+		Narration ndefeat=new Narration();
+		ndefeat.createContents();
+		ndefeat.setTag("DEFEAT");
+		ndefeat.setText("Todos los aventureros han muerto!");
+		ndefeat.setNext(null);
+		this.addScene(ndefeat);
 	}
 }
