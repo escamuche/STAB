@@ -228,7 +228,7 @@ public class CryptEverflameAdventure extends Adventure{
 		rs.setDC(15);
 		rs.setResults("PERCFAIL", "PERCSUCCESS");
 		c2.addOption("Continuar el viaje.", "WOLVES");
-		c2.addGUI(rs);
+		c2.addOption(rs);
 		this.addScene(c2);
 	/*	
 		Narration n7=new Narration();

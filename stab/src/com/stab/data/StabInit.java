@@ -115,6 +115,8 @@ import com.stab.data.scene.SpellBook;
 import com.stab.data.scene.StabLobby;
 import com.stab.data.tokens.IronBarsToken;
 import com.stab.data.ui.PathfinderTokenCard;
+import com.stab.data.ui.RolledOptionButton;
+import com.stab.data.ui.RolledSkillOptionButton;
 import com.stab.data.ui.StabActionBar;
 import com.stab.data.utils.DefaultBlockData;
 import com.stab.data.utils.StabBlockData;
@@ -148,6 +150,8 @@ public class StabInit {
 			sv.getFactory().setMapping(PathfinderTokenCard.class);
 			sv.getFactory().setMapping(StabActionBar.class);
 			sv.getFactory().setMapping(IronBarsToken.ID,ImageToken_sprite.class);
+			sv.getFactory().setMapping(RolledOptionButton.ID,Button_sprite.class);
+			sv.getFactory().setMapping(RolledSkillOptionButton.ID,Button_sprite.class);
 		}
 	}
 
@@ -231,6 +235,8 @@ public class StabInit {
 		
 		//botones
 		of.setMapping(ActionSlotButton.class);
+		of.setMapping(RolledOptionButton.class);
+		of.setMapping(RolledSkillOptionButton.class);
 		
 		//BlockData
 		of.setMapping(DefaultBlockData.class);
