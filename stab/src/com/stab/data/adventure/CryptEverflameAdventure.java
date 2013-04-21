@@ -68,10 +68,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n2.createContents();
 		n2.setTag("INTRO");
 		n2.setNext("INTRO2");
-		//n2.setBackground("ui/scroll$S");
 		n2.setBackground("COLOR#white");
-		Image i2 = new Image();
-		i2.setImage("kassen");
 		Text t2=new Text();
 		t2.setText("Ekat Kassen era un cruzado y buscador de fortuna que llego " +
 				"a servir a Lastwall en el año 4515 AR. Aunque lucho con distincion, " +
@@ -91,8 +88,7 @@ public class CryptEverflameAdventure extends Adventure{
 				"los lugareños encontraron el campamento de los mercenarios en una antigua cripta en lo " +
 				"profundo del bosque, y el mismo Ekat fue a lidiar con su antiguo compañero.");
 		t2.setSize(Constants.CONTENT,Constants.CONTENT);
-		i2.setSize(Constants.CONTENT,Constants.CONTENT);
-		n2.addGUI(i2);
+		n2.addGUI(i);
 		n2.addGUI(t2);
 		this.addScene(n2);
 		
@@ -100,10 +96,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n3.createContents();
 		n3.setTag("INTRO2");
 		n3.setNext("INTRO3");
-
 		n3.setBackground("COLOR#white");
-		//n3.setBackground("ui/crypteverflame_adventure/zone");
-
 		Text t3 = new Text();
 		t3.setText("La batalla fue terriblemente sangrienta, solo unos pocos de la gente de la ciudad volvio " +
 				"para contar lo sucedido. Al final Asar murio y sus mercenarios fueron derrotados, pero " +
@@ -123,17 +116,17 @@ public class CryptEverflameAdventure extends Adventure{
 				"Cuando los aventureros retornan unos pocos dias despues, la ciudad celebra una gran fiesta en su honor. " +
 				"Esto tambien marca la ultima celebracion antes de que comience el duro invierno. ");
 		t3.setSize(Constants.CONTENT,Constants.CONTENT);
+		n3.addGUI(i);
 		n3.addGUI(t3);
 		this.addScene(n3);
 		
 		Narration n4=new Narration();
 		n4.createContents();
 		n4.setTag("INTRO3");
-	
+		Image i2=new Image();
+		i2.setImage("zone");
 		n4.setNext("TOWN");
 		n4.setBackground("COLOR#white");
-		//n4.setBackground("ui/crypteverflame_adventure/zone");
-
 		Text t4 = new Text();
 		t4.setText("Estamos a 4 de Neth, los primeros vientos del invierno empiezan a soplar. " +
 				"Este fue el dia, en 5435, en el que Ekat Kassen y sus hombres marcharon al " +
@@ -144,15 +137,14 @@ public class CryptEverflameAdventure extends Adventure{
 				"por tus compañeros que van apareciendo poco a poco. De pronto la campana de la " +
 				"iglesia empieza a tañir...");
 		t4.setSize(Constants.CONTENT,Constants.CONTENT);
+		i2.setPos(Constants.BEGIN, Constants.NEXT);
+		n4.addGUI(i2);
 		n4.addGUI(t4);
 		this.addScene(n4);
 
 		Narration n5=new Narration();
-		
 		n5.createContents();
 		n5.setBackground("COLOR#white");
-		//n5.setBackground("ui/crypteverflame_adventure/town");
-
 		n5.setTag("TOWN");
 		n5.setNext("TOWN2");
 		Text t5 = new Text();
