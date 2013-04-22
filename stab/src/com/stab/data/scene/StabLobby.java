@@ -14,6 +14,7 @@ import com.stab.data.info.player.WizardCharacter;
 import com.stab.model.Player;
 import com.stab.model.Scene;
 import com.stab.model.basic.scenes.Lobby;
+import com.stab.model.basic.scenes.Tavern;
 import com.stab.model.basic.ui.Backdrop;
 import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.Music;
@@ -231,7 +232,8 @@ public class StabLobby  extends Scene{
 	//	player.discardInfo();
 	//	player.addInfo(new WarriorCharacter());
 	
-		travelToScene(player,CharacterSheet.ID);
+	//	travelToScene(player,CharacterSheet.ID);
+		travelToScene(player,null);
 	}
 	
 }
