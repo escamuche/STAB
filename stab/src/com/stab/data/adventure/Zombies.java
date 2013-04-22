@@ -45,15 +45,16 @@ public class Zombies extends Adventure{
 	
 		Panel tp= new Panel();
 		tp.setPos(Constants.CENTER,Constants.BEGIN);
-		//tp.setSize(Constants.PERCENT+50,Constants.PERCENT+30);
-		tp.setSize(600,200);
+		tp.setSize(Constants.PERCENT+50,Constants.PERCENT+30);
+		//tp.setSize(600,200);
 		tp.setBackground("SHADER#infernal");
 		tp.setOverlay("ui/consolefront$B");
 		
 		Image i=n.createImage("tokens/direrat$S");
 		i.setPos(50,50);
 		i.setSize(40, 40);
-		//n.addGUI(i);
+	//	i.setImage("SHADER#infernal");
+		n.addGUI(i);
 		
 	//	tp.addChild(i);
 		
