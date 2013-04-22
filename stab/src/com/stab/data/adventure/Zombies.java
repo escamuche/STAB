@@ -66,7 +66,7 @@ public class Zombies extends Adventure{
 		
 		DefaultRule rr= new DefaultRule();
 		rr.setEvent(PlayerEntersScene.class);
-		rr.addCondition(new CharacterSkillRollCondition(StabConstants.SENSEMOTIVE, 19));
+		rr.addCondition(new CharacterSkillRollCondition(StabConstants.SENSEMOTIVE, 10));
 		rr.addResponse(new SetVisibleResponse(tt, true));
 		n.addRule(rr);
 		this.addScene(n);
