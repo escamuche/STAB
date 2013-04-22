@@ -44,10 +44,9 @@ public class CryptEverflameAdventure extends Adventure{
 		n1.createContents();
 		n1.setTag("BEGIN");
 		n1.setNext("INTRO");
+		n1.setBackground("COLOR#orange");
+		
 		Text t1=new Text();
-		n1.setBackground("COLOR#white");
-		Image i = new Image();
-		i.setImage("kassen");
 		t1.setText("Hace casi 200 años, cuando la tierra que llegaria a ser Nirmathas " +
 				"todavia era un vasallo del imperio de Cheliax, el norte del bosque de " +
 				"los colmillos era un lugar salvaje y peligroso. Los cruzados que derrotaron " +
@@ -59,7 +58,11 @@ public class CryptEverflameAdventure extends Adventure{
 				"montañas Mindspin en el oeste.");
 		t1.setPos(Constants.BEGIN, Constants.BEGIN);
 		t1.setSize(Constants.CONTENT,Constants.CONTENT);
+		
+		Image i = new Image();
+		i.setImage("kassen");
 		i.setPos(Constants.BEGIN, Constants.NEXT);
+		
 		n1.addGUI(t1);
 		n1.addGUI(i);
 		this.addScene(n1);
@@ -68,7 +71,9 @@ public class CryptEverflameAdventure extends Adventure{
 		n2.createContents();
 		n2.setTag("INTRO");
 		n2.setNext("INTRO2");
-		n2.setBackground("COLOR#white");
+		n2.setBackground("COLOR#orange");
+		Image i2 = new Image();
+		i2.setImage("kassen");
 		Text t2=new Text();
 		t2.setText("Ekat Kassen era un cruzado y buscador de fortuna que llego " +
 				"a servir a Lastwall en el año 4515 AR. Aunque lucho con distincion, " +
@@ -88,7 +93,8 @@ public class CryptEverflameAdventure extends Adventure{
 				"los lugareños encontraron el campamento de los mercenarios en una antigua cripta en lo " +
 				"profundo del bosque, y el mismo Ekat fue a lidiar con su antiguo compañero.");
 		t2.setSize(Constants.CONTENT,Constants.CONTENT);
-		n2.addGUI(i);
+		i2.setPos(Constants.BEGIN, Constants.NEXT);
+		n2.addGUI(i2);
 		n2.addGUI(t2);
 		this.addScene(n2);
 		
@@ -96,7 +102,9 @@ public class CryptEverflameAdventure extends Adventure{
 		n3.createContents();
 		n3.setTag("INTRO2");
 		n3.setNext("INTRO3");
-		n3.setBackground("COLOR#white");
+		n3.setBackground("COLOR#orange");
+		Image i3 = new Image();
+		i3.setImage("kassen");
 		Text t3 = new Text();
 		t3.setText("La batalla fue terriblemente sangrienta, solo unos pocos de la gente de la ciudad volvio " +
 				"para contar lo sucedido. Al final Asar murio y sus mercenarios fueron derrotados, pero " +
@@ -116,17 +124,18 @@ public class CryptEverflameAdventure extends Adventure{
 				"Cuando los aventureros retornan unos pocos dias despues, la ciudad celebra una gran fiesta en su honor. " +
 				"Esto tambien marca la ultima celebracion antes de que comience el duro invierno. ");
 		t3.setSize(Constants.CONTENT,Constants.CONTENT);
-		n3.addGUI(i);
+		i3.setPos(Constants.BEGIN, Constants.NEXT);
+		n3.addGUI(i3);
 		n3.addGUI(t3);
 		this.addScene(n3);
 		
 		Narration n4=new Narration();
 		n4.createContents();
 		n4.setTag("INTRO3");
-		Image i2=new Image();
-		i2.setImage("zone");
+		Image i4=new Image();
+		i4.setImage("zone");
 		n4.setNext("TOWN");
-		n4.setBackground("COLOR#white");
+		n4.setBackground("COLOR#orange");
 		Text t4 = new Text();
 		t4.setText("Estamos a 4 de Neth, los primeros vientos del invierno empiezan a soplar. " +
 				"Este fue el dia, en 5435, en el que Ekat Kassen y sus hombres marcharon al " +
@@ -137,16 +146,18 @@ public class CryptEverflameAdventure extends Adventure{
 				"por tus compañeros que van apareciendo poco a poco. De pronto la campana de la " +
 				"iglesia empieza a tañir...");
 		t4.setSize(Constants.CONTENT,Constants.CONTENT);
-		i2.setPos(Constants.BEGIN, Constants.NEXT);
-		n4.addGUI(i2);
+		i4.setPos(Constants.BEGIN, Constants.NEXT);
+		n4.addGUI(i4);
 		n4.addGUI(t4);
 		this.addScene(n4);
 
 		Narration n5=new Narration();
 		n5.createContents();
-		n5.setBackground("COLOR#white");
+		n5.setBackground("COLOR#orange");
 		n5.setTag("TOWN");
 		n5.setNext("TOWN2");
+		Image i5 = new Image();
+		i5.setImage("town");
 		Text t5 = new Text();
 		t5.setText("La campana sobre el cercano templo de Erastil empieza a tocar su cancion " +
 				"del mediodia, levantando ecos en la silenciosa ciudad de Kassen. Mientras " +
@@ -165,7 +176,9 @@ public class CryptEverflameAdventure extends Adventure{
 				"los bravos que se aventuraran hasta la tumba de kassen para volver con la llama " +
 				"que mantendra a esta comunidad a salvo durante otro invierno?' ");
 		t5.setSize(Constants.CONTENT,Constants.CONTENT);
+		i5.setPos(Constants.BEGIN, Constants.NEXT);
 		n5.addGUI(t5);
+		n5.addGUI(i5);
 		this.addScene(n5);
 		
 		Choice c=new Choice();
@@ -230,15 +243,13 @@ public class CryptEverflameAdventure extends Adventure{
 		c2.addOption("Continuar el viaje.", "WOLVES");
 		c2.addOption(rs);
 		this.addScene(c2);
-	/*	
+	
 		Narration n7=new Narration();
 		n7.createContents();
 		n7.setTag("PERCFAIL");
 		n7.setNext("WOLVES");
 
 		n7.setBackground("COLOR#white");
-		//n7.setBackground("ui/crypteverflame_adventure/zone");
->>>>>>> branch 'master' of https://github.com/escamuche/STAB.git
 		Text t12 = new Text();
 		t7.setText("Buscas por la zona, pero no consigues encontrar nada que te llame la atención. Al cabo de un rato decides continuar con tu camino. ");
 		t7.setSize(Constants.CONTENT,Constants.CONTENT);
@@ -251,8 +262,6 @@ public class CryptEverflameAdventure extends Adventure{
 		n8.setNext("WOLVES");
 
 		n8.setBackground("COLOR#white");
-		//n8.setBackground("ui/crypteverflame_adventure/zone");
->>>>>>> branch 'master' of https://github.com/escamuche/STAB.git
 		Text t13 = new Text();
 		t13.setText("Un olor a tabaco de pipa llama poderosamente tu atención. Despues de un rato pensando lo asocias al tabaco que fuma Holgast, el mago de la aldea. " +
 				"Mientras vas meditando sobre ello decides continuar tu viaje.");
@@ -265,8 +274,6 @@ public class CryptEverflameAdventure extends Adventure{
 		c3.createContents();
 
 		c3.setBackground("COLOR#white");
-		//c3.setBackground("ui/crypteverflame_adventure/town");
->>>>>>> branch 'master' of https://github.com/escamuche/STAB.git
 		c3.setTag("WOLVES");
 		Text t8 = new Text();
 		t8.setText("Despues de derrotar a los orcos seguis avanzando. Gracias al mapa que llevais es relativamente sencillo encontrar el camino correcto. " +
@@ -299,8 +306,6 @@ public class CryptEverflameAdventure extends Adventure{
 		c4.createContents();
 
 		c4.setBackground("COLOR#white");
-		//c4.setBackground("ui/crypteverflame_adventure/town");
->>>>>>> branch 'master' of https://github.com/escamuche/STAB.git
 		c4.setTag("WOLVES2");
 		Text t9 = new Text();
 		t9.setText("Despues encendeis una pequeña hoguera y empezais a cocinar un estofado con las raciones que hay en " +
@@ -339,7 +344,7 @@ public class CryptEverflameAdventure extends Adventure{
 		t11.setSize(Constants.CONTENT,Constants.CONTENT);
 		n9.addGUI(t11);
 		this.addScene(n9);
-		*/
+		
 		Narration ndefeat=new Narration();
 		ndefeat.createContents();
 		ndefeat.setTag("DEFEAT");
