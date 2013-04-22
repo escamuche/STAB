@@ -56,6 +56,10 @@ public  class SkillRoll extends AdvancedRollApplicable {
 	
 	
 	
-	
+	@Override
+	public void validate() {
+		super.validate();
+		System.out.println("Skill roll: "+this.getSkill()+"  roll "+getRollResult()+" + "+getFinalModifier()+"   against "+getFinalTargetNumber()+"  result: "+getResult()+" (success:"+success()+" critical: "+isCritical()+" botch: "+isBotch()+")");
+	}
 	
 }

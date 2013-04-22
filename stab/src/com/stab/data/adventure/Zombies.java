@@ -2,16 +2,22 @@ package com.stab.data.adventure;
 
 import com.stab.adventure.Adventure;
 import com.stab.common.Constants;
+import com.stab.common.events.DefaultRule;
+import com.stab.data.StabConstants;
+import com.stab.data.rules.CharacterSkillRollCondition;
 import com.stab.data.utils.StabBlockData;
 import com.stab.model.basic.scenes.Choice;
 import com.stab.model.basic.scenes.Narration;
+import com.stab.model.basic.scenes.event.PlayerEntersScene;
 import com.stab.model.basic.scenes.event.response.DefeatResponse;
+import com.stab.model.basic.scenes.event.response.SetVisibleResponse;
 import com.stab.model.basic.scenes.event.response.VictoryResponse;
 import com.stab.model.basic.scenes.event.rule.AllMonstersDeadRule;
 import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 import com.stab.model.basic.ui.Image;
 import com.stab.model.basic.ui.Panel;
+import com.stab.model.basic.ui.Text;
 
 
 public class Zombies extends Adventure{
@@ -53,6 +59,15 @@ public class Zombies extends Adventure{
 		
 		n.addGUI(tp);
 		n.setText("El gran Khan surge de su tienda y os mira con mirada penetrante. Os ha convocado a su presencia por algun motivo desconocido para vosotros y tras estudiaros largamente habla con voz rotunda y grave: ");
+		Text tt=n.createText("Intuis que algo no va bien");
+		tt.setVisible(false);
+		n.addGUI(tt);
+		
+		DefaultRule rr= new DefaultRule();
+		rr.setEvent(PlayerEntersScene.class);
+		rr.addCondition(new CharacterSkillRollCondition(StabConstants.SENSEMOTIVE, 19));
+		rr.addResponse(new SetVisibleResponse(tt, true));
+		n.addRule(rr);
 		this.addScene(n);
 
 		Choice c=new Choice();

@@ -172,12 +172,7 @@ public abstract class Attack extends OpposedSkillRoll{
 		return !hits();
 	}
 	
-	public boolean isCritical(){
-		return getResult()==CRITICAL;
-	}
-	public boolean isBotch(){
-		return getResult()==BOTCH;
-	}
+	
 
 
 	

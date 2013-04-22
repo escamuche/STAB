@@ -102,4 +102,10 @@ public  class SavingThrowEffect extends OpposedSkillRoll {
 		}
 	}
 	
+	
+	@Override
+	public void validate() {
+		super.validate();
+		System.out.println("Saving throw : "+this.getSkill()+" roll "+getRollResult()+" + "+getFinalModifier()+"   against "+getFinalTargetNumber()+"  result: "+getResult()+" (success:"+success()+" evaded: "+isEvaded()+" botch: "+isBotch()+")");
+	}
 }
