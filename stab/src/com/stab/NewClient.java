@@ -15,7 +15,7 @@ public class NewClient extends  StabClient {
 	public static void main(String[] args) {
 	
 		
-	//	Component.DEBUG=true;
+		//Component.DEBUG=true;
 		
 		NewClient client=new NewClient();
 		client.start();

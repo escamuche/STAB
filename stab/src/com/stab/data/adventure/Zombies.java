@@ -52,6 +52,7 @@ public class Zombies extends Adventure{
 		
 		Image i=n.createImage("tokens/direrat$S");
 		i.setPos(50,50);
+		
 		i.setSize(40, 40);
 	//	i.setImage("SHADER#infernal");
 		n.addGUI(i);
