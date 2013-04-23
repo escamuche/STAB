@@ -11,6 +11,7 @@ import com.stab.model.basic.scenes.Choice;
 import com.stab.model.basic.scenes.Narration;
 import com.stab.model.basic.scenes.event.PlayerEntersScene;
 import com.stab.model.basic.scenes.event.response.DefeatResponse;
+import com.stab.model.basic.scenes.event.response.SetPartyValueResponse;
 import com.stab.model.basic.scenes.event.response.SetVisibleResponse;
 import com.stab.model.basic.scenes.event.response.VictoryResponse;
 import com.stab.model.basic.scenes.event.rule.AllMonstersDeadRule;
@@ -53,7 +54,6 @@ public class CryptEverflameAdventure extends Adventure{
 		n1.setNext("INTRO");
 		n1.setBackground("COLOR#orange");
 		
-		//Text t1=new Text();
 		n1.setText("Hace casi 200 años, cuando la tierra que llegaria a ser Nirmathas " +
 				"todavia era un vasallo del imperio de Cheliax, el norte del bosque de " +
 				"los colmillos era un lugar salvaje y peligroso. Los cruzados que derrotaron " +
@@ -63,15 +63,12 @@ public class CryptEverflameAdventure extends Adventure{
 				"orcos merodeando a mortales depredadores, haciendolo inseguro para los comerciantes " +
 				"que buscaban comerciar con la creciente comunidad de Skelt en las laderas de las " +
 				"montañas Mindspin en el oeste.");
-		//t1.setPos(Constants.BEGIN, Constants.BEGIN);
-		//t1.setSize(Constants.CONTENT,Constants.CONTENT);
 		
 		Image i1 = new Image();
-		i1.setImage("nirmathas$S");
+		i1.setImage("nirmathas$A");
 		i1.setPos(Constants.BEGIN, Constants.NEXT);
 		i1.setSize(Constants.FILL, Constants.FILL);
 		
-		//n1.addGUI(t1);
 		n1.addGUI(i1);
 		this.addScene(n1);
 		
@@ -83,7 +80,6 @@ public class CryptEverflameAdventure extends Adventure{
 		n2.setNext("INTRO2");
 		n2.setBackground("COLOR#orange");
 		
-		//Text t2=new Text();
 		n2.setText("Ekat Kassen era un cruzado y buscador de fortuna que llego " +
 				"a servir a Lastwall en el año 4515 AR. Aunque lucho con distincion, " +
 				"pronto se dio cuenta de que buscaba mas de la vida y dejo la milicia " +
@@ -101,15 +97,12 @@ public class CryptEverflameAdventure extends Adventure{
 				"grandes fortunas a sus mercenarios, Asar asalto la ciudad durante dos meses. Finalmente " +
 				"los lugareños encontraron el campamento de los mercenarios en una antigua cripta en lo " +
 				"profundo del bosque, y el mismo Ekat fue a lidiar con su antiguo compañero.");
-		//t2.setSize(Constants.CONTENT,Constants.CONTENT);
-		//t2.setPos(Constants.BEGIN, Constants.BEGIN);
 		
 		Image i2 = new Image();
-		i2.setImage("nirmathasmap$S");
+		i2.setImage("nirmathasmap$A");
 		i2.setPos(Constants.BEGIN, Constants.NEXT);
 		i2.setSize(Constants.FILL, Constants.FILL);
 		
-		//n2.addGUI(t2);
 		n2.addGUI(i2);
 		this.addScene(n2);
 		
@@ -121,7 +114,6 @@ public class CryptEverflameAdventure extends Adventure{
 		n3.setNext("INTRO3");
 		n3.setBackground("COLOR#orange");
 		
-		//Text t3 = new Text();
 		n3.setText("La batalla fue terriblemente sangrienta, solo unos pocos de la gente de la ciudad volvio " +
 				"para contar lo sucedido. Al final Asar murio y sus mercenarios fueron derrotados, pero " +
 				"Ekat sufrio una herida mortal. Murio dos dias mas tarde el 11 de Neth de 4535 " +
@@ -139,15 +131,12 @@ public class CryptEverflameAdventure extends Adventure{
 				"con los mercenarios. " +
 				"Cuando los aventureros retornan unos pocos dias despues, la ciudad celebra una gran fiesta en su honor. " +
 				"Esto tambien marca la ultima celebracion antes de que comience el duro invierno. ");
-		//t3.setSize(Constants.CONTENT,Constants.CONTENT);
-		//t3.setPos(Constants.BEGIN, Constants.BEGIN);
 		
 		Image i3 = new Image();
-		i3.setImage("kassen$S");
+		i3.setImage("kassen$A");
 		i3.setPos(Constants.BEGIN, Constants.NEXT);
 		i3.setSize(Constants.FILL, Constants.FILL);
 		
-		//n3.addGUI(t3);
 		n3.addGUI(i3);
 		this.addScene(n3);
 		
@@ -157,9 +146,8 @@ public class CryptEverflameAdventure extends Adventure{
 		n4.createContents();
 		n4.setTag("INTRO3");
 		n4.setNext("TOWN");
-		n4.setBackground("COLOR#orange");
+		n4.setBackground("village");
 		
-		//Text t4 = new Text();
 		n4.setText("Estamos a 4 de Neth, los primeros vientos del invierno empiezan a soplar. " +
 				"Este fue el dia, en 5435, en el que Ekat Kassen y sus hombres marcharon al " +
 				"encuentro de Asar y sus mercenarios. Y hoy sera el dia en el que junto con tus " +
@@ -168,14 +156,12 @@ public class CryptEverflameAdventure extends Adventure{
 				"llevando solo lo necesario. Cuando llegas a la plaza, esta desierta, excepto " +
 				"por tus compañeros que van apareciendo poco a poco. De pronto la campana de la " +
 				"iglesia empieza a tañir...");
-		//t4.setSize(Constants.CONTENT,Constants.CONTENT);
 		
 		Image i4=new Image();
-		i4.setImage("town$S");
+		i4.setImage("town$A");
 		i4.setPos(Constants.BEGIN, Constants.NEXT);
 		i4.setSize(Constants.FILL, Constants.FILL);
 		
-		//n4.addGUI(t4);
 		n4.addGUI(i4);
 		this.addScene(n4);
 
@@ -183,11 +169,10 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		Narration n5=new Narration();
 		n5.createContents();
-		n5.setBackground("COLOR#orange");
+		n5.setBackground("village");
 		n5.setTag("TOWN");
 		n5.setNext("TOWN2");
 		
-		//Text t5 = new Text();
 		n5.setText("La campana sobre el cercano templo de Erastil empieza a tocar su cancion " +
 				"del mediodia, levantando ecos en la silenciosa ciudad de Kassen. Mientras " +
 				"los ecos se extinguen, los primeros aldeanos empiezan a entrar en la plaza, " +
@@ -204,14 +189,12 @@ public class CryptEverflameAdventure extends Adventure{
 				"protegernos a todos, asi sera ahora tambien. ¿Donde estan los heroes? ¿Donde estan " +
 				"los bravos que se aventuraran hasta la tumba de kassen para volver con la llama " +
 				"que mantendra a esta comunidad a salvo durante otro invierno?' ");
-		//t5.setSize(Constants.CONTENT,Constants.CONTENT);
-		
+				
 		Image i5 = new Image();
-		i5.setImage("uptal$S");
+		i5.setImage("uptal$A");
 		i5.setPos(Constants.BEGIN, Constants.NEXT);
 		i5.setSize(Constants.FILL, Constants.FILL);
 		
-		//n5.addGUI(t5);
 		n5.addGUI(i5);
 		this.addScene(n5);
 		
@@ -219,11 +202,10 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		Choice c6=new Choice();
 		c6.createContents();
-		c6.setBackground("COLOR#orange");
+		c6.setBackground("village");
 		c6.setTag("TOWN2");
 		
-		//Text t6 = new Text();
-		c6.setText("El alcalde hace una pausa para que podais aceptar la mision. Uno a uno " +
+		Text t6 = c6.createText("El alcalde hace una pausa para que podais aceptar la mision. Uno a uno " +
 				"tus compañeros y tu os acercais,  Uptal os entrega la mula y la lampara. " +
 				"Antes de partir compruebas el contenido de la mochila, raciones para 5 dias, " +
 				"una tienda de campaña, un saco de dormir de invierno, un odre de agua y un " +
@@ -236,16 +218,17 @@ public class CryptEverflameAdventure extends Adventure{
 				"eterno.' Tras esto el alcalde señala hacia el sur, en direccion a la tumba de Kassen. " +
 				"Los aldeanos os despiden de forma fria, reflejandose la solemnidad del momento en sus " +
 				"rostros. ");
-		//t6.setSize(Constants.CONTENT,Constants.CONTENT);
+		t6.setPos(Constants.NEXT, Constants.BEGIN);
+		t6.setSize(Constants.FILL, Constants.CONTENT);
 		
 		Image i6 = new Image();
-		i6.setImage("zone$S");
-		i6.setPos(Constants.BEGIN, Constants.NEXT);
-		i6.setSize(Constants.FILL, Constants.FILL);
+		i6.setImage("zone$A");
+		i6.setPos(Constants.BEGIN, Constants.BEGIN);
+		i6.setSize(Constants.PERCENT+30, Constants.PERCENT+90);
 		
-		//c6.addGUI(t6);
-		c6.addOption("Empezar la aventura!","SMOKE");
 		c6.addGUI(i6);
+		c6.addGUI(t6);
+		c6.addOption("Empezar la aventura!","SMOKE");
 		this.addScene(c6);
 		
 	//mapa combate 1
@@ -271,17 +254,15 @@ public class CryptEverflameAdventure extends Adventure{
 		Choice c7=new Choice();
 		c7.createContents();
 		c7.setTag("SMOKE");
-		c7.setBackground("COLOR#yellow");
+		c7.setBackground("forest");
 		
-		//Text t7 = new Text();
 		c7.setText("La dura batalla contra los extraños orcos acaba, dejando una sensacion extraña, por la forma de desaparecer parece " +
 				"claro que estas criaturas no eran mas que ilusiones, pero quien y porque haria algo asi.");
-		//t7.setSize(Constants.CONTENT,Constants.CONTENT);
 		
-		Image i7 = new Image();
-		i7.setImage("forest$S");
-		i7.setPos(Constants.BEGIN, Constants.NEXT);
-		i7.setSize(Constants.FILL, Constants.FILL);
+		//Image i7 = new Image();
+		//i7.setImage("forest$A");
+		//i7.setPos(Constants.BEGIN, Constants.NEXT);
+		//i7.setSize(Constants.FILL, Constants.FILL);
 		
 		RolledSkillOptionButton sb7 = new RolledSkillOptionButton();
 		sb7.setText("Investigar la zona.");
@@ -289,10 +270,9 @@ public class CryptEverflameAdventure extends Adventure{
 		sb7.setDC(15);
 		sb7.setResults("PERCFAIL", "PERCSUCCESS");
 		
-		//c7.addGUI(t7);
 		c7.addOption(sb7);
 		c7.addOption("Continuar el viaje.", "WOLVES");
-		c7.addGUI(i7);
+		//c7.addGUI(i7);
 		this.addScene(c7);
 	
 	//escena 8
@@ -301,19 +281,19 @@ public class CryptEverflameAdventure extends Adventure{
 		n8.createContents();
 		n8.setTag("PERCFAIL");
 		n8.setNext("WOLVES");
-		n8.setBackground("COLOR#white");
+		n8.setBackground("forest");
 		
 		//Text t8 = new Text();
 		n8.setText("Buscas por la zona, pero no consigues encontrar nada que te llame la atención. Al cabo de un rato decides continuar con tu camino. ");
 		//t8.setSize(Constants.CONTENT,Constants.CONTENT);
 		
-		Image i8 = new Image();
-		i8.setImage("forest$S");
-		i8.setPos(Constants.BEGIN, Constants.NEXT);
-		i8.setSize(Constants.FILL, Constants.FILL);
+		//Image i8 = new Image();
+		//i8.setImage("forest$A");
+		//i8.setPos(Constants.BEGIN, Constants.NEXT);
+		//i8.setSize(Constants.FILL, Constants.FILL);
 		
 		//n8.addGUI(t8);
-		n8.addGUI(i8);
+		//n8.addGUI(i8);
 		this.addScene(n8);
 		
 	//escena 9
@@ -330,7 +310,7 @@ public class CryptEverflameAdventure extends Adventure{
 		//t9.setSize(Constants.CONTENT,Constants.CONTENT);
 		
 		Image i9 = new Image();
-		i9.setImage("everflame$S");
+		i9.setImage("holgast$A");
 		i9.setPos(Constants.BEGIN, Constants.NEXT);
 		i9.setSize(Constants.FILL, Constants.FILL);
 		
@@ -342,7 +322,7 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		Choice c10=new Choice();
 		c10.createContents();
-		c10.setBackground("COLOR#white");
+		c10.setBackground("forest");
 		c10.setTag("WOLVES");
 		
 		//Text t10 = new Text();
@@ -352,17 +332,17 @@ public class CryptEverflameAdventure extends Adventure{
 				"empezais a montar el campamento. ");
 		//t10.setSize(Constants.CONTENT,Constants.CONTENT);
 	
-		Image i10 = new Image();
-		i10.setImage("forest$S");
-		i10.setPos(Constants.BEGIN, Constants.NEXT);
-		i10.setSize(Constants.FILL, Constants.FILL);
+		//Image i10 = new Image();
+		//i10.setImage("forest$A");
+		//i10.setPos(Constants.BEGIN, Constants.NEXT);
+		//i10.setSize(Constants.FILL, Constants.FILL);
 		
 		//Ejemplo de rolledSkill
 		RolledSkillOptionButton sb10= new RolledSkillOptionButton();
 		sb10.setText("Tirar survival para buscar un buen sitio de acampar");
 		sb10.setSkill(StabConstants.SURVIVAL);
 		sb10.setDC(10);
-		sb10.setResults("WOLVESSUC", "WOLVESFAIL");
+		sb10.setResults("WOLVESFAIL", "WOLVESSUC");
 																					//Si las escenas empiezan por #, eso mueve a todos los jugadores en la escena a la escena indicada
 																					//Esto es aplicable a los casos normales tambien.
 																				    //Ojo que puede que alguien no este en la escena. eso lo vemos mas adelante con scene.setWaitsForAll()
@@ -373,33 +353,75 @@ public class CryptEverflameAdventure extends Adventure{
 		//c10.addGUI(t10);
 		c10.addOption(sb10); 
 		c10.addOption("Acampar en el primer sitio que veas", "WOLVESFAIL");
-		c10.addGUI(i10);
+		//c10.addGUI(i10);
 		this.addScene(c10);
+		
+	//escena 10a
+		
+				Narration n10a=new Narration();
+				n10a.createContents();
+				n10a.setTag("WOLVESSUC");
+				n10a.setNext("WOLVES2");
+				n10a.setBackground("forest");
+				
+				n10a.setText("Despues de un buen rato buscando encuentras una pequeña elevacion protegida por matorrales tupidos en dos de sus lados. " +
+						"Satisfecho con el sitio montais campamento bajo las estrellas. ");
+				
+				DefaultRule r10a= new DefaultRule();
+				r10a.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p10a = new SetPartyValueResponse("acampar",true);
+				r10a.addResponse(p10a);
+				n10a.addRule(r10a);
+				
+				this.addScene(n10a);
+				
+		//escena 10b
+				
+				Narration n10b=new Narration();
+				n10b.createContents();
+				n10b.setTag("WOLVESFAIL");
+				n10b.setNext("WOLVES2");
+				n10b.setBackground("forest");
+				
+				n10b.setText("Por mucho que buscas no consigues ver un sitio bien protegido y la falta de luz hace que acampes en cualquier sitio. " +
+						"Aun asi estas contento de poder descansar un poco despues del duro dia. ");
+				
+				DefaultRule r10b= new DefaultRule();
+				r10b.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p10b = new SetPartyValueResponse("acampar",false);
+				r10b.addResponse(p10b);
+				n10b.addRule(r10b);
+				
+				this.addScene(n10b);
 		
 	//escena 11 choice 4
 		
 		Choice c11=new Choice();
 		c11.createContents();
-		c11.setBackground("COLOR#white");
+		c11.setBackground("forest");
 		c11.setTag("WOLVES2");
 		
-		//Text t11 = new Text();
 		c11.setText("Despues encendeis una pequeña hoguera y empezais a cocinar un estofado con las raciones que hay en " +
 	"vuestras mochilas. Mientras cocinais ois a lo lejos unos aullidos. Al cabo de una hora volveis a oir los aullidos pero ahora mucho mas cerca. " +
 	"Pasa otra media hora...");
-		//t11.setSize(Constants.CONTENT,Constants.CONTENT);
-		
-		Image i11 = new Image();
-		i11.setImage("forest$S");
-		i11.setPos(Constants.BEGIN, Constants.NEXT);
-		i11.setSize(Constants.FILL, Constants.FILL);
 		
 		Text tt=c11.createText("...Veis un gran lobo observandoos escondido entre los matorrales. Claramente intenta huir despues de veros, seguramente con la " +
 				"intencion de traer al resto de su manada para atacaros. Debeis actuar rapidamente. ");
 		tt.setVisible(false);
 		
 		Button sb = new Button();
-		sb.setText("Atacar al lobo");
+		sb.setText("Atacar al lobo.");
+		sb.setVisible(false);
+		sb.setAction("WOLVES3");
+		
+		RolledSkillOptionButton sb11= new RolledSkillOptionButton();
+		sb11.setText("Tirar Wild Empathy contra el lobo");
+		sb11.setSkill(StabConstants.HANDLEANIMAL);
+		sb11.setDC(15);
+		sb11.setResults("WILDFAIL", "WILDSUCC");
+		
+		Button sbd = new Button();
+		sb.setText("Dejar huir al lobo.");
 		sb.setVisible(false);
 		sb.setAction("WOLVES3");
 		
@@ -413,60 +435,55 @@ public class CryptEverflameAdventure extends Adventure{
 		rr.addCondition(new CharacterSkillRollCondition(StabConstants.PERCEPTION, 15));
 		rr.addResponse(new SetVisibleResponse(tt, true));
 		rr.addResponse(new SetVisibleResponse(sb, true));
+		rr.addResponse(new SetVisibleResponse(sb11, true));
+		rr.addResponse(new SetVisibleResponse(sbd, true));
 		rr.addResponse(new SetVisibleResponse(fb, false));
 		c11.addRule(rr);
 		
-		//c11.addGUI(t11);
 		c11.addGUI(tt);
 		c11.addGUI(fb);
 		c11.addGUI(sb);
-		c11.addGUI(i11);
+		c11.addGUI(sb11);
+		c11.addGUI(sbd);
 		this.addScene(c11);
+	
+	//escena 12
 		
-	//escena 12 choice 5
+		Narration n12=new Narration();
+		n12.createContents();
+		n12.setTag("WILDFAIL");
+		n12.setNext("BANDIT");
+		n12.setBackground("forest");
 		
-		Choice c12 = new Choice();
-		c12.createContents();
-		c12.setBackground("COLOR#white");
-		c12.setTag("WOLVES3");
-		
-		//Text t12 = new Text();
-		c12.setText("...Veis un gran lobo observandoos escondido entre los matorrales. Claramente intenta huir despues de veros, seguramente con la " +
-				"intencion de traer al resto de su manada para atacaros. Debeis actuar rapidamente. ");
-		//t12.setSize(Constants.CONTENT,Constants.CONTENT);
-		
+		n12.setText("El lobo se queda escuchandote ladeando la cabeza. Al cabo de un rato sin embargo salta hacia delante y huye. Esperas no tener mas problemas" +
+				"con lobos esta noche. Volveis a dormir aunque decidis mantener a alguien haciendo guardia solamente por si acaso. ");
+				
 		Image i12 = new Image();
-		i12.setImage("wolf$S");
+		i12.setImage("wolf$A");
 		i12.setPos(Constants.BEGIN, Constants.NEXT);
 		i12.setSize(Constants.FILL, Constants.FILL);
 		
-		//c12.addGUI(t12);
+		n12.addGUI(i12);
+		this.addScene(n12);
 		
-		c12.addOption("Atacar al lobo", "EVERFLAME1.start");
-		c12.addOption("Tirar wild empathy contra el lobo", "WOLVES4");
-		c12.addOption("Dejar que el lobo huya", "EVERFLAME1.start");
-		
-		this.addScene(c12);
 		
 	//escena 13
 		
 		Narration n13=new Narration();
 		n13.createContents();
-		n13.setTag("WOLVES4");
+		n13.setTag("WILDSUCC");
 		n13.setNext("BANDITS");
+		n13.setBackground("forest");
 		
-		//Text t13 = new Text();
 		n13.setText("El lobo se queda escuchandote ladeando la cabeza. Al cabo de un rato se acerca a ti olisqueando tu mano y con un salto " +
 				"desaparece en el bosque. Crees que esta manada no os dara mas problemas, al menos esta noche. El resto de la noche pasa " +
 				"con tranquilidad. ");
-		//t13.setSize(Constants.FILL, Constants.FILL);
-		
+			
 		Image i13 = new Image();
-		i13.setImage("wolf");
+		i13.setImage("wolf$A");
 		i12.setPos(Constants.BEGIN, Constants.NEXT);
 		i12.setSize(Constants.FILL, Constants.FILL);
 		
-		//n9.addGUI(t13);
 		n13.addGUI(i13);
 		this.addScene(n13);
 		
