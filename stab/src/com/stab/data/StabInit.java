@@ -3,6 +3,7 @@ package com.stab.data;
 
 
 import com.stab.adventure.AdventureLibrary;
+import com.stab.adventure.Game;
 import com.stab.client.ClientEntityManager;
 import com.stab.client.VisualEngine;
 import com.stab.client.slick.StabVisualEngine;
@@ -10,6 +11,7 @@ import com.stab.client.slick.base.visualobjects.Button_sprite;
 import com.stab.client.slick.base.visualobjects.token.ImageToken_sprite;
 import com.stab.common.fw.ServiceManager;
 import com.stab.data.actions.HealAction;
+import com.stab.data.actions.PathfinderSearchAction;
 import com.stab.data.actions.WeaponAttackAction;
 import com.stab.data.actions.feats.Expertise;
 import com.stab.data.actions.feats.PowerAttack;
@@ -65,6 +67,7 @@ import com.stab.data.animation.MagicMissileAnimation;
 import com.stab.data.animation.MissProyectileAnimation;
 import com.stab.data.animation.OpenDoorAnimation;
 import com.stab.data.animation.RSwingAnimation;
+import com.stab.data.animation.RevealAnimation;
 import com.stab.data.animation.ShakeAnimation;
 import com.stab.data.animation.ShootBeamAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
@@ -160,6 +163,10 @@ public class StabInit {
 		EntityManager em=ServiceManager.getService(EntityManager.class);
 		if (em!=null)
 			em.registerFactory(of);
+		
+		PathfinderGame g = new PathfinderGame();
+		g.init();
+		ServiceManager.register(Game.class,g);
 		
 		initAdventures();
 		
@@ -264,6 +271,7 @@ public class StabInit {
 		of.setMapping(BlockAnimation.class);
 		of.setMapping(StepBackAnimation.class);
 		of.setMapping(SidestepAnimation.class);
+		of.setMapping(RevealAnimation.class);
 		
 		//Tokens
 		of.setMapping(IronBarsToken.class);
@@ -281,6 +289,7 @@ public class StabInit {
 		getActionLibrary().register(new WeaponAttackAction());
 		getActionLibrary().register(new Rage());
 		getActionLibrary().register(new HealAction());
+		getActionLibrary().register(new PathfinderSearchAction());
 		
 		//feats
 		getActionLibrary().register(new PowerAttack());
