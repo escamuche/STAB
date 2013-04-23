@@ -2,7 +2,6 @@ package com.stab.data.animation;
 
 import java.awt.Point;
 
-import com.stab.client.slick.base.util.PaintUtils;
 import com.stab.client.slick.base.visualobjects.StabSprite;
 import com.stab.common.value.Simple2PointValueProvider;
 import com.stab.data.utils.AnimUtils;
@@ -12,6 +11,7 @@ import com.tien.princess.engine.sprite.common.states.State;
 import com.tien.princess.engine.sprite.common.states.StateSet;
 import com.tien.princess.engine.sprite.common.updaters.angle.MoveA;
 import com.tien.princess.engine.sprite.common.updaters.pos.Orbit;
+import com.tien.princess.engine.utils.PaintUtils;
 
 public class SwingAnimation extends OnTargetAnimation{
 

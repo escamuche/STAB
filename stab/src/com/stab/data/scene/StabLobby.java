@@ -119,9 +119,10 @@ public class StabLobby  extends Scene{
 		i=new Button();
 		i.setPos(310+100,440);
 		i.setSize(140,200);
-		i.setIcon("rogue$S");
+		i.setIcon("FOUR#blue#lobby/rogue$S");
 		i.setAction("rogue");
 		i.setMargin(10);
+		//i.setDisabled(true);
 		add(i);
 		
 		i=new Button();

@@ -1,13 +1,13 @@
 package com.stab.data.animation;
 
 import com.stab.client.slick.GameScreen;
-import com.stab.client.slick.base.util.PaintUtils;
 import com.stab.client.slick.base.visualobjects.StabSprite;
 import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.trait.base.VisualEffect;
 import com.tien.princess.engine.sprite.common.states.BasicAnimState;
+import com.tien.princess.engine.utils.PaintUtils;
 
 public class EffectAddAnimation  extends Animation {
 

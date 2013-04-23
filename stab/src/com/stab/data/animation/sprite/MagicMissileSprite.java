@@ -2,7 +2,6 @@ package com.stab.data.animation.sprite;
 
 import org.newdawn.slick.Color;
 
-import com.stab.client.slick.base.util.PaintUtils;
 import com.stab.client.slick.base.visualobjects.LightSprite;
 import com.stab.client.slick.base.visualobjects.StabSprite;
 import com.stab.data.animation.state.SpawnTrailUpdater;
@@ -15,6 +14,7 @@ import com.tien.princess.engine.sprite.common.updaters.angle.CorrectAim;
 import com.tien.princess.engine.sprite.common.updaters.angle.Vectorize;
 import com.tien.princess.engine.sprite.common.updaters.misc.Reach;
 import com.tien.princess.engine.sprite.common.updaters.move.Move;
+import com.tien.princess.engine.utils.PaintUtils;
 
 public class MagicMissileSprite extends LightSprite {
 

@@ -2,7 +2,6 @@ package com.stab.data.animation;
 
 import java.awt.Point;
 
-import com.stab.client.slick.base.util.PaintUtils;
 import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTargetAnimation;
@@ -10,6 +9,7 @@ import com.tien.princess.engine.sprite.StateSprite;
 import com.tien.princess.engine.sprite.common.painters.ParticleSystemPainter;
 import com.tien.princess.engine.sprite.common.painters.ValuePainter;
 import com.tien.princess.engine.sprite.common.states.BasicAnimState;
+import com.tien.princess.engine.utils.PaintUtils;
 
 public class ShootBeamAnimation extends OnTargetAnimation{
 
