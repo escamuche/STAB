@@ -1,6 +1,7 @@
 package com.stab.data.actions;
 
 import com.stab.data.info.applicable.DetectRoll;
+import com.stab.data.info.applicable.SpotRoll;
 import com.stab.model.action.base.SearchAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
@@ -38,7 +39,13 @@ public class PathfinderSearchAction extends SearchAction{
 			
 		}else{
 			//Dificultad fija? detectar siempre?
-			return true;
+			
+			int dc=target.getHideCheck();
+			
+			SpotRoll s= new SpotRoll(i,dc);
+			s.check();
+			
+			return s.success();
 		}
 		
 		
