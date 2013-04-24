@@ -93,6 +93,7 @@ public class WeaponFactory extends ItemFactory{
 	public static final String MEDIUMSLAM = "MEDIUMSLAM";
 	public static final String SMALLBITE = "SMALLBITE";
 	public static final String MEDIUMCLAW = "MEDIUMCLAW";
+	public static final String MEDIUMBITE = "MEDIUMBITE";
 	
 	public static final String RAY = "RAY";
 	public static final String MISSILE = "MISSILE";
@@ -136,6 +137,8 @@ public class WeaponFactory extends ItemFactory{
 		w=new BasicWeapon("Slam",1,6,Damage.IMPACT_DAMAGE,"effects/zombieclaw",SwingAnimation.ID);
 		w.setTwoHanded(true);
 		register(MEDIUMSLAM,w);
+		w=new BasicWeapon("Bite",1,6,Damage.PIERCING_DAMAGE,"effects/zombieclaw",LungeAnimation.ID);
+		register(MEDIUMBITE,w);
 		
 		//Armas
 		

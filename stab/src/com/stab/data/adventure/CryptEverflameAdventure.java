@@ -3,6 +3,7 @@ package com.stab.data.adventure;
 import com.stab.adventure.Adventure;
 import com.stab.common.Constants;
 import com.stab.common.events.DefaultRule;
+import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.data.rules.CharacterSkillRollCondition;
 import com.stab.data.ui.RolledSkillOptionButton;
@@ -10,6 +11,7 @@ import com.stab.data.utils.StabBlockData;
 import com.stab.model.basic.scenes.Choice;
 import com.stab.model.basic.scenes.Narration;
 import com.stab.model.basic.scenes.event.PlayerEntersScene;
+import com.stab.model.basic.scenes.event.condition.PartyValueIs;
 import com.stab.model.basic.scenes.event.response.DefeatResponse;
 import com.stab.model.basic.scenes.event.response.SetPartyValueResponse;
 import com.stab.model.basic.scenes.event.response.SetVisibleResponse;
@@ -341,7 +343,7 @@ public class CryptEverflameAdventure extends Adventure{
 		sb10.setText("Tirar survival para buscar un buen sitio de acampar");
 		sb10.setSkill(StabConstants.SURVIVAL);
 		sb10.setDC(10);
-		sb10.setResults("WOLVESFAIL", "WOLVESSUC");
+		sb10.setResults("SURVIVALFAIL", "SURVIVALSUC");
 																					//Si las escenas empiezan por #, eso mueve a todos los jugadores en la escena a la escena indicada
 																					//Esto es aplicable a los casos normales tambien.
 																				    //Ojo que puede que alguien no este en la escena. eso lo vemos mas adelante con scene.setWaitsForAll()
@@ -351,20 +353,21 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		c10.addGUI(t10);
 		c10.addOption(sb10); 
-		c10.addOption("Acampar en el primer sitio que veas", "WOLVESFAIL");
-		//c10.addGUI(i10);
+		c10.addOption("Acampar en el primer sitio que veas", "SURVIVALFAIL");
 		this.addScene(c10);
 		
 	//escena 10a
 		
 				Narration n10a=new Narration();
 				n10a.createContents();
-				n10a.setTag("WOLVESSUC");
+				n10a.setTag("SURVIVALSUC");
 				n10a.setNext("WOLVES2");
 				n10a.setBackground("forest");
 				
 				Text t10a = n10a.createText("Despues de un buen rato buscando encuentras una pequeña elevacion protegida por matorrales tupidos en dos de sus lados. " +
 						"Satisfecho con el sitio montais campamento bajo las estrellas. ");
+				t10a.setSize(Constants.CONTENT,Constants.CONTENT);
+				t10a.setPos(Constants.BEGIN, Constants.BEGIN);
 				
 				DefaultRule r10a= new DefaultRule();
 				r10a.setEvent(PlayerEntersScene.class);
@@ -379,12 +382,14 @@ public class CryptEverflameAdventure extends Adventure{
 				
 				Narration n10b=new Narration();
 				n10b.createContents();
-				n10b.setTag("WOLVESFAIL");
+				n10b.setTag("SURVIVALFAIL");
 				n10b.setNext("WOLVES2");
 				n10b.setBackground("forest");
 				
 				Text t10b = n10b.createText("Por mucho que buscas no consigues ver un sitio bien protegido y la falta de luz hace que acampes en cualquier sitio. " +
 						"Aun asi estas contento de poder descansar un poco despues del duro dia. ");
+				t10b.setSize(Constants.CONTENT,Constants.CONTENT);
+				t10b.setPos(Constants.BEGIN, Constants.BEGIN);
 				
 				DefaultRule r10b= new DefaultRule();
 				r10b.setEvent(PlayerEntersScene.class);
@@ -410,43 +415,44 @@ public class CryptEverflameAdventure extends Adventure{
 				"intencion de traer al resto de su manada para atacaros. Debeis actuar rapidamente. ");
 		tt.setVisible(false);
 		
-		Button sb = new Button();
-		sb.setText("Atacar al lobo.");
-		sb.setVisible(false);
-		sb.setAction("WOLVES3");
+		Button batt = new Button();
+		batt.setText("Atacar al lobo.");
+		batt.setVisible(false);
+		batt.setAction("WOLVES3");
 		
-		RolledSkillOptionButton sb11= new RolledSkillOptionButton();
-		sb11.setText("Tirar Wild Empathy contra el lobo");
-		sb11.setSkill(StabConstants.HANDLEANIMAL);
-		sb11.setDC(15);
-		sb11.setResults("WILDFAIL", "WILDSUCC");
+		RolledSkillOptionButton bwild= new RolledSkillOptionButton();
+		bwild.setText("Tirar Wild Empathy contra el lobo");
+		bwild.setSkill(StabConstants.HANDLEANIMAL);
+		bwild.setDC(15);
+		bwild.setResults("WILDFAIL", "WILDSUCC");
+		bwild.setVisible(false);
 		
-		Button sbd = new Button();
-		sb.setText("Dejar huir al lobo.");
-		sb.setVisible(false);
-		sb.setAction("WOLVES3");
+		Button bhuir = new Button();
+		bhuir.setText("Dejar huir al lobo.");
+		bhuir.setVisible(false);
+		bhuir.setAction("WOLVES4");
 		
-		Button fb = new Button();
-		fb.setText("Pasar la noche");
-		sb.setAction("WOLVES4");
+		Button bpasar = new Button();
+		bpasar.setText("Pasar la noche");
+		bpasar.setAction("WOLVES4");
 		
 		
 		DefaultRule rr= new DefaultRule();
 		rr.setEvent(PlayerEntersScene.class);
-		rr.addCondition(new CharacterSkillRollCondition(StabConstants.PERCEPTION, 15));
+		rr.addCondition(new CharacterSkillRollCondition(StabConstants.PERCEPTION, Roll.d20()+6));
 		rr.addResponse(new SetVisibleResponse(tt, true));
-		rr.addResponse(new SetVisibleResponse(sb, true));
-		rr.addResponse(new SetVisibleResponse(sb11, true));
-		rr.addResponse(new SetVisibleResponse(sbd, true));
-		rr.addResponse(new SetVisibleResponse(fb, false));
+		rr.addResponse(new SetVisibleResponse(batt, true));
+		rr.addResponse(new SetVisibleResponse(bwild, true));
+		rr.addResponse(new SetVisibleResponse(bhuir, true));
+		rr.addResponse(new SetVisibleResponse(bpasar, false));
 		c11.addRule(rr);
 		
 		c11.addGUI(t11);
+		c11.addGUI(bpasar);
 		c11.addGUI(tt);
-		c11.addGUI(fb);
-		c11.addGUI(sb);
-		c11.addGUI(sb11);
-		c11.addGUI(sbd);
+		c11.addGUI(batt);
+		c11.addGUI(bwild);
+		c11.addGUI(bhuir);
 		this.addScene(c11);
 	
 	//escena 12
@@ -454,43 +460,171 @@ public class CryptEverflameAdventure extends Adventure{
 		Narration n12=new Narration();
 		n12.createContents();
 		n12.setTag("WILDFAIL");
-		n12.setNext("BANDIT");
+		n12.setNext("WOLVES4");
 		n12.setBackground("forest");
 		
 		Text t12 = n12.createText("El lobo se queda escuchandote ladeando la cabeza. Al cabo de un rato sin embargo salta hacia delante y huye. Esperas no tener mas problemas" +
 				"con lobos esta noche. Volveis a dormir aunque decidis mantener a alguien haciendo guardia solamente por precaucion. ");
-				
+		t12.setSize(Constants.CONTENT,Constants.CONTENT);
+		t12.setPos(Constants.BEGIN, Constants.NEXT);
+		
 		Image i12 = new Image();
 		i12.setImage("wolf$A");
-		i12.setPos(Constants.BEGIN, Constants.NEXT);
-		i12.setSize(Constants.FILL, Constants.FILL);
+		i12.setPos(Constants.BEGIN, Constants.BEGIN);
+		i12.setSize(Constants.PERCENT+50, Constants.PERCENT+50);
 		
 		n12.addGUI(i12);
 		n12.addGUI(t12);
 		this.addScene(n12);
-		
 		
 	//escena 13
 		
 		Narration n13=new Narration();
 		n13.createContents();
 		n13.setTag("WILDSUCC");
-		n13.setNext("BANDITS");
+		n13.setNext("BANDIT");
 		n13.setBackground("forest");
 		
 		Text t13 = n13.createText("El lobo se queda escuchandote ladeando la cabeza. Al cabo de un rato se acerca a ti olisqueando tu mano y con un salto " +
 				"desaparece en el bosque. Crees que esta manada no os dara mas problemas, al menos esta noche. El resto de la noche pasa " +
 				"con tranquilidad. ");
-			
+		t13.setSize(Constants.CONTENT,Constants.CONTENT);
+		t13.setPos(Constants.BEGIN, Constants.NEXT);
+		
 		Image i13 = new Image();
 		i13.setImage("wolf$A");
-		i12.setPos(Constants.BEGIN, Constants.NEXT);
-		i12.setSize(Constants.FILL, Constants.FILL);
+		i12.setPos(Constants.BEGIN, Constants.BEGIN);
+		i12.setSize(Constants.PERCENT+50, Constants.PERCENT+50);
 		
 		n13.addGUI(i13);
 		n13.addGUI(t13);
 		this.addScene(n13);
 		
+		//escena 14
+		
+				Narration n14=new Narration();
+				n14.createContents();
+				n14.setTag("WOLVES3");
+				n14.setBackground("forest");
+				
+				Text t14 = n14.createText("Intentas atacar al lobo antes de que este pueda huir. Reaccionas todo lo rapido que puedes con la esperanza de " +
+						"ser suficientemente veloz.");
+				t14.setSize(Constants.CONTENT,Constants.CONTENT);
+				t14.setPos(Constants.BEGIN, Constants.NEXT);
+				
+				Image i14 = new Image();
+				i14.setImage("wolf$A");
+				i14.setPos(Constants.BEGIN, Constants.BEGIN);
+				i14.setSize(Constants.PERCENT+50, Constants.PERCENT+50);
+				
+				RolledSkillOptionButton bini= new RolledSkillOptionButton();
+				bini.setText("Tirar iniciativa");
+				bini.setSkill(StabConstants.INICIATIVEMOD);
+				bini.setDC(Roll.d20()+2);
+				bini.setResults("INIFAIL", "INISUCC");
+				
+				n14.addGUI(i14);
+				n14.addGUI(t14);
+				n14.addGUI(bini);
+				this.addScene(n14);
+				
+				//escena 15
+				
+				Narration n15=new Narration();
+				n15.createContents();
+				n15.setTag("INISUCC");
+				n15.setBackground("forest");
+				
+				Text t15 = n15.createText("Llegas hasta el lobo, dandole un fuerte golpe, aunque no lo suficiente para acabar con el. Enseñandote sus terribles " +
+						"dientes intenta huir y perderse en el golpe. Desesperamente intentas conectar otro golpe que acabe con el antes de que consiga huir");
+				t15.setSize(Constants.CONTENT,Constants.CONTENT);
+				t15.setPos(Constants.BEGIN, Constants.NEXT);
+				
+				Image i15 = new Image();
+				i15.setImage("wolf$A");
+				i15.setPos(Constants.BEGIN, Constants.BEGIN);
+				i15.setSize(Constants.PERCENT+50, Constants.PERCENT+50);
+				
+				RolledSkillOptionButton bini2= new RolledSkillOptionButton();
+				bini2.setText("Atacar");
+				bini2.setSkill(StabConstants.INICIATIVEMOD);
+				bini2.setDC(Roll.d20()+2);
+				bini2.setResults("INIFAIL", "INISUCC2");
+				
+				n15.addGUI(i15);
+				n15.addGUI(t15);
+				n15.addGUI(bini2);
+				this.addScene(n15);
+				
+		//escena 1
+				
+				Narration n16=new Narration();
+				n16.createContents();
+				n16.setTag("INIFAIL");
+				n16.setNext("WOLVES4");
+				n16.setBackground("forest");
+				
+				Text t16 = n16.createText("No consigues incapacitar al lobo antes de que este desaparezca bajo unos arbustos. Solo consigues oir como se pierde " +
+						"cada vez mas lejos de vosotros. Afortunadamente huyo y nadie ha resultado herido. Volveis al campamento a intentar pasar lo que queda de noche.");
+				t16.setSize(Constants.CONTENT,Constants.CONTENT);
+				t16.setPos(Constants.BEGIN, Constants.NEXT);
+				
+				Image i16 = new Image();
+				i16.setImage("wolf$A");
+				i16.setPos(Constants.BEGIN, Constants.BEGIN);
+				i16.setSize(Constants.PERCENT+50, Constants.PERCENT+50);
+				
+				n16.addGUI(i16);
+				n16.addGUI(t16);
+				this.addScene(n16);
+				
+		//escena 17
+				
+				Narration n17=new Narration();
+				n17.createContents();
+				n17.setTag("INISUCC2");
+				n17.setBackground("BANDIT");
+				
+				Text t17 = n17.createText("Consigues incapacitar al lobo antes de que este desaparezca bajo unos arbustos.  Afortunadamente nadie ha " +
+						"resultado herido. Arrastrais el cadaver del gran lobo y volveis al campamento a intentar pasar lo que queda de noche.");
+				t17.setSize(Constants.CONTENT,Constants.CONTENT);
+				t17.setPos(Constants.BEGIN, Constants.NEXT);
+				
+				Image i17 = new Image();
+				i17.setImage("wolf$A");
+				i17.setPos(Constants.BEGIN, Constants.BEGIN);
+				i17.setSize(Constants.PERCENT+50, Constants.PERCENT+50);
+				
+				n17.addGUI(i17);
+				n17.addGUI(t17);
+				this.addScene(n17);
+				
+//escena 18
+				
+				Choice c18=new Choice();
+				c18.createContents();
+				c18.setTag("WOLVES4");
+				c18.setBackground("BANDIT");
+				
+				Text t18 = c18.createText("Al cabo de una hora oyes ruidos que se acercan al campamento y ves unos ojos en la oscuridad, brillando " +
+						"con una luz intensa. Ves surgir de entre la maleza tres lobos que gruñen y se abalanzan sobre vosotros.");
+				t18.setSize(Constants.CONTENT,Constants.CONTENT);
+				t18.setPos(Constants.BEGIN, Constants.NEXT);
+				
+				Image i18 = new Image();
+				i18.setImage("wolf$A");
+				i18.setPos(Constants.BEGIN, Constants.BEGIN);
+				i18.setSize(Constants.PERCENT+50, Constants.PERCENT+50);
+				
+				//if PartyValueIs("acampar") =true
+					//	c18.addOption("Tirar Iniciativa!","CAMP1.start");
+				//if PartyValueIs("acampar") =false
+					//	c18.addOption("Tirar Iniciativa!","CAMP2.start");
+				
+				c18.addGUI(i18);
+				c18.addGUI(t18);
+				this.addScene(c18);
+				
 	//escena derrota
 		
 		Narration ndefeat=new Narration();

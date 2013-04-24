@@ -87,8 +87,10 @@ import com.stab.data.info.monster.bestiary.Goblin;
 import com.stab.data.info.monster.bestiary.GoblinShaman;
 import com.stab.data.info.monster.bestiary.Kobold;
 import com.stab.data.info.monster.bestiary.Lich;
+import com.stab.data.info.monster.bestiary.Orc;
 import com.stab.data.info.monster.bestiary.OrcIlu;
 import com.stab.data.info.monster.bestiary.SkeletalChampion;
+import com.stab.data.info.monster.bestiary.Wolf;
 import com.stab.data.info.monster.bestiary.Zombie;
 import com.stab.data.info.player.BarbarianCharacter;
 import com.stab.data.info.player.BardCharacter;
@@ -243,6 +245,8 @@ public class StabInit {
 		of.setMapping(Couatl.class);
 		of.setMapping(Lich.class);
 		of.setMapping(OrcIlu.class);
+		of.setMapping(Wolf.class);
+		of.setMapping(Orc.class);
 		
 		//botones
 		of.setMapping(ActionSlotButton.class);

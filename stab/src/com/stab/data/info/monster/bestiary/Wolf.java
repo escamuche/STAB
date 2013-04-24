@@ -1,0 +1,57 @@
+package com.stab.data.info.monster.bestiary;
+
+import com.stab.data.StabConstants;
+import com.stab.data.StabInit;
+import com.stab.data.info.equipment.HumanoidGear;
+import com.stab.data.info.equipment.Weapon;
+import com.stab.data.info.feat.general.SkillFocusPerception_Feat;
+import com.stab.data.info.monster.Animal;
+import com.stab.model.ai.DefaultAIPackage;
+
+public class Wolf extends Animal {
+
+	public static final String ID="WOLF_INFO";
+	
+	@Override
+	public void init() {
+		super.init();
+		setMaxMovePoints(10);
+		
+		
+			
+		
+		setResource("wolf");
+		setText("Wolf");
+		setFaction(1);
+		
+		this.setAttribute(StabConstants.XP,400);
+		this.setAttribute(StabConstants.STRENGHT,13);
+		this.setAttribute(StabConstants.DEXTERITY,15);
+		this.setAttribute(StabConstants.CONSTITUTION,15);
+		this.setAttribute(StabConstants.INTELIGENCE,2);
+		this.setAttribute(StabConstants.WISDOM,12);
+		this.setAttribute(StabConstants.CHARISMA,6);
+		this.setAttribute(StabConstants.SIZE,StabConstants.MEDIUM_SIZE);
+		this.setAttribute(StabConstants.HITDICENUMBER, 2);
+		
+		this.setAttribute(StabConstants.NATURALARMORMOD, 2);
+		this.setAttribute(StabConstants.CMB, 6);
+		
+		this.setAttribute(StabConstants.PERCEPTION, 8);
+		this.setAttribute(StabConstants.STEALTH, 6);
+		this.setAttribute(StabConstants.SURVIVAL, 1);
+		
+		this.setCurrentAI(new DefaultAIPackage());
+			
+		this.addTrait(new SkillFocusPerception_Feat());
+		
+		this.setBloodeffEct("PARTICLE#redblood");
+		
+		Weapon bite=StabInit.getWeaponFactory().getWeapon("MEDIUMBITE");
+		
+		this.equip(bite, HumanoidGear.BOTHHANDS);
+		
+		//falta trip
+		
+	}
+}
