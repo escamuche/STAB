@@ -265,7 +265,7 @@ public class CryptEverflameAdventure extends Adventure{
 				t6a.setSize(Constants.FILL, Constants.CONTENT);
 				
 				c6a.addGUI(t6a);
-				c6a.addOption("Tira Iniciativa!","ORCS.start");
+				c6a.addOption("Tira Iniciativa!","VICTORY");
 				this.addScene(c6a);
 				
 	//mapa combate 1
@@ -300,7 +300,7 @@ public class CryptEverflameAdventure extends Adventure{
 		sb7.setText("Investigar la zona.");
 		sb7.setSkill(StabConstants.PERCEPTION);
 		sb7.setDC(15);
-		sb7.setResults("PERCFAIL", "PERCSUCCESS");
+		sb7.setResults("7PERCFAIL", "7PERCSUCCESS");
 		
 		c7.addGUI(t7);
 		c7.addOption(sb7);
@@ -311,7 +311,7 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		Narration n8=new Narration();
 		n8.createContents();
-		n8.setTag("PERCFAIL");
+		n8.setTag("7PERCFAIL");
 		n8.setNext("WOLVES");
 		n8.setBackground("forest");
 		
@@ -325,7 +325,7 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		Narration n9=new Narration();
 		n9.createContents();
-		n9.setTag("PERCSUCCESS");
+		n9.setTag("7PERCSUCCESS");
 		n9.setNext("WOLVES");
 		n9.setBackground("forest");
 		
@@ -363,7 +363,7 @@ public class CryptEverflameAdventure extends Adventure{
 		sb10.setText("Tirar survival para buscar un buen sitio de acampar");
 		sb10.setSkill(StabConstants.SURVIVAL);
 		sb10.setDC(10);
-		sb10.setResults("SURVIVALFAIL", "SURVIVALSUC");
+		sb10.setResults("10SURVIVALFAIL", "10SURVIVALSUC");
 																					//Si las escenas empiezan por #, eso mueve a todos los jugadores en la escena a la escena indicada
 																					//Esto es aplicable a los casos normales tambien.
 																				    //Ojo que puede que alguien no este en la escena. eso lo vemos mas adelante con scene.setWaitsForAll()
@@ -373,14 +373,14 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		c10.addGUI(t10);
 		c10.addOption(sb10); 
-		c10.addOption("Acampar en el primer sitio que veas", "SURVIVALFAIL");
+		c10.addOption("Acampar en el primer sitio que veas", "10SURVIVALFAIL");
 		this.addScene(c10);
 		
 	//escena 10a
 		
 				Narration n10a=new Narration();
 				n10a.createContents();
-				n10a.setTag("SURVIVALSUC");
+				n10a.setTag("10SURVIVALSUC");
 				n10a.setNext("WOLVES2");
 				n10a.setBackground("forest");
 				
@@ -402,7 +402,7 @@ public class CryptEverflameAdventure extends Adventure{
 				
 				Narration n10b=new Narration();
 				n10b.createContents();
-				n10b.setTag("SURVIVALFAIL");
+				n10b.setTag("10SURVIVALFAIL");
 				n10b.setNext("WOLVES2");
 				n10b.setBackground("forest");
 				
@@ -621,13 +621,13 @@ public class CryptEverflameAdventure extends Adventure{
 				
 //escena 18
 				
-				Choice c18=new Choice();
-				c18.createContents();
-				c18.setTag("WOLVES4");
-				c18.setNext("BANDIT");
-				c18.setBackground("forest");
+				Narration n18=new Narration();
+				n18.createContents();
+				n18.setTag("WOLVES4");
+				n18.setNext("BANDIT");
+				n18.setBackground("forest");
 				
-				Text t18 = c18.createText("Al cabo de una hora oyes ruidos que se acercan al campamento y ves unos ojos en la oscuridad, brillando " +
+				Text t18 = n18.createText("Al cabo de una hora oyes ruidos que se acercan al campamento y ves unos ojos en la oscuridad, brillando " +
 						"con una luz intensa. Ves surgir de entre la maleza tres lobos que gruñen y se abalanzan sobre vosotros.");
 				t18.setSize(Constants.CONTENT,Constants.CONTENT);
 				t18.setPos(Constants.BEGIN, Constants.NEXT);
@@ -640,16 +640,15 @@ public class CryptEverflameAdventure extends Adventure{
 				DefaultRule r18 = new DefaultRule();
 				r18.setEvent(PlayerEntersScene.class);
 				r18.addCondition(new PartyValueIs("acampar", false));
-				r18.addResponse(new TravelToSceneResponse("CAMP1.start"));
-				r18.addOnFail(new TravelToSceneResponse("CAMP2.start"));
-				c18.addRule(r18);
+				r18.addResponse(new TravelToSceneResponse("BANDIT"));
+				r18.addOnFail(new TravelToSceneResponse("BANDIT"));
+				n18.addRule(r18);
 				
+				n18.addGUI(i18);
+				n18.addGUI(t18);
+				this.addScene(n18);
 				
-				c18.addGUI(i18);
-				c18.addGUI(t18);
-				this.addScene(c18);
-				
-				//mapa combate 2
+		//mapa combate 2
 				
 				DefaultTileMapScene mc2=new DefaultTileMapScene();
 				mc2.createContents();
@@ -660,14 +659,14 @@ public class CryptEverflameAdventure extends Adventure{
 				mc2.setTag("CAMP1");
 				
 				AllMonstersDeadRule rm2=new AllMonstersDeadRule();
-				rm2.addResponse(new VictoryResponse(0,"VICTORY"));
+				rm2.addResponse(new VictoryResponse(0,"BANDIT"));
 				mc2.addRule(rm2);
 				AllPlayersDeadRule rm3=new AllPlayersDeadRule();
 				rm3.addResponse(new DefeatResponse(0,"DEFEAT"));
 				mc2.addRule(rm3);
 				this.addScene(mc2);
 				
-				//mapa combate 3
+		//mapa combate 3
 				
 				DefaultTileMapScene mc3=new DefaultTileMapScene();
 				mc3.createContents();
@@ -678,11 +677,11 @@ public class CryptEverflameAdventure extends Adventure{
 				mc3.setTag("CAMP2");
 				
 				AllMonstersDeadRule rm4=new AllMonstersDeadRule();
-				rm4.addResponse(new VictoryResponse(0,"VICTORY"));
+				rm4.addResponse(new VictoryResponse(0,"BANDIT"));
 				mc3.addRule(rm4);
 				AllPlayersDeadRule rm5=new AllPlayersDeadRule();
 				rm5.addResponse(new DefeatResponse(0,"DEFEAT"));
-				mc3.addRule(rm4);
+				mc3.addRule(rm5);
 				this.addScene(mc3);
 				
 		//escena 19
@@ -707,11 +706,25 @@ public class CryptEverflameAdventure extends Adventure{
 				sb19a.setDC(10);
 				sb19a.setResults("PERCFAIL", "PERCSUC");
 				
+				DefaultRule r19a = new DefaultRule();
+				r19a.setEvent(PlayerEntersScene.class);
+				r19a.addCondition(new PartyValueIs("banditperception", false));
+				r19a.addResponse(new SetVisibleResponse(sb19a,true));
+				r19a.addOnFail(new SetVisibleResponse(sb19a,false));
+				c19.addRule(r19a);
+				
 				RolledSkillOptionButton sb19b = new RolledSkillOptionButton();
 				sb19b.setText("Investigar el cadaver");
 				sb19b.setSkill(StabConstants.KNOWLEDGELOCAL);
 				sb19b.setDC(10);
 				sb19b.setResults("LOCALFAIL", "LOCALSUC");
+				
+				DefaultRule r19b = new DefaultRule();
+				r19b.setEvent(PlayerEntersScene.class);
+				r19b.addCondition(new PartyValueIs("banditlocal", false));
+				r19b.addResponse(new SetVisibleResponse(sb19b,true));
+				r19b.addOnFail(new SetVisibleResponse(sb19b,false));
+				c19.addRule(r19b);
 				
 				RolledSkillOptionButton sb19c = new RolledSkillOptionButton();
 				sb19c.setText("Investigar sus heridas");
@@ -719,11 +732,25 @@ public class CryptEverflameAdventure extends Adventure{
 				sb19c.setDC(15);
 				sb19c.setResults("HEALFAIL", "HEALSUC");
 				
+				DefaultRule r19c = new DefaultRule();
+				r19c.setEvent(PlayerEntersScene.class);
+				r19c.addCondition(new PartyValueIs("banditheal", false));
+				r19c.addResponse(new SetVisibleResponse(sb19c,true));
+				r19c.addOnFail(new SetVisibleResponse(sb19c,false));
+				c19.addRule(r19c);
+				
 				RolledSkillOptionButton sb19d = new RolledSkillOptionButton();
 				sb19d.setText("Buscar por la zona");
 				sb19d.setSkill(StabConstants.SURVIVAL);
 				sb19d.setDC(15);
 				sb19d.setResults("SURVFAIL", "SURVSUC");
+				
+				DefaultRule r19d = new DefaultRule();
+				r19d.setEvent(PlayerEntersScene.class);
+				r19d.addCondition(new PartyValueIs("banditsurvival", false));
+				r19d.addResponse(new SetVisibleResponse(sb19d,true));
+				r19d.addOnFail(new SetVisibleResponse(sb19d,false));
+				c19.addRule(r19d);
 				
 				c19.addGUI(t19);
 				c19.addOption(sb19a);
@@ -732,6 +759,177 @@ public class CryptEverflameAdventure extends Adventure{
 				c19.addOption(sb19d);
 				c19.addOption("Seguir tu camino", "HILLSIDE");
 				this.addScene(c19);
+				
+		//escena 20a
+				
+				Narration n20a=new Narration();
+				n20a.createContents();
+				n20a.setTag("PERCFAIL");
+				n20a.setNext("BANDIT");
+				n20a.setBackground("forest");
+				
+				Text t20a = n20a.createText("Buscas pero no consigues ver nada que te llame la atencion.");
+				t20a.setSize(Constants.CONTENT,Constants.CONTENT);
+				t20a.setPos(Constants.BEGIN, Constants.BEGIN);
+				
+				DefaultRule r20a= new DefaultRule();
+				r20a.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p20a = new SetPartyValueResponse("banditperception",true);
+				r20a.addResponse(p20a);
+				n20a.addRule(r20a);
+				
+				n20a.addGUI(t20a);
+				this.addScene(n20a);
+				
+		//escena 20b
+				
+				Narration n20b=new Narration();
+				n20b.createContents();
+				n20b.setTag("PERCSUCC");
+				n20b.setNext("BANDIT");
+				n20b.setBackground("forest");
+				
+				Text t20b = n20b.createText("Encuentras una espada corta que parece de buena calidad y una bolsa de cuero con 86 monedas de oro. Las guardas en tu mochila.");
+				t20b.setSize(Constants.CONTENT,Constants.CONTENT);
+				t20b.setPos(Constants.BEGIN, Constants.BEGIN);
+				
+				DefaultRule r20b= new DefaultRule();
+				r20b.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p20b = new SetPartyValueResponse("banditperception",true);
+				r20b.addResponse(p20b);
+				n20b.addRule(r20b);
+				
+				n20b.addGUI(t20b);
+				this.addScene(n20b);
+				
+//escena 20c
+				
+				Narration n20c=new Narration();
+				n20c.createContents();
+				n20c.setTag("LOCALFAIL");
+				n20c.setNext("BANDIT");
+				n20c.setBackground("forest");
+				
+				Text t20c = n20c.createText("Buscas pero no consigues ver nada que te llame la atencion.");
+				t20c.setSize(Constants.CONTENT,Constants.CONTENT);
+				t20c.setPos(Constants.BEGIN, Constants.BEGIN);
+				
+				DefaultRule r20c= new DefaultRule();
+				r20c.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p20c = new SetPartyValueResponse("banditlocal",true);
+				r20c.addResponse(p20c);
+				n20c.addRule(r20c);
+				
+				n20c.addGUI(t20c);
+				this.addScene(n20c);
+				
+//escena 20d
+				
+				Narration n20d=new Narration();
+				n20d.createContents();
+				n20d.setTag("LOCALSUCC");
+				n20d.setNext("BANDIT");
+				n20d.setBackground("forest");
+				
+				Text t20d = n20d.createText("Ves que las ropas que lleva el cadaver no son locales, pero dirias que este hombre venia de una gran ciudad, seguramente cercana.");
+				t20d.setSize(Constants.CONTENT,Constants.CONTENT);
+				t20d.setPos(Constants.BEGIN, Constants.BEGIN);
+				
+				DefaultRule r20d = new DefaultRule();
+				r20d.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p20d = new SetPartyValueResponse("banditlocal",true);
+				r20d.addResponse(p20d);
+				n20d.addRule(r20d);
+				
+				n20d.addGUI(t20d);
+				this.addScene(n20d);
+				
+//escena 20e
+				
+				Narration n20e=new Narration();
+				n20e.createContents();
+				n20e.setTag("HEALFAIL");
+				n20e.setNext("BANDIT");
+				n20e.setBackground("forest");
+				
+				Text t20e = n20e.createText("Miras el cadaver pero no consigues ver nada que te llame la atencion.");
+				t20e.setSize(Constants.CONTENT,Constants.CONTENT);
+				t20e.setPos(Constants.BEGIN, Constants.BEGIN);
+				
+				DefaultRule r20e= new DefaultRule();
+				r20e.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p20e = new SetPartyValueResponse("banditheal",true);
+				r20e.addResponse(p20e);
+				n20e.addRule(r20e);
+				
+				n20e.addGUI(t20e);
+				this.addScene(n20e);
+				
+//escena 20f
+				
+				Narration n20f=new Narration();
+				n20f.createContents();
+				n20f.setTag("HEALSUCC");
+				n20f.setNext("BANDIT");
+				n20f.setBackground("forest");
+				
+				Text t20f = n20f.createText("Miras sus heridas y ves que son heridas de mordiscos de una criatura bastante grande. Son 2 grandes agujeros, dirias " +
+						"que de algun tipo de serpiente gigante. El pobre hombre debio acercarse al lago a coger agua y fue atacado. Dirias que debe llevar muerto " +
+						"dos o tres meses al menos.");
+				t20f.setSize(Constants.CONTENT,Constants.CONTENT);
+				t20f.setPos(Constants.BEGIN, Constants.BEGIN);
+				
+				DefaultRule r20f= new DefaultRule();
+				r20f.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p20f = new SetPartyValueResponse("banditheal",true);
+				r20f.addResponse(p20f);
+				n20f.addRule(r20f);
+				
+				n20f.addGUI(t20f);
+				this.addScene(n20f);
+				
+//escena 20g
+				
+				Narration n20g=new Narration();
+				n20g.createContents();
+				n20g.setTag("SURVFAIL");
+				n20g.setNext("BANDIT");
+				n20g.setBackground("forest");
+				
+				Text t20g = n20g.createText("Buscas pero no consigues ver nada que te llame la atencion.");
+				t20g.setSize(Constants.CONTENT,Constants.CONTENT);
+				t20g.setPos(Constants.BEGIN, Constants.BEGIN);
+				
+				DefaultRule r20g= new DefaultRule();
+				r20g.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p20g = new SetPartyValueResponse("banditsurvival",true);
+				r20g.addResponse(p20g);
+				n20g.addRule(r20g);
+				
+				n20g.addGUI(t20g);
+				this.addScene(n20g);
+				
+//escena 20h
+				
+				Narration n20h=new Narration();
+				n20h.createContents();
+				n20h.setTag("SURVFAIL");
+				n20h.setNext("BANDIT");
+				n20h.setBackground("forest");
+				
+				Text t20h = n20h.createText("Encuentras un antiguo campamento a unos tres kilometros al este. Claramente lleva varios meses sin ser usado " +
+						"y dirias que aqui acampo un pequeño grupo de hombres.");
+				t20h.setSize(Constants.CONTENT,Constants.CONTENT);
+				t20h.setPos(Constants.BEGIN, Constants.BEGIN);
+				
+				DefaultRule r20h = new DefaultRule();
+				r20h.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p20h = new SetPartyValueResponse("banditsurvival",true);
+				r20h.addResponse(p20h);
+				n20h.addRule(r20h);
+				
+				n20h.addGUI(t20h);
+				this.addScene(n20h);
 				
 	//escena derrota
 		
