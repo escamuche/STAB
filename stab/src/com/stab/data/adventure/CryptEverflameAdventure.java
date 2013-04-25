@@ -636,14 +636,14 @@ public class CryptEverflameAdventure extends Adventure{
 				i18.setImage("wolf$A");
 				i18.setPos(Constants.BEGIN, Constants.BEGIN);
 				i18.setSize(Constants.PERCENT+50, Constants.PERCENT+50);
-				
+			/*	
 				DefaultRule r18 = new DefaultRule();
 				r18.setEvent(PlayerEntersScene.class);
 				r18.addCondition(new PartyValueIs("acampar", false));
 				r18.addResponse(new TravelToSceneResponse("BANDIT"));
 				r18.addOnFail(new TravelToSceneResponse("BANDIT"));
 				n18.addRule(r18);
-				
+				*/
 				n18.addGUI(i18);
 				n18.addGUI(t18);
 				this.addScene(n18);
@@ -692,10 +692,10 @@ public class CryptEverflameAdventure extends Adventure{
 				c19.setTag("BANDIT");
 				
 				Text t19 = c19.createText("Al dia siguiente continuais vuestro camino a traves del bosque del Colmillo. " +
-						"Temprano por la mañana llegais a la orilla del lago Gris, donde pensais rellenar vuestros pellejos de agua y" +
+						"Temprano por la mañana llegais a la orilla del lago Gris, donde pensais rellenar vuestros pellejos de agua  y" +
 						"tomar un breve descanso. Segun os acercais veis que los arboles empiezan a escasear, revelando un campo de corta " +
-						"hierba verde que lleva a la orilla de un ancho y tranquilo lago, que refleja el cielo sobre el. Una dense niebla " +
-						"cuelga sobre el centro del lago, oscureciendo la orilla opuesta. Cerca de la orilla, una forma oscura esta tendida " +
+						"hierba verde que lleva a la orilla de un ancho y tranquilo lago, que refleja el cielo sobre el. Una densa niebla " +
+						"cuelga sobre el centro del lago, oscureciendo la orilla opuesta. En la orilla, una forma oscura esta tendida " +
 						"cerca del agua. Os acercais y veis un hombre muerto en bastante mal estado");
 				t19.setSize(Constants.CONTENT,Constants.CONTENT);
 				t19.setPos(Constants.BEGIN, Constants.NEXT);
@@ -704,52 +704,52 @@ public class CryptEverflameAdventure extends Adventure{
 				sb19a.setText("Investigar alrededor del cadaver");
 				sb19a.setSkill(StabConstants.PERCEPTION);
 				sb19a.setDC(10);
-				sb19a.setResults("PERCFAIL", "PERCSUC");
+				sb19a.setResults("PERCFAIL", "PERCSUCC");
 				
 				DefaultRule r19a = new DefaultRule();
 				r19a.setEvent(PlayerEntersScene.class);
-				r19a.addCondition(new PartyValueIs("banditperception", false));
-				r19a.addResponse(new SetVisibleResponse(sb19a,true));
-				r19a.addOnFail(new SetVisibleResponse(sb19a,false));
+				r19a.addCondition(new PartyValueIs("banditperception", true));
+				r19a.addResponse(new SetVisibleResponse(sb19a,false));
+				//r19a.addOnFail(new SetVisibleResponse(sb19a,true));
 				c19.addRule(r19a);
 				
 				RolledSkillOptionButton sb19b = new RolledSkillOptionButton();
 				sb19b.setText("Investigar el cadaver");
 				sb19b.setSkill(StabConstants.KNOWLEDGELOCAL);
 				sb19b.setDC(10);
-				sb19b.setResults("LOCALFAIL", "LOCALSUC");
+				sb19b.setResults("LOCALFAIL", "LOCALSUCC");
 				
 				DefaultRule r19b = new DefaultRule();
 				r19b.setEvent(PlayerEntersScene.class);
-				r19b.addCondition(new PartyValueIs("banditlocal", false));
-				r19b.addResponse(new SetVisibleResponse(sb19b,true));
-				r19b.addOnFail(new SetVisibleResponse(sb19b,false));
+				r19b.addCondition(new PartyValueIs("banditlocal", true));
+				r19b.addResponse(new SetVisibleResponse(sb19b,false));
+				//r19b.addOnFail(new SetVisibleResponse(sb19b,false));
 				c19.addRule(r19b);
 				
 				RolledSkillOptionButton sb19c = new RolledSkillOptionButton();
 				sb19c.setText("Investigar sus heridas");
 				sb19c.setSkill(StabConstants.HEALSKILL);
 				sb19c.setDC(15);
-				sb19c.setResults("HEALFAIL", "HEALSUC");
+				sb19c.setResults("HEALFAIL", "HEALSUCC");
 				
 				DefaultRule r19c = new DefaultRule();
 				r19c.setEvent(PlayerEntersScene.class);
-				r19c.addCondition(new PartyValueIs("banditheal", false));
-				r19c.addResponse(new SetVisibleResponse(sb19c,true));
-				r19c.addOnFail(new SetVisibleResponse(sb19c,false));
+				r19c.addCondition(new PartyValueIs("banditheal", true));
+				r19c.addResponse(new SetVisibleResponse(sb19c,false));
+				//r19c.addOnFail(new SetVisibleResponse(sb19c,false));
 				c19.addRule(r19c);
 				
 				RolledSkillOptionButton sb19d = new RolledSkillOptionButton();
 				sb19d.setText("Buscar por la zona");
 				sb19d.setSkill(StabConstants.SURVIVAL);
 				sb19d.setDC(15);
-				sb19d.setResults("SURVFAIL", "SURVSUC");
+				sb19d.setResults("SURVFAIL", "SURVSUCC");
 				
 				DefaultRule r19d = new DefaultRule();
 				r19d.setEvent(PlayerEntersScene.class);
-				r19d.addCondition(new PartyValueIs("banditsurvival", false));
-				r19d.addResponse(new SetVisibleResponse(sb19d,true));
-				r19d.addOnFail(new SetVisibleResponse(sb19d,false));
+				r19d.addCondition(new PartyValueIs("banditsurvival", true));
+				r19d.addResponse(new SetVisibleResponse(sb19d,false));
+				//r19d.addOnFail(new SetVisibleResponse(sb19d,false));
 				c19.addRule(r19d);
 				
 				c19.addGUI(t19);
@@ -913,7 +913,7 @@ public class CryptEverflameAdventure extends Adventure{
 				
 				Narration n20h=new Narration();
 				n20h.createContents();
-				n20h.setTag("SURVFAIL");
+				n20h.setTag("SURVSUCC");
 				n20h.setNext("BANDIT");
 				n20h.setBackground("forest");
 				
