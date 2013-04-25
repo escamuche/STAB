@@ -249,7 +249,7 @@ public class CryptEverflameAdventure extends Adventure{
 		c6.addOption("Empezar la aventura!","START");
 		this.addScene(c6);
 		
-		//escena 6a choice 1a
+		//escena 6a
 		
 				Choice c6a=new Choice();
 				c6a.createContents();
@@ -265,7 +265,7 @@ public class CryptEverflameAdventure extends Adventure{
 				t6a.setSize(Constants.FILL, Constants.CONTENT);
 				
 				c6a.addGUI(t6a);
-				c6a.addOption("Tira Iniciativa!","VICTORY");
+				c6a.addOption("Tira Iniciativa!","ORCS.start");
 				this.addScene(c6a);
 				
 	//mapa combate 1
@@ -282,10 +282,33 @@ public class CryptEverflameAdventure extends Adventure{
 		r.addResponse(new VictoryResponse(0,"VICTORY"));
 		mc1.addRule(r);
 		AllPlayersDeadRule r2=new AllPlayersDeadRule();
-		r2.addResponse(new DefeatResponse(0,"DEFEAT"));
+		r2.addResponse(new DefeatResponse(0,"DEFEATORCS"));
 		mc1.addRule(r2);
 		this.addScene(mc1);
 		
+		//escena 6b
+		
+				Choice c6b=new Choice();
+				c6b.createContents();
+				c6b.setTag("DEFEATORCS");
+				c6b.setBackground("forest");
+				
+				Text t6b = c6b.createText("Los orcos demuestran ser demasiado duros para vosotros. Cuando el ultimo de vuestro grupo toca el suelo ves " +
+						"mientras agonizas tendido que los orcos parecen desaparecer por arte de magia. Despues tus heridas desaparecen igualmente. Parece " +
+						"como si fueran una elaborada ilusion, pero no parece tener sentido. Os incorporais con la adrenalina aun al maximo y os mirais sin " +
+						"saber muy bien que hacer ahora.");
+				
+				RolledSkillOptionButton sb6b = new RolledSkillOptionButton();
+				sb6b.setText("Investigar la zona.");
+				sb6b.setSkill(StabConstants.PERCEPTION);
+				sb6b.setDC(15);
+				sb6b.setResults("8PERCFAIL", "8PERCSUCCESS");
+				
+				c6b.addGUI(t6b);
+				c6b.addOption(sb6b);
+				c6b.addOption("Continuar el viaje.", "WOLVES");
+				this.addScene(c6b);
+				
 	//escena 7 choice 2
 		
 		Choice c7=new Choice();
@@ -300,7 +323,7 @@ public class CryptEverflameAdventure extends Adventure{
 		sb7.setText("Investigar la zona.");
 		sb7.setSkill(StabConstants.PERCEPTION);
 		sb7.setDC(15);
-		sb7.setResults("7PERCFAIL", "7PERCSUCCESS");
+		sb7.setResults("8PERCFAIL", "8PERCSUCCESS");
 		
 		c7.addGUI(t7);
 		c7.addOption(sb7);
@@ -311,7 +334,7 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		Narration n8=new Narration();
 		n8.createContents();
-		n8.setTag("7PERCFAIL");
+		n8.setTag("8PERCFAIL");
 		n8.setNext("WOLVES");
 		n8.setBackground("forest");
 		
@@ -325,7 +348,7 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		Narration n9=new Narration();
 		n9.createContents();
-		n9.setTag("7PERCSUCCESS");
+		n9.setTag("8PERCSUCCESS");
 		n9.setNext("WOLVES");
 		n9.setBackground("forest");
 		
@@ -468,11 +491,11 @@ public class CryptEverflameAdventure extends Adventure{
 		c11.addRule(rr);
 		
 		c11.addGUI(t11);
-		c11.addGUI(bpasar);
+		c11.addOption(bpasar);
 		c11.addGUI(tt);
-		c11.addGUI(batt);
-		c11.addGUI(bwild);
-		c11.addGUI(bhuir);
+		c11.addOption(batt);
+		c11.addOption(bwild);
+		c11.addOption(bhuir);
 		this.addScene(c11);
 	
 	//escena 12
@@ -522,7 +545,7 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		//escena 14
 		
-				Narration n14=new Narration();
+				Choice n14=new Choice();
 				n14.createContents();
 				n14.setTag("WOLVES3");
 				n14.setBackground("forest");
@@ -545,12 +568,12 @@ public class CryptEverflameAdventure extends Adventure{
 				
 				n14.addGUI(i14);
 				n14.addGUI(t14);
-				n14.addGUI(bini);
+				n14.addOption(bini);
 				this.addScene(n14);
 				
-				//escena 15
+		//escena 15
 				
-				Narration n15=new Narration();
+				Choice n15=new Choice();
 				n15.createContents();
 				n15.setTag("INISUCC");
 				n15.setBackground("forest");
@@ -573,7 +596,7 @@ public class CryptEverflameAdventure extends Adventure{
 				
 				n15.addGUI(i15);
 				n15.addGUI(t15);
-				n15.addGUI(bini2);
+				n15.addOption(bini2);
 				this.addScene(n15);
 				
 		//escena 1
@@ -757,7 +780,7 @@ public class CryptEverflameAdventure extends Adventure{
 				c19.addOption(sb19b);
 				c19.addOption(sb19c);
 				c19.addOption(sb19d);
-				c19.addOption("Seguir tu camino", "HILLSIDE");
+				c19.addOption("Seguir tu camino", "HILLSIDE1");
 				this.addScene(c19);
 				
 		//escena 20a
@@ -930,6 +953,70 @@ public class CryptEverflameAdventure extends Adventure{
 				
 				n20h.addGUI(t20h);
 				this.addScene(n20h);
+				
+//escena 21
+				
+				Narration n21=new Narration();
+				n21.createContents();
+				n21.setTag("HILLSIDE1");
+				n21.setNext("HILLSIDE2");
+				n21.setBackground("crypt");
+				
+				Text t21 = n21.createText("Dejais el lago Gris atras y viajais unas tres horas hasta llegar " +
+						"al valle donde segun el mapa se encuentra la Cripta de la Llama Eterna. Los arboles de " +
+						"esta zona son muy antiguos. El tiempo hace el viaje aun mas miserable cuando una " +
+						"fria lluvia empieza a caer. Veis un camino que lleva aun mas adentro en el bosque, a " +
+						"traves de un laberinto de arboles y tupidos matorrales. El camino sube una pequeña " +
+						"loma y mas alla se abre a un ancho valle, cuyo lado opuesto parece una serpiente " +
+						"ondulante. En el medio se ve una colina detras de un terraplen. La lluvia hace que " +
+						"el suelo sea resbaladizo y traicionero.");
+				t21.setSize(Constants.CONTENT,Constants.CONTENT);
+				t21.setPos(Constants.BEGIN, Constants.BEGIN);
+				
+				n21.addGUI(t21);
+				this.addScene(n21);
+				
+		//escena 22
+				
+				Choice c22=new Choice();
+				c22.createContents();
+				c22.setTag("HILLSIDE2");
+				c22.setBackground("crypt");
+				
+				Text t22 = c22.createText("La colina es muy resbaladiza y bajar por el terraplen sera muy laborioso.");
+				t22.setSize(Constants.CONTENT,Constants.CONTENT);
+				t22.setPos(Constants.BEGIN, Constants.NEXT);
+				
+				RolledSkillOptionButton b22a = new RolledSkillOptionButton();
+				b22a.setText("Bajar la colina");
+				b22a.setSkill(StabConstants.ACROBATICS);
+				b22a.setDC(10);
+				b22a.setResults("FAIL22", "SUCC22");
+				
+				RolledSkillOptionButton b22b = new RolledSkillOptionButton();
+				b22b.setText("Bajar la colina despacio");
+				b22b.setSkill(StabConstants.ACROBATICS);
+				b22b.setDC(8);
+				b22b.setResults("FAIL22", "SUCC22");
+
+				RolledSkillOptionButton b22c = new RolledSkillOptionButton();
+				b22c.setText("Bajar la colina con cuerdas");
+				b22c.setSkill(StabConstants.ACROBATICS);
+				b22c.setDC(8);
+				b22c.setResults("FAIL22", "SUCC22");
+				
+				RolledSkillOptionButton b22d = new RolledSkillOptionButton();
+				b22d.setText("Bajar la colina despacio y con cuerdas");
+				b22d.setSkill(StabConstants.ACROBATICS);
+				b22d.setDC(6);
+				b22d.setResults("FAIL22", "SUCC22");
+				
+				c22.addGUI(t22);
+				c22.addOption(b22a);
+				c22.addOption(b22b);
+				c22.addOption(b22c);
+				c22.addOption(b22d);
+				this.addScene(c22);
 				
 	//escena derrota
 		
