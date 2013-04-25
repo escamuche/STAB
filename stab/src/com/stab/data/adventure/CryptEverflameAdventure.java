@@ -2,11 +2,7 @@ package com.stab.data.adventure;
 
 import com.stab.adventure.Adventure;
 import com.stab.common.Constants;
-import com.stab.common.events.Condition;
 import com.stab.common.events.DefaultRule;
-import com.stab.common.events.ManagedEvent;
-import com.stab.common.events.Response;
-import com.stab.common.events.Rule;
 import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.data.rules.CharacterSkillRollCondition;
@@ -27,7 +23,6 @@ import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.Image;
 import com.stab.model.basic.ui.Text;
-import com.sun.jndi.ldap.DefaultResponseControlFactory;
 import com.tien.princess.engine.Resources;
 
 public class CryptEverflameAdventure extends Adventure{
@@ -215,7 +210,7 @@ public class CryptEverflameAdventure extends Adventure{
 		Image i5 = new Image();
 		i5.setImage("uptal$A");
 		i5.setPos(Constants.BEGIN, Constants.NEXT);
-		i5.setSize(Constants.PERCENT+20, Constants.PERCENT+20);
+		i5.setSize(Constants.PERCENT+30, Constants.PERCENT+30);
 		
 		n5.addGUI(i5);
 		n5.addGUI(t5);
@@ -251,9 +246,28 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		c6.addGUI(i6);
 		c6.addGUI(t6);
-		c6.addOption("Empezar la aventura!","ORCS.start");
+		c6.addOption("Empezar la aventura!","START");
 		this.addScene(c6);
 		
+		//escena 6a choice 1a
+		
+				Choice c6a=new Choice();
+				c6a.createContents();
+				c6a.setBackground("forest");
+				c6a.setTag("START");
+				
+				Text t6a = c6a.createText("Empezais vuestra marcha con ilusion en vuestros corazones. Cuando llevais un par de horas andando por el camino " +
+						"a traves del bosque ois un extraño ruido, como un jabali. Aprestais vuestras armas preparados para espantar al animal, pero lo que sale " +
+						"cargando de entre los arbustos no es lo que esperais, sino tres criaturas humanoides con piel de color verdosa y grandes " +
+						"colmillos. Jurarias que deben ser esas criaturas que has oido alguna vez que se llaman orcos. Sabes de ellos que son fuertes, resistentes " +
+						"y malignos hasta la medula.");
+				t6a.setPos(Constants.NEXT, Constants.BEGIN);
+				t6a.setSize(Constants.FILL, Constants.CONTENT);
+				
+				c6a.addGUI(t6a);
+				c6a.addOption("Tira Iniciativa!","ORCS.start");
+				this.addScene(c6a);
+				
 	//mapa combate 1
 		
 		DefaultTileMapScene mc1=new DefaultTileMapScene();
@@ -542,7 +556,7 @@ public class CryptEverflameAdventure extends Adventure{
 				n15.setBackground("forest");
 				
 				Text t15 = n15.createText("Llegas hasta el lobo, dandole un fuerte golpe, aunque no lo suficiente para acabar con el. Enseñandote sus terribles " +
-						"dientes intenta huir y perderse en el golpe. Desesperamente intentas conectar otro golpe que acabe con el antes de que consiga huir");
+						"dientes intenta huir y perderse en el bosque. Desesperamente intentas conectar otro golpe que acabe con el antes de que consiga huir");
 				t15.setSize(Constants.CONTENT,Constants.CONTENT);
 				t15.setPos(Constants.BEGIN, Constants.NEXT);
 				
@@ -670,6 +684,54 @@ public class CryptEverflameAdventure extends Adventure{
 				rm5.addResponse(new DefeatResponse(0,"DEFEAT"));
 				mc3.addRule(rm4);
 				this.addScene(mc3);
+				
+		//escena 19
+				
+				Choice c19=new Choice();
+				c19.createContents();
+				c19.setBackground("forest");
+				c19.setTag("BANDIT");
+				
+				Text t19 = c19.createText("Al dia siguiente continuais vuestro camino a traves del bosque del Colmillo. " +
+						"Temprano por la mañana llegais a la orilla del lago Gris, donde pensais rellenar vuestros pellejos de agua y" +
+						"tomar un breve descanso. Segun os acercais veis que los arboles empiezan a escasear, revelando un campo de corta " +
+						"hierba verde que lleva a la orilla de un ancho y tranquilo lago, que refleja el cielo sobre el. Una dense niebla " +
+						"cuelga sobre el centro del lago, oscureciendo la orilla opuesta. Cerca de la orilla, una forma oscura esta tendida " +
+						"cerca del agua. Os acercais y veis un hombre muerto en bastante mal estado");
+				t19.setSize(Constants.CONTENT,Constants.CONTENT);
+				t19.setPos(Constants.BEGIN, Constants.NEXT);
+			
+				RolledSkillOptionButton sb19a = new RolledSkillOptionButton();
+				sb19a.setText("Investigar alrededor del cadaver");
+				sb19a.setSkill(StabConstants.PERCEPTION);
+				sb19a.setDC(10);
+				sb19a.setResults("PERCFAIL", "PERCSUC");
+				
+				RolledSkillOptionButton sb19b = new RolledSkillOptionButton();
+				sb19b.setText("Investigar el cadaver");
+				sb19b.setSkill(StabConstants.KNOWLEDGELOCAL);
+				sb19b.setDC(10);
+				sb19b.setResults("LOCALFAIL", "LOCALSUC");
+				
+				RolledSkillOptionButton sb19c = new RolledSkillOptionButton();
+				sb19c.setText("Investigar sus heridas");
+				sb19c.setSkill(StabConstants.HEALSKILL);
+				sb19c.setDC(15);
+				sb19c.setResults("HEALFAIL", "HEALSUC");
+				
+				RolledSkillOptionButton sb19d = new RolledSkillOptionButton();
+				sb19d.setText("Buscar por la zona");
+				sb19d.setSkill(StabConstants.SURVIVAL);
+				sb19d.setDC(15);
+				sb19d.setResults("SURVFAIL", "SURVSUC");
+				
+				c19.addGUI(t19);
+				c19.addOption(sb19a);
+				c19.addOption(sb19b);
+				c19.addOption(sb19c);
+				c19.addOption(sb19d);
+				c19.addOption("Seguir tu camino", "HILLSIDE");
+				this.addScene(c19);
 				
 	//escena derrota
 		
