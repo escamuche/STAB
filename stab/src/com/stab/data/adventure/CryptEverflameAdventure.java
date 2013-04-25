@@ -49,11 +49,26 @@ public class CryptEverflameAdventure extends Adventure{
 		super.init();
 		clearScenes();
 		
+	//indice
+		
+		Choice n0 = new Choice();
+		n0.createContents();
+		n0.setTag("BEGIN");
+		n0.setBackground("cover");
+		
+		n0.addOption("Empezar", "INTRO0");
+		n0.addOption("Punto de salvado 1 (orcos)","START");
+		n0.addOption("Punto de salvado 2 (lobos)","WOLVES");
+		n0.addOption("Punto de salvado 3 (bandido)","BANDIT");
+		n0.addOption("Punto de salvado 4 (colina)", "HILLSIDE1");
+		
+		this.addScene(n0);
+		
 	//escena 1
 		
 		Narration n1=new Narration();
 		n1.createContents();
-		n1.setTag("BEGIN");
+		n1.setTag("INTRO0");
 		n1.setNext("INTRO");
 		n1.setBackground("COLOR#orange");
 		
@@ -216,7 +231,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n5.addGUI(t5);
 		this.addScene(n5);
 		
-	//escena 6 choice 1
+	//escena 6
 		
 		Choice c6=new Choice();
 		c6.createContents();
@@ -263,6 +278,12 @@ public class CryptEverflameAdventure extends Adventure{
 						"y malignos hasta la medula.");
 				t6a.setPos(Constants.NEXT, Constants.BEGIN);
 				t6a.setSize(Constants.FILL, Constants.CONTENT);
+				
+				DefaultRule r6a= new DefaultRule();
+				r6a.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p6a = new SetPartyValueResponse("save1",true);
+				r6a.addResponse(p6a);
+				c6a.addRule(r6a);
 				
 				c6a.addGUI(t6a);
 				c6a.addOption("Tira Iniciativa!","ORCS.start");
@@ -393,6 +414,12 @@ public class CryptEverflameAdventure extends Adventure{
 		//Notese  que esto no le pone icono, pero le cambia el tamaño a que ocupe toda la linea
 		//Y esta pendiente de probar, claro :D
 		//RolledOptionButton funciona casi igual
+		
+		DefaultRule r10= new DefaultRule();
+		r10.setEvent(PlayerEntersScene.class);
+		SetPartyValueResponse p10 = new SetPartyValueResponse("save2",true);
+		r10.addResponse(p10);
+		c10.addRule(r10);
 		
 		c10.addGUI(t10);
 		c10.addOption(sb10); 
@@ -733,7 +760,6 @@ public class CryptEverflameAdventure extends Adventure{
 				r19a.setEvent(PlayerEntersScene.class);
 				r19a.addCondition(new PartyValueIs("banditperception", true));
 				r19a.addResponse(new SetVisibleResponse(sb19a,false));
-				//r19a.addOnFail(new SetVisibleResponse(sb19a,true));
 				c19.addRule(r19a);
 				
 				RolledSkillOptionButton sb19b = new RolledSkillOptionButton();
@@ -746,7 +772,6 @@ public class CryptEverflameAdventure extends Adventure{
 				r19b.setEvent(PlayerEntersScene.class);
 				r19b.addCondition(new PartyValueIs("banditlocal", true));
 				r19b.addResponse(new SetVisibleResponse(sb19b,false));
-				//r19b.addOnFail(new SetVisibleResponse(sb19b,false));
 				c19.addRule(r19b);
 				
 				RolledSkillOptionButton sb19c = new RolledSkillOptionButton();
@@ -759,7 +784,6 @@ public class CryptEverflameAdventure extends Adventure{
 				r19c.setEvent(PlayerEntersScene.class);
 				r19c.addCondition(new PartyValueIs("banditheal", true));
 				r19c.addResponse(new SetVisibleResponse(sb19c,false));
-				//r19c.addOnFail(new SetVisibleResponse(sb19c,false));
 				c19.addRule(r19c);
 				
 				RolledSkillOptionButton sb19d = new RolledSkillOptionButton();
@@ -772,8 +796,13 @@ public class CryptEverflameAdventure extends Adventure{
 				r19d.setEvent(PlayerEntersScene.class);
 				r19d.addCondition(new PartyValueIs("banditsurvival", true));
 				r19d.addResponse(new SetVisibleResponse(sb19d,false));
-				//r19d.addOnFail(new SetVisibleResponse(sb19d,false));
 				c19.addRule(r19d);
+				
+				DefaultRule r19e= new DefaultRule();
+				r19e.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p19e = new SetPartyValueResponse("save3",true);
+				r19e.addResponse(p19e);
+				c19.addRule(r19e);
 				
 				c19.addGUI(t19);
 				c19.addOption(sb19a);
@@ -972,6 +1001,12 @@ public class CryptEverflameAdventure extends Adventure{
 						"el suelo sea resbaladizo y traicionero.");
 				t21.setSize(Constants.CONTENT,Constants.CONTENT);
 				t21.setPos(Constants.BEGIN, Constants.BEGIN);
+				
+				DefaultRule r21= new DefaultRule();
+				r21.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p21 = new SetPartyValueResponse("save4",true);
+				r21.addResponse(p21);
+				n21.addRule(r21);
 				
 				n21.addGUI(t21);
 				this.addScene(n21);
