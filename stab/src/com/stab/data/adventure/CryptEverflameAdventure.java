@@ -2,7 +2,11 @@ package com.stab.data.adventure;
 
 import com.stab.adventure.Adventure;
 import com.stab.common.Constants;
+import com.stab.common.events.Condition;
 import com.stab.common.events.DefaultRule;
+import com.stab.common.events.ManagedEvent;
+import com.stab.common.events.Response;
+import com.stab.common.events.Rule;
 import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.data.rules.CharacterSkillRollCondition;
@@ -15,6 +19,7 @@ import com.stab.model.basic.scenes.event.condition.PartyValueIs;
 import com.stab.model.basic.scenes.event.response.DefeatResponse;
 import com.stab.model.basic.scenes.event.response.SetPartyValueResponse;
 import com.stab.model.basic.scenes.event.response.SetVisibleResponse;
+import com.stab.model.basic.scenes.event.response.TravelToSceneResponse;
 import com.stab.model.basic.scenes.event.response.VictoryResponse;
 import com.stab.model.basic.scenes.event.rule.AllMonstersDeadRule;
 import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
@@ -22,6 +27,7 @@ import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.Image;
 import com.stab.model.basic.ui.Text;
+import com.sun.jndi.ldap.DefaultResponseControlFactory;
 import com.tien.princess.engine.Resources;
 
 public class CryptEverflameAdventure extends Adventure{
@@ -245,7 +251,7 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		c6.addGUI(i6);
 		c6.addGUI(t6);
-		c6.addOption("Empezar la aventura!","SMOKE");
+		c6.addOption("Empezar la aventura!","ORCS.start");
 		this.addScene(c6);
 		
 	//mapa combate 1
@@ -253,10 +259,10 @@ public class CryptEverflameAdventure extends Adventure{
 		DefaultTileMapScene mc1=new DefaultTileMapScene();
 		mc1.createContents();
 		mc1.createMap(15,15);
-		mc1.loadTiled("everflame2", 0, 0);
+		mc1.loadTiled("orcs", 0, 0);
 		mc1.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
 		mc1.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
-		mc1.setTag("EVERFLAME2");
+		mc1.setTag("ORCS");
 		
 		AllMonstersDeadRule r=new AllMonstersDeadRule();
 		r.addResponse(new VictoryResponse(0,"VICTORY"));
@@ -270,7 +276,7 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		Choice c7=new Choice();
 		c7.createContents();
-		c7.setTag("SMOKE");
+		c7.setTag("VICTORY");
 		c7.setBackground("forest");
 		
 		Text t7 = c7.createText("La dura batalla contra los extraños orcos acaba, dejando una sensacion extraña, por la forma de desaparecer parece " +
@@ -604,7 +610,8 @@ public class CryptEverflameAdventure extends Adventure{
 				Choice c18=new Choice();
 				c18.createContents();
 				c18.setTag("WOLVES4");
-				c18.setBackground("BANDIT");
+				c18.setNext("BANDIT");
+				c18.setBackground("forest");
 				
 				Text t18 = c18.createText("Al cabo de una hora oyes ruidos que se acercan al campamento y ves unos ojos en la oscuridad, brillando " +
 						"con una luz intensa. Ves surgir de entre la maleza tres lobos que gruñen y se abalanzan sobre vosotros.");
@@ -616,14 +623,53 @@ public class CryptEverflameAdventure extends Adventure{
 				i18.setPos(Constants.BEGIN, Constants.BEGIN);
 				i18.setSize(Constants.PERCENT+50, Constants.PERCENT+50);
 				
-				//if PartyValueIs("acampar") =true
-					//	c18.addOption("Tirar Iniciativa!","CAMP1.start");
-				//if PartyValueIs("acampar") =false
-					//	c18.addOption("Tirar Iniciativa!","CAMP2.start");
+				DefaultRule r18 = new DefaultRule();
+				r18.setEvent(PlayerEntersScene.class);
+				r18.addCondition(new PartyValueIs("acampar", false));
+				r18.addResponse(new TravelToSceneResponse("CAMP1.start"));
+				r18.addOnFail(new TravelToSceneResponse("CAMP2.start"));
+				c18.addRule(r18);
+				
 				
 				c18.addGUI(i18);
 				c18.addGUI(t18);
 				this.addScene(c18);
+				
+				//mapa combate 2
+				
+				DefaultTileMapScene mc2=new DefaultTileMapScene();
+				mc2.createContents();
+				mc2.createMap(15,15);
+				mc2.loadTiled("camp1", 0, 0);
+				mc2.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
+				mc2.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
+				mc2.setTag("CAMP1");
+				
+				AllMonstersDeadRule rm2=new AllMonstersDeadRule();
+				rm2.addResponse(new VictoryResponse(0,"VICTORY"));
+				mc2.addRule(rm2);
+				AllPlayersDeadRule rm3=new AllPlayersDeadRule();
+				rm3.addResponse(new DefeatResponse(0,"DEFEAT"));
+				mc2.addRule(rm3);
+				this.addScene(mc2);
+				
+				//mapa combate 3
+				
+				DefaultTileMapScene mc3=new DefaultTileMapScene();
+				mc3.createContents();
+				mc3.createMap(15,15);
+				mc3.loadTiled("camp2", 0, 0);
+				mc3.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
+				mc3.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
+				mc3.setTag("CAMP2");
+				
+				AllMonstersDeadRule rm4=new AllMonstersDeadRule();
+				rm4.addResponse(new VictoryResponse(0,"VICTORY"));
+				mc3.addRule(rm4);
+				AllPlayersDeadRule rm5=new AllPlayersDeadRule();
+				rm5.addResponse(new DefeatResponse(0,"DEFEAT"));
+				mc3.addRule(rm4);
+				this.addScene(mc3);
 				
 	//escena derrota
 		
