@@ -73,6 +73,7 @@ import com.stab.data.animation.ShootBeamAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.ShootRotatingProyectileAnimation;
 import com.stab.data.animation.SidestepAnimation;
+import com.stab.data.animation.SpeechBubbleAnimation;
 import com.stab.data.animation.StepBackAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.ThrustAnimation;
@@ -280,6 +281,7 @@ public class StabInit {
 		of.setMapping(StepBackAnimation.class);
 		of.setMapping(SidestepAnimation.class);
 		of.setMapping(RevealAnimation.class);
+		of.setMapping(SpeechBubbleAnimation.class);
 		
 		//Tokens
 		of.setMapping(IronBarsToken.class);
