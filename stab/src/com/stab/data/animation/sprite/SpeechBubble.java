@@ -21,7 +21,7 @@ public class SpeechBubble extends Text implements SpeechLayerComponent {//,Mouse
 		setTextColor(Color.black);
 		setMargin(16,16);
 		
-		ComponentFadeOutState fade= new ComponentFadeOutState(1000, UIStateSet.DESTROYED);
+		ComponentFadeOutState fade= new ComponentFadeOutState(500, UIStateSet.DESTROYED);
 	
 		this.addState(fade);
 		st= new SpeechPanelState();
