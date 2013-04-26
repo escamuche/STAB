@@ -61,6 +61,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n0.addOption("Punto de salvado 2 (lobos)","WOLVES");
 		n0.addOption("Punto de salvado 3 (bandido)","BANDIT");
 		n0.addOption("Punto de salvado 4 (colina)", "HILLSIDE1");
+		n0.addOption("Punto de salvado 5 (cripta)", "CRYPT1");
 		
 		this.addScene(n0);
 		
@@ -905,7 +906,7 @@ public class CryptEverflameAdventure extends Adventure{
 				n20e.setBackground("forest");
 				
 				Text t20e = n20e.createText("Miras el cadaver pero no consigues ver nada que te llame la atencion.");
-				t20e.setSize(Constants.CONTENT,Constants.CONTENT);
+				t20e.setSize(Constants.FILL,Constants.CONTENT);
 				t20e.setPos(Constants.BEGIN, Constants.BEGIN);
 				
 				DefaultRule r20e= new DefaultRule();
@@ -949,7 +950,7 @@ public class CryptEverflameAdventure extends Adventure{
 				n20g.setBackground("forest");
 				
 				Text t20g = n20g.createText("Buscas pero no consigues ver nada que te llame la atencion.");
-				t20g.setSize(Constants.CONTENT,Constants.CONTENT);
+				t20g.setSize(Constants.FILL,Constants.CONTENT);
 				t20g.setPos(Constants.BEGIN, Constants.BEGIN);
 				
 				DefaultRule r20g= new DefaultRule();
@@ -1052,6 +1053,218 @@ public class CryptEverflameAdventure extends Adventure{
 				c22.addOption(b22c);
 				c22.addOption(b22d);
 				this.addScene(c22);
+			///////////////////////////////////////////////////////////////////////////////
+				
+//escena 23
+				
+				Choice c23=new Choice();
+				c23.createContents();
+				c23.setBackground("crypt");
+				c23.setTag("CRYPT1");
+				
+				Text t23 = c23.createText("Hay un arco de piedra en un lateral de una pequeña colina al fondo del valle. " +
+						"El musgo a cubierto muchos de sus detalles, pero uno todavia esta muy claro. La piedra sobre el " +
+						"arco esta tallada con un simbolo de una llama con una estilizada runa en el medio. Mas alla del " +
+						"arco hay un tunel oscuro que lleva a un par de grandes puertas de madera, una de las cuales esta " +
+						"ligeramente doblada. Un par de caballos y un trio de ponis yacen destrozados al lado del arco, " +
+						"cada cadaver aun atado al poste clavado en el suelo. Una nube de moscas zumba perezosamente sobre ellos.");
+				t23.setSize(Constants.CONTENT,Constants.CONTENT);
+				t23.setPos(Constants.BEGIN, Constants.NEXT);
+			
+				RolledSkillOptionButton sb23a = new RolledSkillOptionButton();
+				sb23a.setText("Investigar la zona.");
+				sb23a.setSkill(StabConstants.PERCEPTION);
+				sb23a.setDC(15);
+				sb23a.setResults("CRYPTPERCFAIL", "CRYPTPERCSUCC");
+				
+				DefaultRule r23a = new DefaultRule();
+				r23a.setEvent(PlayerEntersScene.class);
+				r23a.addCondition(new PartyValueIs("cryptperception", true));
+				r23a.addResponse(new SetVisibleResponse(sb23a,false));
+				c23.addRule(r23a);
+				
+				RolledSkillOptionButton sb23b = new RolledSkillOptionButton();
+				sb23b.setText("Buscar las alforjas");
+				sb23b.setSkill(StabConstants.PERCEPTION);
+				sb23b.setDC(10);
+				sb23b.setResults("CRYPTPERC2FAIL", "CRYPTPERC2SUCC");
+				
+				DefaultRule r23b = new DefaultRule();
+				r23b.setEvent(PlayerEntersScene.class);
+				r23b.addCondition(new PartyValueIs("cryptperception2", true));
+				r23b.addResponse(new SetVisibleResponse(sb23b,false));
+				c23.addRule(r23b);
+				
+				RolledSkillOptionButton sb23c = new RolledSkillOptionButton();
+				sb23c.setText("Investigar sus heridas");
+				sb23c.setSkill(StabConstants.HEALSKILL);
+				sb23c.setDC(10);
+				sb23c.setResults("CRYPTHEALFAIL", "CRYPTHEALSUCC");
+				
+				DefaultRule r23c = new DefaultRule();
+				r23c.setEvent(PlayerEntersScene.class);
+				r23c.addCondition(new PartyValueIs("cryptheal", true));
+				r23c.addResponse(new SetVisibleResponse(sb23c,false));
+				c23.addRule(r23c);
+				
+				DefaultRule r23d= new DefaultRule();
+				r23d.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p23d = new SetPartyValueResponse("save5",true);
+				r23d.addResponse(p23d);
+				c23.addRule(r23d);
+				
+				c23.addGUI(t23);
+				c23.addOption(sb23a);
+				c23.addOption(sb23b);
+				c23.addOption(sb23c);
+				c23.addOption("Entrar en la cripta.", "UPPER1");
+				this.addScene(c23);
+				
+		//escena 24a
+				
+				Narration n24a=new Narration();
+				n24a.createContents();
+				n24a.setTag("CRYPTPERCFAIL");
+				n24a.setNext("CRYPT1");
+				n24a.setBackground("crypt");
+				
+				Text t24a = n24a.createText("Buscas pero no consigues ver nada que te llame la atencion.");
+				t24a.setSize(Constants.CONTENT,Constants.CONTENT);
+				t24a.setPos(Constants.BEGIN, Constants.BEGIN);
+				
+				DefaultRule r24a= new DefaultRule();
+				r24a.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p24a = new SetPartyValueResponse("cryptperception",true);
+				r24a.addResponse(p24a);
+				n24a.addRule(r24a);
+				
+				n24a.addGUI(t24a);
+				this.addScene(n24a);
+				
+		//escena 24b
+				
+				Narration n24b=new Narration();
+				n24b.createContents();
+				n24b.setTag("CRYPTPERCSUCC");
+				n24b.setNext("CRYPT1");
+				n24b.setBackground("crypt");
+				
+				Text t24b = n24b.createText("Ves los restos de un cuerpo humano bajo un caballo. Despues de un buen rato consigues " +
+						"sacarlo y veis que apenas son unos huesos polvorientos. Parecen de un cadaver que lleve muerto muchisimos años.");
+				t24b.setSize(Constants.CONTENT,Constants.CONTENT);
+				t24b.setPos(Constants.BEGIN, Constants.BEGIN);
+				
+				DefaultRule r24b= new DefaultRule();
+				r24b.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p24b = new SetPartyValueResponse("cryptperception",true);
+				r24b.addResponse(p24b);
+				n24b.addRule(r24b);
+				
+				n24b.addGUI(t24b);
+				this.addScene(n24b);
+				
+//escena 24c
+				
+				Narration n24c=new Narration();
+				n24c.createContents();
+				n24c.setTag("PERC2FAIL");
+				n24c.setNext("CRYPT1");
+				n24c.setBackground("crypt");
+				
+				Text t24c = n24c.createText("Buscas pero no consigues ver nada que te llame la atencion.");
+				t24c.setSize(Constants.CONTENT,Constants.CONTENT);
+				t24c.setPos(Constants.BEGIN, Constants.BEGIN);
+				
+				DefaultRule r24c= new DefaultRule();
+				r24c.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p24c = new SetPartyValueResponse("cryptperception2",true);
+				r24c.addResponse(p24c);
+				n24c.addRule(r24c);
+				
+				n24c.addGUI(t24c);
+				this.addScene(n24c);
+				
+//escena 24d
+				
+				Narration n24d=new Narration();
+				n24d.createContents();
+				n24d.setTag("CRYPTPERC2SUCC");
+				n24d.setNext("CRYPT1");
+				n24d.setBackground("crypt");
+				
+				Text t24d = n24d.createText("Encuentras una de las alfoljas enterrada cerca. Dentro hay raciones " +
+						"para dos dias, un par de cojines bastante comodos, un carcaj con 10 flechas y un poco de aceite de lampara.");
+				t24d.setSize(Constants.CONTENT,Constants.CONTENT);
+				t24d.setPos(Constants.BEGIN, Constants.BEGIN);
+				
+				DefaultRule r24d = new DefaultRule();
+				r24d.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p24d = new SetPartyValueResponse("cryptperception2",true);
+				r24d.addResponse(p24d);
+				n24d.addRule(r24d);
+				
+				n24d.addGUI(t24d);
+				this.addScene(n24d);
+				
+//escena 24e
+				
+				Narration n24e=new Narration();
+				n24e.createContents();
+				n24e.setTag("CRYPTHEALFAIL");
+				n24e.setNext("CRYPT1");
+				n24e.setBackground("crypt");
+				
+				Text t24e = n24e.createText("Miras los cadaveres pero no consigues ver nada que te llame la atencion.");
+				t24e.setSize(Constants.FILL,Constants.CONTENT);
+				t24e.setPos(Constants.BEGIN, Constants.BEGIN);
+				
+				DefaultRule r24e= new DefaultRule();
+				r24e.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p24e = new SetPartyValueResponse("cryptheal",true);
+				r24e.addResponse(p24e);
+				n24e.addRule(r24e);
+				
+				n24e.addGUI(t24e);
+				this.addScene(n24e);
+				
+//escena 24f
+				
+				Narration n24f=new Narration();
+				n24f.createContents();
+				n24f.setTag("CRYPTHEALSUCC");
+				n24f.setNext("CRYPT1");
+				n24f.setBackground("crypt");
+				
+				Text t24f = n24f.createText("Dirias que los animales llevan muertos dos dias, y las marcas parecen de garras o quizas armas de corte sin afilar.");
+				t24f.setSize(Constants.CONTENT,Constants.CONTENT);
+				t24f.setPos(Constants.BEGIN, Constants.BEGIN);
+				
+				DefaultRule r24f = new DefaultRule();
+				r24f.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p24f = new SetPartyValueResponse("cryptheal",true);
+				r24f.addResponse(p24f);
+				n24f.addRule(r24f);
+				
+				n24f.addGUI(t24f);
+				this.addScene(n24f);
+				
+//escena 25
+				
+				Narration n25=new Narration();
+				n25.createContents();
+				n25.setTag("UPPER1");
+				n25.setNext("UPPER2");
+				n25.setBackground("crypt");
+				
+				Text t25 = n25.createText("Entras en la cripta. Una atmosfera opresiva te envuelve, mientras te adentras en la oscuridad. Necesitas luz para avanzar " +
+						"por la cripta. El techo se encuentra 15 pies sobre vuestras cabezas. Todas las superficies que ves son de piedra. Las paredes estan decoradas " +
+						"con patrones de aldeanos luchando contra bandidos enmascarados y monstruos. El arte aun esta en relativo buen estado, aunque el agua y los " +
+						"mohos han deteriorados los grabados. El hedor de cieno y putridez cuelga pesadamente en el aire.");
+				t25.setSize(Constants.FILL,Constants.CONTENT);
+				t25.setPos(Constants.BEGIN, Constants.BEGIN);
+				
+				n25.addGUI(t25);
+				this.addScene(n25);
 				
 	//escena derrota
 		
