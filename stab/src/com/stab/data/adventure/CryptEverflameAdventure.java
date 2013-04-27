@@ -62,7 +62,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n0.addOption("Punto de salvado 3 (bandido)","BANDIT");
 		n0.addOption("Punto de salvado 4 (colina)", "HILLSIDE1");
 		n0.addOption("Punto de salvado 5 (cripta)", "CRYPT1");
-		n0.addOption("Punto de salvado 6 (Dungeon nivel 1", "UPPER1");
+		n0.addOption("Punto de salvado 6 (Dungeon nivel 1)", "UPPER1");
 		
 		this.addScene(n0);
 		
@@ -676,7 +676,6 @@ public class CryptEverflameAdventure extends Adventure{
 				Narration n18=new Narration();
 				n18.createContents();
 				n18.setTag("WOLVES4");
-				n18.setNext("BANDIT");
 				n18.setBackground("forest");
 				
 				Text t18 = n18.createText("Al cabo de una hora oyes ruidos que se acercan al campamento y ves unos ojos en la oscuridad, brillando " +
@@ -688,14 +687,15 @@ public class CryptEverflameAdventure extends Adventure{
 				i18.setImage("wolf$A");
 				i18.setPos(Constants.BEGIN, Constants.BEGIN);
 				i18.setSize(Constants.PERCENT+50, Constants.PERCENT+50);
-			/*	
+				
+				
 				DefaultRule r18 = new DefaultRule();
 				r18.setEvent(PlayerEntersScene.class);
 				r18.addCondition(new PartyValueIs("acampar", false));
-				r18.addResponse(new TravelToSceneResponse("BANDIT"));
-				r18.addOnFail(new TravelToSceneResponse("BANDIT"));
+				r18.addResponse(new TravelToSceneResponse("CAMP2.Campamento"));
+				r18.addOnFail(new TravelToSceneResponse("CAMP1.Campamento"));
 				n18.addRule(r18);
-				*/
+			
 				n18.addGUI(i18);
 				n18.addGUI(t18);
 				this.addScene(n18);
@@ -704,7 +704,7 @@ public class CryptEverflameAdventure extends Adventure{
 				
 				DefaultTileMapScene mc2=new DefaultTileMapScene();
 				mc2.createContents();
-				mc2.createMap(15,15);
+				mc2.createMap(16,16);
 				mc2.loadTiled("camp1", 0, 0);
 				mc2.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
 				mc2.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
@@ -722,7 +722,7 @@ public class CryptEverflameAdventure extends Adventure{
 				
 				DefaultTileMapScene mc3=new DefaultTileMapScene();
 				mc3.createContents();
-				mc3.createMap(15,15);
+				mc3.createMap(16,16);
 				mc3.loadTiled("camp2", 0, 0);
 				mc3.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
 				mc3.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
@@ -1278,7 +1278,7 @@ public class CryptEverflameAdventure extends Adventure{
 				
 				DefaultTileMapScene mc4=new DefaultTileMapScene();
 				mc4.createContents();
-				mc4.createMap(40,40);
+				mc4.createMap(38,29);
 				mc4.loadTiled("upper", 0, 0);
 				mc4.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
 				mc4.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
