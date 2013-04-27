@@ -49,7 +49,7 @@ public class CryptEverflameAdventure extends Adventure{
 		super.init();
 		clearScenes();
 		
-	//indice
+//indice
 		
 		Choice n0 = new Choice();
 		n0.createContents();
@@ -62,10 +62,11 @@ public class CryptEverflameAdventure extends Adventure{
 		n0.addOption("Punto de salvado 3 (bandido)","BANDIT");
 		n0.addOption("Punto de salvado 4 (colina)", "HILLSIDE1");
 		n0.addOption("Punto de salvado 5 (cripta)", "CRYPT1");
+		n0.addOption("Punto de salvado 6 (Dungeon nivel 1", "UPPER1");
 		
 		this.addScene(n0);
 		
-	//escena 1
+//escena 1
 		
 		Narration n1=new Narration();
 		n1.createContents();
@@ -94,7 +95,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n1.addGUI(t1);
 		this.addScene(n1);
 		
-	//escena 2
+//escena 2
 		
 		Narration n2=new Narration();
 		n2.createContents();
@@ -131,7 +132,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n2.addGUI(t2);
 		this.addScene(n2);
 		
-	//escena 3
+//escena 3
 		
 		Narration n3=new Narration();
 		n3.createContents();
@@ -168,7 +169,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n3.addGUI(t3);
 		this.addScene(n3);
 		
-	//escena 4
+//escena 4
 		
 		Narration n4=new Narration();
 		n4.createContents();
@@ -196,7 +197,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n4.addGUI(t4);
 		this.addScene(n4);
 
-	//escena 5
+//escena 5
 		
 		Narration n5=new Narration();
 		n5.createContents();
@@ -232,7 +233,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n5.addGUI(t5);
 		this.addScene(n5);
 		
-	//escena 6
+//escena 6
 		
 		Choice c6=new Choice();
 		c6.createContents();
@@ -265,7 +266,7 @@ public class CryptEverflameAdventure extends Adventure{
 		c6.addOption("Empezar la aventura!","START");
 		this.addScene(c6);
 		
-		//escena 6a
+//escena 6a
 		
 				Choice c6a=new Choice();
 				c6a.createContents();
@@ -290,7 +291,7 @@ public class CryptEverflameAdventure extends Adventure{
 				c6a.addOption("Tira Iniciativa!","ORCS.start");
 				this.addScene(c6a);
 				
-	//mapa combate 1
+//mapa combate 1
 		
 		DefaultTileMapScene mc1=new DefaultTileMapScene();
 		mc1.createContents();
@@ -308,7 +309,7 @@ public class CryptEverflameAdventure extends Adventure{
 		mc1.addRule(r2);
 		this.addScene(mc1);
 		
-		//escena 6b
+//escena 6b
 		
 				Choice c6b=new Choice();
 				c6b.createContents();
@@ -331,7 +332,7 @@ public class CryptEverflameAdventure extends Adventure{
 				c6b.addOption("Continuar el viaje.", "WOLVES");
 				this.addScene(c6b);
 				
-	//escena 7 choice 2
+//escena 7 choice 2
 		
 		Choice c7=new Choice();
 		c7.createContents();
@@ -352,7 +353,7 @@ public class CryptEverflameAdventure extends Adventure{
 		c7.addOption("Continuar el viaje.", "WOLVES");
 		this.addScene(c7);
 	
-	//escena 8
+//escena 8
 		
 		Narration n8=new Narration();
 		n8.createContents();
@@ -366,7 +367,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n8.addGUI(t8);
 		this.addScene(n8);
 		
-	//escena 9
+//escena 9
 		
 		Narration n9=new Narration();
 		n9.createContents();
@@ -388,7 +389,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n9.addGUI(t9);
 		this.addScene(n9);
 		
-	//escena 10 choice 3
+//escena 10 choice 3
 		
 		Choice c10=new Choice();
 		c10.createContents();
@@ -427,7 +428,7 @@ public class CryptEverflameAdventure extends Adventure{
 		c10.addOption("Acampar en el primer sitio que veas", "10SURVIVALFAIL");
 		this.addScene(c10);
 		
-	//escena 10a
+//escena 10a
 		
 				Narration n10a=new Narration();
 				n10a.createContents();
@@ -449,7 +450,7 @@ public class CryptEverflameAdventure extends Adventure{
 				n10a.addGUI(t10a);
 				this.addScene(n10a);
 				
-		//escena 10b
+//escena 10b
 				
 				Narration n10b=new Narration();
 				n10b.createContents();
@@ -471,7 +472,7 @@ public class CryptEverflameAdventure extends Adventure{
 				n10b.addGUI(t10b);
 				this.addScene(n10b);
 		
-	//escena 11 choice 4
+//escena 11 choice 4
 		
 		Choice c11=new Choice();
 		c11.createContents();
@@ -526,7 +527,7 @@ public class CryptEverflameAdventure extends Adventure{
 		c11.addOption(bhuir);
 		this.addScene(c11);
 	
-	//escena 12
+//escena 12
 		
 		Narration n12=new Narration();
 		n12.createContents();
@@ -548,7 +549,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n12.addGUI(t12);
 		this.addScene(n12);
 		
-	//escena 13
+//escena 13
 		
 		Narration n13=new Narration();
 		n13.createContents();
@@ -571,7 +572,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n13.addGUI(t13);
 		this.addScene(n13);
 		
-		//escena 14
+//escena 14
 		
 				Choice n14=new Choice();
 				n14.createContents();
@@ -599,7 +600,7 @@ public class CryptEverflameAdventure extends Adventure{
 				n14.addOption(bini);
 				this.addScene(n14);
 				
-		//escena 15
+//escena 15
 				
 				Choice n15=new Choice();
 				n15.createContents();
@@ -627,7 +628,7 @@ public class CryptEverflameAdventure extends Adventure{
 				n15.addOption(bini2);
 				this.addScene(n15);
 				
-		//escena 1
+//escena 16
 				
 				Narration n16=new Narration();
 				n16.createContents();
@@ -649,7 +650,7 @@ public class CryptEverflameAdventure extends Adventure{
 				n16.addGUI(t16);
 				this.addScene(n16);
 				
-		//escena 17
+//escena 17
 				
 				Narration n17=new Narration();
 				n17.createContents();
@@ -699,7 +700,7 @@ public class CryptEverflameAdventure extends Adventure{
 				n18.addGUI(t18);
 				this.addScene(n18);
 				
-		//mapa combate 2
+//mapa combate 2
 				
 				DefaultTileMapScene mc2=new DefaultTileMapScene();
 				mc2.createContents();
@@ -717,7 +718,7 @@ public class CryptEverflameAdventure extends Adventure{
 				mc2.addRule(rm3);
 				this.addScene(mc2);
 				
-		//mapa combate 3
+//mapa combate 3
 				
 				DefaultTileMapScene mc3=new DefaultTileMapScene();
 				mc3.createContents();
@@ -735,7 +736,7 @@ public class CryptEverflameAdventure extends Adventure{
 				mc3.addRule(rm5);
 				this.addScene(mc3);
 				
-		//escena 19
+//escena 19
 				
 				Choice c19=new Choice();
 				c19.createContents();
@@ -813,7 +814,7 @@ public class CryptEverflameAdventure extends Adventure{
 				c19.addOption("Seguir tu camino", "HILLSIDE1");
 				this.addScene(c19);
 				
-		//escena 20a
+//escena 20a
 				
 				Narration n20a=new Narration();
 				n20a.createContents();
@@ -834,7 +835,7 @@ public class CryptEverflameAdventure extends Adventure{
 				n20a.addGUI(t20a);
 				this.addScene(n20a);
 				
-		//escena 20b
+//escena 20b
 				
 				Narration n20b=new Narration();
 				n20b.createContents();
@@ -1012,7 +1013,7 @@ public class CryptEverflameAdventure extends Adventure{
 				n21.addGUI(t21);
 				this.addScene(n21);
 				
-		//escena 22
+//escena 22
 				
 				Choice c22=new Choice();
 				c22.createContents();
@@ -1053,8 +1054,7 @@ public class CryptEverflameAdventure extends Adventure{
 				c22.addOption(b22c);
 				c22.addOption(b22d);
 				this.addScene(c22);
-			///////////////////////////////////////////////////////////////////////////////
-				
+		
 //escena 23
 				
 				Choice c23=new Choice();
@@ -1120,7 +1120,7 @@ public class CryptEverflameAdventure extends Adventure{
 				c23.addOption("Entrar en la cripta.", "UPPER1");
 				this.addScene(c23);
 				
-		//escena 24a
+//escena 24a
 				
 				Narration n24a=new Narration();
 				n24a.createContents();
@@ -1141,7 +1141,7 @@ public class CryptEverflameAdventure extends Adventure{
 				n24a.addGUI(t24a);
 				this.addScene(n24a);
 				
-		//escena 24b
+//escena 24b
 				
 				Narration n24b=new Narration();
 				n24b.createContents();
@@ -1250,7 +1250,7 @@ public class CryptEverflameAdventure extends Adventure{
 				
 //escena 25
 				
-				Narration n25=new Narration();
+				Choice n25=new Choice();
 				n25.createContents();
 				n25.setTag("UPPER1");
 				n25.setNext("UPPER2");
@@ -1259,12 +1259,41 @@ public class CryptEverflameAdventure extends Adventure{
 				Text t25 = n25.createText("Entras en la cripta. Una atmosfera opresiva te envuelve, mientras te adentras en la oscuridad. Necesitas luz para avanzar " +
 						"por la cripta. El techo se encuentra 15 pies sobre vuestras cabezas. Todas las superficies que ves son de piedra. Las paredes estan decoradas " +
 						"con patrones de aldeanos luchando contra bandidos enmascarados y monstruos. El arte aun esta en relativo buen estado, aunque el agua y los " +
-						"mohos han deteriorados los grabados. El hedor de cieno y putridez cuelga pesadamente en el aire.");
+						"mohos han deteriorados los grabados. El hedor de cieno y putridez cuelga pesadamente en el aire. Una pesada puerta doble cierra la crypta. " +
+						"Despues de un rato de luchar contra ella conseguis abrirlas, y entrais en la cripta. Dentro veis varios esqueletos que se disponen a atacaros.");
 				t25.setSize(Constants.FILL,Constants.CONTENT);
 				t25.setPos(Constants.BEGIN, Constants.BEGIN);
 				
+				DefaultRule r25= new DefaultRule();
+				r25.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p25 = new SetPartyValueResponse("save6",true);
+				r25.addResponse(p25);
+				n25.addRule(r25);
+				
 				n25.addGUI(t25);
+				n25.addOption("Tirar iniciativa", "UPPER.Start");
 				this.addScene(n25);
+				
+//mapa combate 4
+				
+				DefaultTileMapScene mc4=new DefaultTileMapScene();
+				mc4.createContents();
+				mc4.createMap(40,40);
+				mc4.loadTiled("upper", 0, 0);
+				mc4.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
+				mc4.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
+				mc4.setTag("UPPER");
+				
+				/*AllMonstersDeadRule r4=new AllMonstersDeadRule();
+				r4.addResponse(new VictoryResponse(0,"VICTORY"));
+				mc4.addRule(r);
+				*/
+				
+				AllPlayersDeadRule r5=new AllPlayersDeadRule();
+				r5.addResponse(new DefeatResponse(0,"DEFEAT"));
+				mc4.addRule(r5);
+				
+				this.addScene(mc4);
 				
 	//escena derrota
 		
