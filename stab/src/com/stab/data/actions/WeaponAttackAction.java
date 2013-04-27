@@ -194,6 +194,7 @@ public class WeaponAttackAction extends Action implements TargetAction{
      setResource("actions/ability_steelmelee");
      setName("Attack");
      this.setEffectType(DAMAGE);
+     setDescription("Ataca con el arma equipada en la mano principal (O en ambas manos). El daño depende del arma.");
 	}
 
 	@Override

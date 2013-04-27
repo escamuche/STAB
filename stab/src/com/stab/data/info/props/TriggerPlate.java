@@ -3,6 +3,7 @@ package com.stab.data.info.props;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.base.PressurePlate;
+import com.stab.model.info.trait.base.VisualEffect;
 
 
 public class TriggerPlate extends PressurePlate{
@@ -21,6 +22,7 @@ public class TriggerPlate extends PressurePlate{
 	public void infoEnters(Info info) {
 		if (this.isHiddenFrom(info)&&(info instanceof BaseInfo)){
 			((BaseInfo)info).clearActions();
+			info.playAnimation(VisualEffect.ALERT_ANIMATION);
 		}
 		super.infoEnters(info);
 		

@@ -55,6 +55,7 @@ import com.stab.data.adventure.ColiseoAdventure;
 import com.stab.data.adventure.CryptEverflameAdventure;
 import com.stab.data.adventure.TestAdventure;
 import com.stab.data.adventure.Zombies;
+import com.stab.data.animation.AlertAnimation;
 import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.animation.BlockAnimation;
 import com.stab.data.animation.CloseDoorAnimation;
@@ -161,6 +162,10 @@ public class StabInit {
 			sv.getFactory().setMapping(RolledOptionButton.ID,Button_sprite.class);
 			sv.getFactory().setMapping(RolledSkillOptionButton.ID,Button_sprite.class);
 		}
+	}
+	
+	public static void setMapping(Class c){
+		of.setMapping(c);
 	}
 
 	public static void serverInit(){
@@ -282,6 +287,7 @@ public class StabInit {
 		of.setMapping(SidestepAnimation.class);
 		of.setMapping(RevealAnimation.class);
 		of.setMapping(SpeechBubbleAnimation.class);
+		of.setMapping(AlertAnimation.class);
 		
 		//Tokens
 		of.setMapping(IronBarsToken.class);
