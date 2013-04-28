@@ -3,9 +3,12 @@ package com.stab.data.adventure.everflame;
 import java.awt.Point;
 
 import com.stab.data.StabConstants;
+import com.stab.data.animation.AlertAnimation;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.data.info.applicable.SkillRoll;
 import com.stab.model.action.ContextualAction;
+import com.stab.model.action.base.WalkToAction;
+import com.stab.model.basic.token.DecorToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.request.basic.ActionRequest;
@@ -17,7 +20,9 @@ public class ClimbAction extends ContextualAction {
 	public ClimbAction() {
 		setRange(3);
 		setName("Trepar");
-		setResource("");
+		setResource("actions/tumble");
+		setDescription("Intentar trepar hasta el punto indicado, con riesgo de tropezar y caer al vacío.");
+		setTargetTokenClass(DecorToken.class);
 	}
 
 	@Override
@@ -37,8 +42,12 @@ public class ClimbAction extends ContextualAction {
 		if (ck.success()){
 			//Ir al waypoint, todo bien.
 			//animacion de moverse
+			sleep(character.playAnimationOn(WalkToAction.ANIMATION_ID, target.getPos()));
+			character.setPos(target.getPos());
 			return true;
 		}
+		character.playAnimation(AlertAnimation.ID);
+		sleep(300);
 		//Ahora bien, si fallamos, tirada de salvacion
 		SavingThrowEffect st= new SavingThrowEffect(null,StabConstants.REFLEXSAVE,character);
 		st.check();

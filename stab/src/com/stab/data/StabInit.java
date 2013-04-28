@@ -55,6 +55,8 @@ import com.stab.data.adventure.ColiseoAdventure;
 import com.stab.data.adventure.CryptEverflameAdventure;
 import com.stab.data.adventure.TestAdventure;
 import com.stab.data.adventure.Zombies;
+import com.stab.data.adventure.everflame.ClimbAction;
+import com.stab.data.adventure.everflame.ClimbWaypoint;
 import com.stab.data.animation.AlertAnimation;
 import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.animation.BlockAnimation;
@@ -298,6 +300,9 @@ public class StabInit {
 		wf=new WeaponFactory();
 		af=new ArmorFactory();
 		ef=new EquipmentFactory();
+		
+		
+		
 	}
 	
 	static void initActions(){

@@ -5,6 +5,9 @@ import com.stab.common.Constants;
 import com.stab.common.events.DefaultRule;
 import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
+import com.stab.data.StabInit;
+import com.stab.data.adventure.everflame.ClimbAction;
+import com.stab.data.adventure.everflame.ClimbWaypoint;
 import com.stab.data.rules.CharacterSkillRollCondition;
 import com.stab.data.ui.RolledSkillOptionButton;
 import com.stab.data.utils.StabBlockData;
@@ -63,6 +66,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n0.addOption("Punto de salvado 4 (colina)", "HILLSIDE1");
 		n0.addOption("Punto de salvado 5 (cripta)", "CRYPT1");
 		n0.addOption("Punto de salvado 6 (Dungeon nivel 1)", "UPPER1");
+		n0.addOption("Punto de salvado C (las cuerdas)", "ROPECLIFFS.Start");
 		
 		this.addScene(n0);
 		
@@ -1303,6 +1307,31 @@ public class CryptEverflameAdventure extends Adventure{
 		ndefeat.setText("Todos los aventureros han muerto!");
 		ndefeat.setNext(null);
 		this.addScene(ndefeat);
+		
+		
+		
+		
+		  
+		//Elementos necesarios. Esto tiene que ir fuera de aqui! si no solo se inicializa en el host!
+				StabInit.getActionLibrary().register(new ClimbAction());
+				StabInit.setMapping(ClimbWaypoint.class);
+	//Escena de las cuerdas
+				DefaultTileMapScene ropes=new DefaultTileMapScene();
+				ropes.createContents();
+				ropes.createMap(16,14);
+				ropes.loadTiled("cliff", 0, 0);
+				ropes.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
+				ropes.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
+				ropes.setTag("ROPECLIFFS");
+				
+				//Regla para hacer visibles las cuerdas si la usaron
+				
+				//Regla de todos los players llegan a la salida
+				r2=new AllPlayersDeadRule();
+				r2.addResponse(new DefeatResponse(0,"DEFEAT"));
+				ropes.addRule(r2);
+				this.addScene(ropes);
+		
 	}
 }
 

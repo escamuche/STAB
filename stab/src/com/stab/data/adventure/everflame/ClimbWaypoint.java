@@ -18,6 +18,7 @@ public class ClimbWaypoint extends Decoration {
 		super.init();
 		setResource("waypoint");
 		setSelectable(true);
+		setDepth(10);
 		//Añadir contextualAction
 		ContextualOption op= new ContextualOption();
 		op.setActionId(ClimbAction.ID);
@@ -27,7 +28,7 @@ public class ClimbWaypoint extends Decoration {
 	
 	/*
 	  
-	  	n0.addOption("Punto de salvado 5 (las cuerdas)", "ROPECLIFFS.Start");
+	  	n0.addOption("Punto de salvado C (las cuerdas)", "ROPECLIFFS.Start");
 	  
 		//Elementos necesarios
 				StabInit.getActionLibrary().register(new ClimbAction());

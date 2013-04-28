@@ -24,13 +24,14 @@ public class StabActionBar extends ActionBar {
 	
 	protected Component createLeft() {
 		left= new Panel();
-		left.setDesiredSize((int)(64*getUIScale()), (int)(64*getUIScale()));
+		left.setDesiredSize((int)(56*getUIScale()), (int)(56*getUIScale()));
 		left.setBackground((Painter)null);
 	//	left.setOverlay("ui/consolefront", BOXED);
 		left.setMargin(0);
 		leftHand=new Icon();
-		leftHand.setDesiredPos(BEGIN,END);
-		leftHand.setDesiredSize((int)(64*getUIScale()), (int)(64*getUIScale()));
+		leftHand.setDesiredPos(BEGIN,BEGIN);
+		//leftHand.setDesiredSize((int)(64*getUIScale()), (int)(64*getUIScale()));
+		leftHand.setDesiredSize(FILL, FILL);
 		leftHand.setBackground("ui/lefthand",Constants.SCALED);
 		//leftHand.setPainter("ui/lefthand",Constants.SCALED);
 		
@@ -43,17 +44,17 @@ public class StabActionBar extends ActionBar {
 	
 	protected Component createRight() {
 		right= new Panel();
-		right.setDesiredSize((int)(64*getUIScale()), (int)(64*getUIScale()));
+		right.setDesiredSize((int)(56*getUIScale()), (int)(56*getUIScale()));
 		right.setBackground((Painter)null);
 		right.setMargin(0);
 		//right.setOverlay("ui/consolefront", BOXED);
 		
 		rightHand=new Icon();
-		rightHand.setDesiredPos(BEGIN,END);
-		rightHand.setDesiredSize((int)(64*getUIScale()), (int)(64*getUIScale()));
+		rightHand.setDesiredPos(BEGIN,BEGIN);
+	//	rightHand.setDesiredSize((int)(64*getUIScale()), (int)(64*getUIScale()));
 		rightHand.setBackground("ui/righthand",Constants.SCALED);
 	//	rightHand.setPainter("ui/righthand",Constants.SCALED);
-		
+		rightHand.setDesiredSize(FILL, FILL);
 		right.addChild(rightHand);
 	
 		return right;

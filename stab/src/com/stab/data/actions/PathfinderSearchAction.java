@@ -17,7 +17,7 @@ public class PathfinderSearchAction extends SearchAction{
 	}
 
 	public PathfinderSearchAction() {
-		this.setName("Heal");
+		this.setName("Search");
 		this.setResource("actions/tumble");
 	}
 	
