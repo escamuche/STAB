@@ -63,10 +63,11 @@ public class CryptEverflameAdventure extends Adventure{
 		n0.addOption("Punto de salvado 1 (orcos)","START");
 		n0.addOption("Punto de salvado 2 (lobos)","WOLVES");
 		n0.addOption("Punto de salvado 3 (bandido)","BANDIT");
+		//n0.addOption("Punto de salvado 4 (las cuerdas)", "ROPECLIFFS.Start");
 		n0.addOption("Punto de salvado 4 (colina)", "HILLSIDE1");
 		n0.addOption("Punto de salvado 5 (cripta)", "CRYPT1");
 		n0.addOption("Punto de salvado 6 (Dungeon nivel 1)", "UPPER1");
-		n0.addOption("Punto de salvado C (las cuerdas)", "ROPECLIFFS.Start");
+		
 		
 		this.addScene(n0);
 		
@@ -1028,35 +1029,8 @@ public class CryptEverflameAdventure extends Adventure{
 				t22.setSize(Constants.CONTENT,Constants.CONTENT);
 				t22.setPos(Constants.BEGIN, Constants.NEXT);
 				
-				RolledSkillOptionButton b22a = new RolledSkillOptionButton();
-				b22a.setText("Bajar la colina");
-				b22a.setSkill(StabConstants.ACROBATICS);
-				b22a.setDC(10);
-				b22a.setResults("FAIL22", "SUCC22");
-				
-				RolledSkillOptionButton b22b = new RolledSkillOptionButton();
-				b22b.setText("Bajar la colina despacio");
-				b22b.setSkill(StabConstants.ACROBATICS);
-				b22b.setDC(8);
-				b22b.setResults("FAIL22", "SUCC22");
-
-				RolledSkillOptionButton b22c = new RolledSkillOptionButton();
-				b22c.setText("Bajar la colina con cuerdas");
-				b22c.setSkill(StabConstants.ACROBATICS);
-				b22c.setDC(8);
-				b22c.setResults("FAIL22", "SUCC22");
-				
-				RolledSkillOptionButton b22d = new RolledSkillOptionButton();
-				b22d.setText("Bajar la colina despacio y con cuerdas");
-				b22d.setSkill(StabConstants.ACROBATICS);
-				b22d.setDC(6);
-				b22d.setResults("FAIL22", "SUCC22");
-				
 				c22.addGUI(t22);
-				c22.addOption(b22a);
-				c22.addOption(b22b);
-				c22.addOption(b22c);
-				c22.addOption(b22d);
+				c22.addOption("Bajar la colina.","ROPECLIFFS.Start");
 				this.addScene(c22);
 		
 //escena 23
