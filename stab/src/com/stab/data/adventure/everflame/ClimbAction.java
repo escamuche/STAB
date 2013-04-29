@@ -70,4 +70,34 @@ public class ClimbAction extends ContextualAction {
 	public boolean shouldEndTurn(ActionRequest ar, boolean success) {
 		return true;
 	}
+	
+	
+	
+	
+	
+	private Point getFallPoint(Point to, int steps){
+		//Buscamos el punto al que caemos cuando movemos y fallamos
+		int y=to.y;
+		int dest=y;
+		switch(y){
+			case 5:  if (steps==1)
+							dest=7;
+					 if (steps==2)
+						 dest = 9;
+					 break;
+			case 7:  if (steps==1)
+						dest=9;
+					 if (steps==2)
+						 dest=12;
+					break;
+		}
+		
+		return new Point(to.x,dest);
+	}
+	
+	
+	
+	
+	
+	
 }
