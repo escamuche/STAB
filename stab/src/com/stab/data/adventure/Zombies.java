@@ -55,9 +55,9 @@ public class Zombies extends Adventure{
 		
 		i.setSize(40, 40);
 	//	i.setImage("SHADER#infernal");
-		n.addGUI(i);
+	//	n.addGUI(i);
 		
-	//	tp.addChild(i);
+		tp.addChild(i);
 		
 		n.addGUI(tp);
 		n.setText("El gran Khan surge de su tienda y os mira con mirada penetrante. Os ha convocado a su presencia por algun motivo desconocido para vosotros y tras estudiaros largamente habla con voz rotunda y grave: ");

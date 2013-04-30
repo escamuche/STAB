@@ -55,8 +55,6 @@ import com.stab.data.adventure.ColiseoAdventure;
 import com.stab.data.adventure.CryptEverflameAdventure;
 import com.stab.data.adventure.TestAdventure;
 import com.stab.data.adventure.Zombies;
-import com.stab.data.adventure.everflame.ClimbAction;
-import com.stab.data.adventure.everflame.ClimbWaypoint;
 import com.stab.data.animation.AlertAnimation;
 import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.animation.BlockAnimation;
@@ -111,10 +109,13 @@ import com.stab.data.info.player.WarriorCharacter;
 import com.stab.data.info.player.WizardCharacter;
 import com.stab.data.info.props.Barrel;
 import com.stab.data.info.props.Brazier;
+import com.stab.data.info.props.CDoor;
 import com.stab.data.info.props.Crate;
 import com.stab.data.info.props.Dummy;
 import com.stab.data.info.props.FlameJetTrap;
 import com.stab.data.info.props.IronBars;
+import com.stab.data.info.props.LDoor;
+import com.stab.data.info.props.RDoor;
 import com.stab.data.info.props.StabRandomSpawner;
 import com.stab.data.info.props.Statue;
 import com.stab.data.info.props.TriggerPlate;
@@ -125,7 +126,11 @@ import com.stab.data.scene.Feats;
 import com.stab.data.scene.PrayerBook;
 import com.stab.data.scene.SpellBook;
 import com.stab.data.scene.StabLobby;
+import com.stab.data.tokens.CDoorToken;
 import com.stab.data.tokens.IronBarsToken;
+import com.stab.data.tokens.LDoorToken;
+import com.stab.data.tokens.RDoorToken;
+import com.stab.data.tokens.RoundToken;
 import com.stab.data.ui.PathfinderTokenCard;
 import com.stab.data.ui.RolledOptionButton;
 import com.stab.data.ui.RolledSkillOptionButton;
@@ -162,6 +167,10 @@ public class StabInit {
 			sv.getFactory().setMapping(PathfinderTokenCard.class);
 			sv.getFactory().setMapping(StabActionBar.class);
 			sv.getFactory().setMapping(IronBarsToken.ID,ImageToken_sprite.class);
+			sv.getFactory().setMapping(LDoorToken.ID,ImageToken_sprite.class);
+			sv.getFactory().setMapping(RDoorToken.ID,ImageToken_sprite.class);
+			sv.getFactory().setMapping(CDoorToken.ID,ImageToken_sprite.class);
+			sv.getFactory().setMapping(RoundToken.ID,ImageToken_sprite.class);
 			sv.getFactory().setMapping(RolledOptionButton.ID,Button_sprite.class);
 			sv.getFactory().setMapping(RolledSkillOptionButton.ID,Button_sprite.class);
 		}
@@ -242,6 +251,9 @@ public class StabInit {
 		of.setMapping(IronBars.class);
 		of.setMapping(TriggerPlate.class);
 		of.setMapping(FlameJetTrap.class);
+		of.setMapping(LDoor.class);
+		of.setMapping(RDoor.class);
+		of.setMapping(CDoor.class);
 		
 		//criaturas
 		of.setMapping(Zombie.class);
@@ -296,6 +308,18 @@ public class StabInit {
 		//Tokens
 		of.setMapping(IronBarsToken.class);
 		TokenBasedScene.tokenFactory.setMapping(IronBars.ID, IronBarsToken.ID);
+		of.setMapping(LDoorToken.class);
+		TokenBasedScene.tokenFactory.setMapping(LDoor.ID, LDoorToken.ID);
+		of.setMapping(RDoorToken.class);
+		TokenBasedScene.tokenFactory.setMapping(RDoor.ID, RDoorToken.ID);
+		of.setMapping(CDoorToken.class);
+		TokenBasedScene.tokenFactory.setMapping(CDoor.ID, CDoorToken.ID);
+		of.setMapping(RoundToken.class);
+		TokenBasedScene.tokenFactory.setMapping(Statue.ID, RoundToken.ID);
+		
+		
+		
+		//Factorias
 		
 		wf=new WeaponFactory();
 		af=new ArmorFactory();
