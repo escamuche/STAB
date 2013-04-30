@@ -1273,6 +1273,8 @@ public class CryptEverflameAdventure extends Adventure{
 				
 				this.addScene(mc4);
 				
+				
+				
 	//escena derrota
 		
 		Narration ndefeat=new Narration();

@@ -85,6 +85,7 @@ import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.monster.bestiary.Couatl;
 import com.stab.data.info.monster.bestiary.DireRat;
 import com.stab.data.info.monster.bestiary.EsqueletoArquero;
+import com.stab.data.info.monster.bestiary.GiantBombardierBeetle;
 import com.stab.data.info.monster.bestiary.Goblin;
 import com.stab.data.info.monster.bestiary.GoblinShaman;
 import com.stab.data.info.monster.bestiary.Kobold;
@@ -269,6 +270,7 @@ public class StabInit {
 		of.setMapping(Wolf.class);
 		of.setMapping(Orc.class);
 		of.setMapping(Skeleton.class);
+		of.setMapping(GiantBombardierBeetle.class);
 		
 		//botones
 		of.setMapping(ActionSlotButton.class);
