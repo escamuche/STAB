@@ -4,7 +4,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.monster.Undead;
-import com.stab.data.info.monster.ZombieAIPackage;
+import com.stab.data.info.monster.ZombieAIParameters;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.DamageReduction;
@@ -36,7 +36,7 @@ public class Zombie extends Undead {
 		
 
 	//	this.setCurrentAI(new DefaultAIPackage());
-		this.setCurrentAI(new ZombieAIPackage());
+		this.setAIParams(new ZombieAIParameters());
 		
 		
 		this.setBloodeffEct("PARTICLE#greenblood");

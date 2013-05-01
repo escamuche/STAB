@@ -92,7 +92,7 @@ Spell spell;
 	public boolean isHarmfulFor(Info instigator,Info target) {
 		if (target instanceof BaseInfo){
 			int i=this.getEffectType((BaseInfo)target);
-			if ((i & OFFENSIVE) ==OFFENSIVE )
+			if ((i & NEGATIVE) ==NEGATIVE )
 				return true;
 		}
 		

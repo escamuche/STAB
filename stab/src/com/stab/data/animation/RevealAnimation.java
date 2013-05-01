@@ -2,6 +2,7 @@ package com.stab.data.animation;
 
 import com.stab.model.action.base.SearchAction;
 import com.stab.model.animation.Animation;
+import com.stab.model.basic.token.Token;
 
 public class RevealAnimation extends Animation{
 
@@ -10,7 +11,7 @@ public class RevealAnimation extends Animation{
 	@Override
 	public void start() {
 		super.start();
-		getSource().playAnimation(BasicSparkAnimation.ID,"PARTICLE#reveal");
+		((Token)getSource()).playAnimation(BasicSparkAnimation.ID,"PARTICLE#reveal");
 	}
 	
 }
