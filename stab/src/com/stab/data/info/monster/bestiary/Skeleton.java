@@ -7,7 +7,7 @@ import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.data.info.monster.Undead;
-import com.stab.data.info.monster.ZombieAIPackage;
+import com.stab.data.info.monster.ZombieAIParameters;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.Modifier;
@@ -41,8 +41,8 @@ public class Skeleton extends Undead {
 		
 
 		
-		ZombieAIPackage ai=new ZombieAIPackage();
-		this.setCurrentAI(ai);
+		ZombieAIParameters ai=new ZombieAIParameters();
+		this.setAIParams(new ZombieAIParameters());
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.SCIMITAR), HumanoidGear.MAINHAND);
 		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.LIGHTLEATHER), HumanoidGear.ARMOR);

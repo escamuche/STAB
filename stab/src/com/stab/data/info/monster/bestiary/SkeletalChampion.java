@@ -8,7 +8,7 @@ import com.stab.data.info.feat.combat.PowerAttack_Feat;
 import com.stab.data.info.feat.combat.WeaponFocus_Feat;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.data.info.monster.Undead;
-import com.stab.data.info.monster.ZombieAIPackage;
+import com.stab.data.info.monster.ZombieAIParameters;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.DamageReduction;
@@ -49,9 +49,9 @@ public class SkeletalChampion extends Undead {
 		this.equip(StabInit.getArmorFactory().getArmor("BREASTPLATE"), HumanoidGear.ARMOR);
 		this.equip(StabInit.getArmorFactory().getArmor("HEAVYSTEELSHIELD"), HumanoidGear.OFFHAND);
 
-		ZombieAIPackage ai=new ZombieAIPackage();
-		ai.setLog(true);
-		this.setCurrentAI(ai);
+		ZombieAIParameters ai=new ZombieAIParameters();
+		this.setAIParams(new ZombieAIParameters());
+		
 				
 		this.setBloodeffEct("PARTICLE#greenblood");
 		

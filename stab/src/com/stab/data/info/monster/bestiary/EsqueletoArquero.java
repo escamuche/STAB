@@ -5,7 +5,7 @@ import com.stab.data.StabInit;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.data.info.monster.Undead;
-import com.stab.data.info.monster.ZombieAIPackage;
+import com.stab.data.info.monster.ZombieAIParameters;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.Modifier;
@@ -40,9 +40,8 @@ public class EsqueletoArquero extends Undead {
 
 		
 	//	this.setCurrentAI(new DefaultAIPackage());
-		ZombieAIPackage ai=new ZombieAIPackage();
-	//	ai.setLog(true);
-		this.setCurrentAI(ai);
+		ZombieAIParameters ai=new ZombieAIParameters();
+		this.setAIParams(new ZombieAIParameters());
 		
 		
 		this.setBloodeffEct("PARTICLE#greenblood");
