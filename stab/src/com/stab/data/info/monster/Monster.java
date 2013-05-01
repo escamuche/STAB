@@ -5,6 +5,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.info.BasicAttributes;
 import com.stab.data.info.equipment.HumanoidGear;
+import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.base.Equipment;
 
@@ -14,7 +15,9 @@ public class Monster extends Creature {
 	@Override
 	public void init() {
 		super.init();
-		
+		DefaultAIPackage ai=new DefaultAIPackage();
+		this.setDefaultAIPackage(ai);
+		this.setCurrentAI(ai);
 		this.setActionSet(new MonsterActionSet());
 		this.addTrait(new BasicAttributes());
 		this.setGear(new HumanoidGear());   //si, si, ya, ya. ya lo separaremos en varias clases por tipo de monstruo
