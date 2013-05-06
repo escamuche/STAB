@@ -119,6 +119,8 @@ import com.stab.data.info.props.FlameJetTrap;
 import com.stab.data.info.props.IronBars;
 import com.stab.data.info.props.LDoor;
 import com.stab.data.info.props.RDoor;
+import com.stab.data.info.props.SkillExtraText;
+import com.stab.data.info.props.SkillNote;
 import com.stab.data.info.props.StabRandomSpawner;
 import com.stab.data.info.props.Statue;
 import com.stab.data.info.props.TriggerPlate;
@@ -257,6 +259,8 @@ public class StabInit {
 		of.setMapping(LDoor.class);
 		of.setMapping(RDoor.class);
 		of.setMapping(CDoor.class);
+		of.setMapping(SkillNote.class);
+		of.setMapping(SkillExtraText.class);
 		
 		//criaturas
 		of.setMapping(Zombie.class);
