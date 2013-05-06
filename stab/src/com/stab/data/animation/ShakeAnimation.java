@@ -8,7 +8,7 @@ import com.stab.model.info.trait.base.VisualEffect;
 
 public class ShakeAnimation extends Animation{
 
-	public static final String ID=VisualEffect.SHAKE_ANIMATION_ID;
+	public static final String ID=VisualEffect.SHAKE_ANIMATION;
 	
 	public ShakeAnimation() {
 		setBlocking(true);

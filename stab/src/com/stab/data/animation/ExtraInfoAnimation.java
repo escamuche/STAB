@@ -6,16 +6,15 @@ import com.stab.data.animation.sprite.SpeechBubble;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.trait.base.VisualEffect;
-import com.tien.princess.engine.sprite.common.states.BasicAnimState;
 
-public class SpeechBubbleAnimation extends Animation {
+public class ExtraInfoAnimation extends Animation {
 
 	
-	public static final String ID=VisualEffect.SPEECH_ANIMATION;
+	public static final String ID=VisualEffect.EXTRAINFO_ANIMATION;
 	
-	public SpeechBubbleAnimation() {
+	public ExtraInfoAnimation() {
 		setBlocking(false);
-		setTime(1000);
+		setTime(0);
 	}
 	
 	@Override
@@ -25,20 +24,14 @@ public class SpeechBubbleAnimation extends Animation {
 	
 		Token_sprite s=AnimUtils.getSprite(getSource());
 		
-		SpeechBubble icon=new SpeechBubble();
-		
-		icon.setRef(s);
 		
 		
-		//icon.setPos(getOriginPoint());
-		//icon.setSize(64,64);
 		
-		long time=txt.length()*30;
-		setTime(time);
+	
 		
-		icon.setText(txt);
 		
-		((GameScreen)s.getScreen()).add(icon);
+		((GameScreen)s.getScreen()).setTooltip(txt);
 	}
 
 }
+

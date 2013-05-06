@@ -62,6 +62,7 @@ import com.stab.data.animation.CloseDoorAnimation;
 import com.stab.data.animation.DamageNumberAnimation;
 import com.stab.data.animation.EffectAddAnimation;
 import com.stab.data.animation.EffectRemoveAnimation;
+import com.stab.data.animation.ExtraInfoAnimation;
 import com.stab.data.animation.HealNumberAnimation;
 import com.stab.data.animation.LungeAnimation;
 import com.stab.data.animation.MagicMissileAnimation;
@@ -308,6 +309,7 @@ public class StabInit {
 		of.setMapping(SpeechBubbleAnimation.class);
 		of.setMapping(AlertAnimation.class);
 		of.setMapping(StartledAnimation.class);
+		of.setMapping(ExtraInfoAnimation.class);
 		
 		//Tokens
 		of.setMapping(IronBarsToken.class);
