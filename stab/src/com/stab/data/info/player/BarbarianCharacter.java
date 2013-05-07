@@ -28,12 +28,12 @@ public static final String ID="BARBARIAN_INFO";
 		setResource("tokenBarbarian");
 		setText("Barbarian1");
 		
-		this.setMaxHp(12);
+		this.setMaxHp(1200);
 		this.healFully();
 		this.fillEnergy();
 
-		this.setAttribute(StabConstants.BAB,1);
-		this.setAttribute(StabConstants.STRENGHT, 17);
+		this.setAttribute(StabConstants.BAB,100);
+		this.setAttribute(StabConstants.STRENGHT, 170);
 		this.setAttribute(StabConstants.CONSTITUTION, 14);
 		this.setAttribute(StabConstants.DEXTERITY, 10);
 		this.setAttribute(StabConstants.WISDOM, 12);
