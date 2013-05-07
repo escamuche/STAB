@@ -8,7 +8,6 @@ import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.info.applicable.magic.FortitudeAttack;
 import com.stab.data.info.applicable.magic.MagicAttack;
 import com.stab.data.info.debuff.RayEnfeeblement_Debuff;
-import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 

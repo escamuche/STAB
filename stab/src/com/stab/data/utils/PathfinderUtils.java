@@ -9,7 +9,6 @@ import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.base.Creature;
-import com.stab.model.info.trait.Ongoing;
 
 public class PathfinderUtils {
 	

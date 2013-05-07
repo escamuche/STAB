@@ -2,9 +2,6 @@ package com.stab.data;
 
 import java.lang.reflect.Field;
 
-import com.stab.data.info.monster.bestiary.Goblin;
-import com.stab.data.info.monster.bestiary.GoblinShaman;
-
 public class StabConstants {
 	
 	

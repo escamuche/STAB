@@ -6,7 +6,6 @@ import com.stab.data.animation.sprite.SpeechBubble;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.trait.base.VisualEffect;
-import com.tien.princess.engine.sprite.common.states.BasicAnimState;
 
 public class SpeechBubbleAnimation extends Animation {
 

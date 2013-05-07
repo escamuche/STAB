@@ -1,7 +1,6 @@
 package com.stab.data.info.player.abilities;
 
 import com.stab.data.StabConstants;
-import com.stab.model.info.BaseInfo;
 import com.stab.model.info.trait.AttributeBasedModifier;
 import com.stab.model.info.trait.base.Buff;
 

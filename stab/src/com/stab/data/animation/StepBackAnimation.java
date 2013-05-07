@@ -1,7 +1,6 @@
 package com.stab.data.animation;
 
 import com.stab.client.slick.base.visualobjects.token.Token_sprite;
-import com.stab.data.animation.state.LungeState;
 import com.stab.data.animation.state.StepBackState;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTargetAnimation;

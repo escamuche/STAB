@@ -2,7 +2,6 @@ package com.stab.data.actions.player.spells.bard.level1;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
-import com.stab.model.info.Info;
 
 public class ObscureObject extends SpellOnTarget{
 

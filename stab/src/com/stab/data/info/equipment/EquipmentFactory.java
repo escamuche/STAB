@@ -1,8 +1,6 @@
 package com.stab.data.info.equipment;
 
 import com.stab.data.info.buff.Torchlight_Buff;
-import com.stab.model.info.trait.base.Equipment;
-import com.stab.model.info.trait.base.TraitFactory;
 
 public class EquipmentFactory extends ItemFactory{
 //Ya lo cambiaremos por otra clase cuando la metamos (item extends equipment, por ejemplo)

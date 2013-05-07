@@ -4,7 +4,6 @@ import java.awt.Point;
 
 import com.stab.client.slick.base.visualobjects.StabSprite;
 import com.stab.common.value.InterpolatorValueProvider;
-import com.stab.data.animation.state.LungeState;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTargetAnimation;
 import com.tien.princess.engine.sprite.common.painters.ValuePainter;

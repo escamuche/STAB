@@ -1,6 +1,5 @@
 package com.stab.data.info.player.abilities;
 
-import com.stab.data.StabConstants;
 import com.stab.data.info.equipment.Armor;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.player.BarbarianCharacter;

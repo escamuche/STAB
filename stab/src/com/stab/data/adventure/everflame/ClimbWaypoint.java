@@ -1,10 +1,5 @@
 package com.stab.data.adventure.everflame;
 
-import com.stab.data.StabInit;
-import com.stab.data.utils.StabBlockData;
-import com.stab.model.basic.scenes.event.response.DefeatResponse;
-import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
-import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 import com.stab.model.extras.ContextualOption;
 import com.stab.model.info.base.Decoration;
 

@@ -10,7 +10,6 @@ import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.data.info.equipment.SpellWeapon;
 import com.stab.data.info.equipment.Weapon;
 import com.stab.model.action.Action;
-import com.stab.model.action.SelfAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.base.Creature;

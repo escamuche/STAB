@@ -1,6 +1,5 @@
 package com.stab.data.info.feat.itemcreation;
 
-import com.stab.data.StabConstants;
 import com.stab.data.info.feat.ItemCreationFeat;
 
 public class CraftWand_Feat extends ItemCreationFeat{

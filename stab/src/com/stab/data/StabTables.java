@@ -2,8 +2,6 @@ package com.stab.data;
 
 import com.stab.common.fw.Reference;
 import com.stab.common.utils.WeightedTable;
-import com.stab.data.info.monster.bestiary.Goblin;
-import com.stab.data.info.monster.bestiary.GoblinShaman;
 import com.stab.util.InfosWeightedTable;
 
 public class StabTables extends Reference<WeightedTable>{

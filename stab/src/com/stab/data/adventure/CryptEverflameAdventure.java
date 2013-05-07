@@ -13,11 +13,14 @@ import com.stab.data.ui.RolledSkillOptionButton;
 import com.stab.data.utils.StabBlockData;
 import com.stab.model.basic.scenes.Choice;
 import com.stab.model.basic.scenes.Narration;
+import com.stab.model.basic.scenes.event.InfoInteractsWith;
 import com.stab.model.basic.scenes.event.PlayerEntersScene;
 import com.stab.model.basic.scenes.event.condition.PartyValueIs;
+import com.stab.model.basic.scenes.event.condition.TargetInfoIsTag;
 import com.stab.model.basic.scenes.event.response.DefeatResponse;
 import com.stab.model.basic.scenes.event.response.SetPartyValueResponse;
 import com.stab.model.basic.scenes.event.response.SetVisibleResponse;
+import com.stab.model.basic.scenes.event.response.TravelAllToSceneResponse;
 import com.stab.model.basic.scenes.event.response.TravelToSceneResponse;
 import com.stab.model.basic.scenes.event.response.VictoryResponse;
 import com.stab.model.basic.scenes.event.rule.AllMonstersDeadRule;
@@ -67,6 +70,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n0.addOption("Punto de salvado 4 (colina)", "HILLSIDE1");
 		n0.addOption("Punto de salvado 5 (cripta)", "CRYPT1");
 		n0.addOption("Punto de salvado 6 (Dungeon nivel 1)", "UPPER1");
+		n0.addOption("Punto de salvado 7 (roldare)", "ROLDARE1");
 		
 		
 		this.addScene(n0);
@@ -1271,8 +1275,35 @@ public class CryptEverflameAdventure extends Adventure{
 				r5.addResponse(new DefeatResponse(0,"DEFEAT"));
 				mc4.addRule(r5);
 				
+				DefaultRule r6= new DefaultRule();
+				r6.setEvent(InfoInteractsWith.class);
+				TravelAllToSceneResponse p6 = new TravelAllToSceneResponse("ROLDARE1");
+				r6.addCondition(new TargetInfoIsTag("roldare"));
+				r6.addResponse(p6);
+				mc4.addRule(r6);
+				
 				this.addScene(mc4);
 				
+		//escena 26
+			
+				Choice n26=new Choice();
+				n26.createContents();
+				n26.setTag("ROLDARE1");
+				n26.setBackground("crypt");
+				
+				Text t26 = n26.createText("...Texto de la escena de roldare...");
+				t26.setSize(Constants.FILL,Constants.CONTENT);
+				t26.setPos(Constants.BEGIN, Constants.BEGIN);
+				
+				DefaultRule r26= new DefaultRule();
+				r26.setEvent(PlayerEntersScene.class);
+				SetPartyValueResponse p26 = new SetPartyValueResponse("save7",true);
+				r26.addResponse(p26);
+				n26.addRule(r26);
+				
+				n26.addGUI(t26);
+				n26.addOption("Intentar calmarlo", "ROLDARE2");
+				this.addScene(n26);
 				
 				
 	//escena derrota

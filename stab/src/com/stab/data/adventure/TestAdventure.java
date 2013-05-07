@@ -1,13 +1,9 @@
 package com.stab.data.adventure;
 
 import com.stab.adventure.Adventure;
-import com.stab.common.events.DefaultRule;
-import com.stab.data.info.props.Dummy;
 import com.stab.data.utils.StabBlockData;
 import com.stab.model.basic.scenes.Choice;
 import com.stab.model.basic.scenes.Narration;
-import com.stab.model.basic.scenes.event.InfoDestroyed;
-import com.stab.model.basic.scenes.event.condition.InfoIsClass;
 import com.stab.model.basic.scenes.event.response.DefeatResponse;
 import com.stab.model.basic.scenes.event.response.VictoryResponse;
 import com.stab.model.basic.scenes.event.rule.AllMonstersDeadRule;

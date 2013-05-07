@@ -3,14 +3,11 @@ package com.stab.data.info.applicable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.stab.data.StabConstants;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.info.equipment.Weapon;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.base.Damage;
-import com.stab.model.info.trait.Modifier;
 
 
 public class WeaponAttack extends Attack {

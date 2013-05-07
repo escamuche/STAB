@@ -2,7 +2,6 @@ package com.stab;
 
 import com.stab.client.StabClient;
 import com.stab.data.StabInit;
-import com.tien.princess.engine.sprite.ui.Component;
 
 public class NewClient extends  StabClient {
 
