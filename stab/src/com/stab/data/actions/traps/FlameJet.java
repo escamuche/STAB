@@ -16,6 +16,7 @@ public class FlameJet extends Action implements TileAction,AoE{
 	
 	public FlameJet() {
 		setRange(3);
+		setTargetInfoClass(BaseInfo.class);
 	}
 
 	@Override
@@ -24,7 +25,7 @@ public class FlameJet extends Action implements TileAction,AoE{
 			Damage f=new RolledDamage(2,4,Damage.FIRE_DAMAGE,instigator);
 			((BaseInfo)target).apply(f);
 		}
-		return false;
+		return true;
 	}
 
 	@Override
@@ -51,5 +52,6 @@ public class FlameJet extends Action implements TileAction,AoE{
 	public boolean affectsSelf() {
 		return false;
 	}
+
 	
 }
