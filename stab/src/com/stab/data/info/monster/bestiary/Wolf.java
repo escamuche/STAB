@@ -54,4 +54,7 @@ public class Wolf extends Animal {
 		//falta trip
 		
 	}
+	
+
+	
 }
