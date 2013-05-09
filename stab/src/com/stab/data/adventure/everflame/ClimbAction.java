@@ -50,6 +50,7 @@ public class ClimbAction extends ContextualAction {
 		sleep(300);
 		//Ahora bien, si fallamos, tirada de salvacion
 		SavingThrowEffect st= new SavingThrowEffect(null,StabConstants.REFLEXSAVE,character);
+		st.setTargetNumber(10);
 		st.check();
 		if (st.success()){
 			//no pasa nada, un sustito.

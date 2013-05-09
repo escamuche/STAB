@@ -13,7 +13,7 @@ public class PathfinderSearchAction extends SearchAction{
 
 	@Override
 	public float getLength(Info caster) {
-		return 10; //Por defecto, por ahora
+		return 5; //Por defecto, por ahora
 	}
 
 	public PathfinderSearchAction() {

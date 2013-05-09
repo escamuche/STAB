@@ -10,6 +10,7 @@ import com.stab.client.slick.StabVisualEngine;
 import com.stab.client.slick.base.visualobjects.Button_sprite;
 import com.stab.client.slick.base.visualobjects.token.ImageToken_sprite;
 import com.stab.common.fw.ServiceManager;
+import com.stab.data.actions.ChannelPossitiveEnergyAction;
 import com.stab.data.actions.HealAction;
 import com.stab.data.actions.PathfinderSearchAction;
 import com.stab.data.actions.WeaponAttackAction;
@@ -347,6 +348,7 @@ public class StabInit {
 		getActionLibrary().register(new Rage());
 		getActionLibrary().register(new HealAction());
 		getActionLibrary().register(new PathfinderSearchAction());
+		getActionLibrary().register(new ChannelPossitiveEnergyAction());
 		
 		//feats
 		getActionLibrary().register(new PowerAttack());

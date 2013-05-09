@@ -2,12 +2,16 @@ package com.stab.data.info.player;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
+import com.stab.data.actions.ChannelPossitiveEnergyAction;
 import com.stab.data.actions.player.ClericActionSet;
 import com.stab.data.actions.player.DefendAction;
+import com.stab.data.actions.player.abilities.Rage;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.combat.WeaponFocus_Feat;
 import com.stab.data.info.feat.general.SelectiveChanneling_Feat;
+import com.stab.data.info.player.abilities.ChannelPositiveEnergy;
+import com.stab.model.info.trait.base.RenewableResource;
 
 
 public class ClericCharacter extends PathfinderCharacter{
@@ -52,6 +56,12 @@ public static final String ID="CLERIC_INFO";
 		 * Channel energy 1d6				sera una self action que afecta de area. solo falta la parte de calcular los targets para poder hacerla
 		 * Domains							seran traits, probablemente con algun grantAction
 		 */
+		
+		this.addTrait(new ChannelPositiveEnergy()); 
+		this.addTrait(new RenewableResource(ChannelPossitiveEnergyAction.RESOURCE_ID, 3)); 
+		//En un futuro, sacar a una clase, para que pueda recalcularse el max cuando rest
+		this.getActionSet().setAction(ChannelPossitiveEnergyAction.ID, 6);
+		
 	}
 	
 	

@@ -86,6 +86,14 @@ public class PathfinderUtils {
 				s.addApplicable(a);
 		return s;
 	}
+
+
+	public static int getBonus(int val) {
+		if (val>=10)
+			return (val-10)/2;
+		else
+			return (val-11)/2;
+	}
 	
 	
 	
