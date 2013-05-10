@@ -15,9 +15,10 @@ import com.stab.model.basic.scenes.event.response.VictoryResponse;
 import com.stab.model.basic.scenes.event.rule.AllMonstersDeadRule;
 import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
+import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.Image;
-import com.stab.model.basic.ui.Panel;
 import com.stab.model.basic.ui.Text;
+import com.stab.model.basic.ui.Widget;
 
 
 public class Zombies extends Adventure{
@@ -43,7 +44,7 @@ public class Zombies extends Adventure{
 		n.setTag("BEGIN");
 		n.setNext("CHOICE");
 	
-		Panel tp= new Panel();
+		Widget tp= new Widget();
 		tp.setPos(Constants.CENTER,Constants.BEGIN);
 		tp.setSize(Constants.PERCENT+50,Constants.PERCENT+30);
 		//tp.setSize(600,200);
@@ -51,13 +52,15 @@ public class Zombies extends Adventure{
 		tp.setOverlay("ui/consolefront$B");
 		
 		Image i=n.createImage("tokens/direrat$S");
-		i.setPos(50,50);
+		i.setPos(-50,-50);
 		
-		i.setSize(40, 40);
+		i.setSize(140, 140);
 	//	i.setImage("SHADER#infernal");
 	//	n.addGUI(i);
 		
 		tp.addChild(i);
+		Button bb= n.createButton("Test", "nothing to do");
+		tp.addChild(bb);
 		
 		n.addGUI(tp);
 		n.setText("El gran Khan surge de su tienda y os mira con mirada penetrante. Os ha convocado a su presencia por algun motivo desconocido para vosotros y tras estudiaros largamente habla con voz rotunda y grave: ");
