@@ -56,6 +56,7 @@ import com.stab.data.adventure.ColiseoAdventure;
 import com.stab.data.adventure.CryptEverflameAdventure;
 import com.stab.data.adventure.TestAdventure;
 import com.stab.data.adventure.Zombies;
+import com.stab.data.adventure.everflame.Roldare;
 import com.stab.data.animation.AlertAnimation;
 import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.animation.BlockAnimation;
@@ -278,6 +279,10 @@ public class StabInit {
 		of.setMapping(Orc.class);
 		of.setMapping(Skeleton.class);
 		of.setMapping(GiantBombardierBeetle.class);
+		
+		
+		//pnjs
+		of.setMapping(Roldare.class);
 		
 		//botones
 		of.setMapping(ActionSlotButton.class);
