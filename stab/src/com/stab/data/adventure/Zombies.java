@@ -11,12 +11,14 @@ import com.stab.model.basic.scenes.Narration;
 import com.stab.model.basic.scenes.event.PlayerEntersScene;
 import com.stab.model.basic.scenes.event.response.DefeatResponse;
 import com.stab.model.basic.scenes.event.response.SetVisibleResponse;
+import com.stab.model.basic.scenes.event.response.ShowMessageResponse;
 import com.stab.model.basic.scenes.event.response.VictoryResponse;
 import com.stab.model.basic.scenes.event.rule.AllMonstersDeadRule;
 import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.Image;
+import com.stab.model.basic.ui.MessageWidget;
 import com.stab.model.basic.ui.Text;
 import com.stab.model.basic.ui.Widget;
 
@@ -43,7 +45,7 @@ public class Zombies extends Adventure{
 		n.createContents();
 		n.setTag("BEGIN");
 		n.setNext("CHOICE");
-	
+	/*
 		Widget tp= new Widget();
 		tp.setPos(Constants.CENTER,Constants.BEGIN);
 		tp.setSize(Constants.PERCENT+50,Constants.PERCENT+30);
@@ -61,8 +63,14 @@ public class Zombies extends Adventure{
 		tp.addChild(i);
 		Button bb= n.createButton("Test", "nothing to do");
 		tp.addChild(bb);
+		/**/
 		
+	/*	MessageWidget tp= new MessageWidget();
+		tp.setImage("tokens/direrat");
+		tp.setText("Este es un texto de prueba, ya veremos por donde corta"); 
+		tp.setBackground("ui/consoleback$B");
 		n.addGUI(tp);
+		/**/
 		n.setText("El gran Khan surge de su tienda y os mira con mirada penetrante. Os ha convocado a su presencia por algun motivo desconocido para vosotros y tras estudiaros largamente habla con voz rotunda y grave: ");
 		Text tt=n.createText("Intuis que algo no va bien");
 		tt.setVisible(false);
@@ -70,8 +78,9 @@ public class Zombies extends Adventure{
 		
 		DefaultRule rr= new DefaultRule();
 		rr.setEvent(PlayerEntersScene.class);
-		rr.addCondition(new CharacterSkillRollCondition(StabConstants.SENSEMOTIVE, 10));
-		rr.addResponse(new SetVisibleResponse(tt, true));
+		rr.addCondition(new CharacterSkillRollCondition(StabConstants.SENSEMOTIVE, 2));
+		//rr.addResponse(new SetVisibleResponse(tt, true));
+		rr.addResponse(new ShowMessageResponse(null, "Intuis que algo no va bien"));
 		n.addRule(rr);
 		this.addScene(n);
 
