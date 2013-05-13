@@ -18,7 +18,7 @@ public class ClimbAction extends ContextualAction {
 	public static final String ID="CLIMB_WAYPOINT_EVERFLAME_ACTION";
 
 	public ClimbAction() {
-		setRange(3);
+		setRange(4);
 		setName("Trepar");
 		setResource("actions/tumble");
 		setDescription("Intentar trepar hasta el punto indicado, con riesgo de tropezar y caer al vacío.");

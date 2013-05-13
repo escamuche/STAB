@@ -189,7 +189,7 @@ public class WeaponAttackAction extends Action implements TargetAction{
 	}
 	
 	public WeaponAttackAction() {
-     setRange(0);
+     setRange(ADYACENT);
      
      setResource("actions/ability_steelmelee");
      setName("Attack");

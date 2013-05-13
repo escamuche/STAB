@@ -124,7 +124,7 @@ Spell spell;
 	@Override
 	public int getLosType() {
 		switch(spell.getMedium()){
-			case SELF:
+			case SpellProperties.SELF:
 			case POINT:
 						return IN_RANGE;
 			case TOUCH:

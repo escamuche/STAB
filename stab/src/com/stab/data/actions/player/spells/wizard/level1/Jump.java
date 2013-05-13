@@ -26,7 +26,7 @@ public class Jump extends SpellOnTarget {
 		BaseInfo target=(BaseInfo)receptor;
 		int cl= getCasterLevel(caster);
 		
-		setRange(SELF);
+	
 		Jump_Buff buff = new Jump_Buff(cl);
 		
 		buff.setTime(cl*10);

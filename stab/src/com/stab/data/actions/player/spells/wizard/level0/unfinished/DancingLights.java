@@ -4,10 +4,12 @@ import java.awt.Point;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTile;
+import com.stab.model.action.Action;
+import com.stab.model.action.AoE;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 
-public class DancingLights extends SpellOnTile{
+public class DancingLights extends SpellOnTile implements AoE {
 
 	public static final String ID="DANCINGLIGHTS";
 	
@@ -18,7 +20,7 @@ public class DancingLights extends SpellOnTile{
 		 setRange(CLOSE);
 	     setResource("actions/ability_mage_arcanebarrage");
 	     setName("DancingLights");
-	     this.setEffectType(SPECIAL);
+	     this.setEffectType(Action.SPECIAL);
 		}
 
 
@@ -26,6 +28,37 @@ public class DancingLights extends SpellOnTile{
 	public boolean affect(Info instigator,Info receive,Point point) {
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target=(BaseInfo)receive;
+		return false;
+	}
+
+
+	@Override
+	public int getAreaType() {
+		return AoE.ADJUSTED_BURST;
+	}
+
+
+	@Override
+	public float getLength(Info caster) {
+		return 5;
+	}
+
+
+	@Override
+	public float getWidth(Info caster) {
+		return 45;
+	}
+
+
+	@Override
+	public int getRequiredLine() {
+		return Action.IN_RANGE;
+	}
+
+
+	@Override
+	public boolean affectsSelf() {
+		// TODO Auto-generated method stub
 		return false;
 	}
 }
