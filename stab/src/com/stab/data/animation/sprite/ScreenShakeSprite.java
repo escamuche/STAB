@@ -4,10 +4,12 @@ import java.awt.Point;
 
 import com.stab.common.Constants;
 import com.stab.common.value.SineValueProvider;
+import com.tien.princess.engine.Screen;
 import com.tien.princess.engine.sprite.StateSprite;
 import com.tien.princess.engine.sprite.base.TagPoint;
 import com.tien.princess.engine.sprite.common.states.StateSet;
 import com.tien.princess.engine.sprite.common.states.ValueState;
+import com.tien.princess.engine.sprite.common.updaters.misc.ScreenViewPointUpdater;
 import com.tien.princess.engine.sprite.common.updaters.pos.Orbit;
 
 public class ScreenShakeSprite extends StateSprite {
@@ -24,15 +26,26 @@ public class ScreenShakeSprite extends StateSprite {
 		if (vertical)
 			this.setA(Constants.ANGLE_90);
 		st.addUpdater(new Orbit());
+		st.addUpdater(new ScreenViewPointUpdater() );
 		
-		old=new Point(getScreen().getViewBounds().x,getScreen().getViewBounds().y);
-		this.setPos(old);
 		
-		TagPoint p= new TagPoint();
-		p.setPos(getPos());
-		setRef(p);
+		
 		
 		this.setState(st);
+	}
+	
+	@Override
+	public void update(Screen world, int t) {
+		if (old==null){
+			old=new Point(getScreen().getViewBounds().x,getScreen().getViewBounds().y);
+			this.setPos(old);	
+			TagPoint p= new TagPoint();
+			p.setPos(getPos());
+			setRef(p);
+			return;
+		}
+		super.update(world, t);
+		
 	}
 	
 	@Override

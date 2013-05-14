@@ -1,6 +1,7 @@
 package com.stab.data.ui;
 
 import com.stab.client.slick.base.ActionBar;
+import com.stab.client.slick.base.MultipageActionBar;
 import com.stab.common.Constants;
 import com.stab.data.StabInit;
 import com.stab.data.info.equipment.HumanoidGear;
@@ -10,8 +11,9 @@ import com.tien.princess.engine.sprite.common.painters.Painter;
 import com.tien.princess.engine.sprite.ui.Component;
 import com.tien.princess.engine.sprite.ui.Icon;
 import com.tien.princess.engine.sprite.ui.Panel;
+import com.tien.princess.engine.utils.PaintUtils;
 
-public class StabActionBar extends ActionBar {
+public class StabActionBar extends MultipageActionBar {
 
 	public static final String ID=ActionBar.ID;
 	
@@ -34,7 +36,7 @@ public class StabActionBar extends ActionBar {
 		leftHand.setDesiredSize(FILL, FILL);
 		leftHand.setBackground("ui/lefthand",Constants.SCALED);
 		//leftHand.setPainter("ui/lefthand",Constants.SCALED);
-		
+		left.setOverlay(PaintUtils.getPainter("ui/nanoborder$B"));
 		left.addChild(leftHand);
 		
 		
@@ -56,7 +58,7 @@ public class StabActionBar extends ActionBar {
 	//	rightHand.setPainter("ui/righthand",Constants.SCALED);
 		rightHand.setDesiredSize(FILL, FILL);
 		right.addChild(rightHand);
-	
+		right.setOverlay(PaintUtils.getPainter("ui/nanoborder$B"));
 		return right;
 		//return right;
 	}

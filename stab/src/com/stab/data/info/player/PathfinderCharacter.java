@@ -5,6 +5,7 @@ package com.stab.data.info.player;
 import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
+import com.stab.data.animation.HorizontalScreenShakeAnimation;
 import com.stab.data.info.BasicAttributes;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.Item;
@@ -127,7 +128,12 @@ public static final String ID="PATH_INFO";
 	}
 	
 	
-
+@Override
+	public void receiveDamage(int amount, int type, boolean critical) {
+		// TODO Auto-generated method stub
+		super.receiveDamage(amount, type, critical);
+		playAnimation(HorizontalScreenShakeAnimation.ID);
+	}
 	
 }
 	
