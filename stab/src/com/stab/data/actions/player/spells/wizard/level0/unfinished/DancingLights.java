@@ -34,25 +34,25 @@ public class DancingLights extends SpellOnTile implements AoE {
 
 	@Override
 	public int getAreaType() {
-		return AoE.ADJUSTED_BURST;
+		return AoE.CONE;
 	}
 
 
 	@Override
 	public float getLength(Info caster) {
-		return 5;
+		return 3;
 	}
 
 
 	@Override
 	public float getWidth(Info caster) {
-		return 45;
+		return 190;
 	}
 
 
 	@Override
 	public int getRequiredLine() {
-		return Action.IN_RANGE;
+		return Action.IN_SIGHT;
 	}
 
 
