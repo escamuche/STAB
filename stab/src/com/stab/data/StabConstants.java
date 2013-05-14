@@ -178,7 +178,7 @@ public class StabConstants {
 	public static final String HITDICETYPE="HITDICETYPE";
 	public static final String HITDICENUMBER="HITDICENUMBER";
 	
-	public static final String RAGEROUNDS="RAGEROUNDS";
+	//public static final String RAGEROUNDS="RAGEROUNDS";
 	public static final String RAGEROUNDSSPENT="RAGEROUNDSSPENT";	
 	
 	

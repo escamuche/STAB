@@ -42,7 +42,7 @@ public class BasicAttributes extends CompoundTrait{
 		this.addTrait(new PathfinderAttributeBonus(StabConstants.WILLSAVE,StabConstants.WISDOM));
 		this.addTrait(new PathfinderAttributeBonus(StabConstants.INICIATIVEMOD,StabConstants.DEXTERITY));
 		
-		this.addTrait(new PathfinderAttributeBonus(StabConstants.RAGEROUNDS,StabConstants.CONSTITUTION));
+		//this.addTrait(new PathfinderAttributeBonus(StabConstants.RAGEROUNDS,StabConstants.CONSTITUTION));
 		
 		this.addTrait(new SizeModifier(StabConstants.PASSIVEDEFENSE,+1));
 		this.addTrait(new SizeModifier(StabConstants.TOHIT,+1));
