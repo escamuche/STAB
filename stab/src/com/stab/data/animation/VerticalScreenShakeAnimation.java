@@ -6,11 +6,11 @@ import com.stab.data.animation.sprite.ScreenShakeSprite;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
 
-public class HorizontalScreenShakeAnimation extends Animation{
+public class VerticalScreenShakeAnimation extends Animation{
 
-	public static final String ID="HORIZONTAL_SCREENSHAKE_ANIMATION";
+	public static final String ID="VERTICAL_SCREENSHAKE_ANIMATION";
 	
-	public HorizontalScreenShakeAnimation() {
+	public VerticalScreenShakeAnimation() {
 		setBlocking(true);
 		setTime(500);
 	}
@@ -19,7 +19,7 @@ public class HorizontalScreenShakeAnimation extends Animation{
 	public void start() {
 		super.start();
 		Token_sprite s=AnimUtils.getSprite(getSource());
-		((GameScreen)s.getScreen()).add(new ScreenShakeSprite(getTime(), 10, false));
+		((GameScreen)s.getScreen()).add(new ScreenShakeSprite(getTime(), 10, true));
 		
 	}
 }

@@ -66,6 +66,7 @@ import com.stab.data.animation.EffectAddAnimation;
 import com.stab.data.animation.EffectRemoveAnimation;
 import com.stab.data.animation.ExtraInfoAnimation;
 import com.stab.data.animation.HealNumberAnimation;
+import com.stab.data.animation.HorizontalScreenShakeAnimation;
 import com.stab.data.animation.LungeAnimation;
 import com.stab.data.animation.MagicMissileAnimation;
 import com.stab.data.animation.MissProyectileAnimation;
@@ -82,6 +83,7 @@ import com.stab.data.animation.StartledAnimation;
 import com.stab.data.animation.StepBackAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.ThrustAnimation;
+import com.stab.data.animation.VerticalScreenShakeAnimation;
 import com.stab.data.animation.WalkAnimation;
 import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.EquipmentFactory;
@@ -320,6 +322,8 @@ public class StabInit {
 		of.setMapping(AlertAnimation.class);
 		of.setMapping(StartledAnimation.class);
 		of.setMapping(ExtraInfoAnimation.class);
+		of.setMapping(HorizontalScreenShakeAnimation.class);
+		of.setMapping(VerticalScreenShakeAnimation.class);
 		
 		//Tokens
 		of.setMapping(IronBarsToken.class);
