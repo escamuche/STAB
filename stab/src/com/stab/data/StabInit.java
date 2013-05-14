@@ -99,6 +99,7 @@ import com.stab.data.info.monster.bestiary.Lich;
 import com.stab.data.info.monster.bestiary.Orc;
 import com.stab.data.info.monster.bestiary.OrcIlu;
 import com.stab.data.info.monster.bestiary.SkeletalChampion;
+import com.stab.data.info.monster.bestiary.SkeletoParlanchin;
 import com.stab.data.info.monster.bestiary.Skeleton;
 import com.stab.data.info.monster.bestiary.Wolf;
 import com.stab.data.info.monster.bestiary.Zombie;
@@ -281,6 +282,7 @@ public class StabInit {
 		of.setMapping(Orc.class);
 		of.setMapping(Skeleton.class);
 		of.setMapping(GiantBombardierBeetle.class);
+		of.setMapping(SkeletoParlanchin.class);
 		
 		
 		//pnjs
