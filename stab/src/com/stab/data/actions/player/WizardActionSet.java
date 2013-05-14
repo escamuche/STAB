@@ -21,8 +21,6 @@ public class WizardActionSet extends PathfinderActionSet {
 
 	public WizardActionSet() {
 		
-		
-		
 		this.addAction(AcidSplash.ID);
 		this.addAction(Flare.ID);
 		this.addAction(OpenClose.ID);
