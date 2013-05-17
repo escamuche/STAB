@@ -4,9 +4,9 @@ import org.newdawn.slick.Color;
 
 import com.stab.client.slick.base.visualobjects.LightSprite;
 import com.stab.client.slick.base.visualobjects.StabSprite;
-import com.stab.data.animation.state.SpawnTrailUpdater;
 import com.tien.princess.engine.sprite.Sprite;
 import com.tien.princess.engine.sprite.base.TagPoint;
+import com.tien.princess.engine.sprite.common.painters.ValuePainter;
 import com.tien.princess.engine.sprite.common.states.BasicAnimState;
 import com.tien.princess.engine.sprite.common.states.State;
 import com.tien.princess.engine.sprite.common.states.StateSet;
@@ -18,7 +18,7 @@ import com.tien.princess.engine.utils.PaintUtils;
 
 public class MagicMissileSprite extends LightSprite {
 
-	
+	boolean blocked=false;;
 	
 	public MagicMissileSprite(long t) {
 		setLightOn(true);
@@ -56,11 +56,23 @@ public class MagicMissileSprite extends LightSprite {
 		setRef(h);
 	}
 	
+	public void setBlocked(boolean blocked) {
+		this.blocked = blocked;
+	}
+	
 	public void spawn(){
 		StabSprite s=new StabSprite();
 		s.setPos(this.getPos());
 		s.setSize(64,64);
-		s.setPainter(PaintUtils.getPainter("PARTICLE#blueSparks"));
+		if (blocked)
+			s.setPainter(PaintUtils.getPainter("PARTICLE#mageshield"));
+		else
+			s.setPainter(PaintUtils.getPainter("PARTICLE#blueSparks"));
+		
+		double angle=Math.atan2(-getRef().getCenter().getY()-getY(), getRef().getCenter().getX()-getX());
+				
+		((ValuePainter)(s.getPainter())).setRotation((float)Math.toDegrees(angle));
+	
 		s.setState(new BasicAnimState(1000));
 		getScreen().addSprite(s);
 	}

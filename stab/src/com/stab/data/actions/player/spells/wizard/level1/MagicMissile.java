@@ -6,6 +6,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.animation.MagicMissileAnimation;
 import com.stab.data.info.applicable.RolledDamage;
+import com.stab.data.info.buff.spells.Shield_Buff;
 import com.stab.model.basic.Sprite;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
@@ -24,10 +25,16 @@ public class MagicMissile extends SpellOnTarget{
 		int number=cl+1/2;
 		if (number>5) number=5;
 		number=5;
-		sleep(caster.playAnimationOn(MagicMissileAnimation.ID, target.getToken(), number));
+		boolean blocked=false;
+		
+		if (target.hasTrait(Shield_Buff.class))
+			blocked=true;
+		
+		sleep(caster.playAnimationOn(MagicMissileAnimation.ID, target.getToken(), number,blocked));
 		
 		Damage d= new RolledDamage(number,4,number, Damage.FORCE_DAMAGE,caster);
-		target.apply(d);
+		if (!blocked)
+			target.apply(d);
 		
 		return true;
 		}

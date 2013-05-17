@@ -34,14 +34,14 @@ public class MagicMissileAnimation extends OnTargetAnimation{
 		
 		
 		int number=getIntParam(1);
-		
+		boolean block=getBooleanParam(2);
 		
 		Point origin=getOriginPoint();
 		Point target=getTargetPoint();
 		
 		float speed=getSpeed();
 		float distance=(float)origin.distance(target);
-		long time=(long)((distance/speed)*1.3f);
+		long time=(long)((distance/speed)*1.1f);
 		float ab=10-distance;
 		if (ab<0)
 			ab=0;
@@ -50,6 +50,8 @@ public class MagicMissileAnimation extends OnTargetAnimation{
 		for (int f=0;f<number;f++){
 		
 			MagicMissileSprite icon=new MagicMissileSprite(time);
+			icon.setBlocked(block);
+			
 			double a=getAngle();
 			if (number%2==0)
 				a=a+ab*ang2[f];
