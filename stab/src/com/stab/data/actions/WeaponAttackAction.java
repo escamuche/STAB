@@ -41,7 +41,7 @@ public class WeaponAttackAction extends Action implements TargetAction{
 			}
 			if (arma instanceof BasicWeapon){
 				//Enun futuro, el reach de i
-				return 0; 
+				return ADYACENT; 
 			}
 		}
 		return super.getRange(i);
