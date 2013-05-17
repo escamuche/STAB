@@ -24,7 +24,7 @@ public class MagicMissile extends SpellOnTarget{
 		
 		int number=cl+1/2;
 		if (number>5) number=5;
-		number=5;
+	
 		boolean blocked=false;
 		
 		if (target.hasTrait(Shield_Buff.class))
