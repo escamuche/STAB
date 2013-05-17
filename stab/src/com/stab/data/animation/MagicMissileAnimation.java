@@ -2,12 +2,16 @@ package com.stab.data.animation;
 
 import java.awt.Point;
 
+import org.newdawn.slick.Color;
+
 import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.common.Constants;
 import com.stab.common.utils.Roll;
 import com.stab.data.animation.sprite.MagicMissileSprite;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTargetAnimation;
+import com.stab.model.basic.Sprite;
+import com.tien.princess.engine.sprite.base.TrailSprite;
 
 public class MagicMissileAnimation extends OnTargetAnimation{
 
@@ -35,28 +39,37 @@ public class MagicMissileAnimation extends OnTargetAnimation{
 		Point origin=getOriginPoint();
 		Point target=getTargetPoint();
 		
-		float speed=0.1f;
-		long time=(long)(origin.distance(target)/speed)*2;
+		float speed=getSpeed();
+		float distance=(float)origin.distance(target);
+		long time=(long)((distance/speed)*1.3f);
+		float ab=10-distance;
+		if (ab<0)
+			ab=0;
+		ab=1.0f+(ab/10f);
 		
 		for (int f=0;f<number;f++){
 		
 			MagicMissileSprite icon=new MagicMissileSprite(time);
 			double a=getAngle();
 			if (number%2==0)
-				a=a+ang2[f];
+				a=a+ab*ang2[f];
 			else
-				a=a+ang1[f];
+				a=a+ab*ang1[f];
 			
-			icon.setR(speed+(Roll.d4()/(float)70));
+			icon.setR(speed+(Roll.d4()/(float)30));
 			icon.setPos(origin);
 			icon.setSize(64,64);
 			icon.setA(a);
 			icon.setTarget(AnimUtils.getSprite(getTarget()),true);
 //	icon.setPainter(Resources.INSTANCE.getImage("tokens/door"),Constants.CENTER);
 			AnimUtils.getScreen(getSource()).add(icon);
+			
+			TrailSprite trail = new TrailSprite(Color.cyan,12,6,50);
+			trail.setRef(icon);
+			AnimUtils.getScreen(getSource()).add(trail);
 		}
 		
-		setTime(time);
+		//setTime(time);
 	}
 	
 
@@ -71,4 +84,16 @@ public class MagicMissileAnimation extends OnTargetAnimation{
 		Point p=new Point((int)(t.getX()+t.getWidth()/2),(int)(t.getY()+t.getHeight()/2));;
 		return p;
 	}
+	
+	protected float getSpeed(){
+		return 0.1f;
+	}
+	
+	@Override
+	public long getTime(Sprite origin, Sprite t) {
+		float speed=getSpeed();
+		long time=(long)((origin.getPos().distance(t.getPos())/speed)*1.3);
+		return time;
+	}
+	
 }

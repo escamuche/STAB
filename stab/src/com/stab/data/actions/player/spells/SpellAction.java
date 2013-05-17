@@ -128,6 +128,7 @@ Spell spell;
 			case POINT:
 						return IN_RANGE;
 			case TOUCH:
+						
 			case MISSILE:
 			case RAY:
 			case TARGET:

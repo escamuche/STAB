@@ -8,6 +8,7 @@ import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.data.animation.state.MoveToPointState;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTargetAnimation;
+import com.stab.model.basic.Sprite;
 import com.tien.princess.engine.sprite.common.painters.ValuePainter;
 import com.tien.princess.engine.sprite.common.states.StateSet;
 import com.tien.princess.engine.utils.PaintUtils;
@@ -42,7 +43,7 @@ public class ShootProyectileAnimation extends OnTargetAnimation{
 		icon.setPos(origin);
 		icon.setSize(64,64);
 		
-		float speed=0.3f;
+		float speed=getSpeed();
 		//TODO: leef speed de params tambien
 		
 		long time=(long)(origin.distance(target)/speed);
@@ -78,6 +79,17 @@ public class ShootProyectileAnimation extends OnTargetAnimation{
 		Token_sprite t=AnimUtils.getSprite(getTarget());
 		Point p=new Point((int)(t.getX()+t.getWidth()/2),(int)(t.getY()+t.getHeight()/2));;
 		return p;
+	}
+	
+	protected float getSpeed(){
+		return 0.3f;
+	}
+	
+	@Override
+	public long getTime(Sprite origin, Sprite t) {
+		float speed=getSpeed();
+		long time=(long)(origin.getPos().distance(t.getPos())/speed);
+		return time;
 	}
 	
 }

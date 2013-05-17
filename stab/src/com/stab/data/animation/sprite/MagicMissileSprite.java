@@ -27,8 +27,8 @@ public class MagicMissileSprite extends LightSprite {
 		setPainter(PaintUtils.getPainter("PARTICLE#magicmissile"));
 		
 		BasicAnimState st=new BasicAnimState(t);
-		st.addUpdater(new SpawnTrailUpdater());
-		st.addUpdater(new CorrectAim(0.05));
+	//	st.addUpdater(new SpawnTrailUpdater());
+		st.addUpdater(new CorrectAim(0.015));
 		st.addUpdater(new Vectorize());
 		st.addUpdater(new Move());
 		st.addUpdater(new Reach("SPAWN",24));
