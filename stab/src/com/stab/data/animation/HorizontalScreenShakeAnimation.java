@@ -12,14 +12,14 @@ public class HorizontalScreenShakeAnimation extends Animation{
 	
 	public HorizontalScreenShakeAnimation() {
 		setBlocking(true);
-		setTime(500);
+		setTime(620);
 	}
 	
 	@Override
 	public void start() {
 		super.start();
 		Token_sprite s=AnimUtils.getSprite(getSource());
-		((GameScreen)s.getScreen()).add(new ScreenShakeSprite(getTime(), 10, false));
+		((GameScreen)s.getScreen()).add(new ScreenShakeSprite(getTime(), 12, false,2.0f));
 		
 	}
 }

@@ -16,11 +16,13 @@ public class ScreenShakeSprite extends StateSprite {
 
 	Point old;
 	
-	public ScreenShakeSprite(long l, int amount, boolean vertical) {
+	public ScreenShakeSprite(long l, int amount, boolean vertical,float factor) {
 		ValueState st= new ValueState();
 		st.setTimed(l, StateSet.DESTROYED);
 		SineValueProvider val3= new SineValueProvider();
 		val3.setScale(amount);
+		val3.setFactor(factor);
+		val3.setMax(l);
 		st.setRadius(val3);
 		this.setA(0);
 		if (vertical)

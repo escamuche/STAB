@@ -19,7 +19,7 @@ public class VerticalScreenShakeAnimation extends Animation{
 	public void start() {
 		super.start();
 		Token_sprite s=AnimUtils.getSprite(getSource());
-		((GameScreen)s.getScreen()).add(new ScreenShakeSprite(getTime(), 10, true));
+		((GameScreen)s.getScreen()).add(new ScreenShakeSprite(getTime(), 10, true,2.0f));
 		
 	}
 }

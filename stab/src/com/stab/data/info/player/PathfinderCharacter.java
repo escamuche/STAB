@@ -132,7 +132,7 @@ public static final String ID="PATH_INFO";
 	public void receiveDamage(int amount, int type, boolean critical) {
 		// TODO Auto-generated method stub
 		super.receiveDamage(amount, type, critical);
-		playAnimation(HorizontalScreenShakeAnimation.ID);
+		//playAnimation(HorizontalScreenShakeAnimation.ID);
 	}
 	
 }
