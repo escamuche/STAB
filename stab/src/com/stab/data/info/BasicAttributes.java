@@ -42,6 +42,23 @@ public class BasicAttributes extends CompoundTrait{
 		this.addTrait(new PathfinderAttributeBonus(StabConstants.WILLSAVE,StabConstants.WISDOM));
 		this.addTrait(new PathfinderAttributeBonus(StabConstants.INICIATIVEMOD,StabConstants.DEXTERITY));
 		
+		//CMD con sus modificaciones
+		this.addTrait(new AttributeBasedModifier(StabConstants.CMD, StabConstants.BAB));
+		this.addTrait(new PathfinderAttributeBonus(StabConstants.CMD, StabConstants.DEXTERITY));
+		this.addTrait(new PathfinderAttributeBonus(StabConstants.CMD, StabConstants.STRENGHT));
+		this.addTrait(new AttributeBasedModifier(StabConstants.CMD, StabConstants.DEFLECTIONMOD));
+		this.addTrait(new AttributeBasedModifier(StabConstants.CMD, StabConstants.INSIGHTMOD));
+		this.addTrait(new AttributeBasedModifier(StabConstants.CMD, StabConstants.DODGEMOD));
+		this.addTrait(new AttributeBasedModifier(StabConstants.CMD, StabConstants.LUCKMOD));
+		this.addTrait(new AttributeBasedModifier(StabConstants.CMD, StabConstants.MORALMOD));
+		this.addTrait(new AttributeBasedModifier(StabConstants.CMD, StabConstants.PROFANEMOD));
+		this.addTrait(new AttributeBasedModifier(StabConstants.CMD, StabConstants.SACREDMOD));
+		this.addTrait(new AttributeBasedModifier(StabConstants.CMD, StabConstants.CIRCUMSTANCEMOD));
+		
+		//CMB con sus modificaciones
+		this.addTrait(new AttributeBasedModifier(StabConstants.CMB, StabConstants.BAB));
+		this.addTrait(new PathfinderAttributeBonus(StabConstants.CMB, StabConstants.STRENGHT));
+	
 		//this.addTrait(new PathfinderAttributeBonus(StabConstants.RAGEROUNDS,StabConstants.CONSTITUTION));
 		
 		this.addTrait(new SizeModifier(StabConstants.PASSIVEDEFENSE,+1));

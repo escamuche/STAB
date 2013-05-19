@@ -39,6 +39,7 @@ public class StabConstants {
 	public static final String BAB="BAB";
 	public static final String SPELLRESISTANCE="SPELLRESISTANCE";
 	public static final String CMB="CMB";
+	public static final String CMD="CMD";
 	
 	//public static final String CMDTRIP="CMDTRIP";	///Esto mejor por trait implements Attend<BullRush>
 	//public static final String CMDBULLRUSH="CMDBULLRUSH";
@@ -153,6 +154,8 @@ public class StabConstants {
 	public static final String MORALMOD="MORALMOD";
 	public static final String RESISTANCEMOD="RESISTANCEMOD";
 	public static final String INICIATIVEMOD="INICIATIVEMOD";
+	public static final String CIRCUMSTANCEMOD="CIRCUMSTANCEMOD";
+	public static final String PROFANEMOD="PROFANEMOD";
 	public static final String XP="XP";
 	
 	public static final String PASSIVEDEFENSE="PASSIVEDEFENSE";
