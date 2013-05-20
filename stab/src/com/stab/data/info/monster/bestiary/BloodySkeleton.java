@@ -7,6 +7,7 @@ import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.data.info.monster.Undead;
 import com.stab.data.info.monster.ZombieAIParameters;
+import com.stab.data.info.monster.abilities.FastHealing;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.Modifier;
@@ -21,7 +22,7 @@ public class BloodySkeleton extends Undead {
 		super.init();
 		setMaxMovePoints(6);
 		
-		setResource("bloodyskeleto");
+		setResource("bloodytoken");
 		setText("Esqueleto Sangriento");
 		setFaction(1);
 	
@@ -39,7 +40,7 @@ public class BloodySkeleton extends Undead {
 		this.addTrait(new DamageReduction(Damage.SLASHING_DAMAGE, 5));
 		this.addTrait(new DamageReduction(Damage.PIERCING_DAMAGE, 5));
 		
-		//ponerle fast healing 1
+		this.addTrait(new FastHealing(1));
 		
 		this.setAIParams(new ZombieAIParameters());
 		

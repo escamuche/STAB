@@ -20,7 +20,7 @@ public class KassenGolem extends Construct {
 		super.init();
 		setMaxMovePoints(6);
 	
-		setResource("kassengolem");
+		setResource("golemkassen");
 		setText("Kassen Golem");
 		setFaction(2);
 			
