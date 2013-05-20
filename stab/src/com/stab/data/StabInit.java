@@ -88,12 +88,14 @@ import com.stab.data.animation.WalkAnimation;
 import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.EquipmentFactory;
 import com.stab.data.info.equipment.WeaponFactory;
+import com.stab.data.info.monster.bestiary.BloodySkeleton;
 import com.stab.data.info.monster.bestiary.Couatl;
 import com.stab.data.info.monster.bestiary.DireRat;
 import com.stab.data.info.monster.bestiary.EsqueletoArquero;
 import com.stab.data.info.monster.bestiary.GiantBombardierBeetle;
 import com.stab.data.info.monster.bestiary.Goblin;
 import com.stab.data.info.monster.bestiary.GoblinShaman;
+import com.stab.data.info.monster.bestiary.KassenGolem;
 import com.stab.data.info.monster.bestiary.Kobold;
 import com.stab.data.info.monster.bestiary.Lich;
 import com.stab.data.info.monster.bestiary.Orc;
@@ -283,6 +285,8 @@ public class StabInit {
 		of.setMapping(Skeleton.class);
 		of.setMapping(GiantBombardierBeetle.class);
 		of.setMapping(SkeletoParlanchin.class);
+		of.setMapping(KassenGolem.class);
+		of.setMapping(BloodySkeleton.class);
 		
 		
 		//pnjs
