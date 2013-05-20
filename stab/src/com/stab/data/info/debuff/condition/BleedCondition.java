@@ -32,6 +32,7 @@ public class BleedCondition extends Debuff {
 	public void turnStarts() {
 		super.turnStarts();
 		BaseInfo i = getTarget();
-		i.receiveDamage(damage, Damage.BLEED_DAMAGE, false);
+		Damage d= new Damage(damage,Damage.BLEED_DAMAGE,i);
+		i.apply(d);
 	}
 }

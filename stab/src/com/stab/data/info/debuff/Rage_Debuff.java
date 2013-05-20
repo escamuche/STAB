@@ -26,7 +26,7 @@ public class Rage_Debuff extends Debuff {
 	@Override
 	public void applyTo(BaseInfo baseInfo) {
 			super.applyTo(baseInfo);
-			baseInfo.receiveDamage(2, Damage.GENERIC_DAMAGE, false); //igual que el heal se pone aqui para que solo se aplique cuando te ponen el debuff
+			baseInfo.receiveDamage(2, Damage.GENERIC_DAMAGE, false,false); //igual que el heal se pone aqui para que solo se aplique cuando te ponen el debuff
 	}
 	
 }
