@@ -4,9 +4,9 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.actions.player.BardActionSet;
 import com.stab.data.actions.player.DefendAction;
-import com.stab.data.info.buff.BardicKnowledge_Buff;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.SkillFocusPerformWind_Feat;
+import com.stab.data.info.player.abilities.BardicKnowledge;
 
 
 public class BardCharacter extends PathfinderCharacter{
@@ -40,7 +40,7 @@ public static final String ID="BARD_INFO";
 		this.addTrait(new SkillFocusPerformWind_Feat());
 		//this.addTrait(new WeaponFinesse_Feat());
 		
-		this.addTrait(new BardicKnowledge_Buff());
+		this.addTrait(new BardicKnowledge());
 		
 		this.setAttribute(StabConstants.BLUFF, 7);
 		this.setAttribute(StabConstants.DIPLOMACY, 7);

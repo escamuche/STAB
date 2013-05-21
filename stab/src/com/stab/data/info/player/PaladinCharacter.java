@@ -4,11 +4,15 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.PaladinActionSet;
+import com.stab.data.actions.player.abilities.Rage;
+import com.stab.data.actions.player.abilities.SmiteEvil;
 import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.combat.DazzlingDisplay_Feat;
 import com.stab.data.info.feat.combat.WeaponFocus_Feat;
+import com.stab.data.info.player.abilities.SmiteEvil_Ability;
+import com.stab.model.info.trait.base.RenewableResource;
 
 
 public class PaladinCharacter extends PathfinderCharacter{
@@ -43,6 +47,11 @@ public static final String ID="PALADIN_INFO";
 		
 		this.addTrait(new DazzlingDisplay_Feat());
 		this.addTrait(new WeaponFocus_Feat(WeaponFactory.LONGSWORD));
+		
+		this.addTrait(new SmiteEvil_Ability());
+		this.getActionSet().setAction(SmiteEvil.ID, 6);
+		
+		this.addTrait(new RenewableResource(SmiteEvil.RESOURCE_ID, 1));
 		
 		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.BANDEDMAIL), HumanoidGear.ARMOR);
 		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.LONGSWORD), HumanoidGear.MAINHAND);

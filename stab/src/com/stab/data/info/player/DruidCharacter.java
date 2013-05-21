@@ -6,6 +6,7 @@ import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.DruidActionSet;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.Toughness_Feat;
+import com.stab.data.info.player.abilities.NatureSense;
 
 
 public class DruidCharacter extends PathfinderCharacter{
@@ -44,6 +45,8 @@ public static final String ID="DRUID_INFO";
 		this.setAttribute(StabConstants.SURVIVAL, 8);
 		
 		this.addTrait(new Toughness_Feat());
+		
+		this.addTrait(new NatureSense());
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("SPEAR"), HumanoidGear.BOTHHANDS);
 		this.equip(StabInit.getArmorFactory().getArmor("HIDE"), HumanoidGear.ARMOR);

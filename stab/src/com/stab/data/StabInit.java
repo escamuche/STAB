@@ -18,6 +18,7 @@ import com.stab.data.actions.feats.Expertise;
 import com.stab.data.actions.feats.PowerAttack;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.abilities.Rage;
+import com.stab.data.actions.player.abilities.SmiteEvil;
 import com.stab.data.actions.player.spells.cleric.level0.Guidance;
 import com.stab.data.actions.player.spells.cleric.level0.Resistance;
 import com.stab.data.actions.player.spells.cleric.level1.Bane;
@@ -117,6 +118,7 @@ import com.stab.data.info.player.RogueCharacter;
 import com.stab.data.info.player.SorcererCharacter;
 import com.stab.data.info.player.WarriorCharacter;
 import com.stab.data.info.player.WizardCharacter;
+import com.stab.data.info.player.abilities.NatureSense;
 import com.stab.data.info.props.Barrel;
 import com.stab.data.info.props.Brazier;
 import com.stab.data.info.props.CDoor;
@@ -364,6 +366,7 @@ public class StabInit {
 		getActionLibrary().register(new HealAction());
 		getActionLibrary().register(new PathfinderSearchAction());
 		getActionLibrary().register(new ChannelPossitiveEnergyAction());
+		getActionLibrary().register(new SmiteEvil());
 		
 		//feats
 		getActionLibrary().register(new PowerAttack());
