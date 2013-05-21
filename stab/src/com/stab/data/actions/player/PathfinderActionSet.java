@@ -18,9 +18,9 @@ public class PathfinderActionSet extends BasicActionSet {
 		
 		
 		this.setAction(WeaponAttackAction.ID, 0);
-		this.setAction(InteractAction.ID,18);
-		this.setAction(DefendAction.ID,19);
-		this.setAction(PathfinderSearchAction.ID,17);
+		this.setAction(InteractAction.ID,8);
+		this.setAction(DefendAction.ID,9);
+		this.setAction(PathfinderSearchAction.ID,7);
 		//stealth
 		//trip, disarm, rush?
 		//aid, protect?

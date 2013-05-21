@@ -2,7 +2,6 @@ package com.stab.data.info.player;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
-import com.stab.data.actions.ChannelPossitiveEnergyAction;
 import com.stab.data.actions.feats.PowerAttack;
 import com.stab.data.actions.player.BarbarianActionSet;
 import com.stab.data.actions.player.DefendAction;
@@ -12,7 +11,6 @@ import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.combat.Cleave_Feat;
 import com.stab.data.info.feat.combat.PowerAttack_Feat;
-import com.stab.data.info.player.abilities.ChannelPositiveEnergy;
 import com.stab.data.info.player.abilities.FastMovementBarbarian;
 import com.stab.data.info.player.abilities.Rage_Ability;
 import com.stab.model.info.trait.base.RenewableResource;
@@ -45,7 +43,7 @@ public static final String ID="BARBARIAN_INFO";
 		//this.setAttribute(StabConstants.RAGEROUNDS, 4);
 		
 		this.addTrait(new PowerAttack_Feat());
-		this.getActionSet().setAction(PowerAttack.ID, 7);
+		this.getActionSet().setAction(PowerAttack.ID, 5);
 		
 		this.addTrait(new Cleave_Feat());
 		//this.getActionSet().setAction(Cleave.ID, 4);
@@ -66,13 +64,6 @@ public static final String ID="BARBARIAN_INFO";
 		
 		this.addTrait(new RenewableResource(Rage.RESOURCE_ID, 4)); //habria que sumarle el bono de constitucion mas adelante
 		
-		/* habilidades especiales
-		 * 
-		 * Rage			DONE			- haremos un buff que se puede activar o desactivar con +2 a fue y a a con, y que te cure 2*level hp
-		 * 								 (el max sube con la con). en el remove, ha de quitarte esa vida, ponerte fatigued y meter un cooldown (asi probamos cooldown) 
-		 * Fast Movement				- buff permanente que en turnstart mira tu categoria de armadura y te añade move points si es apropiado
-		 * 
-		 */
 	}
 	
 	

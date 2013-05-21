@@ -71,6 +71,7 @@ public class CryptEverflameAdventure extends Adventure{
 		n0.addOption("Punto de salvado 5 (cripta)", "CRYPT1");
 		n0.addOption("Punto de salvado 6 (Dungeon nivel 1)", "UPPER1");
 		n0.addOption("Punto de salvado 7 (roldare)", "ROLDARE1");
+		n0.addOption("Punto de salvado 8 (Dungeon nivel 2)", "LOWER.start");
 		
 		
 		this.addScene(n0);
@@ -1305,6 +1306,26 @@ public class CryptEverflameAdventure extends Adventure{
 				n26.addOption("Intentar calmarlo", "ROLDARE2");
 				this.addScene(n26);
 				
+//mapa combate 5
+				
+				DefaultTileMapScene mc5=new DefaultTileMapScene();
+				mc5.createContents();
+				mc5.createMap(32,24);
+				mc5.loadTiled("lower", 0, 0);
+				mc5.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
+				mc5.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
+				mc5.setTag("LOWER");
+				
+				/*AllMonstersDeadRule r4=new AllMonstersDeadRule();
+				r4.addResponse(new VictoryResponse(0,"VICTORY"));
+				mc4.addRule(r);
+				*/
+				
+				AllPlayersDeadRule r7=new AllPlayersDeadRule();
+				r7.addResponse(new DefeatResponse(0,"DEFEAT"));
+				mc5.addRule(r7);
+				
+				this.addScene(mc5);
 				
 	//escena derrota
 		
