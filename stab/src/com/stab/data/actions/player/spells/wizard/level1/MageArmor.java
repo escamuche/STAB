@@ -34,5 +34,6 @@ public class MageArmor extends SpellOnTarget{
 		setName("MageArmor");
 		setEffectType(BUFF);
 		setRange(TOUCH);
+		this.setDescription("An invisible but tangible field of force surrounds the subject of a mage armor spell, providing a +4 armor bonus to AC.");
 	}
 }

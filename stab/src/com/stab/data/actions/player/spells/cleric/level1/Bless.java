@@ -31,6 +31,7 @@ public class Bless extends SpellOnTarget{
      setName("Bless");
      this.setCasterClass(StabConstants.CLERICCASTER);
      this.setEffectType(BUFF);
+     this.setDescription("Bless fills your allies with courage. Each ally gains a +1 morale bonus on attack rolls and on saving throws against fear effects. Bless counters and dispels bane.");
 	}
 
 	

@@ -50,6 +50,7 @@ public class RayFrost extends SpellOnTarget{
 		this.setEffectType(DAMAGE);
 		setRange(CLOSE);
 		setMedium(RAY);
+		this.setDescription("A ray of freezing air and ice projects from your pointing finger. You must succeed on a ranged touch attack with the ray to deal damage to a target. The ray deals 1d3 points of cold damage.");
 	}
 
 	

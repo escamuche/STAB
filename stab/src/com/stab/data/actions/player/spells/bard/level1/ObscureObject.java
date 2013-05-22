@@ -15,7 +15,9 @@ public class ObscureObject extends SpellOnTarget{
 	     setResource("actions/hypnotism");
 	     setName("Obscure Object");
 	     this.setEffectType(BUFF);
-		}
+	     this.setDescription("This spell hides an object from location by divination (scrying) effects, such as the scrying spell or a crystal ball. Such an attempt automatically fails (if the divination is targeted on the object) or fails to perceive the object (if the divination is targeted on a nearby location, object, or person).");
+	 
+	}
 
 
 

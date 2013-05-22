@@ -17,8 +17,9 @@ public class LesserConfusion extends SpellOnTarget{
 	     setResource("actions/ability_mage_arcanebarrage");
 	     setName("Lesser Confusion");
 	     this.setEffectType(SPECIAL);
-	     
-		}
+	     this.setDescription("This spell causes a single creature to become confused for 1 round.");
+	    
+	}
 
 
 	@Override

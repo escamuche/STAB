@@ -18,6 +18,7 @@ public class Shield extends SpellOnSelf{
      setName("Shield");
      this.setEffectType(BUFF);
      this.setCasterClass(StabConstants.WIZARDCASTER);
+     this.setDescription("Shield creates an invisible shield of force that hovers in front of you. It negates magic missile attacks directed at you. The disk also provides a +4 shield bonus to AC. This bonus applies against incorporeal touch attacks, since it is a force effect. The shield has no armor check penalty or arcane spell failure chance.");
 	}
 
 	@Override

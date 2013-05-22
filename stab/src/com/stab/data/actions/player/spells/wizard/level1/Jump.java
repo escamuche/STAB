@@ -18,6 +18,7 @@ public class Jump extends SpellOnTarget {
 		setResource("actions/jump");
 		setName("Jump");
 		this.setEffectType(BUFF);
+		this.setDescription("The subject gets a +10 enhancement bonus on Acrobatics checks made to attempt high jumps or long jumps. The enhancement bonus increases to +20 at caster level 5th, and to +30 (the maximum) at caster level 9th.");
 	}
 
 	@Override

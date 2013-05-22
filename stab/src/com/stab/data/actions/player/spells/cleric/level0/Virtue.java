@@ -33,6 +33,7 @@ public class Virtue extends SpellOnTarget{
 		setResource("actions/ability_druid_naturalperfection");
 		setName("PurifyFood");
 		this.setEffectType(HEAL);
+		this.setDescription("With a touch, you infuse a creature with a tiny surge of life, granting the subject 1 temporary hit point.");
 	}
 	
 	@Override

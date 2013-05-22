@@ -31,6 +31,7 @@ public class Guidance extends SpellOnTarget{
 		setName("Guidance");
 		this.setEffectType(BUFF);
 		this.setRange(TOUCH);
+		this.setDescription("This spell imbues the subject with a touch of divine guidance. The creature gets a +1 competence bonus on a single attack roll, saving throw, or skill check. It must choose to use the bonus before making the roll to which it applies.");
 		
 	}
 	

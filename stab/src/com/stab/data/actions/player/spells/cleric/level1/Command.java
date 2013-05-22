@@ -22,6 +22,7 @@ public class Command extends SpellOnTarget{
 		setName("Command");
 		this.setEffectType(DEBUFF);
 		setRange(CLOSE);
+		setDescription("You give the subject a single command, which it obeys to the best of its ability at its earliest opportunity. Halt: The subject stands in place for 1 round. It may not take any actions but is not considered helpless.");
 	}
 	
 	@Override

@@ -19,6 +19,7 @@ public class TrueStrike extends SpellOnSelf{
      setResource("actions/truestrike");
      setName("TrueStrike");
      this.setEffectType(BUFF);
+     this.setDescription("You gain temporary, intuitive insight into the immediate future during your next attack. Your next single attack roll (if it is made before the end of the next round) gains a +20 insight bonus. Additionally, you are not affected by the miss chance that applies to attackers trying to strike a concealed target.");
 	}
 
 	@Override

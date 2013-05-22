@@ -68,7 +68,7 @@ public class InflictLight extends SpellOnTarget{
      
      setResource("actions/inflictlightwounds");
      setName("Inflict Light Wounds");
-     
+     setDescription("When laying your hand upon a creature, you channel negative energy that deals 1d8 points of damage + 1 point per caster level (maximum +5). Since undead are powered by negative energy, this spell cures such a creature of a like amount of damage, rather than harming it.");
 	}
 
 	

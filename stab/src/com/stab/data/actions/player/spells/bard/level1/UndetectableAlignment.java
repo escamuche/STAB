@@ -18,7 +18,8 @@ public class UndetectableAlignment extends SpellOnTarget{
 	     setRange(CLOSE);
 	     setName("Undetectable Alignment");
 	     this.setEffectType(SPECIAL);
-	     
+	     this.setDescription("An undetectable alignment spell conceals the alignment of an object or a creature from all forms of divination.");
+
 		}
 
 

@@ -51,6 +51,8 @@ public class AcidSplash extends SpellOnTarget{
      this.setEffectType(DAMAGE);
      setRange(CLOSE);
      setMedium(MISSILE);
+     this.setDescription("You fire a small orb of acid at the target. You must succeed on a ranged touch attack to hit your target. The orb deals 1d3 points of acid damage. This acid disappears after 1 round.");
+   
 	}
 
 	

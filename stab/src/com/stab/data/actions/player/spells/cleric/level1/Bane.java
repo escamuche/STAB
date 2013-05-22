@@ -31,6 +31,7 @@ public class Bane extends SpellOnTarget {
      this.setCasterClass(StabConstants.CLERICCASTER);
      setName("Bane");
      this.setEffectType(DEBUFF);
+     this.setDescription("Bane fills your enemies with fear and doubt. Each affected creature takes a –1 penalty on attack rolls and a –1 penalty on saving throws against fear effects. Bane counters and dispels bless.");
 	}
 
 	

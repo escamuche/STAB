@@ -17,7 +17,7 @@ public class DivineFavor extends SpellOnSelf{
      setName("Divine Favor");
      this.setEffectType(BUFF);
      this.setCasterClass(StabConstants.CLERICCASTER);
-     
+     this.setDescription("Calling upon the strength and wisdom of a deity, you gain a +1 luck bonus on attack and weapon damage rolls for every three caster levels you have (at least +1, maximum +3). The bonus doesn't apply to spell damage.");
 	}
 
 	@Override

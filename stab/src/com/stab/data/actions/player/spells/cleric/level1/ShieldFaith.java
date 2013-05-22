@@ -17,6 +17,7 @@ public class ShieldFaith extends SpellOnSelf{
      setName("Shield of Faith");
      this.setEffectType(BUFF);
      this.setCasterClass(StabConstants.CLERICCASTER);
+     this.setDescription("This spell creates a shimmering, magical field around the target that averts and deflects attacks. The spell grants the subject a +2 deflection bonus to AC, with an additional +1 to the bonus for every six levels you have (maximum +5 deflection bonus at 18th level).");
 	}
 
 	@Override

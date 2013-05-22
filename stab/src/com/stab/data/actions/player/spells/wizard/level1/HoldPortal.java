@@ -34,5 +34,6 @@ public class HoldPortal extends SpellOnTarget{
 		setName("HoldPortal");
 		this.setEffectType(SPECIAL);
 		setRange(MEDIUM);
+		this.setDescription("This spell magically holds shut a door, gate, window, or shutter of wood, metal, or stone. The magic affects the portal just as if it were securely closed and normally locked. A knock spell or a successful dispel magic spell can negate a hold portal spell.");
 	}
 }

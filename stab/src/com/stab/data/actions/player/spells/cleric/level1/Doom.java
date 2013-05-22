@@ -37,6 +37,7 @@ public class Doom extends SpellOnTarget {
      this.setCasterClass(StabConstants.CLERICCASTER);
      this.setEffectType(DEBUFF);
      setRange(MEDIUM);
+     this.setDescription("This spell fills a single subject with a feeling of horrible dread that causes it to become shaken.");
 	}
 
 	

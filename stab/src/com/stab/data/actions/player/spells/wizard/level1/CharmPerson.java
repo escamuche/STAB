@@ -35,6 +35,6 @@ public class CharmPerson extends SpellOnTarget{
 		setName("CharmPerson");
 		this.setEffectType(DEBUFF);
 		setRange(CLOSE);
-	
+		this.setDescription("This charm makes a humanoid creature regard you as its trusted friend and ally (treat the target's attitude as friendly). If the creature is currently being threatened or attacked by you or your allies, however, it receives a +5 bonus on its saving throw.");
 	}
 }
