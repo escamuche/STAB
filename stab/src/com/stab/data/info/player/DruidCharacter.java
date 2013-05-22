@@ -4,6 +4,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.DruidActionSet;
+import com.stab.data.info.BonusAttributeMP;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.Toughness_Feat;
 import com.stab.data.info.player.abilities.NatureSense;
@@ -23,7 +24,7 @@ public static final String ID="DRUID_INFO";
 		setText("Druid1");
 		
 		this.setMaxHp(8);
-		this.setEp(10);
+		this.setMaxEp(10);
 		this.healFully();
 		this.fillEnergy();
 		
@@ -43,6 +44,8 @@ public static final String ID="DRUID_INFO";
 		this.setAttribute(StabConstants.KNOWLEDGENATURE, 3);
 		this.setAttribute(StabConstants.PERCEPTION, 6);
 		this.setAttribute(StabConstants.SURVIVAL, 8);
+		
+		this.addTrait(new BonusAttributeMP(StabConstants.MAXMP, StabConstants.WISDOM, getValue(StabConstants.DRUIDCASTER)));
 		
 		this.addTrait(new Toughness_Feat());
 		

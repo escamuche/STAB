@@ -5,6 +5,7 @@ import com.stab.data.StabInit;
 import com.stab.data.actions.ChannelPossitiveEnergyAction;
 import com.stab.data.actions.player.ClericActionSet;
 import com.stab.data.actions.player.DefendAction;
+import com.stab.data.info.BonusAttributeMP;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.combat.WeaponFocus_Feat;
@@ -27,7 +28,7 @@ public static final String ID="CLERIC_INFO";
 		setText("Cleric1");
 		
 		this.setMaxHp(8);
-		this.setEp(10);
+		this.setMaxEp(10);
 		this.healFully();
 		this.fillEnergy();
 		
@@ -46,6 +47,8 @@ public static final String ID="CLERIC_INFO";
 		
 		this.addTrait(new WeaponFocus_Feat(WeaponFactory.LIGHTCROSSBOW));
 		this.addTrait(new SelectiveChanneling_Feat());
+		
+		this.addTrait(new BonusAttributeMP(StabConstants.MAXMP, StabConstants.WISDOM, getValue(StabConstants.CLERICCASTER)));
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("LIGHTCROSSBOW"), HumanoidGear.BOTHHANDS);
 		this.equip(StabInit.getArmorFactory().getArmor("CHAINMAIL"), HumanoidGear.ARMOR);

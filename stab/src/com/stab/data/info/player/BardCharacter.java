@@ -4,9 +4,12 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.actions.player.BardActionSet;
 import com.stab.data.actions.player.DefendAction;
+import com.stab.data.info.BonusAttributeMP;
+import com.stab.data.info.PathfinderAttributeBonus;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.SkillFocusPerformWind_Feat;
 import com.stab.data.info.player.abilities.BardicKnowledge;
+import com.stab.model.info.trait.Modifier;
 
 
 public class BardCharacter extends PathfinderCharacter{
@@ -24,7 +27,7 @@ public static final String ID="BARD_INFO";
 		
 		this.setMaxHp(8);
 		this.healFully();
-		this.setEp(10);
+		this.setMaxEp(10);
 		this.fillEnergy();
 		this.setAttribute(StabConstants.DEXTERITY, 14);
 		this.setAttribute(StabConstants.CONSTITUTION, 12);
@@ -36,6 +39,7 @@ public static final String ID="BARD_INFO";
 		this.setAttribute(StabConstants.BARDCASTER, 1);
 		this.setAttribute(StabConstants.SPELLKNOWN1, 2);
 		this.setAttribute(StabConstants.SPELLKNOWN0, 4);
+		this.addTrait(new BonusAttributeMP(StabConstants.MAXMP, StabConstants.CHARISMA, getValue(StabConstants.BARDCASTER)));
 		
 		this.addTrait(new SkillFocusPerformWind_Feat());
 		//this.addTrait(new WeaponFinesse_Feat());

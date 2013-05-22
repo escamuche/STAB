@@ -257,4 +257,9 @@ Spell spell;
 		w.setOld(old);
 		return w;
 	}
+	
+	@Override
+		public int getCost() {
+			return (spell.getLevel()*5)+5;
+		}
 }

@@ -28,7 +28,6 @@ public class BasicAttributes extends CompoundTrait{
 		
 		this.addTrait(new PathfinderAttributeBonus(StabConstants.MAXHP,StabConstants.CONSTITUTION));
 		
-		
 		//Estos 4 puede que desaparezcan y sean sustituidos por valores calculados.
 		this.addTrait(new DexLimitedBonusModifier(StabConstants.ACTIVEDEFENSE));
 		this.addTrait(new PathfinderAttributeBonus(StabConstants.DAMAGE,StabConstants.STRENGHT));

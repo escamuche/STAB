@@ -4,6 +4,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.SorcererActionSet;
+import com.stab.data.info.BonusAttributeMP;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.Alertness_Feat;
 import com.stab.data.info.feat.general.CombatCasting_Feat;
@@ -26,7 +27,7 @@ public static final String ID="SORCERER_INFO";
 		
 		this.setMaxHp(6);
 		this.healFully();
-		this.setEp(10);
+		this.setMaxEp(30);
 		this.fillEnergy();
 		
 		this.setAttribute(StabConstants.STRENGHT, 10);
@@ -48,6 +49,8 @@ public static final String ID="SORCERER_INFO";
 		this.setAttribute(StabConstants.SORCERERCASTER, 1);
 		this.setAttribute(StabConstants.SPELLKNOWN0, 4);
 		this.setAttribute(StabConstants.SPELLKNOWN1, 2);
+		
+		this.addTrait(new BonusAttributeMP(StabConstants.MAXMP, StabConstants.CHARISMA, getValue(StabConstants.SORCERERCASTER)));
 		
 		this.addTrait(new Alertness_Feat());
 		this.addTrait(new CombatCasting_Feat());

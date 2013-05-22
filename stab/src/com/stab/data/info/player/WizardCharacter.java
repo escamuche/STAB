@@ -4,6 +4,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.WizardActionSet;
+import com.stab.data.info.BonusAttributeMP;
 import com.stab.data.info.equipment.EquipmentFactory;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.Alertness_Feat;
@@ -25,7 +26,7 @@ public static final String ID="WIZARD_INFO";
 		setResource("tokenWizard");
 		setText("Wizard1");
 		
-		this.setEp(10);
+		this.setMaxEp(10);
 		this.setMaxHp(6);
 		this.healFully();
 		this.fillEnergy();
@@ -47,6 +48,8 @@ public static final String ID="WIZARD_INFO";
 		this.setAttribute(StabConstants.SPELLCRAFT, 5);
 		
 		this.setAttribute(StabConstants.WIZARDCASTER, 1);
+		
+		this.addTrait(new BonusAttributeMP(StabConstants.MAXMP, StabConstants.INTELIGENCE, getValue(StabConstants.WIZARDCASTER)));
 		
 		this.addTrait(new Alertness_Feat());
 		this.addTrait(new CombatCasting_Feat());
