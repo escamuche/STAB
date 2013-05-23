@@ -10,6 +10,7 @@ import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.data.info.equipment.SpellWeapon;
 import com.stab.data.info.equipment.Weapon;
 import com.stab.model.action.Action;
+import com.stab.model.action.AoE;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.base.Creature;
@@ -47,6 +48,10 @@ Spell spell;
 	}
 
 	public int getRange(Info caster) {
+		if (this instanceof AoE){
+			if (((AoE)this).getAreaType()==AoE.CONE || ((AoE)this).getAreaType()==AoE.LINE)
+				return (int)((AoE)this).getLength(caster);
+		}
 		if (caster instanceof BaseInfo)
 			return spell.getRange((BaseInfo)caster);
 		return super.getRange(caster);
