@@ -47,9 +47,9 @@ public static final String ID="PATH_INFO";
 	}
 	
 	@Override
-	public void setMaxEp(int maxHp) {
-		setAttribute(StabConstants.MAXMP,maxHp);
-		super.setMaxHp(maxHp);
+	public void setMaxEp(int maxEp) {
+		setAttribute(StabConstants.MAXMP,maxEp);
+		super.setMaxEp(maxEp);
 	}
 	
 	@Override
