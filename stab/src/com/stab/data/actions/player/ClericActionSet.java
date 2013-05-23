@@ -1,6 +1,8 @@
 package com.stab.data.actions.player;
 
 
+import com.stab.data.actions.ChannelPossitiveEnergyAction;
+import com.stab.data.actions.player.abilities.NobilityDomain;
 import com.stab.data.actions.player.spells.cleric.level0.Guidance;
 import com.stab.data.actions.player.spells.cleric.level0.Resistance;
 import com.stab.data.actions.player.spells.cleric.level1.Bane;
@@ -28,14 +30,14 @@ public class ClericActionSet extends PathfinderActionSet {
 		this.addAction(InflictLight.ID);
 		this.addAction(MagicStone.ID);
 		this.addAction(ShieldFaith.ID);
+		this.addAction(ChannelPossitiveEnergyAction.ID);
 		
 		
 		/**/this.setAction(Bless.ID, 2);
-		this.setAction(Doom.ID, 6);
+		this.setAction(Doom.ID, 4);
 		this.setAction(CureLight.ID, 1);
 		this.setAction(ShieldFaith.ID, 3);
-		this.setAction(MagicStone.ID, 4);
-		this.setAction(DivineFavor.ID,5);/**/
+		this.setAction(NobilityDomain.ID,5);/**/
 		
 	}
 }

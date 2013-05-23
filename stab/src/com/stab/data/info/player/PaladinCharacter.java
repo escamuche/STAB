@@ -60,8 +60,6 @@ public static final String ID="PALADIN_INFO";
 		/* Habilidades especiales
 		 * Aura of Good					lo mismo que todo, aura centrada que da buff cada turno
 		 * Detect evil					esto estaria bien currarse algo original... pero no se me ocurre nada concreto... aun
-		 * Smite Evil 1/dia				hay que ver lo de poner cargas a las acciones primero.
-		 * 								por lo demas, es o un debuff, o un attends<attackdata>, no recuerdo la version de pathfinder
 		 */
 	}
 	

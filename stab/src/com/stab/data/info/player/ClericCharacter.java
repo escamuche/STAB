@@ -5,12 +5,15 @@ import com.stab.data.StabInit;
 import com.stab.data.actions.ChannelPossitiveEnergyAction;
 import com.stab.data.actions.player.ClericActionSet;
 import com.stab.data.actions.player.DefendAction;
+import com.stab.data.actions.player.abilities.NobilityDomain;
+import com.stab.data.actions.player.abilities.SmiteEvil;
 import com.stab.data.info.BonusAttributeMP;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.combat.WeaponFocus_Feat;
 import com.stab.data.info.feat.general.SelectiveChanneling_Feat;
 import com.stab.data.info.player.abilities.ChannelPositiveEnergy;
+import com.stab.data.info.player.abilities.NobilityDomain_Ability;
 import com.stab.model.info.trait.base.RenewableResource;
 
 
@@ -52,6 +55,11 @@ public static final String ID="CLERIC_INFO";
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("LIGHTCROSSBOW"), HumanoidGear.BOTHHANDS);
 		this.equip(StabInit.getArmorFactory().getArmor("CHAINMAIL"), HumanoidGear.ARMOR);
+		
+		this.addTrait(new NobilityDomain_Ability());
+		this.getActionSet().setAction(NobilityDomain.ID, 6);
+		
+		this.addTrait(new RenewableResource(NobilityDomain.RESOURCE_ID, 5));
 		
 		/* Faltan habilidades especiales:
 		 * Aura								ya veremos como

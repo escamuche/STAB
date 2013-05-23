@@ -2,6 +2,7 @@ package com.stab.data.actions.player;
 
 
 import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
+import com.stab.data.actions.player.spells.wizard.level0.DisruptUndead;
 import com.stab.data.actions.player.spells.wizard.level0.Flare;
 import com.stab.data.actions.player.spells.wizard.level0.OpenClose;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
@@ -46,8 +47,8 @@ public class WizardActionSet extends PathfinderActionSet {
 				this.setAction(BurningHands.ID, 4);
 				this.setAction(Shield.ID,1);
 				this.setAction(DancingLights.ID,6);
-				this.setAction(Flare.ID,5);
-				this.setAction(RayFrost.ID, 3);
+				this.setAction(AcidSplash.ID,5);
+				this.setAction(DisruptUndead.ID, 3);
 			//	this.setAction(OpenClose.ID,7);
 				//this.setAction(Resistance_Wizard.ID,8);/**/
 		

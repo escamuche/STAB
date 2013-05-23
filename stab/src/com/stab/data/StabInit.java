@@ -17,6 +17,7 @@ import com.stab.data.actions.WeaponAttackAction;
 import com.stab.data.actions.feats.Expertise;
 import com.stab.data.actions.feats.PowerAttack;
 import com.stab.data.actions.player.DefendAction;
+import com.stab.data.actions.player.abilities.NobilityDomain;
 import com.stab.data.actions.player.abilities.Rage;
 import com.stab.data.actions.player.abilities.SmiteEvil;
 import com.stab.data.actions.player.spells.cleric.level0.Bleed;
@@ -369,6 +370,7 @@ public class StabInit {
 		getActionLibrary().register(new PathfinderSearchAction());
 		getActionLibrary().register(new ChannelPossitiveEnergyAction());
 		getActionLibrary().register(new SmiteEvil());
+		getActionLibrary().register(new NobilityDomain());
 		
 		//feats
 		getActionLibrary().register(new PowerAttack());
