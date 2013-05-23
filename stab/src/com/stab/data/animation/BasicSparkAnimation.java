@@ -36,6 +36,7 @@ public class BasicSparkAnimation extends Animation {
 		icon.setPos(getOriginPoint());
 		icon.setSize(64,64);
 		Painter p=PaintUtils.getPainter(img);
+	
 		if (p instanceof ValuePainter)
 			((ValuePainter)p).setRotation((float)a);
 		icon.setPainter(p);

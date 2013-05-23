@@ -48,10 +48,8 @@ Spell spell;
 	}
 
 	public int getRange(Info caster) {
-		if (this instanceof AoE){
-			if (((AoE)this).getAreaType()==AoE.CONE || ((AoE)this).getAreaType()==AoE.LINE)
-				return (int)((AoE)this).getLength(caster);
-		}
+		if (isDirected())
+			return 1;
 		if (caster instanceof BaseInfo)
 			return spell.getRange((BaseInfo)caster);
 		return super.getRange(caster);

@@ -10,6 +10,7 @@ import com.stab.model.action.AoE;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
+import com.stab.model.info.trait.base.VisualEffect;
 
 public class BurningHands extends SpellOnTile implements AoE {
 
@@ -30,12 +31,17 @@ public class BurningHands extends SpellOnTile implements AoE {
 
 
 	@Override
-	public boolean affect(Info instigator,Info receptor,Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target=(BaseInfo)receptor;
-		return false;
+	protected void playExecuteActionAnimation(Info caster, Info target,
+			Point pos) {
+		super.playExecuteActionAnimation(caster, target, pos);
+		double a=getAngle(caster,target,pos);
+		a=Math.toDegrees(a);
+		caster.playAnimation(VisualEffect.SPARK_ANIMATION, "PARTICLE#burninghands", 1200,a);
 	}
 	
+	
+
+
 	@Override
 	protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 		int level = getCasterLevel(caster);
