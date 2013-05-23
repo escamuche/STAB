@@ -5,8 +5,8 @@ package com.stab.data.info.player;
 import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
-import com.stab.data.animation.HorizontalScreenShakeAnimation;
 import com.stab.data.info.BasicAttributes;
+import com.stab.data.info.debuff.condition.DyingCondition;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.Item;
 import com.stab.model.basic.token.Token;
@@ -127,8 +127,14 @@ public static final String ID="PATH_INFO";
 				this.getToken().setCustomProperty(StabConstants.AC, getValue(StabConstants.AC));
 	}
 	
-	
-
-	
+	@Override
+		public void setState(int state) {
+			int old = getState();
+			
+			super.setState(state);
+			if(state==DESTROYED_STATE && old!=DESTROYED_STATE){
+				this.addTrait(new DyingCondition());
+			}
+		}
 }
 	

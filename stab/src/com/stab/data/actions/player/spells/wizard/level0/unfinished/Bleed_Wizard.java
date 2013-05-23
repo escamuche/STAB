@@ -1,7 +1,7 @@
 package com.stab.data.actions.player.spells.wizard.level0.unfinished;
 
 import com.stab.data.StabConstants;
-import com.stab.data.actions.player.spells.cleric.level0.unfinished.Bleed;
+import com.stab.data.actions.player.spells.cleric.level0.Bleed;
 
 public class Bleed_Wizard extends Bleed{
 	

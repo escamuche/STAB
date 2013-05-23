@@ -1,4 +1,4 @@
-package com.stab.data.actions.player.spells.cleric.level0.unfinished;
+package com.stab.data.actions.player.spells.cleric.level0;
 
 import java.awt.Point;
 
@@ -28,8 +28,10 @@ public class Bleed extends SpellOnTarget{
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target = (BaseInfo)receptor;
 		
+		if(target.getHp()<=0) {
 		Bleed_Debuff debuff = new Bleed_Debuff();
 		target.addTrait(debuff);
+		}
 		
 		return true;
 	}
