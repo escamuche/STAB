@@ -19,13 +19,14 @@ public class BurningHands extends SpellOnTile implements AoE {
 	     
 		 setLevel(1);
 		 setCasterClass(StabConstants.WIZARDCASTER);
-		 setRange(1);
+		 setRange(10);
 	     setResource("actions/burninghands");
 	     setName("BurningHands");
 	     this.setEffectType(DAMAGE);
 	     this.setSave(StabConstants.REFLEXSAVE);
 	     this.setDescription("A cone of searing flame shoots from your fingertips. Any creature in the area of the flames takes 1d4 points of fire damage per caster level (maximum 5d4).");
-		}
+	     this.setLosType(IN_SIGHT);
+	}
 
 
 	@Override
@@ -86,12 +87,12 @@ public class BurningHands extends SpellOnTile implements AoE {
 
 	@Override
 	public int getRequiredLine() {
-		return Action.LOS;
+		return Action.IN_SIGHT;
 	}
 
 
 	@Override
 	public float getWidth(Info arg0) {
-		return 0;
+		return 180;
 	}
 }

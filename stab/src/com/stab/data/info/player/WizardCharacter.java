@@ -27,7 +27,7 @@ public static final String ID="WIZARD_INFO";
 		setText("Wizard1");
 		
 		this.setMaxEp(10);
-		this.setMaxHp(6);
+		this.setMaxHp(600);
 		this.healFully();
 		this.fillEnergy();
 		
