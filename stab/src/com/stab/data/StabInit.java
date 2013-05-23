@@ -22,7 +22,7 @@ import com.stab.data.actions.player.abilities.SmiteEvil;
 import com.stab.data.actions.player.spells.cleric.level0.Bleed;
 import com.stab.data.actions.player.spells.cleric.level0.Guidance;
 import com.stab.data.actions.player.spells.cleric.level0.Resistance;
-import com.stab.data.actions.player.spells.cleric.level0.unfinished.Stabilize;
+import com.stab.data.actions.player.spells.cleric.level0.Stabilize;
 import com.stab.data.actions.player.spells.cleric.level1.Bane;
 import com.stab.data.actions.player.spells.cleric.level1.Bless;
 import com.stab.data.actions.player.spells.cleric.level1.Command;
@@ -42,6 +42,7 @@ import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.actions.player.spells.wizard.level0.Resistance_Wizard;
 import com.stab.data.actions.player.spells.wizard.level0.TouchFatigue;
 import com.stab.data.actions.player.spells.wizard.level0.unfinished.DancingLights;
+import com.stab.data.actions.player.spells.wizard.level1.BurningHands;
 import com.stab.data.actions.player.spells.wizard.level1.CharmPerson;
 import com.stab.data.actions.player.spells.wizard.level1.ChillTouch;
 import com.stab.data.actions.player.spells.wizard.level1.EnlargePerson;
@@ -400,6 +401,7 @@ public class StabInit {
 		getActionLibrary().register(new ExpeditiousRetreat());
 		getActionLibrary().register(new Identify());
 		getActionLibrary().register(new Jump());
+		getActionLibrary().register(new BurningHands());
 	
 		getActionLibrary().register(new Guidance());
 		getActionLibrary().register(new Resistance());

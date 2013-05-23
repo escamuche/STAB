@@ -1,4 +1,4 @@
-package com.stab.data.actions.player.spells.cleric.level0.unfinished;
+package com.stab.data.actions.player.spells.cleric.level0;
 
 import java.awt.Point;
 
@@ -34,5 +34,6 @@ public class Stabilize extends SpellOnTarget{
      setResource("actions/ability_druid_naturalperfection");
      setName("Stabilize");
      this.setEffectType(HEAL);
+     this.setDescription("Upon casting this spell, you target a living creature that has –1 or fewer hit points. That creature is automatically stabilized and does not lose any further hit points. If the creature later takes damage, it continues dying normally.");
 	}
 }

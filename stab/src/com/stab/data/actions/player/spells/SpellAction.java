@@ -260,6 +260,8 @@ Spell spell;
 	
 	@Override
 		public int getCost() {
+			if(spell.getLevel()==0)
+				return 0;
 			return (spell.getLevel()*5)+5;
 		}
 }
