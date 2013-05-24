@@ -8,6 +8,7 @@ public abstract class Weapon extends Item implements Affects<WeaponAttack>{
 
 	protected String animationIcon;
 	protected String animationType;
+	protected String missAnimationType=null;
 
 	@Override
 	public boolean canAffect(Applicable a) {
@@ -18,7 +19,9 @@ public abstract class Weapon extends Item implements Affects<WeaponAttack>{
 
 	@Override
 	public void affect(WeaponAttack app) {
-		
+		app.setAnimationIcon(animationIcon);
+		app.setAnimationType(animationType);
+		app.setMissAnimationType(missAnimationType);
 	}
 
 	public void attackDone(WeaponAttack attack){
@@ -39,6 +42,13 @@ public abstract class Weapon extends Item implements Affects<WeaponAttack>{
 
 	public String getAnimationType() {
 		return animationType;
+	}
+	
+	public void setMissAnimationType(String missAnimationType) {
+		this.missAnimationType = missAnimationType;
+	}
+	public String getMissAnimationType() {
+		return missAnimationType;
 	}
 	
 }

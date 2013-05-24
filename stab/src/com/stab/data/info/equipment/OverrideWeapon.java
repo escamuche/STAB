@@ -12,11 +12,15 @@ public class OverrideWeapon extends Weapon implements TurnBased {
 	Weapon old;
 	int charges=1;
 	boolean timed=false;
+	boolean onlySpendOnHit=false;
 	
 	public OverrideWeapon() {
 	
 	}
 
+	public void setOnlySpendOnHit(boolean onlySpendOnHit) {
+		this.onlySpendOnHit = onlySpendOnHit;
+	}
 	
 	public void setOld(Weapon old) {
 		this.old = old;
@@ -56,6 +60,13 @@ public class OverrideWeapon extends Weapon implements TurnBased {
 	public void attackDone(WeaponAttack attack) {
 		super.attackDone(attack);
 		
+		if (!onlySpendOnHit || (attack.hits()))	
+			spend();
+	}
+	
+	
+	
+	public void spend(){
 		if (charges>0){
 			charges=charges-1;
 			if (charges==0){
@@ -63,9 +74,7 @@ public class OverrideWeapon extends Weapon implements TurnBased {
 				return;
 			}
 		}
-			
 	}
-	
 	
 	
 	@Override

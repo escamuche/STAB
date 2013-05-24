@@ -17,7 +17,8 @@ public class PathfinderResource extends RenewableResource {
 	public int getMax() {
 		int m=super.getMax();
 		int bonus=0;
-		bonus= PathfinderUtils.getBonus(this.getTarget().getAttributeValue(attr));
+		if (getTarget()!=null)
+			bonus= PathfinderUtils.getBonus(this.getTarget().getAttributeValue(attr));
 		if (bonus<0)
 			bonus=0;
 		m=m+bonus;

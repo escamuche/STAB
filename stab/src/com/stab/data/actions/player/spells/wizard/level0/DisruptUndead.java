@@ -23,7 +23,7 @@ public class DisruptUndead extends SpellOnTarget {
      setName("DisruptUndead");
      this.setEffectType(DAMAGE);
  	 setRange(CLOSE);
- 	 setMedium(RAY);
+ 	 setMedium(MISSILE);
  	 this.setDescription("You direct a ray of positive energy. You must make a ranged touch attack to hit, and if the ray hits an undead creature, it deals 1d6 points of damage to it.");
 	}
 
@@ -44,4 +44,5 @@ public class DisruptUndead extends SpellOnTarget {
 	public int getEffectValue(BaseInfo i) {
 		return 3;
 	}
+	
 }

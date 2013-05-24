@@ -102,9 +102,7 @@ public class BasicWeapon extends Weapon {
 		app.setCritRange(critRange);
 		app.setBaseDamage(calcDamage(app));
 		
-		app.setAnimationIcon(animationIcon);
-		app.setAnimationType(animationType);
-		
+	
 		//los traits anidados ya se comprueban automaticamente.
 		
 	}

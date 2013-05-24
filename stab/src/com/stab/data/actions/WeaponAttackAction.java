@@ -136,7 +136,7 @@ public class WeaponAttackAction extends Action implements TargetAction{
 			sleep(500);
 			return;
 		}
-		sleep(origin.playAnimationOn(ad.getAnimationType(),target,ad.getAnimationIcon()));
+		sleep(origin.playAnimationOn(ad.getMissAnimationType(),target,ad.getAnimationIcon()));
 	}
 
 	private void playBlockAnimation(WeaponAttack ad,BaseInfo origin, Token target) {

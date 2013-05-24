@@ -28,9 +28,17 @@ public class ActionEffect extends Applicable{
 		return ServiceManager.getService(ActionLibrary.class);
 	}
 	
+	public Action getAction() {
+		return action;
+	}
+	
+	public Point getPoint() {
+		return point;
+	}
+	
 	@Override
 	public void applyEffects() {
-		action.affect((BaseInfo)getInstigator(), this.getTarget(),point);
+		getAction().affect((BaseInfo)getInstigator(), this.getTarget(),getPoint());
 	}
 
 	@Override

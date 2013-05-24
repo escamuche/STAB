@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.stab.data.animation.SwingAnimation;
+import com.stab.data.info.equipment.SpellActionEffect;
 import com.stab.data.info.equipment.Weapon;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
@@ -17,6 +18,7 @@ public class WeaponAttack extends Attack {
 	BaseInfo target;
 	
 	String animationType;
+	String missAnimationType;
 	String animationIcon;
 	
 	ArrayList<Applicable> onDamage;
@@ -32,6 +34,7 @@ public class WeaponAttack extends Attack {
 		super(instigator,target);
 		//Valores por defecto de ejemplo
 		animationType=SwingAnimation.ID;
+		missAnimationType=null;
 		onDamage= new ArrayList<Applicable>();
 		onCrit= new ArrayList<Applicable>();
 		baseDamage=0;
@@ -67,7 +70,15 @@ public class WeaponAttack extends Attack {
 	public void setAnimationType(String animationType) {
 		this.animationType = animationType;
 	}
+	public void setMissAnimationType(String animationType) {
+		this.missAnimationType = animationType;
+	}
 	
+	public String getMissAnimationType() {
+		if (missAnimationType!=null)
+			return missAnimationType;
+		return animationType;
+	}
 	public String getAnimationIcon() {
 		return animationIcon;
 	}
@@ -138,7 +149,7 @@ public class WeaponAttack extends Attack {
 	public List<Applicable> getOnDamage() {
 		return collapse(onDamage);
 	}
-	public void addOnCrit(Damage d){  //Para añadir daño extra en critico (ej: flaming burst)
+	public void addOnCrit(Applicable d){  //Para añadir daño extra en critico (ej: flaming burst)
 		onCrit.add(d);
 		d.setInstigator(this.getInstigator());
 	}
@@ -149,6 +160,8 @@ public class WeaponAttack extends Attack {
 	
 	public void applyEffects() {
 		for (Applicable d:getEffects(isCritical())){
+			if (d instanceof SpellActionEffect)
+				((SpellActionEffect)d).setCritical(isCritical());
 			getTarget().apply(d);
 			if (d instanceof Damage)
 				 System.out.println("Aplicando daño: "+((Damage)d).getFinalAmount()+" de daño (tipo "+((Damage)d).getType()+")");

@@ -174,7 +174,8 @@ public class Spell implements SpellProperties {
 	public SpellWeapon getWeapon() {
 		if (weapon==null)
 			return null;
-		return (SpellWeapon)StabInit.getWeaponFactory().getWeapon(weapon);
+		SpellWeapon w= new SpellWeapon(StabInit.getWeaponFactory().getWeapon(weapon));
+		return w;
 	}
 	
 	@Override

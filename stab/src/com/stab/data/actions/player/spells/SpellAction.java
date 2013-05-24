@@ -4,13 +4,12 @@ import java.awt.Point;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.WeaponAttackAction;
-import com.stab.data.info.applicable.ActionEffect;
 import com.stab.data.info.applicable.BreakSpellResistance;
 import com.stab.data.info.applicable.SavingThrowEffect;
+import com.stab.data.info.equipment.SpellActionEffect;
 import com.stab.data.info.equipment.SpellWeapon;
 import com.stab.data.info.equipment.Weapon;
 import com.stab.model.action.Action;
-import com.stab.model.action.AoE;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.base.Creature;
@@ -166,7 +165,7 @@ Spell spell;
 			
 			SpellWeapon w=getWeapon(caster,target,point);
 			if (w!=null){
-				//TODO:equipar spellweapon
+				
 				((Creature)caster).equip(w);
 				WeaponAttackAction a=(WeaponAttackAction)getActionLibrary().getAction(WeaponAttackAction.ID);
 				boolean b=a.affect(caster, target, point);
@@ -247,15 +246,14 @@ Spell spell;
 	protected void playFullEffectAnimation(BaseInfo caster, BaseInfo target,Point point){};
 	protected void playPartialEffectAnimation(BaseInfo caster, BaseInfo target,Point point){};
 	protected void playEvadedAnimation(BaseInfo caster, BaseInfo target,Point point){};
-	
+	 
 	
 	//Corresponde a las subclases determinar las cargas!
-	protected SpellWeapon getWeapon(BaseInfo caster,BaseInfo target,Point point){
+	public SpellWeapon getWeapon(BaseInfo caster,BaseInfo target,Point point){
 		SpellWeapon w= spell.getWeapon();
 		if (w==null)
 			return null;
-		ActionEffect ae= new ActionEffect(caster,target,point,this.getId());
-		w.addEffect(ae);
+		w.addEffect(caster,target,point,this.getId());
 		Weapon old=(Weapon)((Creature)caster).getEquipment(w.getSlot());
 		w.setOld(old);
 		return w;
