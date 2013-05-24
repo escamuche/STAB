@@ -59,7 +59,6 @@ public static final String ID="BARD_INFO";
 		this.equip(StabInit.getArmorFactory().getArmor("STUDDEDLEATHER"), HumanoidGear.ARMOR);
 		
 		/* habilidades especiales
-		 * Bardic Knowledge				por ahora nada claro
 		 * Bardic Performance			esto.... po que?
 		 * Countersong					probablemente genere un aura que de un buff que attends MAgicEffect o algo asi
 		 * Distraction					esto..... po cualo?

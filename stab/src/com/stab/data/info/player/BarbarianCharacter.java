@@ -6,6 +6,7 @@ import com.stab.data.actions.feats.PowerAttack;
 import com.stab.data.actions.player.BarbarianActionSet;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.abilities.Rage;
+import com.stab.data.info.PathfinderResource;
 import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
@@ -13,7 +14,7 @@ import com.stab.data.info.feat.combat.Cleave_Feat;
 import com.stab.data.info.feat.combat.PowerAttack_Feat;
 import com.stab.data.info.player.abilities.FastMovementBarbarian;
 import com.stab.data.info.player.abilities.Rage_Ability;
-import com.stab.model.info.trait.base.RenewableResource;
+import com.stab.model.info.trait.base.Resource;
 
 
 public class BarbarianCharacter extends PathfinderCharacter{
@@ -40,7 +41,6 @@ public static final String ID="BARBARIAN_INFO";
 		this.setAttribute(StabConstants.WISDOM, 12);
 		this.setAttribute(StabConstants.CHARISMA, 8);
 		this.setAttribute(StabConstants.FORTITUDESAVE, 2);
-		//this.setAttribute(StabConstants.RAGEROUNDS, 4);
 		
 		this.addTrait(new PowerAttack_Feat());
 		this.getActionSet().setAction(PowerAttack.ID, 5);
@@ -62,7 +62,7 @@ public static final String ID="BARBARIAN_INFO";
 		this.setAttribute(StabConstants.SURVIVAL, 5);
 		this.setAttribute(StabConstants.SWIMSKILL, 5);
 		
-		this.addTrait(new RenewableResource(Rage.RESOURCE_ID, 4)); //habria que sumarle el bono de constitucion mas adelante
+		this.addTrait(new PathfinderResource(Rage.RESOURCE_ID, 4,StabConstants.CONSTITUTION));
 		
 	}
 	

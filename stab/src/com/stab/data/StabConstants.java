@@ -181,10 +181,7 @@ public class StabConstants {
 	public static final String HITDICETYPE="HITDICETYPE";
 	public static final String HITDICENUMBER="HITDICENUMBER";
 	
-	//public static final String RAGEROUNDS="RAGEROUNDS";
 	public static final String RAGEROUNDSSPENT="RAGEROUNDSSPENT";	
-	
-	
 	
 	public static final String PERCEPTION_DC="PERCEPTION_DC"; //La dificultad para detectarlo con search (trampas, oculto, etc)
 	

@@ -6,8 +6,8 @@ import com.stab.data.actions.ChannelPossitiveEnergyAction;
 import com.stab.data.actions.player.ClericActionSet;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.abilities.NobilityDomain;
-import com.stab.data.actions.player.abilities.SmiteEvil;
 import com.stab.data.info.BonusAttributeMP;
+import com.stab.data.info.PathfinderResource;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.combat.WeaponFocus_Feat;
@@ -59,12 +59,10 @@ public static final String ID="CLERIC_INFO";
 		this.addTrait(new NobilityDomain_Ability());
 		this.getActionSet().setAction(NobilityDomain.ID, 6);
 		
-		this.addTrait(new RenewableResource(NobilityDomain.RESOURCE_ID, 5));
+		this.addTrait(new PathfinderResource(NobilityDomain.RESOURCE_ID, 5,StabConstants.WISDOM));
 		
 		/* Faltan habilidades especiales:
 		 * Aura								ya veremos como
-		 * Channel energy 1d6				sera una self action que afecta de area. solo falta la parte de calcular los targets para poder hacerla
-		 * Domains							seran traits, probablemente con algun grantAction
 		 */
 		
 		this.addTrait(new ChannelPositiveEnergy()); 

@@ -59,7 +59,6 @@ public static final String ID="DRUID_INFO";
 		/* ya va, ya va
 		 * 
 		 * Nature Bond
-		 * Nature sense
 		 * Wild Empathy
 		 */
 		

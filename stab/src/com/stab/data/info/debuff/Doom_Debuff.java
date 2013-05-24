@@ -1,6 +1,7 @@
 package com.stab.data.info.debuff;
 
 import com.stab.data.StabConstants;
+import com.stab.data.info.AllSkillsModifier;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.Buff;
 
@@ -23,6 +24,7 @@ public class Doom_Debuff extends Buff {
 		Modifier savef=new Modifier(StabConstants.FORTITUDESAVE, -2);
 		Modifier saver=new Modifier(StabConstants.REFLEXSAVE, -2);
 		Modifier savew=new Modifier(StabConstants.WILLSAVE, -2);
+		AllSkillsModifier s = new AllSkillsModifier(null, -2);
 		
 		addTrait(tohit);
 		addTrait(tohitranged);
@@ -31,5 +33,6 @@ public class Doom_Debuff extends Buff {
 		addTrait(savef);
 		addTrait(saver);
 		addTrait(savew);
+		addTrait(s);
 	}
 }
