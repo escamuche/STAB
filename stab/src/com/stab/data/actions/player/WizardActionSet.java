@@ -38,6 +38,7 @@ public class WizardActionSet extends PathfinderActionSet {
 		this.addAction(Shield.ID);
 		this.addAction(ShockingGrasp.ID);
 		this.addAction(BurningHands.ID);
+		this.addAction(DisruptUndead.ID);
 	//	this.setAction(TrueStrike.ID, 34);
 		
 		this.addAction(DancingLights.ID);

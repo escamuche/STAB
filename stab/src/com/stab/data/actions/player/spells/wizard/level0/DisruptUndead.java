@@ -5,43 +5,14 @@ import java.awt.Point;
 import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
-import com.stab.data.animation.ShootProyectileAnimation;
-import com.stab.data.info.applicable.magic.MagicAttack;
 import com.stab.data.info.monster.monstertraits.UndeadTraits;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 
-public class DisruptUndead extends SpellOnTarget{
+public class DisruptUndead extends SpellOnTarget {
 	
 	public static final String ID="DISRUPTUNDEAD";
-	
-	
-	
-
-	@Override
-	public boolean affect(Info instigator, Info receptor, Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target = (BaseInfo)receptor;
-		int cl = getCasterLevel(caster);
-		int dañobase=Roll.d6();
-		
-		
-		MagicAttack ataque = new MagicAttack(caster);
-		target.apply(ataque);
-	
-		caster.playAnimationOn(ShootProyectileAnimation.ID, target.getToken(), "PARTICLE#magicmissile");
-		
-		if(target.getTrait(UndeadTraits.ID) != null){
-			
-			if(ataque.hits()) {
-					Damage d= new Damage(dañobase, Damage.HOLY_DAMAGE,caster);
-					target.apply(d);
-					return true;
-					}
-				}
-		return false;
-	}
+	int dañobase=Roll.d6();
 	
 	public DisruptUndead() {
      
@@ -52,10 +23,23 @@ public class DisruptUndead extends SpellOnTarget{
      setName("DisruptUndead");
      this.setEffectType(DAMAGE);
  	 setRange(CLOSE);
+ 	 setMedium(RAY);
  	 this.setDescription("You direct a ray of positive energy. You must make a ranged touch attack to hit, and if the ray hits an undead creature, it deals 1d6 points of damage to it.");
 	}
 
-	
+	@Override
+	protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
+		
+		if(target.hasTrait(UndeadTraits.ID)) {	
+		
+					Damage d= new Damage(dañobase, Damage.HOLY_DAMAGE,caster);
+					target.apply(d);
+					return super.fullEffect(caster, target, point);
+					
+				}
+		return false;
+		
+	}
 	@Override
 	public int getEffectValue(BaseInfo i) {
 		return 3;

@@ -1310,7 +1310,7 @@ public class CryptEverflameAdventure extends Adventure{
 				
 				DefaultTileMapScene mc5=new DefaultTileMapScene();
 				mc5.createContents();
-				mc5.createMap(32,24);
+				mc5.createMap(30,24);
 				mc5.loadTiled("lower", 0, 0);
 				mc5.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
 				mc5.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
