@@ -482,7 +482,6 @@ public class StabInit {
 		getActionLibrary().register(new ShieldFaith());
 		
 			//wizard0
-	
 		getActionLibrary().register(new AcidSplash());
 		getActionLibrary().register(new Bleed_Wizard());
 		getActionLibrary().register(new Daze());
