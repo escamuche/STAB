@@ -7,7 +7,7 @@ public class Flare_Bard extends Flare{
 
 	public static final String ID="FLARE_BARD";
 	
-	Flare_Bard() {
+	public Flare_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

@@ -7,7 +7,7 @@ public class CureLight_Bard extends CureLight{
 
 	public static final String ID="CURELIGHT_BARD";
 	
-	CureLight_Bard() {
+	public CureLight_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

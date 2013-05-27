@@ -7,7 +7,7 @@ public class RemoveFear_Bard extends RemoveFear{
 
 	public static final String ID="REMOVEFEAR_BARD";
 	
-	RemoveFear_Bard() {
+	public RemoveFear_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

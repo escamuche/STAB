@@ -7,7 +7,7 @@ public class OpenClose_Bard extends OpenClose{
 
 	public static final String ID="OPENCLOSE_BARD";
 	
-	OpenClose_Bard() {
+	public OpenClose_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

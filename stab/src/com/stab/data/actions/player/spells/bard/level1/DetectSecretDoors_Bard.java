@@ -7,7 +7,7 @@ public class DetectSecretDoors_Bard extends DetectSecretDoors{
 
 	public static final String ID="DETECTSECRETDOORS_BARD";
 	
-	DetectSecretDoors_Bard() {
+	public DetectSecretDoors_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

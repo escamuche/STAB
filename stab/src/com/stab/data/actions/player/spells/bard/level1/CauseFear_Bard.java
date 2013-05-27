@@ -7,7 +7,7 @@ public class CauseFear_Bard extends CauseFear{
 
 	public static final String ID="CAUSEFEAR_BARD";
 	
-	CauseFear_Bard() {
+	public CauseFear_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

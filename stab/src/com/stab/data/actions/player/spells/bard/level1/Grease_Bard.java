@@ -7,7 +7,7 @@ public class Grease_Bard extends Grease{
 
 	public static final String ID="GREASE_BARD";
 	
-	Grease_Bard() {
+	public Grease_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

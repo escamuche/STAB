@@ -7,7 +7,7 @@ public class Mending_Bard extends Mending{
 
 	public static final String ID="MENDING_BARD";
 	
-	Mending_Bard() {
+	public Mending_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

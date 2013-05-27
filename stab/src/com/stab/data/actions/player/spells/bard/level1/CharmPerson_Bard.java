@@ -7,7 +7,7 @@ public class CharmPerson_Bard extends CharmPerson{
 
 	public static final String ID="CHARMPERSON_BARD";
 	
-	CharmPerson_Bard() {
+	public CharmPerson_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

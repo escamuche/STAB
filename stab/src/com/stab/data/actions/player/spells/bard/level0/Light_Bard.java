@@ -7,7 +7,7 @@ public class Light_Bard extends Light{
 
 	public static final String ID="LIGHT_BARD";
 	
-	Light_Bard() {
+	public Light_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

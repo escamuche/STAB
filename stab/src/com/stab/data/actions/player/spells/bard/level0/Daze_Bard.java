@@ -7,7 +7,7 @@ public class Daze_Bard extends Daze{
 
 	public static final String ID="DAZE_BARD";
 	
-	Daze_Bard() {
+	public Daze_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

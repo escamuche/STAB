@@ -7,7 +7,7 @@ public class UnseenServant_Bard extends UnseenServant{
 
 	public static final String ID="UNSEENSERVANT_BARD";
 	
-	UnseenServant_Bard() {
+	public UnseenServant_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

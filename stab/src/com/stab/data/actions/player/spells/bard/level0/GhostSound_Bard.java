@@ -7,7 +7,7 @@ public class GhostSound_Bard extends GhostSound{
 
 	public static final String ID="GHOSTSOUND_BARD";
 	
-	GhostSound_Bard() {
+	public GhostSound_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

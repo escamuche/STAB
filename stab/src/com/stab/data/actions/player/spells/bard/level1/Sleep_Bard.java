@@ -7,7 +7,7 @@ public class Sleep_Bard extends Sleep{
 
 	public static final String ID="SLEEP_BARD";
 	
-	Sleep_Bard() {
+	public Sleep_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

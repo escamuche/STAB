@@ -7,7 +7,7 @@ public class Alarm_Bard extends Alarm{
 
 	public static final String ID="ALARM_BARD";
 	
-	Alarm_Bard() {
+	public Alarm_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

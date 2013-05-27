@@ -7,7 +7,7 @@ public class AnimateRope_Bard extends AnimateRope{
 
 	public static final String ID="LIGHT_BARD";
 	
-	AnimateRope_Bard() {
+	public AnimateRope_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

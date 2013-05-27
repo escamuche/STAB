@@ -7,7 +7,7 @@ public class Erase_Bard extends Erase{
 
 	public static final String ID="ERASE_BARD";
 	
-	Erase_Bard() {
+	public Erase_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

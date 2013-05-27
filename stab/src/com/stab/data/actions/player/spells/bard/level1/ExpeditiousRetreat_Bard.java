@@ -7,7 +7,7 @@ public class ExpeditiousRetreat_Bard extends ExpeditiousRetreat{
 
 	public static final String ID="EXPEDITIOUSRETREAT_BARD";
 	
-	ExpeditiousRetreat_Bard() {
+	public ExpeditiousRetreat_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

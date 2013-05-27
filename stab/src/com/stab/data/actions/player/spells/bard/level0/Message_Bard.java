@@ -7,7 +7,7 @@ public class Message_Bard extends Message{
 
 	public static final String ID="MESSAGE_BARD";
 	
-	Message_Bard() {
+	public Message_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

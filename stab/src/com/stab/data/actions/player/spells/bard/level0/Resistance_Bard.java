@@ -7,7 +7,7 @@ public class Resistance_Bard extends Resistance{
 
 	public static final String ID="RESISTANCE_BARD";
 	
-	Resistance_Bard() {
+	public Resistance_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

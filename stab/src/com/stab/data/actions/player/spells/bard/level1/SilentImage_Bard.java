@@ -7,7 +7,7 @@ public class SilentImage_Bard extends SilentImage{
 
 	public static final String ID="SILENTIMAGE_BARD";
 	
-	SilentImage_Bard() {
+	public SilentImage_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

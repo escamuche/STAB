@@ -7,7 +7,7 @@ public class FeatherFall_Bard extends FeatherFall{
 
 	public static final String ID="FEATHERFALL_BARD";
 	
-	FeatherFall_Bard() {
+	public FeatherFall_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

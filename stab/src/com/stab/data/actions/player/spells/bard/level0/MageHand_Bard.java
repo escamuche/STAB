@@ -7,7 +7,7 @@ public class MageHand_Bard extends MageHand{
 
 	public static final String ID="MAGEHAND_BARD";
 	
-	MageHand_Bard() {
+	public MageHand_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

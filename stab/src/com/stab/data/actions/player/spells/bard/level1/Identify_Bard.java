@@ -7,7 +7,7 @@ public class Identify_Bard extends Identify{
 
 	public static final String ID="IDENTIFY_BARD";
 	
-	Identify_Bard() {
+	public Identify_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

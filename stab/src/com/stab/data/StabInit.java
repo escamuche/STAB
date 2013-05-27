@@ -20,10 +20,50 @@ import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.abilities.NobilityDomain;
 import com.stab.data.actions.player.abilities.Rage;
 import com.stab.data.actions.player.abilities.SmiteEvil;
+import com.stab.data.actions.player.spells.bard.level0.DancingLights_Bard;
+import com.stab.data.actions.player.spells.bard.level0.Daze_Bard;
+import com.stab.data.actions.player.spells.bard.level0.DetectMagic_Bard;
+import com.stab.data.actions.player.spells.bard.level0.Flare_Bard;
+import com.stab.data.actions.player.spells.bard.level0.GhostSound_Bard;
+import com.stab.data.actions.player.spells.bard.level0.KnowDirection;
+import com.stab.data.actions.player.spells.bard.level0.Light_Bard;
+import com.stab.data.actions.player.spells.bard.level0.Lullaby;
+import com.stab.data.actions.player.spells.bard.level0.MageHand_Bard;
+import com.stab.data.actions.player.spells.bard.level0.Mending_Bard;
+import com.stab.data.actions.player.spells.bard.level0.Message_Bard;
+import com.stab.data.actions.player.spells.bard.level0.OpenClose_Bard;
+import com.stab.data.actions.player.spells.bard.level0.Resistance_Bard;
+import com.stab.data.actions.player.spells.bard.level1.Alarm_Bard;
+import com.stab.data.actions.player.spells.bard.level1.AnimateRope_Bard;
+import com.stab.data.actions.player.spells.bard.level1.CauseFear_Bard;
+import com.stab.data.actions.player.spells.bard.level1.CharmPerson_Bard;
+import com.stab.data.actions.player.spells.bard.level1.ComprehendLanguages_Bard;
+import com.stab.data.actions.player.spells.bard.level1.CureLight_Bard;
+import com.stab.data.actions.player.spells.bard.level1.DetectSecretDoors_Bard;
+import com.stab.data.actions.player.spells.bard.level1.DisguiseSelf_Bard;
+import com.stab.data.actions.player.spells.bard.level1.Erase_Bard;
+import com.stab.data.actions.player.spells.bard.level1.ExpeditiousRetreat_Bard;
+import com.stab.data.actions.player.spells.bard.level1.FeatherFall_Bard;
+import com.stab.data.actions.player.spells.bard.level1.Grease_Bard;
+import com.stab.data.actions.player.spells.bard.level1.HideousLaughter;
+import com.stab.data.actions.player.spells.bard.level1.Hypnotism_Bard;
+import com.stab.data.actions.player.spells.bard.level1.Identify_Bard;
+import com.stab.data.actions.player.spells.bard.level1.LesserConfusion;
+import com.stab.data.actions.player.spells.bard.level1.MagicAura_Bard;
+import com.stab.data.actions.player.spells.bard.level1.MagicMouth;
+import com.stab.data.actions.player.spells.bard.level1.ObscureObject;
+import com.stab.data.actions.player.spells.bard.level1.RemoveFear_Bard;
+import com.stab.data.actions.player.spells.bard.level1.SilentImage_Bard;
+import com.stab.data.actions.player.spells.bard.level1.Sleep_Bard;
+import com.stab.data.actions.player.spells.bard.level1.SummonMonster1_Bard;
+import com.stab.data.actions.player.spells.bard.level1.UndetectableAlignment;
+import com.stab.data.actions.player.spells.bard.level1.UnseenServant_Bard;
+import com.stab.data.actions.player.spells.bard.level1.Ventriloquism_Bard;
 import com.stab.data.actions.player.spells.cleric.level0.Bleed;
 import com.stab.data.actions.player.spells.cleric.level0.Guidance;
 import com.stab.data.actions.player.spells.cleric.level0.Resistance;
 import com.stab.data.actions.player.spells.cleric.level0.Stabilize;
+import com.stab.data.actions.player.spells.cleric.level0.Virtue;
 import com.stab.data.actions.player.spells.cleric.level1.Bane;
 import com.stab.data.actions.player.spells.cleric.level1.Bless;
 import com.stab.data.actions.player.spells.cleric.level1.Command;
@@ -35,9 +75,11 @@ import com.stab.data.actions.player.spells.cleric.level1.InflictLight;
 import com.stab.data.actions.player.spells.cleric.level1.MagicStone;
 import com.stab.data.actions.player.spells.cleric.level1.ShieldFaith;
 import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
+import com.stab.data.actions.player.spells.wizard.level0.Bleed_Wizard;
 import com.stab.data.actions.player.spells.wizard.level0.Daze;
 import com.stab.data.actions.player.spells.wizard.level0.DisruptUndead;
 import com.stab.data.actions.player.spells.wizard.level0.Flare;
+import com.stab.data.actions.player.spells.wizard.level0.MageHand;
 import com.stab.data.actions.player.spells.wizard.level0.OpenClose;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.actions.player.spells.wizard.level0.Resistance_Wizard;
@@ -48,6 +90,7 @@ import com.stab.data.actions.player.spells.wizard.level1.CharmPerson;
 import com.stab.data.actions.player.spells.wizard.level1.ChillTouch;
 import com.stab.data.actions.player.spells.wizard.level1.EnlargePerson;
 import com.stab.data.actions.player.spells.wizard.level1.ExpeditiousRetreat;
+import com.stab.data.actions.player.spells.wizard.level1.HoldPortal;
 import com.stab.data.actions.player.spells.wizard.level1.Identify;
 import com.stab.data.actions.player.spells.wizard.level1.Jump;
 import com.stab.data.actions.player.spells.wizard.level1.MageArmor;
@@ -56,7 +99,6 @@ import com.stab.data.actions.player.spells.wizard.level1.RayEnfeeblement;
 import com.stab.data.actions.player.spells.wizard.level1.Shield;
 import com.stab.data.actions.player.spells.wizard.level1.ShockingGrasp;
 import com.stab.data.actions.player.spells.wizard.level1.TrueStrike;
-import com.stab.data.actions.player.spells.wizard.level1.unfinished.ReducePerson;
 import com.stab.data.adventure.ColiseoAdventure;
 import com.stab.data.adventure.CryptEverflameAdventure;
 import com.stab.data.adventure.TestAdventure;
@@ -377,50 +419,98 @@ public class StabInit {
 		getActionLibrary().register(new Expertise());
 		
 		//conjuros
-		getActionLibrary().register(new DancingLights());
-		getActionLibrary().register(new AcidSplash());
-		getActionLibrary().register(new Flare());
-		getActionLibrary().register(new OpenClose());
-		getActionLibrary().register(new RayFrost());
-		getActionLibrary().register(new Resistance_Wizard());
-		getActionLibrary().register(new Daze());
-		getActionLibrary().register(new TouchFatigue());
-		getActionLibrary().register(new Stabilize());
-		getActionLibrary().register(new Bleed());
+			//bard0
+		getActionLibrary().register(new DancingLights_Bard());
+		getActionLibrary().register(new Daze_Bard());
+		getActionLibrary().register(new DetectMagic_Bard());
+		getActionLibrary().register(new Flare_Bard());
+		getActionLibrary().register(new GhostSound_Bard());
+		getActionLibrary().register(new KnowDirection());
+		getActionLibrary().register(new Light_Bard());
+		getActionLibrary().register(new Lullaby());
+		getActionLibrary().register(new MageHand_Bard());
+		getActionLibrary().register(new Mending_Bard());
+		getActionLibrary().register(new Message_Bard());
+		getActionLibrary().register(new OpenClose_Bard());
+		getActionLibrary().register(new Resistance_Bard());
+			
+			//bard1
+		getActionLibrary().register(new Alarm_Bard());
+		getActionLibrary().register(new AnimateRope_Bard());
+		getActionLibrary().register(new CauseFear_Bard());
+		getActionLibrary().register(new CharmPerson_Bard());
+		getActionLibrary().register(new ComprehendLanguages_Bard());
+		getActionLibrary().register(new CureLight_Bard());
+		getActionLibrary().register(new DetectSecretDoors_Bard());
+		getActionLibrary().register(new DisguiseSelf_Bard());
+		getActionLibrary().register(new Erase_Bard());
+		getActionLibrary().register(new ExpeditiousRetreat_Bard());
+		getActionLibrary().register(new FeatherFall_Bard());
+		getActionLibrary().register(new Grease_Bard());
+		getActionLibrary().register(new HideousLaughter());
+		getActionLibrary().register(new Hypnotism_Bard());
+		getActionLibrary().register(new Identify_Bard());
+		getActionLibrary().register(new LesserConfusion());
+		getActionLibrary().register(new MagicAura_Bard());
+		getActionLibrary().register(new MagicMouth());
+		getActionLibrary().register(new ObscureObject());
+		getActionLibrary().register(new RemoveFear_Bard());
+		getActionLibrary().register(new SilentImage_Bard());
+		getActionLibrary().register(new Sleep_Bard());
+		getActionLibrary().register(new SummonMonster1_Bard());
+		getActionLibrary().register(new UndetectableAlignment());
+		getActionLibrary().register(new UnseenServant_Bard());
+		getActionLibrary().register(new Ventriloquism_Bard());
 		
-		getActionLibrary().register(new MageArmor());
-		getActionLibrary().register(new Shield());
-		getActionLibrary().register(new ShockingGrasp());
-		getActionLibrary().register(new MagicMissile());
-		getActionLibrary().register(new ChillTouch());
-		getActionLibrary().register(new TrueStrike());
-		getActionLibrary().register(new EnlargePerson());
-		getActionLibrary().register(new ExpeditiousRetreat());
-		getActionLibrary().register(new RayEnfeeblement());
-		getActionLibrary().register(new ReducePerson());
-		getActionLibrary().register(new EntropicShield());
-		getActionLibrary().register(new CharmPerson());
-		getActionLibrary().register(new ExpeditiousRetreat());
-		getActionLibrary().register(new Identify());
-		getActionLibrary().register(new Jump());
-		getActionLibrary().register(new BurningHands());
-	
+			//cleric0
+		getActionLibrary().register(new Bleed());
 		getActionLibrary().register(new Guidance());
 		getActionLibrary().register(new Resistance());
+		getActionLibrary().register(new Stabilize());
+		getActionLibrary().register(new Virtue());
 		
-		getActionLibrary().register(new CureLight());
-		getActionLibrary().register(new Bless());
+			//cleric1
 		getActionLibrary().register(new Bane());
+		getActionLibrary().register(new Bless());
+		getActionLibrary().register(new Command());
+		getActionLibrary().register(new CureLight());
 		getActionLibrary().register(new DivineFavor());
 		getActionLibrary().register(new Doom());
+		getActionLibrary().register(new EntropicShield());
 		getActionLibrary().register(new InflictLight());
 		getActionLibrary().register(new MagicStone());
 		getActionLibrary().register(new ShieldFaith());
-		getActionLibrary().register(new EntropicShield());
-		getActionLibrary().register(new Command());
-		getActionLibrary().register(new DisruptUndead());
-	
 		
+			//wizard0
+	
+		getActionLibrary().register(new AcidSplash());
+		getActionLibrary().register(new Bleed_Wizard());
+		getActionLibrary().register(new Daze());
+		getActionLibrary().register(new DancingLights());
+		getActionLibrary().register(new DisruptUndead());
+		getActionLibrary().register(new Flare());
+		getActionLibrary().register(new MageHand());
+		getActionLibrary().register(new OpenClose());
+		getActionLibrary().register(new RayFrost());
+		getActionLibrary().register(new Resistance_Wizard());
+		getActionLibrary().register(new TouchFatigue());
+
+			//wizard1
+		getActionLibrary().register(new BurningHands());
+		getActionLibrary().register(new CharmPerson());
+		getActionLibrary().register(new ChillTouch());
+		getActionLibrary().register(new EnlargePerson());
+		getActionLibrary().register(new ExpeditiousRetreat());
+		getActionLibrary().register(new HoldPortal());
+		getActionLibrary().register(new Identify());
+		getActionLibrary().register(new Jump());
+		getActionLibrary().register(new MageArmor());
+		getActionLibrary().register(new MagicMissile());
+		getActionLibrary().register(new RayEnfeeblement());
+		getActionLibrary().register(new Shield());
+		getActionLibrary().register(new ShockingGrasp());
+		getActionLibrary().register(new TrueStrike());
+
 	}
 	
 	

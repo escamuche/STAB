@@ -7,7 +7,7 @@ public class MagicAura_Bard extends MagicAura{
 
 	public static final String ID="MAGICAURA_BARD";
 	
-	MagicAura_Bard() {
+	public MagicAura_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

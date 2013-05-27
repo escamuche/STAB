@@ -7,7 +7,7 @@ public class DisguiseSelf_Bard extends DisguiseSelf{
 
 	public static final String ID="DISGUISESELF_BARD";
 	
-	DisguiseSelf_Bard() {
+	public DisguiseSelf_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

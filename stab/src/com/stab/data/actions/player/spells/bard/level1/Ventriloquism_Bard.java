@@ -7,7 +7,7 @@ public class Ventriloquism_Bard extends Ventriloquism{
 
 	public static final String ID="VENTRILOQUISM_BARD";
 	
-	Ventriloquism_Bard() {
+	public Ventriloquism_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

@@ -7,7 +7,7 @@ public class ComprehendLanguages_Bard extends ComprehendLanguages{
 
 	public static final String ID="COMPREHENDLANGUAGES_BARD";
 	
-	ComprehendLanguages_Bard() {
+	public ComprehendLanguages_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

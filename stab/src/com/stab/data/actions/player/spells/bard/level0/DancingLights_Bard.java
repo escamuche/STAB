@@ -7,7 +7,7 @@ public class DancingLights_Bard extends DancingLights{
 
 	public static final String ID="DANCINGLIGHTS_BARD";
 	
-	DancingLights_Bard() {
+	public DancingLights_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }

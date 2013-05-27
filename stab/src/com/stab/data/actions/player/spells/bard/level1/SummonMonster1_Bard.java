@@ -7,7 +7,7 @@ public class SummonMonster1_Bard extends SummonMonster1{
 
 	public static final String ID="SUMMONMONSTER1_BARD";
 	
-	SummonMonster1_Bard() {
+	public SummonMonster1_Bard() {
 		 setCasterClass(StabConstants.BARDCASTER);
 	}
 }
