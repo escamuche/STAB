@@ -48,7 +48,7 @@ public class ExplodeState extends State {
 		
 		double angle=sprite.getA();
 		if(reverseAngle && sprite.getRef()!=null)
-			Math.atan2(-sprite.getRef().getCenter().getY()-sprite.getY(), sprite.getRef().getCenter().getX()-sprite.getX());
+			angle=Math.atan2(-sprite.getRef().getCenter().getY()-sprite.getY(), sprite.getRef().getCenter().getX()-sprite.getX());
 				
 		((ValuePainter)(s.getPainter())).setRotation((float)Math.toDegrees(angle));
 	

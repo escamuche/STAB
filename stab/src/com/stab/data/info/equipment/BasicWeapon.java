@@ -31,7 +31,7 @@ public class BasicWeapon extends Weapon {
 	int baseDamageType;
 	int critRange;
 	int critMultiplier;
-	
+	boolean touch;
 	int category;
 	
 	boolean twoHanded;
@@ -42,6 +42,7 @@ public class BasicWeapon extends Weapon {
 		this.setPriority(10);  //Prioridad base para las armas.  Los overrides usaran una posterior, y los encantamientos tambien
 		setTwoHanded(false);
 		category=SIMPLE;
+		touch=false;
 		
 	}
 	
@@ -101,13 +102,18 @@ public class BasicWeapon extends Weapon {
 		app.setCritMultiplier(critMultiplier);
 		app.setCritRange(critRange);
 		app.setBaseDamage(calcDamage(app));
-		
+		app.setTouch(isTouch());
 	
 		//los traits anidados ya se comprueban automaticamente.
 		
 	}
 
-	
+	public void setTouch(boolean touch) {
+		this.touch = touch;
+	}
+	public boolean isTouch() {
+		return touch;
+	}
 	
 
 	protected int calcDamage(WeaponAttack app){

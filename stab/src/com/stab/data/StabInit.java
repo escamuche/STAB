@@ -132,6 +132,7 @@ import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.ThrustAnimation;
 import com.stab.data.animation.VerticalScreenShakeAnimation;
 import com.stab.data.animation.WalkAnimation;
+import com.stab.data.animation.sprite.StabSpriteFactory;
 import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.EquipmentFactory;
 import com.stab.data.info.equipment.WeaponFactory;
@@ -202,6 +203,8 @@ import com.stab.model.action.ActionLibrary;
 import com.stab.model.action.base.InteractAction;
 import com.stab.model.basic.scenes.TokenBasedScene;
 import com.stab.model.info.trait.base.Equipment;
+import com.tien.princess.engine.sprite.AbstractSpriteFactory;
+import com.tien.princess.engine.sprite.SpriteFactory;
 
 public class StabInit {
 
@@ -210,6 +213,8 @@ public class StabInit {
 	static WeaponFactory wf;
 	static ArmorFactory af;
 	static EquipmentFactory ef;
+	
+	static AbstractSpriteFactory spritefactory;
 	
 	public static void clientInit(){
 		initializeData();
@@ -541,6 +546,16 @@ public class StabInit {
 			return e;
 		e=StabInit.getEquipmentFactory().getItem(s); 
 		return e;
+	}
+
+	public static SpriteFactory  getSpriteFactory() {
+		if (spritefactory==null)
+			spritefactory=createSpriteFactory();
+		return spritefactory;
+	}
+
+	private static AbstractSpriteFactory createSpriteFactory() {
+		return new StabSpriteFactory();
 	}
 	
 	

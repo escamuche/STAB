@@ -127,5 +127,9 @@ public class OverrideWeapon extends Weapon implements TurnBased {
 	public void rollInitiative() {
 		
 	}
+	@Override
+	public boolean isReady() {
+		return true;
+	}
 	
 }
