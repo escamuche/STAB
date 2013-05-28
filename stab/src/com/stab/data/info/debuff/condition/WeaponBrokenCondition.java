@@ -3,23 +3,16 @@ package com.stab.data.info.debuff.condition;
 import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.data.info.equipment.BasicWeapon;
 import com.stab.data.info.equipment.Weapon;
+import com.stab.data.info.equipment.WeaponTrait;
 import com.stab.model.info.applicable.Affects;
 import com.stab.model.info.applicable.Applicable;
-import com.stab.model.info.trait.base.Debuff;
 
-public class WeaponBrokenCondition extends Debuff implements Affects<WeaponAttack>{
+public class WeaponBrokenCondition extends WeaponTrait implements Affects<WeaponAttack>{
 	
-	public static final String ID="BROKENCONDITION_DEBUFF";
+	public static final String ID="WEAPONBROKENCONDITION";
 	Weapon weapon = null;
 	
-	WeaponBrokenCondition(Weapon i) {
-		
-		this.setAnimIcon("actions/brokencondition");				
-		this.setSound("HolyCast");
-		this.setResource("actions/brokencondition");                  
-		
-		this.setName("Broken");
-		this.setPermanent();
+	WeaponBrokenCondition(Weapon i) {          
 		weapon = i;
 	}
 
