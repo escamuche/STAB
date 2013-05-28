@@ -17,7 +17,7 @@ public class Lullaby extends SpellOnTile implements AoE{
 	     
 		 setLevel(0);
 		 setCasterClass(StabConstants.BARDCASTER);
-	     setResource("actions/ability_mage_arcanebarrage");
+	     setResource("actions/lullaby");
 	     setName("Lullaby");
 	     this.setEffectType(DEBUFF);
 	     this.setRange(MEDIUM);
