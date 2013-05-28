@@ -15,6 +15,7 @@ import com.stab.model.basic.scenes.event.rule.AllMonstersDeadRule;
 import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 import com.stab.model.basic.ui.Text;
+import com.stab.model.request.RealTimeQueue;
 
 
 public class Zombies extends Adventure{
@@ -99,6 +100,10 @@ public class Zombies extends Adventure{
 		ms.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
 		ms.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
 		ms.setTag("BATTLE");
+		
+		ms.setTurnQueue(new RealTimeQueue());
+		ms.setUnlocked(true);
+		
 		
 	//	DefaultRule r=new DefaultRule();
 	//	r.setEvent(InfoDestroyed.class);

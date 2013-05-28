@@ -120,12 +120,15 @@ public class WeaponFactory extends ItemFactory{
 		//Para hechizos
 		w=new BasicWeapon("Ray",0,1,Damage.GENERIC_DAMAGE,"PARTICLE#rayOfFrost",ShootBeamAnimation.ID);
 		w.setCategory(BasicWeapon.SPECIAL);
+		w.setTouch(true);
 		register(RAY,w);
 		w=new BasicWeapon("Missile",0,1,Damage.GENERIC_DAMAGE, "PARTICLE#magicmissile",ShootProyectileAnimation.ID);
 		w.setCategory(BasicWeapon.SPECIAL);
+		w.setTouch(true);
 		register(MISSILE,w);
 		w=new BasicWeapon("Touch",0,1,Damage.GENERIC_DAMAGE,"effects/touch",ThrustAnimation.ID);
 		w.setCategory(BasicWeapon.SPECIAL);
+		w.setTouch(true);
 		register(TOUCH,w);
 		
 		//Armas de criaturas
