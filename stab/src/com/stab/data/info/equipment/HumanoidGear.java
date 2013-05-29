@@ -31,19 +31,18 @@ public class HumanoidGear extends Gear {
 	public void equip(Equipment e, String slot) {
 		if (MAINHAND.equals(slot) || OFFHAND.equals(slot))
 			unequip(BOTHHANDS);
+		super.equip(e, slot);
 		if (BOTHHANDS.equals(slot)){
-			unequip(MAINHAND);
-			unequip(OFFHAND);
 			assign(MAINHAND,e);
 			assign(OFFHAND,e);
 		}
-		super.equip(e, slot);
 	}
 	
 	@Override
 	public void unequip(String slot) {
 		if (BOTHHANDS.equals(slot))
 		if (this.getEquipment(slot)!=null){
+		//	System.out.println(this.getTarget()+" Desequipando "+this.getEquipment(slot));
 			unequip(MAINHAND);
 			unequip(OFFHAND);
 		}/**/

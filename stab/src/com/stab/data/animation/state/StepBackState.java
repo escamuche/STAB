@@ -18,7 +18,7 @@ public class StepBackState extends ValueState {
 		setRadius(r);
 		setRotation((float)this.a);
 		addUpdater(new Orbit());
-		System.out.println("stepback: "+Math.toDegrees(a)+" > "+Math.toDegrees(this.a));
+	//	System.out.println("stepback: "+Math.toDegrees(a)+" > "+Math.toDegrees(this.a));
 	}
 	
 	@Override
