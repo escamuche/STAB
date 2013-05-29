@@ -42,10 +42,11 @@ public class HumanoidGear extends Gear {
 	
 	@Override
 	public void unequip(String slot) {
-		if (BOTHHANDS.equals(slot)){
+		if (BOTHHANDS.equals(slot))
+		if (this.getEquipment(slot)!=null){
 			unequip(MAINHAND);
 			unequip(OFFHAND);
-		}
+		}/**/
 		super.unequip(slot);
 	}
 
