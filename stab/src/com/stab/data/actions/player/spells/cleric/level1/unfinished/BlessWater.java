@@ -18,19 +18,11 @@ public class BlessWater extends SpellOnSelf{
      this.setEffectType(SPECIAL);
 	}
 
-
-	@Override
-	public boolean affect(Info instigator, Info receptor,Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target = (BaseInfo)receptor;
-		return false;
-	}
-
 	
-	/*@Override
+	@Override
 	public int getEffectValue(BaseInfo i) {
-		return dañobase;
-	}*/
+		return 3;
+	}
 	
 
 }
