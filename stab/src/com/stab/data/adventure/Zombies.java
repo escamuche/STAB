@@ -101,8 +101,8 @@ public class Zombies extends Adventure{
 		ms.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
 		ms.setTag("BATTLE");
 		
-		ms.setTurnQueue(new RealTimeQueue());
-		ms.setUnlocked(true);
+	//	ms.setTurnQueue(new RealTimeQueue());
+	//	ms.setUnlocked(true);
 		
 		
 	//	DefaultRule r=new DefaultRule();
