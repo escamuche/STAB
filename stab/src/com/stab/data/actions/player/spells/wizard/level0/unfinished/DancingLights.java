@@ -46,7 +46,7 @@ public class DancingLights extends SpellOnTile implements AoE {
 
 	@Override
 	public float getWidth(Info caster) {
-		return 190;
+		return 90;
 	}
 
 
