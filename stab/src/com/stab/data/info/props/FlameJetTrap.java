@@ -22,6 +22,7 @@ public class FlameJetTrap extends Switch implements RemoteActivated{
 	public void channelOn() {
 		super.channelOn();
 		
+		reveal();
 		setVisible(true);
 		
 		//Use action on corresponding tile

@@ -57,7 +57,7 @@ public class WeaponAttackAction extends Action implements TargetAction{
 		
 		arma=getWeapon(atacante);
 		if (arma==null){
-			System.out.println("No hay arma!");
+			System.out.println("No hay arma! "+atacante+" sobre "+atacado);
 			return false;
 		}
 		
@@ -202,7 +202,7 @@ public class WeaponAttackAction extends Action implements TargetAction{
 		Weapon arma=null;
 		arma=getWeapon(info);
 		if (arma==null){
-			System.out.println("No hay arma!");
+		//	System.out.println("No hay arma! resource para "+info);
 			return super.getResource(info);
 		}
 		return arma.getResource();
