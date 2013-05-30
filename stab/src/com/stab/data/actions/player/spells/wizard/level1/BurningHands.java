@@ -45,14 +45,11 @@ public class BurningHands extends SpellOnTile implements AoE {
 	@Override
 	protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 		int level = getCasterLevel(caster);
-		if(level<5){
-			RolledDamage g = new RolledDamage(level,4,Damage.FIRE_DAMAGE,caster);
-			target.apply(g);
-		}
-		else{
-			RolledDamage g = new RolledDamage(5,4,Damage.FIRE_DAMAGE,caster);
-			target.apply(g);
-		}
+		if(level>5)
+			level=5;
+
+		RolledDamage g = new RolledDamage(level,4,0,Damage.FIRE_DAMAGE,caster);
+		target.apply(g);
 		return super.fullEffect(caster, target, point);	
 	}
 	
@@ -61,14 +58,11 @@ public class BurningHands extends SpellOnTile implements AoE {
 			Point point) {
 		
 		int level = getCasterLevel(caster);
-		if(level<5){
-			RolledDamage g = new RolledDamage(level,2,Damage.FIRE_DAMAGE,caster);
-			target.apply(g);
-		}
-		else{
-			RolledDamage g = new RolledDamage(5,2,Damage.FIRE_DAMAGE,caster);
-			target.apply(g);
-		}
+		if(level>5)
+			level=5;
+		
+		RolledDamage g = new RolledDamage(level,2,0,Damage.FIRE_DAMAGE,caster);
+		target.apply(g);
 		return super.partialEffect(caster, target, point);
 	}
 

@@ -5,11 +5,9 @@ import com.stab.data.StabInit;
 import com.stab.data.actions.player.BardActionSet;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.info.BonusAttributeMP;
-import com.stab.data.info.PathfinderAttributeBonus;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.SkillFocusPerformWind_Feat;
 import com.stab.data.info.player.abilities.BardicKnowledge;
-import com.stab.model.info.trait.Modifier;
 
 
 public class BardCharacter extends PathfinderCharacter{

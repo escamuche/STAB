@@ -12,9 +12,9 @@ public class Guidance_Buff extends Buff {
 	public Guidance_Buff() {
 	
 		
-		this.setAnimIcon("actions/bless");				
+		this.setAnimIcon("actions/guidance");				
 		this.setSound("HolyCast");
-		this.setResource("actions/bless");                  
+		this.setResource("actions/guidance");                  
 		this.setName("Guidance");
 		
 		this.setCharges(1);
