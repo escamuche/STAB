@@ -2,6 +2,8 @@ package com.stab.data.actions.player.spells;
 
 import java.awt.Point;
 
+import org.newdawn.slick.Color;
+
 import com.stab.data.StabConstants;
 import com.stab.data.actions.WeaponAttackAction;
 import com.stab.data.info.applicable.BreakSpellResistance;
@@ -241,10 +243,16 @@ Spell spell;
 	
 	//No olvidarse de playExecuteActionAnimation!
 
-	protected void playSRFailAnimation(BaseInfo caster, BaseInfo target,Point point){};
+	protected void playSRFailAnimation(BaseInfo caster, BaseInfo target,Point point){ 
+		target.showFloatingText("RESIST", Color.pink);
+	};
 	protected void playFullEffectAnimation(BaseInfo caster, BaseInfo target,Point point){};
-	protected void playPartialEffectAnimation(BaseInfo caster, BaseInfo target,Point point){};
-	protected void playEvadedAnimation(BaseInfo caster, BaseInfo target,Point point){};
+	protected void playPartialEffectAnimation(BaseInfo caster, BaseInfo target,Point point){
+		target.showFloatingText("SAVE", Color.green);
+	};
+	protected void playEvadedAnimation(BaseInfo caster, BaseInfo target,Point point){
+		target.showFloatingText("EVADED", Color.pink);
+	};
 	 
 	
 	//Corresponde a las subclases determinar las cargas!

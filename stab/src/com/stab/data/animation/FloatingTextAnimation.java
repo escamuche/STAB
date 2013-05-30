@@ -29,7 +29,11 @@ public class FloatingTextAnimation extends Animation{
 		 FloatingText ft=new FloatingText(1000);
 		 ft.setText(getParam(0));
 		 
-		 ft.setTextColor(Resources.INSTANCE.getColor(getParam(1)));
+		 String[] vals= getParam(1).split(",");
+		 
+		// Color c= new Color(Integer.parseInt(vals[0]),Integer.parseInt(vals[1]),Integer.parseInt(vals[2]),Integer.parseInt(vals[3]));
+		 Color c= getT(1, Color.class);
+		 ft.setTextColor(c);
 		 
 		 ft.setFont(Resources.INSTANCE.getFont(Resources.BOLD_FONT));
 		 
