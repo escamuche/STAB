@@ -39,7 +39,8 @@ public class OverrideWeapon extends Weapon implements TurnBased {
 	@Override
 	public void removeFrom(BaseInfo baseInfo) {
 		super.removeFrom(baseInfo);
-		((Creature)baseInfo).equip(old);
+		if (old!=null)
+			((Creature)baseInfo).equip(old);
 	}
 	
 	
