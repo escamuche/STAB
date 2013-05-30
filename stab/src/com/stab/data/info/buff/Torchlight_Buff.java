@@ -14,7 +14,7 @@ public class Torchlight_Buff extends Buff {
 	@Override
 	protected DecorToken createEffectToken() {
 		LightDecorToken light= new LightDecorToken ();
-		light.setLightIntensity(6);
+		light.setLightIntensity(9);
 		//light.setResource("PARTICLE#brazier");
 		//light.setResource("Palanca_icono");
 		//light.setDepth(20);
