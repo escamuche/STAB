@@ -15,7 +15,7 @@ public class Brazier extends LightDecoration {
 		setResource("PARTICLE#brazier");
 		//setResource("effects/brazier");
 		setText("");
-		setLightIntensity(80);
+		setLightIntensity(8);
 		setLightColor(Color.orange);
 	}
 }

@@ -164,6 +164,7 @@ import com.stab.data.animation.DamageNumberAnimation;
 import com.stab.data.animation.EffectAddAnimation;
 import com.stab.data.animation.EffectRemoveAnimation;
 import com.stab.data.animation.ExtraInfoAnimation;
+import com.stab.data.animation.FloatingTextAnimation;
 import com.stab.data.animation.HealNumberAnimation;
 import com.stab.data.animation.HorizontalScreenShakeAnimation;
 import com.stab.data.animation.LungeAnimation;
@@ -434,6 +435,7 @@ public class StabInit {
 		of.setMapping(ExtraInfoAnimation.class);
 		of.setMapping(HorizontalScreenShakeAnimation.class);
 		of.setMapping(VerticalScreenShakeAnimation.class);
+		of.setMapping(FloatingTextAnimation.class);
 		
 		//Tokens
 		of.setMapping(IronBarsToken.class);

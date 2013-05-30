@@ -22,7 +22,7 @@ public class MagicMissileSprite extends LightSprite {
 	
 	public MagicMissileSprite(long t) {
 		setLightOn(true);
-		setLightIntensity(24);
+		setLightIntensity(3);
 		setLightColor(Color.blue);
 		setPainter(PaintUtils.getPainter("PARTICLE#magicmissile"));
 		
