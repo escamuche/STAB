@@ -6,7 +6,6 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.model.basic.token.DoorToken;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.Info;
 import com.stab.model.info.base.Door;
 
 public class HoldPortal extends SpellOnTarget{
@@ -14,15 +13,11 @@ public class HoldPortal extends SpellOnTarget{
 	public static final String ID="HOLDPORTAL";
 
 	@Override
-	public boolean affect(Info instigator, Info receptor, Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target = (BaseInfo)receptor;
-		
-		
+	protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 		//Cambiar para que solo cierre. Pendiente tema con llave. Duracion 1 min/level
-		Door Atacado = (Door)target;
-		Atacado.infoInteracts(caster);
-		return true;
+				Door Atacado = (Door)target;
+				Atacado.infoInteracts(caster);
+		return super.fullEffect(caster, target, point);
 	}
 	
 	public HoldPortal() {

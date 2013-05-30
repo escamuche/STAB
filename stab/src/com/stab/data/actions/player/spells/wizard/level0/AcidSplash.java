@@ -6,9 +6,7 @@ import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.animation.ShootProyectileAnimation;
-import com.stab.data.info.applicable.magic.MagicAttack;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 
 public class AcidSplash extends SpellOnTarget{
@@ -18,28 +16,16 @@ public class AcidSplash extends SpellOnTarget{
 	
 	
 
-	@Override
-	public boolean affect(Info instigator,Info receptor,Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target=(BaseInfo)receptor;
-		int cl =getCasterLevel(caster);
-		int dañobase=Roll.d3();
-		
-		
-		
-		MagicAttack ataque = new MagicAttack(caster);
-		target.apply(ataque);
-		
-		caster.playAnimationOn(ShootProyectileAnimation.ID, target.getToken(), "PARTICLE#magicmissile");
-		
-		if(ataque.hits()) {
-		Damage d= new Damage(dañobase, Damage.ACID_DAMAGE,caster);
-		target.apply(d);
-		System.out.println(d.getFinalAmount()+" de daño");	
-		return true;
-		}
-		return false;
-	}
+@Override
+protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
+	int dañobase=Roll.d3();
+	
+	caster.playAnimationOn(ShootProyectileAnimation.ID, target.getToken(), "PARTICLE#magicmissile");
+	
+	Damage d= new Damage(dañobase, Damage.ACID_DAMAGE,caster);
+	target.apply(d);
+	return super.fullEffect(caster, target, point);
+}
 	
 	public AcidSplash() {
      
@@ -52,7 +38,7 @@ public class AcidSplash extends SpellOnTarget{
      setRange(CLOSE);
      setMedium(MISSILE);
      this.setDescription("You fire a small orb of acid at the target. You must succeed on a ranged touch attack to hit your target. The orb deals 1d3 points of acid damage. This acid disappears after 1 round.");
-   
+   this.setSave(StabConstants.FORTITUDESAVE);
 	}
 
 	

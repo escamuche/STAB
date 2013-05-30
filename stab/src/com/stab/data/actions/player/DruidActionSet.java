@@ -1,10 +1,5 @@
 package com.stab.data.actions.player;
 
-import com.stab.data.actions.player.abilities.NobilityDomain;
-import com.stab.data.actions.player.spells.cleric.level1.Bless;
-import com.stab.data.actions.player.spells.cleric.level1.CureLight;
-import com.stab.data.actions.player.spells.cleric.level1.Doom;
-import com.stab.data.actions.player.spells.cleric.level1.ShieldFaith;
 import com.stab.data.actions.player.spells.druid.level0.CreateWater_Druid;
 import com.stab.data.actions.player.spells.druid.level0.DetectMagic_Druid;
 import com.stab.data.actions.player.spells.druid.level0.DetectPoison_Druid;

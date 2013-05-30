@@ -7,9 +7,7 @@ import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.animation.MagicMissileAnimation;
 import com.stab.data.info.applicable.RolledDamage;
 import com.stab.data.info.buff.spells.Shield_Buff;
-import com.stab.model.basic.Sprite;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 
 public class MagicMissile extends SpellOnTarget{
@@ -17,9 +15,7 @@ public class MagicMissile extends SpellOnTarget{
 	public static final String ID="MagicMissile";
 	
 	@Override
-	public boolean affect(Info instigator, Info receptor, Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target = (BaseInfo)receptor;
+	protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 		int cl = getCasterLevel(caster);
 		
 		int number=cl+1/2;
@@ -36,8 +32,8 @@ public class MagicMissile extends SpellOnTarget{
 		if (!blocked)
 			target.apply(d);
 		
-		return true;
-		}
+		return super.fullEffect(caster, target, point);
+	}
 	
 	public MagicMissile() {
 		

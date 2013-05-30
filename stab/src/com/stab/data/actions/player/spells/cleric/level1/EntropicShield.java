@@ -6,7 +6,6 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.data.info.buff.spells.EntropicShield_Buff;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.Info;
 
 public class EntropicShield extends SpellOnSelf{
 	
@@ -20,20 +19,17 @@ public class EntropicShield extends SpellOnSelf{
      setName("Entropic Shield");
      this.setEffectType(BUFF);
      this.setDescription("A magical field appears around you, glowing with a chaotic blast of multicolored hues. This field deflects incoming arrows, rays, and other ranged attacks. Each ranged attack directed at you for which the attacker must make an attack roll has a 20% miss chance (similar to the effects of concealment). Other attacks that simply work at a distance are not affected.");
+     this.setLevel(1);
 	}
 
 
-	@Override
-	public boolean affect(Info instigator,Info receptor,Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target=(BaseInfo)receptor;
-		
-			EntropicShield_Buff buff = new EntropicShield_Buff();
-			buff.setTime(getCasterLevel(caster)*10);
-			target.addTrait(buff);
-			return true;
-	
-	}
+@Override
+protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
+	EntropicShield_Buff buff = new EntropicShield_Buff();
+	buff.setTime(getCasterLevel(caster)*10);
+	target.addTrait(buff);
+	return super.fullEffect(caster, target, point);
+}
 
 	
 	@Override

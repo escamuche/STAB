@@ -42,6 +42,7 @@ public static final String ID="CLERIC_INFO";
 		this.setAttribute(StabConstants.WISDOM, 14);
 		this.setAttribute(StabConstants.FORTITUDESAVE, 2);
 		this.setAttribute(StabConstants.WILLSAVE, 2);
+		this.setAttribute(StabConstants.CLERICCASTER, 1);
 		
 		this.setAttribute(StabConstants.APPRAISE, 4);
 		this.setAttribute(StabConstants.DIPLOMACY, 7);

@@ -3,7 +3,6 @@ package com.stab.data.info.equipment;
 import java.awt.Point;
 import java.util.ArrayList;
 
-import com.stab.data.info.applicable.ActionEffect;
 import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.model.info.BaseInfo;
 

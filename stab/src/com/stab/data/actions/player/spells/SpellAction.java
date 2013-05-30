@@ -6,7 +6,6 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.WeaponAttackAction;
 import com.stab.data.info.applicable.BreakSpellResistance;
 import com.stab.data.info.applicable.SavingThrowEffect;
-import com.stab.data.info.equipment.SpellActionEffect;
 import com.stab.data.info.equipment.SpellWeapon;
 import com.stab.data.info.equipment.Weapon;
 import com.stab.model.action.Action;

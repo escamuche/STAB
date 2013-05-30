@@ -4,7 +4,6 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.PaladinActionSet;
-import com.stab.data.actions.player.abilities.Rage;
 import com.stab.data.actions.player.abilities.SmiteEvil;
 import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.HumanoidGear;

@@ -4,11 +4,8 @@ import java.awt.Point;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
-import com.stab.data.info.applicable.magic.FortitudeAttack;
-import com.stab.data.info.applicable.magic.MagicAttack;
 import com.stab.data.info.debuff.condition.FatiguedCondition;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.Info;
 
 public class TouchFatigue extends SpellOnTarget{
 	
@@ -26,26 +23,15 @@ public class TouchFatigue extends SpellOnTarget{
 		this.setEffectType(DEBUFF);
 		setRange(TOUCH);
 		this.setDescription("You channel negative energy through your touch, fatiguing the target. You must succeed on a touch attack to strike a target. The subject is immediately fatigued for the spell's duration. This spell has no effect on a creature that is already fatigued. Unlike with normal fatigue, the effect ends as soon as the spell's duration expires.");
-	}
-	@Override
-	public boolean affect(Info instigator, Info receptor, Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target = (BaseInfo)receptor;
-		int cl = getCasterLevel(caster);
-		
-		
-
-		MagicAttack attack = new MagicAttack(caster);
-		if(attack.hits()) {
-			FortitudeAttack b = new FortitudeAttack(caster);
-				if(b.hits()){
-					FatiguedCondition debuff = new FatiguedCondition();
-					debuff.setTime(cl);
-					target.addTrait(debuff);
-					return true;
-				}
+		this.setSave(StabConstants.FORTITUDESAVE);
 		}
-	return false;
-	}
+@Override
+protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
+	int cl = getCasterLevel(caster);
+	FatiguedCondition debuff = new FatiguedCondition();
+	debuff.setTime(cl);
+	target.addTrait(debuff);
+	return super.fullEffect(caster, target, point);
+}
 
 }

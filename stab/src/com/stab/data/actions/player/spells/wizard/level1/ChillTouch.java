@@ -6,11 +6,9 @@ import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.animation.ShootProyectileAnimation;
-import com.stab.data.info.applicable.magic.FortitudeAttack;
-import com.stab.data.info.applicable.magic.MagicAttack;
+import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.data.info.debuff.ChillTouch_Debuff;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 
 public class ChillTouch extends SpellOnTarget{
@@ -19,34 +17,36 @@ public class ChillTouch extends SpellOnTarget{
 	
 	
 	
-
-	@Override
-	public boolean affect(Info instigator, Info receptor, Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target = (BaseInfo)receptor;
-		int dañobase=Roll.d6();
-		int cl =getCasterLevel(caster);
-		
-		
-		MagicAttack ataque = new MagicAttack(caster);
-		target.apply(ataque);
-		
-		caster.playAnimationOn(ShootProyectileAnimation.ID, target.getToken(), "PARTICLE#magicmissile");
-		
-		Damage d= new Damage(dañobase, Damage.UNHOLY_DAMAGE,caster);
-		target.apply(d);
-			
-		if(ataque.hits()) {
-			FortitudeAttack ataque2 = new FortitudeAttack(caster);
-			target.apply(ataque2);
-			if(ataque2.hits()){
-				ChillTouch_Debuff chilltouch = new ChillTouch_Debuff();
-				target.addTrait(chilltouch);
-			}
-		return true;
-		}
-		return false;
+@Override
+protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
+	int dañobase=Roll.d6();
+	
+	caster.playAnimationOn(ShootProyectileAnimation.ID, target.getToken(), "PARTICLE#magicmissile");
+	
+	Damage d= new Damage(dañobase, Damage.UNHOLY_DAMAGE,caster);
+	target.apply(d);
+	
+	SavingThrowEffect save= new SavingThrowEffect(caster, StabConstants.FORTITUDESAVE, target);
+	save.check();
+	if(save.failed()){
+		ChillTouch_Debuff chilltouch = new ChillTouch_Debuff();
+		target.addTrait(chilltouch);
 	}
+	return super.fullEffect(caster, target, point);
+}
+
+@Override
+protected boolean partialEffect(BaseInfo caster, BaseInfo target, Point point) {	
+	int dañobase=Roll.d6();
+	
+	caster.playAnimationOn(ShootProyectileAnimation.ID, target.getToken(), "PARTICLE#magicmissile");
+	
+	Damage d= new Damage(dañobase, Damage.UNHOLY_DAMAGE,caster);
+	target.apply(d);
+	return super.partialEffect(caster, target, point);
+}
+
+
 	
 	// falta el tema de panicked a undeads...
 	

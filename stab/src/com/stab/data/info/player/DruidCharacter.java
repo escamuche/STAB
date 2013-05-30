@@ -37,6 +37,7 @@ public static final String ID="DRUID_INFO";
 		
 		this.setAttribute(StabConstants.FORTITUDESAVE, 2);
 		this.setAttribute(StabConstants.WILLSAVE, 2);
+		this.setAttribute(StabConstants.DRUIDCASTER, 2);
 		
 		this.setAttribute(StabConstants.CLIMB, 4);
 		this.setAttribute(StabConstants.HANDLEANIMAL, 2);

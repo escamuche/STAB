@@ -6,7 +6,6 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.info.debuff.condition.DazedCondition;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.Info;
 
 public class Command extends SpellOnTarget{
 	
@@ -23,19 +22,15 @@ public class Command extends SpellOnTarget{
 		this.setEffectType(DEBUFF);
 		setRange(CLOSE);
 		setDescription("You give the subject a single command, which it obeys to the best of its ability at its earliest opportunity. Halt: The subject stands in place for 1 round. It may not take any actions but is not considered helpless.");
+		 this.setLevel(1);
 	}
 	
 	@Override
-	public boolean affect(Info instigator, Info receptor,Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target = (BaseInfo)receptor;
+	protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 		DazedCondition d = new DazedCondition();
-		
-	
 		d.setTime(1);
 		target.addTrait(d);
-		return true;
-		
+		return super.fullEffect(caster, target, point);
 	}
 	
 	@Override

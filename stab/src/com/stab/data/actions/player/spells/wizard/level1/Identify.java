@@ -6,7 +6,6 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.data.info.buff.spells.Identify_Buff;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.Info;
 
 public class Identify extends SpellOnSelf{
 	
@@ -23,12 +22,9 @@ public class Identify extends SpellOnSelf{
 	}
 
 	@Override
-	public boolean affect(Info instigator,Info receptor,Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target=(BaseInfo)receptor;
+	protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 		Identify_Buff buff = new Identify_Buff();
 		target.addTrait(buff);
-		return true;
-	
+		return super.fullEffect(caster, target, point);
 	}
 }

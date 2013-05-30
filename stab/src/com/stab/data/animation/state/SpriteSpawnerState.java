@@ -5,9 +5,6 @@ import java.util.Collection;
 import com.stab.data.StabInit;
 import com.tien.princess.engine.sprite.Sprite;
 import com.tien.princess.engine.sprite.SpriteFactory;
-import com.tien.princess.engine.sprite.common.painters.ValuePainter;
-import com.tien.princess.engine.sprite.common.states.BasicAnimState;
-import com.tien.princess.engine.utils.PaintUtils;
 
 public class SpriteSpawnerState extends ExplodeState {
 

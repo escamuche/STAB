@@ -6,23 +6,18 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.info.buff.spells.ResistanceBuff;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.Info;
 
 public class Resistance extends SpellOnTarget{
 	
 	public static final String ID="RESISTANCE_CLERIC";
 
 	@Override
-	public boolean affect(Info instigator, Info receptor,Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target = (BaseInfo)receptor;
-		
+	protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 		ResistanceBuff buff = new ResistanceBuff();
 		buff.setTime(10);
 		target.addTrait(buff);
-		
-		return true;
-		}
+		return super.fullEffect(caster, target, point);
+	}
 	
 	public Resistance() {
 		setLevel(0);

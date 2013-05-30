@@ -4,30 +4,22 @@ import java.awt.Point;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
-import com.stab.data.info.applicable.magic.WillAttack;
 import com.stab.data.info.debuff.Doom_Debuff;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.Info;
 
 public class Doom extends SpellOnTarget {
 	
 	public static final String ID="DOOM";
 
 	@Override
-	public boolean affect(Info instigator, Info receptor, Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target = (BaseInfo)receptor;
+	protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 		int cl=getCasterLevel(caster);
 		
-		WillAttack ataque = new WillAttack(caster);
-		if(ataque.hits()) {
-			Doom_Debuff debuff = new Doom_Debuff();
-			debuff.setTime(cl*10);
-			target.addTrait(debuff);
-			return true;
-			}
-		return false;
-		}
+		Doom_Debuff debuff = new Doom_Debuff();
+		debuff.setTime(cl*10);
+		target.addTrait(debuff);
+		return super.fullEffect(caster, target, point);
+	}
 	
 	public Doom() {
     
@@ -38,6 +30,8 @@ public class Doom extends SpellOnTarget {
      this.setEffectType(DEBUFF);
      setRange(MEDIUM);
      this.setDescription("This spell fills a single subject with a feeling of horrible dread that causes it to become shaken.");
+     this.setLevel(1);
+     this.setSave(StabConstants.WILLSAVE);
 	}
 
 	

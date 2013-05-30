@@ -6,7 +6,6 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.data.info.buff.spells.ExpeditiousRetreat_Buff;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.Info;
 
 public class ExpeditiousRetreat extends SpellOnSelf{
 	
@@ -23,12 +22,10 @@ public class ExpeditiousRetreat extends SpellOnSelf{
 	}
 
 	@Override
-	public boolean affect(Info instigator,Info receptor,Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target=(BaseInfo)receptor;
+	protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 		ExpeditiousRetreat_Buff buff = new ExpeditiousRetreat_Buff();
 		buff.setTime(getCasterLevel(caster)*10);
 		target.addTrait(buff);
-		return true;
+		return super.fullEffect(caster, target, point);
 	}
 }

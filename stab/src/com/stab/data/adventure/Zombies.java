@@ -15,7 +15,6 @@ import com.stab.model.basic.scenes.event.rule.AllMonstersDeadRule;
 import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 import com.stab.model.basic.ui.Text;
-import com.stab.model.request.RealTimeQueue;
 
 
 public class Zombies extends Adventure{

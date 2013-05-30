@@ -14,7 +14,6 @@ import com.stab.data.info.feat.combat.Cleave_Feat;
 import com.stab.data.info.feat.combat.PowerAttack_Feat;
 import com.stab.data.info.player.abilities.FastMovementBarbarian;
 import com.stab.data.info.player.abilities.Rage_Ability;
-import com.stab.model.info.trait.base.Resource;
 
 
 public class BarbarianCharacter extends PathfinderCharacter{

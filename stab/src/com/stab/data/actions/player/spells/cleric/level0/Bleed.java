@@ -6,7 +6,6 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.info.debuff.Bleed_Debuff;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.Info;
 
 public class Bleed extends SpellOnTarget{
 	
