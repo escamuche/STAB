@@ -12,6 +12,7 @@ public class PathfinderSearchAction extends SearchAction{
 	public float getLength(Info caster) {
 		return 5; //Por defecto, por ahora
 	}
+	
 
 	public PathfinderSearchAction() {
 		this.setName("Search");
