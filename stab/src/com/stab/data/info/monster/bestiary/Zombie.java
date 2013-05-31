@@ -5,6 +5,8 @@ import com.stab.data.StabInit;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.monster.Undead;
 import com.stab.data.info.monster.ZombieAIParameters;
+import com.stab.model.ai.AIPackage;
+import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.DamageReduction;
@@ -43,6 +45,9 @@ public class Zombie extends Undead {
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("MEDIUMSLAM"), HumanoidGear.BOTHHANDS);	
 		
+		
+		this.setAIState(AIPackage.IDLE);
+		((DefaultAIPackage)getCurrentAI()).setLog(true);		
 	}
 	
 }
