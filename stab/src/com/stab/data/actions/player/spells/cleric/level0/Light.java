@@ -4,29 +4,34 @@ import java.awt.Point;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
-import com.stab.data.info.buff.Torchlight_Buff;
+import com.stab.data.info.buff.spells.LightInUse;
+import com.stab.data.info.buff.spells.Light_Buff;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.trait.Trait;
 
 public class Light extends SpellOnTarget{
 	
 	public static final String ID="LIGHT_CLERIC";
-	boolean u = false;
-	BaseInfo t = null;
-	Torchlight_Buff buff = new Torchlight_Buff();
+	
 	
 	@Override
 	protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
-		if(u==false){
-		u=true;
-		t=target;
-		target.addTrait(buff);
-		return super.fullEffect(caster, target, point);
+		
+		if(caster.hasTrait(LightInUse.ID)){
+		
 		}
 		else{
-			t.removeTrait(buff);
-			target.addTrait(buff);
-			return super.fullEffect(caster, target, point);
+		caster.addTrait(new LightInUse());
 		}
+		
+		Trait light= (LightInUse) caster.getTrait(LightInUse.ID);
+		if(((LightInUse) light).getBuff()!=null){
+				((LightInUse) light).getBuff().end();
+				Light_Buff mylight = new Light_Buff();
+				target.addTrait(mylight);
+				((LightInUse) light).setBuff(mylight);
+			}
+			return super.fullEffect(caster, target, point);
 	}
 	
 	public Light() {
