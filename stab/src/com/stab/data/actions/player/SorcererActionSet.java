@@ -5,6 +5,7 @@ import com.stab.data.actions.player.spells.sorcerer.level0.Bleed_Sorcerer;
 import com.stab.data.actions.player.spells.sorcerer.level0.Daze_Sorcerer;
 import com.stab.data.actions.player.spells.sorcerer.level0.DisruptUndead_Sorcerer;
 import com.stab.data.actions.player.spells.sorcerer.level0.Flare_Sorcerer;
+import com.stab.data.actions.player.spells.sorcerer.level0.Light_Sorcerer;
 import com.stab.data.actions.player.spells.sorcerer.level0.MageHand_Sorcerer;
 import com.stab.data.actions.player.spells.sorcerer.level0.OpenClose_Sorcerer;
 import com.stab.data.actions.player.spells.sorcerer.level0.RayFrost_Sorcerer;
@@ -40,6 +41,7 @@ public class SorcererActionSet extends PathfinderActionSet {
 		this.addAction(RayFrost_Sorcerer.ID);
 		this.addAction(Resistance_Sorcerer.ID);
 		this.addAction(TouchFatigue_Sorcerer.ID);
+		this.addAction(Light_Sorcerer.ID);
 		
 		this.addAction(BurningHands_Sorcerer.ID);
 		this.addAction(CharmPerson_Sorcerer.ID);
@@ -62,7 +64,7 @@ public class SorcererActionSet extends PathfinderActionSet {
 				this.setAction(Daze_Sorcerer.ID, 3);
 				this.setAction(RayFrost_Sorcerer.ID, 4);
 				this.setAction(TouchFatigue_Sorcerer.ID, 5);
-				this.setAction(OpenClose_Sorcerer.ID, 6);
+				this.setAction(Light_Sorcerer.ID, 6);
 	
 	}	
 }

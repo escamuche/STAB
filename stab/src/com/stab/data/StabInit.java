@@ -58,6 +58,7 @@ import com.stab.data.actions.player.spells.bard.level1.UnseenServant_Bard;
 import com.stab.data.actions.player.spells.bard.level1.Ventriloquism_Bard;
 import com.stab.data.actions.player.spells.cleric.level0.Bleed;
 import com.stab.data.actions.player.spells.cleric.level0.Guidance;
+import com.stab.data.actions.player.spells.cleric.level0.Light;
 import com.stab.data.actions.player.spells.cleric.level0.Resistance;
 import com.stab.data.actions.player.spells.cleric.level0.Stabilize;
 import com.stab.data.actions.player.spells.cleric.level0.Virtue;
@@ -107,6 +108,7 @@ import com.stab.data.actions.player.spells.sorcerer.level0.Bleed_Sorcerer;
 import com.stab.data.actions.player.spells.sorcerer.level0.Daze_Sorcerer;
 import com.stab.data.actions.player.spells.sorcerer.level0.DisruptUndead_Sorcerer;
 import com.stab.data.actions.player.spells.sorcerer.level0.Flare_Sorcerer;
+import com.stab.data.actions.player.spells.sorcerer.level0.Light_Sorcerer;
 import com.stab.data.actions.player.spells.sorcerer.level0.MageHand_Sorcerer;
 import com.stab.data.actions.player.spells.sorcerer.level0.OpenClose_Sorcerer;
 import com.stab.data.actions.player.spells.sorcerer.level0.RayFrost_Sorcerer;
@@ -525,6 +527,7 @@ public class StabInit {
 		getActionLibrary().register(new Resistance());
 		getActionLibrary().register(new Stabilize());
 		getActionLibrary().register(new Virtue());
+		getActionLibrary().register(new Light());
 		
 			//cleric1
 		getActionLibrary().register(new Bane());
@@ -579,6 +582,7 @@ public class StabInit {
 	getActionLibrary().register(new Daze_Sorcerer());
 	getActionLibrary().register(new DisruptUndead_Sorcerer());
 	getActionLibrary().register(new Flare_Sorcerer());
+	getActionLibrary().register(new Light_Sorcerer());
 	getActionLibrary().register(new MageHand_Sorcerer());
 	getActionLibrary().register(new OpenClose_Sorcerer());
 	getActionLibrary().register(new RayFrost_Sorcerer());
