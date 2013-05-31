@@ -468,6 +468,7 @@ public class StabInit {
 		getActionLibrary().register(new WeaponAttackAction());
 		getActionLibrary().register(new Rage());
 		getActionLibrary().register(new HealAction());
+	//	getActionLibrary().getAction(SearchAction.ID).setResource("actions/inv_gizmo_02");
 		getActionLibrary().register(new PathfinderSearchAction());
 		getActionLibrary().register(new ChannelPossitiveEnergyAction());
 		getActionLibrary().register(new SmiteEvil());

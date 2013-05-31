@@ -15,9 +15,6 @@ public class Monster extends Creature {
 	@Override
 	public void init() {
 		super.init();
-		DefaultAIPackage ai=new DefaultAIPackage();
-		this.setDefaultAIPackage(ai);
-		this.setCurrentAI(ai);
 		this.setActionSet(new MonsterActionSet());
 		this.addTrait(new BasicAttributes());
 		this.setGear(new HumanoidGear());   //si, si, ya, ya. ya lo separaremos en varias clases por tipo de monstruo

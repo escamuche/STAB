@@ -1,5 +1,6 @@
 package com.stab.data.actions.player.spells.wizard.level0;
 
+import java.awt.Color;
 import java.awt.Point;
 
 import com.stab.common.utils.Roll;
@@ -37,6 +38,7 @@ public class DisruptUndead extends SpellOnTarget {
 					return super.fullEffect(caster, target, point);
 					
 				}
+		 target.showFloatingText("INEFFECTIVE", Color.pink);
 		return false;
 		
 	}
