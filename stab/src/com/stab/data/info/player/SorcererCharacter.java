@@ -5,6 +5,7 @@ import com.stab.data.StabInit;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.SorcererActionSet;
 import com.stab.data.info.BonusAttributeMP;
+import com.stab.data.info.alignment.Lawful;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.Alertness_Feat;
 import com.stab.data.info.feat.general.CombatCasting_Feat;
@@ -59,6 +60,8 @@ public static final String ID="SORCERER_INFO";
 		this.addTrait(new IronWill_Feat());
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("QUARTERSTAFF"), HumanoidGear.BOTHHANDS);
+		
+		this.addTrait(new Lawful());
 		
 		this.addTrait(new Modifier(StabConstants.FORTITUDESAVE,+2)); //familiar--> rata 
 		//Bloodline arcana

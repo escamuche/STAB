@@ -5,6 +5,7 @@ import com.stab.data.StabInit;
 import com.stab.data.actions.player.BardActionSet;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.info.BonusAttributeMP;
+import com.stab.data.info.alignment.Chaotic;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.SkillFocusPerformWind_Feat;
 import com.stab.data.info.player.abilities.BardicKnowledge;
@@ -55,6 +56,8 @@ public static final String ID="BARD_INFO";
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("RAPIER"), HumanoidGear.BOTHHANDS);
 		this.equip(StabInit.getArmorFactory().getArmor("STUDDEDLEATHER"), HumanoidGear.ARMOR);
+		
+		this.addTrait(new Chaotic());
 		
 		/* habilidades especiales
 		 * Bardic Performance			esto.... po que?

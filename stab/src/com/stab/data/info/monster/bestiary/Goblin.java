@@ -2,6 +2,7 @@ package com.stab.data.info.monster.bestiary;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
+import com.stab.data.info.alignment.Evil;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.data.info.monster.Humanoid;
@@ -37,6 +38,8 @@ public class Goblin extends Humanoid {
 		this.setCurrentAI(ai);
 			
 		this.setBloodeffEct("PARTICLE#redblood");
+		
+		this.addTrait(new Evil());
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("SHORTSWORD"), HumanoidGear.MAINHAND);
 		this.equip(StabInit.getArmorFactory().getArmor("LIGHTLEATHER"), HumanoidGear.ARMOR);

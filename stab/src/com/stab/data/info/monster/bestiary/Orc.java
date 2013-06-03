@@ -2,6 +2,8 @@ package com.stab.data.info.monster.bestiary;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
+import com.stab.data.info.alignment.Chaotic;
+import com.stab.data.info.alignment.Evil;
 import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
@@ -41,6 +43,9 @@ public class Orc extends Humanoid {
 		DefaultAIPackage ai=new DefaultAIPackage();
 		this.setCurrentAI(ai);
 			
+		this.addTrait(new Evil());
+		this.addTrait(new Chaotic());
+		
 		this.setBloodeffEct("PARTICLE#redblood");
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.GREATAXE), HumanoidGear.BOTHHANDS);

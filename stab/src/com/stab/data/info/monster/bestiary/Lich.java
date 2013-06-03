@@ -6,6 +6,7 @@ import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.actions.player.spells.wizard.level1.MagicMissile;
 import com.stab.data.actions.player.spells.wizard.level1.RayEnfeeblement;
 import com.stab.data.actions.player.spells.wizard.level1.Shield;
+import com.stab.data.info.alignment.Evil;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.IronWill_Feat;
 import com.stab.data.info.feat.general.Toughness_Feat;
@@ -44,6 +45,8 @@ public class Lich extends Humanoid {
 		this.setAttribute(StabConstants.SIZE,StabConstants.MEDIUM_SIZE);
 		this.setAttribute(StabConstants.HITDICENUMBER, 11);
 		this.setAttribute(StabConstants.WIZARDCASTER, 11);
+		
+		this.addTrait(new Evil());
 		
 		Modifier armor = new Modifier(StabConstants.ACTIVEDEFENSE,StabConstants.ARMORMOD,+4);
 		Modifier nat = new Modifier(StabConstants.ACTIVEDEFENSE,StabConstants.NATURALARMORMOD,+5);

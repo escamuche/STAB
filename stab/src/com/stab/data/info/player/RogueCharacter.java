@@ -4,6 +4,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.RogueActionSet;
+import com.stab.data.info.alignment.Evil;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 
@@ -51,7 +52,7 @@ public static final String ID="ROGUE_INFO";
 		
 		this.equip(StabInit.getArmorFactory().getArmor("STUDDEDLEATHER"), HumanoidGear.ARMOR);
 
-		
+		this.addTrait(new Evil());
 		
 		
 		/* Habilidades especiales

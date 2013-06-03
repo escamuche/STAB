@@ -5,6 +5,7 @@ import com.stab.data.StabInit;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.DruidActionSet;
 import com.stab.data.info.BonusAttributeMP;
+import com.stab.data.info.alignment.Lawful;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.Toughness_Feat;
 import com.stab.data.info.player.abilities.NatureSense;
@@ -55,6 +56,7 @@ public static final String ID="DRUID_INFO";
 		this.equip(StabInit.getWeaponFactory().getWeapon("SPEAR"), HumanoidGear.BOTHHANDS);
 		this.equip(StabInit.getArmorFactory().getArmor("HIDE"), HumanoidGear.ARMOR);
 		
+		this.addTrait(new Lawful());
 		
 		//Aqui ni comentar nada, no? :D
 		/* ya va, ya va

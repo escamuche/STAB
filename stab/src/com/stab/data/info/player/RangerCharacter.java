@@ -4,6 +4,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.RangerActionSet;
+import com.stab.data.info.alignment.Lawful;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.combat.PointBlankShot_Feat;
 import com.stab.data.info.feat.general.SkillFocusPerception_Feat;
@@ -49,6 +50,8 @@ public static final String ID="RANGER_INFO";
 		
 		this.equip(StabInit.getArmorFactory().getArmor("STUDDEDLEATHER"), HumanoidGear.ARMOR);
 		this.equip(StabInit.getWeaponFactory().getWeapon("LONGBOW"), HumanoidGear.MAINHAND);
+		
+		this.addTrait(new Lawful());
 		
 		/* Habilidades especiales
 		 * Favored Enemy 1				Esto, tal cual es un attends<attackDAta>. Ojo hacer un trait con parametro, para que acepte la clase

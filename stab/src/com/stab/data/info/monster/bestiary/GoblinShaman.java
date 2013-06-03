@@ -4,6 +4,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.actions.player.spells.cleric.level1.CureLight;
 import com.stab.data.actions.player.spells.wizard.level1.MagicMissile;
+import com.stab.data.info.alignment.Evil;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.data.info.monster.Humanoid;
@@ -44,6 +45,8 @@ public class GoblinShaman extends Humanoid {
 		this.setCurrentAI(ai);
 			
 		this.setBloodeffEct("PARTICLE#redblood");
+		
+		this.addTrait(new Evil());
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("QUARTERSTAFF"), HumanoidGear.BOTHHANDS);
 		this.equip(StabInit.getArmorFactory().getArmor("LIGHTLEATHER"), HumanoidGear.ARMOR);

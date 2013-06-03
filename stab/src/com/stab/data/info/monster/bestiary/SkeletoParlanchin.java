@@ -2,6 +2,7 @@ package com.stab.data.info.monster.bestiary;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
+import com.stab.data.info.alignment.Evil;
 import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
@@ -47,7 +48,7 @@ public class SkeletoParlanchin extends Undead {
 		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.SCIMITAR), HumanoidGear.MAINHAND);
 		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.LIGHTLEATHER), HumanoidGear.ARMOR);
 		
-		
+		this.addTrait(new Evil());
 		
 	}
 	

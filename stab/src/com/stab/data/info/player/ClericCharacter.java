@@ -8,6 +8,8 @@ import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.abilities.NobilityDomain;
 import com.stab.data.info.BonusAttributeMP;
 import com.stab.data.info.PathfinderResource;
+import com.stab.data.info.alignment.Evil;
+import com.stab.data.info.alignment.Lawful;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.combat.WeaponFocus_Feat;
@@ -70,6 +72,9 @@ public static final String ID="CLERIC_INFO";
 		this.addTrait(new RenewableResource(ChannelPossitiveEnergyAction.RESOURCE_ID, 3)); 
 		//En un futuro, sacar a una clase, para que pueda recalcularse el max cuando rest
 		this.getActionSet().setAction(ChannelPossitiveEnergyAction.ID, 6);
+		
+		this.addTrait(new Lawful());
+		this.addTrait(new Evil());
 		
 	}
 	

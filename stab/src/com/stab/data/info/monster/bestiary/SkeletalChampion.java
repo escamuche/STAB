@@ -2,6 +2,7 @@ package com.stab.data.info.monster.bestiary;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
+import com.stab.data.info.alignment.Evil;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.combat.PowerAttack_Feat;
@@ -40,6 +41,7 @@ public class SkeletalChampion extends Undead {
 		Modifier natural = new Modifier(StabConstants.ARMORDEFENSE,StabConstants.NATURALARMORMOD,+2);
 		this.addTrait(natural);
 
+		this.addTrait(new Evil());
 		
 		this.addTrait(new ImprovedInitiative_Feat());
 		this.addTrait(new PowerAttack_Feat());
@@ -49,7 +51,6 @@ public class SkeletalChampion extends Undead {
 		this.equip(StabInit.getArmorFactory().getArmor("BREASTPLATE"), HumanoidGear.ARMOR);
 		this.equip(StabInit.getArmorFactory().getArmor("HEAVYSTEELSHIELD"), HumanoidGear.OFFHAND);
 
-		ZombieAIParameters ai=new ZombieAIParameters();
 		this.setAIParams(new ZombieAIParameters());
 		
 				

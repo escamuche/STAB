@@ -5,6 +5,8 @@ import com.stab.data.StabInit;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.PaladinActionSet;
 import com.stab.data.actions.player.abilities.SmiteEvil;
+import com.stab.data.info.alignment.Good;
+import com.stab.data.info.alignment.Lawful;
 import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
@@ -55,6 +57,9 @@ public static final String ID="PALADIN_INFO";
 		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.BANDEDMAIL), HumanoidGear.ARMOR);
 		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.LONGSWORD), HumanoidGear.MAINHAND);
 		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.HEAVYWOODENSHIELD), HumanoidGear.OFFHAND);
+		
+		this.addTrait(new Lawful());
+		this.addTrait(new Good());
 		
 		/* Habilidades especiales
 		 * Aura of Good					lo mismo que todo, aura centrada que da buff cada turno

@@ -8,6 +8,8 @@ import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.actions.player.spells.wizard.level0.Resistance_Wizard;
 import com.stab.data.actions.player.spells.wizard.level1.MageArmor;
 import com.stab.data.actions.player.spells.wizard.level1.TrueStrike;
+import com.stab.data.info.alignment.Good;
+import com.stab.data.info.alignment.Lawful;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.combat.Dodge_Feat;
 import com.stab.data.info.feat.general.Alertness_Feat;
@@ -52,6 +54,9 @@ public class Couatl extends Outsider {
 		this.setAttribute(StabConstants.HITDICENUMBER, 12);
 		this.setAttribute(StabConstants.WIZARDCASTER, 9);
 		this.setAttribute(StabConstants.NATURALARMORMOD, 9);
+		
+		this.addTrait(new Lawful());
+		this.addTrait(new Good());
 		
 		DefaultAIPackage ai=new DefaultAIPackage();
 //		ai.setLog(true);

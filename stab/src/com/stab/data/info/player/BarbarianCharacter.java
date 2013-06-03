@@ -7,6 +7,7 @@ import com.stab.data.actions.player.BarbarianActionSet;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.abilities.Rage;
 import com.stab.data.info.PathfinderResource;
+import com.stab.data.info.alignment.Chaotic;
 import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
@@ -61,6 +62,8 @@ public static final String ID="BARBARIAN_INFO";
 		this.setAttribute(StabConstants.SWIMSKILL, 5);
 		
 		this.addTrait(new PathfinderResource(Rage.RESOURCE_ID, 4,StabConstants.CONSTITUTION));
+		
+		this.addTrait(new Chaotic());
 		
 	}
 	

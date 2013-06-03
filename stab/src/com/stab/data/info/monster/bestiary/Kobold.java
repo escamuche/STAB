@@ -2,6 +2,8 @@ package com.stab.data.info.monster.bestiary;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
+import com.stab.data.info.alignment.Evil;
+import com.stab.data.info.alignment.Lawful;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.SkillFocusPerception_Feat;
 import com.stab.data.info.monster.Humanoid;
@@ -35,8 +37,10 @@ public class Kobold extends Humanoid {
 		this.setAttribute(StabConstants.HITDICENUMBER, 1);
 
 		Modifier natural = new Modifier(StabConstants.ARMORDEFENSE,StabConstants.NATURALARMORMOD,+1);
-		
 		this.addTrait(natural);
+		
+		this.addTrait(new Evil());
+		this.addTrait(new Lawful());
 		
 		this.addTrait(new SkillFocusPerception_Feat());
 

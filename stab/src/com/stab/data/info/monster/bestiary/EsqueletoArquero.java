@@ -2,6 +2,7 @@ package com.stab.data.info.monster.bestiary;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
+import com.stab.data.info.alignment.Evil;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.data.info.monster.Undead;
@@ -30,6 +31,8 @@ public class EsqueletoArquero extends Undead {
 		this.addTrait(new Attribute(StabConstants.HITDICENUMBER, 1));
 		
 		this.addTrait(new ImprovedInitiative_Feat());
+		
+		this.addTrait(new Evil());
 		
 		Modifier armornatural=new Modifier(StabConstants.ARMORDEFENSE,StabConstants.NATURALARMORMOD, +2);
 		this.addTrait(armornatural);

@@ -1,6 +1,8 @@
 package com.stab.data.info.monster.bestiary;
 
 import com.stab.data.StabConstants;
+import com.stab.data.info.alignment.Chaotic;
+import com.stab.data.info.alignment.Evil;
 import com.stab.data.info.feat.combat.Dodge_Feat;
 import com.stab.data.info.feat.general.SkillFocusPerception_Feat;
 import com.stab.data.info.monster.Undead;
@@ -30,6 +32,9 @@ public class Shadow extends Undead {
 		
 		this.addTrait(new SkillFocusPerception_Feat());
 		this.addTrait(new Dodge_Feat());
+		
+		this.addTrait(new Evil());
+		this.addTrait(new Chaotic());
 		
 		Modifier armordeflection=new Modifier(StabConstants.ARMORDEFENSE,StabConstants.DEFLECTIONMOD, +2);
 		this.addTrait(armordeflection);

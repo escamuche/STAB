@@ -5,6 +5,7 @@ import com.stab.data.StabInit;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.MonkActionSet;
 import com.stab.data.info.PathfinderAttributeBonus;
+import com.stab.data.info.alignment.Lawful;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.combat.CombatReflexes_Feat;
 import com.stab.data.info.feat.combat.Dodge_Feat;
@@ -55,6 +56,8 @@ public static final String ID="MONK_INFO";
 		this.equip(StabInit.getWeaponFactory().getWeapon("KAMA"), HumanoidGear.BOTHHANDS);
 		
 		this.addTrait(new PathfinderAttributeBonus(StabConstants.ARMOR,StabConstants.WISDOM));
+		
+		this.addTrait(new Lawful());
 		
 		/* Habilidades especiales			Esto... vendra en un dlc, no?
 		 * Flurry of Blows
