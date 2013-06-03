@@ -10,7 +10,7 @@ import com.stab.data.info.PathfinderResource;
 import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
-import com.stab.data.info.feat.combat.Cleave_Feat;
+import com.stab.data.info.feat.combat.IntimidatingProwess_Feat;
 import com.stab.data.info.feat.combat.PowerAttack_Feat;
 import com.stab.data.info.player.abilities.FastMovementBarbarian;
 import com.stab.data.info.player.abilities.Rage_Ability;
@@ -44,8 +44,7 @@ public static final String ID="BARBARIAN_INFO";
 		this.addTrait(new PowerAttack_Feat());
 		this.getActionSet().setAction(PowerAttack.ID, 5);
 		
-		this.addTrait(new Cleave_Feat());
-		//this.getActionSet().setAction(Cleave.ID, 4);
+		this.addTrait(new IntimidatingProwess_Feat());
 		
 		this.addTrait(new Rage_Ability());
 		this.getActionSet().setAction(Rage.ID, 6);

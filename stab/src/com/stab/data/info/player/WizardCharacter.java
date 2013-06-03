@@ -11,6 +11,7 @@ import com.stab.data.info.feat.general.Alertness_Feat;
 import com.stab.data.info.feat.general.CombatCasting_Feat;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.data.info.feat.itemcreation.ScribeScroll_Feat;
+import com.stab.model.info.trait.Modifier;
 
 
 public class WizardCharacter extends PathfinderCharacter{
@@ -59,6 +60,9 @@ public static final String ID="WIZARD_INFO";
 		this.equip(StabInit.getWeaponFactory().getWeapon("QUARTERSTAFF"), HumanoidGear.BOTHHANDS);
 		
 		this.equip(EquipmentFactory.TORCH);
+
+		this.addTrait(new Modifier(StabConstants.APPRAISE,+3)); // Familiar--> cuervo
+		
 		
 		/*Equipment brazalete = new Equipment();
 		brazalete.setSlots(HumanoidGear.BRACERS);

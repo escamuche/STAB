@@ -10,6 +10,7 @@ import com.stab.data.info.feat.general.Alertness_Feat;
 import com.stab.data.info.feat.general.CombatCasting_Feat;
 import com.stab.data.info.feat.general.EschewMaterials_Feat;
 import com.stab.data.info.feat.general.IronWill_Feat;
+import com.stab.model.info.trait.Modifier;
 
 
 public class SorcererCharacter extends PathfinderCharacter{
@@ -59,9 +60,9 @@ public static final String ID="SORCERER_INFO";
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("QUARTERSTAFF"), HumanoidGear.BOTHHANDS);
 		
-		/* habilidades especiales
-		 * Bloodline power			traits.
-		 */
+		this.addTrait(new Modifier(StabConstants.FORTITUDESAVE,+2)); //familiar--> rata 
+		//Bloodline arcana
+		
 		
 	}
 	
