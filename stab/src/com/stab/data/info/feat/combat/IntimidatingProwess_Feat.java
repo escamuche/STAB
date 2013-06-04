@@ -3,7 +3,7 @@ package com.stab.data.info.feat.combat;
 import com.stab.data.StabConstants;
 import com.stab.data.info.PathfinderAttributeBonus;
 import com.stab.data.info.feat.CombatFeat;
-import com.stab.model.info.BaseInfo;
+import com.stab.model.info.trait.Modifier;
 
 public class IntimidatingProwess_Feat extends CombatFeat{
 	
@@ -12,8 +12,8 @@ public class IntimidatingProwess_Feat extends CombatFeat{
 	
 	
 	public IntimidatingProwess_Feat() {
-			BaseInfo i = (BaseInfo) getTarget();
-			i.addTrait(new PathfinderAttributeBonus(StabConstants.INTIMIDATE,StabConstants.STRENGHT));
+			Modifier bonus = new PathfinderAttributeBonus(StabConstants.INTIMIDATE,StabConstants.STRENGHT);
+			this.addTrait(bonus);
 			}
 	
 }
