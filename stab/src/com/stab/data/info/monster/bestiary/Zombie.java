@@ -48,7 +48,7 @@ public class Zombie extends Undead {
 		
 		this.addTrait(new Evil());
 		
-		this.setAIState(AIPackage.IDLE);
+	//	this.setAIState(AIPackage.IDLE);
 		((DefaultAIPackage)getCurrentAI()).setLog(true);		
 	}
 	

@@ -2,10 +2,13 @@ package com.stab.data.animation;
 
 import java.awt.Point;
 
+import org.newdawn.slick.Color;
+
 import com.stab.client.slick.base.visualobjects.StabSprite;
 import com.stab.common.value.Simple2PointValueProvider;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTargetAnimation;
+import com.tien.princess.engine.sprite.base.TrailSprite;
 import com.tien.princess.engine.sprite.common.painters.ValuePainter;
 import com.tien.princess.engine.sprite.common.states.State;
 import com.tien.princess.engine.sprite.common.states.StateSet;
@@ -64,5 +67,10 @@ public class SwingAnimation extends OnTargetAnimation{
 		icon.setState(st);
 		
 		AnimUtils.getScreen(getSource()).add(icon);
+		
+	//	TrailSprite trail = new TrailSprite(Color.white,8,8,35);
+	//	trail.setRef(icon);
+	//	AnimUtils.getScreen(getSource()).add(trail);
+		
 	}
 }
