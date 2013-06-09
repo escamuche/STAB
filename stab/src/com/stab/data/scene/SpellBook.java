@@ -164,7 +164,7 @@ public class SpellBook extends ActionBarSelectionScene{
 		
 		Button finish=new Button();
 		finish.setText("Continuar");
-		finish.setIcon("ui/point");
+		finish.setImage("ui/point");
 		finish.setMode(Label.LABEL);  
 		finish.setAction("CONTINUAR"); 
 		finish.setPos(Constants.MIDDLE,Constants.END); 
@@ -173,7 +173,7 @@ public class SpellBook extends ActionBarSelectionScene{
 		
 		Button atras=new Button();
 		atras.setText("Atras");
-		atras.setIcon("ui/point");
+		atras.setImage("ui/point");
 		atras.setMode(Label.LABEL);  
 		atras.setAction("ATRAS"); 
 		atras.setPos(Constants.BEGIN,Constants.END); 

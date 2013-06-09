@@ -216,7 +216,7 @@ public class CharacterSheet extends InfoDataScene{
 		
 		spells=new Button();
 		spells.setText("Conjuros");
-		spells.setIcon("ui/point");
+		spells.setImage("ui/point");
 		spells.setMode(Label.LABEL);  //Hay varios tipos de boton, indicando la posicion del texto y el icono
 		spells.setAction("SPELLS"); //Esta accion nos llegara a playerOption cuando lo pulse
 		spells.setPos(Constants.BEGIN,Constants.NEXT); //Middle= en la mitad del ancho. End= al final del todo
@@ -225,7 +225,7 @@ public class CharacterSheet extends InfoDataScene{
 		
 		feats=new Button();
 		feats.setText("Feats");
-		feats.setIcon("ui/point");
+		feats.setImage("ui/point");
 		feats.setMode(Label.LABEL);  //Hay varios tipos de boton, indicando la posicion del texto y el icono
 		feats.setAction("FEATS"); //Esta accion nos llegara a playerOption cuando lo pulse
 		feats.setPos(Constants.NEXT,Constants.PREVIOUS); //Middle= en la mitad del ancho. End= al final del todo
@@ -234,7 +234,7 @@ public class CharacterSheet extends InfoDataScene{
 		
 		Button atras=new Button();
 		atras.setText("Atras");
-		atras.setIcon("ui/point");
+		atras.setImage("ui/point");
 		atras.setMode(Label.LABEL);  
 		atras.setAction("ATRAS"); 
 		atras.setPos(Constants.BEGIN,Constants.END); 
@@ -243,7 +243,7 @@ public class CharacterSheet extends InfoDataScene{
 		
 		finish=new Button();
 		finish.setText("Continuar");
-		finish.setIcon("ui/point");
+		finish.setImage("ui/point");
 		finish.setMode(Label.LABEL);  //Hay varios tipos de boton, indicando la posicion del texto y el icono
 		finish.setAction("CONTINUAR"); //Esta accion nos llegara a playerOption cuando lo pulse
 		finish.setPos(Constants.MIDDLE,Constants.END); //Middle= en la mitad del ancho. End= al final del todo

@@ -46,7 +46,7 @@ public class StabLobby  extends Scene{
 		
 		i.setPos(30,200);
 		i.setSize(140,200);
-		i.setIcon("barbarian$S");
+		i.setImage("barbarian$S");
 		i.setAction("barbarian");
 //		i.setMode(Constants.ICON);
 //		i.setText("Warrior");
@@ -56,7 +56,7 @@ public class StabLobby  extends Scene{
 		i=new Button();
 		i.setPos(170+35,200);
 		i.setSize(140,200);
-		i.setIcon("bard$S");
+		i.setImage("bard$S");
 		i.setAction("bard");
 //		i.setMode(Constants.AVATAR);
 //		i.setText("Rogue");
@@ -66,7 +66,7 @@ public class StabLobby  extends Scene{
 		i=new Button();
 		i.setPos(310+70,200);
 		i.setSize(140,200);
-		i.setIcon("cleric$S");
+		i.setImage("cleric$S");
 		i.setAction("cleric");
 //		i.setText("Wizard");
 		i.setMargin(10);
@@ -75,7 +75,7 @@ public class StabLobby  extends Scene{
 		i=new Button();
 		i.setPos(450+105,200);
 		i.setSize(140,200);
-		i.setIcon("druid$S");
+		i.setImage("druid$S");
 		i.setAction("druid");
 //		i.setMode(Constants.BANNER);
 //		i.setText("Cleric");
@@ -86,7 +86,7 @@ public class StabLobby  extends Scene{
 		i=new Button();
 		i.setPos(690+20,200);
 		i.setSize(140,200);
-		i.setIcon("fighter$S");
+		i.setImage("fighter$S");
 		i.setAction("fighter");
 		i.setMargin(10);
 		add(i);
@@ -94,7 +94,7 @@ public class StabLobby  extends Scene{
 		i=new Button();
 		i.setPos(830+40,200);
 		i.setSize(140,200);
-		i.setIcon("monk$S");
+		i.setImage("monk$S");
 		i.setAction("monk");
 		i.setMargin(10);
 		add(i);
@@ -102,7 +102,7 @@ public class StabLobby  extends Scene{
 		i=new Button();
 		i.setPos(40,440);
 		i.setSize(140,200);
-		i.setIcon("paladin$S");
+		i.setImage("paladin$S");
 		i.setAction("paladin");
 		i.setMargin(10);
 		add(i);
@@ -110,7 +110,7 @@ public class StabLobby  extends Scene{
 		i=new Button();
 		i.setPos(170+50,440);
 		i.setSize(140,200);
-		i.setIcon("ranger$S");
+		i.setImage("ranger$S");
 		i.setAction("ranger");
 		i.setMargin(10);
 		add(i);
@@ -118,7 +118,7 @@ public class StabLobby  extends Scene{
 		i=new Button();
 		i.setPos(310+100,440);
 		i.setSize(140,200);
-		i.setIcon("FOUR#blue#lobby/rogue$S");
+		i.setImage("FOUR#blue#lobby/rogue$S");
 		i.setAction("rogue");
 		i.setMargin(10);
 		//i.setDisabled(true);
@@ -127,7 +127,7 @@ public class StabLobby  extends Scene{
 		i=new Button();
 		i.setPos(450+150,440);
 		i.setSize(140,200);
-		i.setIcon("sorcerer$S");
+		i.setImage("sorcerer$S");
 		i.setAction("sorcerer");
 		i.setMargin(10);
 		add(i);
@@ -135,7 +135,7 @@ public class StabLobby  extends Scene{
 		i=new Button();
 		i.setPos(590+200,440);
 		i.setSize(140,200);
-		i.setIcon("wizard$S");
+		i.setImage("wizard$S");
 		i.setAction("wizard");
 		i.setMargin(10);
 		add(i);
@@ -232,8 +232,8 @@ public class StabLobby  extends Scene{
 	//	player.discardInfo();
 	//	player.addInfo(new WarriorCharacter());
 	
-	//	travelToScene(player,CharacterSheet.ID);
-		travelToScene(player,null);
+		travelToScene(player,ActionBarSelectionScene2.ID);
+	//	travelToScene(player,null);
 	}
 	
 }

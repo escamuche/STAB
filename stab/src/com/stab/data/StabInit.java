@@ -235,6 +235,7 @@ import com.stab.data.info.props.StabRandomSpawner;
 import com.stab.data.info.props.Statue;
 import com.stab.data.info.props.TriggerPlate;
 import com.stab.data.info.props.WoodenDoor;
+import com.stab.data.scene.ActionBarSelectionScene2;
 import com.stab.data.scene.ActionSlotButton;
 import com.stab.data.scene.CharacterSheet;
 import com.stab.data.scene.Feats;
@@ -344,6 +345,7 @@ public class StabInit {
 		of.setMapping(SpellBook.class);
 		of.setMapping(Feats.class);
 		of.setMapping(PrayerBook.class);
+		of.setMapping(ActionBarSelectionScene2.class);
 		
 		//personajes
 		of.setMapping(WarriorCharacter.class);

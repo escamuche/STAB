@@ -1,6 +1,7 @@
 package com.stab.data.adventure;
 
 import com.stab.adventure.Adventure;
+import com.stab.common.Constants;
 import com.stab.common.events.DefaultRule;
 import com.stab.data.StabConstants;
 import com.stab.data.rules.CharacterSkillRollCondition;
@@ -14,6 +15,9 @@ import com.stab.model.basic.scenes.event.response.VictoryResponse;
 import com.stab.model.basic.scenes.event.rule.AllMonstersDeadRule;
 import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
+import com.stab.model.basic.ui.Button;
+import com.stab.model.basic.ui.Image;
+import com.stab.model.basic.ui.Panel;
 import com.stab.model.basic.ui.Text;
 
 
@@ -39,8 +43,8 @@ public class Zombies extends Adventure{
 		n.createContents();
 		n.setTag("BEGIN");
 		n.setNext("CHOICE");
-	/*
-		Widget tp= new Widget();
+	/**/
+		Panel tp= new Panel();
 		tp.setPos(Constants.CENTER,Constants.BEGIN);
 		tp.setSize(Constants.PERCENT+50,Constants.PERCENT+30);
 		//tp.setSize(600,200);
@@ -51,12 +55,13 @@ public class Zombies extends Adventure{
 		i.setPos(-50,-50);
 		
 		i.setSize(140, 140);
-	//	i.setImage("SHADER#infernal");
+		i.setImage("SHADER#infernal");
 	//	n.addGUI(i);
 		
 		tp.addChild(i);
 		Button bb= n.createButton("Test", "nothing to do");
 		tp.addChild(bb);
+		n.addGUI(tp);
 		/**/
 		
 	/*	MessageWidget tp= new MessageWidget();
