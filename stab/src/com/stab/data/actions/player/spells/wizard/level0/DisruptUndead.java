@@ -25,6 +25,7 @@ public class DisruptUndead extends SpellOnTarget {
  	 setRange(CLOSE);
  	 setMedium(MISSILE);
  	 this.setDescription("You direct a ray of positive energy. You must make a ranged touch attack to hit, and if the ray hits an undead creature, it deals 1d6 points of damage to it.");
+ 	 setWeapon(ID);
 	}
 
 	@Override

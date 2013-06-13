@@ -1,10 +1,13 @@
 package com.stab.data.info.equipment;
 
+import com.stab.data.actions.player.spells.wizard.level0.DisruptUndead;
+import com.stab.data.animation.GenericProyectileAnimation;
 import com.stab.data.animation.LungeAnimation;
 import com.stab.data.animation.ShootBeamAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.ThrustAnimation;
+import com.stab.data.animation.sprite.SpellsSpriteFactory;
 import com.stab.model.info.applicable.base.Damage;
 
 public class WeaponFactory extends ItemFactory{
@@ -130,6 +133,12 @@ public class WeaponFactory extends ItemFactory{
 		w.setCategory(BasicWeapon.SPECIAL);
 		w.setTouch(true);
 		register(TOUCH,w);
+		
+		w=new BasicWeapon("Disrupt Undead",0,1,Damage.GENERIC_DAMAGE, DisruptUndead.ID,GenericProyectileAnimation.ID);
+		w.setCategory(BasicWeapon.SPECIAL);
+		w.setTouch(true);
+		w.setBaseItem(MISSILE);
+		register(DisruptUndead.ID,w);
 		
 		//Armas de criaturas
 		w=new BasicWeapon("Claw",1,6,Damage.SLASHING_DAMAGE,"effects/zombieclaw",SwingAnimation.ID);

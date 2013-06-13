@@ -44,7 +44,6 @@ public class ShootProyectileAnimation extends OnTargetAnimation{
 		icon.setSize(64,64);
 		
 		float speed=getSpeed();
-		//TODO: leef speed de params tambien
 		
 		long time=(long)(origin.distance(target)/speed);
 	/*System.out.println("From "+origin+" to "+target);
