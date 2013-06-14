@@ -6,6 +6,7 @@ public class StabSpriteFactory extends AbstractSpriteFactory{
 
 	
 	public StabSpriteFactory() {
+		this.addFactory(new SpecialEffectsSpriteFactory());
 		this.addFactory(new SpellsSpriteFactory());
 	}
 	

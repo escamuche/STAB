@@ -4,36 +4,45 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import com.stab.data.actions.player.spells.wizard.level0.DisruptUndead;
+import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.animation.state.ExplodeState;
 import com.tien.princess.engine.sprite.AbstractSpriteFactory;
 import com.tien.princess.engine.sprite.Sprite;
 import com.tien.princess.engine.sprite.base.ProyectileSprite;
+import com.tien.princess.engine.sprite.common.states.StateSet;
+import com.tien.princess.engine.sprite.common.updaters.misc.ChangePainter;
 import com.tien.princess.engine.sprite.common.updaters.sound.LoopSound;
 
 public class SpellsSpriteFactory extends AbstractSpriteFactory{
 
-	public static final String CAST1="CAST1";
+	
 	
 	@Override
 	public Collection<Sprite> getSprites(String type) {
 		
 		
-		if (CAST1.equals(type)){
-			ProyectileSprite s= new ProyectileSprite(2);
-			s.setOnFire(new ExplodeState("PARTICLE#blueCast","effects/FizzleNatureA"));
-			return Arrays.asList((Sprite)s);
-		}
-		
 		if (DisruptUndead.ID.equals(type)){
 			ProyectileSprite s= new ProyectileSprite(1000);
 			s.setPainter("PARTICLE#magicmissile");
 			s.setR(0.2f);
-			ExplodeState x=new ExplodeState("PARTICLE#blueSparks","effects/IceCast");
-			s.getState(ProyectileSprite.TRAVEL)
-			.addUpdater(new LoopSound("effects/ArcaneExplosion"));
+			s.getTravel().addUpdater(new LoopSound("effects/ArcaneExplosion"));
+			s.setOnReach(new ExplodeState(SpecialEffectsSpriteFactory.BLUE_EXPLOSION), 16);
+			s.setOnFade(new ExplodeState(SpecialEffectsSpriteFactory.BLUE_EXPLOSION));
+			s.setOnFire(new ExplodeState(SpecialEffectsSpriteFactory.BLUE_CAST));
+			return Arrays.asList((Sprite)s);
+		}
+		if (RayFrost.ID.equals(type)){
+			ProyectileSprite s= new ProyectileSprite(1000);
+			s.setPainter("PARTICLE#magicmissile");
+			s.setR(0.5f);
+			s.getTravel().addUpdater(new LoopSound("effects/ArcaneExplosion"));
+			ExplodeState x=new ExplodeState(SpecialEffectsSpriteFactory.BLUE_EXPLOSION);
+			x.setTimed(1000, StateSet.DESTROYED);
+			x.addUpdater(new ChangePainter("PARTICLE#magicmissile"));
 			s.setOnReach(x, 16);
-			s.setOnFade(new ExplodeState("PARTICLE#blueSparks","effects/IceCast"));
-			s.setOnFire(new ExplodeState(CAST1));
+			s.setOnFade(new ExplodeState(SpecialEffectsSpriteFactory.BLUE_EXPLOSION));
+			
+			s.setOnFire(new ExplodeState(SpecialEffectsSpriteFactory.BLUE_CAST));
 			return Arrays.asList((Sprite)s);
 		}
 		
