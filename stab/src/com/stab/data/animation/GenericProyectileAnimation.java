@@ -10,6 +10,7 @@ import com.stab.data.StabInit;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTileAnimation;
 import com.tien.princess.engine.sprite.Sprite;
+import com.tien.princess.engine.sprite.base.ProyectileSprite;
 import com.tien.princess.engine.sprite.base.TagPoint;
 
 public class GenericProyectileAnimation extends OnTileAnimation {
@@ -25,7 +26,7 @@ public static final String ID="GENERICPROYECTILE_ANIMATION";
 	public void start() {
 		super.start();
 		
-		String img=getParam(1);
+		String img=getParam(2);
 		
 		Point origin=getOriginPoint();
 		Point target=getTargetPoint();
@@ -38,12 +39,14 @@ public static final String ID="GENERICPROYECTILE_ANIMATION";
 		Sprite first=sprites.iterator().next();
 		first.setPos(origin);
 		
+		
 		if (getTargetPoint()!=null){
 			TagPoint tp= new TagPoint();
 			tp.setPos(getTargetPoint());
 			first.setRef(tp);
 			
 			int rad=getIntParam(3);
+			rad=rad*Game.TILEWIDTH/2;
 			if (rad>0){
 				double a= Math.atan2(target.y-origin.y, target.x-origin.x);
 				first.setPos((int)(origin.x+rad*Math.cos(a)),(int)(origin.y+rad*Math.sin(a)));
@@ -52,6 +55,11 @@ public static final String ID="GENERICPROYECTILE_ANIMATION";
 		
 		
 	
+		if (first instanceof ProyectileSprite){
+			long distance= (long)first.getPos().distance(first.getRef().getPos());
+			long time=(long)(distance/((ProyectileSprite)first).getSpeed());
+			((ProyectileSprite)first).setTimeCap(time);
+		}
 		
 		
 		for (Sprite icon:sprites)

@@ -4,6 +4,8 @@ import java.awt.Point;
 
 import com.stab.data.StabConstants;
 import com.stab.data.animation.BlockAnimation;
+import com.stab.data.animation.GenericProyectileAnimation;
+import com.stab.data.animation.GenericProyectileMissAnimation;
 import com.stab.data.animation.MissProyectileAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SidestepAnimation;
@@ -110,6 +112,10 @@ public class WeaponAttackAction extends Action implements TargetAction{
 			sleep(500);
 			return;
 		}
+		if (GenericProyectileAnimation.ID.equals(ad.getAnimationType())){
+			sleep(origin.playAnimationOn(GenericProyectileAnimation.ID,target.getPos(),ad.getAnimationIcon(),origin.getWidth()));
+			return;
+		}
 		sleep(origin.playAnimationOn(ad.getAnimationType(),target,ad.getAnimationIcon()));
 	}
 
@@ -134,6 +140,10 @@ public class WeaponAttackAction extends Action implements TargetAction{
 		if (ThrustAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(ThrustAnimation.ID,target,ad.getAnimationIcon());
 			sleep(500);
+			return;
+		}
+		if (GenericProyectileAnimation.ID.equals(ad.getAnimationType())){
+			sleep(origin.playAnimationOn(GenericProyectileMissAnimation.ID,target.getPos(),ad.getAnimationIcon(),origin.getWidth()));
 			return;
 		}
 		sleep(origin.playAnimationOn(ad.getMissAnimationType(),target,ad.getAnimationIcon()));

@@ -167,11 +167,16 @@ import com.stab.data.animation.EffectAddAnimation;
 import com.stab.data.animation.EffectRemoveAnimation;
 import com.stab.data.animation.ExtraInfoAnimation;
 import com.stab.data.animation.FloatingTextAnimation;
+import com.stab.data.animation.GenericProyectileAnimation;
+import com.stab.data.animation.GenericProyectileMissAnimation;
+import com.stab.data.animation.GenericSpriteAnimation;
+import com.stab.data.animation.GenericSpriteOnAnimation;
 import com.stab.data.animation.HealNumberAnimation;
 import com.stab.data.animation.HorizontalScreenShakeAnimation;
 import com.stab.data.animation.LungeAnimation;
 import com.stab.data.animation.MagicMissileAnimation;
 import com.stab.data.animation.MissProyectileAnimation;
+import com.stab.data.animation.MissRotatingProyectileAnimation;
 import com.stab.data.animation.OpenDoorAnimation;
 import com.stab.data.animation.RSwingAnimation;
 import com.stab.data.animation.RevealAnimation;
@@ -429,6 +434,7 @@ public class StabInit {
 		of.setMapping(LungeAnimation.class);
 		of.setMapping(RSwingAnimation.class);
 		of.setMapping(ShootRotatingProyectileAnimation.class);
+		of.setMapping(MissRotatingProyectileAnimation.class);
 		of.setMapping(BlockAnimation.class);
 		of.setMapping(StepBackAnimation.class);
 		of.setMapping(SidestepAnimation.class);
@@ -440,6 +446,10 @@ public class StabInit {
 		of.setMapping(HorizontalScreenShakeAnimation.class);
 		of.setMapping(VerticalScreenShakeAnimation.class);
 		of.setMapping(FloatingTextAnimation.class);
+		of.setMapping(GenericProyectileAnimation.class);
+		of.setMapping(GenericProyectileMissAnimation.class);
+		of.setMapping(GenericSpriteAnimation.class);
+		of.setMapping(GenericSpriteOnAnimation.class);
 		
 		//Tokens
 		of.setMapping(IronBarsToken.class);

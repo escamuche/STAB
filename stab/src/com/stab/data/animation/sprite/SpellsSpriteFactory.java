@@ -20,14 +20,17 @@ public class SpellsSpriteFactory extends AbstractSpriteFactory{
 		
 		if (CAST1.equals(type)){
 			ProyectileSprite s= new ProyectileSprite(2);
-			s.setOnFire(new ExplodeState("BlueCast","effects/FizzleNatureA"));
+			s.setOnFire(new ExplodeState("PARTICLE#blueCast","effects/FizzleNatureA"));
 			return Arrays.asList((Sprite)s);
 		}
 		
 		if (DisruptUndead.ID.equals(type)){
 			ProyectileSprite s= new ProyectileSprite(1000);
+			s.setPainter("PARTICLE#magicmissile");
+			s.setR(0.2f);
 			ExplodeState x=new ExplodeState("PARTICLE#blueSparks","effects/IceCast");
-			s.getState(ProyectileSprite.TRAVEL).addUpdater(new LoopSound("effects/ArcaneExplosion"));
+			s.getState(ProyectileSprite.TRAVEL)
+			.addUpdater(new LoopSound("effects/ArcaneExplosion"));
 			s.setOnReach(x, 16);
 			s.setOnFade(new ExplodeState("PARTICLE#blueSparks","effects/IceCast"));
 			s.setOnFire(new ExplodeState(CAST1));
