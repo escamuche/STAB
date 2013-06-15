@@ -3,6 +3,7 @@ package com.stab.data.animation.sprite;
 import java.util.Arrays;
 import java.util.Collection;
 
+import com.stab.data.StabInit;
 import com.stab.data.actions.player.spells.wizard.level0.DisruptUndead;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.animation.state.ExplodeState;
@@ -12,6 +13,7 @@ import com.tien.princess.engine.sprite.base.ProyectileSprite;
 import com.tien.princess.engine.sprite.common.states.StateSet;
 import com.tien.princess.engine.sprite.common.updaters.misc.ChangePainter;
 import com.tien.princess.engine.sprite.common.updaters.sound.LoopSound;
+import com.tien.princess.engine.sprite.common.updaters.spawn.SpawnUpdater;
 
 public class SpellsSpriteFactory extends AbstractSpriteFactory{
 
@@ -35,6 +37,9 @@ public class SpellsSpriteFactory extends AbstractSpriteFactory{
 			StabProyectile s= new StabProyectile(0.5f);
 			s.setPainter("PARTICLE#magicmissile");
 			s.setLoopSound("effects/ArcaneExplosion");
+			SpawnUpdater beam= new SpawnUpdater(SpecialEffectsSpriteFactory.BLUE_BEAM);
+			beam.setFactory(StabInit.getSpriteFactory());
+			s.getTravel().addUpdater(beam);
 			ExplodeState x=new ExplodeState(SpecialEffectsSpriteFactory.BLUE_EXPLOSION);
 			x.setTimed(1000, StateSet.DESTROYED);
 			x.addUpdater(new ChangePainter("PARTICLE#magicmissile"));
