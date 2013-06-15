@@ -32,17 +32,16 @@ public class SpellsSpriteFactory extends AbstractSpriteFactory{
 			return Arrays.asList((Sprite)s);
 		}
 		if (RayFrost.ID.equals(type)){
-			ProyectileSprite s= new ProyectileSprite(1000);
+			StabProyectile s= new StabProyectile(0.5f);
 			s.setPainter("PARTICLE#magicmissile");
-			s.setR(0.5f);
-			s.getTravel().addUpdater(new LoopSound("effects/ArcaneExplosion"));
+			s.setLoopSound("effects/ArcaneExplosion");
 			ExplodeState x=new ExplodeState(SpecialEffectsSpriteFactory.BLUE_EXPLOSION);
 			x.setTimed(1000, StateSet.DESTROYED);
 			x.addUpdater(new ChangePainter("PARTICLE#magicmissile"));
 			s.setOnReach(x, 16);
-			s.setOnFade(new ExplodeState(SpecialEffectsSpriteFactory.BLUE_EXPLOSION));
+			s.setOnFade(SpecialEffectsSpriteFactory.BLUE_EXPLOSION);
 			
-			s.setOnFire(new ExplodeState(SpecialEffectsSpriteFactory.BLUE_CAST));
+			s.setOnFire(SpecialEffectsSpriteFactory.BLUE_CAST);
 			return Arrays.asList((Sprite)s);
 		}
 		

@@ -1,6 +1,7 @@
 package com.stab.data.info.equipment;
 
 import com.stab.data.actions.player.spells.wizard.level0.DisruptUndead;
+import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.animation.GenericProyectileAnimation;
 import com.stab.data.animation.LungeAnimation;
 import com.stab.data.animation.ShootBeamAnimation;
@@ -134,11 +135,17 @@ public class WeaponFactory extends ItemFactory{
 		w.setTouch(true);
 		register(TOUCH,w);
 		
+		//Spell Weapons
 		w=new BasicWeapon("Disrupt Undead",0,1,Damage.GENERIC_DAMAGE, DisruptUndead.ID,GenericProyectileAnimation.ID);
 		w.setCategory(BasicWeapon.SPECIAL);
 		w.setTouch(true);
 		w.setBaseItem(MISSILE);
 		register(DisruptUndead.ID,w);
+		w=new BasicWeapon("Ray of frost",1,3,Damage.COLD_DAMAGE, RayFrost.ID,GenericProyectileAnimation.ID);
+		w.setCategory(BasicWeapon.SPECIAL);
+		w.setTouch(true);
+		w.setBaseItem(RAY);
+		register( RayFrost.ID,w);
 		
 		//Armas de criaturas
 		w=new BasicWeapon("Claw",1,6,Damage.SLASHING_DAMAGE,"effects/zombieclaw",SwingAnimation.ID);

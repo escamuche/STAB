@@ -16,7 +16,7 @@ public class RayFrost extends SpellOnTarget{
 	
 	
 	
-
+/*
 @Override
 protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 	int dañobase=Roll.d3();
@@ -27,6 +27,8 @@ protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 		target.apply(d);
 	return super.fullEffect(caster, target, point);
 }
+/**/
+
 	public RayFrost() {
 		
 		setLevel(0);
@@ -36,6 +38,7 @@ protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 		this.setEffectType(DAMAGE);
 		setRange(CLOSE);
 		setMedium(RAY);
+		setWeapon(RayFrost.ID);
 		this.setDescription("A ray of freezing air and ice projects from your pointing finger. You must succeed on a ranged touch attack with the ray to deal damage to a target. The ray deals 1d3 points of cold damage.");
 	}
 
