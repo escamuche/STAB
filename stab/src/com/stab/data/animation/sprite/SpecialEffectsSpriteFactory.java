@@ -8,6 +8,7 @@ import com.stab.data.animation.state.ExplodeState;
 import com.tien.princess.engine.Resources;
 import com.tien.princess.engine.sprite.AbstractSpriteFactory;
 import com.tien.princess.engine.sprite.Sprite;
+import com.tien.princess.engine.sprite.StateSprite;
 import com.tien.princess.engine.sprite.base.BeamSprite;
 import com.tien.princess.engine.sprite.base.ProyectileSprite;
 
@@ -32,6 +33,11 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 		if (BLUE_EXPLOSION.equals(type)){
 			ProyectileSprite s= new ProyectileSprite(2);
 			s.setOnFire(new ExplodeState("PARTICLE#blueSparks","effects/IceCast"));
+			return Arrays.asList((Sprite)s);
+		}
+		if (BLUE_CHANNEL.equals(type)){
+			StateSprite s= new StateSprite();
+			s.setPainter("PARTICLE#RayOfFrost");
 			return Arrays.asList((Sprite)s);
 		}
 		if (BLUE_BEAM.equals(type)){
