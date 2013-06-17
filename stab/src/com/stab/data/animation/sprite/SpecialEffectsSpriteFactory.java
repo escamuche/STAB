@@ -4,13 +4,15 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import com.stab.common.Constants;
+import com.stab.common.value.InterpolatorValueProvider;
 import com.stab.data.animation.state.ExplodeState;
 import com.tien.princess.engine.Resources;
 import com.tien.princess.engine.sprite.AbstractSpriteFactory;
 import com.tien.princess.engine.sprite.Sprite;
-import com.tien.princess.engine.sprite.StateSprite;
+import com.tien.princess.engine.sprite.base.AttachedParticleSprite;
 import com.tien.princess.engine.sprite.base.BeamSprite;
 import com.tien.princess.engine.sprite.base.ProyectileSprite;
+import com.tien.princess.engine.sprite.common.updaters.sound.PlaySound;
 
 public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 
@@ -31,12 +33,13 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 			return Arrays.asList((Sprite)s);
 		}
 		if (BLUE_EXPLOSION.equals(type)){
-			ProyectileSprite s= new ProyectileSprite(2);
-			s.setOnFire(new ExplodeState("PARTICLE#blueSparks","effects/IceCast"));
+			AttachedParticleSprite s= new AttachedParticleSprite();
+			s.setPainter("PARTICLE#blueSparks");
+			s.getCurrentState().addUpdater(new PlaySound("effects/IceCast"));
 			return Arrays.asList((Sprite)s);
 		}
 		if (BLUE_CHANNEL.equals(type)){
-			StateSprite s= new StateSprite();
+			AttachedParticleSprite s= new AttachedParticleSprite();
 			s.setPainter("PARTICLE#RayOfFrost");
 			return Arrays.asList((Sprite)s);
 		}
@@ -44,7 +47,10 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 			BeamSprite s= new BeamSprite();
 			s.setImage(Resources.INSTANCE.getImage("effects/frostBeam"));
 			s.setStyle(Constants.TILED);
-			s.setWidth(16);
+			s.getFireState().setAlpha(new InterpolatorValueProvider(0,0.1f,100,0.8f));
+			s.getFireState().setWidth(new InterpolatorValueProvider(0,0,200,16));
+			s.getFadeState().setWidth(new InterpolatorValueProvider(0,16,400,16,600,0));
+			s.getFadeState().setAlpha(new InterpolatorValueProvider(400,0.6f,600,0f));
 			return Arrays.asList((Sprite)s);
 		}
 		

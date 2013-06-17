@@ -2,6 +2,7 @@ package com.stab.data.actions.traps;
 
 import java.awt.Point;
 
+import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.info.applicable.RolledDamage;
 import com.stab.model.action.Action;
 import com.stab.model.action.AoE;
@@ -53,5 +54,14 @@ public class FlameJet extends Action implements TileAction,AoE{
 		return false;
 	}
 
+	
+	@Override
+	protected void playExecuteActionAnimation(Info caster, Info target,
+			Point pos) {
+
+		super.playExecuteActionAnimation(caster, target, pos);
+		caster.playSound("flames");
+		caster.playAnimation(BasicSparkAnimation.ID,"PARTICLE#generic/flamejet",1500,Math.toDegrees(getAngle(caster, target, pos)));
+	}
 	
 }
