@@ -21,6 +21,7 @@ public class Monster extends Creature {
 		this.setGear(new HumanoidGear());   //si, si, ya, ya. ya lo separaremos en varias clases por tipo de monstruo
 		setOverlay("border");
 		setAIState(AIPackage.IDLE);
+		this.setBloodeffEct("PARTICLE#damage/redblood");
 	}
 	
 	public void postInit(){

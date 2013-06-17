@@ -48,7 +48,7 @@ public class Roldare extends Humanoid {
 		
 		this.setCurrentAI(ai);
 			
-		this.setBloodeffEct("PARTICLE#redblood");
+		this.setBloodeffEct("PARTICLE#damage/redblood");
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.LIGHTCROSSBOW), HumanoidGear.MAINHAND);
 		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.PADDED), HumanoidGear.ARMOR);

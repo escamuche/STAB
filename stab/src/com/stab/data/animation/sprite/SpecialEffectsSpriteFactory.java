@@ -23,24 +23,33 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 	public static final String BLUE_IMPACT="BLUEIMPACT";
 	public static final String BLUE_BEAM="BLUEBEAMT";
 	
+	
+	public static final String FREEZE_EXPLOSION="FEEZEEXPLOSION";
+	
 	@Override
 	public Collection<Sprite> getSprites(String type) {
 		
 		
 		if (BLUE_CAST.equals(type)){
 			ProyectileSprite s= new ProyectileSprite(2);
-			s.setOnFire(new ExplodeState("PARTICLE#blueCast","effects/FizzleNatureA"));
+			s.setOnFire(new ExplodeState("PARTICLE#effects/blueCast","effects/FizzleNatureA"));
 			return Arrays.asList((Sprite)s);
 		}
 		if (BLUE_EXPLOSION.equals(type)){
 			AttachedParticleSprite s= new AttachedParticleSprite();
-			s.setPainter("PARTICLE#blueSparks");
+			s.setPainter("PARTICLE#effects/blueSparks");
+			s.getCurrentState().addUpdater(new PlaySound("effects/IceCast"));
+			return Arrays.asList((Sprite)s);
+		}
+		if (FREEZE_EXPLOSION.equals(type)){
+			AttachedParticleSprite s= new AttachedParticleSprite();
+			s.setPainter("PARTICLE#effectsfreeze");
 			s.getCurrentState().addUpdater(new PlaySound("effects/IceCast"));
 			return Arrays.asList((Sprite)s);
 		}
 		if (BLUE_CHANNEL.equals(type)){
 			AttachedParticleSprite s= new AttachedParticleSprite();
-			s.setPainter("PARTICLE#RayOfFrost");
+			s.setPainter("PARTICLE#effects/blueChannel");
 			return Arrays.asList((Sprite)s);
 		}
 		if (BLUE_BEAM.equals(type)){

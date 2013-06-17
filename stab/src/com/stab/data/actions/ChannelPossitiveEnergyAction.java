@@ -67,11 +67,11 @@ public class ChannelPossitiveEnergyAction extends Action implements SelfAction, 
 			SavingThrowEffect st=getSavingThrow(caster,target);
 			st.check();
 			if (st.success()){
-				target.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#smallholyburn");
+				target.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#damage/smallHolyBurn");
 				Damage d= new Damage((int)(getAmount(caster)/2),Damage.HOLY_DAMAGE,caster);
 				target.apply(d);
 			}else{
-				target.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#holyburn");
+				target.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#damage/holyBurn");
 				Damage d= new Damage(getAmount(caster),Damage.HOLY_DAMAGE,caster);
 				target.apply(d);
 			}
@@ -86,7 +86,7 @@ public class ChannelPossitiveEnergyAction extends Action implements SelfAction, 
 		
 		Heal h= new Heal(getAmount(caster),caster);
 		target.apply(h);
-		target.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#Healing");
+		target.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#effects/healing");
 		
 		return true;
 	}
@@ -101,7 +101,7 @@ public class ChannelPossitiveEnergyAction extends Action implements SelfAction, 
 	protected void playExecuteActionAnimation(Info caster, Info target,	Point pos) {
 		super.playExecuteActionAnimation(caster, target, pos);
 		
-		caster.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#holyNova");
+		caster.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#spells/holyNova");
 		
 		sleep(1000);
 	}

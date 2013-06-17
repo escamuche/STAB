@@ -54,7 +54,6 @@ public class SkeletalChampion extends Undead {
 		this.setAIParams(new ZombieAIParameters());
 		
 				
-		this.setBloodeffEct("PARTICLE#greenblood");
 		
 		
 	}

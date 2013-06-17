@@ -9,7 +9,7 @@ public class Undead extends Monster{
 		super.init();
 		
 		this.addTrait(new UndeadTraits());
-		
+		this.setBloodeffEct("PARTICLE#damage/greenblood");
 	}
 
 }

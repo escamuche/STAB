@@ -122,7 +122,7 @@ public class WeaponFactory extends ItemFactory{
 		
 		
 		//Para hechizos
-		w=new BasicWeapon("Ray",0,1,Damage.GENERIC_DAMAGE,"PARTICLE#rayOfFrost",ShootBeamAnimation.ID);
+		w=new BasicWeapon("Ray",0,1,Damage.GENERIC_DAMAGE,"PARTICLE#magicmissile",ShootBeamAnimation.ID);
 		w.setCategory(BasicWeapon.SPECIAL);
 		w.setTouch(true);
 		register(RAY,w);

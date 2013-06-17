@@ -27,7 +27,7 @@ public class EffectAddAnimation  extends Animation {
 		icon.setPos(s.getCenter());
 		icon.setSize(64,64);
 	//	icon.setSpeed(0, -0.05f);
-		icon.setPainter(PaintUtils.getPainter("PARTICLE#buffOn#"+img));
+		icon.setPainter(PaintUtils.getPainter("PARTICLE#effects/buffOn#"+img));
 		icon.setState(new BasicAnimState(this.getTime()));
 		((GameScreen)s.getScreen()).add(icon);
 	}

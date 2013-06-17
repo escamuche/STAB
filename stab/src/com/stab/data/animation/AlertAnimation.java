@@ -27,7 +27,7 @@ public static final String ID=VisualEffect.ALERT_ANIMATION;
 		StabSprite icon=new StabSprite();
 		icon.setPos(getOriginPoint().x,getOriginPoint().y-s.getWidth()/2-16);
 		icon.setSize(64,64);
-		Painter p=PaintUtils.getPainter("PARTICLE#alert");
+		Painter p=PaintUtils.getPainter("PARTICLE#effects/alert");
 		icon.setPainter(p);
 		icon.setState(new BasicAnimState(this.getTime()));
 		((GameScreen)s.getScreen()).add(icon);

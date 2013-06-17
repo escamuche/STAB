@@ -38,7 +38,7 @@ public class DireRat extends Animal {
 		
 		//falta special:Filth fever
 		
-		this.setBloodeffEct("PARTICLE#redblood");
+	//	this.setBloodeffEct("PARTICLE#redblood");
 		
 		Weapon bite=StabInit.getWeaponFactory().getWeapon("SMALLBITE");
 		

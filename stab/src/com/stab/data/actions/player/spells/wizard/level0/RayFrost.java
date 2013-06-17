@@ -16,18 +16,7 @@ public class RayFrost extends SpellOnTarget{
 	
 	
 	
-/*
-@Override
-protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
-	int dañobase=Roll.d3();
-	
-	sleep(caster.playAnimationOn(ShootBeamAnimation.ID, target.getToken(), "PARTICLE#rayOfFrost"));
-	
-		Damage d= new Damage(dañobase, Damage.COLD_DAMAGE,caster);
-		target.apply(d);
-	return super.fullEffect(caster, target, point);
-}
-/**/
+
 
 	public RayFrost() {
 		

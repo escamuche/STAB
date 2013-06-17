@@ -46,7 +46,6 @@ public class Kobold extends Humanoid {
 
 		this.setCurrentAI(new DefaultAIPackage());
 			
-		this.setBloodeffEct("PARTICLE#redblood");
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("SPEAR"), HumanoidGear.BOTHHANDS);
 		this.equip(StabInit.getArmorFactory().getArmor("LIGHTLEATHER"), HumanoidGear.ARMOR);

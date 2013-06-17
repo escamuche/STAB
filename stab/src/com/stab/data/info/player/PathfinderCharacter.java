@@ -24,7 +24,7 @@ public static final String ID="PATH_INFO";
 		this.addTrait(new BasicAttributes());
 		this.setMaxMovePoints(6);
 	    this.setMaxActionPoints(1);
-	    this.setBloodeffEct("PARTICLE#redblood");
+	    this.setBloodeffEct("PARTICLE#damage/redblood");
 	    this.setGear(new HumanoidGear());
 	    this.setOverlay("border");
 	}

@@ -12,7 +12,7 @@ public class Brazier extends LightDecoration {
 	public void init() {
 		super.init();
 		
-		setResource("PARTICLE#brazier");
+		setResource("PARTICLE#decor/brazier");
 		//setResource("effects/brazier");
 		setText("");
 		setLightIntensity(8);

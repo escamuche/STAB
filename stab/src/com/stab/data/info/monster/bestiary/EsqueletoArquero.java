@@ -47,7 +47,6 @@ public class EsqueletoArquero extends Undead {
 		this.setAIParams(new ZombieAIParameters());
 		
 		
-		this.setBloodeffEct("PARTICLE#greenblood");
 		
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("LONGBOW"), HumanoidGear.BOTHHANDS);

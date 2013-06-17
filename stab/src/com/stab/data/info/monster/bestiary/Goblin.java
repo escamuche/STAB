@@ -37,7 +37,6 @@ public class Goblin extends Humanoid {
 		
 		this.setCurrentAI(ai);
 			
-		this.setBloodeffEct("PARTICLE#redblood");
 		
 		this.addTrait(new Evil());
 		

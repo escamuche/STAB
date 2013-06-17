@@ -42,14 +42,13 @@ public class Zombie extends Undead {
 		this.setAIParams(new ZombieAIParameters());
 		
 //		((DefaultAIPackage)this.getCurrentAI()).setLog(true);
-		this.setBloodeffEct("PARTICLE#greenblood");
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("MEDIUMSLAM"), HumanoidGear.BOTHHANDS);	
 		
 		this.addTrait(new Evil());
 		
 	//	this.setAIState(AIPackage.IDLE);
-		((DefaultAIPackage)getCurrentAI()).setLog(true);		
+		//((DefaultAIPackage)getCurrentAI()).setLog(true);		
 	}
 	
 }

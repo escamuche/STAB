@@ -24,7 +24,7 @@ public class MagicMissileSprite extends LightSprite {
 		setLightOn(true);
 		setLightIntensity(3);
 		setLightColor(Color.blue);
-		setPainter(PaintUtils.getPainter("PARTICLE#magicmissile"));
+		setPainter(PaintUtils.getPainter("PARTICLE#spells/magicMissile"));
 		
 		BasicAnimState st=new BasicAnimState(t);
 	//	st.addUpdater(new SpawnTrailUpdater());
@@ -65,9 +65,9 @@ public class MagicMissileSprite extends LightSprite {
 		s.setPos(this.getPos());
 		s.setSize(64,64);
 		if (blocked)
-			s.setPainter(PaintUtils.getPainter("PARTICLE#mageshield"));
+			s.setPainter(PaintUtils.getPainter("PARTICLE#spells/mageShield"));
 		else
-			s.setPainter(PaintUtils.getPainter("PARTICLE#blueSparks"));
+			s.setPainter(PaintUtils.getPainter("PARTICLE#effects/blueSparks"));
 		
 		double angle=Math.atan2(-getRef().getCenter().getY()-getY(), getRef().getCenter().getX()-getX());
 				

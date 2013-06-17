@@ -18,7 +18,7 @@ public class SpawnTrailUpdater extends SpawnUpdater {
 	
 	public Collection<Sprite> createSpawn(Sprite sprite){
 		StabSprite s=new StabSprite();
-		s.setPainter(PaintUtils.getPainter("PARTICLE#bluetrail"));
+		s.setPainter(PaintUtils.getPainter("PARTICLE#effects/bluetrail"));
 		s.setState(new BasicAnimState(450));
 		return Arrays.asList((Sprite)s);
 	}

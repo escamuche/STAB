@@ -11,7 +11,7 @@ public class RevealAnimation extends Animation{
 	@Override
 	public void start() {
 		super.start();
-		((Token)getSource()).playAnimation(BasicSparkAnimation.ID,"PARTICLE#reveal");
+		((Token)getSource()).playAnimation(BasicSparkAnimation.ID,"PARTICLE#effects/reveal");
 	}
 	
 }

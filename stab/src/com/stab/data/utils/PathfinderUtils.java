@@ -33,7 +33,7 @@ public class PathfinderUtils {
 	
 	public static String getShieldIcon(Creature c){
 		if (c.hasTrait(Shield_Buff.class))
-			return "PARTICLE#mageshield";
+			return "PARTICLE#spells/mageShield";
 		if (c.getEquipment(HumanoidGear.OFFHAND) instanceof Shield) {
 			Shield a = (Shield)c.getEquipment(HumanoidGear.OFFHAND);
 			return a.getEffectIcon();

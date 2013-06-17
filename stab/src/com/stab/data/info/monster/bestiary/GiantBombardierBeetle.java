@@ -40,7 +40,7 @@ public class GiantBombardierBeetle extends Vermin {
 		
 		this.setCurrentAI(new DefaultAIPackage());
 		
-		this.setBloodeffEct("PARTICLE#redblood");
+	//	this.setBloodeffEct("PARTICLE#redblood");
 		
 		Weapon bite=StabInit.getWeaponFactory().getWeapon("MEDIUMBITE");
 		

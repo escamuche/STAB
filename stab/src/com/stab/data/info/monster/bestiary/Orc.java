@@ -46,7 +46,7 @@ public class Orc extends Humanoid {
 		this.addTrait(new Evil());
 		this.addTrait(new Chaotic());
 		
-		this.setBloodeffEct("PARTICLE#redblood");
+	
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.GREATAXE), HumanoidGear.BOTHHANDS);
 		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.STUDDEDLEATHER), HumanoidGear.ARMOR);

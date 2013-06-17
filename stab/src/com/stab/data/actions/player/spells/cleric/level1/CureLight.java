@@ -25,7 +25,7 @@ public class CureLight extends SpellOnTarget{
 	
 	if (target.hasTrait(UndeadTraits.ID) == false) {
 		Heal heal = new Heal(dañobase, caster);
-		target.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#Healing");
+		target.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#effects/healing");
 		sleep(500);
 		target.apply(heal);
 		this.setEffectType(HEAL);
@@ -49,7 +49,7 @@ public class CureLight extends SpellOnTarget{
 	
 	if (target.hasTrait(UndeadTraits.ID) == false) {
 		Heal heal = new Heal(dañobase, caster);
-		target.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#Healing");
+		target.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#damage/holyBurn");
 		sleep(500);
 		target.apply(heal);
 		this.setEffectType(HEAL);

@@ -11,7 +11,7 @@ public class FlamingWeapon extends WeaponTrait {
 	public void affect(WeaponAttack app) {
 		app.addOnDamage(new RolledDamage(6, 0, Damage.FIRE_DAMAGE, null));
 		String s=app.getAnimationIcon();
-		app.setAnimationIcon("PARTICLE#flamingStrike#"+s);
+		app.setAnimationIcon("PARTICLE#effects/flamingStrike#"+s);
 	}
 	
 }
