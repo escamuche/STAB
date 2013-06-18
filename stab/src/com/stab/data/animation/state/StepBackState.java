@@ -12,6 +12,7 @@ public class StepBackState extends ValueState {
 	double a;
 	
 	public StepBackState(double a) {
+		super(true);
 		super.setTimed(700, SyncState.ID);
 		this.a=a+Math.PI;
 		InterpolatorValueProvider r= new InterpolatorValueProvider(0,0,300,32,600,32,700,0);

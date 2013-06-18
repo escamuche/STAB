@@ -12,7 +12,10 @@ public class SidestepState extends ValueState {
 	
 	double a;
 	
+	
+	
 	public SidestepState(double a) {
+		super(true);
 		super.setTimed(700, SyncState.ID);
 		this.a=a;
 		if (Roll.d2()==1)

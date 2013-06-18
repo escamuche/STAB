@@ -12,6 +12,7 @@ public class LungeState extends ValueState {
 	double a;
 	
 	public LungeState(double a) {
+		super(true);
 		super.setTimed(700, SyncState.ID);
 		this.a=a;
 		InterpolatorValueProvider r= new InterpolatorValueProvider(0,0,100,-4,400,32,600,32,700,0);

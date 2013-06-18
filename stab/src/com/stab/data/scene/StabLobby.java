@@ -232,8 +232,8 @@ public class StabLobby  extends Scene{
 	//	player.discardInfo();
 	//	player.addInfo(new WarriorCharacter());
 	
-		travelToScene(player,ActionBarSelectionScene2.ID);
-	//	travelToScene(player,null);
+	//	travelToScene(player,ActionBarSelectionScene2.ID);
+		travelToScene(player,null);
 	}
 	
 }

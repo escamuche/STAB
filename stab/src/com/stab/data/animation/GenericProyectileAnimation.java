@@ -59,11 +59,13 @@ public static final String ID="GENERICPROYECTILE_ANIMATION";
 			long distance= (long)first.getPos().distance(first.getRef().getPos());
 			long time=(long)(distance/((ProyectileSprite)first).getSpeed());
 			((ProyectileSprite)first).setTimeCap(time);
+			setTime(time+250);
 		}
 		
 		
 		for (Sprite icon:sprites)
 			AnimUtils.getScreen(getSource()).add(icon);
+	
 		
 		
 		
