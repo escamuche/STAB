@@ -1,5 +1,6 @@
 package com.stab.data.info.equipment;
 
+import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
 import com.stab.data.actions.player.spells.wizard.level0.DisruptUndead;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.animation.GenericProyectileAnimation;
@@ -8,7 +9,6 @@ import com.stab.data.animation.ShootBeamAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.ThrustAnimation;
-import com.stab.data.animation.sprite.SpellsSpriteFactory;
 import com.stab.model.info.applicable.base.Damage;
 
 public class WeaponFactory extends ItemFactory{
@@ -146,6 +146,11 @@ public class WeaponFactory extends ItemFactory{
 		w.setTouch(true);
 		w.setBaseItem(RAY);
 		register( RayFrost.ID,w);
+		w=new BasicWeapon("Acid orb",1,3,Damage.ACID_DAMAGE, AcidSplash.ID,GenericProyectileAnimation.ID);
+		w.setCategory(BasicWeapon.SPECIAL);
+		w.setTouch(true);
+		w.setBaseItem(RAY);
+		register( AcidSplash.ID,w);
 		
 		//Armas de criaturas
 		w=new BasicWeapon("Claw",1,6,Damage.SLASHING_DAMAGE,"effects/zombieclaw",SwingAnimation.ID);

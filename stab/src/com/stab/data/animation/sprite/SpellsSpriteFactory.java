@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import com.stab.data.StabInit;
+import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
 import com.stab.data.actions.player.spells.wizard.level0.DisruptUndead;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.animation.state.ExplodeState;
@@ -11,8 +12,6 @@ import com.tien.princess.engine.sprite.AbstractSpriteFactory;
 import com.tien.princess.engine.sprite.Sprite;
 import com.tien.princess.engine.sprite.common.states.StateSet;
 import com.tien.princess.engine.sprite.common.states.ValueState2;
-import com.tien.princess.engine.sprite.common.updaters.angle.AngleToRotation;
-import com.tien.princess.engine.sprite.common.updaters.misc.ChangePainter;
 import com.tien.princess.engine.sprite.common.updaters.sound.LoopSound;
 import com.tien.princess.engine.sprite.common.updaters.spawn.SpawnUpdater;
 
@@ -23,7 +22,17 @@ public class SpellsSpriteFactory extends AbstractSpriteFactory{
 	@Override
 	public Collection<Sprite> getSprites(String type) {
 		
-		
+		if (AcidSplash.ID.equals(type)){
+			StabProyectile s= new StabProyectile(0.2f);
+			s.setPainter("PARTICLE#spells/acidOrb");
+			s.setOnReach(new ExplodeState(SpecialEffectsSpriteFactory.ACID_EXPLOSION), 16);
+			s.setOnFade(new ExplodeState(SpecialEffectsSpriteFactory.ACID_EXPLOSION));
+			s.setOnFire(new ExplodeState(SpecialEffectsSpriteFactory.BLUE_CAST));
+			//((ValueState2)s.getTravel()).setScale(0.7f); 
+			s.setOriented();
+			
+			return Arrays.asList((Sprite)s);
+		}
 		if (DisruptUndead.ID.equals(type)){
 			StabProyectile s= new StabProyectile(0.3f);
 			s.setPainter("PARTICLE#spells/ball1");
@@ -33,7 +42,7 @@ public class SpellsSpriteFactory extends AbstractSpriteFactory{
 			s.setOnFire(new ExplodeState(SpecialEffectsSpriteFactory.BLUE_CAST));
 			((ValueState2)s.getTravel()).setScale(0.7f); 
 			s.setOriented();
-			s.getTravel().addUpdater(new AngleToRotation());
+			//s.getTravel().addUpdater(new AngleToRotation());
 			return Arrays.asList((Sprite)s);
 		}
 		if (RayFrost.ID.equals(type)){

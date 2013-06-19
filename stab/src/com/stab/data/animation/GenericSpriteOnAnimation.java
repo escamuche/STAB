@@ -21,7 +21,7 @@ public class GenericSpriteOnAnimation extends Animation {
 	public void start() {
 		super.start();
 		
-		String img=getParam(2);
+		String img=getParam(0);
 		
 		
 		Token_sprite s=AnimUtils.getSprite(getSource());

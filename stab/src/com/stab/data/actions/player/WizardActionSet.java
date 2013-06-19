@@ -1,17 +1,19 @@
 package com.stab.data.actions.player;
 
 
+import com.stab.data.actions.player.spells.cleric.level0.Light;
 import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
 import com.stab.data.actions.player.spells.wizard.level0.Bleed_Wizard;
 import com.stab.data.actions.player.spells.wizard.level0.Daze;
 import com.stab.data.actions.player.spells.wizard.level0.DisruptUndead;
 import com.stab.data.actions.player.spells.wizard.level0.Flare;
-import com.stab.data.actions.player.spells.wizard.level0.MageHand;
+import com.stab.data.actions.player.spells.wizard.level0.Light_Wizard;
 import com.stab.data.actions.player.spells.wizard.level0.OpenClose;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.actions.player.spells.wizard.level0.Resistance_Wizard;
 import com.stab.data.actions.player.spells.wizard.level0.TouchFatigue;
 import com.stab.data.actions.player.spells.wizard.level0.unfinished.DancingLights;
+import com.stab.data.actions.player.spells.wizard.level0.unfinished.MageHand;
 import com.stab.data.actions.player.spells.wizard.level1.BurningHands;
 import com.stab.data.actions.player.spells.wizard.level1.CharmPerson;
 import com.stab.data.actions.player.spells.wizard.level1.ChillTouch;
@@ -36,7 +38,8 @@ public class WizardActionSet extends PathfinderActionSet {
 		this.addAction(Daze.ID);
 		this.addAction(DisruptUndead.ID);
 		this.addAction(Flare.ID);
-		this.addAction(MageHand.ID);
+		this.addAction(Light_Wizard.ID);
+	//	this.addAction(MageHand.ID);
 		this.addAction(OpenClose.ID);
 		this.addAction(RayFrost.ID);
 		this.addAction(Resistance_Wizard.ID);
@@ -65,5 +68,8 @@ public class WizardActionSet extends PathfinderActionSet {
 				this.setAction(BurningHands.ID, 4);
 				this.setAction(RayFrost.ID,5);
 				this.setAction(DancingLights.ID,6);
+				
+				
+				this.setAction(Light_Wizard.ID, 2);
 	}
 }

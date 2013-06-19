@@ -4,9 +4,11 @@ import java.awt.Point;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
+import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.info.buff.spells.LightInUse;
 import com.stab.data.info.buff.spells.Light_Buff;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 import com.stab.model.info.trait.Trait;
 
 public class Light extends SpellOnTarget{
@@ -42,5 +44,13 @@ public class Light extends SpellOnTarget{
 		setResource("actions/light");
 		setName("Light");
 		this.setEffectType(BUFF);
+	}
+	
+	@Override
+	protected void playExecuteActionAnimation(Info caster, Info target,
+			Point pos) {
+		super.playExecuteActionAnimation(caster, target, pos);
+		target.playAnimation(BasicSparkAnimation.ID,"PARTICLE#spells/flash");
+		target.playSound("HolyCast");
 	}
 }

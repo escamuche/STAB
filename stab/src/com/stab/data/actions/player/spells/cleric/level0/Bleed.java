@@ -4,6 +4,7 @@ import java.awt.Point;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
+import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.info.debuff.Bleed_Debuff;
 import com.stab.model.info.BaseInfo;
 
@@ -35,5 +36,13 @@ public class Bleed extends SpellOnTarget{
 			else
 				return false;
 		
-	}
+	  }
+		
+		
+	@Override
+	protected void playFullEffectAnimation(BaseInfo caster, BaseInfo target,
+			Point point) {
+		super.playFullEffectAnimation(caster, target, point);
+		target.playAnimation(BasicSparkAnimation.ID, target.getBloodEffect());
+	}	
 }
