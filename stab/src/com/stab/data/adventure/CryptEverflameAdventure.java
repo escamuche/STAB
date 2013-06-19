@@ -714,7 +714,7 @@ public class CryptEverflameAdventure extends Adventure{
 				
 				DefaultTileMapScene mc2=new DefaultTileMapScene();
 				mc2.createContents();
-				mc2.createMap(16,16);
+				mc2.createMap(12,12);
 				mc2.loadTiled("camp1", 0, 0);
 				mc2.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
 				mc2.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
@@ -732,7 +732,7 @@ public class CryptEverflameAdventure extends Adventure{
 				
 				DefaultTileMapScene mc3=new DefaultTileMapScene();
 				mc3.createContents();
-				mc3.createMap(16,16);
+				mc3.createMap(12,12);
 				mc3.loadTiled("camp2", 0, 0);
 				mc3.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
 				mc3.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
