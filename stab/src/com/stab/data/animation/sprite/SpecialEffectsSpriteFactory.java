@@ -60,7 +60,7 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 			return getSpark("PARTICLE#effects/freeze","effects/IceCast");
 		}
 		if (BLUE_IMPACT.equals(type)){
-			return getSpark("PARTICLE#effects/blueCast","effects/FizzleNatureA");
+			return getSpark("PARTICLE#effects/frostImpact","effects/FizzleNatureA");
 		}
 		if (BLUE_CHANNEL.equals(type)){
 			AttachedParticleSprite s= new AttachedParticleSprite();

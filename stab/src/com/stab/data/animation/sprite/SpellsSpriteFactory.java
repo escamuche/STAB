@@ -25,9 +25,8 @@ public class SpellsSpriteFactory extends AbstractSpriteFactory{
 		
 		
 		if (DisruptUndead.ID.equals(type)){
-			StabProyectile s= new StabProyectile(1000);
+			StabProyectile s= new StabProyectile(0.3f);
 			s.setPainter("PARTICLE#spells/ball1");
-			s.setR(0.02f);
 			s.getTravel().addUpdater(new LoopSound("effects/ArcaneExplosion"));
 			s.setOnReach(new ExplodeState(SpecialEffectsSpriteFactory.BLUE_EXPLOSION), 16);
 			s.setOnFade(new ExplodeState(SpecialEffectsSpriteFactory.BLUE_EXPLOSION));
@@ -38,15 +37,17 @@ public class SpellsSpriteFactory extends AbstractSpriteFactory{
 			return Arrays.asList((Sprite)s);
 		}
 		if (RayFrost.ID.equals(type)){
-			StabProyectile s= new StabProyectile(0.05f);
+			StabProyectile s= new StabProyectile(0.5f);
 			s.setPainter("PARTICLE#effects/blueBeamHead");
 			s.setLoopSound("effects/ArcaneExplosion");
 			SpawnUpdater beam= new SpawnUpdater(SpecialEffectsSpriteFactory.BLUE_BEAM);
 			beam.setFactory(StabInit.getSpriteFactory());
 			s.getTravel().addUpdater(beam);
 			ExplodeState x=new ExplodeState(SpecialEffectsSpriteFactory.FREEZE_EXPLOSION);
-			x.setTimed(1000, StateSet.DESTROYED);
-			x.addUpdater(new ChangePainter("PARTICLE#effects/frostImpact"));
+			x.setTimed(2000, StateSet.DESTROYED);
+			SpawnUpdater beam2= new SpawnUpdater(SpecialEffectsSpriteFactory.BLUE_IMPACT,true);
+			beam2.setFactory(StabInit.getSpriteFactory());
+			x.addUpdater(beam2);
 			s.setOnReach(x, 16);
 			s.setOnFade(SpecialEffectsSpriteFactory.FREEZE_EXPLOSION);
 			s.setOnFire(SpecialEffectsSpriteFactory.BLUE_CHANNEL);

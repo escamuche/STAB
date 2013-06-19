@@ -60,6 +60,7 @@ public static final String ID="GENERICPROYECTILE_ANIMATION";
 			long time=(long)(distance/((ProyectileSprite)first).getSpeed());
 			((ProyectileSprite)first).setTimeCap(time);
 			setTime(time+250);
+			
 		}
 		
 		
