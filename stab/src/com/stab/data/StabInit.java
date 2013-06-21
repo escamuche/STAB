@@ -164,6 +164,7 @@ import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.animation.BlockAnimation;
 import com.stab.data.animation.CloseDoorAnimation;
 import com.stab.data.animation.DamageNumberAnimation;
+import com.stab.data.animation.DecayAnimation;
 import com.stab.data.animation.EffectAddAnimation;
 import com.stab.data.animation.EffectRemoveAnimation;
 import com.stab.data.animation.ExtraInfoAnimation;
@@ -451,6 +452,7 @@ public class StabInit {
 		of.setMapping(GenericProyectileMissAnimation.class);
 		of.setMapping(GenericSpriteAnimation.class);
 		of.setMapping(GenericSpriteOnAnimation.class);
+		of.setMapping(DecayAnimation.class);
 		
 		//Tokens
 		of.setMapping(IronBarsToken.class);

@@ -26,7 +26,7 @@ public class FastHealing extends Buff {
 		Creature i = (Creature) getTarget(); 
 		Heal h = new Heal(c,i);
 		i.apply(h);
-		i.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#effect/healing");
+		i.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#effects/healing");
 		
 	}
 }

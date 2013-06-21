@@ -100,7 +100,9 @@ public class WeaponAttackAction extends Action implements TargetAction{
 		
 		if (SwingAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(SwingAnimation.ID,target,ad.getAnimationIcon());
+			origin.playSound("effects/SwipeTarget");
 			sleep(500);
+			origin.playSound("effects/MetalShieldBlock1");
 			return;
 		}
 		if (ShootProyectileAnimation.ID.equals(ad.getAnimationType())){
@@ -109,7 +111,10 @@ public class WeaponAttackAction extends Action implements TargetAction{
 		}
 		if (ThrustAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(ThrustAnimation.ID,target,ad.getAnimationIcon());
-			sleep(500);
+			sleep(100);
+			origin.playSound("effects/SwipeTarget");
+			sleep(400);
+			origin.playSound("effects/MetalShieldBlock1");
 			return;
 		}
 		if (GenericProyectileAnimation.ID.equals(ad.getAnimationType())){
@@ -127,7 +132,12 @@ public class WeaponAttackAction extends Action implements TargetAction{
 		
 		if (SwingAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(SwingAnimation.ID,target,ad.getAnimationIcon());
+			origin.playSound("effects/SwipeTarget");
 			sleep(500);
+			if (ad.getResult()==WeaponAttack.BLOCK)
+				origin.playSound("effects/m1hSwordHitMetalShield1b");
+			if (ad.getResult()==WeaponAttack.ARMOR)
+				origin.playSound("effects/m1hSwordHitFlesh1b");
 			return;
 		}
 		if (ShootProyectileAnimation.ID.equals(ad.getAnimationType())){
@@ -139,7 +149,13 @@ public class WeaponAttackAction extends Action implements TargetAction{
 		}
 		if (ThrustAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(ThrustAnimation.ID,target,ad.getAnimationIcon());
-			sleep(500);
+			sleep(100);
+			origin.playSound("effects/SwipeTarget");
+			sleep(400);
+			if (ad.getResult()==WeaponAttack.BLOCK)
+				origin.playSound("effects/m1hSwordHitMetalShield1b");
+			if (ad.getResult()==WeaponAttack.ARMOR)
+				origin.playSound("effects/m1hSwordHitFlesh1b");
 			return;
 		}
 		if (GenericProyectileAnimation.ID.equals(ad.getAnimationType())){

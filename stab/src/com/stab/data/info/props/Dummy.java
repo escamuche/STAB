@@ -15,6 +15,7 @@ public class Dummy extends Obstacle {
 		setMaxEp(0);
 		healFully();
 		setResource("dummy");
+		setDestroyedResource("BarrilRoto");
 		setText("");
 		this.addTrait(new Modifier(StabConstants.ARMORDEFENSE,StabConstants.ARMORMOD,2));
 	
@@ -22,10 +23,6 @@ public class Dummy extends Obstacle {
 	//	this.setCurrentAI(new DefaultAIPackage());
 	}
 	
-	@Override
-	public void die() {
-		super.die();
-		setResource("BarrilRoto");
-	}
+	
 	
 }

@@ -1,8 +1,12 @@
 package com.stab.data.info.buff;
 
+import com.stab.common.Constants;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.abilities.Rage;
+import com.stab.data.animation.GenericSpriteOnAnimation;
+import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
 import com.stab.data.info.debuff.Rage_Debuff;
+import com.stab.model.basic.token.DecorToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.Buff;
@@ -56,4 +60,15 @@ public class Rage_Buff extends Buff {
 		i.setAttribute(StabConstants.RAGEROUNDSSPENT, j+1); //y los aplicamos
 		super.turnStarts(); //esto es para q no desaparezca el baseinfo al principio del turno
 	}
+	
+	
+	@Override
+	protected DecorToken createEffectToken() {
+		DecorToken t=createEffectToken(null,Constants.AURAS);
+		t.setResource("PARTICLE#generic/redAuraSmall");
+		return t;
+	}
+	
+	
+	
 }

@@ -4,6 +4,7 @@ import java.awt.Point;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
+import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.model.basic.token.DoorToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.base.Door;
@@ -34,7 +35,8 @@ protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 	protected void playFullEffectAnimation(BaseInfo caster, BaseInfo target,
 			Point point) {
 		super.playFullEffectAnimation(caster, target, point);
-		
+		target.playAnimation(BasicSparkAnimation.ID,"PARTICLE#spells/magicSparks");
+		target.playSound("effects/LayOnhands_Low_Chest");
 	}
 	
 }

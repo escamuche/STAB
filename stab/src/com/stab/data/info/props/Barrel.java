@@ -13,13 +13,10 @@ public class Barrel extends Obstacle {
 		setMaxEp(0);
 		healFully();
 		setResource("Barril");
+		setDestroyedResource("BarrilRoto");
 		setText("");
 	}
 	
-	@Override
-	public void die() {
-		super.die();
-		setResource("BarrilRoto");
-	}
+
 	
 }
