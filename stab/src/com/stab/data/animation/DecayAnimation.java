@@ -26,7 +26,7 @@ public class DecayAnimation  extends Animation{
 		
 		ValueState2 st=new ValueState2();
 		st.setBrightness(new InterpolatorValueProvider(0,1.0f,1000,0.f));
-		st.setAlpha(new InterpolatorValueProvider(1000,1.0f,1450,0.f,1500,1.0f));
+		st.setAlpha(new InterpolatorValueProvider(1000,1.0f,1500,0.0f));
 		s.setState(st);
 		
 		
