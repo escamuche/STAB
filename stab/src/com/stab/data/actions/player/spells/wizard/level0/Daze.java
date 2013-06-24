@@ -3,6 +3,7 @@ package com.stab.data.actions.player.spells.wizard.level0;
 import java.awt.Point;
 
 import com.stab.data.StabConstants;
+import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.info.debuff.condition.DazedCondition;
@@ -17,7 +18,7 @@ public class Daze extends SpellOnTarget{
 	public Daze() {
 		setLevel(0);
 		setCasterClass(StabConstants.WIZARDCASTER);
-		
+		setDescriptors(EffectDescriptor.COMPULSION,EffectDescriptor.MIND_AFFECTING,EffectDescriptor.STUN);
 		setResource("actions/ability_druid_naturalperfection");
 		setName("Daze");
 		this.setEffectType(DEBUFF);

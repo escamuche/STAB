@@ -1,13 +1,16 @@
 package com.stab.data.actions.player.spells;
 
 import java.awt.Point;
+import java.util.EnumSet;
 
 import org.newdawn.slick.Color;
 
 import com.stab.data.StabConstants;
+import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.actions.WeaponAttackAction;
 import com.stab.data.info.applicable.BreakSpellResistance;
 import com.stab.data.info.applicable.SavingThrowEffect;
+import com.stab.data.info.equipment.SpellActionEffect;
 import com.stab.data.info.equipment.SpellWeapon;
 import com.stab.data.info.equipment.Weapon;
 import com.stab.model.action.Action;
@@ -21,6 +24,7 @@ Spell spell;
 	
 	public SpellAction() {
 		spell=new Spell();
+		
 	}
 
 	public void setLevel(int level) {
@@ -141,8 +145,23 @@ Spell spell;
 		}
 		return super.getLosType();
 	}
+	
+	
+	@Override
+	public EnumSet<EffectDescriptor> getDescriptors() {
+		return spell.getDescriptors();
+	}
 
 	
+	
+	public void setDescriptors(EffectDescriptor arg0) {
+		spell.setDescriptors(arg0);
+	}
+
+	public void setDescriptors(EffectDescriptor arg0, EffectDescriptor... arg1) {
+		spell.setDescriptors(arg0, arg1);
+	}
+
 	@Override
 	public boolean affect(Info origin,Info t,Point point) {
 		//Este comportamiento estandar es para baseinfos. si es otra cosa, este metodo estara sobreescrito
@@ -173,12 +192,18 @@ Spell spell;
 				return b;
 			}
 			//Si no se usa un ataque, castear normalmente
-			return fullEffect(caster,target,point);
+			SpellActionEffect ae= new SpellActionEffect(caster,target,point,this.getId());
+			target.apply(ae);
+			//return fullEffect(caster,target,point);
+			return true;
 		}
 		//Si no es harmful, considerar que afecta siempre
 		//TODO: mirarse lo de resistencia magica para efectos beneficiosos, tecnicamente se aplica
-		
-		return fullEffect(caster,target,point);
+		SpellActionEffect ae= new SpellActionEffect(caster,target,point,this.getId());
+		target.apply(ae);
+		//return fullEffect(caster,target,point);
+		return true;
+	//	return fullEffect(caster,target,point);
 		
 	}
 

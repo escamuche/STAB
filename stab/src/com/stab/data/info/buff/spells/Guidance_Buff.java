@@ -17,7 +17,6 @@ public class Guidance_Buff extends Buff {
 		this.setResource("actions/guidance");                  
 		this.setName("Guidance");
 		
-		this.setCharges(1);
 	
 		Modifier tohit=new Modifier(StabConstants.TOHIT,StabConstants.COMPETENCEMOD, +1);
 		Modifier fsave=new Modifier(StabConstants.FORTITUDESAVE,StabConstants.COMPETENCEMOD, +1);

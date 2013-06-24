@@ -4,6 +4,7 @@ import java.awt.Point;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
+import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.info.debuff.condition.DyingCondition;
 import com.stab.model.info.BaseInfo;
 
@@ -33,4 +34,13 @@ public class Stabilize extends SpellOnTarget{
      this.setEffectType(HEAL);
      this.setDescription("Upon casting this spell, you target a living creature that has –1 or fewer hit points. That creature is automatically stabilized and does not lose any further hit points. If the creature later takes damage, it continues dying normally.");
 	}
+	
+	
+	@Override
+	protected void playFullEffectAnimation(BaseInfo caster, BaseInfo target,
+			Point point) {
+		super.playFullEffectAnimation(caster, target, point);
+		target.playAnimation(BasicSparkAnimation.ID, "PARTICLE#effects/healing");
+	}	
+	
 }

@@ -3,6 +3,7 @@ package com.stab.data.info.equipment;
 import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
 import com.stab.data.actions.player.spells.wizard.level0.DisruptUndead;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
+import com.stab.data.actions.player.spells.wizard.level0.TouchFatigue;
 import com.stab.data.animation.GenericProyectileAnimation;
 import com.stab.data.animation.LungeAnimation;
 import com.stab.data.animation.ShootBeamAnimation;
@@ -151,6 +152,12 @@ public class WeaponFactory extends ItemFactory{
 		w.setTouch(true);
 		w.setBaseItem(RAY);
 		register( AcidSplash.ID,w);
+		w=new BasicWeapon("Touch of Fatigue",0,1,Damage.UNHOLY_DAMAGE, "PARTICLE#effects/negativeStrike#effects/touch",ThrustAnimation.ID);
+		w.setCategory(BasicWeapon.SPECIAL);
+		w.setTouch(true);
+		w.setBaseItem(TOUCH);
+		register( TouchFatigue.ID,w);
+		
 		
 		//Armas de criaturas
 		w=new BasicWeapon("Claw",1,6,Damage.SLASHING_DAMAGE,"effects/zombieclaw",SwingAnimation.ID);

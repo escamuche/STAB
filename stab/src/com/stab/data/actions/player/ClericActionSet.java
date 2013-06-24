@@ -4,10 +4,10 @@ package com.stab.data.actions.player;
 import com.stab.data.actions.ChannelPossitiveEnergyAction;
 import com.stab.data.actions.player.abilities.NobilityDomain;
 import com.stab.data.actions.player.spells.cleric.level0.Bleed;
-import com.stab.data.actions.player.spells.cleric.level0.Guidance;
 import com.stab.data.actions.player.spells.cleric.level0.Resistance;
 import com.stab.data.actions.player.spells.cleric.level0.Stabilize;
 import com.stab.data.actions.player.spells.cleric.level0.Virtue;
+import com.stab.data.actions.player.spells.cleric.level0.unfinished.Guidance;
 import com.stab.data.actions.player.spells.cleric.level1.Bane;
 import com.stab.data.actions.player.spells.cleric.level1.Bless;
 import com.stab.data.actions.player.spells.cleric.level1.Command;
@@ -26,7 +26,7 @@ public class ClericActionSet extends PathfinderActionSet {
 		
 		
 		this.addAction(Bleed.ID);
-		this.addAction(Guidance.ID);
+		//this.addAction(Guidance.ID);
 		this.addAction(Resistance.ID);
 		this.addAction(Stabilize.ID);
 		this.addAction(Virtue.ID);

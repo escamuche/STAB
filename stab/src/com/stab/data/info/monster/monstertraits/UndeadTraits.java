@@ -1,6 +1,8 @@
 package com.stab.data.info.monster.monstertraits;
 
 import com.stab.data.StabConstants;
+import com.stab.data.actions.EffectDescriptor;
+import com.stab.data.info.DescriptorImmunity;
 import com.stab.data.info.feat.general.NaturalWeaponProficiency_Feat;
 import com.stab.data.info.feat.general.SimpleWeaponProficiency_Feat;
 import com.stab.model.info.trait.Attribute;
@@ -22,5 +24,8 @@ public class UndeadTraits extends CompoundTrait {
 	
 		this.addTrait(new NaturalWeaponProficiency_Feat());
 		this.addTrait(new SimpleWeaponProficiency_Feat());
+		
+		this.addTrait(new DescriptorImmunity(EffectDescriptor.CHARM, EffectDescriptor.COMPULSION,EffectDescriptor.MIND_AFFECTING,EffectDescriptor.PATTERN,EffectDescriptor.PHANTASM));
+		this.addTrait(new DescriptorImmunity(EffectDescriptor.DEATH, EffectDescriptor.POISON,EffectDescriptor.DISEASE,EffectDescriptor.STUN,EffectDescriptor.SLEEP,EffectDescriptor.FATIGUE));		
 	}
 }

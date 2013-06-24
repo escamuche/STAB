@@ -1,10 +1,11 @@
 package com.stab.data.actions.player.spells;
 
+import com.stab.data.actions.HasDescriptor;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 
-public interface SpellProperties {
+public interface SpellProperties extends HasDescriptor{
   
 	//Medio de transmision
 	public static final int SELF=0;  //Solo en el caster (rango 0)

@@ -1,7 +1,10 @@
 package com.stab.data.actions.player.spells;
 
+import java.util.EnumSet;
+
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
+import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.data.info.equipment.SpellWeapon;
 import com.stab.model.info.BaseInfo;
@@ -23,6 +26,9 @@ public class Spell implements SpellProperties {
 	
 	String weapon=null;
 	boolean weaponChargeSpell=false;
+	
+	EnumSet<EffectDescriptor> descriptors;
+	
 	
 	public void setLevel(int level) {
 		this.level = level;
@@ -185,6 +191,19 @@ public class Spell implements SpellProperties {
 	
 	public void setWeaponChargeSpell(boolean weaponChargeSpell) {
 		this.weaponChargeSpell = weaponChargeSpell;
+	}
+	
+	@Override
+	public EnumSet<EffectDescriptor> getDescriptors() {
+		return descriptors;
+	}
+	
+	public void setDescriptors(EffectDescriptor arg0){
+		descriptors= EnumSet.of(arg0);
+	}
+	
+	public void setDescriptors(EffectDescriptor arg0,EffectDescriptor...arg1){
+		descriptors= EnumSet.of(arg0, arg1);
 	}
 	
 }
