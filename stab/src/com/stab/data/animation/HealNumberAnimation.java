@@ -4,6 +4,7 @@ import org.newdawn.slick.Color;
 
 import com.stab.client.slick.GameScreen;
 import com.stab.client.slick.base.visualobjects.token.Token_sprite;
+import com.stab.common.Constants;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.BaseInfo;
@@ -25,9 +26,13 @@ public class HealNumberAnimation extends Animation{
 		super.start();
 			
 		Token_sprite s=AnimUtils.getSprite(getSource());
-		
+		if (!s.isVisible()){
+			setTime(0);
+			return;
+		}
 		 FloatingText ft=new FloatingText(1000);
 		 ft.setText(getParam(0));
+		 ft.setDesiredLayer(Constants.OVERMAP);
 		 ft.setTextColor(Color.green);
 		 ft.setFont(Resources.INSTANCE.getFont(Resources.BOLD_FONT));
 		 

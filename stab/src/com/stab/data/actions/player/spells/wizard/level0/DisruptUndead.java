@@ -31,7 +31,7 @@ public class DisruptUndead extends SpellOnTarget {
 	@Override
 	protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 		
-		if(target.hasTrait(UndeadTraits.ID)) {	
+		if (target.hasTrait(UndeadTraits.ID)) {	
 		
 					Damage d= new RolledDamage(1,6,0, Damage.HOLY_DAMAGE,caster);
 					target.apply(d);

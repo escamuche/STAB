@@ -23,7 +23,10 @@ public class SpeechBubbleAnimation extends Animation {
 		String txt=getParam(0);
 	
 		Token_sprite s=AnimUtils.getSprite(getSource());
-		
+		if (!s.isVisible()){
+			setTime(0);
+			return;
+		}
 		SpeechBubble icon=new SpeechBubble();
 		
 		icon.setRef(s);

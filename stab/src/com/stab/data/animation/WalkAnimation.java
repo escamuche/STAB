@@ -23,6 +23,12 @@ public class WalkAnimation extends OnTileAnimation {
 	public void start() {
 		super.start();
 		Token_sprite s=AnimUtils.getSprite(getSource());
+		/*
+		if (!s.isVisible()){
+			setTime(0);
+			return;
+		}
+		/**/
 		Point target=new Point(getTile().x*Game.TILEWIDTH,getTile().y*Game.TILEHEIGHT);
 		MoveToPointState st=new MoveToPointState(target,getTime());
 		s.setState(st);

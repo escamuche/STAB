@@ -3,7 +3,9 @@ package com.stab.data.animation;
 import org.newdawn.slick.Color;
 
 import com.stab.client.slick.GameScreen;
+import com.stab.client.slick.base.visualobjects.StabSprite;
 import com.stab.client.slick.base.visualobjects.token.Token_sprite;
+import com.stab.common.Constants;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.trait.base.VisualEffect;
@@ -25,10 +27,13 @@ public class FloatingTextAnimation extends Animation{
 		super.start();
 			
 		Token_sprite s=AnimUtils.getSprite(getSource());
-		
+		if (!s.isVisible()){
+			setTime(0);
+			return;
+		}
 		 FloatingText ft=new FloatingText(1000);
 		 ft.setText(getParam(0));
-		 
+		// ft.setDesiredLayer(Constants.OVERMAP);
 		 String[] vals= getParam(1).split(",");
 		 
 		// Color c= new Color(Integer.parseInt(vals[0]),Integer.parseInt(vals[1]),Integer.parseInt(vals[2]),Integer.parseInt(vals[3]));

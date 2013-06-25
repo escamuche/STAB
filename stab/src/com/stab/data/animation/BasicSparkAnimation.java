@@ -5,6 +5,7 @@ import sun.misc.Cleaner;
 import com.stab.client.slick.GameScreen;
 import com.stab.client.slick.base.visualobjects.StabSprite;
 import com.stab.client.slick.base.visualobjects.token.Token_sprite;
+import com.stab.common.Constants;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.trait.base.VisualEffect;
@@ -38,13 +39,17 @@ public class BasicSparkAnimation extends Animation {
 			a=getT(2, Double.class);
 		}catch(Exception e){}
 		Token_sprite s=AnimUtils.getSprite(getSource());
-		
+		/*if (!s.isVisible()){ //En basic no podemos presuponer nada.
+			setTime(0);
+			return;
+		}/**/
 		Painter p=PaintUtils.getPainter(img);
 	
 		if (p instanceof ValuePainter)
 			((ValuePainter)p).setRotation((float)a);
 		
 		StateSprite icon=new StabSprite();
+		
 		if (p instanceof ParticleSystemPainter){
 			icon=new AttachedParticleSprite();
 			BasicAnimState st=new BasicAnimState(this.getTime());
