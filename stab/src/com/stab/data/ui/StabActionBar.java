@@ -72,7 +72,7 @@ public class StabActionBar extends MultipageActionBar {
 		if (l!=null && l.length()>0){
 			Equipment w=StabInit.getEquipment(l);
 			if (w!=null){
-				rightHand.setPainter(w.getResource(), Constants.SCALED);
+				System.out.println("Right hand: "+w.getResource());
 			}
 		}
 		leftHand.setPainter((Painter)null);

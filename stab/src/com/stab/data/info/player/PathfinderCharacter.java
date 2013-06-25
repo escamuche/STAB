@@ -76,9 +76,16 @@ public static final String ID="PATH_INFO";
 	@Override
 		public boolean equip(Equipment e, String slot) {
 			boolean b=super.equip(e, slot);
-			if (HumanoidGear.MAINHAND.equals(slot)||HumanoidGear.OFFHAND.equals(slot)||HumanoidGear.BOTHHANDS.equals(slot))
+			if (HumanoidGear.MAINHAND.equals(slot)||HumanoidGear.OFFHAND.equals(slot)||HumanoidGear.BOTHHANDS.equals(slot)||HumanoidGear.ARMOR.equals(slot))
 				refreshEquippedGear();
 			return b;
+		}
+	
+	@Override
+		public void unequip(String slot) {
+			super.unequip(slot);
+			if (HumanoidGear.MAINHAND.equals(slot)||HumanoidGear.OFFHAND.equals(slot)||HumanoidGear.BOTHHANDS.equals(slot)||HumanoidGear.ARMOR.equals(slot))
+				refreshEquippedGear();
 		}
 	
 	
@@ -90,6 +97,7 @@ public static final String ID="PATH_INFO";
 		}
 	
 	public void refreshEquippedGear(){
+		if (getGear() instanceof HumanoidGear)
 		if (getToken()!=null){
 			String s="";
 			Equipment rh=getEquipment(HumanoidGear.MAINHAND);
@@ -105,6 +113,12 @@ public static final String ID="PATH_INFO";
 			if (s==null)
 				s="";
 			getToken().setCustomProperty(HumanoidGear.OFFHAND, s);
+			Equipment ar=getEquipment(HumanoidGear.ARMOR);
+			if (ar instanceof Item)
+				s=((Item)ar).getBaseItem();
+			if (s==null)
+				s="";
+			getToken().setCustomProperty(HumanoidGear.ARMOR, s);
 		}
 	}
 	
