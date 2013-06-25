@@ -8,6 +8,7 @@ import com.stab.model.basic.scenes.event.response.DefeatResponse;
 import com.stab.model.basic.scenes.event.response.VictoryResponse;
 import com.stab.model.basic.scenes.event.rule.AllMonstersDeadRule;
 import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
+import com.stab.model.basic.scenes.event.rule.ConditionalMusic;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 
 public class TestAdventure extends Adventure{
@@ -53,6 +54,9 @@ public class TestAdventure extends Adventure{
 		ms.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
 		ms.setTag("BATTLE");
 		ms.setWaitsForAll(true);
+		
+		ConditionalMusic m=new ConditionalMusic(ms);
+		m.setMusic("Lone", "Pursued", "Midnight", "LastBattle");
 		
 		AllMonstersDeadRule r=new AllMonstersDeadRule();
 		r.addResponse(new VictoryResponse(0,"VICTORY"));

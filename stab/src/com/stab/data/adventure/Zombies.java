@@ -14,6 +14,7 @@ import com.stab.model.basic.scenes.event.response.ShowMessageResponse;
 import com.stab.model.basic.scenes.event.response.VictoryResponse;
 import com.stab.model.basic.scenes.event.rule.AllMonstersDeadRule;
 import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
+import com.stab.model.basic.scenes.event.rule.ConditionalMusic;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.Image;
@@ -104,6 +105,9 @@ public class Zombies extends Adventure{
 		ms.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
 		ms.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
 		ms.setTag("BATTLE");
+		
+		ConditionalMusic m=new ConditionalMusic(ms);
+		m.setMusic("Lone", "Pursued", "Midnight", "LastBattle");
 		
 	//	ms.setTurnQueue(new RealTimeQueue());
 	//	ms.setUnlocked(true);
