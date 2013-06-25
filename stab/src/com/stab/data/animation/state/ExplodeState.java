@@ -28,7 +28,8 @@ public class ExplodeState extends State {
 		setTimed(2, StateSet.DESTROYED);
 		this.reverseAngle=reverseAngle;
 		this.sound=sound;
-		addUpdater(new PlaySound(sound));
+		if (sound!=null)
+			addUpdater(new PlaySound(sound));
 		SpawnUpdater sp=new SpawnUpdater();
 		sp.setEvery(-1);
 		sp.setType(spark);

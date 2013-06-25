@@ -46,9 +46,12 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 	protected Collection<Sprite> getSpark(String painter,String sound,long t){
 		AttachedParticleSprite s= new AttachedParticleSprite();
 		s.setPainter(painter);
+		
 		s.getCurrentState().setTimed(t, ClearParticlesState.ID);
-		if (sound!=null)
+		if (sound!=null){
+		//	System.out.println("preparing sound "+sound+" in "+s);
 			s.getCurrentState().addUpdater(new PlaySound(sound));
+		}
 		return Arrays.asList((Sprite)s);
 	}
 	

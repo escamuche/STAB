@@ -53,6 +53,7 @@ public class SpellsSpriteFactory extends AbstractSpriteFactory{
 			beam.setFactory(StabInit.getSpriteFactory());
 			s.getTravel().addUpdater(beam);
 			ExplodeState x=new ExplodeState(SpecialEffectsSpriteFactory.FREEZE_EXPLOSION);
+			x.addUpdater(new LoopSound("effects/ArcaneExplosion"));
 			x.setTimed(2000, StateSet.DESTROYED);
 			SpawnUpdater beam2= new SpawnUpdater(SpecialEffectsSpriteFactory.BLUE_IMPACT,true);
 			beam2.setFactory(StabInit.getSpriteFactory());

@@ -33,7 +33,7 @@ public class FloatingTextAnimation extends Animation{
 		}
 		 FloatingText ft=new FloatingText(1000);
 		 ft.setText(getParam(0));
-		// ft.setDesiredLayer(Constants.OVERMAP);
+		 ft.setDesiredLayer(Constants.OVERMAP);
 		 String[] vals= getParam(1).split(",");
 		 
 		// Color c= new Color(Integer.parseInt(vals[0]),Integer.parseInt(vals[1]),Integer.parseInt(vals[2]),Integer.parseInt(vals[3]));
