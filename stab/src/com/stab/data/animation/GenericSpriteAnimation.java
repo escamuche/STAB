@@ -3,12 +3,10 @@ package com.stab.data.animation;
 import java.awt.Point;
 import java.util.Collection;
 
-import com.stab.adventure.Game;
 import com.stab.data.StabInit;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTileAnimation;
 import com.tien.princess.engine.sprite.Sprite;
-import com.tien.princess.engine.sprite.base.ProyectileSprite;
 import com.tien.princess.engine.sprite.base.TagPoint;
 
 

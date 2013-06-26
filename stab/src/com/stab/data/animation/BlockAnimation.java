@@ -2,10 +2,10 @@ package com.stab.data.animation;
 
 import com.stab.client.slick.GameScreen;
 import com.stab.client.slick.base.visualobjects.StabSprite;
-import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.common.value.InterpolatorValueProvider;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTargetAnimation;
+import com.tien.princess.engine.sprite.StateSprite;
 import com.tien.princess.engine.sprite.common.painters.Painter;
 import com.tien.princess.engine.sprite.common.painters.ValuePainter;
 import com.tien.princess.engine.sprite.common.states.BasicAnimState;
@@ -27,7 +27,7 @@ public class BlockAnimation  extends OnTargetAnimation {
 		String img=getParam(1);
 		double a=getAngle();
 		
-		Token_sprite s=AnimUtils.getSprite(getSource());
+		StateSprite s=AnimUtils.getSprite(getSource());
 		StabSprite icon=new StabSprite();
 		icon.setPos(getOriginPoint());
 		icon.setSize(64,64);

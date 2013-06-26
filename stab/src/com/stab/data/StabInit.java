@@ -193,8 +193,11 @@ import com.stab.data.animation.StepBackAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.ThrustAnimation;
 import com.stab.data.animation.VerticalScreenShakeAnimation;
+import com.stab.data.animation.WaitAnimation;
 import com.stab.data.animation.WalkAnimation;
 import com.stab.data.animation.sprite.StabSpriteFactory;
+import com.stab.data.animation.ui.EnterScreenAnimation;
+import com.stab.data.animation.ui.LeaveScreenAnimation;
 import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.EquipmentFactory;
 import com.stab.data.info.equipment.WeaponFactory;
@@ -248,7 +251,7 @@ import com.stab.data.scene.CharacterSheet;
 import com.stab.data.scene.Feats;
 import com.stab.data.scene.PrayerBook;
 import com.stab.data.scene.SpellBook;
-import com.stab.data.scene.StabLobby;
+import com.stab.data.scene.StabLobby2;
 import com.stab.data.tokens.CDoorToken;
 import com.stab.data.tokens.IronBarsToken;
 import com.stab.data.tokens.LDoorToken;
@@ -347,7 +350,7 @@ public class StabInit {
 		of= new BasicObjectFactory();
 		
 		//scenes
-		of.setMapping(StabLobby.class);
+		of.setMapping(StabLobby2.class);
 		of.setMapping(CharacterSheet.class);
 		of.setMapping(SpellBook.class);
 		of.setMapping(Feats.class);
@@ -453,6 +456,9 @@ public class StabInit {
 		of.setMapping(GenericSpriteAnimation.class);
 		of.setMapping(GenericSpriteOnAnimation.class);
 		of.setMapping(DecayAnimation.class);
+		of.setMapping(EnterScreenAnimation.class);
+		of.setMapping(LeaveScreenAnimation.class);
+		of.setMapping(WaitAnimation.class);
 		
 		//Tokens
 		of.setMapping(IronBarsToken.class);

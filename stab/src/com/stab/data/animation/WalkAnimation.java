@@ -3,11 +3,11 @@ package com.stab.data.animation;
 import java.awt.Point;
 
 import com.stab.adventure.Game;
-import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.data.animation.state.MoveToPointState;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.action.base.WalkToAction;
 import com.stab.model.animation.OnTileAnimation;
+import com.tien.princess.engine.sprite.StateSprite;
 
 public class WalkAnimation extends OnTileAnimation {
 
@@ -22,7 +22,7 @@ public class WalkAnimation extends OnTileAnimation {
 	@Override
 	public void start() {
 		super.start();
-		Token_sprite s=AnimUtils.getSprite(getSource());
+		StateSprite s=AnimUtils.getSprite(getSource());
 		/*
 		if (!s.isVisible()){
 			setTime(0);

@@ -1,10 +1,10 @@
 package com.stab.data.animation;
 
 import com.stab.client.slick.GameScreen;
-import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.data.animation.sprite.ScreenShakeSprite;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
+import com.tien.princess.engine.sprite.StateSprite;
 
 public class HorizontalScreenShakeAnimation extends Animation{
 
@@ -18,7 +18,7 @@ public class HorizontalScreenShakeAnimation extends Animation{
 	@Override
 	public void start() {
 		super.start();
-		Token_sprite s=AnimUtils.getSprite(getSource());
+		StateSprite s=AnimUtils.getSprite(getSource());
 		((GameScreen)s.getScreen()).add(new ScreenShakeSprite(getTime(), 12, false,2.0f));
 		
 	}

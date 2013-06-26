@@ -2,11 +2,11 @@ package com.stab.data.animation;
 
 import java.util.Collection;
 
-import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.data.StabInit;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
 import com.tien.princess.engine.sprite.Sprite;
+import com.tien.princess.engine.sprite.StateSprite;
 
 public class GenericSpriteOnAnimation extends Animation {
 
@@ -24,7 +24,7 @@ public class GenericSpriteOnAnimation extends Animation {
 		String img=getParam(0);
 		
 		
-		Token_sprite s=AnimUtils.getSprite(getSource());
+		StateSprite s=AnimUtils.getSprite(getSource());
 		
 		Collection<Sprite> sprites= StabInit.getSpriteFactory().getSprites(img);
 		if (sprites==null){

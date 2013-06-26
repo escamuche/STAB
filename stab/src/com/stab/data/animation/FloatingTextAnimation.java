@@ -3,13 +3,12 @@ package com.stab.data.animation;
 import org.newdawn.slick.Color;
 
 import com.stab.client.slick.GameScreen;
-import com.stab.client.slick.base.visualobjects.StabSprite;
-import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.common.Constants;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.trait.base.VisualEffect;
 import com.tien.princess.engine.Resources;
+import com.tien.princess.engine.sprite.StateSprite;
 import com.tien.princess.engine.sprite.base.FloatingText;
 
 public class FloatingTextAnimation extends Animation{
@@ -26,7 +25,7 @@ public class FloatingTextAnimation extends Animation{
 	public void start() {
 		super.start();
 			
-		Token_sprite s=AnimUtils.getSprite(getSource());
+		StateSprite s=AnimUtils.getSprite(getSource());
 		if (!s.isVisible()){
 			setTime(0);
 			return;

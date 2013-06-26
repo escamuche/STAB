@@ -5,8 +5,10 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.info.BasicAttributes;
 import com.stab.data.info.equipment.HumanoidGear;
+import com.stab.data.info.equipment.Item;
 import com.stab.model.ai.AIPackage;
 import com.stab.model.ai.DefaultAIPackage;
+import com.stab.model.basic.token.Token;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.base.Equipment;
 
@@ -83,4 +85,51 @@ public class Monster extends Creature {
 	}
 	
 	
+	public boolean equip(Equipment e, String slot) {
+		boolean b=super.equip(e, slot);
+		if (HumanoidGear.MAINHAND.equals(slot)||HumanoidGear.OFFHAND.equals(slot)||HumanoidGear.BOTHHANDS.equals(slot)||HumanoidGear.ARMOR.equals(slot))
+			refreshEquippedGear();
+		return b;
+	}
+
+@Override
+	public void unequip(String slot) {
+		super.unequip(slot);
+		if (HumanoidGear.MAINHAND.equals(slot)||HumanoidGear.OFFHAND.equals(slot)||HumanoidGear.BOTHHANDS.equals(slot)||HumanoidGear.ARMOR.equals(slot))
+			refreshEquippedGear();
+	}
+
+
+@Override
+	public void initToken(Token token) {
+		super.initToken(token);
+		refreshEquippedGear();
+		
+	}
+
+public void refreshEquippedGear(){
+	if (getGear() instanceof HumanoidGear)
+	if (getToken()!=null){
+		String s="";
+		Equipment rh=getEquipment(HumanoidGear.MAINHAND);
+		if (rh instanceof Item)
+			s=((Item)rh).getBaseItem();
+		if (s==null)
+			s="";
+		getToken().setCustomProperty(HumanoidGear.MAINHAND, s);
+		s="";
+		Equipment lh=getEquipment(HumanoidGear.OFFHAND);
+		if (lh instanceof Item)
+			s=((Item)lh).getBaseItem();
+		if (s==null)
+			s="";
+		getToken().setCustomProperty(HumanoidGear.OFFHAND, s);
+		Equipment ar=getEquipment(HumanoidGear.ARMOR);
+		if (ar instanceof Item)
+			s=((Item)ar).getBaseItem();
+		if (s==null)
+			s="";
+		getToken().setCustomProperty(HumanoidGear.ARMOR, s);
+	}
+}
 }

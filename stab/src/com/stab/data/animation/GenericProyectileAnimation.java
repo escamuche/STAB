@@ -5,11 +5,11 @@ import java.awt.Rectangle;
 import java.util.Collection;
 
 import com.stab.adventure.Game;
-import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.data.StabInit;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTileAnimation;
 import com.tien.princess.engine.sprite.Sprite;
+import com.tien.princess.engine.sprite.StateSprite;
 import com.tien.princess.engine.sprite.base.ProyectileSprite;
 import com.tien.princess.engine.sprite.base.TagPoint;
 
@@ -73,7 +73,7 @@ public static final String ID="GENERICPROYECTILE_ANIMATION";
 	}
 	
 	protected Point getOriginPoint(){
-		Token_sprite s=AnimUtils.getSprite(getSource());
+		StateSprite s=AnimUtils.getSprite(getSource());
 		Point p=new Point((int)(s.getX()+s.getWidth()/2),(int)(s.getY()+s.getHeight()/2));
 		return p;
 	}

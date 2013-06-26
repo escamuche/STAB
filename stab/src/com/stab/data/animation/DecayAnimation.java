@@ -1,10 +1,10 @@
 package com.stab.data.animation;
 
-import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.common.value.InterpolatorValueProvider;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.trait.base.VisualEffect;
+import com.tien.princess.engine.sprite.StateSprite;
 import com.tien.princess.engine.sprite.common.states.ValueState2;
 
 public class DecayAnimation  extends Animation{
@@ -22,7 +22,7 @@ public class DecayAnimation  extends Animation{
 	
 		
 		
-		Token_sprite s=AnimUtils.getSprite(getSource());
+		StateSprite s=AnimUtils.getSprite(getSource());
 		if (s==null)
 			return;
 		ValueState2 st=new ValueState2();

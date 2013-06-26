@@ -1,11 +1,11 @@
 package com.stab.data.animation;
 
 import com.stab.client.slick.GameScreen;
-import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.data.animation.sprite.SpeechBubble;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.trait.base.VisualEffect;
+import com.tien.princess.engine.sprite.StateSprite;
 
 public class SpeechBubbleAnimation extends Animation {
 
@@ -22,7 +22,7 @@ public class SpeechBubbleAnimation extends Animation {
 		super.start();
 		String txt=getParam(0);
 	
-		Token_sprite s=AnimUtils.getSprite(getSource());
+		StateSprite s=AnimUtils.getSprite(getSource());
 		if (!s.isVisible()){
 			setTime(0);
 			return;

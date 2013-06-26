@@ -4,13 +4,13 @@ import java.awt.Point;
 
 import org.newdawn.slick.Color;
 
-import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.common.Constants;
 import com.stab.common.utils.Roll;
 import com.stab.data.animation.sprite.MagicMissileSprite;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTargetAnimation;
 import com.stab.model.basic.Sprite;
+import com.tien.princess.engine.sprite.StateSprite;
 import com.tien.princess.engine.sprite.base.TrailSprite;
 
 public class MagicMissileAnimation extends OnTargetAnimation{
@@ -76,13 +76,13 @@ public class MagicMissileAnimation extends OnTargetAnimation{
 	
 
 	protected Point getOriginPoint(){
-		Token_sprite s=AnimUtils.getSprite(getSource());
+		StateSprite s=AnimUtils.getSprite(getSource());
 		Point p=new Point((int)(s.getX()+s.getWidth()/2),(int)(s.getY()+s.getHeight()/2));
 		return p;
 	}
 	
 	protected Point getTargetPoint(){
-		Token_sprite t=AnimUtils.getSprite(getTarget());
+		StateSprite t=AnimUtils.getSprite(getTarget());
 		Point p=new Point((int)(t.getX()+t.getWidth()/2),(int)(t.getY()+t.getHeight()/2));;
 		return p;
 	}

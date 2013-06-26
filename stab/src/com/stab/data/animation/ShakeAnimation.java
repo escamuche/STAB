@@ -1,10 +1,10 @@
 package com.stab.data.animation;
 
-import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.data.animation.state.ShakeState;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.trait.base.VisualEffect;
+import com.tien.princess.engine.sprite.StateSprite;
 
 public class ShakeAnimation extends Animation{
 
@@ -18,7 +18,7 @@ public class ShakeAnimation extends Animation{
 	@Override
 	public void start() {
 		super.start();
-		Token_sprite s=AnimUtils.getSprite(getSource());
+		StateSprite s=AnimUtils.getSprite(getSource());
 	
 		ShakeState st=new ShakeState(getTime());
 		s.setState(st);

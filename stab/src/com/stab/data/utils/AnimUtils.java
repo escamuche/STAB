@@ -2,14 +2,14 @@ package com.stab.data.utils;
 
 import com.stab.client.slick.AbstractGameScreen;
 import com.stab.client.slick.base.updaters.SyncState;
-import com.stab.client.slick.base.visualobjects.token.Token_sprite;
-import com.stab.model.basic.Sprite;
+import com.tien.princess.engine.sprite.StateSprite;
+
 
 public class AnimUtils {
 
-	public static Token_sprite getSprite(Sprite t){
+	public static StateSprite getSprite(com.stab.model.basic.Sprite t){
 		if(t.getVisualObject() instanceof SyncState){
-			return (Token_sprite)((SyncState)t.getVisualObject()).getSprite();
+			return ((SyncState)t.getVisualObject()).getSprite();
 		}
 		return null;
 	}
@@ -23,7 +23,7 @@ public class AnimUtils {
 		
 	}
 
-	public static AbstractGameScreen getScreen(Sprite source) {
+	public static AbstractGameScreen getScreen(com.stab.model.basic.Sprite source) {
 		return (AbstractGameScreen)getSprite(source).getScreen();
 	}
 }

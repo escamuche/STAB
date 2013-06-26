@@ -1,9 +1,9 @@
 package com.stab.data.animation;
 
-import com.stab.client.slick.base.visualobjects.token.Token_sprite;
 import com.stab.data.animation.state.SidestepState;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTargetAnimation;
+import com.tien.princess.engine.sprite.StateSprite;
 
 public class SidestepAnimation extends OnTargetAnimation{
 
@@ -21,7 +21,7 @@ public class SidestepAnimation extends OnTargetAnimation{
 		
 		double a=getAngle();
 		
-		Token_sprite s=AnimUtils.getSprite(getSource());
+		StateSprite s=AnimUtils.getSprite(getSource());
 		
 		SidestepState st=new SidestepState(a);
 		s.setState(st);
