@@ -224,4 +224,13 @@ public class Spell implements SpellProperties {
 		return verbal;
 	}
 	
+	
+	public boolean isSubjectToArcaneArmorFailure() {
+		if (getCasterClass().equals(StabConstants.WIZARDCASTER))
+			return true;
+		if (getCasterClass().equals(StabConstants.SORCERERCASTER))
+			return true;
+		return false;
+	}
+	
 }

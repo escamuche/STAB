@@ -2,9 +2,9 @@ package com.stab.data.info.monster.monstertraits;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.EffectDescriptor;
-import com.stab.data.info.DescriptorImmunity;
 import com.stab.data.info.feat.general.NaturalWeaponProficiency_Feat;
 import com.stab.data.info.feat.general.SimpleWeaponProficiency_Feat;
+import com.stab.data.info.traits.DescriptorImmunity;
 import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.AttributeBasedModifier;
 import com.stab.model.info.trait.CompoundTrait;

@@ -6,8 +6,6 @@ import com.stab.data.actions.ChannelPossitiveEnergyAction;
 import com.stab.data.actions.player.ClericActionSet;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.abilities.NobilityDomain;
-import com.stab.data.info.BonusAttributeMP;
-import com.stab.data.info.PathfinderResource;
 import com.stab.data.info.alignment.Evil;
 import com.stab.data.info.alignment.Lawful;
 import com.stab.data.info.equipment.HumanoidGear;
@@ -16,6 +14,8 @@ import com.stab.data.info.feat.combat.WeaponFocus_Feat;
 import com.stab.data.info.feat.general.SelectiveChanneling_Feat;
 import com.stab.data.info.player.abilities.ChannelPositiveEnergy;
 import com.stab.data.info.player.abilities.NobilityDomain_Ability;
+import com.stab.data.info.traits.BonusAttributeMP;
+import com.stab.data.info.traits.PathfinderResource;
 import com.stab.model.info.trait.base.RenewableResource;
 
 

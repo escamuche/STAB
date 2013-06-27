@@ -45,6 +45,7 @@ public interface SpellProperties extends HasDescriptor{
 	public SavingThrowEffect getSavingThrow(BaseInfo caster,BaseInfo target);
 	public boolean isSomatic();
 	public boolean isVerbal(); 
+	public boolean isSubjectToArcaneArmorFailure();
 	
 	
 	

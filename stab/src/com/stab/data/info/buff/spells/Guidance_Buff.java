@@ -1,7 +1,7 @@
 package com.stab.data.info.buff.spells;
 
 import com.stab.data.StabConstants;
-import com.stab.data.info.AllSkillsModifier;
+import com.stab.data.info.traits.AllSkillsModifier;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.Buff;
 

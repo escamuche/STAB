@@ -4,12 +4,12 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.MonkActionSet;
-import com.stab.data.info.PathfinderAttributeBonus;
 import com.stab.data.info.alignment.Lawful;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.combat.CombatReflexes_Feat;
 import com.stab.data.info.feat.combat.Dodge_Feat;
 import com.stab.data.info.feat.combat.ImprovedUnarmedStrike_Feat;
+import com.stab.data.info.traits.PathfinderAttributeBonus;
 
 
 public class MonkCharacter extends PathfinderCharacter{

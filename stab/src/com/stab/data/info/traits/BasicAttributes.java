@@ -1,4 +1,4 @@
-package com.stab.data.info;
+package com.stab.data.info.traits;
 
 import com.stab.data.StabConstants;
 import com.stab.model.info.trait.Attribute;
@@ -73,6 +73,8 @@ public class BasicAttributes extends CompoundTrait{
 		this.addTrait(new AttributeBasedModifier(StabConstants.AC,StabConstants.SHIELDDEFENSE));
 		
 		
+		//Spellfailure
+		this.addTrait(new ArmorArcaneFailure());
 		
 		//Modificadores a los skills por armorcheckPenalty
 		this.addTrait(new AttributeBasedModifier(StabConstants.SWIMSKILL,StabConstants.ARMORCHECKPENALTY));

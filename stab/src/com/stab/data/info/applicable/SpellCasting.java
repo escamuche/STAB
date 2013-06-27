@@ -6,7 +6,7 @@ import com.stab.model.info.applicable.Applicable;
 
 public class SpellCasting extends Applicable {
 	
-	
+	//Eventualmente podemos meter aqui algun calculo de coste (doble coste para escuelas negadas, etc)
 
 
 	public static final int SUCCESS = 0;
@@ -33,5 +33,43 @@ public class SpellCasting extends Applicable {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@Override
+	public boolean success() {
+		return !success();
+	}
+	
+	public boolean failed() {
+		if (getResult()==GENERICFAIL)
+			return true;
+		if (getResult()==ARMORFAIL)
+			return true;
+		if (getResult()==CONCENTRATIONFAIL)
+			return true;
+		if (getResult()==INDUCEDFAIL)
+			return true;
+		if (getResult()==SPELLCHECKFAIL)
+			return true;
+		return false;
+	}
+	
+	
+	public Spell getSpell() {
+		return spell;
+	}
 
+	public boolean isSomatic() {
+		//Meter posibles comprobaciones (still, silent, etc)
+		return spell.isSomatic();
+	}
+
+	public boolean isVerbal() {
+	//	Meter posibles comprobaciones (still, silent, etc)
+		return spell.isVerbal();
+	}
+
+	public boolean isSubjectToArcaneArmorFailure() {
+		return spell.isSubjectToArcaneArmorFailure();
+	}
+	
 }

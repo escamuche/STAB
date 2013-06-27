@@ -6,7 +6,6 @@ import com.stab.data.actions.feats.PowerAttack;
 import com.stab.data.actions.player.BarbarianActionSet;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.abilities.Rage;
-import com.stab.data.info.PathfinderResource;
 import com.stab.data.info.alignment.Chaotic;
 import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.HumanoidGear;
@@ -15,6 +14,7 @@ import com.stab.data.info.feat.combat.IntimidatingProwess_Feat;
 import com.stab.data.info.feat.combat.PowerAttack_Feat;
 import com.stab.data.info.player.abilities.FastMovementBarbarian;
 import com.stab.data.info.player.abilities.Rage_Ability;
+import com.stab.data.info.traits.PathfinderResource;
 
 
 public class BarbarianCharacter extends PathfinderCharacter{

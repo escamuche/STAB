@@ -4,13 +4,13 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.SorcererActionSet;
-import com.stab.data.info.BonusAttributeMP;
 import com.stab.data.info.alignment.Lawful;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.Alertness_Feat;
 import com.stab.data.info.feat.general.CombatCasting_Feat;
 import com.stab.data.info.feat.general.EschewMaterials_Feat;
 import com.stab.data.info.feat.general.IronWill_Feat;
+import com.stab.data.info.traits.BonusAttributeMP;
 import com.stab.model.info.trait.Modifier;
 
 

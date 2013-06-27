@@ -1,4 +1,4 @@
-package com.stab.data.info;
+package com.stab.data.info.traits;
 
 import java.util.EnumSet;
 

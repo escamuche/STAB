@@ -1,8 +1,8 @@
 package com.stab.data.info.feat.combat;
 
 import com.stab.data.StabConstants;
-import com.stab.data.info.PathfinderAttributeBonus;
 import com.stab.data.info.feat.CombatFeat;
+import com.stab.data.info.traits.PathfinderAttributeBonus;
 import com.stab.model.info.trait.Modifier;
 
 public class IntimidatingProwess_Feat extends CombatFeat{

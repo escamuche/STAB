@@ -4,13 +4,13 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.WizardActionSet;
-import com.stab.data.info.BonusAttributeMP;
 import com.stab.data.info.equipment.EquipmentFactory;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.Alertness_Feat;
 import com.stab.data.info.feat.general.CombatCasting_Feat;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.data.info.feat.itemcreation.ScribeScroll_Feat;
+import com.stab.data.info.traits.BonusAttributeMP;
 import com.stab.model.info.trait.Modifier;
 
 

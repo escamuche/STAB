@@ -1,4 +1,4 @@
-package com.stab.data.info;
+package com.stab.data.info.traits;
 
 import com.stab.data.StabConstants;
 import com.stab.model.info.trait.Modifier;

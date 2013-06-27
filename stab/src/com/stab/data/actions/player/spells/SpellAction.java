@@ -10,6 +10,7 @@ import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.actions.WeaponAttackAction;
 import com.stab.data.info.applicable.BreakSpellResistance;
 import com.stab.data.info.applicable.SavingThrowEffect;
+import com.stab.data.info.applicable.SpellCasting;
 import com.stab.data.info.equipment.SpellActionEffect;
 import com.stab.data.info.equipment.SpellWeapon;
 import com.stab.data.info.equipment.Weapon;
@@ -40,16 +41,26 @@ Spell spell;
 	
 	
 	public boolean attemptCast(Info origin,Info target,Point point){
-		//Hacer por attends?
-		/*if (this.isVerbal(origin)){
-			//Comprobar areas de silencio, efectos, etc
+		SpellCasting sc= new SpellCasting(origin,getSpell());
+		sc.check();
+		if (sc.failed()){
+			switch(sc.getResult()){
+				case SpellCasting.ARMORFAIL: 
+				case SpellCasting.INDUCEDFAIL:
+				case SpellCasting.CONCENTRATIONFAIL:
+				case SpellCasting.SPELLCHECKFAIL:
+				case SpellCasting.GENERICFAIL:
+						origin.showFloatingText("FAILED", Color.red);
+			}
+			return false;
 		}
-		if (this.isSomatic(origin)){
-			
-		}/**/
 		return true;
 	}
 	
+	
+	public Spell getSpell() {
+		return spell;
+	}
 	
 	public void setLevel(int level) {
 		spell.setLevel(level);
@@ -330,13 +341,7 @@ Spell spell;
 		spell.setVerbal(verbal);
 	}
 
-	public boolean isSomatic(Info i) {
-		return spell.isSomatic();
-	}
 
-	public boolean isVerbal(Info i) {
-		return spell.isVerbal();
-	}
 	
 	public boolean isSomatic() {
 		return spell.isSomatic();
@@ -346,5 +351,8 @@ Spell spell;
 		return spell.isVerbal();
 	}
 	
+	public boolean isSubjectToArcaneArmorFailure() {
+		return spell.isSubjectToArcaneArmorFailure();
+	}
 	
 }
