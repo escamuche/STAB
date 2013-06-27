@@ -25,6 +25,8 @@ public class ArmorFactory extends ItemFactory{
 	public static final String STUDDEDLEATHER = "STUDDEDLEATHER";
 	public static final String LIGHTLEATHER = "LIGHTLEATHER";
 	public static final String PADDED = "PADDED";
+	public static final String CLOTH= "CLOTH";
+	public static final String ROBE= "ROBE";
 
 
 
@@ -43,6 +45,14 @@ public class ArmorFactory extends ItemFactory{
 		super.init();
 		
 		Armor a;
+		
+		a=new Armor("Ropa",0,25,0,Armor.NO_ARMOR,0);
+		register(CLOTH,a);
+		a=new Armor("Túnica",0,25,0,Armor.NO_ARMOR,0);
+		register(ROBE,a);
+		
+		a=new Armor("padded armor",1,8,0,Armor.LIGHT_ARMOR,5);
+		register(PADDED,a);
 		
 		a=new Armor("padded armor",1,8,0,Armor.LIGHT_ARMOR,5);
 		register(PADDED,a);

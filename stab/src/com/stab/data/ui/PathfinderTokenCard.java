@@ -10,10 +10,17 @@ public class PathfinderTokenCard extends DefaultTokenCard {
 	public static final String ID=TokenCard.ID;
 
 	
+	
+	protected boolean showData(Token t){
+		//return true;
+		return t.getFaction()==0;
+	}
+	
 	public void refreshData(){
 		super.refreshData();
 		Token t=this.getToken();
-		if (t!=null){
+		
+		if (t!=null && showData(t)){
 			String ac=t.getCustomString(StabConstants.AC);
 			if (ac!=null && ac.length()>0)
 				this.setName(getName()+" (AC:"+ac+")");

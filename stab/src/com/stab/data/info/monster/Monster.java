@@ -124,6 +124,7 @@ public void refreshEquippedGear(){
 		if (s==null)
 			s="";
 		getToken().setCustomProperty(HumanoidGear.OFFHAND, s);
+		s="";
 		Equipment ar=getEquipment(HumanoidGear.ARMOR);
 		if (ar instanceof Item)
 			s=((Item)ar).getBaseItem();

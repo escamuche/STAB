@@ -73,6 +73,7 @@ public class StabActionBar extends MultipageActionBar {
 			Equipment w=StabInit.getEquipment(l);
 			if (w!=null){
 			//	System.out.println("Right hand: "+w.getResource());
+				rightHand.setPainter(w.getResource(), Constants.SCALED);
 			}
 		}
 		leftHand.setPainter((Painter)null);
@@ -80,7 +81,7 @@ public class StabActionBar extends MultipageActionBar {
 		if (l!=null && l.length()>0){
 			Equipment w=StabInit.getEquipment(l);
 			if (w!=null){
-			//	leftHand.setPainter(w.getResource(), Constants.SCALED);
+				leftHand.setPainter(w.getResource(), Constants.SCALED);
 			}
 		}
 	}

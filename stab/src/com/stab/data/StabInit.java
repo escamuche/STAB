@@ -258,6 +258,7 @@ import com.stab.data.tokens.LDoorToken;
 import com.stab.data.tokens.RDoorToken;
 import com.stab.data.tokens.RoundToken;
 import com.stab.data.ui.PathfinderTokenCard;
+import com.stab.data.ui.PathfinderTokenTooltip;
 import com.stab.data.ui.RolledOptionButton;
 import com.stab.data.ui.RolledSkillOptionButton;
 import com.stab.data.ui.StabActionBar;
@@ -303,6 +304,7 @@ public class StabInit {
 			sv.getFactory().setMapping(RoundToken.ID,ImageToken_sprite.class);
 			sv.getFactory().setMapping(RolledOptionButton.ID,Button_sprite.class);
 			sv.getFactory().setMapping(RolledSkillOptionButton.ID,Button_sprite.class);
+			sv.getFactory().setMapping(PathfinderTokenTooltip.class);
 		}
 	}
 	
