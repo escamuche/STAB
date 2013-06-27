@@ -89,7 +89,12 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 		
 		
 		if (BLUE_CAST.equals(type)){
-			return getSpark("PARTICLE#effects/blueCast","effects/FizzleNatureA");
+			//return getSpark("PARTICLE#effects/blueCast","effects/FizzleNatureA");
+			/*AttachedParticleSprite s= new AttachedParticleSprite();
+			s.setPainter("PARTICLE#effects/blueCast");
+			s.addUpdater(new PlaySound("effects/FizzleNatureA"));
+			((ValueState2)s.getCurrentState()).setScale(0.2f);
+			return Arrays.asList((Sprite)s);/**/
 		}
 		if (BLUE_EXPLOSION.equals(type)){
 			return getSpark("PARTICLE#effects/blueSparks","effects/IceCast");

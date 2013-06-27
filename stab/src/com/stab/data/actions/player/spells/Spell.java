@@ -28,6 +28,8 @@ public class Spell implements SpellProperties {
 	boolean weaponChargeSpell=false;
 	
 	EnumSet<EffectDescriptor> descriptors;
+	boolean verbal=true;
+	boolean somatic=true;
 	
 	
 	public void setLevel(int level) {
@@ -204,6 +206,22 @@ public class Spell implements SpellProperties {
 	
 	public void setDescriptors(EffectDescriptor arg0,EffectDescriptor...arg1){
 		descriptors= EnumSet.of(arg0, arg1);
+	}
+	
+	public void setSomatic(boolean somatic) {
+		this.somatic = somatic;
+	}
+	
+	public void setVerbal(boolean verbal) {
+		this.verbal = verbal;
+	}
+	
+	public boolean isSomatic() {
+		return somatic;
+	}
+	
+	public boolean isVerbal() {
+		return verbal;
 	}
 	
 }

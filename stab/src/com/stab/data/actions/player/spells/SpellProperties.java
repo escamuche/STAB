@@ -43,6 +43,8 @@ public interface SpellProperties extends HasDescriptor{
 	public boolean canCast(BaseInfo caster);
 	public boolean isAffectedBySR();
 	public SavingThrowEffect getSavingThrow(BaseInfo caster,BaseInfo target);
+	public boolean isSomatic();
+	public boolean isVerbal(); 
 	
 	
 	

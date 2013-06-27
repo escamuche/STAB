@@ -71,6 +71,14 @@ public class BasicAttributes extends CompoundTrait{
 		this.addTrait(new AttributeBasedModifier(StabConstants.AC,StabConstants.ACTIVEDEFENSE));
 		this.addTrait(new AttributeBasedModifier(StabConstants.AC,StabConstants.ARMORDEFENSE));
 		this.addTrait(new AttributeBasedModifier(StabConstants.AC,StabConstants.SHIELDDEFENSE));
+		
+		
+		
+		//Modificadores a los skills por armorcheckPenalty
+		this.addTrait(new AttributeBasedModifier(StabConstants.SWIMSKILL,StabConstants.ARMORCHECKPENALTY));
+		//etc...
+		
+		
 	}
 
 }

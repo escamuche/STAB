@@ -27,6 +27,30 @@ Spell spell;
 		
 	}
 
+	
+	public final boolean execute(Info origin,Info target,Point point){
+		if (!attemptCast(origin,target,point))
+			return false;
+		return castSpell(origin,target,point);
+	}
+	
+	public boolean castSpell(Info origin,Info target,Point point){
+		return super.execute(origin, target, point);
+	}
+	
+	
+	public boolean attemptCast(Info origin,Info target,Point point){
+		//Hacer por attends?
+		/*if (this.isVerbal(origin)){
+			//Comprobar areas de silencio, efectos, etc
+		}
+		if (this.isSomatic(origin)){
+			
+		}/**/
+		return true;
+	}
+	
+	
 	public void setLevel(int level) {
 		spell.setLevel(level);
 	}
@@ -297,4 +321,30 @@ Spell spell;
 				return 0;
 			return (spell.getLevel()*5)+5;
 		}
+
+	public void setSomatic(boolean somatic) {
+		spell.setSomatic(somatic);
+	}
+
+	public void setVerbal(boolean verbal) {
+		spell.setVerbal(verbal);
+	}
+
+	public boolean isSomatic(Info i) {
+		return spell.isSomatic();
+	}
+
+	public boolean isVerbal(Info i) {
+		return spell.isVerbal();
+	}
+	
+	public boolean isSomatic() {
+		return spell.isSomatic();
+	}
+
+	public boolean isVerbal() {
+		return spell.isVerbal();
+	}
+	
+	
 }

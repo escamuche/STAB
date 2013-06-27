@@ -117,7 +117,7 @@ public class StabLobby2  extends Scene{
 			Character infowizard=new WizardCharacter();
 			player.addInfo(infowizard);	
 			infowizard.setText(player.getName());
-			d=11;
+			d=10;
 			}
 		if(option.equals("cleric")) {
 			player.setIcon("tokens/tokenCleric");
