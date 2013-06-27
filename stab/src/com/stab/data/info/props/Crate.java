@@ -14,5 +14,6 @@ public class Crate extends Obstacle {
 		healFully();
 		setResource("crate");
 		setText("");
+		setDestroyedResource("brokenCrate");
 	}
 }
