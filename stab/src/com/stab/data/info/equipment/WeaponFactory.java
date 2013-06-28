@@ -222,13 +222,13 @@ public class WeaponFactory extends ItemFactory{
 		w=new RangedWeapon("dart",1,4,Damage.PIERCING_DAMAGE,"effects/sword",ShootProyectileAnimation.ID);
 		register(DART,w);
 		
-		w=new RangedWeapon("javelin",1,6,Damage.PIERCING_DAMAGE,"effects/sword",ShootProyectileAnimation.ID);
+		w=new ThrownWeapon("javelin",1,6,Damage.PIERCING_DAMAGE,"effects/sword",ShootProyectileAnimation.ID);
 		register(JAVELIN,w);
 		
 		w=new RangedWeapon("sling",1,4,Damage.IMPACT_DAMAGE,"effects/sword",ShootProyectileAnimation.ID);
 		register(SLING,w);
 		
-		w=new RangedWeapon("throwingaxe",1,6,Damage.SLASHING_DAMAGE,"effects/axe",ShootProyectileAnimation.ID);
+		w=new ThrownWeapon("throwingaxe",1,6,Damage.SLASHING_DAMAGE,"effects/axe",ShootProyectileAnimation.ID);
 		register(THROWINGAXE,w);
 		
 		w=new BasicWeapon("lighthammer",1,4,Damage.IMPACT_DAMAGE,"effects/hammer",SwingAnimation.ID);
@@ -401,7 +401,7 @@ public class WeaponFactory extends ItemFactory{
 		w.setTwoHanded(true);
 		register(DWARVENURGROSH,w);
 		
-		w=new BasicWeapon("bolas",1,4,Damage.IMPACT_DAMAGE,"effects/sword",SwingAnimation.ID);
+		w=new ThrownWeapon("bolas",1,4,Damage.IMPACT_DAMAGE,"effects/sword",SwingAnimation.ID);
 		register(BOLAS,w);
 		
 		w=new RangedWeapon("handcrossbow",1,4,Damage.PIERCING_DAMAGE,2,2,"effects/sword",SwingAnimation.ID);
@@ -415,7 +415,7 @@ public class WeaponFactory extends ItemFactory{
 		w.setTwoHanded(true);
 		register(REPEATINGLIGHTCROSSBOW,w);
 		
-		w=new RangedWeapon("shuriken",1,2,Damage.PIERCING_DAMAGE,"effects/sword",ShootProyectileAnimation.ID);
+		w=new ThrownWeapon("shuriken",1,2,Damage.PIERCING_DAMAGE,"effects/sword",ShootProyectileAnimation.ID);
 		register(SHURIKEN,w);
 		
 		w=new BasicWeapon("halflingslingstaff",1,8,Damage.IMPACT_DAMAGE,1,3,"effects/sword",SwingAnimation.ID);
