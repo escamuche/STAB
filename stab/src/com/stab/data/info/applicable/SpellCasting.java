@@ -36,7 +36,7 @@ public class SpellCasting extends Applicable {
 	
 	@Override
 	public boolean success() {
-		return !success();
+		return !failed();
 	}
 	
 	public boolean failed() {
