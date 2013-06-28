@@ -10,5 +10,5 @@ public enum EffectDescriptor {
 	PHANTASM,DISBELIEF,POLYMORPH,
 	
 //Ojo, estos son "no estandar", pero importantes	
-	BLEED,PARALYSIS,STUN,SLEEP,FATIGUE
+	BLEED,PARALYSIS,STUN,SLEEP,FATIGUE,AFFECTS_OBJECTS
 }
