@@ -50,4 +50,13 @@ public class SpellDeliverWeapon extends BasicWeapon {
 	public void setRanged(boolean ranged) {
 		this.ranged = ranged;
 	}
+	
+	
+	@Override
+	public void setBaseItem(String baseItem) {
+		// TODO Auto-generated method stub
+		super.setBaseItem(baseItem);
+		this.setResource("items/"+baseItem);
+	}
+	
 }
