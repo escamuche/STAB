@@ -19,7 +19,7 @@ public class WeaponBrokenCondition extends WeaponTrait implements Affects<Weapon
 	@Override
 	public void affect(WeaponAttack arg0) {
 		arg0.addModifier(-2);
-		arg0.setBaseDamage(arg0.getBaseDamage()-2);
+		arg0.modifyBaseDamage(-2);
 		arg0.setCritMultiplier(2);
 		arg0.setCritRange(20);
 	}

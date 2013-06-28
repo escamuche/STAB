@@ -123,39 +123,30 @@ public class WeaponFactory extends ItemFactory{
 		
 		
 		//Para hechizos
-		w=new BasicWeapon("Ray",0,1,Damage.GENERIC_DAMAGE,"PARTICLE#magicmissile",ShootBeamAnimation.ID);
+		w=new SpellDeliverWeapon("Ray",0,1,Damage.GENERIC_DAMAGE,"PARTICLE#magicmissile",ShootBeamAnimation.ID);
 		w.setCategory(BasicWeapon.SPECIAL);
 		w.setTouch(true);
 		register(RAY,w);
-		w=new BasicWeapon("Missile",0,1,Damage.GENERIC_DAMAGE, "PARTICLE#magicmissile",ShootProyectileAnimation.ID);
+		w=new SpellDeliverWeapon("Missile",0,1,Damage.GENERIC_DAMAGE, "PARTICLE#magicmissile",ShootProyectileAnimation.ID);
 		w.setCategory(BasicWeapon.SPECIAL);
 		w.setTouch(true);
 		register(MISSILE,w);
-		w=new BasicWeapon("Touch",0,1,Damage.GENERIC_DAMAGE,"effects/touch",ThrustAnimation.ID);
-		w.setCategory(BasicWeapon.SPECIAL);
-		w.setTouch(true);
+		w=new SpellDeliverWeapon("Touch",0,1,Damage.GENERIC_DAMAGE,"effects/touch",ThrustAnimation.ID);
+		((SpellDeliverWeapon)w).setRanged(false);
 		register(TOUCH,w);
 		
 		//Spell Weapons
-		w=new BasicWeapon("Disrupt Undead",0,1,Damage.GENERIC_DAMAGE, DisruptUndead.ID,GenericProyectileAnimation.ID);
-		w.setCategory(BasicWeapon.SPECIAL);
-		w.setTouch(true);
+		w=new SpellDeliverWeapon("Disrupt Undead",0,1,Damage.GENERIC_DAMAGE, DisruptUndead.ID,GenericProyectileAnimation.ID);
 		w.setBaseItem(MISSILE);
 		register(DisruptUndead.ID,w);
-		w=new BasicWeapon("Ray of frost",1,3,Damage.COLD_DAMAGE, RayFrost.ID,GenericProyectileAnimation.ID);
+		w=new SpellDeliverWeapon("Ray of frost",1,3,Damage.COLD_DAMAGE, RayFrost.ID,GenericProyectileAnimation.ID);
 		w.setCategory(BasicWeapon.SPECIAL);
-		w.setTouch(true);
-		w.setBaseItem(RAY);
 		register( RayFrost.ID,w);
-		w=new BasicWeapon("Acid orb",1,3,Damage.ACID_DAMAGE, AcidSplash.ID,GenericProyectileAnimation.ID);
+		w=new SpellDeliverWeapon("Acid orb",1,3,Damage.ACID_DAMAGE, AcidSplash.ID,GenericProyectileAnimation.ID);
 		w.setCategory(BasicWeapon.SPECIAL);
-		w.setTouch(true);
-		w.setBaseItem(RAY);
 		register( AcidSplash.ID,w);
-		w=new BasicWeapon("Touch of Fatigue",0,1,Damage.UNHOLY_DAMAGE, "PARTICLE#effects/negativeStrike#effects/touch",ThrustAnimation.ID);
-		w.setCategory(BasicWeapon.SPECIAL);
-		w.setTouch(true);
-		w.setBaseItem(TOUCH);
+		w=new SpellDeliverWeapon("Touch of Fatigue",0,1,Damage.UNHOLY_DAMAGE, "PARTICLE#effects/negativeStrike#effects/touch",ThrustAnimation.ID);
+		((SpellDeliverWeapon)w).setRanged(false);
 		register( TouchFatigue.ID,w);
 		
 		
