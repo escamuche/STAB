@@ -45,7 +45,7 @@ public class SmiteEvil_Debuff extends Debuff implements Attends<Attack> {
 	@Override
 	protected DecorToken createEffectToken() {
 		DecorToken t=createEffectToken(null,Constants.AURAS);
-		t.setResource("PARTICLE#generic/yellowAuraSmall");
+		t.setResource("PARTICLE#effects/yellowAuraSmall");
 		return t;
 	}
 	
