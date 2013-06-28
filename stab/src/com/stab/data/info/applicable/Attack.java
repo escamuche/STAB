@@ -172,7 +172,14 @@ public abstract class Attack extends OpposedSkillRoll{
 		return !hits();
 	}
 	
-	
+	@Override
+	public boolean success() {
+		return hits();
+	}
+	@Override
+	public boolean failed() {
+		return misses();
+	}
 
 
 	
