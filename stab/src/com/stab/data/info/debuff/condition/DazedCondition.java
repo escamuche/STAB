@@ -12,7 +12,7 @@ public class DazedCondition extends Debuff{
 
 	public static final String ID="DAZEDCONDITION_DEBUFF";
 	
-	
+	 
 	
 	public DazedCondition() {
 		

@@ -2,6 +2,7 @@ package com.stab.data.actions.player.abilities;
 
 import java.awt.Point;
 
+import com.stab.data.info.alignment.Evil;
 import com.stab.data.info.buff.SmiteEvil_Buff;
 import com.stab.data.info.debuff.SmiteEvil_Debuff;
 import com.stab.model.action.Action;
@@ -30,7 +31,9 @@ public class SmiteEvil extends Action implements SelfAction{
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target=(BaseInfo)receive;
 		
+		target.spendResource(SmiteEvil.RESOURCE_ID, 1);
 		
+		if(target.hasTrait(Evil.ID)){
 			SmiteEvil_Buff buff = new SmiteEvil_Buff();
 			buff.setSmiteTarget(target);
 			caster.addTrait(buff);
@@ -39,8 +42,12 @@ public class SmiteEvil extends Action implements SelfAction{
 			debuff.setPaladin(caster);
 			target.addTrait(debuff);
 			
-			target.spendResource(SmiteEvil.RESOURCE_ID, 1);
+			
 			return true;
+		}
+		
+		return false;
+		
 	}
 
 	@Override
