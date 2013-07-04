@@ -20,10 +20,5 @@ public class ReducePerson extends SpellOnTarget {
      this.setEffectType(DEBUFF);
 	}
 
-	@Override
-	public boolean affect(Info instigator, Info receptor, Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target = (BaseInfo)receptor;
-		return false;
-	}
+	
 }

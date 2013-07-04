@@ -21,10 +21,5 @@ public class DetectMagic extends SpellOnSelf{
 
 
 
-	@Override
-	public boolean affect(Info instigator, Info receptor,Point point) {
-		
 	
-		return false;
-	}
 }

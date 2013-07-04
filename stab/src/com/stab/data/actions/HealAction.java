@@ -25,7 +25,7 @@ public class HealAction extends Action implements SelfAction{
 	
 	//TODO: campiar por un skillroll
 	@Override
-	public boolean affect(Info instigator,Info receive,Point point) {
+	public int affect(Info instigator,Info receive,Point point) {
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target=(BaseInfo)receive;
 		if(target.hasTrait(BleedCondition.ID)) {
@@ -33,12 +33,12 @@ public class HealAction extends Action implements SelfAction{
 			if(healroll>14) { 
 				target.removeTrait(BleedCondition.ID);
 				target.removeTrait(HealAction.ID);
-				return true;
+				return OK;
 			}
 			
 		}
 		
-		return false;
+		return FAIL;
 	}
 
 }

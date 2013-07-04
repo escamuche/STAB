@@ -24,19 +24,7 @@ public class MagicWeapon extends SpellOnTarget {
      this.setEffectType(BUFF);
 	}
 
-	@Override
-	public boolean affect(Info instigator, Info receptor,Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target = (BaseInfo)receptor;
-		/* atatatatataaaaaaaaaaaaaaaaaaaaaa
-		BaseInfo weapon = (Creature) target;
-		target.getWeapon(target);
-		MagicWeapon_Buff buff = new MagicWeapon_Buff(target, weapon);
-		weapon.addTrait(buff);
-		/**/
-		
-		return true;
-	}
+	
 	
 protected Weapon getWeapon(BaseInfo atacante) {
 		

@@ -11,12 +11,7 @@ public class RemoveFear extends SpellOnTarget{
 	
 	public static final String ID="REMOVEFEAR";
 
-	@Override
-	public boolean affect(Info instigator, Info receptor,Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target = (BaseInfo)receptor;
-		return false;
-		}
+	
 	
 	public RemoveFear() {
 		setLevel(1);

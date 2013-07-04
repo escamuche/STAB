@@ -23,7 +23,7 @@ public class DefendAction extends Action implements SelfAction {
 	}
 	
 	@Override
-	public boolean affect(Info instigator,Info target,Point point) {
+	public int affect(Info instigator,Info target,Point point) {
 		BaseInfo self=(BaseInfo)target;
 		self.playAnimation(DefendAnimation.ID);
 		self.sendMessage(ConsoleMessage.SUCCESS, self.getText()+" defends");
@@ -33,7 +33,7 @@ public class DefendAction extends Action implements SelfAction {
 		
 		self.addTrait(buffqueduraunround); //nos añadimos el buff
 		
-		return true;
+		return OK;
 	}
 	
 	@Override

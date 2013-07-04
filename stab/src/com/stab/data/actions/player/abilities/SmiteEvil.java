@@ -27,7 +27,7 @@ public class SmiteEvil extends Action implements SelfAction{
 
 
 	@Override
-	public boolean affect(Info instigator,Info receive,Point point) {
+	public int affect(Info instigator,Info receive,Point point) {
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target=(BaseInfo)receive;
 		
@@ -43,10 +43,10 @@ public class SmiteEvil extends Action implements SelfAction{
 			target.addTrait(debuff);
 			
 			
-			return true;
+			return OK;
 		}
 		
-		return false;
+		return FAIL;
 		
 	}
 

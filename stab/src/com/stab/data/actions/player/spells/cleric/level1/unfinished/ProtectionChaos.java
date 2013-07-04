@@ -11,12 +11,7 @@ public class ProtectionChaos extends SpellOnTarget{
 	
 	public static final String ID="PROTECTIONCHAOS_CLERIC";
 
-	@Override
-	public boolean affect(Info instigator, Info receptor,Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target = (BaseInfo)receptor;
-		return false;
-		}
+
 	
 	public ProtectionChaos() {
 		setLevel(1);

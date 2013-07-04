@@ -50,7 +50,7 @@ public class WeaponAttackAction extends Action implements TargetAction{
 	}
 
 	@Override
-	public boolean affect(Info yo, Info target,Point point) {
+	public int affect(Info yo, Info target,Point point) {
 		
 		BaseInfo atacante = (BaseInfo)yo;
 		BaseInfo atacado = (BaseInfo)target;
@@ -60,7 +60,7 @@ public class WeaponAttackAction extends Action implements TargetAction{
 		arma=getWeapon(atacante);
 		if (arma==null){
 			System.out.println("No hay arma! "+atacante+" sobre "+atacado);
-			return false;
+			return INVALID;
 		}
 		
 		//TODO: ver como se rellena el slot!
@@ -80,7 +80,9 @@ public class WeaponAttackAction extends Action implements TargetAction{
 		if (ad.hits()) {
 			ad.applyEffects();
 			sleep(500);
-			return true;	
+			if (ad.isCritical())
+				return CRITICAL;
+			return OK;	
 		}
 		
 		
@@ -88,10 +90,10 @@ public class WeaponAttackAction extends Action implements TargetAction{
 		if (ad.isBotch()) {
 			
 			System.out.println("Pero mira que eres torpe!");
-		    return false;
+		    return BOTCH;
 		}
 		
-		return false;
+		return FAIL;
 		
 	}
 	

@@ -27,7 +27,7 @@ public class PowerAttack extends Action implements SelfAction, ToggleableBuffAct
 	}
 	
 	@Override
-	public boolean affect(Info instigator,Info target,Point point) {
+	public int affect(Info instigator,Info target,Point point) {
 		BaseInfo self=(BaseInfo)target;
 		
 		int bab = self.getValue(StabConstants.BAB);
@@ -35,13 +35,13 @@ public class PowerAttack extends Action implements SelfAction, ToggleableBuffAct
 		
 		if(self.hasTrait(buff.getId()) == true) {
 			self.removeTrait(buff.getId());
-			return false;
+			return OK;
 		}
 		else {
 			
 		self.addTrait(buff);
 
-		return true;
+		return OK;
 		}
 	}
 	

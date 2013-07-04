@@ -56,11 +56,11 @@ public class ChannelPossitiveEnergyAction extends Action implements SelfAction, 
 	}
 
 	@Override
-	public boolean affect(Info instigator, Info t, Point point) {
+	public int affect(Info instigator, Info t, Point point) {
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target=(BaseInfo)t;
 		if (target.hasTrait(ConstructTraits.class))
-			return true;
+			return OK;
 		
 		if (target.hasTrait(UndeadTraits.class)){
 			
@@ -77,18 +77,18 @@ public class ChannelPossitiveEnergyAction extends Action implements SelfAction, 
 			}
 			
 			
-			return true;
+			return OK;
 		}
 		
 		if (caster.isEnemy(target))
 			if (caster.hasTrait(SelectiveChanneling_Feat.class))
-				return true;
+				return OK;
 		
 		Heal h= new Heal(getAmount(caster),caster);
 		target.apply(h);
 		target.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#effects/healing");
 		
-		return true;
+		return OK;
 	}
 	
 	protected SavingThrowEffect getSavingThrow(BaseInfo caster, BaseInfo target) {

@@ -22,11 +22,5 @@ public class DetectPoison extends SpellOnSelf{
 
 
 
-	@Override
-	public boolean affect(Info instigator, Info receptor,Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target = (BaseInfo)receptor;
-		
-		return false;
-	}
+	
 }

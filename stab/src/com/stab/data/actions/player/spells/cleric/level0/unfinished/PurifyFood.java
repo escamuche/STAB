@@ -11,12 +11,7 @@ public class PurifyFood extends SpellOnTarget{
 	
 	public static final String ID="PURIFYFOOD";
 
-	@Override
-	public boolean affect(Info instigator, Info receptor,Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target = (BaseInfo)receptor;
-		return false;
-	}
+
 	
 	public PurifyFood() {
 		setLevel(0);

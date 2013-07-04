@@ -29,13 +29,13 @@ Spell spell;
 	}
 
 	
-	public final boolean execute(Info origin,Info target,Point point){
+	public final int execute(Info origin,Info target,Point point){
 		if (!attemptCast(origin,target,point))
-			return false;
+			return FAIL;
 		return castSpell(origin,target,point);
 	}
 	
-	public boolean castSpell(Info origin,Info target,Point point){
+	public int castSpell(Info origin,Info target,Point point){
 		return super.execute(origin, target, point);
 	}
 	
@@ -198,12 +198,12 @@ Spell spell;
 	}
 
 	@Override
-	public boolean affect(Info origin,Info t,Point point) {
+	public int affect(Info origin,Info t,Point point) {
 		//Este comportamiento estandar es para baseinfos. si es otra cosa, este metodo estara sobreescrito
 		if (!(origin instanceof BaseInfo))
-			return false;
+			return FAIL;
 		if (!(t instanceof BaseInfo))
-			return false;
+			return FAIL;
 		BaseInfo caster=(BaseInfo)origin;
 		BaseInfo target=(BaseInfo)t;
 		
@@ -212,7 +212,7 @@ Spell spell;
 			SpellWeapon w=getWeapon(caster,target,point);
 			if (w!=null)
 				((Creature)caster).equip(w);
-			return true;
+			return OK;
 		}
 		
 		
@@ -223,21 +223,21 @@ Spell spell;
 				
 				((Creature)caster).equip(w);
 				WeaponAttackAction a=(WeaponAttackAction)getActionLibrary().getAction(WeaponAttackAction.ID);
-				boolean b=a.affect(caster, target, point);
-				return b;
+				int r=a.affect(caster, target, point);
+				return r;
 			}
 			//Si no se usa un ataque, castear normalmente
 			SpellActionEffect ae= new SpellActionEffect(caster,target,point,this.getId());
 			target.apply(ae);
 			//return fullEffect(caster,target,point);
-			return true;
+			return OK;
 		}
 		//Si no es harmful, considerar que afecta siempre
 		//TODO: mirarse lo de resistencia magica para efectos beneficiosos, tecnicamente se aplica
 		SpellActionEffect ae= new SpellActionEffect(caster,target,point,this.getId());
 		target.apply(ae);
 		//return fullEffect(caster,target,point);
-		return true;
+		return OK;
 	//	return fullEffect(caster,target,point);
 		
 	}

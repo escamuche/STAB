@@ -11,12 +11,7 @@ public class ProtectionGood extends SpellOnTarget{
 	
 	public static final String ID="PROTECTIONGOOD_CLERIC";
 
-	@Override
-	public boolean affect(Info instigator, Info receptor,Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target = (BaseInfo)receptor;
-		return false;
-		}
+
 	
 	public ProtectionGood() {
 		setLevel(1);

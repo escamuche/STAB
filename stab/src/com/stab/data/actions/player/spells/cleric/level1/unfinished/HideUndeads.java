@@ -12,12 +12,7 @@ public class HideUndeads extends SpellOnTarget{
 	public static final String ID="HIDEUNDEADS";
 
 
-	@Override
-	public boolean affect(Info instigator, Info receptor,Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target = (BaseInfo)receptor;
-		return false;
-		}
+
 	
 	public HideUndeads() {
      setRange(1);

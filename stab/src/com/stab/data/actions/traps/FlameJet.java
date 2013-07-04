@@ -21,12 +21,12 @@ public class FlameJet extends Action implements TileAction,AoE{
 	}
 
 	@Override
-	public boolean affect(Info instigator, Info target, Point point) {
+	public int affect(Info instigator, Info target, Point point) {
 		if (target instanceof BaseInfo){
 			Damage f=new RolledDamage(2,4,Damage.FIRE_DAMAGE,instigator);
 			((BaseInfo)target).apply(f);
 		}
-		return true;
+		return OK;
 	}
 
 	@Override

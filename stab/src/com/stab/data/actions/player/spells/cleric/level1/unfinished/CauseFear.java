@@ -11,12 +11,6 @@ public class CauseFear extends SpellOnTarget{
 	
 	public static final String ID="CAUSEFEAR_CLERIC";
 
-	@Override
-	public boolean affect(Info instigator, Info receptor,Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target = (BaseInfo)receptor;
-		return false;
-		}
 	
 	public CauseFear() {
 		setLevel(1);

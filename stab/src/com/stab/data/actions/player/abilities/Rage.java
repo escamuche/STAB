@@ -27,7 +27,7 @@ public class Rage extends Action implements SelfAction{
 
 
 	@Override
-	public boolean affect(Info instigator,Info receive,Point point) {
+	public int affect(Info instigator,Info receive,Point point) {
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target=(BaseInfo)receive;
 		//int i = caster.getValue(StabConstants.RAGEROUNDS);
@@ -36,7 +36,7 @@ public class Rage extends Action implements SelfAction{
 		if(target.hasTrait(Rage_Buff.ID)){ //si tiene rabia activa la quita y vuelve
 			if(j>0){						//si no ha gastado ningun turno de rabia no la desactiva
 			target.removeTrait(Rage_Buff.ID);
-			return true;
+			return OK;
 			}
 		}
 		else { //si no la tiene activa seguimos
@@ -45,15 +45,15 @@ public class Rage extends Action implements SelfAction{
 				//if(i-j <=0)   // si no ha gastado todos los round de rabia sigue, si no vuelve
 					//return false;
 					if(target.hasTrait(FatiguedCondition.ID)) // por ultimo comprobar que no esta fatigued, si pasa todo sigue
-						return false;
+						return FAIL;
 			Rage_Buff buff = new Rage_Buff(); 
 			target.addTrait(buff); //aplicando el buff
 			target.setAttribute(StabConstants.RAGEROUNDSSPENT, 0);
 			buff.setTime(target.getResourceCount(Rage.RESOURCE_ID)); //el max de duracion es este, los rounds que tienes menos los que gastaste
 			target.spendResource(Rage.RESOURCE_ID, 1);
-			return true;
+			return OK;
 		}
-		return true;
+		return OK;
 }
 
 	@Override

@@ -22,7 +22,7 @@ public class PillarArrowsAction extends Action implements SelfAction,AoE{
 	}
 
 	@Override
-	public boolean affect(Info instigator, Info target, Point point) {
+	public int affect(Info instigator, Info target, Point point) {
 		if (target instanceof BaseInfo){
 			int n = Roll.d4();
 			while(n>0){
@@ -33,7 +33,7 @@ public class PillarArrowsAction extends Action implements SelfAction,AoE{
 			n=n-1;
 			}
 		}
-		return true;
+		return OK;
 	}
 
 	@Override

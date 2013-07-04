@@ -24,12 +24,6 @@ public class DancingLights extends SpellOnTile implements AoE {
 		}
 
 
-	@Override
-	public boolean affect(Info instigator,Info receive,Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target=(BaseInfo)receive;
-		return false;
-	}
 
 
 	@Override

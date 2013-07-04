@@ -11,12 +11,7 @@ public class Erase extends SpellOnTarget{
 	
 	public static final String ID="ERASE";
 
-	@Override
-	public boolean affect(Info instigator, Info receptor, Point point) {
-		BaseInfo caster=(BaseInfo)instigator;
-		BaseInfo target = (BaseInfo)receptor;
-		return false;
-		}
+
 	
 	public Erase() {
 		setLevel(1);

@@ -23,9 +23,5 @@ public class UndetectableAlignment extends SpellOnTarget{
 		}
 
 
-	@Override
-	public boolean affect(Info instigator, Info target,Point point) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 }

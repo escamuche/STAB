@@ -28,7 +28,7 @@ public class NobilityDomain extends Action implements TargetAction{
 
 
 	@Override
-	public boolean affect(Info instigator,Info receive,Point point) {
+	public int affect(Info instigator,Info receive,Point point) {
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target=(BaseInfo)receive;
 		
@@ -41,7 +41,7 @@ public class NobilityDomain extends Action implements TargetAction{
 			target.addTrait(buff);
 			
 			caster.spendResource(NobilityDomain.RESOURCE_ID, 1);
-			return true;
+			return OK;
 	}
 
 	@Override

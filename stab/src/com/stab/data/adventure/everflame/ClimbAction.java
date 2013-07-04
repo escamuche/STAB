@@ -26,7 +26,7 @@ public class ClimbAction extends ContextualAction {
 	}
 
 	@Override
-	public boolean affect(Info instigator, Info target, Point point) {
+	public int affect(Info instigator, Info target, Point point) {
 
 		BaseInfo character=(BaseInfo)instigator;
 		ClimbWaypoint waypoint=(ClimbWaypoint)target;
@@ -44,7 +44,7 @@ public class ClimbAction extends ContextualAction {
 			//animacion de moverse
 			sleep(character.playAnimationOn(WalkToAction.ANIMATION_ID, target.getPos()));
 			character.setPos(target.getPos());
-			return true;
+			return OK;
 		}
 		character.playAnimation(AlertAnimation.ID);
 		sleep(300);
@@ -55,7 +55,7 @@ public class ClimbAction extends ContextualAction {
 		if (st.success()){
 			//no pasa nada, un sustito.
 			//animacion de warning, return
-			return false;
+			return OK;
 		}
 		//ahora viene la gracia.
 		int rolled=st.getRollResult();
@@ -63,7 +63,7 @@ public class ClimbAction extends ContextualAction {
 		
 		
 		
-		return false;
+		return OK;
 	}
 	
 	
