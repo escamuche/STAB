@@ -3,10 +3,15 @@ package com.stab.data.info.equipment;
 import java.awt.Point;
 import java.util.ArrayList;
 
+import com.stab.data.actions.player.spells.SpellAction;
 import com.stab.data.info.applicable.WeaponAttack;
+import com.stab.model.action.Action;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
+import com.stab.model.info.interfaces.ActionPerformedListener;
+import com.stab.model.request.basic.ActionRequest;
 
-public class SpellWeapon extends OverrideWeapon {
+public class SpellWeapon extends OverrideWeapon implements ActionPerformedListener {
 
 	SpellActionEffect ae;
 	Weapon base;
@@ -58,6 +63,18 @@ public class SpellWeapon extends OverrideWeapon {
 
 	public String getText() {
 		return base.getText();
+	}
+
+	@Override
+	public void actionPerformed(Info info, Action action, int result,
+			ActionRequest request) {
+	
+		if (action instanceof SpellAction){
+			
+		//	this.getTarget().removeTrait(this);
+		//	System.out.println("-----");
+		}
+		
 	}
 
 	
