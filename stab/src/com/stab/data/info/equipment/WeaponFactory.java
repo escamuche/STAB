@@ -133,6 +133,8 @@ public class WeaponFactory extends ItemFactory{
 		register(MISSILE,w);
 		w=new SpellDeliverWeapon("Touch",0,1,Damage.GENERIC_DAMAGE,"effects/touch",ThrustAnimation.ID);
 		((SpellDeliverWeapon)w).setRanged(false);
+		w.setTouch(true);
+		w.setCategory(BasicWeapon.SPECIAL);
 		register(TOUCH,w);
 		
 		//Spell Weapons
@@ -140,12 +142,14 @@ public class WeaponFactory extends ItemFactory{
 		w.setBaseItem(MISSILE);
 		register(DisruptUndead.ID,w);
 		w=new SpellDeliverWeapon("Ray of frost",1,3,Damage.COLD_DAMAGE, RayFrost.ID,GenericProyectileAnimation.ID);
-		w.setCategory(BasicWeapon.SPECIAL);
+		//w.setCategory(BasicWeapon.SPECIAL);
+		w.setBaseItem(RAY);
 		register( RayFrost.ID,w);
 		w=new SpellDeliverWeapon("Acid orb",1,3,Damage.ACID_DAMAGE, AcidSplash.ID,GenericProyectileAnimation.ID);
-		w.setCategory(BasicWeapon.SPECIAL);
+		w.setBaseItem(MISSILE);
 		register( AcidSplash.ID,w);
 		w=new SpellDeliverWeapon("Touch of Fatigue",0,1,Damage.UNHOLY_DAMAGE, "PARTICLE#effects/negativeStrike#effects/touch",ThrustAnimation.ID);
+		w.setBaseItem(TOUCH);
 		((SpellDeliverWeapon)w).setRanged(false);
 		register( TouchFatigue.ID,w);
 		

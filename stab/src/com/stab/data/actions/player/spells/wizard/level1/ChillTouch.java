@@ -59,6 +59,7 @@ protected boolean partialEffect(BaseInfo caster, BaseInfo target, Point point) {
      setName("Chill Touch");
      this.setEffectType(DAMAGE);
      setRange(TOUCH);
+ 	 setWeaponChargeSpell(true);
      this.setDescription("A touch from your hand, which glows with blue energy, disrupts the life force of living creatures. Each touch channels negative energy that deals 1d6 points of damage. The touched creature also takes 1 point of Strength damage unless it makes a successful Fortitude saving throw. You can use this melee touch attack up to one time per level. An undead creature you touch takes no damage of either sort, but it must make a successful Will saving throw or flee as if panicked for 1d4 rounds + 1 round per caster level.");
 	}
 
