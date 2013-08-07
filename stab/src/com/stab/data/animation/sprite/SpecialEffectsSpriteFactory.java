@@ -24,6 +24,7 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 
 	
 	public static final String DAZED="DAZED";
+	public static final String SPELLCASTING="SPELLCASTING";
 	
 	public static final String BLUE_CAST="BLUECAST";
 	public static final String BLUE_EXPLOSION="BLUEEXPLOSION";
@@ -87,6 +88,14 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 			return all;
 		}
 		
+		if (SPELLCASTING.equals(type)){
+			//return getSpark("PARTICLE#effects/blueCast","effects/FizzleNatureA");
+			//return getSpark("PARTICLE#effects/casting","effects/FizzleNatureA");
+		/**/	AttachedParticleSprite s= new AttachedParticleSprite();
+			s.setPainter("PARTICLE#effects/casting");
+			((ValueState2)s.getCurrentState()).addUpdater(new StickToRef(true));
+			return Arrays.asList((Sprite)s);/**/
+		}
 		
 		if (BLUE_CAST.equals(type)){
 			return getSpark("PARTICLE#effects/blueCast","effects/FizzleNatureA");

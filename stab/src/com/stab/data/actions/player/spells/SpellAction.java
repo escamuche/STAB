@@ -11,6 +11,7 @@ import com.stab.data.actions.WeaponAttackAction;
 import com.stab.data.info.applicable.BreakSpellResistance;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.data.info.applicable.SpellCasting;
+import com.stab.data.info.buff.SpellCasting_Condition;
 import com.stab.data.info.equipment.SpellActionEffect;
 import com.stab.data.info.equipment.SpellWeapon;
 import com.stab.data.info.equipment.Weapon;
@@ -30,6 +31,7 @@ Spell spell;
 
 	
 	public final int execute(Info origin,Info target,Point point){
+	
 		if (!attemptCast(origin,target,point))
 			return FAIL;
 		return castSpell(origin,target,point);
@@ -39,10 +41,25 @@ Spell spell;
 		return super.execute(origin, target, point);
 	}
 	
+	protected void beginCasting(Info origin){
+		if (origin instanceof BaseInfo){
+			SpellCasting_Condition c= new SpellCasting_Condition(this);
+			((BaseInfo)origin).addTrait(c);
+			sleep(200);
+		}
+	}
+	protected void endCasting(Info origin){
+		if (origin instanceof BaseInfo){
+			((BaseInfo)origin).removeTrait(SpellCasting_Condition.ID);
+			sleep(50);
+		}
+	}
 	
 	public boolean attemptCast(Info origin,Info target,Point point){
+		beginCasting(origin);
 		SpellCasting sc= new SpellCasting(origin,getSpell());
 		sc.check();
+		endCasting(origin);
 		if (sc.failed()){
 			switch(sc.getResult()){
 				case SpellCasting.ARMORFAIL: 
