@@ -230,7 +230,28 @@ public class Spell implements SpellProperties {
 			return true;
 		if (getCasterClass().equals(StabConstants.SORCERERCASTER))
 			return true;
+		//TODO: mirar que hacer con el bardo
 		return false;
 	}
+	
+	public boolean isArcane(){
+		if (getCasterClass().equals(StabConstants.WIZARDCASTER) ||
+			getCasterClass().equals(StabConstants.SORCERERCASTER) ||
+			getCasterClass().equals(StabConstants.BARDCASTER) 
+				)
+			return true;
+		return false;
+	}
+
+	public boolean isDivine(){
+		if (getCasterClass().equals(StabConstants.CLERICCASTER) ||
+			getCasterClass().equals(StabConstants.DRUIDCASTER) ||
+			getCasterClass().equals(StabConstants.PALADINCASTER) ||
+			getCasterClass().equals(StabConstants.RANGERCASTER) 
+				)
+			return true;
+		return false;
+	}
+
 	
 }

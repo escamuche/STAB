@@ -1,6 +1,7 @@
 package com.stab.data.info.buff;
 
 import com.stab.common.Constants;
+import com.stab.data.actions.player.spells.SpellAction;
 import com.stab.data.animation.GenericSpriteOnAnimation;
 import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
 import com.stab.model.action.Action;
@@ -30,7 +31,13 @@ public class SpellCasting_Condition extends Buff {
 	
 	protected void configureEffectToken(DecorToken token) {
 		//En un futuro, usar una animacion distinta para divine casting, y para spell like
-		token.playAnimation(GenericSpriteOnAnimation.ID,SpecialEffectsSpriteFactory.SPELLCASTING);
+		if (action instanceof SpellAction){
+			SpellAction a= (SpellAction)action;
+			if (a.getSpell().isArcane())
+				token.playAnimation(GenericSpriteOnAnimation.ID,SpecialEffectsSpriteFactory.SPELLCASTING);
+			if (a.getSpell().isDivine())
+				token.playAnimation(GenericSpriteOnAnimation.ID,SpecialEffectsSpriteFactory.DIVINESPELLCASTING);
+		}
 	}
 
 }
