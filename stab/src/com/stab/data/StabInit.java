@@ -270,8 +270,8 @@ import com.stab.model.action.ActionLibrary;
 import com.stab.model.action.base.InteractAction;
 import com.stab.model.basic.scenes.TokenBasedScene;
 import com.stab.model.info.trait.base.Equipment;
-import com.tien.princess.engine.sprite.AbstractSpriteFactory;
-import com.tien.princess.engine.sprite.SpriteFactory;
+import com.tien.princess.engine.sprite.factory.AbstractSpriteFactory;
+import com.tien.princess.engine.sprite.factory.SpriteFactory;
 
 public class StabInit {
 

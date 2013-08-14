@@ -7,7 +7,6 @@ import java.util.Collection;
 import com.stab.common.Constants;
 import com.stab.common.value.InterpolatorValueProvider;
 import com.tien.princess.engine.Resources;
-import com.tien.princess.engine.sprite.AbstractSpriteFactory;
 import com.tien.princess.engine.sprite.Sprite;
 import com.tien.princess.engine.sprite.StateSprite;
 import com.tien.princess.engine.sprite.base.AttachedParticleSprite;
@@ -19,6 +18,7 @@ import com.tien.princess.engine.sprite.common.updaters.conditions.OnRefDestroyed
 import com.tien.princess.engine.sprite.common.updaters.pos.Orbit;
 import com.tien.princess.engine.sprite.common.updaters.pos.StickToRef;
 import com.tien.princess.engine.sprite.common.updaters.sound.PlaySound;
+import com.tien.princess.engine.sprite.factory.AbstractSpriteFactory;
 
 public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 
@@ -32,6 +32,7 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 	public static final String BLUE_CHANNEL="BLUECHANNEL";
 	public static final String BLUE_IMPACT="BLUEIMPACT";
 	public static final String BLUE_BEAM="BLUEBEAMT";
+	
 	
 	
 	public static final String FREEZE_EXPLOSION="FEEZEEXPLOSION";

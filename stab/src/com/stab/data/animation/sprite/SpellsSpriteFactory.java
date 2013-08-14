@@ -8,12 +8,12 @@ import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
 import com.stab.data.actions.player.spells.wizard.level0.DisruptUndead;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.animation.state.ExplodeState;
-import com.tien.princess.engine.sprite.AbstractSpriteFactory;
 import com.tien.princess.engine.sprite.Sprite;
 import com.tien.princess.engine.sprite.common.states.StateSet;
 import com.tien.princess.engine.sprite.common.states.ValueState2;
 import com.tien.princess.engine.sprite.common.updaters.sound.LoopSound;
 import com.tien.princess.engine.sprite.common.updaters.spawn.SpawnUpdater;
+import com.tien.princess.engine.sprite.factory.AbstractSpriteFactory;
 
 public class SpellsSpriteFactory extends AbstractSpriteFactory{
 
