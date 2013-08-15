@@ -6,6 +6,7 @@ import java.util.Collection;
 
 import com.stab.common.Constants;
 import com.stab.common.value.InterpolatorValueProvider;
+import com.stab.data.StabInit;
 import com.tien.princess.engine.Resources;
 import com.tien.princess.engine.sprite.Sprite;
 import com.tien.princess.engine.sprite.StateSprite;
@@ -16,9 +17,10 @@ import com.tien.princess.engine.sprite.common.states.base.ClearParticlesState;
 import com.tien.princess.engine.sprite.common.updaters.angle.MoveA;
 import com.tien.princess.engine.sprite.common.updaters.conditions.OnRefDestroyed;
 import com.tien.princess.engine.sprite.common.updaters.pos.Orbit;
-import com.tien.princess.engine.sprite.common.updaters.pos.StickToRef;
+import com.tien.princess.engine.sprite.common.updaters.ref.StickToRef;
 import com.tien.princess.engine.sprite.common.updaters.sound.PlaySound;
 import com.tien.princess.engine.sprite.factory.AbstractSpriteFactory;
+import com.tien.princess.engine.sprite.factory.EmitterUtils;
 
 public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 
@@ -112,7 +114,9 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 			return Arrays.asList((Sprite)s);/**/
 		}
 		if (BLUE_EXPLOSION.equals(type)){
-			return getSpark("PARTICLE#effects/blueSparks","effects/IceCast");
+			Sprite s= getSpark("PARTICLE#effects/blueSparks","effects/IceCast").iterator().next();
+			Sprite sp= EmitterUtils.getTimedSpawner(EmitterUtils.getEmitter(StabInit.getSpriteFactory(),"PX_CYAN_PARTICLE", 25, 45, 360, 10, 150, 1000, 1000), 100);
+			return Arrays.asList(s,sp);
 		}
 		if (ACID_EXPLOSION.equals(type)){
 			return getSpark("PARTICLE#effects/acidExplosion","effects/IceCast");
