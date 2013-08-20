@@ -6,6 +6,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.info.buff.spells.ResistanceBuff;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
 public class Resistance extends SpellOnTarget{
 	
@@ -32,7 +33,7 @@ public class Resistance extends SpellOnTarget{
 	}
 	
 	@Override
-	public int getEffectValue(BaseInfo i) {
+	public int getEffectValue(BaseInfo i, Info target) {
 		return 3;
 	}
 }

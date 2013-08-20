@@ -1,4 +1,4 @@
-package com.stab.data.actions.traps;
+package com.stab.data.adventure.everflame;
 
 import java.awt.Point;
 

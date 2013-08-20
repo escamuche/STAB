@@ -2,6 +2,7 @@ package com.stab.data.actions.player.spells.cleric.level1.unfinished;
 
 import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
 public class BlessWater extends SpellOnSelf{
 	
@@ -17,7 +18,7 @@ public class BlessWater extends SpellOnSelf{
 
 	
 	@Override
-	public int getEffectValue(BaseInfo i) {
+	public int getEffectValue(BaseInfo i, Info target) {
 		return 3;
 	}
 	

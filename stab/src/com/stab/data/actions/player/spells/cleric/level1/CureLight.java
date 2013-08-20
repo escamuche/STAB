@@ -7,6 +7,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.info.monster.monstertraits.UndeadTraits;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.applicable.base.Heal;
 import com.stab.model.info.trait.base.VisualEffect;
@@ -78,7 +79,7 @@ public class CureLight extends SpellOnTarget{
 
 	
 	@Override
-	public int getEffectValue(BaseInfo i) {
+	public int getEffectValue(BaseInfo i, Info target) {
 		return 5;
 	}
 	

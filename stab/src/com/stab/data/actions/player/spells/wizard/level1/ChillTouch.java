@@ -9,6 +9,7 @@ import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.data.info.debuff.ChillTouch_Debuff;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 
 public class ChillTouch extends SpellOnTarget{
@@ -65,7 +66,7 @@ protected boolean partialEffect(BaseInfo caster, BaseInfo target, Point point) {
 
 	
 	@Override
-	public int getEffectValue(BaseInfo i) {
+	public int getEffectValue(BaseInfo i, Info target) {
 		return 5;
 	}
 }

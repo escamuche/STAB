@@ -8,6 +8,7 @@ import com.stab.data.animation.MagicMissileAnimation;
 import com.stab.data.info.applicable.RolledDamage;
 import com.stab.data.info.buff.spells.Shield_Buff;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 
 public class MagicMissile extends SpellOnTarget{
@@ -49,7 +50,7 @@ public class MagicMissile extends SpellOnTarget{
 
 	
 	@Override
-	public int getEffectValue(BaseInfo i) {
+	public int getEffectValue(BaseInfo i, Info target) {
 		return (((i.getAttributeValue(StabConstants.WIZARDCASTER)+1)/2)*3);
 	}
 	

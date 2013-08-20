@@ -7,6 +7,7 @@ import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.info.buff.spells.Virtue_Buff;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
 public class Virtue extends SpellOnTarget{
 	
@@ -33,7 +34,7 @@ public class Virtue extends SpellOnTarget{
 	}
 	
 	@Override
-	public int getEffectValue(BaseInfo i) {
+	public int getEffectValue(BaseInfo i, Info target) {
 		return 3;
 	}
 	

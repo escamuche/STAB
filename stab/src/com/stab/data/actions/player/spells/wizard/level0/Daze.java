@@ -36,7 +36,7 @@ protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 }
 
 	@Override
-	public int getEffectValue(BaseInfo i) {
+	public int getEffectValue(BaseInfo i, Info target) {
 		return 4;
 	}
 	

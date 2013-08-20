@@ -6,6 +6,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.info.debuff.Doom_Debuff;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
 public class Doom extends SpellOnTarget {
 	
@@ -36,7 +37,7 @@ public class Doom extends SpellOnTarget {
 
 	
 	@Override
-	public int getEffectValue(BaseInfo i) {
+	public int getEffectValue(BaseInfo i, Info target) {
 		return 10;
 	}
 	

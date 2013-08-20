@@ -6,6 +6,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.data.info.buff.spells.EntropicShield_Buff;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
 public class EntropicShield extends SpellOnSelf{
 	
@@ -33,7 +34,7 @@ protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 
 	
 	@Override
-	public int getEffectValue(BaseInfo i) {
+	public int getEffectValue(BaseInfo i, Info target) {
 		return 5;
 	}
 	

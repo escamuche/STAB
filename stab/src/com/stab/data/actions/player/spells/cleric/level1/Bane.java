@@ -6,6 +6,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.info.debuff.Bane_Debuff;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
 public class Bane extends SpellOnTarget {
 	
@@ -33,7 +34,7 @@ public class Bane extends SpellOnTarget {
 
 	
 	@Override
-	public int getEffectValue(BaseInfo i) {
+	public int getEffectValue(BaseInfo i, Info target) {
 		return 5;
 	}
 }

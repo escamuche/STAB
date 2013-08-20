@@ -8,6 +8,7 @@ import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.info.applicable.RolledDamage;
 import com.stab.data.info.monster.monstertraits.UndeadTraits;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 
 public class DisruptUndead extends SpellOnTarget {
@@ -44,7 +45,7 @@ public class DisruptUndead extends SpellOnTarget {
 		
 	}
 	@Override
-	public int getEffectValue(BaseInfo i) {
+	public int getEffectValue(BaseInfo i, Info target) {
 		return 3;
 	}
 	

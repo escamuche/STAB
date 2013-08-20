@@ -55,7 +55,7 @@ public class NobilityDomain extends Action implements TargetAction{
 	}
 	
 	@Override
-	public int getEffectValue(BaseInfo i) {
+	public int getEffectValue(BaseInfo i, Info target) {
 		return 25; // valor alto para que los bichos lo usen prioritariamente
 	}
 	

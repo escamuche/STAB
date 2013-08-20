@@ -96,6 +96,7 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 		/**/	AttachedParticleSprite s= new AttachedParticleSprite();
 			s.setPainter("PARTICLE#effects/casting");
 			((ValueState2)s.getCurrentState()).addUpdater(new StickToRef(true));
+			
 			return Arrays.asList((Sprite)s);/**/
 		}
 		if (DIVINESPELLCASTING.equals(type)){
@@ -115,8 +116,9 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 		}
 		if (BLUE_EXPLOSION.equals(type)){
 			Sprite s= getSpark("PARTICLE#effects/blueSparks","effects/IceCast").iterator().next();
-			Sprite sp= EmitterUtils.getTimedSpawner(EmitterUtils.getEmitter(StabInit.getSpriteFactory(),"PX_CYAN_PARTICLE", 25, 45, 360, 10, 150, 1000, 1000), 100);
-			//Sprite sp= EmitterUtils.getTimedSpawner(EmitterUtils.getEmitter(StabInit.getSpriteFactory(),"PX_CYAN_GLOWORB", 25, 145, 360, 10, 150, 1000, 1000), 100);
+		//	Sprite sp= EmitterUtils.getTimedSpawner(EmitterUtils.getEmitter("PX_CYAN_PARTICLE", 25, 45, 360, 10, 150), 100);
+			Sprite sp= EmitterUtils.getTimedSpawner(EmitterUtils.getBang("PX_CYAN_PARTICLE", 6));
+			//Sprite sp= EmitterUtils.getTimedSpawner(EmitterUtils.getEmitter("PX_CYAN_GLOWORB", 25, 145, 360, 10, 150, 1000, 1000), 100);
 			return Arrays.asList(s,sp);
 		}
 		if (ACID_EXPLOSION.equals(type)){
