@@ -42,8 +42,8 @@ public class SkeletoParlanchin extends Undead {
 		this.addTrait(new DamageReduction(Damage.PIERCING_DAMAGE, 5));
 		
 		this.setAIParams(new ZombieAIParameters());
-		DefaultAIPackage ai = (DefaultAIPackage) this.getCurrentAI();
-		ai.setLog(true);
+//		DefaultAIPackage ai = (DefaultAIPackage) this.getCurrentAI();
+//		ai.setLog(true);
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.SCIMITAR), HumanoidGear.MAINHAND);
 		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.LIGHTLEATHER), HumanoidGear.ARMOR);

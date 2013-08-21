@@ -11,7 +11,7 @@ import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.request.basic.ActionRequest;
 
-public class SmiteEvil extends Action implements SelfAction{
+public class SmiteEvil extends Action {//implements SelfAction{
 	
 	public static final String ID="SMITEEVIL";
 	public static final String RESOURCE_ID="SMITEEVIL";
@@ -20,7 +20,7 @@ public class SmiteEvil extends Action implements SelfAction{
      
      setResource("actions/smite");
      setName("Smite Evil");
-     this.setEffectType(BUFF);
+     this.setEffectType(DEBUFF);
      this.setRequiredResource(SmiteEvil.RESOURCE_ID, 1);
 	}
 
@@ -31,7 +31,7 @@ public class SmiteEvil extends Action implements SelfAction{
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target=(BaseInfo)receive;
 		
-		target.spendResource(SmiteEvil.RESOURCE_ID, 1);
+		caster.spendResource(SmiteEvil.RESOURCE_ID, 1);
 		
 		if(target.hasTrait(Evil.ID)){
 			SmiteEvil_Buff buff = new SmiteEvil_Buff();

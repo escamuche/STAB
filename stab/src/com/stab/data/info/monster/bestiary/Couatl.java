@@ -58,9 +58,9 @@ public class Couatl extends Outsider {
 		this.addTrait(new Lawful());
 		this.addTrait(new Good());
 		
-		DefaultAIPackage ai=new DefaultAIPackage();
+//		DefaultAIPackage ai=new DefaultAIPackage();
 //		ai.setLog(true);
-		this.setCurrentAI(ai);
+//		this.setCurrentAI(ai);
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("SMALLBITE"), HumanoidGear.MAINHAND);
 			

@@ -41,7 +41,7 @@ public class Wolf extends Animal {
 		this.setAttribute(StabConstants.STEALTH, 6);
 		this.setAttribute(StabConstants.SURVIVAL, 1);
 		
-		this.setCurrentAI(new DefaultAIPackage());
+	//	this.setCurrentAI(new DefaultAIPackage());
 			
 		this.addTrait(new SkillFocusPerception_Feat());
 		

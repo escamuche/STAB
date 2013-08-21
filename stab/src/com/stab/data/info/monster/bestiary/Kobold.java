@@ -44,7 +44,7 @@ public class Kobold extends Humanoid {
 		
 		this.addTrait(new SkillFocusPerception_Feat());
 
-		this.setCurrentAI(new DefaultAIPackage());
+	//	this.setCurrentAI(new DefaultAIPackage());
 			
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("SPEAR"), HumanoidGear.BOTHHANDS);

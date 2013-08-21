@@ -40,9 +40,9 @@ public class GoblinShaman extends Humanoid {
 		this.setAttribute(StabConstants.WIZARDCASTER, 1);
 		this.setAttribute(StabConstants.CLERICCASTER, 1);
 		
-		DefaultAIPackage ai=new DefaultAIPackage();
+	//	DefaultAIPackage ai=new DefaultAIPackage();
 	//	ai.setLog(true);
-		this.setCurrentAI(ai);
+	//	this.setCurrentAI(ai);
 			
 		
 		this.addTrait(new Evil());

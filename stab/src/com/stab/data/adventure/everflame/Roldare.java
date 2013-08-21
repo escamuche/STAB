@@ -44,9 +44,8 @@ public class Roldare extends Humanoid {
 		this.setAttribute(StabConstants.RIDE, 8);
 		this.setAttribute(StabConstants.SENSEMOTIVE, 7);
 		
-		DefaultAIPackage ai=new DefaultAIPackage();
-		
-		this.setCurrentAI(ai);
+	//	DefaultAIPackage ai=new DefaultAIPackage();
+	//	this.setCurrentAI(ai);
 			
 		this.setBloodeffEct("PARTICLE#damage/redblood");
 		

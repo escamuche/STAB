@@ -56,9 +56,9 @@ public class Lich extends Undead {
 		addTrait(nat);
 		addTrait(def);
 		
-		DefaultAIPackage ai=new DefaultAIPackage();
+	//	DefaultAIPackage ai=new DefaultAIPackage();
 //		ai.setLog(true);
-		this.setCurrentAI(ai);
+//		this.setCurrentAI(ai);
 	
 		this.equip(StabInit.getWeaponFactory().getWeapon("MEDIUMSLAM"), HumanoidGear.BOTHHANDS);
 	}

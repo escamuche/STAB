@@ -33,6 +33,7 @@ public class ChannelPossitiveEnergyAction extends Action implements SelfAction, 
 		this.setName("Channel Positive energy");
 		this.setResource("actions/curelightwounds");
 		this.setRequiredResource(RESOURCE_ID, 1);
+		this.setEffectType(HEAL);
 	}
 
 	@Override
@@ -115,6 +116,8 @@ public class ChannelPossitiveEnergyAction extends Action implements SelfAction, 
 	public int getEffectType(Info instigator,Info t){
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target=(BaseInfo)t;
+		
+		//TODO: comprobar que se excluya el caster si es undead!
 		
 		if (target.hasTrait(UndeadTraits.class))
 			return DAMAGE;

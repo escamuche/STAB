@@ -33,9 +33,9 @@ public class Goblin extends Humanoid {
 		this.setAttribute(StabConstants.SIZE,StabConstants.SMALL_SIZE);
 		this.setAttribute(StabConstants.HITDICENUMBER, 1);
 		
-		DefaultAIPackage ai=new DefaultAIPackage();
+	//	DefaultAIPackage ai=new DefaultAIPackage();
 		
-		this.setCurrentAI(ai);
+	//	this.setCurrentAI(ai);
 			
 		
 		this.addTrait(new Evil());

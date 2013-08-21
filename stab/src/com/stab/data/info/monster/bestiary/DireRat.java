@@ -32,7 +32,7 @@ public class DireRat extends Animal {
 		this.setAttribute(StabConstants.SIZE,StabConstants.SMALL_SIZE);
 		this.setAttribute(StabConstants.HITDICENUMBER, 1);
 		
-		this.setCurrentAI(new DefaultAIPackage());
+	//	this.setCurrentAI(new DefaultAIPackage());
 			
 		this.addTrait(new SkillFocusPerception_Feat());
 		

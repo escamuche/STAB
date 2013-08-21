@@ -38,7 +38,7 @@ public class GiantBombardierBeetle extends Vermin {
 		
 		this.setAttribute(StabConstants.PERCEPTION, 6);
 		
-		this.setCurrentAI(new DefaultAIPackage());
+	//	this.setCurrentAI(new DefaultAIPackage());
 		
 	//	this.setBloodeffEct("PARTICLE#redblood");
 		

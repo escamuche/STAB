@@ -40,8 +40,8 @@ public class Orc extends Humanoid {
 		this.setAttribute(StabConstants.PERCEPTION, -1);
 		this.setAttribute(StabConstants.INTIMIDATE, 2);
 		
-		DefaultAIPackage ai=new DefaultAIPackage();
-		this.setCurrentAI(ai);
+	//	DefaultAIPackage ai=new DefaultAIPackage();
+	//	this.setCurrentAI(ai);
 			
 		this.addTrait(new Evil());
 		this.addTrait(new Chaotic());

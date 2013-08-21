@@ -239,7 +239,9 @@ public class WeaponAttackAction extends Action implements TargetAction{
 	
 	@Override
 	public int getEffectValue(BaseInfo i, Info target) {
-		return i.getAttributeValue(StabConstants.DAMAGE);  //REvisar
+		return i.getAttributeValue(StabConstants.DAMAGE+5);  //REvisar  (el +5 es de porque si)
 	}
+	
+
 	
 }
