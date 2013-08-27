@@ -4,17 +4,18 @@ import com.stab.model.action.Action;
 import com.stab.model.ai.AIParameters;
 
 public class ZombieAIParameters extends AIParameters{
-
+	/*
 	@Override
-	public double getDangerFactor() {
+	public float getDangerFactor() {
 		return 0; //Al zombie le da igual el peligro
 	}
 
+
 	@Override
-	public int getMovementFactor() {
+	public float getMovementFactor() {
 		return -100; //Penaliza mas aun el movimiento. Los zombies prefieren acciones que impliquen mover menos
 	}
-	
+	/**/
 	@Override
 	public double getFactorForType(int type) {
 		if (type==Action.DAMAGE)
@@ -25,6 +26,6 @@ public class ZombieAIParameters extends AIParameters{
 	
 	@Override
 	public int getRandomFactor() {
-		return 20;  //No son muy creativos o aleatorios que digamos
+		return 5;  //No son muy creativos o aleatorios que digamos
 	}
 }
