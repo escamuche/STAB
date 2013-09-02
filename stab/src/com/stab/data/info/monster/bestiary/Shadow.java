@@ -21,7 +21,7 @@ public class Shadow extends Undead {
 		
 		setResource("shadow");
 		setText("Shadow");
-		setFaction(1);
+	
 	
 		this.addTrait(new Attribute(StabConstants.INTELIGENCE,6));
 		this.addTrait(new Attribute(StabConstants.DEXTERITY,14));

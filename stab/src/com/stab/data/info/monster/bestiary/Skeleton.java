@@ -25,7 +25,7 @@ public class Skeleton extends Undead {
 		
 		setResource("skeleto");
 		setText("Esqueleto");
-		setFaction(1);
+	
 	
 		this.addTrait(new Attribute(StabConstants.STRENGHT,15));
 		this.addTrait(new Attribute(StabConstants.DEXTERITY,14));

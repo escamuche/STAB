@@ -6,7 +6,7 @@ import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.Weapon;
 import com.stab.data.info.feat.general.SkillFocusPerception_Feat;
 import com.stab.data.info.monster.Animal;
-import com.stab.model.ai.DefaultAIPackage;
+import com.stab.model.ai.AbstractAIPackage;
 
 public class DireRat extends Animal {
 
@@ -22,8 +22,7 @@ public class DireRat extends Animal {
 		
 		setResource("direrat");
 		setText("Dire Rat");
-		setFaction(1);
-		
+	
 		this.setAttribute(StabConstants.XP,135);
 		this.setAttribute(StabConstants.DEXTERITY,17);
 		this.setAttribute(StabConstants.CONSTITUTION,13);

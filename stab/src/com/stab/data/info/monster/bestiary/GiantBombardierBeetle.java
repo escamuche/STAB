@@ -5,7 +5,7 @@ import com.stab.data.StabInit;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.Weapon;
 import com.stab.data.info.monster.Vermin;
-import com.stab.model.ai.DefaultAIPackage;
+import com.stab.model.ai.AbstractAIPackage;
 
 public class GiantBombardierBeetle extends Vermin {
 
@@ -21,7 +21,6 @@ public class GiantBombardierBeetle extends Vermin {
 		
 		setResource("bombardierbeetle");
 		setText("Giant Bombardier Beetle");
-		setFaction(1);
 		
 		this.setAttribute(StabConstants.XP,600);
 		this.setAttribute(StabConstants.STRENGHT,15);

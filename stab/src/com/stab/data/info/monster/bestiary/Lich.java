@@ -11,7 +11,7 @@ import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.IronWill_Feat;
 import com.stab.data.info.feat.general.Toughness_Feat;
 import com.stab.data.info.monster.Undead;
-import com.stab.model.ai.DefaultAIPackage;
+import com.stab.model.ai.AbstractAIPackage;
 import com.stab.model.info.trait.Modifier;
 
 public class Lich extends Undead {
@@ -30,7 +30,7 @@ public class Lich extends Undead {
 		
 		setResource("lich");
 		setText("Lich");
-		setFaction(2);
+		
 	
 		this.addTrait(new IronWill_Feat());
 		this.addTrait(new Toughness_Feat());

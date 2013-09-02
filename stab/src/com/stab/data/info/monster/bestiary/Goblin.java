@@ -6,7 +6,7 @@ import com.stab.data.info.alignment.Evil;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.data.info.monster.Humanoid;
-import com.stab.model.ai.DefaultAIPackage;
+import com.stab.model.ai.AbstractAIPackage;
 
 public class Goblin extends Humanoid {
 
@@ -19,7 +19,6 @@ public class Goblin extends Humanoid {
 		
 		setResource("goblin");
 		setText("Goblin");
-		setFaction(2);
 		this.addTrait(new ImprovedInitiative_Feat());
 		
 		this.setAttribute(StabConstants.XP,135);

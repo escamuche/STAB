@@ -23,7 +23,7 @@ public class EsqueletoArquero extends Undead {
 		
 		setResource("skeleto");
 		setText("Esqueleto Arquero");
-		setFaction(1);
+	
 	
 		this.addTrait(new Attribute(StabConstants.STRENGHT,15));
 		this.addTrait(new Attribute(StabConstants.DEXTERITY,14));

@@ -8,7 +8,7 @@ import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.combat.WeaponFocus_Feat;
 import com.stab.data.info.feat.general.Alertness_Feat;
 import com.stab.data.info.monster.Humanoid;
-import com.stab.model.ai.DefaultAIPackage;
+import com.stab.model.ai.AbstractAIPackage;
 
 public class Roldare extends Humanoid {
 

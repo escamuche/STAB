@@ -7,7 +7,7 @@ import com.stab.data.info.alignment.Lawful;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.SkillFocusPerception_Feat;
 import com.stab.data.info.monster.Humanoid;
-import com.stab.model.ai.DefaultAIPackage;
+import com.stab.model.ai.AbstractAIPackage;
 import com.stab.model.info.trait.Modifier;
 
 public class Kobold extends Humanoid {
@@ -23,8 +23,7 @@ public class Kobold extends Humanoid {
 		
 		setResource("kobold");
 		setText("Kobold");
-		setFaction(1);
-		
+			
 		
 		this.setAttribute(StabConstants.XP,100);
 		this.setAttribute(StabConstants.TOHIT,+1);

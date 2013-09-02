@@ -22,7 +22,7 @@ public class KassenGolem extends Construct {
 	
 		setResource("golemkassen");
 		setText("Kassen Golem");
-		setFaction(2);
+		setFaction(2000);
 			
 		this.setAttribute(StabConstants.XP,800);
 		this.setAttribute(StabConstants.STRENGHT,18);

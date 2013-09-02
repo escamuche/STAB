@@ -9,7 +9,7 @@ import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.data.info.monster.Undead;
 import com.stab.data.info.monster.ZombieAIParameters;
-import com.stab.model.ai.DefaultAIPackage;
+import com.stab.model.ai.AbstractAIPackage;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.Modifier;
@@ -26,7 +26,6 @@ public class SkeletoParlanchin extends Undead {
 		
 		setResource("skeleto");
 		setText("Esqueleto");
-		setFaction(1);
 	
 		this.addTrait(new Attribute(StabConstants.STRENGHT,15));
 		this.addTrait(new Attribute(StabConstants.DEXTERITY,14));

@@ -7,7 +7,7 @@ import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.Item;
 import com.stab.data.info.traits.BasicAttributes;
 import com.stab.model.ai.AIPackage;
-import com.stab.model.ai.DefaultAIPackage;
+import com.stab.model.ai.AbstractAIPackage;
 import com.stab.model.basic.token.Token;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.base.Equipment;
@@ -15,10 +15,14 @@ import com.stab.model.info.trait.base.Equipment;
 public class Monster extends Creature {
 
 	
+	public static final int DEFAULT_MONSTER_FACTION=1000;
+
+	
 	@Override
 	public void init() {
 		super.init();
 		this.setActionSet(new MonsterActionSet());
+		this.setFaction(DEFAULT_MONSTER_FACTION);
 		this.addTrait(new BasicAttributes());
 		this.setGear(new HumanoidGear());   //si, si, ya, ya. ya lo separaremos en varias clases por tipo de monstruo
 		setOverlay("border");

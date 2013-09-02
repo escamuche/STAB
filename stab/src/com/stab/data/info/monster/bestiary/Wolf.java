@@ -6,7 +6,7 @@ import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.Weapon;
 import com.stab.data.info.feat.general.SkillFocusPerception_Feat;
 import com.stab.data.info.monster.Animal;
-import com.stab.model.ai.DefaultAIPackage;
+import com.stab.model.ai.AbstractAIPackage;
 
 public class Wolf extends Animal {
 
@@ -22,7 +22,6 @@ public class Wolf extends Animal {
 		
 		setResource("wolf");
 		setText("Wolf");
-		setFaction(1);
 		
 		this.setAttribute(StabConstants.XP,400);
 		this.setAttribute(StabConstants.STRENGHT,13);

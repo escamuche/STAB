@@ -9,7 +9,7 @@ import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.combat.WeaponFocus_Feat;
 import com.stab.data.info.monster.Humanoid;
-import com.stab.model.ai.DefaultAIPackage;
+import com.stab.model.ai.AbstractAIPackage;
 
 public class Orc extends Humanoid {
 
@@ -22,7 +22,6 @@ public class Orc extends Humanoid {
 		
 		setResource("orc");
 		setText("Orc");
-		setFaction(2);
 		
 		this.addTrait(new WeaponFocus_Feat(WeaponFactory.GREATAXE));
 		
