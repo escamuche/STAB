@@ -60,6 +60,8 @@ public class Lich extends Undead {
 //		ai.setLog(true);
 //		this.setCurrentAI(ai);
 	
+		getAIParams().setLog(true);
+		
 		this.equip(StabInit.getWeaponFactory().getWeapon("MEDIUMSLAM"), HumanoidGear.BOTHHANDS);
 	}
 }
