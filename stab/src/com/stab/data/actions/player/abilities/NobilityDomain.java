@@ -44,10 +44,7 @@ public class NobilityDomain extends Action implements TargetAction{
 			return OK;
 	}
 
-	@Override
-	public boolean shouldEndTurn(ActionRequest ar, boolean success) {
-		return true;
-	}
+
 	
 	@Override
 	protected boolean payResources(BaseInfo i) {

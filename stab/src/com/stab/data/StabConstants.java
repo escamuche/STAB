@@ -184,6 +184,12 @@ public class StabConstants {
 	public static final String RAGEROUNDSSPENT="RAGEROUNDSSPENT";	
 	
 	public static final String PERCEPTION_DC="PERCEPTION_DC"; //La dificultad para detectarlo con search (trampas, oculto, etc)
+
+
+	public static final String SWIFT_ACTION = "SWIFT_ACTION";
+
+
+	public static final String AOO = "ATTACKOFOPPORTUNITY";
 	
 	
 	

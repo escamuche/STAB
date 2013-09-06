@@ -29,8 +29,5 @@ protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 	return super.fullEffect(caster, target, point);
 }
 	
-	@Override
-	public boolean shouldEndTurn(ActionRequest ar, boolean success) {
-		return false;
-	}
+	
 }
