@@ -20,5 +20,9 @@ public abstract class WeaponTrait extends Trait implements Affects<WeaponAttack>
 	public void attackDone(WeaponAttack attack){
 		//Nada a priori. las subclases pueden comprobar cosas, pasarselo a sus traits, etc
 	}
+
+	public int getEffectValue() {
+		return 0;
+	}
 	
 }

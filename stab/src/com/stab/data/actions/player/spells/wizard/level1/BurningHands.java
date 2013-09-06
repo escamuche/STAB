@@ -93,6 +93,6 @@ public class BurningHands extends SpellOnTile implements AoE {
 
 	@Override
 	public float getWidth(Info arg0) {
-		return 180;
+		return 90;
 	}
 }

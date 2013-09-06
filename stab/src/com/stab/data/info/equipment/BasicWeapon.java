@@ -8,6 +8,7 @@ import com.stab.data.info.feat.general.NaturalWeaponProficiency_Feat;
 import com.stab.data.info.feat.general.SimpleWeaponProficiency_Feat;
 import com.stab.data.info.feat.general.WeaponProficiency_Feat;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
 /**
  * arma basica, con los datos principales
@@ -123,7 +124,10 @@ public class BasicWeapon extends Weapon {
 	}
 
 	protected int getDamageModifier(WeaponAttack app) {
-		BaseInfo i=(BaseInfo)app.getInstigator();
+		return getDamageModifier((BaseInfo)app.getInstigator());
+	}
+	protected int getDamageModifier(BaseInfo i) {
+	
 		int d=i.getValue(StabConstants.DAMAGE);
 		if (isTwoHanded()) //Realmente, comprobar si esta en both hands
 			d=(int)(d*1.5);
@@ -192,6 +196,16 @@ public class BasicWeapon extends Weapon {
 		for (WeaponTrait wt:getTraits(WeaponTrait.class))
 			wt.attackDone(attack);
 		super.attackDone(attack);
+	}
+	
+	
+	@Override
+	public int getEffectValue(BaseInfo i, Info target) {
+		int v=dices*dice/2;
+		for (WeaponTrait wt:getTraits(WeaponTrait.class))
+			v=v+wt.getEffectValue();
+		v=v+getDamageModifier(i);
+		return v;
 	}
 	
 }

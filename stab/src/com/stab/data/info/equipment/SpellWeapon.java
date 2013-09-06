@@ -78,6 +78,13 @@ public class SpellWeapon extends OverrideWeapon implements ActionPerformedListen
 	}
 
 	
-	
+	@Override
+	public int getEffectValue(BaseInfo i, Info target) {
+		int v= base.getEffectValue(i,target);
+		if (ae!=null)
+				v=v+ae.getAction().getEffectValue(i,target); //Sumar el effectType del spell que descargamos.
+		v=v*3; //PAra realzar la importancia de usar el spellweapon que tenemos cargado (al fin y al cabo, para algo lo hemos casteado!)
+		return v;
+	}
 	
 }

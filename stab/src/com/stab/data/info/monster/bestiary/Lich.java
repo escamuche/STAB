@@ -3,6 +3,7 @@ package com.stab.data.info.monster.bestiary;
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
+import com.stab.data.actions.player.spells.wizard.level1.BurningHands;
 import com.stab.data.actions.player.spells.wizard.level1.MagicMissile;
 import com.stab.data.actions.player.spells.wizard.level1.RayEnfeeblement;
 import com.stab.data.actions.player.spells.wizard.level1.Shield;
@@ -23,10 +24,15 @@ public class Lich extends Undead {
 		super.init();
 		setMaxMovePoints(6);
 	
+		setMaxEp(40);
+		setEp(40);
+		
 		this.getActionSet().addAction(RayFrost.ID);
 		this.getActionSet().addAction(MagicMissile.ID);
 		this.getActionSet().addAction(Shield.ID);
 		this.getActionSet().addAction(RayEnfeeblement.ID);
+		this.getActionSet().addAction(BurningHands.ID);
+		
 		
 		setResource("lich");
 		setText("Lich");

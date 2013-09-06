@@ -2,7 +2,7 @@ package com.stab.data.info.alignment;
 
 import com.stab.model.info.trait.Trait;
 
-public class Chaotic extends Trait {
+public class Chaotic extends Alignment {
 	
 	public static String ID="CHAOTIC";
 	

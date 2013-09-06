@@ -50,6 +50,9 @@ public class SpellDeliverWeapon extends BasicWeapon {
 	public void setRanged(boolean ranged) {
 		this.ranged = ranged;
 	}
+	public boolean isRanged() {
+		return ranged;
+	}
 	
 	
 	@Override

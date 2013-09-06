@@ -9,7 +9,7 @@ public class Barrel extends Obstacle {
 	
 	public void init() {
 		super.init();
-		setMaxHp(50);
+		setMaxHp(5);
 		setMaxEp(0);
 		healFully();
 		setResource("Barril");

@@ -1,14 +1,12 @@
 package com.stab.data.info.debuff.condition;
 
 import com.stab.common.Constants;
-import com.stab.data.animation.GenericSpriteAnimation;
 import com.stab.data.animation.GenericSpriteOnAnimation;
 import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
 import com.stab.model.basic.token.DecorToken;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.trait.base.Debuff;
 
-public class DazedCondition extends Debuff{
+public class DazedCondition extends UnableToActCondition{
 
 	public static final String ID="DAZEDCONDITION_DEBUFF";
 	

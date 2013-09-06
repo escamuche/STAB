@@ -117,10 +117,16 @@ public class ChannelPossitiveEnergyAction extends Action implements SelfAction, 
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target=(BaseInfo)t;
 		
-		//TODO: comprobar que se excluya el caster si es undead!
+		//comprobar que se excluya el caster si es undead!
 		
-		if (target.hasTrait(UndeadTraits.class))
+		if (target.hasTrait(UndeadTraits.class)){
+			if (target==caster)
+				return NEUTRAL;
+			if (caster.isAlly(target))
+				if (caster.hasTrait(SelectiveChanneling_Feat.class))
+					return NEUTRAL;
 			return DAMAGE;
+		}
 		if (target.hasTrait(ConstructTraits.class))
 			return NEUTRAL;
 		

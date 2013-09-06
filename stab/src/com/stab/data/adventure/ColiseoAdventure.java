@@ -32,7 +32,7 @@ public class ColiseoAdventure extends Adventure{
 		Narration n=new Narration();
 		n.createContents();
 		n.setTag("BEGIN");
-		n.setNext("CHOICE");
+		n.setNext("BATTLE.Balconada");
 		n.setText("Entra, no seas timido.");
 		this.addScene(n);
 
@@ -53,11 +53,11 @@ public class ColiseoAdventure extends Adventure{
 		ms.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
 		ms.setTag("BATTLE");
 		
-		DefaultRule r=new DefaultRule();
-		r.setEvent(InfoDestroyed.class);
-		r.addCondition(new InfoIsClass(Dummy.class));
-		r.addResponse(new VictoryResponse(0,"VICTORY"));
-		ms.addRule(r);
+	//	DefaultRule r=new DefaultRule();
+	//	r.setEvent(InfoDestroyed.class);
+	//	r.addCondition(new InfoIsClass(Dummy.class));
+	//	r.addResponse(new VictoryResponse(0,"VICTORY"));
+	//	ms.addRule(r);
 		this.addScene(ms);
 		
 		Narration n2=new Narration();

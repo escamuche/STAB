@@ -4,9 +4,8 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.HealAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.base.Damage;
-import com.stab.model.info.trait.base.Debuff;
 
-public class DyingCondition extends Debuff {
+public class DyingCondition extends UnableToActCondition {
 
 	public static final String ID="DYINGCONDITION_DEBUFF";
 	

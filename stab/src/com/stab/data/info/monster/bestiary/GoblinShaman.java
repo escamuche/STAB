@@ -2,13 +2,16 @@ package com.stab.data.info.monster.bestiary;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
+import com.stab.data.actions.ChannelPossitiveEnergyAction;
 import com.stab.data.actions.player.spells.cleric.level1.CureLight;
 import com.stab.data.actions.player.spells.wizard.level1.MagicMissile;
 import com.stab.data.info.alignment.Evil;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.data.info.monster.Humanoid;
+import com.stab.data.info.player.abilities.ChannelPositiveEnergy;
 import com.stab.model.ai.AbstractAIPackage;
+import com.stab.model.info.trait.base.RenewableResource;
 
 public class GoblinShaman extends Humanoid {
 
@@ -21,6 +24,10 @@ public class GoblinShaman extends Humanoid {
 	
 		this.getActionSet().addAction(CureLight.ID);
 		this.getActionSet().addAction(MagicMissile.ID);
+		
+		this.addTrait(new ChannelPositiveEnergy()); 
+		this.addTrait(new RenewableResource(ChannelPossitiveEnergyAction.RESOURCE_ID, 3)); 
+		
 		
 		setResource("goblinshaman");
 		setText("Goblin Shaman");

@@ -4,11 +4,14 @@ import java.util.EnumSet;
 
 import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.actions.HasDescriptor;
+import com.stab.model.action.Action;
+import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
-import com.stab.model.info.trait.Trait;
+import com.stab.model.info.trait.base.AdvancedTrait;
 
-public class DescriptorImmunity extends Trait  implements Attends<Applicable>{
+public class DescriptorImmunity extends AdvancedTrait  implements Attends<Applicable>{
 
 	protected EnumSet<EffectDescriptor> descriptors;
 	
@@ -55,6 +58,23 @@ public class DescriptorImmunity extends Trait  implements Attends<Applicable>{
 	
 	public void setDescriptors(EffectDescriptor arg0,EffectDescriptor...arg1){
 		descriptors= EnumSet.of(arg0, arg1);
+	}
+	
+	
+	@Override
+	public int valorateTarget(Action a, int type, BaseInfo actor, Info target,
+			int value) {
+		if (a instanceof HasDescriptor){
+			EnumSet<EffectDescriptor> desc=((HasDescriptor)a).getDescriptors();
+			if (desc==null)
+				return value;
+			if (desc.isEmpty())
+				return value;
+			for (EffectDescriptor e:(EffectDescriptor[])descriptors.toArray())
+				if (desc.containsAll(EnumSet.of(e)))
+					return 0;
+		}
+		return super.valorateTarget(a, type, actor, target, value);
 	}
 
 }

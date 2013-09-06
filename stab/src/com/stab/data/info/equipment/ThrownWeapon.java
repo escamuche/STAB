@@ -22,8 +22,8 @@ public class ThrownWeapon extends RangedWeapon {
 		super(name,numberofDice,dice,baseDamageType,critRange,critMultiplier,animationIcon,animationType);
 	}
 	
-	protected int getDamageModifier(WeaponAttack app) {
-		BaseInfo i=(BaseInfo)app.getInstigator();
+	protected int getDamageModifier(BaseInfo i) {
+		
 		int d=i.getValue(StabConstants.DAMAGE);
 		if (isTwoHanded()) //Realmente, comprobar si esta en both hands
 			d=(int)(d*1.5);

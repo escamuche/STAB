@@ -1,6 +1,8 @@
 package com.stab.data.info.equipment;
 
 import com.stab.data.info.applicable.WeaponAttack;
+import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Affects;
 import com.stab.model.info.applicable.Applicable;
 
@@ -51,4 +53,8 @@ public abstract class Weapon extends Item implements Affects<WeaponAttack>{
 		return missAnimationType;
 	}
 	
+	
+	public int getEffectValue(BaseInfo i, Info target){
+		return 1;
+	}
 }

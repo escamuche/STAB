@@ -16,6 +16,7 @@ import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.data.info.equipment.BasicWeapon;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.RangedWeapon;
+import com.stab.data.info.equipment.SpellWeapon;
 import com.stab.data.info.equipment.Weapon;
 import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.action.Action;
@@ -239,7 +240,10 @@ public class WeaponAttackAction extends Action implements TargetAction{
 	
 	@Override
 	public int getEffectValue(BaseInfo i, Info target) {
-		return i.getAttributeValue(StabConstants.DAMAGE)+5;  //REvisar  (el +5 es de porque si)
+		int v=0;
+		Weapon w=getWeapon(i);
+		v=w.getEffectValue(i,target);
+		return v;
 	}
 	
 

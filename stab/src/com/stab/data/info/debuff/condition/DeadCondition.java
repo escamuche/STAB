@@ -3,9 +3,8 @@ package com.stab.data.info.debuff.condition;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.applicable.base.Heal;
-import com.stab.model.info.trait.base.Debuff;
 
-public class DeadCondition extends Debuff implements Attends<Heal>{
+public class DeadCondition extends UnableToActCondition implements Attends<Heal>{
 	
 	
 	public static final String ID="DEADCONDITION_DEBUFF";

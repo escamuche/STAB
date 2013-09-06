@@ -40,10 +40,10 @@ public class RangedWeapon extends BasicWeapon {
 	}
 	
 	@Override
-	protected int getDamageModifier(WeaponAttack app) {
-		BaseInfo i=(BaseInfo)app.getInstigator();
+	protected int getDamageModifier(BaseInfo i) {
+		
 		int d=i.getValue(StabConstants.DAMAGERANGED);
-		//TODO: las armas thrown van por damage, ojo!
+		//las armas thrown van por damage, ojo!
 		return d;
 	}
 	

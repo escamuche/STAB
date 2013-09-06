@@ -9,7 +9,7 @@ public class Crate extends Obstacle {
 	
 	public void init() {
 		super.init();
-		setMaxHp(30);
+		setMaxHp(10);
 		setMaxEp(0);
 		healFully();
 		setResource("crate");

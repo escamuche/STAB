@@ -81,33 +81,6 @@ public class OverrideWeapon extends Weapon implements TurnBased {
 	}
 	
 	
-	@Override
-	public boolean isTurnActive() {
-		return false; //DE hecho, no debe ir a la queue
-	}
-	
-	@Override
-	public Request getNextAction() {
-		return null;
-	}
-	
-	@Override
-	public boolean isTurnDone() {
-		return true;
-	}
-	@Override
-	public void setActed(boolean b) {
-		}
-
-	@Override
-	public void setTurnDone(boolean b) {
-	}
-
-	@Override
-	public boolean hasActed() {
-			return false;
-	}
-
 
 	@Override
 	public void turnEnds() {
@@ -115,25 +88,6 @@ public class OverrideWeapon extends Weapon implements TurnBased {
 	}
 
 
-	@Override
-	public int getInitiative() {
-		return 0;
-	}
 
-
-	@Override
-	public Request getDefaultAction() {
-		return null;
-	}
-
-
-	@Override
-	public void rollInitiative() {
-		
-	}
-	@Override
-	public boolean isReady() {
-		return true;
-	}
 	
 }
