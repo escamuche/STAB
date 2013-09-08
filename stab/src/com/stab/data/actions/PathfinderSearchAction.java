@@ -3,7 +3,7 @@ package com.stab.data.actions;
 import com.stab.model.action.base.SearchAction;
 import com.stab.model.info.Info;
 
-public class PathfinderSearchAction extends SearchAction{
+public class PathfinderSearchAction extends SearchAction{  //TODO: decidir si cambiar el extends o pasar pathfinderaction a un interfaz!
 	
 	
 	public static final String ID=SearchAction.ID;

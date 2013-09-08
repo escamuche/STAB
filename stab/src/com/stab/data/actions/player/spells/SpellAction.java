@@ -19,6 +19,7 @@ import com.stab.model.action.Action;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.base.Creature;
+import com.stab.model.request.basic.ActionRequest;
 
 public abstract class SpellAction extends Action implements SpellProperties{
 
@@ -30,15 +31,15 @@ Spell spell;
 	}
 
 	
-	public final int execute(Info origin,Info target,Point point){
+	public final int execute(Info origin,Info target,Point point,ActionRequest ar){
 	
 		if (!attemptCast(origin,target,point))
 			return FAIL;
-		return castSpell(origin,target,point);
+		return castSpell(origin,target,point,ar);
 	}
 	
-	public int castSpell(Info origin,Info target,Point point){
-		return super.execute(origin, target, point);
+	public int castSpell(Info origin,Info target,Point point,ActionRequest ar){
+		return super.execute(origin, target, point,ar);
 	}
 	
 	protected void beginCasting(Info origin){

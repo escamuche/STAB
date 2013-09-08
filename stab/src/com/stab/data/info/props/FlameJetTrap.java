@@ -36,7 +36,7 @@ public class FlameJetTrap extends Switch implements RemoteActivated{
 		//animacion
 	//	playSound("flames");
 	//	playAnimation(BasicSparkAnimation.ID,"PARTICLE#flamejet",1500,dir[2]);
-		fj.execute(this, null, tile);
+		fj.execute(this, null, tile,null);
 		
 	}
 	

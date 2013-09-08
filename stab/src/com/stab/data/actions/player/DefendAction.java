@@ -2,8 +2,8 @@ package com.stab.data.actions.player;
 
 import java.awt.Point;
 
+import com.stab.data.actions.PathfinderAction;
 import com.stab.data.animation.DefendAnimation;
-import com.stab.model.action.Action;
 import com.stab.model.action.SelfAction;
 import com.stab.model.events.common.ConsoleMessage;
 import com.stab.model.info.BaseInfo;
@@ -12,7 +12,7 @@ import com.stab.model.info.trait.Effect;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.request.basic.ActionRequest;
 
-public class DefendAction extends Action implements SelfAction {
+public class DefendAction extends PathfinderAction implements SelfAction {
 	
 	public static final String ID="DEFEND";
 	
@@ -41,4 +41,8 @@ public class DefendAction extends Action implements SelfAction {
 		return true;
 	}
 	
+	@Override
+	public int getEffectValue(BaseInfo i, Info target) {
+		return 5;
+	}
 }

@@ -13,7 +13,7 @@ import com.stab.data.info.player.abilities.ChannelPositiveEnergy;
 import com.stab.model.ai.AbstractAIPackage;
 import com.stab.model.info.trait.base.RenewableResource;
 
-public class GoblinShaman extends Humanoid {
+public class GoblinShaman extends Goblin {
 
 	public static final String ID="GOBLINSHAMAN_INFO";
 	
@@ -41,7 +41,7 @@ public class GoblinShaman extends Humanoid {
 		this.setAttribute(StabConstants.INTELIGENCE,14);
 		this.setAttribute(StabConstants.WISDOM,14);
 		this.setAttribute(StabConstants.CHARISMA,6);
-		this.setAttribute(StabConstants.SIZE,StabConstants.SMALL_SIZE);
+		//this.setAttribute(StabConstants.SIZE,StabConstants.SMALL_SIZE);
 		this.setAttribute(StabConstants.HITDICENUMBER, 1);
 		this.setAttribute(StabConstants.WIZARDCASTER, 1);
 		this.setAttribute(StabConstants.CLERICCASTER, 1);

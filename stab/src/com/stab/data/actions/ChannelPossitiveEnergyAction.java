@@ -18,7 +18,7 @@ import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.applicable.base.Heal;
 import com.stab.model.info.trait.base.VisualEffect;
 
-public class ChannelPossitiveEnergyAction extends Action implements SelfAction, AoE{
+public class ChannelPossitiveEnergyAction extends PathfinderAction implements SelfAction, AoE{
 	
 	
 	public static final String ID="CHANNELPOSITIVE_ACTION";
