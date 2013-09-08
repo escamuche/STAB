@@ -28,9 +28,11 @@ public class Shield extends SpellOnSelf{
 		target.addTrait(buff);
 		return super.fullEffect(caster, target, point);
 	}
-}
+
 	
-	/*@Override
-	public int getEffectValue(BaseInfo i) {
-		return dañobase;
-	}*/
+	public int getEffectValue(BaseInfo i, com.stab.model.info.Info target) {
+		
+		return 10;
+	};
+	
+}

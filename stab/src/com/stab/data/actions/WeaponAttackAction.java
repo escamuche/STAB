@@ -133,6 +133,7 @@ public class WeaponAttackAction extends Action implements TargetAction{
 		if (ad.getResult()==WeaponAttack.DODGE)
 			playDodgeAnimation(ad,origin,target);
 		
+		
 		if (SwingAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(SwingAnimation.ID,target,ad.getAnimationIcon());
 			origin.playSound("effects/SwipeTarget");
@@ -141,10 +142,12 @@ public class WeaponAttackAction extends Action implements TargetAction{
 				origin.playSound("effects/m1hSwordHitMetalShield1b");
 			if (ad.getResult()==WeaponAttack.ARMOR)
 				origin.playSound("effects/m1hSwordHitFlesh1b");
+			if (ad.getResult()==WeaponAttack.ARMOR)
+				playArmorAnimation(ad,origin,target);
 			return;
 		}
 		if (ShootProyectileAnimation.ID.equals(ad.getAnimationType())){
-			if (ad.getResult()==WeaponAttack.BLOCK)
+			if (ad.getResult()==WeaponAttack.BLOCK || (ad.getResult()==WeaponAttack.DODGE )|| (ad.getResult()==WeaponAttack.ARMOR) )
 				sleep(origin.playAnimationOn(ShootProyectileAnimation.ID,target,ad.getAnimationIcon()));
 			else
 				sleep(origin.playAnimationOn(MissProyectileAnimation.ID,target,ad.getAnimationIcon()));
@@ -159,9 +162,14 @@ public class WeaponAttackAction extends Action implements TargetAction{
 				origin.playSound("effects/m1hSwordHitMetalShield1b");
 			if (ad.getResult()==WeaponAttack.ARMOR)
 				origin.playSound("effects/m1hSwordHitFlesh1b");
+			if (ad.getResult()==WeaponAttack.ARMOR)
+				playArmorAnimation(ad,origin,target);
 			return;
 		}
 		if (GenericProyectileAnimation.ID.equals(ad.getAnimationType())){
+			if (ad.getResult()==WeaponAttack.BLOCK || (ad.getResult()==WeaponAttack.DODGE )|| (ad.getResult()==WeaponAttack.ARMOR) )
+				sleep(origin.playAnimationOn(GenericProyectileAnimation.ID,target.getPos(),ad.getAnimationIcon(),origin.getWidth()));
+			else
 			sleep(origin.playAnimationOn(GenericProyectileMissAnimation.ID,target.getPos(),ad.getAnimationIcon(),origin.getWidth()));
 			return;
 		}
@@ -199,6 +207,7 @@ public class WeaponAttackAction extends Action implements TargetAction{
 			return;
 		}
 		if (ShootProyectileAnimation.ID.equals(ad.getAnimationType())){
+			target.playAnimationOn(SidestepAnimation.ID,origin.getToken());
 			return;
 		}
 		if (ThrustAnimation.ID.equals(ad.getAnimationType())){
@@ -206,6 +215,11 @@ public class WeaponAttackAction extends Action implements TargetAction{
 			return;
 		}
 	}
+	
+	private void playArmorAnimation(WeaponAttack ad,BaseInfo origin, Token target) {
+		
+	}
+	
 	protected Weapon getWeapon(BaseInfo atacante) {
 		
 		if (atacante instanceof Creature){

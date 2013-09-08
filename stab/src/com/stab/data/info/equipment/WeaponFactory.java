@@ -124,17 +124,17 @@ public class WeaponFactory extends ItemFactory{
 		
 		//Para hechizos
 		w=new SpellDeliverWeapon("Ray",0,1,Damage.GENERIC_DAMAGE,"PARTICLE#magicmissile",ShootBeamAnimation.ID);
-		w.setCategory(BasicWeapon.SPECIAL);
-		w.setTouch(true);
+	//	w.setCategory(BasicWeapon.SPECIAL);
+	//	w.setTouch(true);
 		register(RAY,w);
 		w=new SpellDeliverWeapon("Missile",0,1,Damage.GENERIC_DAMAGE, "PARTICLE#magicmissile",ShootProyectileAnimation.ID);
-		w.setCategory(BasicWeapon.SPECIAL);
-		w.setTouch(true);
+	//	w.setCategory(BasicWeapon.SPECIAL);
+	//	w.setTouch(true);
 		register(MISSILE,w);
 		w=new SpellDeliverWeapon("Touch",0,1,Damage.GENERIC_DAMAGE,"effects/touch",ThrustAnimation.ID);
 		((SpellDeliverWeapon)w).setRanged(false);
-		w.setTouch(true);
-		w.setCategory(BasicWeapon.SPECIAL);
+	//	w.setTouch(true);
+	//	w.setCategory(BasicWeapon.SPECIAL);
 		register(TOUCH,w);
 		
 		//Spell Weapons

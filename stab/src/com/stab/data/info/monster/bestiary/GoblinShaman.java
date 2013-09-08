@@ -41,15 +41,14 @@ public class GoblinShaman extends Goblin {
 		this.setAttribute(StabConstants.INTELIGENCE,14);
 		this.setAttribute(StabConstants.WISDOM,14);
 		this.setAttribute(StabConstants.CHARISMA,6);
-		//this.setAttribute(StabConstants.SIZE,StabConstants.SMALL_SIZE);
+		//this.setAttribute(StabConstants.SIZE,StabConstants.SMALL_SIZE); //heredado de goblin
 		this.setAttribute(StabConstants.HITDICENUMBER, 1);
 		this.setAttribute(StabConstants.WIZARDCASTER, 1);
 		this.setAttribute(StabConstants.CLERICCASTER, 1);
 		
-	//	DefaultAIPackage ai=new DefaultAIPackage();
-	//	ai.setLog(true);
-	//	this.setCurrentAI(ai);
-			
+		
+		
+		getAIParams().setLog(true);
 		
 		this.addTrait(new Evil());
 		

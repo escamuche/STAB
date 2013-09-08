@@ -54,17 +54,14 @@ public class Lich extends Undead {
 		
 		this.addTrait(new Evil());
 		
-		Modifier armor = new Modifier(StabConstants.ACTIVEDEFENSE,StabConstants.ARMORMOD,+4);
-		Modifier nat = new Modifier(StabConstants.ACTIVEDEFENSE,StabConstants.NATURALARMORMOD,+5);
+		Modifier armor = new Modifier(StabConstants.ARMORDEFENSE,StabConstants.ARMORMOD,+4);
+		Modifier nat = new Modifier(StabConstants.ARMORDEFENSE,StabConstants.NATURALARMORMOD,+5);
 		Modifier def = new Modifier(StabConstants.PASSIVEDEFENSE,StabConstants.DEFLECTIONMOD,+2);
 		
 		addTrait(armor);
 		addTrait(nat);
 		addTrait(def);
 		
-	//	DefaultAIPackage ai=new DefaultAIPackage();
-//		ai.setLog(true);
-//		this.setCurrentAI(ai);
 	
 		getAIParams().setLog(true);
 		

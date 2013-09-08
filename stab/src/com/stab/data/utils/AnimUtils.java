@@ -10,11 +10,18 @@ import com.tien.princess.engine.sprite.StateSprite;
 
 public class AnimUtils {
 
+	static StateSprite fake;
+	static{
+		fake=new StateSprite();
+		fake.setVisible(false);
+	}
+	
 	public static StateSprite getSprite(com.stab.model.basic.Sprite t){
 		if(t.getVisualObject() instanceof SyncState){
 			return ((SyncState)t.getVisualObject()).getSprite();
 		}
-		return null;
+		System.out.println("No encuentro el visualObject para "+t+"  "+t.getPos());
+		return fake;
 	}
 	
 	public static void spawnSprite(){
