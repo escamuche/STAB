@@ -6,6 +6,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.data.info.buff.spells.TrueStrike_Buff;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
 public class TrueStrike extends SpellOnSelf{
 	
@@ -27,5 +28,10 @@ public class TrueStrike extends SpellOnSelf{
 		buff.setTime(1);
 		target.addTrait(buff);
 		return super.fullEffect(caster, target, point);
+	}
+	
+	@Override
+	public int getEffectValue(BaseInfo i, Info target) {
+		return 10;
 	}
 }

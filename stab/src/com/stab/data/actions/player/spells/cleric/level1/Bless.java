@@ -35,7 +35,7 @@ public class Bless extends SpellOnTarget{
 	
 	@Override
 	public int getEffectValue(BaseInfo i, Info target) {
-		return 10;
+		return 4;
 	}
 	
 

@@ -40,4 +40,10 @@ protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 		target.playAnimation(BasicSparkAnimation.ID,"PARTICLE#spells/flash");
 		target.playSound("effects/Curse");
 	}
+	
+	@Override
+	public int getEffectValue(BaseInfo i, Info target) {
+		return 2;
+	}
+	
 }

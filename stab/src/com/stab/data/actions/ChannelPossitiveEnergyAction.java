@@ -138,8 +138,20 @@ public class ChannelPossitiveEnergyAction extends PathfinderAction implements Se
 	}
 	
 	
+	@Override
+	public int getEffectSubType(Info instigator, Info target) {
+		int i=getEffectType(instigator, target);
+		if (i==HEAL)
+			return 0;
+		return Damage.HOLY_DAMAGE;
+		//return super.getEffectSubType(instigator, target);
+	}
 	
+	@Override
+	public int getEffectValue(BaseInfo i, Info target) {
 	
+		return 6;
+	}
 
 }
 

@@ -50,8 +50,17 @@ public class MagicMissile extends SpellOnTarget{
 
 	
 	@Override
+	public int getEffectSubType(Info instigator, Info target) {
+		return Damage.FORCE_DAMAGE;
+	}
+	
+	@Override
 	public int getEffectValue(BaseInfo i, Info target) {
-		return (((i.getAttributeValue(StabConstants.WIZARDCASTER)+1)/2)*3);
+		int cl = getCasterLevel(i);
+		
+		int number=cl+1/2;
+		if (number>5) number=5;
+		return number*5;
 	}
 	
 	

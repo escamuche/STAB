@@ -52,7 +52,9 @@ public class TouchFatigue extends SpellOnTarget{
 
 	@Override
 	public int getEffectValue(BaseInfo i, Info target) {
-		return 4;
+		if (i==target)
+			return 5;
+		return 5;
 	}
 	
 	@Override

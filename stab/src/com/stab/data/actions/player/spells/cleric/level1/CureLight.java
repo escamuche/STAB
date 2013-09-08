@@ -76,11 +76,27 @@ public class CureLight extends SpellOnTarget{
   	 this.setSave(StabConstants.FORTITUDESAVE);
   	 
 	}
-
+	@Override
+	public int getEffectType(Info instigator, Info target) {
+		if (target instanceof BaseInfo)
+			if(((BaseInfo)target).hasTrait(UndeadTraits.class))
+			return DAMAGE;
+		return HEAL;
+			
+	}
+	
+	@Override
+	public int getEffectSubType(Info instigator, Info target) {
+		int i=getEffectType(instigator, target);
+		if (i==HEAL)
+			return 0;
+		return Damage.HOLY_DAMAGE;
+		//return super.getEffectSubType(instigator, target);
+	}
 	
 	@Override
 	public int getEffectValue(BaseInfo i, Info target) {
-		return 5;
+		return 9;
 	}
 	
 

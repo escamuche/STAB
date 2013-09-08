@@ -38,7 +38,7 @@ public class Doom extends SpellOnTarget {
 	
 	@Override
 	public int getEffectValue(BaseInfo i, Info target) {
-		return 10;
+		return 4;
 	}
 	
 

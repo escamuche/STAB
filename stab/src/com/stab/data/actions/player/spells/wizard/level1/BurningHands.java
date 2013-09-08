@@ -95,4 +95,18 @@ public class BurningHands extends SpellOnTile implements AoE {
 	public float getWidth(Info arg0) {
 		return 90;
 	}
+	
+	@Override
+	public int getEffectSubType(Info instigator, Info target) {
+		return Damage.FIRE_DAMAGE;
+	}
+	
+	@Override
+	public int getEffectValue(BaseInfo i, Info target) {
+		int level = getCasterLevel(i);
+		if(level>5)
+			level=5;
+		return level*4;
+	}
+	
 }

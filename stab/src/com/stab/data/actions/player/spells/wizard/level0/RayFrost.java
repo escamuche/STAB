@@ -32,10 +32,14 @@ public class RayFrost extends SpellOnTarget{
 		this.setDescription("A ray of freezing air and ice projects from your pointing finger. You must succeed on a ranged touch attack with the ray to deal damage to a target. The ray deals 1d3 points of cold damage.");
 	}
 
+	@Override
+	public int getEffectSubType(Info instigator, Info target) {
+		return Damage.COLD_DAMAGE;
+	}
 	
 	@Override
 	public int getEffectValue(BaseInfo i, Info target) {
-		return 1;
+		return 3;
 	}
 	
 

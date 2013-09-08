@@ -37,6 +37,7 @@ protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
      setResource("actions/acidspray");
      setName("AcidSplash");
      this.setEffectType(DAMAGE);
+     this.setEffectSubType(Damage.ACID_DAMAGE);
      setRange(CLOSE);
      setMedium(MISSILE);
      setWeapon(AcidSplash.ID);
@@ -46,8 +47,10 @@ protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 	}
 
 	
+	
+	
 	@Override
 	public int getEffectValue(BaseInfo i, Info target) {
-		return 1;
+		return 3;
 	}
 }

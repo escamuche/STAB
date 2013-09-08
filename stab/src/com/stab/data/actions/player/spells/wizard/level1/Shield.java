@@ -32,7 +32,7 @@ public class Shield extends SpellOnSelf{
 	
 	public int getEffectValue(BaseInfo i, com.stab.model.info.Info target) {
 		
-		return 10;
+		return 4*4;
 	};
 	
 }

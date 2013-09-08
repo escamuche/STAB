@@ -44,9 +44,19 @@ public class DisruptUndead extends SpellOnTarget {
 		return false;
 		
 	}
+	
+	
+	@Override
+	public int getEffectSubType(Info instigator, Info target) {
+		return Damage.HOLY_DAMAGE;
+	}
+	
 	@Override
 	public int getEffectValue(BaseInfo i, Info target) {
-		return 3;
+		if (target instanceof BaseInfo)
+		if (!((BaseInfo)target).hasTrait(UndeadTraits.ID))
+			return 0;
+		return 6;
 	}
 	
 }

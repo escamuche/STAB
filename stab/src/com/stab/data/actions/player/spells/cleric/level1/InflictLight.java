@@ -49,14 +49,14 @@ protected boolean partialEffect(BaseInfo caster, BaseInfo target, Point point) {
 	if(target.hasTrait(UndeadTraits.ID) == false) {
 					Damage d= new Damage(dañobase/2, Damage.UNHOLY_DAMAGE,caster);
 					target.apply(d);
-					this.setEffectType(DAMAGE);
+				
 					return super.partialEffect(caster, target, point);
 					}
 					
 			else {
 				Heal d= new Heal(dañobase,caster);
 				target.apply(d);
-				this.setEffectType(HEAL);
+		
 				return super.partialEffect(caster, target, point);
 			}
 	
@@ -76,7 +76,25 @@ protected boolean partialEffect(BaseInfo caster, BaseInfo target, Point point) {
 
 	
 	@Override
+	public int getEffectType(Info instigator, Info target) {
+		if (target instanceof BaseInfo)
+			if(((BaseInfo)target).hasTrait(UndeadTraits.class))
+			return HEAL;
+		return DAMAGE;
+			
+	}
+	
+	@Override
+	public int getEffectSubType(Info instigator, Info target) {
+		int i=getEffectType(instigator, target);
+		if (i==HEAL)
+			return 0;
+		return Damage.UNHOLY_DAMAGE;
+		//return super.getEffectSubType(instigator, target);
+	}
+	
+	@Override
 	public int getEffectValue(BaseInfo i, Info target) {
-		return 5;
+		return 9;
 	}
 }
