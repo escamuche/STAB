@@ -11,6 +11,7 @@ import com.stab.model.action.SelfAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
+import com.stab.model.request.basic.ActionRequest;
 
 public class PillarArrowsAction extends Action implements SelfAction,AoE{
 
@@ -22,7 +23,7 @@ public class PillarArrowsAction extends Action implements SelfAction,AoE{
 	}
 
 	@Override
-	public int affect(Info instigator, Info target, Point point) {
+	public int affect(Info instigator, Info target, Point point, ActionRequest ar) {
 		if (target instanceof BaseInfo){
 			int n = Roll.d4();
 			while(n>0){

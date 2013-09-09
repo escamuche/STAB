@@ -7,6 +7,7 @@ import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.info.debuff.Bleed_Debuff;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.request.basic.ActionRequest;
 
 public class Bleed extends SpellOnTarget{
 	
@@ -41,8 +42,8 @@ public class Bleed extends SpellOnTarget{
 		
 	@Override
 	protected void playFullEffectAnimation(BaseInfo caster, BaseInfo target,
-			Point point) {
-		super.playFullEffectAnimation(caster, target, point);
+			Point point, ActionRequest ar) {
+		super.playFullEffectAnimation(caster, target, point, ar);
 		target.playAnimation(BasicSparkAnimation.ID, target.getBloodEffect());
 	}	
 }

@@ -21,8 +21,8 @@ public class SpellWeapon extends OverrideWeapon implements ActionPerformedListen
 	}
 
 	public void addEffect(BaseInfo instigator, BaseInfo target, Point point,
-			String action) {
-		this.ae=new SpellActionEffect(instigator, target, point, action);
+			String action,ActionRequest ar) {
+		this.ae=new SpellActionEffect(instigator, target, point, action,ar);
 	}
 	
 	

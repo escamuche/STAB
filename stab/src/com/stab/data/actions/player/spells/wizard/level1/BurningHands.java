@@ -11,6 +11,7 @@ import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.base.VisualEffect;
+import com.stab.model.request.basic.ActionRequest;
 
 public class BurningHands extends SpellOnTile implements AoE {
 
@@ -32,8 +33,8 @@ public class BurningHands extends SpellOnTile implements AoE {
 
 	@Override
 	protected void playExecuteActionAnimation(Info caster, Info target,
-			Point pos) {
-		super.playExecuteActionAnimation(caster, target, pos);
+			Point pos,ActionRequest ar) {
+		super.playExecuteActionAnimation(caster, target, pos, ar);
 		double a=getAngle(caster,target,pos);
 		a=Math.toDegrees(a);
 		caster.playAnimation(VisualEffect.SPARK_ANIMATION, "PARTICLE#spells/burninghands", 1200,a);

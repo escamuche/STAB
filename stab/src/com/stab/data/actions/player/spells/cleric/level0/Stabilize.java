@@ -7,6 +7,7 @@ import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.info.debuff.condition.DyingCondition;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.request.basic.ActionRequest;
 
 public class Stabilize extends SpellOnTarget{
 	
@@ -38,8 +39,8 @@ public class Stabilize extends SpellOnTarget{
 	
 	@Override
 	protected void playFullEffectAnimation(BaseInfo caster, BaseInfo target,
-			Point point) {
-		super.playFullEffectAnimation(caster, target, point);
+			Point point, ActionRequest ar) {
+		super.playFullEffectAnimation(caster, target, point, ar);
 		target.playAnimation(BasicSparkAnimation.ID, "PARTICLE#effects/healing");
 	}	
 	

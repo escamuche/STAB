@@ -10,6 +10,7 @@ import com.stab.model.action.TileAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
+import com.stab.model.request.basic.ActionRequest;
 
 public class FlameJet extends Action implements TileAction,AoE{
 
@@ -21,7 +22,7 @@ public class FlameJet extends Action implements TileAction,AoE{
 	}
 
 	@Override
-	public int affect(Info instigator, Info target, Point point) {
+	public int affect(Info instigator, Info target, Point point, ActionRequest ar) {
 		if (target instanceof BaseInfo){
 			Damage f=new RolledDamage(2,4,Damage.FIRE_DAMAGE,instigator);
 			((BaseInfo)target).apply(f);
@@ -57,9 +58,9 @@ public class FlameJet extends Action implements TileAction,AoE{
 	
 	@Override
 	protected void playExecuteActionAnimation(Info caster, Info target,
-			Point pos) {
+			Point pos, ActionRequest ar) {
 
-		super.playExecuteActionAnimation(caster, target, pos);
+		super.playExecuteActionAnimation(caster, target, pos, ar);
 		caster.playSound("flames");
 		caster.playAnimation(BasicSparkAnimation.ID,"PARTICLE#generic/flamejet",1500,Math.toDegrees(getAngle(caster, target, pos)));
 	}

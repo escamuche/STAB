@@ -9,6 +9,7 @@ import com.stab.data.info.debuff.FatigueDebuff;
 import com.stab.model.action.Action;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.request.basic.ActionRequest;
 
 public class TouchFatigue extends SpellOnTarget{
 	
@@ -44,8 +45,8 @@ public class TouchFatigue extends SpellOnTarget{
 	
 	@Override
 	protected void playFullEffectAnimation(BaseInfo caster, BaseInfo target,
-			Point point) {
-		super.playFullEffectAnimation(caster, target, point);
+			Point point, ActionRequest ar) {
+		super.playFullEffectAnimation(caster, target, point, ar);
 		target.playAnimation(BasicSparkAnimation.ID,"PARTICLE#effects/purpleBubbles");
 		target.playSound("effects/Curse");
 	}

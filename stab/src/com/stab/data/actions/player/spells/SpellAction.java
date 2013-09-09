@@ -18,12 +18,16 @@ import com.stab.data.info.equipment.Weapon;
 import com.stab.model.action.Action;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.base.Creature;
 import com.stab.model.request.basic.ActionRequest;
 
 public abstract class SpellAction extends Action implements SpellProperties{
 
-Spell spell;
+	
+	
+	
+	Spell spell;
 	
 	public SpellAction() {
 		spell=new Spell();
@@ -216,7 +220,7 @@ Spell spell;
 	}
 
 	@Override
-	public int affect(Info origin,Info t,Point point) {
+	public int affect(Info origin,Info t,Point point, ActionRequest ar) {
 		//Este comportamiento estandar es para baseinfos. si es otra cosa, este metodo estara sobreescrito
 		if (!(origin instanceof BaseInfo))
 			return FAIL;
@@ -227,7 +231,7 @@ Spell spell;
 		
 		
 		if (caster==target && isWeaponChargeSpell()){
-			SpellWeapon w=getWeapon(caster,target,point);
+			SpellWeapon w=getWeapon(caster,target,point,ar);
 			if (w!=null)
 				((Creature)caster).equip(w);
 			return OK;
@@ -236,31 +240,33 @@ Spell spell;
 		
 		if (isHarmfulFor(caster,target)){
 			
-			SpellWeapon w=getWeapon(caster,target,point);
+			SpellWeapon w=getWeapon(caster,target,point,ar);
 			if (w!=null){
 				
 				((Creature)caster).equip(w);
 				WeaponAttackAction a=(WeaponAttackAction)getActionLibrary().getAction(WeaponAttackAction.ID);
-				int r=a.affect(caster, target, point);
+				int r=a.affect(caster, target, point, ar);
 				return r;
 			}
 			//Si no se usa un ataque, castear normalmente
-			SpellActionEffect ae= new SpellActionEffect(caster,target,point,this.getId());
+			SpellActionEffect ae= new SpellActionEffect(caster,target,point,this.getId(),ar);
 			target.apply(ae);
-			//return fullEffect(caster,target,point);
-			return OK;
+		
+		
+			return ae.getResult();
 		}
 		//Si no es harmful, considerar que afecta siempre
 		//TODO: mirarse lo de resistencia magica para efectos beneficiosos, tecnicamente se aplica
-		SpellActionEffect ae= new SpellActionEffect(caster,target,point,this.getId());
+		SpellActionEffect ae= new SpellActionEffect(caster,target,point,this.getId(),ar);
 		target.apply(ae);
-		//return fullEffect(caster,target,point);
-		return OK;
-	//	return fullEffect(caster,target,point);
+		
+		
+		return ae.getResult();
+
 		
 	}
 
-	public boolean spellAffect(BaseInfo caster, BaseInfo target, Point point, boolean critical){
+	public int spellAffect(BaseInfo caster, BaseInfo target, Point point, boolean critical,ActionRequest ar){
 		
 		
 		//primero, spell resistance
@@ -271,7 +277,8 @@ Spell spell;
 				 bsr.check();
 				 if (bsr.failed()){
 					
-					 return spellResisted(caster,target,point);
+					 spellResisted(caster,target,point, ar);
+					 return SpellActionEffect.RESISTED;
 				 }
 			}
 		
@@ -285,60 +292,76 @@ Spell spell;
 			
 			if (st.isEvaded()){
 				
-				return evadedEffect(caster, target,point);
+				evadedEffect(caster, target,point,ar);
+				return SpellActionEffect.EVADED;
 			}
 			if (st.success()){
 				
-				return partialEffect(caster, target,point);
+				return partialEffect(caster, target,point,ar);
+				
 			}
 			if (st.failed()){
 			
-				return fullEffect(caster, target,point);
+				return fullEffect(caster, target,point,ar);
 			}
 			//No hay mas casos.
-			return false; //por si algo falla horriblemente
+			return INVALID; //por si algo falla horriblemente
 		}
 	
-		return fullEffect(caster,target,point);
+		return fullEffect(caster,target,point,ar);
+	}
+	
+	
+	protected int fullEffect(BaseInfo caster, BaseInfo target,Point point,ActionRequest ar) {
+		playFullEffectAnimation(caster, target,point, ar);
+		fullEffect(caster,target,point);
+		return Applicable.OK;
+	}
+	protected int partialEffect(BaseInfo caster, BaseInfo target,Point point,ActionRequest ar) {
+		playPartialEffectAnimation(caster, target,point,ar);
+		partialEffect(caster,target,point);
+		return Applicable.OK;
 	}
 	
 	protected boolean fullEffect(BaseInfo caster, BaseInfo target,Point point) {
-		playFullEffectAnimation(caster, target,point);
+		
 		return true;
 	}
 	protected boolean partialEffect(BaseInfo caster, BaseInfo target,Point point) {
-		playPartialEffectAnimation(caster, target,point);
+		
 		return true;
 	}
-	protected boolean evadedEffect(BaseInfo caster, BaseInfo target,Point point) {
-		playEvadedAnimation(caster, target,point);
+	protected boolean evadedEffect(BaseInfo caster, BaseInfo target,Point point,ActionRequest ar) {
+		playEvadedAnimation(caster, target,point,ar);
+	
 		return true;
 	}
-	protected boolean spellResisted(BaseInfo caster, BaseInfo target,Point point) {
-		 playSRFailAnimation(caster, target,point);
+	protected boolean spellResisted(BaseInfo caster, BaseInfo target,Point point,ActionRequest ar) {
+		 playSRFailAnimation(caster, target,point,ar);
+	
 		return true;
 	}
 	
 	//No olvidarse de playExecuteActionAnimation!
 
-	protected void playSRFailAnimation(BaseInfo caster, BaseInfo target,Point point){ 
+	protected void playSRFailAnimation(BaseInfo caster, BaseInfo target,Point point,ActionRequest ar){ 
 		target.showFloatingText("RESIST", Color.pink);
 	};
-	protected void playFullEffectAnimation(BaseInfo caster, BaseInfo target,Point point){};
-	protected void playPartialEffectAnimation(BaseInfo caster, BaseInfo target,Point point){
+	protected void playFullEffectAnimation(BaseInfo caster, BaseInfo target,Point point, ActionRequest ar){};
+	protected void playPartialEffectAnimation(BaseInfo caster, BaseInfo target,Point point,ActionRequest ar){
 		target.showFloatingText("SAVE", Color.green);
 	};
-	protected void playEvadedAnimation(BaseInfo caster, BaseInfo target,Point point){
+	protected void playEvadedAnimation(BaseInfo caster, BaseInfo target,Point point,ActionRequest ar){
 		target.showFloatingText("EVADED", Color.pink);
 	};
 	 
 	
 	//Corresponde a las subclases determinar las cargas!
-	public SpellWeapon getWeapon(BaseInfo caster,BaseInfo target,Point point){
+	public SpellWeapon getWeapon(BaseInfo caster,BaseInfo target,Point point,ActionRequest ar){
 		SpellWeapon w= spell.getWeapon();
 		if (w==null)
 			return null;
-		w.addEffect(caster,target,point,this.getId());
+		w.addEffect(caster,target,point,this.getId(),ar);
 		Weapon old=(Weapon)((Creature)caster).getEquipment(w.getSlot());
 		w.setOld(old);
 		return w;

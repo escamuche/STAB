@@ -10,7 +10,7 @@ import com.stab.model.ai.AbstractAIPackage;
 
 public class Goblin extends Humanoid {
 
-	public static final String ID="GOBLIN_INFO";
+
 	
 	@Override
 	public void init() {
@@ -22,24 +22,20 @@ public class Goblin extends Humanoid {
 		this.addTrait(new ImprovedInitiative_Feat());
 		
 		this.setAttribute(StabConstants.XP,135);
-		this.setAttribute(StabConstants.TOHIT,+1);
-		this.setAttribute(StabConstants.TOHITRANGED,+1);
 		this.setAttribute(StabConstants.STRENGHT,11);
 		this.setAttribute(StabConstants.DEXTERITY,15);
+		this.setAttribute(StabConstants.INTELIGENCE,10);
 		this.setAttribute(StabConstants.CONSTITUTION,12);
 		this.setAttribute(StabConstants.WISDOM,9);
 		this.setAttribute(StabConstants.CHARISMA,6);
 		this.setAttribute(StabConstants.SIZE,StabConstants.SMALL_SIZE);
 		this.setAttribute(StabConstants.HITDICENUMBER, 1);
-		
 	
 			
 		
 		this.addTrait(new Evil());
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("SHORTSWORD"), HumanoidGear.MAINHAND);
-		this.equip(StabInit.getArmorFactory().getArmor("LIGHTLEATHER"), HumanoidGear.ARMOR);
-		this.equip(StabInit.getArmorFactory().getArmor("LIGHTWOODENSHIELD"), HumanoidGear.OFFHAND);
+	
 		
 		
 		

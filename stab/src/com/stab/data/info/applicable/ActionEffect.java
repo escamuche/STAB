@@ -10,6 +10,7 @@ import com.stab.model.action.Action;
 import com.stab.model.action.ActionLibrary;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
+import com.stab.model.request.basic.ActionRequest;
 
 public class ActionEffect extends Applicable implements HasDescriptor{
 
@@ -17,15 +18,16 @@ public class ActionEffect extends Applicable implements HasDescriptor{
 	Point point;
 	
 	Action action;
+	ActionRequest ar;
 
 	protected EnumSet<EffectDescriptor> descriptors;
 	
-	public ActionEffect(BaseInfo instigator,BaseInfo target,Point point, String action) {
+	public ActionEffect(BaseInfo instigator,BaseInfo target,Point point, String action,ActionRequest ar) {
 		super(instigator);
 		setTarget(target);
 		this.point=point;
 		this.action=getActionLibrary().getAction(action);
-	
+		this.ar=ar;
 	}
 
 	protected static ActionLibrary getActionLibrary(){
@@ -35,14 +37,16 @@ public class ActionEffect extends Applicable implements HasDescriptor{
 	public Action getAction() {
 		return action;
 	}
-	
+	public ActionRequest getActionRequest() {
+		return ar;
+	}
 	public Point getPoint() {
 		return point;
 	}
 	
 	@Override
 	public void applyEffects() {
-		getAction().affect((BaseInfo)getInstigator(), this.getTarget(),getPoint());
+		getAction().affect((BaseInfo)getInstigator(), this.getTarget(),getPoint(), ar);
 	}
 
 	@Override

@@ -28,7 +28,7 @@ public class NobilityDomain extends Action implements TargetAction{
 
 
 	@Override
-	public int affect(Info instigator,Info receive,Point point) {
+	public int affect(Info instigator,Info receive,Point point, ActionRequest ar) {
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target=(BaseInfo)receive;
 		

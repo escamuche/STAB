@@ -28,10 +28,10 @@ public class Lich extends Undead {
 		setEp(40);
 		
 		this.getActionSet().addAction(RayFrost.ID);
-		this.getActionSet().addAction(MagicMissile.ID);
+	//	this.getActionSet().addAction(MagicMissile.ID);
 		this.getActionSet().addAction(Shield.ID);
-		this.getActionSet().addAction(RayEnfeeblement.ID);
-		this.getActionSet().addAction(BurningHands.ID);
+//		this.getActionSet().addAction(RayEnfeeblement.ID);
+	//	this.getActionSet().addAction(BurningHands.ID);
 		
 		
 		setResource("lich");
@@ -63,7 +63,7 @@ public class Lich extends Undead {
 		addTrait(def);
 		
 	
-		getAIParams().setLog(true);
+	//	getAIParams().setLog(true);
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("MEDIUMSLAM"), HumanoidGear.BOTHHANDS);
 	}

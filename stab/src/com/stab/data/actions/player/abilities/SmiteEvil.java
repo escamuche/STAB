@@ -27,7 +27,7 @@ public class SmiteEvil extends Action {//implements SelfAction{
 
 
 	@Override
-	public int affect(Info instigator,Info receive,Point point) {
+	public int affect(Info instigator,Info receive,Point point, ActionRequest ar) {
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target=(BaseInfo)receive;
 		

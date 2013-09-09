@@ -27,7 +27,7 @@ public class PowerAttack extends Action implements SelfAction, ToggleableBuffAct
 	}
 	
 	@Override
-	public int affect(Info instigator,Info target,Point point) {
+	public int affect(Info instigator,Info target,Point point, ActionRequest ar) {
 		BaseInfo self=(BaseInfo)target;
 		
 		int bab = self.getValue(StabConstants.BAB);

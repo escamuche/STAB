@@ -17,6 +17,7 @@ import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.applicable.base.Heal;
 import com.stab.model.info.trait.base.VisualEffect;
+import com.stab.model.request.basic.ActionRequest;
 
 public class ChannelPossitiveEnergyAction extends PathfinderAction implements SelfAction, AoE{
 	
@@ -34,6 +35,7 @@ public class ChannelPossitiveEnergyAction extends PathfinderAction implements Se
 		this.setResource("actions/curelightwounds");
 		this.setRequiredResource(RESOURCE_ID, 1);
 		this.setEffectType(HEAL);
+		setRelations(Action.TARGET_ENEMY,Action.TARGET_FRIEND,Action.TARGET_SELF);
 	}
 
 	@Override
@@ -57,7 +59,7 @@ public class ChannelPossitiveEnergyAction extends PathfinderAction implements Se
 	}
 
 	@Override
-	public int affect(Info instigator, Info t, Point point) {
+	public int affect(Info instigator, Info t, Point point,ActionRequest ar) {
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target=(BaseInfo)t;
 		if (target.hasTrait(ConstructTraits.class))
@@ -99,8 +101,8 @@ public class ChannelPossitiveEnergyAction extends PathfinderAction implements Se
 	}
 
 	@Override
-	protected void playExecuteActionAnimation(Info caster, Info target,	Point pos) {
-		super.playExecuteActionAnimation(caster, target, pos);
+	protected void playExecuteActionAnimation(Info caster, Info target,	Point pos,ActionRequest ar) {
+		super.playExecuteActionAnimation(caster, target, pos, ar);
 		
 		caster.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#spells/holyNova");
 		

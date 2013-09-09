@@ -16,6 +16,7 @@ import com.stab.data.actions.PathfinderSearchAction;
 import com.stab.data.actions.WeaponAttackAction;
 import com.stab.data.actions.feats.Expertise;
 import com.stab.data.actions.feats.PowerAttack;
+import com.stab.data.actions.monster.AcidFlask;
 import com.stab.data.actions.player.DefendAction;
 import com.stab.data.actions.player.abilities.NobilityDomain;
 import com.stab.data.actions.player.abilities.Rage;
@@ -206,8 +207,9 @@ import com.stab.data.info.monster.bestiary.Couatl;
 import com.stab.data.info.monster.bestiary.DireRat;
 import com.stab.data.info.monster.bestiary.EsqueletoArquero;
 import com.stab.data.info.monster.bestiary.GiantBombardierBeetle;
-import com.stab.data.info.monster.bestiary.Goblin;
+import com.stab.data.info.monster.bestiary.GoblinAlchemist;
 import com.stab.data.info.monster.bestiary.GoblinShaman;
+import com.stab.data.info.monster.bestiary.GoblinWarrior;
 import com.stab.data.info.monster.bestiary.KassenGolem;
 import com.stab.data.info.monster.bestiary.Kobold;
 import com.stab.data.info.monster.bestiary.Lich;
@@ -395,8 +397,9 @@ public class StabInit {
 		of.setMapping(EsqueletoArquero.class);
 		of.setMapping(DireRat.class);
 		of.setMapping(Kobold.class);
-		of.setMapping(Goblin.class);
+		of.setMapping(GoblinWarrior.class);
 		of.setMapping(GoblinShaman.class);
+		of.setMapping(GoblinAlchemist.class);
 		of.setMapping(SkeletalChampion.class);
 		of.setMapping(Couatl.class);
 		of.setMapping(Lich.class);
@@ -498,6 +501,7 @@ public class StabInit {
 		getActionLibrary().register(new ChannelPossitiveEnergyAction());
 		getActionLibrary().register(new SmiteEvil());
 		getActionLibrary().register(new NobilityDomain());
+		getActionLibrary().register(new AcidFlask());
 		
 		//feats
 		getActionLibrary().register(new PowerAttack());

@@ -2,7 +2,6 @@ package com.stab.data.actions;
 
 import java.awt.Point;
 
-import com.stab.data.StabConstants;
 import com.stab.data.animation.BlockAnimation;
 import com.stab.data.animation.GenericProyectileAnimation;
 import com.stab.data.animation.GenericProyectileMissAnimation;
@@ -16,7 +15,6 @@ import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.data.info.equipment.BasicWeapon;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.RangedWeapon;
-import com.stab.data.info.equipment.SpellWeapon;
 import com.stab.data.info.equipment.Weapon;
 import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.action.Action;
@@ -26,6 +24,7 @@ import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.base.Equipment;
+import com.stab.model.request.basic.ActionRequest;
 
 public class WeaponAttackAction extends Action implements TargetAction{
 	
@@ -51,7 +50,7 @@ public class WeaponAttackAction extends Action implements TargetAction{
 	}
 
 	@Override
-	public int affect(Info yo, Info target,Point point) {
+	public int affect(Info yo, Info target,Point point, ActionRequest ar) {
 		
 		BaseInfo atacante = (BaseInfo)yo;
 		BaseInfo atacado = (BaseInfo)target;

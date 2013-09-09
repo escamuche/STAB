@@ -23,7 +23,7 @@ public class DefendAction extends PathfinderAction implements SelfAction {
 	}
 	
 	@Override
-	public int affect(Info instigator,Info target,Point point) {
+	public int affect(Info instigator,Info target,Point point,ActionRequest ar) {
 		BaseInfo self=(BaseInfo)target;
 		self.playAnimation(DefendAnimation.ID);
 		self.sendMessage(ConsoleMessage.SUCCESS, self.getText()+" defends");

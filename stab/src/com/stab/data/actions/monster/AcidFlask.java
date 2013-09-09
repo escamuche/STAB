@@ -10,14 +10,15 @@ import com.stab.model.action.TileAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
+import com.stab.model.request.basic.ActionRequest;
 
-public class AcidGlob extends Action implements TileAction, AoE{
+public class AcidFlask extends Action implements TileAction, AoE{
 	
 	
-	public static final String ID="CHANNELPOSITIVE_ACTION";
+	public static final String ID="ACIDFLASK_ACTION";
 
 	
-	public AcidGlob() {
+	public AcidFlask() {
 		setEffectType(DAMAGE);
 		this.setName("Acid glob");
 		this.setResource("actions/acidsplash");
@@ -50,7 +51,7 @@ public class AcidGlob extends Action implements TileAction, AoE{
 	}
 
 	@Override
-	public int affect(Info instigator, Info target, Point point) {
+	public int affect(Info instigator, Info target, Point point, ActionRequest ar) {
 		if (target instanceof BaseInfo){
 			Damage d= new RolledDamage(1,6,Damage.ACID_DAMAGE,instigator);
 			((BaseInfo)target).apply(d);
@@ -64,11 +65,17 @@ public class AcidGlob extends Action implements TileAction, AoE{
 		return 6;
 	}
 
+	@Override
+	public int getEffectSubType(Info instigator, Info target) {
+		return Damage.ACID_DAMAGE;
+	}
 	
 	@Override
-	protected void playExecuteActionAnimation(Info caster, Info target,	Point pos) {
-		super.playExecuteActionAnimation(caster, target, pos);
+	protected void playExecuteActionAnimation(Info caster, Info target,	Point pos, ActionRequest ar) {
+		super.playExecuteActionAnimation(caster, target, pos, ar);
+		
 	//	target.playAnimationOnTile(BasicSparkAnimation.ID,"PARTICLE#spells/swirl");
+	
 		target.playSound("effects/Curse");
 	}
 	

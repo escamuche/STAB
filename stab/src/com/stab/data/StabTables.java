@@ -3,8 +3,9 @@ package com.stab.data;
 import com.stab.common.fw.Reference;
 import com.stab.common.utils.WeightedTable;
 import com.stab.data.info.monster.bestiary.EsqueletoArquero;
-import com.stab.data.info.monster.bestiary.Goblin;
+import com.stab.data.info.monster.bestiary.GoblinAlchemist;
 import com.stab.data.info.monster.bestiary.GoblinShaman;
+import com.stab.data.info.monster.bestiary.GoblinWarrior;
 import com.stab.data.info.monster.bestiary.Skeleton;
 import com.stab.data.info.monster.bestiary.Zombie;
 import com.stab.util.InfosWeightedTable;
@@ -42,12 +43,16 @@ public class StabTables extends Reference<WeightedTable>{
 		InfosWeightedTable t = new InfosWeightedTable();
 		t.addValue(1, "NULL");
 	/**/
-		t.addValue(2, Goblin.ID);
+		t.addValue(2, GoblinWarrior.ID);
 		t.addValue(2, GoblinShaman.ID);
-		t.addValue(1, Goblin.ID,GoblinShaman.ID);
-		t.addValue(1, Goblin.ID,Goblin.ID);/**/
-		t.addValue(1, Goblin.ID,Goblin.ID, Goblin.ID);/**/
-		t.addValue(1, Goblin.ID,Goblin.ID,GoblinShaman.ID);
+		t.addValue(1, GoblinWarrior.ID,GoblinShaman.ID);
+		t.addValue(1, GoblinWarrior.ID,GoblinWarrior.ID);/**/
+		t.addValue(1, GoblinWarrior.ID,GoblinWarrior.ID, GoblinWarrior.ID);/**/
+		t.addValue(1, GoblinWarrior.ID,GoblinWarrior.ID,GoblinShaman.ID);
+		t.addValue(1, GoblinWarrior.ID,GoblinAlchemist.ID);
+		t.addValue(1, GoblinShaman.ID,GoblinAlchemist.ID,GoblinWarrior.ID);
+		t.addValue(1, GoblinShaman.ID,GoblinAlchemist.ID,GoblinWarrior.ID,GoblinWarrior.ID);
+		t.addValue(1, GoblinShaman.ID,GoblinAlchemist.ID,GoblinWarrior.ID,GoblinAlchemist.ID,GoblinAlchemist.ID);
 		register(RND_GOBLIN,t);
 		
 		t = new InfosWeightedTable();

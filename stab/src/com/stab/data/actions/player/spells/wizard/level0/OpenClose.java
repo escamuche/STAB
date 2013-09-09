@@ -8,6 +8,7 @@ import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.model.basic.token.DoorToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.base.Door;
+import com.stab.model.request.basic.ActionRequest;
 
 public class OpenClose extends SpellOnTarget{
 	
@@ -33,8 +34,8 @@ protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 	
 	@Override
 	protected void playFullEffectAnimation(BaseInfo caster, BaseInfo target,
-			Point point) {
-		super.playFullEffectAnimation(caster, target, point);
+			Point point, ActionRequest ar) {
+		super.playFullEffectAnimation(caster, target, point, ar);
 		target.playAnimation(BasicSparkAnimation.ID,"PARTICLE#spells/magicSparks");
 		target.playSound("effects/LayOnhands_Low_Chest");
 	}

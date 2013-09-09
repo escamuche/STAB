@@ -5,9 +5,10 @@ import java.awt.Point;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.data.info.buff.spells.Shield_Buff;
+import com.stab.model.action.BuffDebuffAction;
 import com.stab.model.info.BaseInfo;
 
-public class Shield extends SpellOnSelf{
+public class Shield extends SpellOnSelf implements BuffDebuffAction{
 	
 	public static final String ID="Shield";
 	
@@ -33,6 +34,21 @@ public class Shield extends SpellOnSelf{
 	public int getEffectValue(BaseInfo i, com.stab.model.info.Info target) {
 		
 		return 4*4;
+	}
+
+	@Override
+	public String getEffectId() {
+		return Shield_Buff.ID;
+	}
+
+	@Override
+	public int getMaxStack() {
+		return 1;
+	}
+
+	@Override
+	public boolean concentrateStack() {
+		return false;
 	};
 	
 }

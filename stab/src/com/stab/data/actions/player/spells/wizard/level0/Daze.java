@@ -9,6 +9,7 @@ import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.info.debuff.condition.DazedCondition;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.request.basic.ActionRequest;
 
 public class Daze extends SpellOnTarget{
 	
@@ -43,8 +44,8 @@ protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 	
 	@Override
 	protected void playExecuteActionAnimation(Info caster, Info target,
-			Point pos) {
-		super.playExecuteActionAnimation(caster, target, pos);
+			Point pos,ActionRequest ar) {
+		super.playExecuteActionAnimation(caster, target, pos, ar);
 		target.playAnimation(BasicSparkAnimation.ID,"PARTICLE#spells/swirl");
 		target.playSound("effects/Curse");
 	}

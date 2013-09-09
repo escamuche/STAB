@@ -9,6 +9,7 @@ import com.stab.model.action.Action;
 import com.stab.model.action.SelfAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.request.basic.ActionRequest;
 
 public class HealAction extends Action implements SelfAction{
 	
@@ -25,7 +26,7 @@ public class HealAction extends Action implements SelfAction{
 	
 	//TODO: campiar por un skillroll
 	@Override
-	public int affect(Info instigator,Info receive,Point point) {
+	public int affect(Info instigator,Info receive,Point point, ActionRequest ar) {
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target=(BaseInfo)receive;
 		if(target.hasTrait(BleedCondition.ID)) {

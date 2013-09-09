@@ -9,7 +9,7 @@ import com.stab.data.info.buff.spells.LightInUse;
 import com.stab.data.info.buff.spells.Light_Buff;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
-import com.stab.model.info.trait.Trait;
+import com.stab.model.request.basic.ActionRequest;
 
 public class Light extends SpellOnTarget{
 	
@@ -48,8 +48,8 @@ public class Light extends SpellOnTarget{
 	
 	@Override
 	protected void playExecuteActionAnimation(Info caster, Info target,
-			Point pos) {
-		super.playExecuteActionAnimation(caster, target, pos);
+			Point pos,ActionRequest ar) {
+		super.playExecuteActionAnimation(caster, target, pos, ar);
 		target.playAnimation(BasicSparkAnimation.ID,"PARTICLE#spells/flash");
 		target.playSound("HolyCast");
 	}

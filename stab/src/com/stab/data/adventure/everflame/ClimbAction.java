@@ -26,7 +26,7 @@ public class ClimbAction extends ContextualAction {
 	}
 
 	@Override
-	public int affect(Info instigator, Info target, Point point) {
+	public int affect(Info instigator, Info target, Point point, ActionRequest ar) {
 
 		BaseInfo character=(BaseInfo)instigator;
 		ClimbWaypoint waypoint=(ClimbWaypoint)target;

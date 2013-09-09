@@ -8,6 +8,7 @@ import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.info.buff.spells.Virtue_Buff;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.request.basic.ActionRequest;
 
 public class Virtue extends SpellOnTarget{
 	
@@ -40,8 +41,8 @@ public class Virtue extends SpellOnTarget{
 	
 	@Override
 	protected void playFullEffectAnimation(BaseInfo caster, BaseInfo target,
-			Point point) {
-		super.playFullEffectAnimation(caster, target, point);
+			Point point, ActionRequest ar) {
+		super.playFullEffectAnimation(caster, target, point, ar);
 		target.playAnimation(BasicSparkAnimation.ID, "PARTICLE#effects/healing");
 	}	
 	

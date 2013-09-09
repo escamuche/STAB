@@ -7,6 +7,7 @@ import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.data.info.buff.spells.Sanctuary_Buff;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.request.basic.ActionRequest;
 
 public class Sanctuary extends SpellOnSelf{
 	
@@ -20,7 +21,7 @@ public class Sanctuary extends SpellOnSelf{
 	}
 
 	@Override
-	public int affect(Info instigator, Info receptor,Point point) {
+	public int affect(Info instigator, Info receptor,Point point,ActionRequest ar) {
 		BaseInfo caster=(BaseInfo)instigator;
 		BaseInfo target = (BaseInfo)receptor;
 		
