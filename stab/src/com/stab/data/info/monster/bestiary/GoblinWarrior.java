@@ -1,8 +1,11 @@
 package com.stab.data.info.monster.bestiary;
 
 import com.stab.data.StabInit;
+import com.stab.data.info.ai.FlankAI;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.model.ai.actions.orders.Minion;
+import com.stab.model.ai.traits.Agressor;
+import com.stab.model.ai.traits.DistanceMapAI;
 
 public class GoblinWarrior extends Goblin implements Minion {
 
@@ -19,5 +22,12 @@ public class GoblinWarrior extends Goblin implements Minion {
 		this.equip(StabInit.getWeaponFactory().getWeapon("SHORTSWORD"), HumanoidGear.MAINHAND);
 		this.equip(StabInit.getArmorFactory().getArmor("LIGHTLEATHER"), HumanoidGear.ARMOR);
 		this.equip(StabInit.getArmorFactory().getArmor("LIGHTWOODENSHIELD"), HumanoidGear.OFFHAND);
+		
+		
+		this.addTrait(new Agressor());
+		this.addTrait(new FlankAI(1.0f));
+		this.addTrait(new DistanceMapAI());
+		
+		
 	}
 }

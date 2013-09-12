@@ -169,6 +169,7 @@ import com.stab.data.animation.DecayAnimation;
 import com.stab.data.animation.EffectAddAnimation;
 import com.stab.data.animation.EffectRemoveAnimation;
 import com.stab.data.animation.ExtraInfoAnimation;
+import com.stab.data.animation.FlashAnimation;
 import com.stab.data.animation.FloatingTextAnimation;
 import com.stab.data.animation.GenericProyectileAnimation;
 import com.stab.data.animation.GenericProyectileMissAnimation;
@@ -208,6 +209,7 @@ import com.stab.data.info.monster.bestiary.DireRat;
 import com.stab.data.info.monster.bestiary.EsqueletoArquero;
 import com.stab.data.info.monster.bestiary.GiantBombardierBeetle;
 import com.stab.data.info.monster.bestiary.GoblinAlchemist;
+import com.stab.data.info.monster.bestiary.GoblinChieftain;
 import com.stab.data.info.monster.bestiary.GoblinShaman;
 import com.stab.data.info.monster.bestiary.GoblinWarrior;
 import com.stab.data.info.monster.bestiary.KassenGolem;
@@ -400,6 +402,7 @@ public class StabInit {
 		of.setMapping(GoblinWarrior.class);
 		of.setMapping(GoblinShaman.class);
 		of.setMapping(GoblinAlchemist.class);
+		of.setMapping(GoblinChieftain.class);
 		of.setMapping(SkeletalChampion.class);
 		of.setMapping(Couatl.class);
 		of.setMapping(Lich.class);
@@ -464,6 +467,7 @@ public class StabInit {
 		of.setMapping(EnterScreenAnimation.class);
 		of.setMapping(LeaveScreenAnimation.class);
 		of.setMapping(WaitAnimation.class);
+		of.setMapping(FlashAnimation.class);
 		
 		//Tokens
 		of.setMapping(IronBarsToken.class);

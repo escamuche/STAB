@@ -4,7 +4,9 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 
+import com.stab.common.utils.PathUtils;
 import com.stab.data.actions.WeaponAttackAction;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.data.info.buff.spells.Shield_Buff;
@@ -15,6 +17,7 @@ import com.stab.data.info.equipment.RangedWeapon;
 import com.stab.data.info.equipment.Shield;
 import com.stab.data.info.equipment.SpellDeliverWeapon;
 import com.stab.data.info.equipment.Weapon;
+import com.stab.model.basic.scenes.MapLogic;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
@@ -56,7 +59,7 @@ public class PathfinderUtils {
 	
 	//no iria nada mal un getWeapon() para saber que arma lleva un info (mirando mainhand, y si no lleva nada offhand), pensandose lo de las
 	//armas naturales, etc.
-	public Weapon getWeapon(Creature c){
+	public static Weapon getWeapon(Creature c){
 		Equipment e= c.getEquipment(HumanoidGear.MAINHAND);
 		if (e instanceof Weapon)
 			return (Weapon)e;
@@ -66,15 +69,20 @@ public class PathfinderUtils {
 		return null;
 	}
 	
+	public static int getReach(BaseInfo c){
+		WeaponAttackAction aa= new WeaponAttackAction();
+		return aa.getRange(c);
+	}
+	
 	//Threats
-	public boolean threats(Creature c,BaseInfo target){
+	public static boolean threats(Creature c,BaseInfo target){
 		return threats(c,target,target.getBounds());
 	}
-	public boolean threatsAt(Creature c,BaseInfo target,Point at){
+	public static  boolean threatsAt(Creature c,BaseInfo target,Point at){
 		Rectangle r=new Rectangle(at.x,at.y,target.getWidth(),target.getHeight());
 		return threats(c,target,r);
 	}
-	public boolean threats(Creature c,BaseInfo target,Rectangle r){
+	public static boolean threats(Creature c,BaseInfo target,Rectangle r){
 		if (!c.isAwareOf(target))
 			return false;
 		//comprobacion de si puede verlo (puede que este aware, pero puede estar ciego, el target ser invisible, etc)
@@ -85,10 +93,10 @@ public class PathfinderUtils {
 				return true;
 		return false; 
 	}
-	public boolean threats(Creature c,Point tile){
+	public static boolean threats(Creature c,Point tile){
 		return threats(c,null,tile);
 	}
-	public boolean threats(Creature c,BaseInfo target,Point tile){
+	public static boolean threats(Creature c,BaseInfo target,Point tile){
 		if (!threats(c))
 			return false;
 		WeaponAttackAction aa= new WeaponAttackAction();
@@ -105,7 +113,7 @@ public class PathfinderUtils {
 		}
 		return false;
 	}
-	public boolean threats(Creature c){
+	public static boolean threats(Creature c){
 		if (c.isDestroyed())
 			return false;
 		if (c.hasTrait(UnableToActCondition.class))
@@ -125,7 +133,7 @@ public class PathfinderUtils {
 	
 	
 	//enemigos que me amenazan en una casilla
-	public Collection<Creature> getThreats(Point p,BaseInfo me, Collection<Info> infos){
+	public static Collection<Creature> getThreateningMe(Point p,BaseInfo me, Collection<Info> infos){
 		ArrayList<Creature> enemies=new ArrayList<Creature>();
 		for (Info i:infos){
 			if (i instanceof Creature){
@@ -185,6 +193,63 @@ public class PathfinderUtils {
 			return (val-11)/2;
 	}
 	
+	public static Collection<Creature> getFlankersFor(BaseInfo target,Point p, Collection<Info> infos){
+		HashSet<Creature> enemies=new HashSet<Creature>();
+
+		char c=PathUtils.getPointPos(target.getBounds(), p);
+		c=PathUtils.reverse(c);
+		if (c=='S'){
+			System.out.println("Check de flank desde dentro del target!");
+			return enemies;
+		}
+		MapLogic ml=target.getMapLogic();
+		for (Info i:infos)
+			if (i instanceof Creature){
+				boolean add=false;
+				for (Point tp:ml.getPointsInRect(i.getBounds()))
+					if (c==PathUtils.getPointPos(target.getBounds(),tp))
+						add=true;
+				if (add)
+					if (canFlank((Creature)i,target))
+						enemies.add((Creature)i);
+			}
+		return enemies;
+	}
+			
+	public static Collection<Creature> getFlankersFor(BaseInfo target, BaseInfo attacker, Collection<Info> infos){
+		HashSet<Creature> enemies=new HashSet<Creature>();
+		MapLogic ml=target.getMapLogic();
+		for (Point tp:ml.getPointsInRect(attacker.getBounds())){
+			Collection<Creature> candidates=getFlankersFor(target,tp,infos);
+			enemies.addAll(candidates);
+				
+		}
+		if (enemies.contains(attacker))
+			enemies.remove(attacker);
+		return enemies;
+		
+	}
+	public static Collection<Creature> willIFlankAt(BaseInfo target, BaseInfo attacker, Point pos, Collection<Info> infos){
+		HashSet<Creature> enemies=new HashSet<Creature>();
+		MapLogic ml=target.getMapLogic();
+		Rectangle r=new Rectangle(pos.x,pos.y,attacker.getWidth(),attacker.getHeight());
+		for (Point tp:ml.getPointsInRect(r)){
+			Collection<Creature> candidates=getFlankersFor(target,tp,infos);
+			enemies.addAll(candidates);
+				
+		}
+		if (enemies.contains(attacker))
+			enemies.remove(attacker);
+		return enemies;
+		
+	}
 	
+	public static boolean canFlank(Creature attacker,BaseInfo defender){
+		if (!threats(attacker, defender))
+			return false;
+		//TODO: uncanny dodge
+		
+		return true;
+	}
 	
 }

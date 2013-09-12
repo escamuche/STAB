@@ -22,6 +22,8 @@ public class SpeechBubbleAnimation extends Animation {
 		super.start();
 		String txt=getParam(0);
 	
+		String img=getParam(0);
+		
 		StateSprite s=AnimUtils.getSprite(getSource());
 		if (!s.isVisible()){
 			setTime(0);
@@ -39,6 +41,9 @@ public class SpeechBubbleAnimation extends Animation {
 		setTime(time);
 		
 		icon.setText(txt);
+		
+		if (img!=null)
+			icon.setIcon(img);
 		
 		((GameScreen)s.getScreen()).add(icon);
 	}

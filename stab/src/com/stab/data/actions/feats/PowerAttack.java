@@ -7,13 +7,13 @@ import com.stab.data.StabConstants;
 import com.stab.data.info.buff.PowerAttack_Buff;
 import com.stab.model.action.Action;
 import com.stab.model.action.SelfAction;
-import com.stab.model.action.ToggleableBuffAction;
+import com.stab.model.action.StanceAction;
 import com.stab.model.ai.AbstractPosibleAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.request.basic.ActionRequest;
 
-public class PowerAttack extends Action implements SelfAction, ToggleableBuffAction {
+public class PowerAttack extends Action implements SelfAction, StanceAction {
 	
 	public static final String ID="POWERATTACK";
 	
@@ -56,9 +56,6 @@ public class PowerAttack extends Action implements SelfAction, ToggleableBuffAct
 		return null;
 	}
 
-	@Override
-	public int shouldBeOn(AbstractPosibleAction arg0) {
-		return 0;
-	}
+
 	
 }

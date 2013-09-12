@@ -1,8 +1,11 @@
 package com.stab.data.actions;
 
 import java.awt.Point;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import com.stab.data.animation.BlockAnimation;
+import com.stab.data.animation.FlashAnimation;
 import com.stab.data.animation.GenericProyectileAnimation;
 import com.stab.data.animation.GenericProyectileMissAnimation;
 import com.stab.data.animation.MissProyectileAnimation;
@@ -19,6 +22,7 @@ import com.stab.data.info.equipment.Weapon;
 import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.action.Action;
 import com.stab.model.action.TargetAction;
+import com.stab.model.basic.scenes.MapLogic;
 import com.stab.model.basic.token.Token;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
@@ -67,6 +71,28 @@ public class WeaponAttackAction extends Action implements TargetAction{
 		
 		WeaponAttack ad=new WeaponAttack (atacante,arma,atacado);
 
+		//bonos adicionales por posicion: flanking y altura
+		MapLogic ml=atacante.getMapLogic();
+		int ha=ml.getElevation(atacante.getBounds());
+		int hd=ml.getElevation(atacado.getBounds());
+		if (ha>hd){
+			ad.addModifier(+1); //+1 de altura
+			System.out.println("+1 de altura!");
+		}
+		ArrayList<Info> infos= new ArrayList<Info>();
+		//atacante.getAIParams().getTargets();
+		infos.addAll(atacante.getScene().getElements(Creature.class));
+		Collection<Creature> flankers=PathfinderUtils.getFlankersFor(atacado,atacante, infos);
+		if (!flankers.isEmpty()){
+			Creature flanker=flankers.iterator().next();
+			ad.addModifier(+2);
+			atacante.playAnimation(FlashAnimation.ID);
+			flanker.playAnimation(FlashAnimation.ID);
+			sleep(100);
+			//Sneak attack
+			
+		}
+		
 		ad.check();
 		 //Esto calcula todos los bonos, daño etc
 		 //y comprueba si da o no, pero sin aplicar el resultado

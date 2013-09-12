@@ -40,9 +40,6 @@ public class Expertise extends Action implements SelfAction {
 		return OK;
 		}
 	}
-	@Override
-	public boolean shouldEndTurn(ActionRequest ar, boolean success) {
-		return false;
-	}
+	
 		
 }

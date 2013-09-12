@@ -1,5 +1,7 @@
 package com.stab.data.info.debuff.condition;
 
+import org.newdawn.slick.Color;
+
 import com.stab.data.StabConstants;
 import com.stab.data.actions.HealAction;
 import com.stab.model.info.BaseInfo;
@@ -36,6 +38,8 @@ public class DyingCondition extends UnableToActCondition {
 		if(-die>=i.getValue(StabConstants.CONSTITUTION)){
 			i.addTrait(new DeadCondition());
 			i.removeTrait(DyingCondition.ID);
+		}else{
+			i.showFloatingText("DYING ("+die+")", Color.red);
 		}
 	}
 }

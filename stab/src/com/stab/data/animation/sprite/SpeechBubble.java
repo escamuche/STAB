@@ -4,12 +4,12 @@ import org.newdawn.slick.Color;
 
 import com.stab.client.slick.base.util.SpeechLayerComponent;
 import com.stab.data.animation.state.SpeechPanelState;
-import com.tien.princess.engine.sprite.ui.Text;
+import com.tien.princess.engine.sprite.ui.Label;
 import com.tien.princess.engine.sprite.ui.states.UIStateSet;
 import com.tien.princess.engine.sprite.ui.states.animating.ComponentFadeOutState;
 import com.tien.princess.engine.utils.PaintUtils;
 
-public class SpeechBubble extends Text implements SpeechLayerComponent {//,MouseComponent {
+public class SpeechBubble extends Label implements SpeechLayerComponent {//,MouseComponent {
 
 	SpeechPanelState st;
 	
@@ -34,6 +34,13 @@ public class SpeechBubble extends Text implements SpeechLayerComponent {//,Mouse
 		super.setText(text);
 		st.setTimed(text.length()*60, ComponentFadeOutState.ID);
 		this.setState(st);
+	}
+	
+	@Override
+	public void setIcon(String img) {
+		super.setIcon(img);
+		if (st.getTimed()<1200)
+			st.setTimed(1200, ComponentFadeOutState.ID);
 	}
 	
 	@Override

@@ -1,5 +1,7 @@
 package com.stab.data.info.debuff.condition;
 
+import java.awt.Color;
+
 import com.stab.common.Constants;
 import com.stab.data.animation.GenericSpriteOnAnimation;
 import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
@@ -20,6 +22,7 @@ public class DazedCondition extends UnableToActCondition{
 	public void turnStarts() {
 		BaseInfo i = getTarget();
 		i.setTurnDone(true);
+		i.showFloatingText("DAZED", Color.yellow);
 		super.turnStarts();
 	}
 	
