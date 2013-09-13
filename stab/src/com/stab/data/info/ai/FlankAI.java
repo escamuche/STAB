@@ -5,6 +5,7 @@ import java.awt.Rectangle;
 
 import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.action.Action;
+import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.ai.HeatMap;
 import com.stab.model.ai.traits.HeatMapAITrait;
 import com.stab.model.basic.scenes.MapLogic;
@@ -26,6 +27,8 @@ public class FlankAI extends HeatMapAITrait{
 	public void heat(HeatMap map, BaseInfo actor, Info target) {
 		if (!(target instanceof BaseInfo))
 			return;
+		if (!actor.isEnemy(target))
+			return;
 		//Empezamos calentando las casillas desde las que alcanzo a este objetivo
 		Rectangle r=target.getBounds();
 		int i=PathfinderUtils.getReach(actor);
@@ -33,12 +36,14 @@ public class FlankAI extends HeatMapAITrait{
 		r2.grow(i, i);
 		MapLogic ml=map.getMapLogic();
 		for (Point p:ml.getPointsInRect(r2))
+			if (map.getHeat(p)>=0)
 			if (!r.contains(p)){
 				if (ml.isLOS(target.getToken(), p)){
 					map.heat(p, 1);
 					//Comprobamos si desde aqui flanquearia a ese objetivo.
-					if (!PathfinderUtils.willIFlankAt((BaseInfo)target, actor, p, actor.getAIParams().getTargets()).isEmpty()){
+					if (PathfinderUtils.willIFlankAt((BaseInfo)target, actor, p, actor.getAIParams().getTargets())){
 						map.heat(p, 10);
+						//System.out.println("Flankeo!" +p);
 					}
 				}
 			}else
@@ -52,8 +57,9 @@ public class FlankAI extends HeatMapAITrait{
 		int vf=0;
 		vf=getHeat(p);
 		vf=(int)(vf*value);
+	//	System.out.println("Flank tile value: "+p+" : "+vf);
 		return v+vf;
 	}
 	
-	
+
 }

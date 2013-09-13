@@ -83,13 +83,17 @@ public class PathfinderUtils {
 		return threats(c,target,r);
 	}
 	public static boolean threats(Creature c,BaseInfo target,Rectangle r){
-		if (!c.isAwareOf(target))
+		if (!c.isAwareOf(target)){
 			return false;
+		}
+		System.out.println("Checking threat ");
 		//comprobacion de si puede verlo (puede que este aware, pero puede estar ciego, el target ser invisible, etc)
-		if (!c.canSense(target))
+		if (!c.canSense(target)){
+			System.out.println("Cant see it");
 			return false;
+		}
 		for (Point p: c.getMapLogic().getPointsInRect(r))
-			if (threats(c,p))
+			if (threats(c,target,p))
 				return true;
 		return false; 
 	}
@@ -97,21 +101,29 @@ public class PathfinderUtils {
 		return threats(c,null,tile);
 	}
 	public static boolean threats(Creature c,BaseInfo target,Point tile){
-		if (!threats(c))
+		if (!threats(c)){
+			//System.out.println("No threat");
 			return false;
+		}
 		WeaponAttackAction aa= new WeaponAttackAction();
 		float dist=c.getMapLogic().getDistance(c.getToken(), tile);
-		if (aa.getRange(c)<=dist)
-			return true;
+		if (aa.getRange(c)<dist){
+			//System.out.println("No range!");
+			return false;
+		}
 		//Los
 		if (target!=null){
-			if (!c.getMapLogic().isLOSTo(c.getToken(),target.getToken(), tile)) 
+			if (!c.getMapLogic().isLOSTo(c.getToken(),target.getToken(), tile)) {
+			//	System.out.println("No los!");
 				return false;
+			}
 		}else{
-			if (!c.getMapLogic().isLOS(c.getToken(), tile))
+			if (!c.getMapLogic().isLOS(c.getToken(), tile)){
+			//	System.out.println("No los!");
 				return false;
+			}
 		}
-		return false;
+		return true;
 	}
 	public static boolean threats(Creature c){
 		if (c.isDestroyed())
@@ -128,7 +140,7 @@ public class PathfinderUtils {
 			return false;
 		if (!c.getActionSet().contains(WeaponAttackAction.ID))
 			return false;
-		return false;
+		return true;
 	}
 	
 	
@@ -202,17 +214,23 @@ public class PathfinderUtils {
 			System.out.println("Check de flank desde dentro del target!");
 			return enemies;
 		}
+	//	System.out.println("Check de flank desde "+p+" en direccion "+c+" sobre "+ target);
 		MapLogic ml=target.getMapLogic();
 		for (Info i:infos)
 			if (i instanceof Creature){
 				boolean add=false;
-				for (Point tp:ml.getPointsInRect(i.getBounds()))
+					for (Point tp:ml.getPointsInRect(i.getBounds()))
 					if (c==PathUtils.getPointPos(target.getBounds(),tp))
 						add=true;
-				if (add)
-					if (canFlank((Creature)i,target))
+				if (add){
+				//	System.out.println("   Chechking "+i+" "+i.getPos()+"at dir "+PathUtils.getPointPos(target.getBounds(),i.getPos()));
+					if (canFlank((Creature)i,target)){
 						enemies.add((Creature)i);
+				//		System.out.println("and can flank");
+					}
+				}
 			}
+	//	System.out.println("-");
 		return enemies;
 	}
 			
@@ -228,8 +246,14 @@ public class PathfinderUtils {
 			enemies.remove(attacker);
 		return enemies;
 		
+	
 	}
-	public static Collection<Creature> willIFlankAt(BaseInfo target, BaseInfo attacker, Point pos, Collection<Info> infos){
+	
+	public static boolean willIFlankAt(BaseInfo target, BaseInfo attacker, Point pos, Collection<Info> infos){
+		return !getFlankersAt(target, attacker, pos, infos).isEmpty();
+	}
+	public static Collection<Creature> getFlankersAt(BaseInfo target, BaseInfo attacker, Point pos, Collection<Info> infos){
+	
 		HashSet<Creature> enemies=new HashSet<Creature>();
 		MapLogic ml=target.getMapLogic();
 		Rectangle r=new Rectangle(pos.x,pos.y,attacker.getWidth(),attacker.getHeight());

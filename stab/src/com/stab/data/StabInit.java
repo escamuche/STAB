@@ -179,6 +179,7 @@ import com.stab.data.animation.HealNumberAnimation;
 import com.stab.data.animation.HorizontalScreenShakeAnimation;
 import com.stab.data.animation.LungeAnimation;
 import com.stab.data.animation.MagicMissileAnimation;
+import com.stab.data.animation.MarkAnimation;
 import com.stab.data.animation.MissProyectileAnimation;
 import com.stab.data.animation.MissRotatingProyectileAnimation;
 import com.stab.data.animation.OpenDoorAnimation;
@@ -468,6 +469,7 @@ public class StabInit {
 		of.setMapping(LeaveScreenAnimation.class);
 		of.setMapping(WaitAnimation.class);
 		of.setMapping(FlashAnimation.class);
+		of.setMapping(MarkAnimation.class);
 		
 		//Tokens
 		of.setMapping(IronBarsToken.class);

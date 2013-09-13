@@ -46,7 +46,7 @@ public class GoblinShaman extends Goblin  implements Minion{
 		
 		addTrait(new Healer());
 		
-		getAIParams().setLog(true);
+		//getAIParams().setLog(true);
 		
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.QUARTERSTAFF), HumanoidGear.BOTHHANDS);

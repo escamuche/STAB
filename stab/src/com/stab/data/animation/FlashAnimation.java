@@ -13,7 +13,7 @@ public class FlashAnimation  extends Animation{
 	
 	public FlashAnimation() {
 		setBlocking(false);
-		setTime(100);
+		setTime(200);
 	}
 	
 	@Override
@@ -25,9 +25,9 @@ public class FlashAnimation  extends Animation{
 		StateSprite s=AnimUtils.getSprite(getSource());
 		if (s==null)
 			return;
-		ValueState2 st=new ValueState2();
-		st.setBrightness(new InterpolatorValueProvider(0,1.0f,50,3.0f,100,1.0f));
-		st.setTimed(100, s.getCurrentStateId());
+		ValueState2 st=new ValueState2(true);
+		st.setBrightness(true,0,1.0f,100,10.0f,100,1.0f);
+		st.setTimed(getTime(), s.getCurrentStateId());
 		
 		s.setState(st);
 	}
