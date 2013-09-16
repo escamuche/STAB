@@ -4,6 +4,7 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import com.stab.common.utils.Roll;
 import com.stab.data.animation.BlockAnimation;
 import com.stab.data.animation.FlashAnimation;
 import com.stab.data.animation.GenericProyectileAnimation;
@@ -22,6 +23,8 @@ import com.stab.data.info.equipment.Weapon;
 import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.action.Action;
 import com.stab.model.action.TargetAction;
+import com.stab.model.animation.AbstractSpeech;
+import com.stab.model.animation.BaseSpeech;
 import com.stab.model.basic.scenes.MapLogic;
 import com.stab.model.basic.token.Token;
 import com.stab.model.info.BaseInfo;
@@ -97,27 +100,48 @@ public class WeaponAttackAction extends Action implements TargetAction{
 		 //Esto calcula todos los bonos, daño etc
 		 //y comprueba si da o no, pero sin aplicar el resultado
 		
-		if (ad.hits())
+		if (Roll.check(10)){
+			atacante.doSpeech(BaseSpeech.BATTLECRY, atacante,atacado);
+		}
+		
+		if (ad.hits()){
+			
 			playHitAnimation(ad,atacante,target.getToken());
-		else
+			
+		
+		}
+		else{
 			playMissAnimation(ad,atacante,target.getToken());
+			
+				
+		}
 	
 		
 		if (ad.hits()) {
 			ad.applyEffects();
 			sleep(500);
-			if (ad.isCritical())
-				return CRITICAL;
+			if (ad.isCritical()){
+				if (Roll.check(40))
+					atacante.doSpeech(BaseSpeech.CRIT, atacante, atacado);
+					return CRITICAL;		
+				}
+			
 			return OK;	
 		}
 		
 		
 		sleep(500);
 		if (ad.isBotch()) {
+			if (Roll.check(40))
+				atacante.doSpeech(BaseSpeech.BOTCH, atacante, atacado);
 			
+				
 			System.out.println("Pero mira que eres torpe!");
 		    return BOTCH;
 		}
+		
+		if (Roll.check(10))
+			atacante.doSpeech(BaseSpeech.ATTACKFAILED, atacante, atacado);
 		
 		return FAIL;
 		
@@ -125,6 +149,7 @@ public class WeaponAttackAction extends Action implements TargetAction{
 	
 	
 	private void playHitAnimation(WeaponAttack ad,BaseInfo origin, Token target) {
+	
 		
 		if (SwingAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(SwingAnimation.ID,target,ad.getAnimationIcon());

@@ -6,10 +6,10 @@ import com.stab.data.info.alignment.Evil;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.data.info.monster.Humanoid;
 import com.stab.model.ai.traits.Agressor;
-import com.stab.model.ai.traits.DangerMapAI;
-import com.stab.model.ai.traits.DistanceMapAI;
 import com.stab.model.ai.traits.Hatred;
 import com.stab.model.ai.traits.SelfPreservation;
+import com.stab.model.animation.BaseSpeech;
+import com.tien.princess.engine.Resources;
 
 public class Goblin extends Humanoid {
 
@@ -46,8 +46,9 @@ public class Goblin extends Humanoid {
 	//	this.addTrait(new DistanceMapAI());
 		this.addTrait(new Hatred(Zombie.class));
 		
-		
-		
+		BaseSpeech s= new BaseSpeech();
+		s.loadFrom(Resources.INSTANCE.getStream("txt/speech/goblin.txt"));
+		setSpeech(s);
 	}
 	
 }

@@ -86,6 +86,8 @@ public class PathfinderUtils {
 		if (!c.isAwareOf(target)){
 			return false;
 		}
+		if (!c.isEnemy(target))
+			return false;
 		System.out.println("Checking threat ");
 		//comprobacion de si puede verlo (puede que este aware, pero puede estar ciego, el target ser invisible, etc)
 		if (!c.canSense(target)){

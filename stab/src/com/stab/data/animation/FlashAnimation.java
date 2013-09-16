@@ -26,7 +26,7 @@ public class FlashAnimation  extends Animation{
 		if (s==null)
 			return;
 		ValueState2 st=new ValueState2(true);
-		st.setBrightness(true,0,1.0f,100,10.0f,100,1.0f);
+		st.setBrightness(true,0,0.5f,100,10.0f,100,1.0f);
 		st.setTimed(getTime(), s.getCurrentStateId());
 		
 		s.setState(st);
