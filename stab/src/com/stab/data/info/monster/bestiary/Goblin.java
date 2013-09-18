@@ -47,7 +47,7 @@ public class Goblin extends Humanoid {
 		this.addTrait(new Hatred(Zombie.class));
 		
 		BaseSpeech s= new BaseSpeech();
-		s.loadFrom(Resources.INSTANCE.getStream("txt/speech/goblin.txt"));
+		s.loadFrom(Resources.INSTANCE.getStream("/txt/speech/goblin.txt"));
 		setSpeech(s);
 	}
 	

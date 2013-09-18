@@ -13,7 +13,7 @@ public class SpeechBubbleAnimation extends Animation {
 	public static final String ID=VisualEffect.SPEECH_ANIMATION;
 	
 	public SpeechBubbleAnimation() {
-		setBlocking(false);
+		setBlocking(true);
 		setTime(1000);
 	}
 	
@@ -22,7 +22,9 @@ public class SpeechBubbleAnimation extends Animation {
 		super.start();
 		String txt=getParam(0);
 	
-		String img=getParam(0);
+		String img=getParam(1);
+		
+		System.out.println("Vamos a hacer un dialogo con "+txt+" | "+img);
 		
 		StateSprite s=AnimUtils.getSprite(getSource());
 		if (!s.isVisible()){
@@ -37,13 +39,14 @@ public class SpeechBubbleAnimation extends Animation {
 		//icon.setPos(getOriginPoint());
 		//icon.setSize(64,64);
 		
-		long time=txt.length()*30;
-		setTime(time);
+		
 		
 		icon.setText(txt);
 		
 		if (img!=null)
 			icon.setIcon(img);
+		
+		setTime(icon.getCurrentState().getTimed()+200);
 		
 		((GameScreen)s.getScreen()).add(icon);
 	}

@@ -19,8 +19,8 @@ public class SpeechBubble extends Label implements SpeechLayerComponent {//,Mous
 		setBackground(PaintUtils.getPainter("speech$X"));
 		setDesiredSize(240,CONTENT);
 		setTextColor(Color.black);
-		setMargin(16,16);
-		
+		setMargin(20,16,8,24);
+		this.setMode(BANNER);
 		ComponentFadeOutState fade= new ComponentFadeOutState(500, UIStateSet.DESTROYED);
 	
 		this.addState(fade);
@@ -32,8 +32,12 @@ public class SpeechBubble extends Label implements SpeechLayerComponent {//,Mous
 	@Override
 	public void setText(String text) {
 		super.setText(text);
-		st.setTimed(text.length()*60, ComponentFadeOutState.ID);
+		int ln=text.length()*60;
+		if (ln<1200)
+			ln=1200;
+		st.setTimed(ln, ComponentFadeOutState.ID);
 		this.setState(st);
+		
 	}
 	
 	@Override

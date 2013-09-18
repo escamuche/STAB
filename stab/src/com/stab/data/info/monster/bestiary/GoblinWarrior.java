@@ -24,7 +24,7 @@ public class GoblinWarrior extends Goblin implements Minion {
 		this.equip(StabInit.getArmorFactory().getArmor("LIGHTWOODENSHIELD"), HumanoidGear.OFFHAND);
 		
 		
-		getAIParams().setLog(true);
+	//	getAIParams().setLog(true);
 		
 		
 	}
