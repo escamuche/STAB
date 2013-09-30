@@ -34,7 +34,7 @@ public class GoblinAlchemist  extends Goblin implements Minion{
 			
 		this.getActionSet().addAction(AcidFlask.ID);
 		
-		//getAIParams().setLog(true);
+		getAIParams().setLog(true);
 		
 		this.addTrait(new Chaotic());
 		

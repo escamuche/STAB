@@ -4,6 +4,7 @@ import java.awt.Point;
 
 import com.stab.data.actions.PathfinderAction;
 import com.stab.data.animation.DefendAnimation;
+import com.stab.model.action.Action;
 import com.stab.model.action.SelfAction;
 import com.stab.model.events.common.ConsoleMessage;
 import com.stab.model.info.BaseInfo;
@@ -20,6 +21,9 @@ public class DefendAction extends PathfinderAction implements SelfAction {
 		this.setName("Defend");
 		this.setResource("actions/ability_warrior_defensivestance");
 		this.setEffectType(BUFF);
+		this.setAiCap(500);
+		setRelations(Action.TARGET_SELF);
+		this.setRange(0);
 	}
 	
 	@Override

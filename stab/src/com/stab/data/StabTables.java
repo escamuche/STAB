@@ -41,14 +41,14 @@ public class StabTables extends Reference<WeightedTable>{
 	public void init() {
 		
 		InfosWeightedTable t = new InfosWeightedTable();
-		t.addValue(1, "NULL");
-	/**/
+		/*	t.addValue(1, "NULL");
+	
 		t.addValue(2, GoblinWarrior.ID);
 		t.addValue(2, GoblinShaman.ID);
 		t.addValue(1, GoblinWarrior.ID,GoblinShaman.ID);
-		t.addValue(1, GoblinWarrior.ID,GoblinWarrior.ID);/**/
-		t.addValue(1, GoblinWarrior.ID,GoblinWarrior.ID, GoblinWarrior.ID);/**/
-		t.addValue(1, GoblinWarrior.ID,GoblinWarrior.ID,GoblinShaman.ID);
+		t.addValue(1, GoblinWarrior.ID,GoblinWarrior.ID);
+		t.addValue(1, GoblinWarrior.ID,GoblinWarrior.ID, GoblinWarrior.ID);
+		t.addValue(1, GoblinWarrior.ID,GoblinWarrior.ID,GoblinShaman.ID);/**/
 		t.addValue(1, GoblinWarrior.ID,GoblinAlchemist.ID);
 		t.addValue(1, GoblinShaman.ID,GoblinAlchemist.ID,GoblinWarrior.ID);
 		t.addValue(1, GoblinShaman.ID,GoblinAlchemist.ID,GoblinWarrior.ID,GoblinWarrior.ID);

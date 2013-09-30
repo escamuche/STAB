@@ -6,7 +6,7 @@ import java.util.Collection;
 
 import com.stab.common.Constants;
 import com.stab.common.value.InterpolatorValueProvider;
-import com.stab.data.StabInit;
+import com.stab.data.animation.state.ExplodeState;
 import com.tien.princess.engine.Resources;
 import com.tien.princess.engine.sprite.Sprite;
 import com.tien.princess.engine.sprite.StateSprite;
@@ -25,6 +25,8 @@ import com.tien.princess.engine.sprite.factory.EmitterUtils;
 public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 
 	
+	public static final String RED_MARK="RED_MARK";
+	
 	public static final String DAZED="DAZED";
 	public static final String SPELLCASTING="SPELLCASTING";
 	public static final String DIVINESPELLCASTING="DIVINESPELLCASTING";
@@ -39,6 +41,11 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 	
 	public static final String FREEZE_EXPLOSION="FEEZEEXPLOSION";
 	public static final String ACID_EXPLOSION="ACIDEXPLOSION";
+	
+	
+	public static final String ACID_FLASK="ACIDFLASK";
+	public static final String ACID_FLASK_EXPLOSION="ACID_FLASK_EXPLOSION";
+	public static final String FLASK_SHATTER="FLASK_SHATTER";
 	
 	//-----------------------------
 	
@@ -144,6 +151,32 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 			s.getFireState().setWidth(new InterpolatorValueProvider(0,0,200,8));
 			s.getFadeState().setWidth(new InterpolatorValueProvider(0,8,400,0));
 			s.getFadeState().setAlpha(new InterpolatorValueProvider(0,0.6f,500,0f));
+			return Arrays.asList((Sprite)s);
+		}
+		
+		if (FLASK_SHATTER.equals(type)){
+			Sprite sp= EmitterUtils.getTimedSpawner(EmitterUtils.getBang(StabParticleFactory.GLASSSHARD, 3));
+			return Arrays.asList(sp);
+		}
+		if (ACID_FLASK_EXPLOSION.equals(type)){
+			return combine(FLASK_SHATTER,ACID_EXPLOSION);
+		}
+		if (ACID_FLASK.equals(type)){
+			StabProyectile s= new StabProyectile(0.2f);
+			s.setPainter("effects/acidFlask");
+			s.setOnReach(new ExplodeState(SpecialEffectsSpriteFactory.ACID_FLASK_EXPLOSION), 16);
+			s.setOnFade(new ExplodeState(SpecialEffectsSpriteFactory.ACID_FLASK_EXPLOSION));
+			
+			((ValueState2)s.getTravel()).setScale(0,0.5f,1000,1.0f,2000,0.5f); 
+			((ValueState2)s.getTravel()).setRotation(true,0,0f,350,360f); 
+			
+			return Arrays.asList((Sprite)s);
+		}
+		
+		if (RED_MARK.equals(type)){
+			StateSprite s= (StateSprite)getSpark(null).iterator().next();
+			s.addUpdater(new StickToRef());
+			
 			return Arrays.asList((Sprite)s);
 		}
 		

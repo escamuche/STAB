@@ -6,6 +6,7 @@ import com.stab.data.info.alignment.Evil;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.data.info.monster.Humanoid;
 import com.stab.model.ai.traits.Agressor;
+import com.stab.model.ai.traits.DistanceMapAI;
 import com.stab.model.ai.traits.Hatred;
 import com.stab.model.ai.traits.SelfPreservation;
 import com.stab.model.animation.BaseSpeech;
@@ -43,7 +44,7 @@ public class Goblin extends Humanoid {
 		this.addTrait(new Agressor());
 		this.addTrait(new FlankAI(1.0f));
 	//	this.addTrait(new DangerMapAI());
-	//	this.addTrait(new DistanceMapAI());
+		this.addTrait(new DistanceMapAI());
 		this.addTrait(new Hatred(Zombie.class));
 		
 		BaseSpeech s= new BaseSpeech();

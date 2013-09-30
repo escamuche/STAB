@@ -2,7 +2,10 @@ package com.stab.data.actions.monster;
 
 import java.awt.Point;
 
+import com.stab.data.actions.PathfinderAction;
 import com.stab.data.animation.BasicSparkAnimation;
+import com.stab.data.animation.GenericProyectileAnimation;
+import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
 import com.stab.data.info.applicable.RolledDamage;
 import com.stab.model.action.Action;
 import com.stab.model.action.AoE;
@@ -12,7 +15,7 @@ import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.request.basic.ActionRequest;
 
-public class AcidFlask extends Action implements TileAction, AoE{
+public class AcidFlask extends PathfinderAction implements TileAction, AoE{
 	
 	
 	public static final String ID="ACIDFLASK_ACTION";
@@ -20,8 +23,11 @@ public class AcidFlask extends Action implements TileAction, AoE{
 	
 	public AcidFlask() {
 		setEffectType(DAMAGE);
-		this.setName("Acid glob");
+		this.setName("Acid flask");
 		this.setResource("actions/acidsplash");
+		this.setRange(5);
+		this.setLosType(IN_SIGHT);
+		setRelations(Action.TARGET_ENEMY);
 	}
 	
 	
@@ -75,8 +81,8 @@ public class AcidFlask extends Action implements TileAction, AoE{
 		super.playExecuteActionAnimation(caster, target, pos, ar);
 		
 	//	target.playAnimationOnTile(BasicSparkAnimation.ID,"PARTICLE#spells/swirl");
-	
-		target.playSound("effects/Curse");
+		caster.playAnimationOn(GenericProyectileAnimation.ID,target.getPos(),SpecialEffectsSpriteFactory.ACID_FLASK,caster.getWidth());
+		//target.playSound("effects/Curse");
 	}
 	
 	
