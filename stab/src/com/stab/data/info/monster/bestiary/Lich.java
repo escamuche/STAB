@@ -13,6 +13,7 @@ import com.stab.data.info.feat.general.IronWill_Feat;
 import com.stab.data.info.feat.general.Toughness_Feat;
 import com.stab.data.info.monster.Undead;
 import com.stab.model.ai.AbstractAIPackage;
+import com.stab.model.ai.traits.PrefferRanged;
 import com.stab.model.info.trait.Modifier;
 
 public class Lich extends Undead {
@@ -62,6 +63,8 @@ public class Lich extends Undead {
 		addTrait(nat);
 		addTrait(def);
 		
+		
+		addTrait(new PrefferRanged());
 	
 	//	getAIParams().setLog(true);
 		

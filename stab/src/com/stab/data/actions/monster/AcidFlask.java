@@ -48,7 +48,7 @@ public class AcidFlask extends PathfinderAction implements TileAction, AoE{
 
 	@Override
 	public int getRequiredLine() {
-		return LOS;
+		return IN_RANGE;
 	}
 
 	@Override
@@ -81,7 +81,7 @@ public class AcidFlask extends PathfinderAction implements TileAction, AoE{
 		super.playExecuteActionAnimation(caster, target, pos, ar);
 		
 	//	target.playAnimationOnTile(BasicSparkAnimation.ID,"PARTICLE#spells/swirl");
-		caster.playAnimationOn(GenericProyectileAnimation.ID,target.getPos(),SpecialEffectsSpriteFactory.ACID_FLASK,caster.getWidth());
+		caster.playAnimationOn(GenericProyectileAnimation.ID,pos,SpecialEffectsSpriteFactory.ACID_FLASK,caster.getWidth());
 		//target.playSound("effects/Curse");
 	}
 	

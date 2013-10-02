@@ -8,6 +8,7 @@ import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.model.ai.actions.orders.Minion;
+import com.stab.model.ai.traits.PrefferRanged;
 
 public class GoblinAlchemist  extends Goblin implements Minion{
 
@@ -38,10 +39,12 @@ public class GoblinAlchemist  extends Goblin implements Minion{
 		
 		this.addTrait(new Chaotic());
 		
+		this.addTrait(new PrefferRanged());
+		
 		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.DAGGER), HumanoidGear.MAINHAND);
 		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.LIGHTLEATHER), HumanoidGear.ARMOR);
 		
-	
+		this.unequip(HumanoidGear.MAINHAND);
 		
 	}
 }

@@ -23,6 +23,8 @@ import com.stab.data.info.equipment.Weapon;
 import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.action.Action;
 import com.stab.model.action.TargetAction;
+import com.stab.model.ai.AIPackage;
+import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.animation.AbstractSpeech;
 import com.stab.model.animation.BaseSpeech;
 import com.stab.model.basic.scenes.MapLogic;
@@ -306,6 +308,8 @@ public class WeaponAttackAction extends Action implements TargetAction{
 	public int getEffectValue(BaseInfo i, Info target) {
 		int v=0;
 		Weapon w=getWeapon(i);
+		if (w==null)
+			return DefaultAIPackage.DISCARD;
 		v=w.getEffectValue(i,target);
 		return v;
 	}

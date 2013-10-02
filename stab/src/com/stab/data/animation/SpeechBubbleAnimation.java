@@ -24,7 +24,7 @@ public class SpeechBubbleAnimation extends Animation {
 	
 		String img=getParam(1);
 		
-		System.out.println("Vamos a hacer un dialogo con "+txt+" | "+img);
+	//	System.out.println("Vamos a hacer un dialogo con "+txt+" | "+img);
 		
 		StateSprite s=AnimUtils.getSprite(getSource());
 		if (!s.isVisible()){

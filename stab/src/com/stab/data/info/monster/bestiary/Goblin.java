@@ -42,7 +42,7 @@ public class Goblin extends Humanoid {
 	
 		this.addTrait(new SelfPreservation());
 		this.addTrait(new Agressor());
-		this.addTrait(new FlankAI(1.0f));
+	//	this.addTrait(new FlankAI(1.0f));
 	//	this.addTrait(new DangerMapAI());
 		this.addTrait(new DistanceMapAI());
 		this.addTrait(new Hatred(Zombie.class));
