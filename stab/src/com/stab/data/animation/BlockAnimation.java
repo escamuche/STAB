@@ -1,6 +1,6 @@
 package com.stab.data.animation;
 
-import com.stab.client.slick.GameScreen;
+import com.stab.client.slick.AbstractGameScreen;
 import com.stab.client.slick.base.visualobjects.StabSprite;
 import com.stab.common.value.InterpolatorValueProvider;
 import com.stab.data.utils.AnimUtils;
@@ -43,6 +43,6 @@ public class BlockAnimation  extends OnTargetAnimation {
 		BasicAnimState st=new BasicAnimState(this.getTime());
 		st.addUpdater(new Orbit());
 		icon.setState(st);
-		((GameScreen)s.getScreen()).add(icon);
+		((AbstractGameScreen)s.getScreen()).add(icon);
 	}
 }

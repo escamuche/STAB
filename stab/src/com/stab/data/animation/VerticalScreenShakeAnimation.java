@@ -1,6 +1,6 @@
 package com.stab.data.animation;
 
-import com.stab.client.slick.GameScreen;
+import com.stab.client.slick.AbstractGameScreen;
 import com.stab.data.animation.sprite.ScreenShakeSprite;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
@@ -19,7 +19,7 @@ public class VerticalScreenShakeAnimation extends Animation{
 	public void start() {
 		super.start();
 		StateSprite s=AnimUtils.getSprite(getSource());
-		((GameScreen)s.getScreen()).add(new ScreenShakeSprite(getTime(), 10, true,2.0f));
+		((AbstractGameScreen)s.getScreen()).add(new ScreenShakeSprite(getTime(), 10, true,2.0f));
 		
 	}
 }

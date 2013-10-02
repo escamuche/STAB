@@ -1,6 +1,6 @@
 package com.stab.data.animation;
 
-import com.stab.client.slick.GameScreen;
+import com.stab.client.slick.AbstractGameScreen;
 import com.stab.client.slick.base.visualobjects.StabSprite;
 import com.stab.common.Constants;
 import com.stab.data.utils.AnimUtils;
@@ -36,7 +36,7 @@ public static final String ID=VisualEffect.STARTLED_ANIMATION;
 		Painter p=PaintUtils.getPainter("PARTICLE#effects/startled");
 		icon.setPainter(p);
 		icon.setState(new BasicAnimState(this.getTime()));
-		((GameScreen)s.getScreen()).add(icon);
+		((AbstractGameScreen)s.getScreen()).add(icon);
 	}
 	
 }

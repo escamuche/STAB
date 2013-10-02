@@ -1,6 +1,6 @@
 package com.stab.data.animation;
 
-import com.stab.client.slick.GameScreen;
+import com.stab.client.slick.AbstractGameScreen;
 import com.stab.client.slick.base.visualobjects.StabSprite;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
@@ -60,6 +60,6 @@ public class BasicSparkAnimation extends Animation {
 		icon.setSize(64,64);
 		
 		icon.setPainter(p);
-		((GameScreen)s.getScreen()).add(icon);
+		((AbstractGameScreen)s.getScreen()).add(icon);
 	}
 }

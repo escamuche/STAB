@@ -24,6 +24,7 @@ public class DefendAction extends PathfinderAction implements SelfAction {
 		this.setAiCap(500);
 		setRelations(Action.TARGET_SELF);
 		this.setRange(0);
+		setDefaultAIValue(600);
 	}
 	
 	@Override

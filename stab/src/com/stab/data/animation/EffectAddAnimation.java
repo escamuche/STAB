@@ -1,6 +1,6 @@
 package com.stab.data.animation;
 
-import com.stab.client.slick.GameScreen;
+import com.stab.client.slick.AbstractGameScreen;
 import com.stab.common.Constants;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
@@ -39,6 +39,6 @@ public class EffectAddAnimation  extends Animation {
 	//	icon.setSpeed(0, -0.05f);
 		icon.setPainter(PaintUtils.getPainter("PARTICLE#effects/buffOn#"+img));
 		icon.setState(new BasicAnimState(this.getTime()));
-		((GameScreen)s.getScreen()).add(icon);
+		((AbstractGameScreen)s.getScreen()).add(icon);
 	}
 }

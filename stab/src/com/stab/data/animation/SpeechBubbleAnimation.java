@@ -1,6 +1,6 @@
 package com.stab.data.animation;
 
-import com.stab.client.slick.GameScreen;
+import com.stab.client.slick.AbstractGameScreen;
 import com.stab.data.animation.sprite.SpeechBubble;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
@@ -48,7 +48,7 @@ public class SpeechBubbleAnimation extends Animation {
 		
 		setTime(icon.getCurrentState().getTimed()+200);
 		
-		((GameScreen)s.getScreen()).add(icon);
+		((AbstractGameScreen)s.getScreen()).add(icon);
 	}
 
 }

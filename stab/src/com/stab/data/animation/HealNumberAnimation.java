@@ -2,7 +2,7 @@ package com.stab.data.animation;
 
 import org.newdawn.slick.Color;
 
-import com.stab.client.slick.GameScreen;
+import com.stab.client.slick.AbstractGameScreen;
 import com.stab.common.Constants;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
@@ -42,7 +42,7 @@ public class HealNumberAnimation extends Animation{
 		 ft.setPos(s.getX()+s.getWidth()/2,s.getY()+16);
 		 ft.setSize(64,64);
 		 ft.setSpeed(0, -0.03f);
-		((GameScreen)s.getScreen()).add(ft);
+		((AbstractGameScreen)s.getScreen()).add(ft);
 		
 	}
 	
