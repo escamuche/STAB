@@ -13,7 +13,6 @@ public class GenericSpriteOnAnimation extends Animation {
 	public static final String ID="GENERICSPRITEON_ANIMATION";
 	
 	public GenericSpriteOnAnimation() {
-		setBlocking(false);
 		setTime(500);
 	}
 	

@@ -17,7 +17,6 @@ public class HealNumberAnimation extends Animation{
 
 
 	public HealNumberAnimation() {
-		setBlocking(true);
 		setTime(200);
 	}
 	

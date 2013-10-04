@@ -18,7 +18,6 @@ public class RSwingAnimation extends OnTargetAnimation{
 public static final String ID="RSWING_ANIMATION";
 	
 	public RSwingAnimation() {
-		setBlocking(false);
 		setTime(500);
 	}
 	

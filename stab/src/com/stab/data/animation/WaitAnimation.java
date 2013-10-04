@@ -1,10 +1,11 @@
 package com.stab.data.animation;
 
 import com.stab.model.animation.Animation;
+import com.stab.model.info.trait.base.VisualEffect;
 
 public class WaitAnimation  extends Animation{
 
-	public static final String ID="WAIT_ANIMATION";
+	public static final String ID=VisualEffect.WAIT_ANIMATION;
 	
 	public WaitAnimation() {
 		setBlocking(true);

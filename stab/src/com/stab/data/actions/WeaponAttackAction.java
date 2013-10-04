@@ -93,6 +93,7 @@ public class WeaponAttackAction extends Action implements TargetAction{
 			ad.addModifier(+2);
 			atacante.playAnimation(FlashAnimation.ID);
 			flanker.playAnimation(FlashAnimation.ID);
+			atacante.waitAnimation(100);
 			sleep(100);
 			//Sneak attack
 			
@@ -156,6 +157,7 @@ public class WeaponAttackAction extends Action implements TargetAction{
 		if (SwingAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(SwingAnimation.ID,target,ad.getAnimationIcon());
 			origin.playSound("effects/SwipeTarget");
+			origin.waitAnimation(500);
 			sleep(500);
 			origin.playSound("effects/MetalShieldBlock1");
 			return;
@@ -166,8 +168,10 @@ public class WeaponAttackAction extends Action implements TargetAction{
 		}
 		if (ThrustAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(ThrustAnimation.ID,target,ad.getAnimationIcon());
+			origin.waitAnimation(100);
 			sleep(100);
 			origin.playSound("effects/SwipeTarget");
+			origin.waitAnimation(400);
 			sleep(400);
 			origin.playSound("effects/MetalShieldBlock1");
 			return;
@@ -189,6 +193,7 @@ public class WeaponAttackAction extends Action implements TargetAction{
 		if (SwingAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(SwingAnimation.ID,target,ad.getAnimationIcon());
 			origin.playSound("effects/SwipeTarget");
+			origin.waitAnimation(500);
 			sleep(500);
 			if (ad.getResult()==WeaponAttack.BLOCK)
 				origin.playSound("effects/m1hSwordHitMetalShield1b");
@@ -207,8 +212,10 @@ public class WeaponAttackAction extends Action implements TargetAction{
 		}
 		if (ThrustAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(ThrustAnimation.ID,target,ad.getAnimationIcon());
+			origin.waitAnimation(100);
 			sleep(100);
 			origin.playSound("effects/SwipeTarget");
+			origin.waitAnimation(400);
 			sleep(400);
 			if (ad.getResult()==WeaponAttack.BLOCK)
 				origin.playSound("effects/m1hSwordHitMetalShield1b");

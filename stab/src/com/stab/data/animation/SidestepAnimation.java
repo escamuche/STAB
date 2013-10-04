@@ -10,7 +10,6 @@ public class SidestepAnimation extends OnTargetAnimation{
 	public static final String ID="SIDESTEP_ANIMATION";
 	
 	public SidestepAnimation() {
-		setBlocking(false);
 		setTime(700);
 	}
 	

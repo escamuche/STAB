@@ -10,7 +10,6 @@ public class StepBackAnimation extends OnTargetAnimation{
 	public static final String ID="STEPBACK_ANIMATION";
 	
 	public StepBackAnimation() {
-		setBlocking(false);
 		setTime(700);
 	}
 	

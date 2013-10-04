@@ -15,7 +15,6 @@ public class MarkAnimation  extends Animation{
 	public static final String ID=VisualEffect.MARK_ANIMATION;
 	
 	public MarkAnimation() {
-		setBlocking(false);
 		setTime(400);
 	}
 	

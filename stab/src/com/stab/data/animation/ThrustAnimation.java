@@ -17,7 +17,6 @@ public class ThrustAnimation extends OnTargetAnimation{
 	public static final String ID="THRUST_ANIMATION";
 	
 	public ThrustAnimation() {
-		setBlocking(false);
 		setTime(1000);
 	}
 	

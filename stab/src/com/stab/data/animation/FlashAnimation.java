@@ -12,7 +12,6 @@ public class FlashAnimation  extends Animation{
 	public static final String ID=VisualEffect.FLASH_ANIMATION;
 	
 	public FlashAnimation() {
-		setBlocking(false);
 		setTime(200);
 	}
 	

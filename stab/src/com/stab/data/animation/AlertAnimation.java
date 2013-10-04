@@ -16,7 +16,6 @@ public class AlertAnimation extends Animation {
 public static final String ID=VisualEffect.ALERT_ANIMATION;
 	
 	public AlertAnimation() {
-		setBlocking(false);
 		setTime(1000);
 	}
 	

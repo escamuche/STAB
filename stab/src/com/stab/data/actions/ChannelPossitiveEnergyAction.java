@@ -105,7 +105,7 @@ public class ChannelPossitiveEnergyAction extends PathfinderAction implements Se
 		super.playExecuteActionAnimation(caster, target, pos, ar);
 		
 		caster.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#spells/holyNova");
-		
+		caster.waitAnimation(200);
 		sleep(1000);
 	}
 	

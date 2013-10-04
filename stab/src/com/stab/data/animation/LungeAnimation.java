@@ -10,8 +10,7 @@ public class LungeAnimation  extends OnTargetAnimation{
 	public static final String ID="LUNGE_ANIMATION";
 	
 	public LungeAnimation() {
-		setBlocking(false);
-		setTime(700);
+			setTime(700);
 	}
 	
 	@Override

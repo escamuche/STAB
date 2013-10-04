@@ -17,8 +17,7 @@ public class BlockAnimation  extends OnTargetAnimation {
 	public static final String ID="BLOCK_ANIMATION";
 	
 	public BlockAnimation() {
-		setBlocking(false);
-		setTime(1000);
+			setTime(1000);
 	}
 	
 	@Override

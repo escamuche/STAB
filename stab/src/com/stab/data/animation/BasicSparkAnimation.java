@@ -19,7 +19,7 @@ public class BasicSparkAnimation extends Animation {
 	public static final String ID=VisualEffect.SPARK_ANIMATION;
 	
 	public BasicSparkAnimation() {
-		setBlocking(false);
+		
 		setTime(1000);
 	}
 	

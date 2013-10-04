@@ -16,7 +16,6 @@ public class StartledAnimation extends Animation {
 public static final String ID=VisualEffect.STARTLED_ANIMATION;
 	
 	public StartledAnimation() {
-		setBlocking(false);
 		setTime(1000);
 	}
 	

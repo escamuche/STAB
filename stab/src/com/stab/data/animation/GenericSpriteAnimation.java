@@ -15,7 +15,6 @@ public class GenericSpriteAnimation extends OnTileAnimation {
 	public static final String ID="GENERICSPRITE_ANIMATION";
 	
 	public GenericSpriteAnimation() {
-		setBlocking(false);
 		setTime(500);
 	}
 	

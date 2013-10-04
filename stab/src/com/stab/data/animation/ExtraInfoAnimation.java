@@ -12,7 +12,6 @@ public class ExtraInfoAnimation extends Animation {
 	public static final String ID=VisualEffect.EXTRAINFO_ANIMATION;
 	
 	public ExtraInfoAnimation() {
-		setBlocking(false);
 		setTime(0);
 	}
 	

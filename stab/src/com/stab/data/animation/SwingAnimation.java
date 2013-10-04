@@ -18,7 +18,6 @@ public class SwingAnimation extends OnTargetAnimation{
 	public static final String ID="SWING_ANIMATION";
 	
 	public SwingAnimation() {
-		setBlocking(false);
 		setTime(500);
 	}
 	
