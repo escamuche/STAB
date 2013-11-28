@@ -18,5 +18,7 @@ public class WaitAnimation  extends Animation{
 		/*StateSprite s=AnimUtils.getSprite(getSource());**/
 		int i=getIntParam(0);
 		setTime(i);
+		boolean b=getBooleanParam(1);
+		setBlocking(b);
 	}
 }

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
+import org.newdawn.slick.Color;
+
 import com.stab.common.Constants;
 import com.stab.common.value.InterpolatorValueProvider;
 import com.stab.data.animation.state.ExplodeState;
@@ -12,6 +14,7 @@ import com.tien.princess.engine.sprite.Sprite;
 import com.tien.princess.engine.sprite.StateSprite;
 import com.tien.princess.engine.sprite.base.AttachedParticleSprite;
 import com.tien.princess.engine.sprite.base.BeamSprite;
+import com.tien.princess.engine.sprite.base.TrailSprite;
 import com.tien.princess.engine.sprite.common.states.ValueState2;
 import com.tien.princess.engine.sprite.common.states.base.ClearParticlesState;
 import com.tien.princess.engine.sprite.common.updaters.angle.MoveA;
@@ -176,8 +179,13 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 		if (RED_MARK.equals(type)){
 			StateSprite s= (StateSprite)getSpark(null).iterator().next();
 			s.addUpdater(new StickToRef());
-			
-			return Arrays.asList((Sprite)s);
+			s.addUpdater(new Orbit());
+			s.setA(0);
+			s.setSa((float)(Math.toRadians(370)/1000));
+			s.setR(32);
+			TrailSprite trail = new TrailSprite(Color.red,20,12,100);
+			trail.setRef(s);
+			return Arrays.asList((Sprite)s,trail);
 		}
 		
 		return null;

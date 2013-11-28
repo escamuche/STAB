@@ -50,7 +50,7 @@ public abstract class SpellAction extends Action implements SpellProperties{
 		if (origin instanceof BaseInfo){
 			SpellCasting_Condition c= new SpellCasting_Condition(this);
 			((BaseInfo)origin).addTrait(c);
-	//		origin.waitAnimation(200);
+			origin.waitAnimation(200);
 			sleep(200);
 		}
 	}

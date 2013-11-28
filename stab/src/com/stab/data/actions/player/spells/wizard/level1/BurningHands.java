@@ -37,6 +37,7 @@ public class BurningHands extends SpellOnTile implements AoE {
 		super.playExecuteActionAnimation(caster, target, pos, ar);
 		double a=getAngle(caster,target,pos);
 		a=Math.toDegrees(a);
+		caster.playSound("flames");
 		caster.playAnimation(VisualEffect.SPARK_ANIMATION, "PARTICLE#spells/burninghands", 1200,a);
 	}
 	

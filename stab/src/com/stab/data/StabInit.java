@@ -183,6 +183,7 @@ import com.stab.data.animation.MarkAnimation;
 import com.stab.data.animation.MissProyectileAnimation;
 import com.stab.data.animation.MissRotatingProyectileAnimation;
 import com.stab.data.animation.OpenDoorAnimation;
+import com.stab.data.animation.PlaySoundAnimation;
 import com.stab.data.animation.RSwingAnimation;
 import com.stab.data.animation.RevealAnimation;
 import com.stab.data.animation.ShakeAnimation;
@@ -430,6 +431,7 @@ public class StabInit {
 		of.setMapping(StabBlockData.class);
 		
 		//Animations
+		of.setMapping(PlaySoundAnimation.class);
 		of.setMapping(WalkAnimation.class);
 		of.setMapping(OpenDoorAnimation.class);
 		of.setMapping(CloseDoorAnimation.class);
