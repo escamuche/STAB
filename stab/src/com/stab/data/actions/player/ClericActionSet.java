@@ -1,7 +1,7 @@
 package com.stab.data.actions.player;
 
 
-import com.stab.data.actions.ChannelPossitiveEnergyAction;
+import com.stab.data.actions.player.abilities.ChannelPossitiveEnergyAction;
 import com.stab.data.actions.player.abilities.NobilityDomain;
 import com.stab.data.actions.player.spells.cleric.level0.Bleed;
 import com.stab.data.actions.player.spells.cleric.level0.Resistance;

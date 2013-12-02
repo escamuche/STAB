@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.HashSet;
 
 import com.stab.common.utils.PathUtils;
-import com.stab.data.actions.WeaponAttackAction;
+import com.stab.data.actions.general.WeaponAttackAction;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.data.info.buff.spells.Shield_Buff;
 import com.stab.data.info.debuff.condition.UnableToActCondition;

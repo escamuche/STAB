@@ -1,6 +1,6 @@
 package com.stab.data.info.player.abilities;
 
-import com.stab.data.actions.ChannelPossitiveEnergyAction;
+import com.stab.data.actions.player.abilities.ChannelPossitiveEnergyAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.trait.Trait;
 

@@ -38,7 +38,7 @@ public class AcidFlask extends PathfinderAction implements TileAction, AoE{
 
 	@Override
 	public float getLength(Info caster) {
-		return 2;
+		return 1.5f;
 	}
 
 	@Override

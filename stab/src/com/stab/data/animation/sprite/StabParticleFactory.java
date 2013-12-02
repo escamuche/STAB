@@ -20,7 +20,7 @@ public class StabParticleFactory extends ParticleFactory {
 	
 	@Override
 	protected ParticleSprite getParticle(String string, Color c) {
-	
+
 		
 		if (GLOWORB.equals(string)){
 			PixelParticle p=getDefaultParticle(c,5000);
@@ -38,19 +38,20 @@ public class StabParticleFactory extends ParticleFactory {
 			return p;
 		}
 		if (GLASSSHARD.equals(string)){
+		//	return super.getParticle(string, c);
 			PixelParticle p=getDefaultParticle(c,2000);
 			p.bounce();
 			int i=Roll.roll(5);
 			SimpleImagePainter pt= new SimpleImagePainter("effects/glass"+i);
 			p.setSr(-0.01f/Roll.d100());
 			p.addUpdater(new MoveR(0, 10));
-			p.getVState().addUpdater(new AngleToRotation());
+			p.addUpdater(new AngleToRotation());
 			p.fade(75);
 			p.setPainter(pt);
 			
 			//TrailSprite trail = new TrailSprite(c,12,6,50);
 			//trail.setRef(p);
-			//AnimUtils.getScreen().add(trail);
+			//AnimUtils.getScreen().add(trail);/**/
 			return p;
 		}
 		

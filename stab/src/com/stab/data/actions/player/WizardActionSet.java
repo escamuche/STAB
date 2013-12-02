@@ -1,7 +1,7 @@
 package com.stab.data.actions.player;
 
 
-import com.stab.data.actions.player.spells.cleric.level0.Light;
+import com.stab.data.actions.monster.AcidFlask;
 import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
 import com.stab.data.actions.player.spells.wizard.level0.Bleed_Wizard;
 import com.stab.data.actions.player.spells.wizard.level0.Daze;
@@ -13,7 +13,6 @@ import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.actions.player.spells.wizard.level0.Resistance_Wizard;
 import com.stab.data.actions.player.spells.wizard.level0.TouchFatigue;
 import com.stab.data.actions.player.spells.wizard.level0.unfinished.DancingLights;
-import com.stab.data.actions.player.spells.wizard.level0.unfinished.MageHand;
 import com.stab.data.actions.player.spells.wizard.level1.BurningHands;
 import com.stab.data.actions.player.spells.wizard.level1.CharmPerson;
 import com.stab.data.actions.player.spells.wizard.level1.ChillTouch;
@@ -71,5 +70,9 @@ public class WizardActionSet extends PathfinderActionSet {
 				
 				
 				this.setAction(Daze.ID, 2);
+				
+				
+				this.addAction(AcidFlask.ID);
+				this.setAction(AcidFlask.ID,6);
 	}
 }

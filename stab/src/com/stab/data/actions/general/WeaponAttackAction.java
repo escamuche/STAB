@@ -1,4 +1,4 @@
-package com.stab.data.actions;
+package com.stab.data.actions.general;
 
 import java.awt.Point;
 import java.util.ArrayList;

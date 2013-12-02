@@ -2,8 +2,8 @@ package com.stab.data.info.player;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
+import com.stab.data.actions.general.DefendAction;
 import com.stab.data.actions.player.BardActionSet;
-import com.stab.data.actions.player.DefendAction;
 import com.stab.data.info.alignment.Chaotic;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.SkillFocusPerformWind_Feat;

@@ -1,6 +1,6 @@
 package com.stab.data.info.debuff.condition;
 
-import com.stab.data.actions.HealAction;
+import com.stab.data.actions.general.HealAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.base.Debuff;

@@ -1,9 +1,10 @@
-package com.stab.data.actions;
+package com.stab.data.actions.player.abilities;
 
 import java.awt.Point;
 
 import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
+import com.stab.data.actions.PathfinderAction;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.data.info.feat.general.SelectiveChanneling_Feat;
 import com.stab.data.info.monster.monstertraits.ConstructTraits;

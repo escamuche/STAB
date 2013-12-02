@@ -3,7 +3,7 @@ package com.stab.data.info.debuff.condition;
 import org.newdawn.slick.Color;
 
 import com.stab.data.StabConstants;
-import com.stab.data.actions.HealAction;
+import com.stab.data.actions.general.HealAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.base.Damage;
 

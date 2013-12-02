@@ -159,6 +159,7 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 		
 		if (FLASK_SHATTER.equals(type)){
 			Sprite sp= EmitterUtils.getTimedSpawner(EmitterUtils.getBang(StabParticleFactory.GLASSSHARD, 3));
+			
 			return Arrays.asList(sp);
 		}
 		if (ACID_FLASK_EXPLOSION.equals(type)){

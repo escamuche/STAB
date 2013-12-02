@@ -2,7 +2,7 @@ package com.stab.data.info.monster.bestiary;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
-import com.stab.data.actions.ChannelPossitiveEnergyAction;
+import com.stab.data.actions.player.abilities.ChannelPossitiveEnergyAction;
 import com.stab.data.actions.player.spells.cleric.level1.CureLight;
 import com.stab.data.actions.player.spells.wizard.level1.MagicMissile;
 import com.stab.data.info.equipment.ArmorFactory;

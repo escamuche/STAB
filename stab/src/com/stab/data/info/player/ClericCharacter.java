@@ -2,9 +2,9 @@ package com.stab.data.info.player;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
-import com.stab.data.actions.ChannelPossitiveEnergyAction;
+import com.stab.data.actions.general.DefendAction;
 import com.stab.data.actions.player.ClericActionSet;
-import com.stab.data.actions.player.DefendAction;
+import com.stab.data.actions.player.abilities.ChannelPossitiveEnergyAction;
 import com.stab.data.actions.player.abilities.NobilityDomain;
 import com.stab.data.info.alignment.Evil;
 import com.stab.data.info.alignment.Lawful;

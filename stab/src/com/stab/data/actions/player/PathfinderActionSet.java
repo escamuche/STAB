@@ -1,6 +1,7 @@
 package com.stab.data.actions.player;
 
-import com.stab.data.actions.WeaponAttackAction;
+import com.stab.data.actions.general.DefendAction;
+import com.stab.data.actions.general.WeaponAttackAction;
 import com.stab.model.action.BasicActionSet;
 import com.stab.model.action.base.InteractAction;
 import com.stab.model.action.base.SearchAction;

@@ -3,7 +3,7 @@ package com.stab.data.info.player;
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.actions.feats.PowerAttack;
-import com.stab.data.actions.player.DefendAction;
+import com.stab.data.actions.general.DefendAction;
 import com.stab.data.actions.player.FighterActionSet;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.combat.PowerAttack_Feat;
