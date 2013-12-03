@@ -6,7 +6,7 @@ import com.stab.model.basic.token.interfaces.AffectsVisibility;
 
 public class RoundToken extends PhysicalToken  implements AffectsVisibility{
 	
-	public static final String ID="ROUD_TOKEN";
+	public static final String ID="ROUND_TOKEN";
 
 	public static int EMPTY=BytePropertiesMapData.EMPTY;
 	public static int SOLID=BytePropertiesMapData.SHADESOLID;

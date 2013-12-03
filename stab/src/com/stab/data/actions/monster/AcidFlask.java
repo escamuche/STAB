@@ -27,7 +27,8 @@ public class AcidFlask extends PathfinderAction implements TileAction, AoE{
 		this.setResource("actions/acidsplash");
 		this.setRange(5);
 		this.setLosType(IN_SIGHT);
-		setRelations(Action.TARGET_ENEMY);
+	//	this.setLosType(IN_RANGE);
+	//	setRelations(Action.TARGET_ENEMY);
 	}
 	
 	

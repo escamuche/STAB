@@ -7,9 +7,11 @@ import com.stab.data.utils.AnimUtils;
 import com.tien.princess.engine.sprite.base.PixelParticle;
 import com.tien.princess.engine.sprite.base.TrailSprite;
 import com.tien.princess.engine.sprite.common.painters.SimpleImagePainter;
+import com.tien.princess.engine.sprite.common.updaters.angle.AccelR;
 import com.tien.princess.engine.sprite.common.updaters.angle.AngleToRotation;
 import com.tien.princess.engine.sprite.common.updaters.angle.MoveA;
 import com.tien.princess.engine.sprite.common.updaters.angle.MoveR;
+import com.tien.princess.engine.sprite.common.updaters.angle.Vectorize;
 import com.tien.princess.engine.sprite.common.updaters.particle.ParticleSprite;
 import com.tien.princess.engine.sprite.factory.ParticleFactory;
 
@@ -43,9 +45,14 @@ public class StabParticleFactory extends ParticleFactory {
 			p.bounce();
 			int i=Roll.roll(5);
 			SimpleImagePainter pt= new SimpleImagePainter("effects/glass"+i);
-			p.setSr(-0.01f/Roll.d100());
+			
+			p.setSr(-0.0002f/Roll.d100());
+			//p.getVState().setRadiusSpeed(-0.00001f/Roll.d100(),0,-1f,1000);
+			//p.getVState().setRadius(1.1f+(Roll.d100()/100),0,0,1000);
+			p.addUpdater(new AccelR(-10f,0f,-0.000000004f));
 			p.addUpdater(new MoveR(0, 10));
 			p.addUpdater(new AngleToRotation());
+			p.addUpdater(new Vectorize());
 			p.fade(75);
 			p.setPainter(pt);
 			

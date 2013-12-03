@@ -21,15 +21,15 @@ public class EnterScreenAnimation  extends Animation{
 	public void start() {
 		super.start();
 		StateSprite s=AnimUtils.getSprite(getSource());
-	
+		s.setVisible(true);
 		MoveToAnimatingState st= new MoveToAnimatingState(s.getPos(), (int)getTime(), UIStateSet.NORMAL);
 		int i=getIntParam(0);
 		if (i==Constants.LEFT)
-			s.setPos(-140,s.getY());
+			s.setPos(-s.getWidth()-1,s.getY());
 		if (i==Constants.RIGHT)
 			s.setPos(Game.WIDTH+1,s.getY());
 		s.setState(st);
-		s.setVisible(true);
+		
 	}
 	
 }
