@@ -1,12 +1,8 @@
 package com.stab.data.animation;
 
-import java.util.Collection;
-
-import com.stab.data.StabInit;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.trait.base.VisualEffect;
-import com.tien.princess.engine.sprite.Sprite;
 import com.tien.princess.engine.sprite.StateSprite;
 
 public class PlaySoundAnimation extends Animation {

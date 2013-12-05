@@ -3,16 +3,12 @@ package com.stab.data.info.monster.bestiary;
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
-import com.stab.data.actions.player.spells.wizard.level1.BurningHands;
-import com.stab.data.actions.player.spells.wizard.level1.MagicMissile;
-import com.stab.data.actions.player.spells.wizard.level1.RayEnfeeblement;
 import com.stab.data.actions.player.spells.wizard.level1.Shield;
 import com.stab.data.info.alignment.Evil;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.IronWill_Feat;
 import com.stab.data.info.feat.general.Toughness_Feat;
 import com.stab.data.info.monster.Undead;
-import com.stab.model.ai.AbstractAIPackage;
 import com.stab.model.ai.traits.PrefferRanged;
 import com.stab.model.info.trait.Modifier;
 

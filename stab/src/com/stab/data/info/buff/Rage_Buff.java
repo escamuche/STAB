@@ -3,8 +3,6 @@ package com.stab.data.info.buff;
 import com.stab.common.Constants;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.abilities.Rage;
-import com.stab.data.animation.GenericSpriteOnAnimation;
-import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
 import com.stab.data.info.debuff.Rage_Debuff;
 import com.stab.model.basic.token.DecorToken;
 import com.stab.model.info.BaseInfo;

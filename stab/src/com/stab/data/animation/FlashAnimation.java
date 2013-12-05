@@ -1,6 +1,5 @@
 package com.stab.data.animation;
 
-import com.stab.common.value.InterpolatorValueProvider;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.trait.base.VisualEffect;

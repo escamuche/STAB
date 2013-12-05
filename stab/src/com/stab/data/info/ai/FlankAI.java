@@ -5,7 +5,6 @@ import java.awt.Rectangle;
 
 import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.action.Action;
-import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.ai.HeatMap;
 import com.stab.model.ai.traits.HeatMapAITrait;
 import com.stab.model.basic.scenes.MapLogic;

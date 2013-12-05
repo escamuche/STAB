@@ -5,7 +5,6 @@ import com.stab.data.StabInit;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.Weapon;
 import com.stab.data.info.monster.Vermin;
-import com.stab.model.ai.AbstractAIPackage;
 
 public class GiantBombardierBeetle extends Vermin {
 

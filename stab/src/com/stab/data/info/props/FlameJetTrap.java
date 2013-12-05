@@ -4,7 +4,6 @@ import java.awt.Point;
 
 import com.stab.common.utils.PathUtils;
 import com.stab.data.actions.traps.FlameJet;
-import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.model.info.base.Switch;
 import com.stab.model.info.interfaces.RemoteActivated;
 

@@ -1,7 +1,6 @@
 package com.stab.data.info.monster.bestiary;
 
 import com.stab.data.StabConstants;
-import com.stab.data.info.ai.FlankAI;
 import com.stab.data.info.alignment.Evil;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.data.info.monster.Humanoid;

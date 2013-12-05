@@ -6,7 +6,6 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
 import com.stab.data.info.buff.spells.MagicStone_Buff;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.request.basic.ActionRequest;
 
 public class MagicStone extends SpellOnSelf{
 	

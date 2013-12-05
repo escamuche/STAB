@@ -3,11 +3,9 @@ package com.stab.data.actions.monster;
 import java.awt.Point;
 
 import com.stab.data.actions.PathfinderAction;
-import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.animation.GenericProyectileAnimation;
 import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
 import com.stab.data.info.applicable.RolledDamage;
-import com.stab.model.action.Action;
 import com.stab.model.action.AoE;
 import com.stab.model.action.TileAction;
 import com.stab.model.info.BaseInfo;

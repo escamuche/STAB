@@ -6,7 +6,6 @@ import com.stab.data.info.alignment.Evil;
 import com.stab.data.info.buff.SmiteEvil_Buff;
 import com.stab.data.info.debuff.SmiteEvil_Debuff;
 import com.stab.model.action.Action;
-import com.stab.model.action.SelfAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.request.basic.ActionRequest;

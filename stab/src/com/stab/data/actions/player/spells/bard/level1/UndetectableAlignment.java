@@ -1,10 +1,7 @@
 package com.stab.data.actions.player.spells.bard.level1;
 
-import java.awt.Point;
-
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
-import com.stab.model.info.Info;
 
 public class UndetectableAlignment extends SpellOnTarget{
 

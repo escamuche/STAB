@@ -1,12 +1,9 @@
 package com.stab.data.actions.player.spells.wizard.level0.unfinished;
 
-import java.awt.Point;
-
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTile;
 import com.stab.model.action.Action;
 import com.stab.model.action.AoE;
-import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 
 public class DancingLights extends SpellOnTile implements AoE {

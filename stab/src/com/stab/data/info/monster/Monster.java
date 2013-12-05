@@ -7,7 +7,6 @@ import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.Item;
 import com.stab.data.info.traits.BasicAttributes;
 import com.stab.model.ai.AIPackage;
-import com.stab.model.ai.AbstractAIPackage;
 import com.stab.model.basic.token.Token;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.base.Equipment;

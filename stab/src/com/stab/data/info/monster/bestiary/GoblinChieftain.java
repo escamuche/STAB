@@ -7,7 +7,9 @@ import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.model.ai.actions.orders.Commander;
+import com.stab.model.ai.actions.orders.base.FocusOnTargetOrderAction;
 import com.stab.model.ai.traits.Agressor;
+import com.stab.model.ai.traits.DefaultCommanderAI;
 import com.stab.model.ai.traits.DistanceMapAI;
 
 public class GoblinChieftain extends Goblin implements Commander{
@@ -35,7 +37,14 @@ public class GoblinChieftain extends Goblin implements Commander{
 		this.addTrait(new Agressor());
 		this.addTrait(new FlankAI(1.0f));
 		this.addTrait(new DistanceMapAI());
+		this.addTrait(new DefaultCommanderAI());
 		
+		this.getActionSet().addAction(FocusOnTargetOrderAction.ID);
+	
+		getAIParams().setLog(true);
+		
+		
+	//	((BaseSpeech)getSpeech()).loadFrom(Resources.INSTANCE.getStream("/txt/speech/goblin.txt"));
 		
 	}
 

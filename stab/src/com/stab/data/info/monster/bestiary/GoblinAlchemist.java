@@ -35,7 +35,7 @@ public class GoblinAlchemist  extends Goblin implements Minion{
 			
 		this.getActionSet().addAction(AcidFlask.ID);
 		
-		getAIParams().setLog(true);
+	//	getAIParams().setLog(true);
 		
 		this.addTrait(new Chaotic());
 		
@@ -44,7 +44,7 @@ public class GoblinAlchemist  extends Goblin implements Minion{
 		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.DAGGER), HumanoidGear.MAINHAND);
 		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.LIGHTLEATHER), HumanoidGear.ARMOR);
 		
-		this.unequip(HumanoidGear.MAINHAND);
+		//this.unequip(HumanoidGear.MAINHAND);
 		
 	}
 }

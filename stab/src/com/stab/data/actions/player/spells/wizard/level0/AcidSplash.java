@@ -1,11 +1,7 @@
 package com.stab.data.actions.player.spells.wizard.level0;
 
-import java.awt.Point;
-
-import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
-import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;

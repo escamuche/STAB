@@ -2,9 +2,8 @@ package com.stab.data.info.equipment;
 
 import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.TurnBased;
 import com.stab.model.info.base.Creature;
-import com.stab.model.request.Request;
+import com.stab.model.info.interfaces.TurnBased;
 
 public class OverrideWeapon extends Weapon implements TurnBased {
 	

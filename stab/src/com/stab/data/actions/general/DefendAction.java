@@ -9,8 +9,6 @@ import com.stab.model.action.SelfAction;
 import com.stab.model.events.common.ConsoleMessage;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
-import com.stab.model.info.trait.Effect;
-import com.stab.model.info.trait.Modifier;
 import com.stab.model.request.basic.ActionRequest;
 
 public class DefendAction extends PathfinderAction implements SelfAction {

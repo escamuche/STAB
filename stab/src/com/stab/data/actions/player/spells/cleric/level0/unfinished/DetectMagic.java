@@ -1,10 +1,7 @@
 package com.stab.data.actions.player.spells.cleric.level0.unfinished;
 
-import java.awt.Point;
-
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnSelf;
-import com.stab.model.info.Info;
 
 
 public class DetectMagic extends SpellOnSelf{

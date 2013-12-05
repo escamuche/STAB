@@ -16,7 +16,6 @@ import com.stab.data.info.feat.general.Alertness_Feat;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.data.info.feat.general.IronWill_Feat;
 import com.stab.data.info.monster.Outsider;
-import com.stab.model.ai.AbstractAIPackage;
 
 public class Couatl extends Outsider {
 

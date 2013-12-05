@@ -8,7 +8,6 @@ import com.stab.data.info.buff.PowerAttack_Buff;
 import com.stab.model.action.Action;
 import com.stab.model.action.SelfAction;
 import com.stab.model.action.StanceAction;
-import com.stab.model.ai.AbstractPosibleAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.request.basic.ActionRequest;
