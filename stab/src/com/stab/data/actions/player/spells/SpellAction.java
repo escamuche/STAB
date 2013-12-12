@@ -244,7 +244,6 @@ public abstract class SpellAction extends Action implements SpellProperties{
 			
 			SpellWeapon w=getWeapon(caster,target,point,ar);
 			if (w!=null){
-				
 				((Creature)caster).equip(w);
 				WeaponAttackAction a=(WeaponAttackAction)getActionLibrary().getAction(WeaponAttackAction.ID);
 				int r=a.affect(caster, target, point, ar);

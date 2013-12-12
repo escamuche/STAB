@@ -15,6 +15,7 @@ import com.stab.data.animation.SidestepAnimation;
 import com.stab.data.animation.StepBackAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.ThrustAnimation;
+import com.stab.data.info.applicable.SneakAttack;
 import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.data.info.equipment.BasicWeapon;
 import com.stab.data.info.equipment.HumanoidGear;
@@ -93,8 +94,13 @@ public class WeaponAttackAction extends Action implements TargetAction{
 			flanker.playAnimation(FlashAnimation.ID);
 			atacante.waitAnimation(100);
 			sleep(100);
-			//Sneak attack
-			
+			//Sneak attack. siempre se hace (inicialmente 0 dados)
+			SneakAttack s= new SneakAttack(atacante,ad);
+			atacado.apply(s);
+			if (s.success()){
+				//añadimos el daño de sneak al ataque
+				//RolledDamage rd=new RolledDamage(s.getNumber()s.getDie(),ad.getWeapon()
+			}
 		}
 		
 		ad.check();
