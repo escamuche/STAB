@@ -37,6 +37,7 @@ import com.stab.model.request.basic.ActionRequest;
 public class WeaponAttackAction extends Action implements TargetAction{
 	
 	public static final String ID="MELEE_STRIKE_ACTION";
+	private static final String DONTSNEAK = "DONTSNEAK";
 
 	
 	
@@ -83,6 +84,7 @@ public class WeaponAttackAction extends Action implements TargetAction{
 			ad.addModifier(+1); //+1 de altura
 			System.out.println("+1 de altura!");
 		}
+		boolean trySneak=false;
 		ArrayList<Info> infos= new ArrayList<Info>();
 		//atacante.getAIParams().getTargets();
 		infos.addAll(atacante.getScene().getElements(Creature.class));
@@ -94,7 +96,18 @@ public class WeaponAttackAction extends Action implements TargetAction{
 			flanker.playAnimation(FlashAnimation.ID);
 			atacante.waitAnimation(100);
 			sleep(100);
-			//Sneak attack. siempre se hace (inicialmente 0 dados)
+			trySneak=true;
+			
+		}
+		
+		//TODO: atacado unaware , no puede ver al atacante, etc (bono a dar, do sneak
+		
+		//TODO: visibilidad, concealment, etc
+		
+		
+		//Sneak attack. siempre se hace (inicialmente 0 dados)
+		if (trySneak)
+		if (ar.getExtraParam(DONTSNEAK)!=Boolean.TRUE){
 			SneakAttack s= new SneakAttack(atacante,ad);
 			atacado.apply(s);
 			if (s.success()){
@@ -102,7 +115,6 @@ public class WeaponAttackAction extends Action implements TargetAction{
 				//RolledDamage rd=new RolledDamage(s.getNumber()s.getDie(),ad.getWeapon()
 			}
 		}
-		
 		ad.check();
 		 //Esto calcula todos los bonos, daño etc
 		 //y comprueba si da o no, pero sin aplicar el resultado

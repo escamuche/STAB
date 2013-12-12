@@ -6,6 +6,7 @@ import java.util.List;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.info.equipment.SpellActionEffect;
 import com.stab.data.info.equipment.Weapon;
+import com.stab.model.basic.scenes.MapLogic;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.base.Damage;
@@ -183,6 +184,9 @@ public class WeaponAttack extends Attack {
 	}
 	
 	
-	
+	public float getDistance(){
+		MapLogic ml=getTarget().getMapLogic();
+		return ml.getDistance(getInstigator(), getTarget());
+	}
 	
 }

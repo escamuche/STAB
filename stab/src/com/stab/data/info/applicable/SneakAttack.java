@@ -55,10 +55,13 @@ public class SneakAttack extends Applicable{
 			this.setResult(NOTAVAILABLE);
 			return;
 		}
-	//	if (attack.isRanged())
-		//	if (attack.getDistance()>range){
-		//		this.setResult(OUTOFRANGE);
-		//	}
+		
+		//TODO: comprobar si podemos ver correctamente al target (ie: concealment)
+		
+		if (attack.isRanged())
+			if (attack.getDistance()>range){
+				this.setResult(OUTOFRANGE);
+			}
 				
 	}
 	
