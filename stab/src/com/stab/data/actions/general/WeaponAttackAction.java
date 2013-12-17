@@ -15,6 +15,7 @@ import com.stab.data.animation.SidestepAnimation;
 import com.stab.data.animation.StepBackAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.ThrustAnimation;
+import com.stab.data.info.applicable.RolledDamage;
 import com.stab.data.info.applicable.SneakAttack;
 import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.data.info.equipment.BasicWeapon;
@@ -75,7 +76,7 @@ public class WeaponAttackAction extends Action implements TargetAction{
 		//TODO: ver como se rellena el slot!
 		
 		WeaponAttack ad=new WeaponAttack (atacante,arma,atacado);
-
+	
 		//bonos adicionales por posicion: flanking y altura
 		MapLogic ml=atacante.getMapLogic();
 		int ha=ml.getElevation(atacante.getBounds());
@@ -105,16 +106,10 @@ public class WeaponAttackAction extends Action implements TargetAction{
 		//TODO: visibilidad, concealment, etc
 		
 		
-		//Sneak attack. siempre se hace (inicialmente 0 dados)
-		if (trySneak)
-		if (ar.getExtraParam(DONTSNEAK)!=Boolean.TRUE){
-			SneakAttack s= new SneakAttack(atacante,ad);
-			atacado.apply(s);
-			if (s.success()){
-				//añadimos el daño de sneak al ataque
-				//RolledDamage rd=new RolledDamage(s.getNumber()s.getDie(),ad.getWeapon()
-			}
-		}
+
+	
+		
+		
 		ad.check();
 		 //Esto calcula todos los bonos, daño etc
 		 //y comprueba si da o no, pero sin aplicar el resultado
@@ -124,6 +119,18 @@ public class WeaponAttackAction extends Action implements TargetAction{
 		}
 		
 		if (ad.hits()){
+			
+			//Sneak attack. siempre se hace (inicialmente 0 dados)
+			if (trySneak)
+			if (ar.getExtraParam(DONTSNEAK)!=Boolean.TRUE){
+				SneakAttack s= new SneakAttack(atacante,ad);
+				atacado.apply(s);
+				if (s.success()){
+					//añadimos el daño de sneak al ataque
+					RolledDamage rd=new RolledDamage(s.getNumber(),s.getDie(),ad.getBaseDamageType(),ad.getInstigator());
+					ad.addOnDamage(rd);
+				}
+			}
 			
 			playHitAnimation(ad,atacante,target.getToken());
 			

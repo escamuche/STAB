@@ -44,7 +44,7 @@ public class SneakAttack extends Applicable{
 
 	
 	@Override
-	protected void ready() {
+	public void ready() {
 		super.ready();
 		if (number<=0)
 			this.setResult(NOTAVAILABLE);
