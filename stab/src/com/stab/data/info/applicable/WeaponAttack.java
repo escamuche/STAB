@@ -39,7 +39,7 @@ public class WeaponAttack extends Attack {
 		onDamage= new ArrayList<Applicable>();
 		onCrit= new ArrayList<Applicable>();
 		baseDamage=0;
-		baseDamageType=Damage.SLASHING_DAMAGE;
+		baseDamageType=Damage.NO_DAMAGE;
 		setCritRange(1);
 		setCritRange(2);
 		this.setTarget(target);

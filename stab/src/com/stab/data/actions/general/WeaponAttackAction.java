@@ -122,15 +122,16 @@ public class WeaponAttackAction extends Action implements TargetAction{
 			
 			//Sneak attack. siempre se hace (inicialmente 0 dados)
 			if (trySneak)
-			if (ar.getExtraParam(DONTSNEAK)!=Boolean.TRUE){
-				SneakAttack s= new SneakAttack(atacante,ad);
-				atacado.apply(s);
-				if (s.success()){
-					//añadimos el daño de sneak al ataque
-					RolledDamage rd=new RolledDamage(s.getNumber(),s.getDie(),ad.getBaseDamageType(),ad.getInstigator());
-					ad.addOnDamage(rd);
+				if (ad.getBaseDamageType()!=0 && ad.getBaseDamage()>0)  //Filtrar sneak attacks para ataques que no hacen daño. ie: touch of fatigue
+					if (ar.getExtraParam(DONTSNEAK)!=Boolean.TRUE){
+					SneakAttack s= new SneakAttack(atacante,ad);
+					atacado.apply(s);
+					if (s.success()){
+						//añadimos el daño de sneak al ataque
+						RolledDamage rd=new RolledDamage(s.getNumber(),s.getDie(),ad.getBaseDamageType(),ad.getInstigator());
+						ad.addOnDamage(rd);
+					}
 				}
-			}
 			
 			playHitAnimation(ad,atacante,target.getToken());
 			
