@@ -1,5 +1,6 @@
 package com.stab.data.actions.general;
 
+import java.awt.Color;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -119,7 +120,7 @@ public class WeaponAttackAction extends Action implements TargetAction{
 		}
 		
 		if (ad.hits()){
-			
+			 boolean isSneak=false;
 			//Sneak attack. siempre se hace (inicialmente 0 dados)
 			if (trySneak)
 				if (ad.getBaseDamageType()!=0 && ad.getBaseDamage()>0)  //Filtrar sneak attacks para ataques que no hacen daño. ie: touch of fatigue
@@ -130,21 +131,14 @@ public class WeaponAttackAction extends Action implements TargetAction{
 						//añadimos el daño de sneak al ataque
 						RolledDamage rd=new RolledDamage(s.getNumber(),s.getDie(),ad.getBaseDamageType(),ad.getInstigator());
 						ad.addOnDamage(rd);
+						isSneak=true;
 					}
 				}
 			
 			playHitAnimation(ad,atacante,target.getToken());
-			
-		
-		}
-		else{
-			playMissAnimation(ad,atacante,target.getToken());
-			
-				
-		}
-	
-		
-		if (ad.hits()) {
+			if (isSneak){
+				atacado.showFloatingText("Sneak Attack", Color.red);
+			}
 			ad.applyEffects();
 			sleep(500);
 			if (ad.isCritical()){
@@ -155,6 +149,12 @@ public class WeaponAttackAction extends Action implements TargetAction{
 			
 			return OK;	
 		}
+		else{
+			playMissAnimation(ad,atacante,target.getToken());
+			
+		}
+	
+		
 		
 		
 		sleep(500);
