@@ -19,7 +19,7 @@ public class PillarArrowsAction extends Action implements SelfAction,AoE{
 	
 	public PillarArrowsAction() {
 		setRange(6);
-		setTargetInfoClass(BaseInfo.class);
+		
 	}
 
 	@Override

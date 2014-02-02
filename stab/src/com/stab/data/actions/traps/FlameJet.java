@@ -18,7 +18,7 @@ public class FlameJet extends Action implements TileAction,AoE{
 	
 	public FlameJet() {
 		setRange(3);
-		setTargetInfoClass(BaseInfo.class);
+		
 	}
 
 	@Override
