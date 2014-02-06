@@ -30,6 +30,7 @@ public class WeaponAttack extends Attack {
 	int baseDamageType;
 	int critRange;
 	int critMultiplier;
+	Damage baseDamageApplicable;
 	
 	public WeaponAttack(BaseInfo instigator,Weapon weapon,BaseInfo target) {
 		super(instigator,target);
@@ -40,6 +41,7 @@ public class WeaponAttack extends Attack {
 		onCrit= new ArrayList<Applicable>();
 		baseDamage=0;
 		baseDamageType=Damage.NO_DAMAGE;
+		baseDamageApplicable=null;
 		setCritRange(1);
 		setCritRange(2);
 		this.setTarget(target);
@@ -63,6 +65,13 @@ public class WeaponAttack extends Attack {
 	
 	public Weapon getWeapon() {
 		return weapon;
+	}
+	
+	public void setBaseDamageApplicable(Damage baseDamageApplicable) {
+		this.baseDamageApplicable = baseDamageApplicable;
+	}
+	public Damage getBaseDamageApplicable() {
+		return baseDamageApplicable;
 	}
 	
 	public void setAnimationIcon(String animationIcon) {
@@ -140,9 +149,23 @@ public class WeaponAttack extends Attack {
 		ArrayList<Applicable> list=new ArrayList<Applicable>();
 		if (getBaseDamage()>0)
 			list.add(createDamage(b));
+		if (this.getBaseDamageApplicable()!=null)
+			list.add(getBaseDamageApplicable());
 		list.addAll(getOnDamage());
 		if (b){
 			list.addAll(getOnCrit());
+			if (this.getBaseDamageApplicable()!=null)
+			for (int f=1;f<getCritMultiplier();f++){
+				Damage dc;
+				try {
+					dc = (Damage)getBaseDamageApplicable().clone();
+					dc.setCritical(true);
+					list.add(dc);
+				} catch (CloneNotSupportedException e) {
+					e.printStackTrace();
+				}
+			
+			}
 		}
 		return collapse(list);
 	}

@@ -105,6 +105,8 @@ public class BasicWeapon extends Weapon {
 		app.setBaseDamage(calcDamage(app));
 		app.setTouch(isTouch());
 	
+		//TODO: cambiar el calculo de daño para que añada la tirada de dado como setBaseDamageApplicable
+		
 		//los traits anidados ya se comprueban automaticamente.
 		
 	}
