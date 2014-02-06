@@ -17,6 +17,8 @@ public class DeadCondition extends UnableToActCondition implements Attends<Heal>
 		
 		this.setName("Dead");
 		this.setPermanent();
+		addTrait(new CannotThreatCondition());
+		addTrait(new UnableToActCondition());
 		
 	}
 

@@ -22,7 +22,7 @@ public class BlindCondition extends Debuff  implements Affects<WeaponAttack> {
 		Modifier ac=new Modifier(StabConstants.PASSIVEDEFENSE, -2);
 		
 		addTrait(ac);
-		
+		addTrait(new CannotThreatCondition());
 		
 	}
 	

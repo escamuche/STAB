@@ -10,7 +10,7 @@ import com.stab.common.utils.PathUtils;
 import com.stab.data.actions.general.WeaponAttackAction;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.data.info.buff.spells.Shield_Buff;
-import com.stab.data.info.debuff.condition.UnableToActCondition;
+import com.stab.data.info.debuff.condition.CannotThreatCondition;
 import com.stab.data.info.equipment.Armor;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.RangedWeapon;
@@ -130,7 +130,7 @@ public class PathfinderUtils {
 	public static boolean threats(Creature c){
 		if (c.isDestroyed())
 			return false;
-		if (c.hasTrait(UnableToActCondition.class))
+		if (c.hasTrait(CannotThreatCondition.class))
 			return false;
 		Weapon w=getWeapon(c);
 		if (w==null)
