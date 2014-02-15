@@ -149,8 +149,11 @@ public class WeaponAttack extends Attack {
 		ArrayList<Applicable> list=new ArrayList<Applicable>();
 		if (getBaseDamage()>0)
 			list.add(createDamage(b));
-		if (this.getBaseDamageApplicable()!=null)
-			list.add(getBaseDamageApplicable());
+		if (this.getBaseDamageApplicable()!=null){
+			RolledDamage d=(RolledDamage)getBaseDamageApplicable();
+		//	System.out.println("Base dice damage: "+d.dice+" "+d.numberOfDice+" "+d.bonus+d.getFinalAmount());
+			list.add(d);
+		}
 		list.addAll(getOnDamage());
 		if (b){
 			list.addAll(getOnCrit());

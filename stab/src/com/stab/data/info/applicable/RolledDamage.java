@@ -23,8 +23,21 @@ public class RolledDamage extends Damage {
 	@Override
 	public Object clone() throws CloneNotSupportedException {
 		RolledDamage d=(RolledDamage) super.clone();
-		d.setAmount(Roll.roll(numberOfDice,dice)+bonus);
+		int i=(Roll.roll(numberOfDice,dice)+bonus);
+		d.amount= i;
+		d.finalAmount=i;
 		return d;
+	}
+	
+	public int getDice() {
+		return dice;
+	}
+	public int getNumberOfDice() {
+		return numberOfDice;
+	}
+	
+	public int getBonus() {
+		return bonus;
 	}
 
 }

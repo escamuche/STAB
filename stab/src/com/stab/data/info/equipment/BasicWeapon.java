@@ -2,6 +2,7 @@ package com.stab.data.info.equipment;
 
 import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
+import com.stab.data.info.applicable.RolledDamage;
 import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.data.info.feat.general.MartialWeaponProficiency_Feat;
 import com.stab.data.info.feat.general.NaturalWeaponProficiency_Feat;
@@ -105,8 +106,10 @@ public class BasicWeapon extends Weapon {
 		app.setBaseDamage(calcDamage(app));
 		app.setTouch(isTouch());
 	
-		//TODO: cambiar el calculo de daño para que añada la tirada de dado como setBaseDamageApplicable
-		
+		// cambiado el calculo de daño para que añada la tirada de dado como setBaseDamageApplicable
+		RolledDamage d=new RolledDamage(this.dices, dice, 0, baseDamageType, app.getInstigator());
+		app.setBaseDamageApplicable(d);
+	//	System.out.println("Creando rolledDamage para weaponattack "+d.getAmount()+"  "+d.getFinalAmount());
 		//los traits anidados ya se comprueban automaticamente.
 		
 	}
@@ -120,7 +123,8 @@ public class BasicWeapon extends Weapon {
 	
 
 	protected int calcDamage(WeaponAttack app){
-		int i=rollDamage();
+	//	int i=rollDamage();
+		int i=0;
 		i=i+getDamageModifier(app);
 		return i;
 	}
@@ -138,9 +142,9 @@ public class BasicWeapon extends Weapon {
 	}
 
 
-	protected int rollDamage() {
+/*	protected int rollDamage() {
 		return Roll.roll(dices, dice);
-	}
+	}/**/
 	
 	protected void setDice(int number,int dice){
 		dices=number;
