@@ -8,10 +8,12 @@ import com.stab.common.Constants;
 import com.stab.data.StabInit;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.model.basic.token.Token;
+import com.stab.model.info.trait.base.Activity;
 import com.stab.model.info.trait.base.Equipment;
 import com.tien.princess.engine.sprite.common.painters.Painter;
 import com.tien.princess.engine.sprite.ui.Icon;
 import com.tien.princess.engine.sprite.ui.Panel;
+import com.tien.princess.engine.sprite.ui.Text;
 
 public class PathfinderTokenTooltip extends DefaultTokenTooltip {
 	
@@ -19,11 +21,16 @@ public class PathfinderTokenTooltip extends DefaultTokenTooltip {
 	
 	Panel equip;
 	Icon left,armor,right;
-
+    Text activity;
 	
 	@Override
 	protected void init() {
 		super.init();
+		
+		activity=new Text();
+		addChild(activity);
+		activity.setDesiredPos(CENTER,NEXT);
+		activity.setDesiredSize(100, CONTENT);
 		equip=new Panel();
 		equip.setDesiredPos(CENTER,NEXT);
 		equip.setDesiredSize(CONTENT, 54);
@@ -52,6 +59,14 @@ public class PathfinderTokenTooltip extends DefaultTokenTooltip {
 		
 		Token t=getToken();
 		String l;
+		
+		activity.setVisible(false);
+		activity.setText("");
+		String act=t.getCustomString(Activity.ACTIVITY);
+		if (act!=null && act.length()>0){
+			activity.setText(act);
+			activity.setVisible(true);
+		}
 		
 		left.setVisible(false);
 		right.setVisible(false);
