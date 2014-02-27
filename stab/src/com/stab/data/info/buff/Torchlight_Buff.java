@@ -1,5 +1,6 @@
 package com.stab.data.info.buff;
 
+import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.DecorToken;
 import com.stab.model.basic.token.LightDecorToken;
 import com.stab.model.info.trait.base.Buff;
@@ -12,7 +13,7 @@ public class Torchlight_Buff extends Buff {
 	
 	
 	@Override
-	protected DecorToken createEffectToken() {
+	protected Sprite createEffectSprite() {
 		LightDecorToken light= new LightDecorToken ();
 		light.setLightIntensity(9);
 		//light.setResource("PARTICLE#brazier");

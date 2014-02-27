@@ -4,7 +4,9 @@ import com.stab.common.Constants;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.abilities.Rage;
 import com.stab.data.info.debuff.Rage_Debuff;
+import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.DecorToken;
+import com.stab.model.extras.VisionMode;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.Buff;
@@ -34,10 +36,12 @@ public class Rage_Buff extends Buff {
 		
 		}
 	
+	VisionMode vm=new VisionMode("RAGE");
 	@Override
 	public void applyTo(BaseInfo baseInfo) {
 		super.applyTo(baseInfo);
 		baseInfo.heal(2, false);  //se mete aqui para q solo cure cuando te aplique el buff
+		baseInfo.addExtra(vm);
 	}
 	
 	@Override
@@ -47,6 +51,7 @@ public class Rage_Buff extends Buff {
 		debuff.setTime(rounds*2); // doble duracion del debuff que los rounds gastados en rabia
 		 if(rounds>0)  //comprueba que no se aplique si no hay rounds de debuff
 			 baseInfo.addTrait(debuff);
+		 baseInfo.removeExtra(vm);
 	}	
 	
 	@Override
@@ -61,7 +66,7 @@ public class Rage_Buff extends Buff {
 	
 	
 	@Override
-	protected DecorToken createEffectToken() {
+	protected Sprite createEffectSprite() {
 		DecorToken t=createEffectToken(null,Constants.AURAS);
 		t.setResource("PARTICLE#generic/redAuraSmall");
 		return t;

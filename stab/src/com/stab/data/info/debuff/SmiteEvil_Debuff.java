@@ -3,6 +3,7 @@ package com.stab.data.info.debuff;
 import com.stab.common.Constants;
 import com.stab.data.StabConstants;
 import com.stab.data.info.applicable.Attack;
+import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.DecorToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
@@ -43,7 +44,7 @@ public class SmiteEvil_Debuff extends Debuff implements Attends<Attack> {
 
 	
 	@Override
-	protected DecorToken createEffectToken() {
+	protected Sprite createEffectSprite() {
 		DecorToken t=createEffectToken(null,Constants.AURAS);
 		t.setResource("PARTICLE#effects/yellowAuraSmall");
 		return t;

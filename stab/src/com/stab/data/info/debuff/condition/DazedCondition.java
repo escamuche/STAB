@@ -5,6 +5,7 @@ import java.awt.Color;
 import com.stab.common.Constants;
 import com.stab.data.animation.GenericSpriteOnAnimation;
 import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
+import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.DecorToken;
 import com.stab.model.info.BaseInfo;
 
@@ -27,7 +28,7 @@ public class DazedCondition extends UnableToActCondition{
 	}
 	
 	@Override
-	protected DecorToken createEffectToken() {
+	protected Sprite createEffectSprite() {
 		DecorToken t=createEffectToken(null,Constants.EFFECTS);
 		return t;
 	}

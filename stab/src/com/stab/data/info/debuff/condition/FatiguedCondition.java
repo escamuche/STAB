@@ -2,6 +2,7 @@ package com.stab.data.info.debuff.condition;
 
 import com.stab.common.Constants;
 import com.stab.data.StabConstants;
+import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.DecorToken;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.Debuff;
@@ -24,7 +25,7 @@ public class FatiguedCondition extends Debuff {
 	}
 	
 	@Override
-	protected DecorToken createEffectToken() {
+	protected Sprite createEffectSprite() {
 		DecorToken t=createEffectToken(null,Constants.EFFECTS);
 		t.setResource("PARTICLE#effects/fatigued");
 		return t;

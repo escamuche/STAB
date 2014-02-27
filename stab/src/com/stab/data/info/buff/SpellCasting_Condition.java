@@ -5,6 +5,7 @@ import com.stab.data.actions.player.spells.SpellAction;
 import com.stab.data.animation.GenericSpriteOnAnimation;
 import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
 import com.stab.model.action.Action;
+import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.DecorToken;
 import com.stab.model.info.trait.base.Buff;
 
@@ -24,7 +25,7 @@ public class SpellCasting_Condition extends Buff {
 	}
 	
 	@Override
-	protected DecorToken createEffectToken() {
+	protected Sprite createEffectSprite() {
 		DecorToken t=createEffectToken(null,Constants.EFFECTS);
 		return t;
 	}

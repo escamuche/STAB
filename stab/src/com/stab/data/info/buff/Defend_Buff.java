@@ -1,6 +1,7 @@
 package com.stab.data.info.buff;
 
 import com.stab.common.Constants;
+import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.DecorToken;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.Buff;
@@ -22,7 +23,7 @@ public class Defend_Buff extends Buff {
 	}
 	
 	@Override
-	protected DecorToken createEffectToken() {
+	protected Sprite createEffectSprite() {
 		DecorToken t=createEffectToken("defending",Constants.EFFECTS);
 	
 		return t;
