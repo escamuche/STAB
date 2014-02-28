@@ -224,6 +224,7 @@ import com.stab.data.info.monster.bestiary.SkeletoParlanchin;
 import com.stab.data.info.monster.bestiary.Skeleton;
 import com.stab.data.info.monster.bestiary.Wolf;
 import com.stab.data.info.monster.bestiary.Zombie;
+import com.stab.data.info.other.HasLockInfo;
 import com.stab.data.info.player.BarbarianCharacter;
 import com.stab.data.info.player.BardCharacter;
 import com.stab.data.info.player.ClericCharacter;
@@ -395,6 +396,7 @@ public class StabInit {
 		of.setMapping(CDoor.class);
 		of.setMapping(SkillNote.class);
 		of.setMapping(SkillExtraText.class);
+		of.setMapping(HasLockInfo.class);
 		
 		//criaturas
 		of.setMapping(Zombie.class);
