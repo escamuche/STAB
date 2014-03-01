@@ -1,6 +1,7 @@
 package com.stab.data.info.props;
 
 import com.stab.model.Injected;
+import com.stab.model.basic.token.Token;
 import com.stab.model.extras.OnSelectText;
 import com.stab.model.info.base.Note;
 
@@ -19,7 +20,7 @@ public class SkillNote extends Note {
 	@Override
 	public void init() {
 		super.init();
-		setSelectable(false);
+		setSelectable(Token.NOT_SELECTABLE);
 	}
 	
 	protected OnSelectText createExtra() {

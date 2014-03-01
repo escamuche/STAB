@@ -1,6 +1,7 @@
 package com.stab.data.adventure.everflame;
 
 import com.stab.common.Constants;
+import com.stab.model.basic.token.Token;
 import com.stab.model.extras.ContextualOption;
 import com.stab.model.info.base.Decoration;
 
@@ -13,7 +14,7 @@ public class ClimbWaypoint extends Decoration {
 	public void init() {
 		super.init();
 		setResource("waypoint");
-		setSelectable(true);
+		setSelectable(Token.SELECTABLE);
 		setDepth(Constants.FLOOR);
 		//Añadir contextualAction
 		ContextualOption op= new ContextualOption();
