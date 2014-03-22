@@ -27,4 +27,5 @@ public class HasLockInfo extends InfoModifier{
 		((BaseInfo)i).addTrait(new Locked(dc));
 		
 	}
+	
 }
