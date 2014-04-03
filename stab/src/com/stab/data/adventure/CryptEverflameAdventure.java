@@ -306,9 +306,10 @@ public class CryptEverflameAdventure extends Adventure{
 		DefaultTileMapScene mc1=new DefaultTileMapScene();
 		mc1.createContents();
 		mc1.createMap(15,15);
+		mc1.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
 		mc1.loadTiled("orcs", 0, 0);
 		mc1.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
-		mc1.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
+		
 		mc1.setTag("ORCS");
 		
 		AllMonstersDeadRule r=new AllMonstersDeadRule();
@@ -715,9 +716,10 @@ public class CryptEverflameAdventure extends Adventure{
 				DefaultTileMapScene mc2=new DefaultTileMapScene();
 				mc2.createContents();
 				mc2.createMap(12,12);
+				mc2.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
 				mc2.loadTiled("camp1", 0, 0);
 				mc2.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
-				mc2.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
+				
 				mc2.setTag("CAMP1");
 				
 				AllMonstersDeadRule rm2=new AllMonstersDeadRule();
@@ -733,9 +735,10 @@ public class CryptEverflameAdventure extends Adventure{
 				DefaultTileMapScene mc3=new DefaultTileMapScene();
 				mc3.createContents();
 				mc3.createMap(12,12);
+				mc3.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
 				mc3.loadTiled("camp2", 0, 0);
 				mc3.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
-				mc3.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
+			
 				mc3.setTag("CAMP2");
 				
 				AllMonstersDeadRule rm4=new AllMonstersDeadRule();
@@ -1262,9 +1265,10 @@ public class CryptEverflameAdventure extends Adventure{
 				DefaultTileMapScene mc4=new DefaultTileMapScene();
 				mc4.createContents();
 				mc4.createMap(32,24);
+				mc4.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
 				mc4.loadTiled("upper", 0, 0);
 				mc4.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
-				mc4.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
+			
 				mc4.setTag("UPPER");
 				
 				/*AllMonstersDeadRule r4=new AllMonstersDeadRule();
@@ -1311,9 +1315,10 @@ public class CryptEverflameAdventure extends Adventure{
 				DefaultTileMapScene mc5=new DefaultTileMapScene();
 				mc5.createContents();
 				mc5.createMap(30,24);
+				mc5.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
 				mc5.loadTiled("lower", 0, 0);
 				mc5.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
-				mc5.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
+			
 				mc5.setTag("LOWER");
 				
 				/*AllMonstersDeadRule r4=new AllMonstersDeadRule();
@@ -1347,9 +1352,10 @@ public class CryptEverflameAdventure extends Adventure{
 				DefaultTileMapScene ropes=new DefaultTileMapScene();
 				ropes.createContents();
 				ropes.createMap(16,14);
+				ropes.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
 				ropes.loadTiled("cliff", 0, 0);
 				ropes.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
-				ropes.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
+		
 				ropes.setTag("ROPECLIFFS");
 				
 				//Regla para hacer visibles las cuerdas si la usaron

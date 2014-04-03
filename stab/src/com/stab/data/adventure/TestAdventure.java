@@ -49,9 +49,10 @@ public class TestAdventure extends Adventure{
 		DefaultTileMapScene ms=new DefaultTileMapScene();
 		ms.createContents();
 		ms.createMap(24,16);
+		ms.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
 		ms.loadTiled("map2", 0, 0);
 		ms.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
-		ms.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
+		
 		ms.setTag("BATTLE");
 		ms.setWaitsForAll(true);
 		

@@ -101,9 +101,10 @@ public class Zombies extends Adventure{
 		//ms.setTiles(DefaultTileMapScene.DEFAULT,"newtiles");
 		//ms.setProperties(DefaultTileMapScene.DEFAULT, DefaultBlockData.ID);
 		ms.createMap(64,64);
+		ms.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
 		ms.loadTiled("big", 0, 0);
 		ms.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
-		ms.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
+		
 		ms.setTag("BATTLE");
 		
 		ConditionalMusic m=new ConditionalMusic(ms);
