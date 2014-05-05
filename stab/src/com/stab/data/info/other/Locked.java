@@ -1,5 +1,7 @@
 package com.stab.data.info.other;
 
+import com.stab.data.animation.GenericSpriteOnAnimation;
+import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
 import com.stab.model.basic.Sprite;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
@@ -38,4 +40,5 @@ public class Locked extends VisualEffect implements Attends<Interaction>{
 		e.setHideCheck(-1); //evita que se detecte por search
 		return e;
 	}
+	
 }
