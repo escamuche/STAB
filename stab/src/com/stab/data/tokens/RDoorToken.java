@@ -1,9 +1,10 @@
 package com.stab.data.tokens;
 
 import com.stab.common.map.BytePropertiesMapData;
+import com.stab.model.Core;
 import com.stab.model.basic.token.DoorToken;
 import com.stab.model.info.base.Door;
-
+@Core
 public class RDoorToken extends DoorToken{
 	
 	public static final String ID="RDOOR_TOKEN";
