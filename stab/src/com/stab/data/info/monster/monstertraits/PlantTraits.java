@@ -6,7 +6,7 @@ import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.AttributeBasedModifier;
 import com.stab.model.info.trait.CompoundTrait;
 
-public class PlantTraits extends CompoundTrait {
+public class PlantTraits extends RaceTraits {
 	
 	public PlantTraits() {
 	

@@ -6,7 +6,7 @@ import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.AttributeBasedModifier;
 import com.stab.model.info.trait.CompoundTrait;
 
-public class FeyTraits extends CompoundTrait {
+public class FeyTraits extends RaceTraits {
 	
 	public FeyTraits() {
 	

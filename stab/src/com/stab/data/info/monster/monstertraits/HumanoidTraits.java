@@ -6,7 +6,7 @@ import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.AttributeBasedModifier;
 import com.stab.model.info.trait.CompoundTrait;
 
-public class HumanoidTraits extends CompoundTrait {
+public class HumanoidTraits extends RaceTraits {
 	
 	public static final String ID="HUMANOIDTRAITS";
 	

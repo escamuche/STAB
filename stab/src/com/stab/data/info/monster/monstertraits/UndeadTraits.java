@@ -9,7 +9,7 @@ import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.AttributeBasedModifier;
 import com.stab.model.info.trait.CompoundTrait;
 
-public class UndeadTraits extends CompoundTrait {
+public class UndeadTraits extends RaceTraits {
 	
 	public static final String ID="UNDEADTRAITS";
 	
