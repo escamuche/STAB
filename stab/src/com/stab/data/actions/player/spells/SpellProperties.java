@@ -12,7 +12,7 @@ public interface SpellProperties extends HasDescriptor{
 	public static final int TOUCH=1; //Toque
 	public static final int RAY=2;   //rayo (tirada de ranged touch)
 	public static final int MISSILE=3;//proyectil (tirada de ranged touch) (distinto para los weapon focus)
-	public static final int TARGET=4; //normal, LoE
+	public static final int SELECTED=4; //normal, LoE
 	public static final int SIGHT=5; //LoS
 	public static final int POINT=6; //Basta con que este en rango, no se necesita linea (raro, no creo que haya en pathfinder)
 	

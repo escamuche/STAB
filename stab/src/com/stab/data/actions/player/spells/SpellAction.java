@@ -197,7 +197,7 @@ public abstract class SpellAction extends Action implements SpellProperties{
 						
 			case MISSILE:
 			case RAY:
-			case TARGET:
+			case SELECTED:
 						return LOS;
 			case SIGHT:
 						return IN_SIGHT;

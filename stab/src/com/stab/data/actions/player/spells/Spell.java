@@ -18,7 +18,7 @@ public class Spell implements SpellProperties {
 	String casterClass;
 	String save=null;
 	
-	int medium=TARGET;
+	int medium=SELECTED;
 	
 	int range=0;
 	int cost=0;
