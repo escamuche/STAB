@@ -78,7 +78,7 @@ public class AcidFlask extends PathfinderAction {
 	}
 	
 	@Override
-	protected void playExecuteActionAnimation(Info caster, Info target,	Point pos, ActionRequest ar) {
+	public void playExecuteActionAnimation(Info caster, Info target,	Point pos, ActionRequest ar) {
 		super.playExecuteActionAnimation(caster, target, pos, ar);
 		
 	//	target.playAnimationOnTile(BasicSparkAnimation.ID,"PARTICLE#spells/swirl");

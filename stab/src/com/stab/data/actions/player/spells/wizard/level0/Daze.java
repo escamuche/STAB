@@ -43,7 +43,7 @@ protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 	
 	
 	@Override
-	protected void playExecuteActionAnimation(Info caster, Info target,
+	public void playExecuteActionAnimation(Info caster, Info target,
 			Point pos,ActionRequest ar) {
 		super.playExecuteActionAnimation(caster, target, pos, ar);
 		target.playAnimation(BasicSparkAnimation.ID,"PARTICLE#spells/swirl");

@@ -103,7 +103,7 @@ public class ChannelPossitiveEnergyAction extends PathfinderAction   {
 	}
 
 	@Override
-	protected void playExecuteActionAnimation(Info caster, Info target,	Point pos,ActionRequest ar) {
+	public void playExecuteActionAnimation(Info caster, Info target,	Point pos,ActionRequest ar) {
 		super.playExecuteActionAnimation(caster, target, pos, ar);
 		caster.playSound("effects/HolyBolt");
 		caster.playAnimation(VisualEffect.SPARK_ANIMATION,"PARTICLE#spells/holyNova");

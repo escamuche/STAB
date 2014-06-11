@@ -47,7 +47,7 @@ public class Light extends SpellOnTarget{
 	}
 	
 	@Override
-	protected void playExecuteActionAnimation(Info caster, Info target,
+	public void playExecuteActionAnimation(Info caster, Info target,
 			Point pos,ActionRequest ar) {
 		super.playExecuteActionAnimation(caster, target, pos, ar);
 		target.playAnimation(BasicSparkAnimation.ID,"PARTICLE#spells/flash");

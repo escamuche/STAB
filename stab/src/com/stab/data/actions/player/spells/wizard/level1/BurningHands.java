@@ -32,7 +32,7 @@ public class BurningHands extends SpellOnTile   {
 
 
 	@Override
-	protected void playExecuteActionAnimation(Info caster, Info target,
+	public void playExecuteActionAnimation(Info caster, Info target,
 			Point pos,ActionRequest ar) {
 		super.playExecuteActionAnimation(caster, target, pos, ar);
 		double a=getAngle(caster,target,pos);
