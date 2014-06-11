@@ -1,7 +1,6 @@
 package com.stab.data.info.buff;
 
 import com.stab.model.basic.Sprite;
-import com.stab.model.basic.token.DecorToken;
 import com.stab.model.basic.token.LightDecorToken;
 import com.stab.model.info.trait.base.Buff;
 

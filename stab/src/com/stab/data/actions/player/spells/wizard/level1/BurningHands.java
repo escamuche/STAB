@@ -13,12 +13,12 @@ import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.base.VisualEffect;
 import com.stab.model.request.basic.ActionRequest;
 
-public class BurningHands extends SpellOnTile implements AoE {
+public class BurningHands extends SpellOnTile   {
 
 	public static final String ID="BURNINGHANDS";
 	
 	public BurningHands() {
-	     
+		setAoE(true);
 		 setLevel(1);
 		 setCasterClass(StabConstants.WIZARDCASTER);
 		 setRange(10);

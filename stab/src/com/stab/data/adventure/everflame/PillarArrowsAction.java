@@ -7,19 +7,19 @@ import com.stab.data.info.applicable.Attack;
 import com.stab.data.info.applicable.RolledDamage;
 import com.stab.model.action.Action;
 import com.stab.model.action.AoE;
-import com.stab.model.action.SelfAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.request.basic.ActionRequest;
 
-public class PillarArrowsAction extends Action implements SelfAction,AoE{
+public class PillarArrowsAction extends Action  {
 
 	public static final String ID="PILLARARROWS_ACTION";
 	
 	public PillarArrowsAction() {
 		setRange(6);
-		
+		setAoE(true);
+		setTargetMode(SELF);
 	}
 
 	@Override

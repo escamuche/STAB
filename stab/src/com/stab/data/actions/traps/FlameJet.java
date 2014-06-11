@@ -6,19 +6,19 @@ import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.info.applicable.RolledDamage;
 import com.stab.model.action.Action;
 import com.stab.model.action.AoE;
-import com.stab.model.action.TileAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.request.basic.ActionRequest;
 
-public class FlameJet extends Action implements TileAction,AoE{
+public class FlameJet extends Action  {
 
 	public static final String ID="FLAMEJET_ACTION";
 	
 	public FlameJet() {
 		setRange(3);
-		
+		setAoE(true);
+		setTargetMode(Action.TILE);
 	}
 
 	@Override

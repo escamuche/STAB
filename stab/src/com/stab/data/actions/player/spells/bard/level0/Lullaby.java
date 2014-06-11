@@ -9,12 +9,12 @@ import com.stab.model.action.AoE;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 
-public class Lullaby extends SpellOnTile implements AoE{
+public class Lullaby extends SpellOnTile  {
 
 	public static final String ID="LULLABY";
 	
 	public Lullaby() {
-	     
+		setAoE(true);
 		 setLevel(0);
 		 setCasterClass(StabConstants.BARDCASTER);
 	     setResource("actions/lullaby");

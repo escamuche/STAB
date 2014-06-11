@@ -12,7 +12,6 @@ import com.stab.data.info.monster.monstertraits.UndeadTraits;
 import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.action.Action;
 import com.stab.model.action.AoE;
-import com.stab.model.action.SelfAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
@@ -20,7 +19,7 @@ import com.stab.model.info.applicable.base.Heal;
 import com.stab.model.info.trait.base.VisualEffect;
 import com.stab.model.request.basic.ActionRequest;
 
-public class ChannelPossitiveEnergyAction extends PathfinderAction implements SelfAction, AoE{
+public class ChannelPossitiveEnergyAction extends PathfinderAction   {
 	
 	
 	public static final String ID="CHANNELPOSITIVE_ACTION";
@@ -32,6 +31,8 @@ public class ChannelPossitiveEnergyAction extends PathfinderAction implements Se
 	}
 
 	public ChannelPossitiveEnergyAction() {
+		setAoE(true);
+		setTargetMode(SELF);
 		this.setName("Channel Positive energy");
 		this.setResource("actions/curelightwounds");
 		this.setRequiredResource(RESOURCE_ID, 1);

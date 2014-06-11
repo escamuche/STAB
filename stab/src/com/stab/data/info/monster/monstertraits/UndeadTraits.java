@@ -7,7 +7,6 @@ import com.stab.data.info.feat.general.SimpleWeaponProficiency_Feat;
 import com.stab.data.info.traits.DescriptorImmunity;
 import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.AttributeBasedModifier;
-import com.stab.model.info.trait.CompoundTrait;
 
 public class UndeadTraits extends RaceTraits {
 	

@@ -6,12 +6,12 @@ import com.stab.model.action.Action;
 import com.stab.model.action.AoE;
 import com.stab.model.info.Info;
 
-public class DancingLights extends SpellOnTile implements AoE {
+public class DancingLights extends SpellOnTile   {
 
 	public static final String ID="DANCINGLIGHTS";
 	
 	public DancingLights() {
-	     
+		setAoE(true);
 		 setLevel(0);
 		 setCasterClass(StabConstants.WIZARDCASTER);
 		 setRange(CLOSE);

@@ -1,7 +1,6 @@
 package com.stab.data.info.player.abilities;
 
 import com.stab.data.info.applicable.SneakAttack;
-import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Affects;

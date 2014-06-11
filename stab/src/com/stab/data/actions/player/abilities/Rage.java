@@ -6,18 +6,17 @@ import com.stab.data.StabConstants;
 import com.stab.data.info.buff.Rage_Buff;
 import com.stab.data.info.debuff.condition.FatiguedCondition;
 import com.stab.model.action.Action;
-import com.stab.model.action.SelfAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.request.basic.ActionRequest;
 
-public class Rage extends Action implements SelfAction{
+public class Rage extends Action  {
 	
 	public static final String ID="RAGE";
 	public static final String RESOURCE_ID="RAGE";
 	
 	public Rage() {
-     
+		setTargetMode(SELF);
      setResource("actions/rage");
      setName("Rage");
      this.setEffectType(BUFF);

@@ -5,17 +5,17 @@ import java.awt.Point;
 import com.stab.data.actions.PathfinderAction;
 import com.stab.data.info.buff.Defend_Buff;
 import com.stab.model.action.Action;
-import com.stab.model.action.SelfAction;
 import com.stab.model.events.common.ConsoleMessage;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.request.basic.ActionRequest;
 
-public class DefendAction extends PathfinderAction implements SelfAction {
+public class DefendAction extends PathfinderAction   {
 	
 	public static final String ID="DEFEND";
 	
 	public DefendAction() {
+		setTargetMode(SELF);
 		this.setName("Defend");
 		this.setResource("actions/ability_warrior_defensivestance");
 		this.setEffectType(BUFF);

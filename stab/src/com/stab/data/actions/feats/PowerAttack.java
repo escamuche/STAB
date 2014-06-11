@@ -6,13 +6,12 @@ import java.awt.Point;
 import com.stab.data.StabConstants;
 import com.stab.data.info.buff.PowerAttack_Buff;
 import com.stab.model.action.Action;
-import com.stab.model.action.SelfAction;
 import com.stab.model.action.StanceAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.request.basic.ActionRequest;
 
-public class PowerAttack extends Action implements SelfAction, StanceAction {
+public class PowerAttack extends Action implements  StanceAction {
 	
 	public static final String ID="POWERATTACK";
 	
@@ -22,6 +21,7 @@ public class PowerAttack extends Action implements SelfAction, StanceAction {
 		this.setName("Power");
 		this.setResource("actions/ability_backstab");
 		this.setUsableByAI(false);
+		setTargetMode(SELF);
 	
 	}
 	

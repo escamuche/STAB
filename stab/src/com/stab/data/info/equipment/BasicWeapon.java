@@ -1,6 +1,5 @@
 package com.stab.data.info.equipment;
 
-import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.data.info.applicable.RolledDamage;
 import com.stab.data.info.applicable.WeaponAttack;

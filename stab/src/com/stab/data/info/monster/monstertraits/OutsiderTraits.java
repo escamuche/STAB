@@ -9,7 +9,6 @@ import com.stab.data.info.feat.general.ShieldProficiency_Feat;
 import com.stab.data.info.feat.general.SimpleWeaponProficiency_Feat;
 import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.AttributeBasedModifier;
-import com.stab.model.info.trait.CompoundTrait;
 
 public class OutsiderTraits extends RaceTraits {
 	

@@ -5,18 +5,17 @@ import java.awt.Point;
 import com.stab.data.StabConstants;
 import com.stab.data.info.buff.NobilityDomain_Buff;
 import com.stab.model.action.Action;
-import com.stab.model.action.TargetAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.request.basic.ActionRequest;
 
-public class NobilityDomain extends Action implements TargetAction{
+public class NobilityDomain extends Action  {
 	
 	public static final String ID="NOBILITYDOMAIN";
 	public static final String RESOURCE_ID="NOBILITYDOMAIN";
 	
 	public NobilityDomain() {
-     
+	setTargetMode(Action.TARGET);
      setResource("actions/nobility");
      setName("Nobility Domain");
      this.setEffectType(BUFF);

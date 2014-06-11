@@ -4,7 +4,6 @@ import com.stab.data.StabConstants;
 import com.stab.data.info.feat.general.NaturalWeaponProficiency_Feat;
 import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.AttributeBasedModifier;
-import com.stab.model.info.trait.CompoundTrait;
 
 public class MagicalBeastTraits extends RaceTraits {
 	

@@ -6,14 +6,14 @@ import com.stab.data.actions.PathfinderAction;
 import com.stab.data.animation.GenericProyectileAnimation;
 import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
 import com.stab.data.info.applicable.RolledDamage;
+import com.stab.model.action.Action;
 import com.stab.model.action.AoE;
-import com.stab.model.action.TileAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.request.basic.ActionRequest;
 
-public class AcidFlask extends PathfinderAction implements TileAction, AoE{
+public class AcidFlask extends PathfinderAction {
 	
 	
 	public static final String ID="ACIDFLASK_ACTION";
@@ -21,6 +21,8 @@ public class AcidFlask extends PathfinderAction implements TileAction, AoE{
 	
 	public AcidFlask() {
 		setEffectType(DAMAGE);
+		setTargetMode(Action.TILE);
+		setAoE(true);
 		this.setName("Acid flask");
 		this.setResource("actions/acidsplash");
 		this.setRange(5);

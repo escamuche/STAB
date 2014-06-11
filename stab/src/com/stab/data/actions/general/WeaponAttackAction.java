@@ -25,7 +25,6 @@ import com.stab.data.info.equipment.RangedWeapon;
 import com.stab.data.info.equipment.Weapon;
 import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.action.Action;
-import com.stab.model.action.TargetAction;
 import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.animation.BaseSpeech;
 import com.stab.model.basic.scenes.MapLogic;
@@ -36,7 +35,7 @@ import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.base.Equipment;
 import com.stab.model.request.basic.ActionRequest;
 
-public class WeaponAttackAction extends Action implements TargetAction{
+public class WeaponAttackAction extends Action  {
 	
 	public static final String ID="MELEE_STRIKE_ACTION";
 	private static final String DONTSNEAK = "DONTSNEAK";
@@ -316,7 +315,7 @@ public class WeaponAttackAction extends Action implements TargetAction{
 	
 	public WeaponAttackAction() {
      setRange(ADYACENT);
-     
+     setTargetMode(Action.TARGET);
      setResource("actions/ability_steelmelee");
      setName("Attack");
      this.setEffectType(DAMAGE);
