@@ -2,6 +2,7 @@ package com.stab;
 
 import com.stab.client.StabClient;
 import com.stab.data.StabInit;
+import com.stab.fw.Logs;
 
 public class NewClient extends  StabClient {
 
@@ -12,7 +13,6 @@ public class NewClient extends  StabClient {
 
 
 	public static void main(String[] args) {
-	
 		
 		//Component.DEBUG=true;
 		

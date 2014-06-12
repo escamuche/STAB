@@ -14,6 +14,7 @@ public class Locked extends VisualEffect implements Attends<Interaction>{
 	
 	public Locked(int dc) {
 		this.dc=dc;
+		this.setVisible(false);
 	}
 
 	@Override
@@ -36,6 +37,7 @@ public class Locked extends VisualEffect implements Attends<Interaction>{
 		e.setResource("locked");
 		e.setHidden();
 		e.setHideCheck(-1); //evita que se detecte por search
+	//	e.setHideCheck(5);
 		return e;
 	}
 	
