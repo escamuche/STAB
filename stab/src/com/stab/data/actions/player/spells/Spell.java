@@ -103,7 +103,9 @@ public class Spell implements SpellProperties {
 	@Override
 	public int getCasterLevel(BaseInfo caster) {
 	//	System.out.println("Caster level is "+caster.getAttributeValue(getCasterClass())+" in  "+getCasterClass());
-		return caster.getValue(getCasterClass());
+		int v= caster.getValue(getCasterClass());
+		
+		return v;
 	}
 
 	@Override

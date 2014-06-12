@@ -22,10 +22,13 @@ public class SpellCasting extends Applicable {
 	
 	Spell spell;
 	
+	int clModifier; //Aun no funciona / hay que plantearlo de otra manera
+	
 	public SpellCasting(Info instigator,Spell spell) {
 		super(instigator);
 		this.spell=spell;
 		setResult(SUCCESS);
+		clModifier=0;
 	}
 	
 	@Override
@@ -72,4 +75,16 @@ public class SpellCasting extends Applicable {
 		return spell.isSubjectToArcaneArmorFailure();
 	}
 	
+	
+	public void setClModifier(int clModifier) {
+		this.clModifier = clModifier;
+	}
+	
+	public int getClModifier() {
+		return clModifier;
+	}
+	
+	public void modifyCl(int amount){
+		clModifier+=amount;
+	}
 }
