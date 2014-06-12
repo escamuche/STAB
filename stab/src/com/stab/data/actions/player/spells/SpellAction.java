@@ -269,7 +269,7 @@ public abstract class SpellAction extends Action implements SpellProperties{
 
 	public int spellAffect(BaseInfo caster, BaseInfo target, Point point, boolean critical,ActionRequest ar){
 		
-		
+		if (this.isHarmfulFor(caster, target)) //solo si es dañino (si, ya se que en las reglas no es asi, pero por simplificar)
 		//primero, spell resistance
 		if (spell.isAffectedBySR())
 			if (target.getValue(StabConstants.SPELLRESISTANCE)>0){
@@ -283,8 +283,8 @@ public abstract class SpellAction extends Action implements SpellProperties{
 				 }
 			}
 		
-		//segundo, resolver tirada de salvacion
-		
+		//segundo, resolver tirada de salvacion (solo si es dañino)
+		if (this.isHarmfulFor(caster, target))
 		if (spell.getSave()!=null){
 			SavingThrowEffect st=new SavingThrowEffect(caster, spell.getSave(), target);
 			st.setTargetNumber(spell.getDC(caster));
