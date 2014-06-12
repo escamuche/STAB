@@ -23,8 +23,16 @@ public class ClimbAction extends ContextualAction {
 		setResource("actions/tumble");
 		setDescription("Intentar trepar hasta el punto indicado, con riesgo de tropezar y caer al vacío.");
 		setTargetTokenClass(DecorToken.class);
+		setLosType(IN_RANGE);
+		setTargetInfoClass(ClimbWaypoint.class);
 	}
 
+	@Override
+	public int execute(Info origin, Info target, Point point, ActionRequest ar) {
+		// TODO Auto-generated method stub
+		return super.execute(origin, target, point, ar);
+	}
+	
 	@Override
 	public int affect(Info instigator, Info target, Point point, ActionRequest ar) {
 
