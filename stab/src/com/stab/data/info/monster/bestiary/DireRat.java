@@ -21,6 +21,7 @@ public class DireRat extends Animal {
 		
 		setResource("direrat");
 		setText("Dire Rat");
+		
 	
 		this.setAttribute(StabConstants.XP,135);
 		this.setAttribute(StabConstants.DEXTERITY,17);

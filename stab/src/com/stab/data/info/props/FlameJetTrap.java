@@ -15,7 +15,8 @@ public class FlameJetTrap extends Switch implements RemoteActivated{
 	 public void init() {
 		super.init();
 		setResource("fireslits");
-		
+		setText("");
+		setDescription("Some slits on the side, with scorched markings");
 	};
 	
 	public void channelOn() {

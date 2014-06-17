@@ -9,7 +9,7 @@ public class Dragon extends Monster{
 		super.init();
 		
 		this.addTrait(new DragonTraits());
-		
+		this.setDescription("A dragon, the most magnificent of creatures");
 	}
 
 }

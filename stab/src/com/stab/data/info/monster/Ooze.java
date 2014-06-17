@@ -9,7 +9,7 @@ public class Ooze extends Monster{
 		super.init();
 		
 		this.addTrait(new OozeTraits());
-		
+		this.setDescription("An oozing fluid that moves");
 	}
 
 }

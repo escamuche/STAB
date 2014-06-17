@@ -1,6 +1,8 @@
 package com.stab.data.info.extra;
 
 import com.stab.model.Entity;
+import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
 public class DisguisesAsExtra extends SkillCheckExtra {
 
@@ -54,7 +56,41 @@ public class DisguisesAsExtra extends SkillCheckExtra {
 	@Override
 	public void setOwner(Entity owner) {
 		super.setOwner(owner);
-		
+		if (!(owner instanceof BaseInfo))
+			return;
+		BaseInfo i=(BaseInfo)owner;
+		if (this.name!=null){
+			String tmp=this.name;
+			this.name=i.getText();
+			i.setText(tmp);
+		}
+		if (this.resource!=null){
+			String tmp=this.resource;
+			this.resource=i.getResource();
+			i.setResource(tmp);
+		}
+		if (this.description!=null){
+			String tmp=this.description;
+			this.description=i.getDescription();
+			i.setDescription(tmp);
+		}
 	}
 	
+	
+	@Override
+	public void skillCheckPassed(BaseInfo instigator, Info i) {
+		super.skillCheckPassed(instigator, i);
+		if (this.name!=null){
+			String tmp=this.name;
+			i.setText(tmp);
+		}
+		if (this.resource!=null){
+			String tmp=this.resource;
+			i.setResource(tmp);
+		}
+		if (this.description!=null){
+			String tmp=this.description;
+			i.setDescription(tmp);
+		}
+	}
 }

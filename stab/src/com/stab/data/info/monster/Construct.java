@@ -8,7 +8,7 @@ public class Construct extends Monster{
 		super.init();
 		
 		this.addTrait(new ConstructTraits());
-		
+		this.setDescription("An animated object brought to life with magic");
 	}
 
 }

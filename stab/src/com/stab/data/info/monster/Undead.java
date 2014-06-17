@@ -12,6 +12,7 @@ public class Undead extends Monster{
 		this.setFaction(DEFAULT_UNDEAD_FACTION);
 		this.addTrait(new UndeadTraits());
 		this.setBloodeffEct("PARTICLE#damage/greenblood");
+		this.setDescription("The dead walk! beware!");
 	}
 
 }

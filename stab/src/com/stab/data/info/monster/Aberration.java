@@ -8,7 +8,7 @@ public class Aberration extends Monster{
 		super.init();
 		
 		this.addTrait(new AberrationTraits());
-		
+		this.setDescription("Some foul creature, its nature unknown");
 	}
 
 }

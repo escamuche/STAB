@@ -12,9 +12,10 @@ public class Barrel extends Obstacle {
 		setMaxHp(5);
 		setMaxEp(0);
 		healFully();
-		setResource("Barril");
-		setDestroyedResource("BarrilRoto");
-		setText("");
+		setResource("decor/barrel");
+		setDestroyedResource("decor/BarrilRoto");
+		setText("Barrel");
+		setDescription("A heavy wooden barrel, with unknown contents.");
 	}
 	
 

@@ -8,7 +8,7 @@ public class Fey extends Monster{
 	public void init() {
 		super.init();
 		this.addTrait(new FeyTraits());
-		
+		this.setDescription("A faerie from the primal world");
 	}
 
 }

@@ -12,6 +12,8 @@ public static final String ID="CDOOR";
 		setMaxEp(0);
 		healFully();
 		setResource("cdoorClosed");
+	//	setText("Door");
+		setDescription("A wooden door");
 	}
 	
 	

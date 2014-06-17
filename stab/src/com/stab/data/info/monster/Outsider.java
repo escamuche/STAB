@@ -9,7 +9,7 @@ public class Outsider extends Monster{
 		super.init();
 		
 		this.addTrait(new OutsiderTraits());
-		
+		this.setDescription("An alien, not from this plane");
 	}
 
 }

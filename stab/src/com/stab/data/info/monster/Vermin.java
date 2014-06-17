@@ -11,6 +11,7 @@ public class Vermin extends Monster{
 		super.init();
 		this.addTrait(new VerminTraits());
 		setFaction(DEFAULT_VERMIN_FACTION);
+		this.setDescription("An insectoid horror");
 	}
 
 }

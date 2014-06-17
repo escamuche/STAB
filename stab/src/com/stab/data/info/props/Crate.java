@@ -13,7 +13,8 @@ public class Crate extends Obstacle {
 		setMaxEp(0);
 		healFully();
 		setResource("crate");
-		setText("");
+		setText("Crate");
+		setDescription("A wooden crate of unimportant contents");
 		setDestroyedResource("brokenCrate");
 	}
 }

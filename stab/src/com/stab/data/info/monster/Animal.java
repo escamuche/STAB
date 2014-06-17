@@ -7,7 +7,7 @@ public class Animal extends Monster{
 	public void init() {
 		super.init();
 		this.addTrait(new AnimalTraits());
-		
+		this.setDescription("A wild animal");
 	}
 
 }

@@ -17,7 +17,8 @@ public class Dummy extends Obstacle {
 		healFully();
 		setResource("dummy");
 		setDestroyedResource("BarrilRoto");
-		setText("");
+		setText("Target dummy");
+		setDescription("A training dummy");
 		this.addTrait(new Modifier(StabConstants.ARMORDEFENSE,StabConstants.ARMORMOD,2));
 	
 	//	this.setActionSet(new WarriorActionSet());

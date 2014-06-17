@@ -15,6 +15,7 @@ public class TriggerPlate extends PressurePlate{
 		// TODO Auto-generated method stub
 		super.init();
 		setResource("pressureOff");
+		setDescription("A section of the ground that appears to be some trigger to a mechanism");
 	}
 	
 	

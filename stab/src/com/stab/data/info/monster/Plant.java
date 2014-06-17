@@ -9,7 +9,7 @@ public class Plant extends Monster{
 		super.init();
 		
 		this.addTrait(new PlantTraits());
-		
+		this.setDescription("Some unnatural plant");
 	}
 
 }

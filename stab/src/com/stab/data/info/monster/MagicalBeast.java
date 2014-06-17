@@ -8,7 +8,7 @@ public class MagicalBeast extends Monster{
 	public void init() {
 		super.init();
 		this.addTrait(new MagicalBeastTraits());
-		
+		this.setDescription("A beast, twisted by magic");
 	}
 
 }
