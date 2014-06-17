@@ -1,6 +1,8 @@
 package com.stab.data.adventure;
 
 import com.stab.adventure.Adventure;
+import com.stab.data.scene.DefaultStabMapScene;
+import com.stab.data.scene.QuestTracker;
 import com.stab.data.utils.StabBlockData;
 import com.stab.model.basic.scenes.Choice;
 import com.stab.model.basic.scenes.Narration;
@@ -46,7 +48,7 @@ public class TestAdventure extends Adventure{
 		//c.addOption("Marcharse","VICTORY");
 		this.addScene(c);
 		
-		DefaultTileMapScene ms=new DefaultTileMapScene();
+		DefaultStabMapScene ms=new DefaultStabMapScene();
 		ms.createContents();
 		ms.createMap(24,16);
 		ms.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
@@ -55,6 +57,13 @@ public class TestAdventure extends Adventure{
 		
 		ms.setTag("BATTLE");
 		ms.setWaitsForAll(true);
+		
+		QuestTracker qt=new QuestTracker();
+		qt.setMessage("Kill all zombies");
+		qt.setProgress(0);
+		qt.setMax(1);
+		qt.setState(QuestTracker.IN_PROGRESS);
+		ms.addTracker(qt);
 		
 		ConditionalMusic m=new ConditionalMusic(ms);
 		m.setMusic("Lone", "Pursued", "Midnight", "LastBattle");
