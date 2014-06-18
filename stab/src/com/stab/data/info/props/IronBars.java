@@ -13,7 +13,7 @@ public class IronBars extends Door {
 		setMaxEp(0);
 		healFully();
 		setResource("ironBarsOn");
-	//	setText("Bars");
+		setText("Bars");
 		setDescription("Sturdy iron bars blocking the way");
 	}
 	
