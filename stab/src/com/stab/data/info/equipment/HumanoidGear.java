@@ -1,7 +1,7 @@
 package com.stab.data.info.equipment;
 
-import com.stab.model.info.trait.Gear;
-import com.stab.model.info.trait.base.Equipment;
+import com.stab.model.info.trait.base.gear.Equipment;
+import com.stab.model.info.trait.base.gear.Gear;
 
 public class HumanoidGear extends Gear {
 	

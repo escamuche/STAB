@@ -1,12 +1,12 @@
 package com.stab.data.info.feat.combat;
 
 import com.stab.data.StabConstants;
-import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.data.info.equipment.BasicWeapon;
-import com.stab.data.info.equipment.Weapon;
 import com.stab.data.info.feat.CombatFeat;
 import com.stab.model.info.applicable.Affects;
 import com.stab.model.info.applicable.Applicable;
+import com.stab.model.info.applicable.base.WeaponAttack;
+import com.stab.model.info.trait.base.gear.Weapon;
 
 public class WeaponFocus_Feat extends CombatFeat implements Affects<WeaponAttack> {
 	

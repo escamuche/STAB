@@ -70,4 +70,17 @@ public class Locked extends VisualEffect implements Attends<Interaction>,Mechani
 		return dc;
 	}
 	
+	
+
+	@Override
+	public String getActivityName(Info actor) {
+		return null;
+	}
+
+	@Override
+	public String getActivityIcon(Info actor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }

@@ -3,18 +3,14 @@ package com.stab.data.info.applicable;
 import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.applicable.base.WeaponAttack;
 import com.stab.model.info.trait.Modifier;
+import com.stab.model.info.trait.base.gear.Weapon;
 
-public abstract class Attack extends OpposedSkillRoll{
+public  class PathfinderAttack extends WeaponAttack{
 
 	
-	public static final int HIT = SUCCESS;
-	public static final int MISS = FAIL;
-	public static final int BLOCK = 20;
-	public static final int PARRY = 21;
-	public static final int DODGE = 22;
-	public static final int ARMOR = 23;
-	public static final int COVER = 24;
+	
 
 	//En un futuro añadir o reutilizar los que hay para "le has dado a una imagen" o "fallo por concealment", etc
 	//Añadir tambien si ha sido CA, dodge, cover, parry o block lo que ha parado el ataque (con vistas a animacion)
@@ -24,47 +20,28 @@ public abstract class Attack extends OpposedSkillRoll{
 	int confirmMod=0;  //Bono a confirmar
 	
 	boolean touch;
-	boolean ranged;
 	
-	public Attack(BaseInfo instigator,BaseInfo target) {
-		super(instigator,StabConstants.TOHIT,target,StabConstants.AC);  //Realmente no se usa lo de AC (ver mas abajo en recalcTarget
+	public PathfinderAttack(BaseInfo instigator,Weapon weapon,BaseInfo target) {
+		super(instigator,StabConstants.TOHIT,weapon,target,StabConstants.AC);  //Realmente no se usa lo de AC (ver mas abajo en recalcTarget
 		setDice(20);
 		setCritRange(1);
 		setBotchRange(1);
 		touch=false;
 	}
 	
+	public void setRanged(boolean b) {
+		super.setRanged(b);
+		if (b){
+			setSkill(StabConstants.TOHITRANGED);
+		}else
+			setSkill(StabConstants.TOHIT);
+	}
 	
 	public void setTouch(boolean touch) {
 		this.touch = touch;
 	}
 	public boolean isTouch() {
 		return touch;
-	}
-	
-	public void setRanged(boolean b){
-		ranged=b;
-		if (b){
-			setSkill(StabConstants.TOHITRANGED);
-		}else
-			setSkill(StabConstants.TOHIT);
-		
-	}
-	
-	public boolean isRanged() {
-		return ranged;
-	}
-	
-	public void setConfirmMod(int confirmMod) {
-		this.confirmMod = confirmMod;
-	}
-
-	public int getConfirmMod() {
-		return confirmMod;
-	}
-	
-	public void addConfirmMod(int v){
-		confirmMod+=v;
 	}
 	
 	@Override
@@ -83,6 +60,39 @@ public abstract class Attack extends OpposedSkillRoll{
 		i=i+getTargetNumber();
 		setFinalTargetNumber(i);	
 	}
+	
+	@Override
+	protected boolean checkCritical(int roll) {
+		if (super.checkCritical(roll)){
+			int n=Roll.d20()+getModifier()+getConfirmMod();
+			if (n>=getTargetNumber())
+				return true;
+		}
+		return false;
+	}
+
+	protected boolean checkBotch(int roll) {
+			if (super.checkBotch(roll)){
+			int n=Roll.d20()+getModifier()+getConfirmMod();
+			if (n<getTargetNumber())
+				return true;
+		}
+		return false;
+	}
+	
+	public void setConfirmMod(int confirmMod) {
+		this.confirmMod = confirmMod;
+	}
+
+	public int getConfirmMod() {
+		return confirmMod;
+	}
+	
+	public void addConfirmMod(int v){
+		confirmMod+=v;
+	}
+	
+	
 
 	/*
 	@Override
@@ -141,60 +151,6 @@ public abstract class Attack extends OpposedSkillRoll{
 					
 	}
 	/**/
-	
-	@Override
-	protected boolean checkCritical(int roll) {
-		if (super.checkCritical(roll)){
-			int n=Roll.d20()+getModifier()+getConfirmMod();
-			if (n>=getTargetNumber())
-				return true;
-		}
-		return false;
-	}
-	
-	protected boolean checkBotch(int roll){
-			if (super.checkBotch(roll)){
-			int n=Roll.d20()+getModifier()+getConfirmMod();
-			if (n<getTargetNumber())
-				return true;
-		}
-		return false;
-	}
-	
-
-	
-	
-	public boolean hits(){
-		return getResult()==HIT || getResult()==CRITICAL;
-	}
-	
-	public boolean misses(){
-		return !hits();
-	}
-	
-	@Override
-	public boolean success() {
-		return hits();
-	}
-	@Override
-	public boolean failed() {
-		return misses();
-	}
-
-
-	
-	
-	@Override
-	public void validate() {
-	
-		super.validate();
-		
-	}
-	
-	
-	
-	
-	
 	
 	@Override
 	protected int evalRoll(int roll) {

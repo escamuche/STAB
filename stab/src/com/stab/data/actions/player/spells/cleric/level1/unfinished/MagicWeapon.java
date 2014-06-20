@@ -3,10 +3,10 @@ package com.stab.data.actions.player.spells.cleric.level1.unfinished;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.info.equipment.HumanoidGear;
-import com.stab.data.info.equipment.Weapon;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.base.Creature;
-import com.stab.model.info.trait.base.Equipment;
+import com.stab.model.info.trait.base.gear.Equipment;
+import com.stab.model.info.trait.base.gear.Weapon;
 
 public class MagicWeapon extends SpellOnTarget {
 	

@@ -1,14 +1,17 @@
 package com.stab.data.info.equipment;
 
 import com.stab.data.StabConstants;
-import com.stab.data.info.applicable.RolledDamage;
-import com.stab.data.info.applicable.WeaponAttack;
+import com.stab.data.info.applicable.PathfinderAttack;
 import com.stab.data.info.feat.general.MartialWeaponProficiency_Feat;
 import com.stab.data.info.feat.general.NaturalWeaponProficiency_Feat;
 import com.stab.data.info.feat.general.SimpleWeaponProficiency_Feat;
 import com.stab.data.info.feat.general.WeaponProficiency_Feat;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.info.applicable.base.RolledDamage;
+import com.stab.model.info.applicable.base.WeaponAttack;
+import com.stab.model.info.trait.base.gear.Weapon;
+import com.stab.model.info.trait.base.gear.WeaponTrait;
 
 /**
  * arma basica, con los datos principales
@@ -103,7 +106,8 @@ public class BasicWeapon extends Weapon {
 		app.setCritMultiplier(critMultiplier);
 		app.setCritRange(critRange);
 		app.setBaseDamage(calcDamage(app));
-		app.setTouch(isTouch());
+		
+		((PathfinderAttack)app).setTouch(isTouch());
 	
 		// cambiado el calculo de daño para que añada la tirada de dado como setBaseDamageApplicable
 		RolledDamage d=new RolledDamage(this.dices, dice, 0, baseDamageType, app.getInstigator());

@@ -14,12 +14,12 @@ import com.stab.data.info.applicable.SpellCasting;
 import com.stab.data.info.buff.SpellCasting_Condition;
 import com.stab.data.info.equipment.SpellActionEffect;
 import com.stab.data.info.equipment.SpellWeapon;
-import com.stab.data.info.equipment.Weapon;
 import com.stab.model.action.Action;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.base.Creature;
+import com.stab.model.info.trait.base.gear.Weapon;
 import com.stab.model.request.basic.ActionRequest;
 
 public abstract class SpellAction extends Action implements SpellProperties{

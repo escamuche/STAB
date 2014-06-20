@@ -1,18 +1,19 @@
 package com.stab.data.info.buff;
 
 import com.stab.data.StabConstants;
-import com.stab.data.info.applicable.Attack;
+import com.stab.data.info.applicable.PathfinderAttack;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Affects;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
+import com.stab.model.info.applicable.base.Attack;
 import com.stab.model.info.trait.base.Buff;
 
-public class Illusion_Buff extends Buff implements Affects<Attack>, Attends<Attack> {
+public class Illusion_Buff extends Buff implements Affects<PathfinderAttack>, Attends<PathfinderAttack> {
 
 	@Override
-	public void affect(Attack arg0) {
+	public void affect(PathfinderAttack arg0) {
 		
 		BaseInfo target=getTarget();
 		BaseInfo instigator = (BaseInfo) arg0.getInstigator();
@@ -32,14 +33,14 @@ public class Illusion_Buff extends Buff implements Affects<Attack>, Attends<Atta
 
 	@Override
 	public boolean canAffect(Applicable arg0) {
-		if(arg0 instanceof Attack)
+		if(arg0 instanceof PathfinderAttack)
 			return true;
 		else
 			return false;
 	}
 
 	@Override
-	public void attend(Attack arg0) {
+	public void attend(PathfinderAttack arg0) {
 		
 		BaseInfo target = arg0.getTarget();
 		BaseInfo instigator = (BaseInfo) arg0.getInstigator();
@@ -59,7 +60,7 @@ public class Illusion_Buff extends Buff implements Affects<Attack>, Attends<Atta
 
 	@Override
 	public boolean canAttend(Applicable arg0) {
-		if(arg0 instanceof Attack)
+		if(arg0 instanceof PathfinderAttack)
 			return true;
 		else
 			return false;

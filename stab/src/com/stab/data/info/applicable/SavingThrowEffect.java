@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.base.Damage;
+import com.stab.model.info.applicable.base.OpposedSkillRoll;
 import com.stab.model.info.trait.Modifier;
 
 public  class SavingThrowEffect extends OpposedSkillRoll {

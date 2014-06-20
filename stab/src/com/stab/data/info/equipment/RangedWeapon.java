@@ -1,8 +1,8 @@
 package com.stab.data.info.equipment;
 
 import com.stab.data.StabConstants;
-import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.applicable.base.WeaponAttack;
 
 public class RangedWeapon extends BasicWeapon {
 

@@ -1,11 +1,11 @@
 package com.stab.data.info.debuff.condition;
 
-import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.data.info.equipment.BasicWeapon;
-import com.stab.data.info.equipment.Weapon;
-import com.stab.data.info.equipment.WeaponTrait;
 import com.stab.model.info.applicable.Affects;
 import com.stab.model.info.applicable.Applicable;
+import com.stab.model.info.applicable.base.WeaponAttack;
+import com.stab.model.info.trait.base.gear.Weapon;
+import com.stab.model.info.trait.base.gear.WeaponTrait;
 
 public class WeaponBrokenCondition extends WeaponTrait implements Affects<WeaponAttack>{
 	

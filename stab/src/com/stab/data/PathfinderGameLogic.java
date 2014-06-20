@@ -2,12 +2,12 @@ package com.stab.data;
 
 import com.stab.adventure.GameLogic;
 import com.stab.data.info.applicable.DetectRoll;
-import com.stab.data.info.applicable.SkillRoll;
 import com.stab.data.info.applicable.SpotRoll;
 import com.stab.model.basic.token.interfaces.Mechanism;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
+import com.stab.model.info.applicable.base.SkillRoll;
 
 public class PathfinderGameLogic extends GameLogic {
 

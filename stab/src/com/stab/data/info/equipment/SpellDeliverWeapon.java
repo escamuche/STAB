@@ -1,6 +1,6 @@
 package com.stab.data.info.equipment;
 
-import com.stab.data.info.applicable.WeaponAttack;
+import com.stab.model.info.applicable.base.WeaponAttack;
 
 public class SpellDeliverWeapon extends BasicWeapon {
 

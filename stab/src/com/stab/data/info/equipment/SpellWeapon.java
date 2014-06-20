@@ -4,11 +4,13 @@ import java.awt.Point;
 import java.util.ArrayList;
 
 import com.stab.data.actions.player.spells.SpellAction;
-import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.model.action.Action;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.info.applicable.base.WeaponAttack;
 import com.stab.model.info.interfaces.ActionPerformedListener;
+import com.stab.model.info.trait.base.gear.OverrideWeapon;
+import com.stab.model.info.trait.base.gear.Weapon;
 import com.stab.model.request.basic.ActionRequest;
 
 public class SpellWeapon extends OverrideWeapon implements ActionPerformedListener {

@@ -2,6 +2,7 @@ package com.stab.data.info.applicable;
 
 import com.stab.data.StabConstants;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.applicable.base.OpposedSkillRoll;
 
 public class BreakSpellResistance extends OpposedSkillRoll {
 

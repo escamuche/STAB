@@ -1,10 +1,10 @@
 package com.stab.data.info.extra;
 
-import com.stab.data.info.applicable.SkillRoll;
 import com.stab.model.basic.token.Token;
 import com.stab.model.extras.Extra;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.info.applicable.base.SkillRoll;
 import com.stab.model.info.trait.base.VisualEffect;
 
 public class SkillCheckExtra extends Extra {

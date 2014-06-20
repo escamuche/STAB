@@ -11,6 +11,8 @@ import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.ThrustAnimation;
 import com.stab.model.info.applicable.base.Damage;
+import com.stab.model.info.trait.base.gear.ItemFactory;
+import com.stab.model.info.trait.base.gear.Weapon;
 
 public class WeaponFactory extends ItemFactory{
 

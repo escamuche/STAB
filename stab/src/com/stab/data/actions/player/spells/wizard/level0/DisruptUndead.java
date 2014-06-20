@@ -5,11 +5,11 @@ import java.awt.Point;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
-import com.stab.data.info.applicable.RolledDamage;
 import com.stab.data.info.monster.monstertraits.UndeadTraits;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
+import com.stab.model.info.applicable.base.RolledDamage;
 
 public class DisruptUndead extends SpellOnTarget {
 	

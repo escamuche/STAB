@@ -5,12 +5,12 @@ import java.awt.Point;
 import com.stab.data.StabConstants;
 import com.stab.data.animation.AlertAnimation;
 import com.stab.data.info.applicable.SavingThrowEffect;
-import com.stab.data.info.applicable.SkillRoll;
 import com.stab.model.action.ContextualAction;
 import com.stab.model.action.base.WalkToAction;
 import com.stab.model.basic.token.DecorToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.info.applicable.base.SkillRoll;
 import com.stab.model.request.basic.ActionRequest;
 
 public class ClimbAction extends ContextualAction {

@@ -16,14 +16,14 @@ import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.RangedWeapon;
 import com.stab.data.info.equipment.Shield;
 import com.stab.data.info.equipment.SpellDeliverWeapon;
-import com.stab.data.info.equipment.Weapon;
 import com.stab.model.basic.scenes.MapLogic;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.base.Creature;
-import com.stab.model.info.trait.base.Equipment;
+import com.stab.model.info.trait.base.gear.Equipment;
+import com.stab.model.info.trait.base.gear.Weapon;
 
 public class PathfinderUtils {
 	

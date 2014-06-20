@@ -1,9 +1,9 @@
 package com.stab.data.info.extra;
 
-import com.stab.data.info.applicable.SkillRoll;
 import com.stab.model.extras.OnSelectText;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.info.applicable.base.SkillRoll;
 
 public class SkillExtraText extends OnSelectText{
 	

@@ -3,9 +3,9 @@ package com.stab.data.info.monster.bestiary;
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.info.equipment.HumanoidGear;
-import com.stab.data.info.equipment.Weapon;
 import com.stab.data.info.feat.general.SkillFocusPerception_Feat;
 import com.stab.data.info.monster.Animal;
+import com.stab.model.info.trait.base.gear.Weapon;
 
 public class DireRat extends Animal {
 

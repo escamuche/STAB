@@ -2,6 +2,7 @@ package com.stab.data.info.equipment;
 
 import com.stab.data.StabConstants;
 import com.stab.model.info.trait.Modifier;
+import com.stab.model.info.trait.base.gear.Item;
 
 public class Armor extends Item {
 	

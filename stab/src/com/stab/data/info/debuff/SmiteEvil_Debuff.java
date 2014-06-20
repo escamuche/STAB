@@ -2,7 +2,7 @@ package com.stab.data.info.debuff;
 
 import com.stab.common.Constants;
 import com.stab.data.StabConstants;
-import com.stab.data.info.applicable.Attack;
+import com.stab.data.info.applicable.PathfinderAttack;
 import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.DecorToken;
 import com.stab.model.info.BaseInfo;
@@ -12,7 +12,7 @@ import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.base.DamageModification;
 import com.stab.model.info.trait.base.Debuff;
 
-public class SmiteEvil_Debuff extends Debuff implements Attends<Attack> {
+public class SmiteEvil_Debuff extends Debuff implements Attends<PathfinderAttack> {
 
 
 	BaseInfo paladin = null;
@@ -22,7 +22,7 @@ public class SmiteEvil_Debuff extends Debuff implements Attends<Attack> {
 	}
 	
 	@Override
-	public void attend(Attack arg0) {
+	public void attend(PathfinderAttack arg0) {
 		
 		if(arg0.getInstigator() == paladin){
 			int daño = paladin.getValue(StabConstants.PALADINCASTER);
@@ -37,7 +37,7 @@ public class SmiteEvil_Debuff extends Debuff implements Attends<Attack> {
 
 	@Override
 	public boolean canAttend(Applicable arg0) {
-		if(arg0 instanceof Attack)				
+		if(arg0 instanceof PathfinderAttack)				
 			return true;
 		return false;
 	}

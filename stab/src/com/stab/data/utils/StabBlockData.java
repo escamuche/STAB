@@ -1,7 +1,5 @@
 package com.stab.data.utils;
 
-import org.newdawn.slick.Color;
-
 import com.stab.client.slick.base.map.StabBlockProperties;
 import com.stab.common.map.blocks.BlockData;
 

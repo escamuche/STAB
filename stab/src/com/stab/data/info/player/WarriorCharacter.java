@@ -7,12 +7,12 @@ import com.stab.data.actions.feats.PowerAttack;
 import com.stab.data.actions.general.DefendAction;
 import com.stab.data.actions.player.WarriorActionSet;
 import com.stab.data.info.equipment.EquipmentFactory;
-import com.stab.data.info.equipment.Weapon;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.equipment.traits.FlamingWeapon;
 import com.stab.data.info.feat.combat.Expertise_Feat;
 import com.stab.data.info.feat.combat.PowerAttack_Feat;
 import com.stab.model.info.trait.Modifier;
+import com.stab.model.info.trait.base.gear.Weapon;
 
 
 public class WarriorCharacter extends PathfinderCharacter{

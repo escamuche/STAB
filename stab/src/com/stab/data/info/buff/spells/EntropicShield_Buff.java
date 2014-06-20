@@ -1,10 +1,11 @@
 package com.stab.data.info.buff.spells;
 
 import com.stab.common.utils.Roll;
-import com.stab.data.info.applicable.Attack;
-import com.stab.data.info.applicable.WeaponAttack;
+import com.stab.data.info.applicable.PathfinderAttack;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
+import com.stab.model.info.applicable.base.Attack;
+import com.stab.model.info.applicable.base.WeaponAttack;
 import com.stab.model.info.trait.base.Buff;
 
 public class EntropicShield_Buff extends Buff implements Attends<WeaponAttack> {
@@ -32,7 +33,7 @@ public class EntropicShield_Buff extends Buff implements Attends<WeaponAttack> {
 
 	@Override
 	public boolean canAttend(Applicable arg0) {
-		if (arg0 instanceof Attack)
+		if (arg0 instanceof PathfinderAttack)
 			return ((Attack)arg0).isRanged();
 		return false;
 	}

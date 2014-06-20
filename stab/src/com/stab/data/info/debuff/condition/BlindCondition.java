@@ -2,10 +2,10 @@ package com.stab.data.info.debuff.condition;
 
 import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
-import com.stab.data.info.applicable.Attack;
-import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.model.info.applicable.Affects;
 import com.stab.model.info.applicable.Applicable;
+import com.stab.model.info.applicable.base.Attack;
+import com.stab.model.info.applicable.base.WeaponAttack;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.Debuff;

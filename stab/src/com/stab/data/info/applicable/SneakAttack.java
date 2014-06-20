@@ -2,6 +2,7 @@ package com.stab.data.info.applicable;
 
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
+import com.stab.model.info.applicable.base.WeaponAttack;
 
 public class SneakAttack extends Applicable{
 	

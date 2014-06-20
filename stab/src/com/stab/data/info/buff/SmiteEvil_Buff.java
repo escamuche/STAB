@@ -1,13 +1,13 @@
 package com.stab.data.info.buff;
 
 import com.stab.data.StabConstants;
-import com.stab.data.info.applicable.Attack;
+import com.stab.data.info.applicable.PathfinderAttack;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.trait.base.Buff;
 
-public class SmiteEvil_Buff extends Buff implements Attends<Attack>{
+public class SmiteEvil_Buff extends Buff implements Attends<PathfinderAttack>{
 
 	BaseInfo smitetarget = null;
 	
@@ -16,7 +16,7 @@ public class SmiteEvil_Buff extends Buff implements Attends<Attack>{
 	}
 	
 	@Override
-	public void attend(Attack arg0) {
+	public void attend(PathfinderAttack arg0) {
 		
 		if(arg0.getInstigator() == smitetarget){
 			BaseInfo paladin = arg0.getTarget();
@@ -29,7 +29,7 @@ public class SmiteEvil_Buff extends Buff implements Attends<Attack>{
 	@Override
 	public boolean canAttend(Applicable arg0) {
 		
-	if(arg0 instanceof Attack)				
+	if(arg0 instanceof PathfinderAttack)				
 		return true;
 	return false;
 	}

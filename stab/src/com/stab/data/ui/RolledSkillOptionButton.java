@@ -1,8 +1,8 @@
 package com.stab.data.ui;
 
-import com.stab.data.info.applicable.SkillRoll;
 import com.stab.model.Player;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.applicable.base.SkillRoll;
 
 public class RolledSkillOptionButton extends RolledOptionButton {
 	

@@ -2,9 +2,9 @@ package com.stab.data.rules;
 
 import com.stab.common.events.Condition;
 import com.stab.common.events.ManagedEvent;
-import com.stab.data.info.applicable.SkillRoll;
 import com.stab.model.basic.scenes.event.InfoEvent;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.applicable.base.SkillRoll;
 
 public class InfoSkillRollContidion extends Condition{
 

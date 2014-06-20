@@ -7,11 +7,11 @@ import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.info.debuff.condition.DyingCondition;
 import com.stab.data.info.equipment.HumanoidGear;
-import com.stab.data.info.equipment.Item;
 import com.stab.data.info.traits.BasicAttributes;
 import com.stab.model.basic.token.Token;
 import com.stab.model.info.base.Character;
-import com.stab.model.info.trait.base.Equipment;
+import com.stab.model.info.trait.base.gear.Equipment;
+import com.stab.model.info.trait.base.gear.Item;
 
 public class PathfinderCharacter extends Character {
 	

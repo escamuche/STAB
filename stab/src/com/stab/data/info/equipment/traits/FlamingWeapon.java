@@ -1,9 +1,9 @@
 package com.stab.data.info.equipment.traits;
 
-import com.stab.data.info.applicable.RolledDamage;
-import com.stab.data.info.applicable.WeaponAttack;
-import com.stab.data.info.equipment.WeaponTrait;
 import com.stab.model.info.applicable.base.Damage;
+import com.stab.model.info.applicable.base.RolledDamage;
+import com.stab.model.info.applicable.base.WeaponAttack;
+import com.stab.model.info.trait.base.gear.WeaponTrait;
 
 public class FlamingWeapon extends WeaponTrait {
 

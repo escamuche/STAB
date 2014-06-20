@@ -4,12 +4,12 @@ import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.info.equipment.HumanoidGear;
-import com.stab.data.info.equipment.Item;
 import com.stab.data.info.traits.BasicAttributes;
 import com.stab.model.ai.AIPackage;
 import com.stab.model.basic.token.Token;
 import com.stab.model.info.base.Creature;
-import com.stab.model.info.trait.base.Equipment;
+import com.stab.model.info.trait.base.gear.Equipment;
+import com.stab.model.info.trait.base.gear.Item;
 
 public class Monster extends Creature {
 

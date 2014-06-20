@@ -1,11 +1,11 @@
 package com.stab.data.info.buff.spells;
 
 import com.stab.data.StabConstants;
-import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.data.info.equipment.BasicWeapon;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Affects;
 import com.stab.model.info.applicable.Applicable;
+import com.stab.model.info.applicable.base.WeaponAttack;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.Buff;
 

@@ -16,13 +16,11 @@ import com.stab.data.animation.SidestepAnimation;
 import com.stab.data.animation.StepBackAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.ThrustAnimation;
-import com.stab.data.info.applicable.RolledDamage;
+import com.stab.data.info.applicable.PathfinderAttack;
 import com.stab.data.info.applicable.SneakAttack;
-import com.stab.data.info.applicable.WeaponAttack;
 import com.stab.data.info.equipment.BasicWeapon;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.RangedWeapon;
-import com.stab.data.info.equipment.Weapon;
 import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.action.Action;
 import com.stab.model.ai.DefaultAIPackage;
@@ -31,8 +29,11 @@ import com.stab.model.basic.scenes.MapLogic;
 import com.stab.model.basic.token.Token;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.info.applicable.base.RolledDamage;
+import com.stab.model.info.applicable.base.WeaponAttack;
 import com.stab.model.info.base.Creature;
-import com.stab.model.info.trait.base.Equipment;
+import com.stab.model.info.trait.base.gear.Equipment;
+import com.stab.model.info.trait.base.gear.Weapon;
 import com.stab.model.request.basic.ActionRequest;
 
 public class WeaponAttackAction extends Action  {
@@ -75,7 +76,7 @@ public class WeaponAttackAction extends Action  {
 		
 		//TODO: ver como se rellena el slot!
 		
-		WeaponAttack ad=new WeaponAttack (atacante,arma,atacado);
+		PathfinderAttack ad=new PathfinderAttack (atacante,arma,atacado);
 	
 		//bonos adicionales por posicion: flanking y altura
 		MapLogic ml=atacante.getMapLogic();

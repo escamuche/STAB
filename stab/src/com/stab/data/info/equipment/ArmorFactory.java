@@ -1,5 +1,7 @@
 package com.stab.data.info.equipment;
 
+import com.stab.model.info.trait.base.gear.ItemFactory;
+
 
 public class ArmorFactory extends ItemFactory{
 
