@@ -250,7 +250,7 @@ public abstract class SpellAction extends Action implements SpellProperties{
 				return r;
 			}
 			//Si no se usa un ataque, castear normalmente
-			SpellActionEffect ae= new SpellActionEffect(caster,target,point,this.getId(),ar);
+			SpellActionEffect ae= new SpellActionEffect(caster,target,point,this.getLocator(),ar);
 			target.apply(ae);
 		
 		
@@ -362,7 +362,7 @@ public abstract class SpellAction extends Action implements SpellProperties{
 		SpellWeapon w= spell.getWeapon();
 		if (w==null)
 			return null;
-		w.addEffect(caster,target,point,this.getId(),ar);
+		w.addEffect(caster,target,point,this.getLocator(),ar);
 		Weapon old=(Weapon)((Creature)caster).getEquipment(w.getSlot());
 		w.setOld(old);
 		return w;
