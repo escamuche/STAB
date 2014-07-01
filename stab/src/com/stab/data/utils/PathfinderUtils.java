@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.HashSet;
 
 import com.stab.common.utils.PathUtils;
+import com.stab.data.actions.general.PathfinderWeaponAttackAction;
 import com.stab.data.actions.general.WeaponAttackAction;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.data.info.buff.spells.Shield_Buff;
@@ -70,7 +71,7 @@ public class PathfinderUtils {
 	}
 	
 	public static int getReach(BaseInfo c){
-		WeaponAttackAction aa= new WeaponAttackAction();
+		WeaponAttackAction aa= new PathfinderWeaponAttackAction();
 		return aa.getRange(c);
 	}
 	
@@ -107,7 +108,7 @@ public class PathfinderUtils {
 			//System.out.println("No threat");
 			return false;
 		}
-		WeaponAttackAction aa= new WeaponAttackAction();
+		WeaponAttackAction aa= new PathfinderWeaponAttackAction();
 		float dist=c.getMapLogic().getDistance(c.getToken(), tile);
 		if (aa.getRange(c)<dist){
 			//System.out.println("No range!");
@@ -140,8 +141,8 @@ public class PathfinderUtils {
 		if (w instanceof SpellDeliverWeapon)
 			if (((SpellDeliverWeapon)w).isRanged())
 			return false;
-		if (!c.getActionSet().contains(WeaponAttackAction.ID))
-			return false;
+		//if (!c.getActionSet().contains(PathfinderWeaponAttackAction.ID))
+		//	return false;
 		return true;
 	}
 	

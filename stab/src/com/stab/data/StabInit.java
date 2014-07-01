@@ -15,7 +15,7 @@ import com.stab.data.actions.feats.Expertise;
 import com.stab.data.actions.feats.PowerAttack;
 import com.stab.data.actions.general.DefendAction;
 import com.stab.data.actions.general.HealAction;
-import com.stab.data.actions.general.WeaponAttackAction;
+import com.stab.data.actions.general.PathfinderWeaponAttackAction;
 import com.stab.data.actions.monster.AcidFlask;
 import com.stab.data.actions.player.abilities.ChannelPossitiveEnergyAction;
 import com.stab.data.actions.player.abilities.NobilityDomain;
@@ -503,7 +503,7 @@ public class StabInit {
 		//accciones
 		getActionLibrary().register(new DefendAction());
 		getActionLibrary().getAction(InteractAction.ID).setResource("actions/inv_gizmo_02");
-		getActionLibrary().register(new WeaponAttackAction());
+		getActionLibrary().register(new PathfinderWeaponAttackAction());
 		getActionLibrary().register(new Rage());
 		getActionLibrary().register(new HealAction());
 	//	getActionLibrary().getAction(SearchAction.ID).setResource("actions/inv_gizmo_02");

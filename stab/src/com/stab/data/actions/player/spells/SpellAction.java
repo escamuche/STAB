@@ -21,6 +21,7 @@ import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.base.gear.Weapon;
 import com.stab.model.request.basic.ActionRequest;
+import com.stab.util.StabUtils;
 
 public abstract class SpellAction extends Action implements SpellProperties{
 
@@ -245,7 +246,7 @@ public abstract class SpellAction extends Action implements SpellProperties{
 			SpellWeapon w=getWeapon(caster,target,point,ar);
 			if (w!=null){
 				((Creature)caster).equip(w);
-				WeaponAttackAction a=(WeaponAttackAction)getActionLibrary().getAction(WeaponAttackAction.ID);
+				WeaponAttackAction a=(WeaponAttackAction)StabUtils.getGameLogic().getAttackAction(w);
 				int r=a.affect(caster, target, point, ar);
 				return r;
 			}

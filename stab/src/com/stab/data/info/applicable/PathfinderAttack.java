@@ -10,7 +10,11 @@ import com.stab.model.info.trait.base.gear.Weapon;
 public  class PathfinderAttack extends WeaponAttack{
 
 	
-	
+	public static final int BLOCK = 20;
+	public static final int PARRY = 21;
+	public static final int DODGE = 22;
+	public static final int ARMOR = 23;
+	public static final int COVER = 24;
 
 	//En un futuro añadir o reutilizar los que hay para "le has dado a una imagen" o "fallo por concealment", etc
 	//Añadir tambien si ha sido CA, dodge, cover, parry o block lo que ha parado el ataque (con vistas a animacion)
