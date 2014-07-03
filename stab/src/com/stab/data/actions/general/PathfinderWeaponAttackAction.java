@@ -43,7 +43,11 @@ public class PathfinderWeaponAttackAction extends WeaponAttackAction  {
 	public static final String ID=WeaponAttackAction.ID;
 	private static final String DONTSNEAK = "DONTSNEAK";
 
-	
+	@Override
+	protected void fixID() {
+		// TODO Auto-generated method stub
+		super.fixID();
+	}
 	
 	public Weapon getWeapon(BaseInfo i) {
 		Weapon w=super.getWeapon(i);

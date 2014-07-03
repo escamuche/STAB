@@ -11,6 +11,7 @@ import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.base.SkillRoll;
 import com.stab.model.info.trait.base.gear.Weapon;
+import com.stab.util.StabUtils;
 
 public class PathfinderGameLogic extends GameLogic {
 
@@ -72,7 +73,7 @@ public class PathfinderGameLogic extends GameLogic {
 	
 	@Override
 	public Action getAttackAction(Weapon weapon) {
-		return new PathfinderWeaponAttackAction();
+		return super.getAttackAction(weapon);
 	}
 	
 }
