@@ -503,7 +503,7 @@ public class StabInit {
 		//accciones
 		getActionLibrary().register(new DefendAction());
 		getActionLibrary().getAction(InteractAction.ID).setResource("actions/inv_gizmo_02");
-		getActionLibrary().register(new PathfinderWeaponAttackAction());
+		getActionLibrary().register(PathfinderWeaponAttackAction.class);
 		getActionLibrary().register(new Rage());
 		getActionLibrary().register(new HealAction());
 	//	getActionLibrary().getAction(SearchAction.ID).setResource("actions/inv_gizmo_02");

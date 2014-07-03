@@ -7,7 +7,6 @@ import org.newdawn.slick.Color;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.EffectDescriptor;
-import com.stab.data.actions.general.WeaponAttackAction;
 import com.stab.data.info.applicable.BreakSpellResistance;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.data.info.applicable.SpellCasting;
@@ -15,6 +14,7 @@ import com.stab.data.info.buff.SpellCasting_Condition;
 import com.stab.data.info.equipment.SpellActionEffect;
 import com.stab.data.info.equipment.SpellWeapon;
 import com.stab.model.action.Action;
+import com.stab.model.action.base.WeaponAttackAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;

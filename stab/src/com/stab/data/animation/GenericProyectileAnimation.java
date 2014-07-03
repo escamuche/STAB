@@ -8,6 +8,7 @@ import com.stab.adventure.Game;
 import com.stab.data.StabInit;
 import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTileAnimation;
+import com.stab.model.info.trait.base.VisualEffect;
 import com.tien.princess.engine.sprite.Sprite;
 import com.tien.princess.engine.sprite.StateSprite;
 import com.tien.princess.engine.sprite.base.ProyectileSprite;
@@ -15,7 +16,7 @@ import com.tien.princess.engine.sprite.base.TagPoint;
 
 public class GenericProyectileAnimation extends OnTileAnimation {
 	
-public static final String ID="GENERICPROYECTILE_ANIMATION";
+public static final String ID=VisualEffect.GENERICPROYECTILE_ANIMATION;
 	
 	public GenericProyectileAnimation() {
 		setBlocking(true);

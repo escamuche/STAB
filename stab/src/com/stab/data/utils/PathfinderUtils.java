@@ -8,7 +8,6 @@ import java.util.HashSet;
 
 import com.stab.common.utils.PathUtils;
 import com.stab.data.actions.general.PathfinderWeaponAttackAction;
-import com.stab.data.actions.general.WeaponAttackAction;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.data.info.buff.spells.Shield_Buff;
 import com.stab.data.info.debuff.condition.CannotThreatCondition;
@@ -17,6 +16,7 @@ import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.RangedWeapon;
 import com.stab.data.info.equipment.Shield;
 import com.stab.data.info.equipment.SpellDeliverWeapon;
+import com.stab.model.action.base.WeaponAttackAction;
 import com.stab.model.basic.scenes.MapLogic;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
@@ -70,6 +70,7 @@ public class PathfinderUtils {
 		return null;
 	}
 	
+	//TODO: arregrlar esto, esta contando las armas de ranged!
 	public static int getReach(BaseInfo c){
 		WeaponAttackAction aa= new PathfinderWeaponAttackAction();
 		return aa.getRange(c);

@@ -20,9 +20,11 @@ import com.stab.data.animation.ThrustAnimation;
 import com.stab.data.info.applicable.PathfinderAttack;
 import com.stab.data.info.applicable.SneakAttack;
 import com.stab.data.info.equipment.BasicWeapon;
+import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.RangedWeapon;
 import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.action.Action;
+import com.stab.model.action.base.WeaponAttackAction;
 import com.stab.model.ai.DefaultAIPackage;
 import com.stab.model.animation.BaseSpeech;
 import com.stab.model.basic.scenes.MapLogic;
@@ -43,6 +45,15 @@ public class PathfinderWeaponAttackAction extends WeaponAttackAction  {
 
 	
 	
+	public Weapon getWeapon(BaseInfo i) {
+		Weapon w=super.getWeapon(i);
+		if (w!=null)
+			return w;
+		if (i instanceof Creature)
+			return PathfinderUtils.getWeapon((Creature)i);
+		return null;
+	}
+	
 	@Override
 	public int getRange(Info i) {
 		if (i instanceof BaseInfo){
@@ -54,6 +65,7 @@ public class PathfinderWeaponAttackAction extends WeaponAttackAction  {
 			}
 			if (arma instanceof BasicWeapon){
 				//Enun futuro, el reach de i
+			
 				return ADYACENT; 
 			}
 		}
