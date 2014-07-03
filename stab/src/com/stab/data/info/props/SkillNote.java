@@ -1,7 +1,7 @@
 package com.stab.data.info.props;
 
+import com.stab.annotations.Injected;
 import com.stab.data.info.extra.SkillExtraText;
-import com.stab.model.Injected;
 import com.stab.model.basic.token.Token;
 import com.stab.model.extras.OnSelectText;
 import com.stab.model.info.base.Note;

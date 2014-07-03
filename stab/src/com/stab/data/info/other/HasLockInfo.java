@@ -1,6 +1,6 @@
 package com.stab.data.info.other;
 
-import com.stab.model.Injected;
+import com.stab.annotations.Injected;
 import com.stab.model.basic.token.interfaces.Interactive;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;

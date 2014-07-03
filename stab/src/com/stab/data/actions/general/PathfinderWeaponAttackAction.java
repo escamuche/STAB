@@ -5,6 +5,7 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import com.stab.annotations.Instanced;
 import com.stab.common.utils.Roll;
 import com.stab.data.animation.BlockAnimation;
 import com.stab.data.animation.FlashAnimation;
@@ -34,9 +35,10 @@ import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.base.gear.Weapon;
 import com.stab.model.request.basic.ActionRequest;
 
+@Instanced
 public class PathfinderWeaponAttackAction extends WeaponAttackAction  {
 	
-//	public static final String ID="MELEE_STRIKE_ACTION";
+	public static final String ID=WeaponAttackAction.ID;
 	private static final String DONTSNEAK = "DONTSNEAK";
 
 	

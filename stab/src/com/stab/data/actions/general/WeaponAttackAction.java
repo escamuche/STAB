@@ -1,19 +1,18 @@
 package com.stab.data.actions.general;
 
+import com.stab.annotations.Instanced;
 import com.stab.data.animation.GenericProyectileAnimation;
 import com.stab.data.animation.GenericProyectileMissAnimation;
-import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.model.action.Action;
 import com.stab.model.basic.token.Token;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.base.WeaponAttack;
-import com.stab.model.info.base.Creature;
-import com.stab.model.info.trait.base.gear.Equipment;
 import com.stab.model.info.trait.base.gear.Weapon;
-import com.stab.model.request.basic.ActionRequest;
 
+@Instanced 
 public abstract class WeaponAttackAction extends Action {
 
+	public static final String ID="WEAPON_ATTACK_ACTION";
 	
 	Weapon weapon;
 	
