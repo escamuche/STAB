@@ -6,6 +6,7 @@ import com.stab.model.Player;
 import com.stab.model.basic.scenes.event.PlayerEvent;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.base.SkillRoll;
+import com.stab.util.StabUtils;
 
 public class CharacterSkillRollCondition  extends Condition{
 
@@ -21,7 +22,7 @@ public class CharacterSkillRollCondition  extends Condition{
 	public boolean check(ManagedEvent e) {
 		if (e instanceof PlayerEvent){
 			Player p=((PlayerEvent)e).getPlayer();
-			SkillRoll sk= new SkillRoll((BaseInfo)p.getCharacter(),skill,dc);
+			SkillRoll sk=StabUtils.getGameLogic().getSkillRoll((BaseInfo)p.getCharacter(),skill,dc);
 			sk.check();
 			return sk.success();
 		}

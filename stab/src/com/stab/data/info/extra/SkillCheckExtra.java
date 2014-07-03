@@ -6,6 +6,7 @@ import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.SkillRoll;
 import com.stab.model.info.trait.base.VisualEffect;
+import com.stab.util.StabUtils;
 
 public class SkillCheckExtra extends Extra {
 	
@@ -28,7 +29,7 @@ public class SkillCheckExtra extends Extra {
 			return; 
 		}
 		if (instigator instanceof BaseInfo){
-			SkillRoll r=new SkillRoll((BaseInfo)instigator,skill,dc);
+			SkillRoll r=StabUtils.getGameLogic().getSkillRoll((BaseInfo)instigator,skill,dc);
 			r.check();
 			if (r.success()){
 				setActive(true);

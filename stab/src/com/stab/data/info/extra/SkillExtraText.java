@@ -4,6 +4,7 @@ import com.stab.model.extras.OnSelectText;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.SkillRoll;
+import com.stab.util.StabUtils;
 
 public class SkillExtraText extends OnSelectText{
 	
@@ -45,7 +46,7 @@ public class SkillExtraText extends OnSelectText{
 			return; 
 		}
 		if (instigator instanceof BaseInfo){
-			SkillRoll r=new SkillRoll((BaseInfo)instigator,skill,dc);
+			SkillRoll r=StabUtils.getGameLogic().getSkillRoll((BaseInfo)instigator,skill,dc);
 			r.check();
 			if (r.success())
 				setActive(true);

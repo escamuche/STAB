@@ -12,6 +12,7 @@ import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.SkillRoll;
 import com.stab.model.request.basic.ActionRequest;
+import com.stab.util.StabUtils;
 
 public class ClimbAction extends ContextualAction {
 	
@@ -45,7 +46,7 @@ public class ClimbAction extends ContextualAction {
 			dc=dc-2;
 		if (character.getParty().getBoolean("DESPACIO"))
 			dc=dc-2;
-		SkillRoll ck=new SkillRoll(character,StabConstants.ACROBATICS,dc);
+		SkillRoll ck= StabUtils.getGameLogic().getSkillRoll(character,StabConstants.ACROBATICS,dc);
 		ck.check();
 		if (ck.success()){
 			//Ir al waypoint, todo bien.

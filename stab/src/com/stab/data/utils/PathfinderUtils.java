@@ -279,5 +279,13 @@ public class PathfinderUtils {
 		
 		return true;
 	}
+
+
+	public static boolean hasRanks(BaseInfo info, String skill) {
+		int i=info.getAttributeValue(skill);
+		if (i>0)
+			return true;
+		return false;
+	}
 	
 }
