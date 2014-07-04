@@ -4,10 +4,10 @@ import java.awt.Point;
 
 import com.stab.common.utils.PathUtils;
 import com.stab.data.actions.traps.FlameJet;
-import com.stab.model.info.base.Switch;
+import com.stab.model.info.base.DecoGadget;
 import com.stab.model.info.interfaces.RemoteActivated;
 
-public class FlameJetTrap extends Switch implements RemoteActivated{
+public class FlameJetTrap extends DecoGadget implements RemoteActivated{
 
 	public static final String ID="FLAMEJET_TRAP";
 	@Override

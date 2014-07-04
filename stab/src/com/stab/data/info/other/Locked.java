@@ -1,6 +1,7 @@
 package com.stab.data.info.other;
 
-import com.stab.model.action.base.TinkerAction;
+import java.awt.Color;
+
 import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.Token;
 import com.stab.model.basic.token.interfaces.Mechanism;
@@ -31,6 +32,7 @@ public class Locked extends VisualEffect implements Attends<Interaction>,Mechani
 	public void attend(Interaction app) {
 		((Info)this.getEffectSprite()).revealFor(app.getInstigator());
 		app.setResult(Interaction.NEUTRALIZED);
+		this.getTarget().playAnimation(VisualEffect.FLOATING_TEXT_ANIMATION,"Locked",Color.orange);
 	}
 	
 	
@@ -42,9 +44,10 @@ public class Locked extends VisualEffect implements Attends<Interaction>,Mechani
 		e.setHideCheck(-1); //evita que se detecte por search
 	//	e.setHideCheck(5);
 		e.setSelectable(Token.SELECTABLE_MENU);
-		e.addTag(TinkerAction.TINKER_TAG);
+		e.addTag(Mechanism.TINKER_TAG);
 		e.setText("Lock");
 		e.setDescription("A locking mechanism. Will either need a key, or some tinkering to get it open");
+		
 		return e;
 	}
 
