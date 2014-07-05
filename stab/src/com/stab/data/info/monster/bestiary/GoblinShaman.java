@@ -11,7 +11,7 @@ import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.player.abilities.ChannelPositiveEnergy;
 import com.stab.model.ai.actions.orders.Minion;
 import com.stab.model.ai.traits.Healer;
-import com.stab.model.info.trait.base.RenewableResource;
+import com.stab.model.info.trait.base.resource.RenewableResource;
 
 public class GoblinShaman extends Goblin  implements Minion{
 

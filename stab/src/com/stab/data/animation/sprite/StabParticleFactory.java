@@ -19,6 +19,10 @@ public class StabParticleFactory extends ParticleFactory {
 
 	public static final String GLOWORB="GLOWORB";
 	public static final String GLASSSHARD="GLASSSHARD";
+	//Pending
+	public static final String BONESHARD="BONESHARD";
+	public static final String WOODSHARD="WOODSHARD";
+	public static final String ROCKCHIP="ROCKCHIP";
 	
 	@Override
 	protected ParticleSprite getParticle(String string, Color c) {

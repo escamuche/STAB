@@ -8,7 +8,7 @@ import com.stab.model.info.trait.base.Buff;
 
 public class Defend_Buff extends Buff {
 	
-	public static final String ID="RAGE_BUFF";
+	public static final String ID="DEFEND_BUFF";
 	
 	public Defend_Buff() {
 	

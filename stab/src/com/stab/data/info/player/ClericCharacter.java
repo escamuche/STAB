@@ -16,7 +16,7 @@ import com.stab.data.info.player.abilities.ChannelPositiveEnergy;
 import com.stab.data.info.player.abilities.NobilityDomain_Ability;
 import com.stab.data.info.traits.BonusAttributeMP;
 import com.stab.data.info.traits.PathfinderResource;
-import com.stab.model.info.trait.base.RenewableResource;
+import com.stab.model.info.trait.base.resource.RenewableResource;
 
 
 public class ClericCharacter extends PathfinderCharacter{

@@ -1,7 +1,7 @@
 package com.stab.data.info.traits;
 
 import com.stab.data.utils.PathfinderUtils;
-import com.stab.model.info.trait.base.RenewableResource;
+import com.stab.model.info.trait.base.resource.RenewableResource;
 
 public class PathfinderResource extends RenewableResource {
 

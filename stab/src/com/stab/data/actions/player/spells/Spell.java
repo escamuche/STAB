@@ -1,6 +1,9 @@
 package com.stab.data.actions.player.spells;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.EnumSet;
+
+import org.apache.commons.beanutils.BeanUtils;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
@@ -24,12 +27,16 @@ public class Spell implements SpellProperties {
 	int cost=0;
 	boolean affectedBySR=true;
 	
+	boolean spellLikeAbility=false;
+	
 	String weapon=null;
 	boolean weaponChargeSpell=false;
 	
 	EnumSet<EffectDescriptor> descriptors;
 	boolean verbal=true;
 	boolean somatic=true;
+	
+	Integer fixedCasterLevel=null;
 	
 	
 	public void setLevel(int level) {
@@ -39,12 +46,25 @@ public class Spell implements SpellProperties {
 		return level;
 	}
 	
+	
+	public void setFixedCasterLevel(Integer fixedCasterLevel) {
+		this.fixedCasterLevel = fixedCasterLevel;
+	}
+	
+	public Integer getFixedCasterLevel() {
+		return fixedCasterLevel;
+	}
+	
 	private void setAttribute(String attribute) {
 		this.attribute = attribute;
 	}
 	@Override
 	public String getAttribute() {
 		return attribute;
+	}
+	
+	public void setSpellLikeAbility(boolean spellLikeAbility) {
+		this.spellLikeAbility = spellLikeAbility;
 	}
 	
 	@Override
@@ -76,6 +96,9 @@ public class Spell implements SpellProperties {
 		return 0;
 	}
 	public int getRange(BaseInfo caster) {
+		
+		//TODO: comprobar metamagia que modificque el alcance
+		
 		switch(range){
 			case SELF: return 0;
 			case TOUCH: return 1; //Sumar reach en un futuro!
@@ -102,6 +125,10 @@ public class Spell implements SpellProperties {
 	
 	@Override
 	public int getCasterLevel(BaseInfo caster) {
+		
+		if (getFixedCasterLevel()!=null)
+			return getFixedCasterLevel();
+		
 	//	System.out.println("Caster level is "+caster.getAttributeValue(getCasterClass())+" in  "+getCasterClass());
 		int v= caster.getValue(getCasterClass());
 		
@@ -244,7 +271,20 @@ public class Spell implements SpellProperties {
 			return true;
 		return false;
 	}
+	
+	
+	public boolean isSpellLikeAbility(){
+		return spellLikeAbility;
+	}
 
+	
+	public boolean provokesAoO(BaseInfo caster){
+		if (isSpellLikeAbility())
+			return false;
+		//TODO: combat casting
+		return true;
+	}
+	
 	public boolean isDivine(){
 		if (getCasterClass().equals(StabConstants.CLERICCASTER) ||
 			getCasterClass().equals(StabConstants.DRUIDCASTER) ||
@@ -255,5 +295,17 @@ public class Spell implements SpellProperties {
 		return false;
 	}
 
+	
+	public Spell getCopy(){
+		Spell s=new Spell();
+		try {
+			BeanUtils.copyProperties(s, this);
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		}
+		return s;
+	}
 	
 }

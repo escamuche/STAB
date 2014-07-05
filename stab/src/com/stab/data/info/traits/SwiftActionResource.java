@@ -2,7 +2,7 @@ package com.stab.data.info.traits;
 
 import com.stab.data.StabConstants;
 import com.stab.model.info.interfaces.ActionResource;
-import com.stab.model.info.trait.base.PerRoundResource;
+import com.stab.model.info.trait.base.resource.PerRoundResource;
 
 public class SwiftActionResource extends PerRoundResource implements ActionResource{
 

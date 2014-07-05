@@ -49,4 +49,5 @@ public interface SpellProperties extends HasDescriptor{
 	
 	
 	
+	
 }

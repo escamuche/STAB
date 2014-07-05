@@ -88,71 +88,71 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	}
 	
 	public void setLevel(int level) {
-		spell.setLevel(level);
+		getSpell().setLevel(level);
 	}
 
 	public int getLevel() {
-		return spell.getLevel();
+		return getSpell().getLevel();
 	}
 
 	public String getAttribute() {
-		return spell.getAttribute();
+		return getSpell().getAttribute();
 	}
 
 	public int getDC(BaseInfo caster) {
-		return spell.getDC(caster);
+		return getSpell().getDC(caster);
 	}
 
 	public void setCasterClass(String casterClass) {
-		spell.setCasterClass(casterClass);
+		getSpell().setCasterClass(casterClass);
 	}
 
 	public String getCasterClass() {
-		return spell.getCasterClass();
+		return getSpell().getCasterClass();
 	}
 
 	public int getRange(Info caster) {
 		if (isDirected())
 			return 1;
 		if (caster instanceof BaseInfo)
-			return spell.getRange((BaseInfo)caster);
+			return getSpell().getRange((BaseInfo)caster);
 		return super.getRange(caster);
 	}
 
 	public int getCasterLevel(BaseInfo caster) {
-		return spell.getCasterLevel(caster);
+		return getSpell().getCasterLevel(caster);
 	}
 
 	public String getSave() {
-		return spell.getSave();
+		return getSpell().getSave();
 	}
 
 	public void setSave(String save) {
-		spell.setSave(save);
+		getSpell().setSave(save);
 	}
 
 	public int getMedium() {
-		return spell.getMedium();
+		return getSpell().getMedium();
 	}
 
 	public boolean canCast(BaseInfo caster) {
-		return spell.canCast(caster);
+		return getSpell().canCast(caster);
 	}
 
 	public int hashCode() {
-		return spell.hashCode();
+		return getSpell().hashCode();
 	}
 
 	public void setMedium(int medium) {
-		spell.setMedium(medium);
+		getSpell().setMedium(medium);
 	}
 
 	public void setAffectedBySR(boolean affectedBySR) {
-		spell.setAffectedBySR(affectedBySR);
+		getSpell().setAffectedBySR(affectedBySR);
 	}
 
 	public boolean isAffectedBySR() {
-		return spell.isAffectedBySR();
+		return getSpell().isAffectedBySR();
 	}
 
 	public boolean isHarmfulFor(Info instigator,Info target) {
@@ -167,30 +167,30 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	
 	@Override
 	public SavingThrowEffect getSavingThrow(BaseInfo caster,BaseInfo target) {
-		return spell.getSavingThrow(caster,target);
+		return getSpell().getSavingThrow(caster,target);
 	}
 	
 	public void setRange(int range){
-		spell.setRange(range);
+		getSpell().setRange(range);
 	}
 	
 	
 	
 	public void setWeapon(String weapon) {
-		spell.setWeapon(weapon);
+		getSpell().setWeapon(weapon);
 	}
 
 	public boolean isWeaponChargeSpell() {
-		return spell.isWeaponChargeSpell();
+		return getSpell().isWeaponChargeSpell();
 	}
 
 	public void setWeaponChargeSpell(boolean weaponChargeSpell) {
-		spell.setWeaponChargeSpell(weaponChargeSpell);
+		getSpell().setWeaponChargeSpell(weaponChargeSpell);
 	}
 
 	@Override
 	public int getLosType() {
-		switch(spell.getMedium()){
+		switch(getSpell().getMedium()){
 			case SpellProperties.SELF:
 			case POINT:
 						return IN_RANGE;
@@ -209,17 +209,17 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	
 	@Override
 	public EnumSet<EffectDescriptor> getDescriptors() {
-		return spell.getDescriptors();
+		return getSpell().getDescriptors();
 	}
 
 	
 	
 	public void setDescriptors(EffectDescriptor arg0) {
-		spell.setDescriptors(arg0);
+		getSpell().setDescriptors(arg0);
 	}
 
 	public void setDescriptors(EffectDescriptor arg0, EffectDescriptor... arg1) {
-		spell.setDescriptors(arg0, arg1);
+		getSpell().setDescriptors(arg0, arg1);
 	}
 
 	@Override
@@ -272,10 +272,10 @@ public abstract class SpellAction extends Action implements SpellProperties{
 		
 		if (this.isHarmfulFor(caster, target)) //solo si es dañino (si, ya se que en las reglas no es asi, pero por simplificar)
 		//primero, spell resistance
-		if (spell.isAffectedBySR())
+		if (getSpell().isAffectedBySR())
 			if (target.getValue(StabConstants.SPELLRESISTANCE)>0){
 				//Tirada de spell resistance
-				 BreakSpellResistance bsr= new BreakSpellResistance(caster, spell.getCasterClass(), target);
+				 BreakSpellResistance bsr= new BreakSpellResistance(caster, getSpell().getCasterClass(), target);
 				 bsr.check();
 				 if (bsr.failed()){
 					
@@ -286,9 +286,9 @@ public abstract class SpellAction extends Action implements SpellProperties{
 		
 		//segundo, resolver tirada de salvacion (solo si es dañino)
 		if (this.isHarmfulFor(caster, target))
-		if (spell.getSave()!=null){
-			SavingThrowEffect st=new SavingThrowEffect(caster, spell.getSave(), target);
-			st.setTargetNumber(spell.getDC(caster));
+		if (getSpell().getSave()!=null){
+			SavingThrowEffect st=new SavingThrowEffect(caster, getSpell().getSave(), target);
+			st.setTargetNumber(getSpell().getDC(caster));
 			
 			st.check();
 			
@@ -360,7 +360,7 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	
 	//Corresponde a las subclases determinar las cargas!
 	public SpellWeapon getWeapon(BaseInfo caster,BaseInfo target,Point point,ActionRequest ar){
-		SpellWeapon w= spell.getWeapon();
+		SpellWeapon w= getSpell().getWeapon();
 		if (w==null)
 			return null;
 		w.addEffect(caster,target,point,this.getLocator(),ar);
@@ -371,31 +371,31 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	
 	@Override
 		public int getCost() {
-			if(spell.getLevel()==0)
+			if(getSpell().getLevel()==0)
 				return 0;
-			return (spell.getLevel()*5)+5;
+			return (getSpell().getLevel()*5)+5;
 		}
 
 	public void setSomatic(boolean somatic) {
-		spell.setSomatic(somatic);
+		getSpell().setSomatic(somatic);
 	}
 
 	public void setVerbal(boolean verbal) {
-		spell.setVerbal(verbal);
+		getSpell().setVerbal(verbal);
 	}
 
 
 	
 	public boolean isSomatic() {
-		return spell.isSomatic();
+		return getSpell().isSomatic();
 	}
 
 	public boolean isVerbal() {
-		return spell.isVerbal();
+		return getSpell().isVerbal();
 	}
 	
 	public boolean isSubjectToArcaneArmorFailure() {
-		return spell.isSubjectToArcaneArmorFailure();
+		return getSpell().isSubjectToArcaneArmorFailure();
 	}
 	
 }

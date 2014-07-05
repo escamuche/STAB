@@ -13,7 +13,7 @@ import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.combat.DazzlingDisplay_Feat;
 import com.stab.data.info.feat.combat.WeaponFocus_Feat;
 import com.stab.data.info.player.abilities.SmiteEvil_Ability;
-import com.stab.model.info.trait.base.RenewableResource;
+import com.stab.model.info.trait.base.resource.RenewableResource;
 
 
 public class PaladinCharacter extends PathfinderCharacter{

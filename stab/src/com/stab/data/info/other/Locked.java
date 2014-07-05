@@ -3,14 +3,16 @@ package com.stab.data.info.other;
 import java.awt.Color;
 
 import com.stab.model.basic.Sprite;
-import com.stab.model.basic.token.Token;
 import com.stab.model.basic.token.interfaces.Mechanism;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.applicable.base.Interaction;
-import com.stab.model.info.base.EffectDecoration;
+import com.stab.model.info.base.MechanismDecoration;
 import com.stab.model.info.trait.base.VisualEffect;
+import com.stab.model.info.trait.base.activity.Activity;
+import com.stab.model.info.trait.base.activity.ProgressActivity;
+import com.stab.model.request.basic.ActionRequest;
 
 public class Locked extends VisualEffect implements Attends<Interaction>,Mechanism {
 
@@ -38,13 +40,12 @@ public class Locked extends VisualEffect implements Attends<Interaction>,Mechani
 	
 	@Override
 	protected Sprite createEffectSprite() {
-		EffectDecoration e=new EffectDecoration();
+		MechanismDecoration e=new MechanismDecoration();
 		e.setResource("locked");
 		e.setHidden();
 		e.setHideCheck(-1); //evita que se detecte por search
 	//	e.setHideCheck(5);
-		e.setSelectable(Token.SELECTABLE_MENU);
-		e.addTag(Mechanism.TINKER_TAG);
+	
 		e.setText("Lock");
 		e.setDescription("A locking mechanism. Will either need a key, or some tinkering to get it open");
 		
@@ -56,15 +57,12 @@ public class Locked extends VisualEffect implements Attends<Interaction>,Mechani
 		return true;
 	}
 
-	@Override
-	public int getTimeToTinker(Info actor) {
-		return 0;
-	}
+
 
 	@Override
 	public boolean infoTinkers(Info actor) {
 		int i=actor.getGameLogic().tinkerAttempt(actor, this);
-		
+		System.out.println("Tinkering result: "+i);
 		return false;
 	}
 
@@ -74,16 +72,14 @@ public class Locked extends VisualEffect implements Attends<Interaction>,Mechani
 	}
 	
 	
-
 	@Override
-	public String getActivityName(Info actor) {
-		return null;
+	public Activity createActivity(ActionRequest ar) {
+		ProgressActivity pa= new ProgressActivity();
+		pa.setMaxProgress(2);
+	//	pa.setAnimIcon(animIcon)
+		pa.setName("Lockpicking");
+		pa.setAnimIcon("animations/pickLock");
+		return pa;
 	}
 
-	@Override
-	public String getActivityIcon(Info actor) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
 }

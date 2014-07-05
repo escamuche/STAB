@@ -8,7 +8,7 @@ import com.stab.common.Constants;
 import com.stab.data.StabInit;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.model.basic.token.Token;
-import com.stab.model.info.trait.base.Activity;
+import com.stab.model.info.trait.base.activity.Activity;
 import com.stab.model.info.trait.base.gear.Equipment;
 import com.tien.princess.engine.sprite.common.painters.Painter;
 import com.tien.princess.engine.sprite.ui.Icon;
