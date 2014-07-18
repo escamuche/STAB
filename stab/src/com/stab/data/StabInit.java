@@ -161,6 +161,7 @@ import com.stab.data.adventure.TestAdventure;
 import com.stab.data.adventure.Zombies;
 import com.stab.data.adventure.everflame.Roldare;
 import com.stab.data.animation.AlertAnimation;
+import com.stab.data.animation.AnimatedIconAnimation;
 import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.animation.BlockAnimation;
 import com.stab.data.animation.CloseDoorAnimation;
@@ -474,6 +475,7 @@ public class StabInit {
 		of.setMapping(WaitAnimation.class);
 		of.setMapping(FlashAnimation.class);
 		of.setMapping(MarkAnimation.class);
+		of.setMapping(AnimatedIconAnimation.class);
 		
 		//Tokens
 		of.setMapping(IronBarsToken.class);

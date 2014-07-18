@@ -11,7 +11,7 @@ import com.stab.model.info.applicable.base.Interaction;
 import com.stab.model.info.base.MechanismDecoration;
 import com.stab.model.info.trait.base.VisualEffect;
 import com.stab.model.info.trait.base.activity.Activity;
-import com.stab.model.info.trait.base.activity.ProgressActivity;
+import com.stab.model.info.trait.base.activity.TinkerActivity;
 import com.stab.model.request.basic.ActionRequest;
 
 public class Locked extends VisualEffect implements Attends<Interaction>,Mechanism {
@@ -74,11 +74,10 @@ public class Locked extends VisualEffect implements Attends<Interaction>,Mechani
 	
 	@Override
 	public Activity createActivity(ActionRequest ar) {
-		ProgressActivity pa= new ProgressActivity();
-		pa.setMaxProgress(2);
-	//	pa.setAnimIcon(animIcon)
-		pa.setName("Lockpicking");
-		pa.setAnimIcon("animations/pickLock");
+		PickLockActivity pa= new PickLockActivity();
+		pa.setMaxProgress(20);
+	
+	
 		return pa;
 	}
 
