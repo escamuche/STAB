@@ -14,6 +14,12 @@ public class PickLockActivity extends TinkerActivity{
 	
 	
 	@Override
+	public void advanceActivity() {
+		super.advanceActivity();
+		System.out.println("pick lock "+this.getProgress()+" of "+this.getMaxProgress()+" finished? "+this.isFinished()+" shouldEndTurn? "+this.shouldEndTurn());
+	}
+	
+	@Override
 	protected void configureEffectSprite(Sprite es) {
 		super.configureEffectSprite(es);
 		es.playAnimation(VisualEffect.ANIMATED_ICON_ANIMATION,0,0,3,1000,true,false);
