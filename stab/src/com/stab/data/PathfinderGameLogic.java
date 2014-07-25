@@ -73,7 +73,7 @@ public class PathfinderGameLogic extends GameLogic {
 		}
 		SkillRoll d= getSkillRoll(i,StabConstants.DISABLEDEVICES,dc);
 		d.check();
-		
+		System.out.println("disable device roll "+d.getRollResult()+" "+d.getFinalModifier()+" vs "+d.getFinalTargetNumber());
 		if (!d.isBotch() && d.failed())
 		if (d.getFinalTargetNumber()-5>d.getRollResult()){
 			return SkillRoll.BOTCH;

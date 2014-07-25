@@ -13,7 +13,8 @@ public class FailureAnimation extends Animation {
 	
 	@Override
 	public void start() {
-		getSource().playAnimation(VisualEffect.ANIMATED_SPARK_ANIMATION, "animations/failure",1000,0,0,8,1000,false,false);
+		super.start();
+		getSource().playAnimation(VisualEffect.ANIMATED_SPARK_ANIMATION, "animations/failure&0",1000,0,0,8,1000,false,false);
 	}
 	
 }

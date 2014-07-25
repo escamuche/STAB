@@ -171,6 +171,7 @@ import com.stab.data.animation.DecayAnimation;
 import com.stab.data.animation.EffectAddAnimation;
 import com.stab.data.animation.EffectRemoveAnimation;
 import com.stab.data.animation.ExtraInfoAnimation;
+import com.stab.data.animation.FailureAnimation;
 import com.stab.data.animation.FlashAnimation;
 import com.stab.data.animation.FloatingTextAnimation;
 import com.stab.data.animation.GenericProyectileAnimation;
@@ -196,6 +197,7 @@ import com.stab.data.animation.SidestepAnimation;
 import com.stab.data.animation.SpeechBubbleAnimation;
 import com.stab.data.animation.StartledAnimation;
 import com.stab.data.animation.StepBackAnimation;
+import com.stab.data.animation.SuccessAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.ThrustAnimation;
 import com.stab.data.animation.VerticalScreenShakeAnimation;
@@ -478,6 +480,8 @@ public class StabInit {
 		of.setMapping(MarkAnimation.class);
 		of.setMapping(AnimatedIconAnimation.class);
 		of.setMapping(AnimatedSparkAnimation.class);
+		of.setMapping(SuccessAnimation.class);
+		of.setMapping(FailureAnimation.class);
 		
 		//Tokens
 		of.setMapping(IronBarsToken.class);

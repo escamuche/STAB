@@ -2,6 +2,7 @@ package com.stab.data.animation;
 
 import com.stab.client.slick.AbstractGameScreen;
 import com.stab.client.slick.base.visualobjects.StabSprite;
+import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.trait.base.VisualEffect;
 import com.tien.princess.engine.sprite.StateSprite;
@@ -62,7 +63,9 @@ public class AnimatedSparkAnimation extends Animation {
 		icon.setSize(64,64);
 		
 		icon.setPainter(p);
-		((AbstractGameScreen)icon.getScreen()).add(icon);
+		
+		StateSprite s=AnimUtils.getSprite(getSource());
+		((AbstractGameScreen)s.getScreen()).add(icon);
 	}
 
 }

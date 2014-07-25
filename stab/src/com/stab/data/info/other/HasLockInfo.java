@@ -13,6 +13,9 @@ public class HasLockInfo extends InfoModifier{
 	@Injected
 	int dc;
 	
+	@Injected
+	String key;
+	
 	@Override
 	protected boolean shouldAffect(Info i) {
 		if (i instanceof Interactive)
@@ -21,10 +24,30 @@ public class HasLockInfo extends InfoModifier{
 		return false;
 	}
 	
+	public void setDc(int dc) {
+		this.dc = dc;
+	}
+	
+	public int getDc() {
+		return dc;
+	}
+	
+	
+	public void setKey(String key) {
+		this.key = key;
+	}
+	
+	public String getKey() {
+		return key;
+	}
+	
 	@Override
 	protected void affect(Info i) {
-	//	System.out.println("AÑADIENDO CERROJO A "+i);
-		((BaseInfo)i).addTrait(new Locked(dc));
+	//	System.out.println("AÑADIENDO CERROJO A "+i+"  DC: "+dc);
+		Locked l= new Locked(dc);
+		if (getKey()!=null)
+			l.setKey(getKey());
+		((BaseInfo)i).addTrait(l);
 		
 	}
 	
