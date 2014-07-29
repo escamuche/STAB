@@ -55,14 +55,16 @@ public class AnimatedSparkAnimation extends Animation {
 		Painter p=PaintUtils.getPainter(img);
 	
 		
-		StateSprite icon=new StabSprite();
+		StabSprite icon=new StabSprite();
 
-		icon.setState(st);
 	
 		icon.setPos(getOriginPoint());
 		icon.setSize(64,64);
 		
 		icon.setPainter(p);
+		
+//		icon.setState(st);
+
 		
 		StateSprite s=AnimUtils.getSprite(getSource());
 		((AbstractGameScreen)s.getScreen()).add(icon);

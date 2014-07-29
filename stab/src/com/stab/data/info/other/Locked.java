@@ -54,8 +54,14 @@ public class Locked extends VisualEffect implements Attends<Interaction>,Mechani
 				if (k.opens(getKey()))
 					found=true;
 			
-			if (found)
+			if (found){
 				this.getTarget().playAnimation(VisualEffect.FLOATING_TEXT_ANIMATION,"Unlocked",Color.green);
+				((EffectDecoration)this.getEffectSprite()).setResource("animations/openLock&0");
+				this.getEffectSprite().playAnimation(VisualEffect.ANIMATED_ICON_ANIMATION,0,0,3,1000,true,false);
+				this.getEffectSprite().playAnimation(VisualEffect.WAIT_ANIMATION,1000);
+				this.end();
+			}
+			return;
 		}
 		
 		app.setResult(Interaction.NEUTRALIZED);
