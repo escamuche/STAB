@@ -22,7 +22,8 @@ public class FlameJetTrap extends DecoGadget implements RemoteActivated{
 	
 	public void channelOn() {
 		super.channelOn();
-		
+		if (!isEnabled())
+			return;
 		revealForRange(12);
 		setVisible(true);
 		

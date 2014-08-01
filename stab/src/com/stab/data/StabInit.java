@@ -200,6 +200,7 @@ import com.stab.data.animation.StepBackAnimation;
 import com.stab.data.animation.SuccessAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.ThrustAnimation;
+import com.stab.data.animation.TinkerAnimation;
 import com.stab.data.animation.VerticalScreenShakeAnimation;
 import com.stab.data.animation.WaitAnimation;
 import com.stab.data.animation.WalkAnimation;
@@ -486,6 +487,7 @@ public class StabInit {
 		of.setMapping(AnimatedSparkAnimation.class);
 		of.setMapping(SuccessAnimation.class);
 		of.setMapping(FailureAnimation.class);
+		of.setMapping(TinkerAnimation.class);
 		
 		//Tokens
 		of.setMapping(IronBarsToken.class);

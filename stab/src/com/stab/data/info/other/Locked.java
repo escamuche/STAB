@@ -57,11 +57,13 @@ public class Locked extends VisualEffect implements Attends<Interaction>,Mechani
 			if (found){
 				this.getTarget().playAnimation(VisualEffect.FLOATING_TEXT_ANIMATION,"Unlocked",Color.green);
 				((EffectDecoration)this.getEffectSprite()).setResource("animations/openLock&0");
-				this.getEffectSprite().playAnimation(VisualEffect.ANIMATED_ICON_ANIMATION,0,0,3,1000,true,false);
+				this.getEffectSprite().playAnimation(VisualEffect.ANIMATED_ICON_ANIMATION,1000,0,3,1000,true,false);
 				this.getEffectSprite().playAnimation(VisualEffect.WAIT_ANIMATION,1000);
+				try{Thread.sleep(1000);}catch(Exception e){}
 				this.end();
+				return;
 			}
-			return;
+			
 		}
 		
 		app.setResult(Interaction.NEUTRALIZED);
@@ -98,8 +100,9 @@ public class Locked extends VisualEffect implements Attends<Interaction>,Mechani
 			actor.playAnimation(VisualEffect.SUCCESS_ANIMATION);
 			//this.getEffectSprite().playAnimation(a)
 			((EffectDecoration)this.getEffectSprite()).setResource("animations/openLock&0");
-			this.getEffectSprite().playAnimation(VisualEffect.ANIMATED_ICON_ANIMATION,0,0,3,1000,true,false);
+			this.getEffectSprite().playAnimation(VisualEffect.ANIMATED_ICON_ANIMATION,1000,0,3,1000,true,false);
 			this.getEffectSprite().playAnimation(VisualEffect.WAIT_ANIMATION,1000);
+			try{Thread.sleep(1000);}catch(Exception e){}
 			this.end();
 		}else{
 			actor.playAnimation(VisualEffect.FAILURE_ANIMATION);

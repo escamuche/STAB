@@ -8,11 +8,18 @@ public class FloorLever extends Lever {
 	
 	
 	@Override
+	public void init() {
+		super.init();
+		setText("Lever");
+		setState(OFF);
+	}
+	
+	@Override
 	public void setState(int state) {
 		super.setState(state);
 		playSound("door_close");
 		if (state==ON){
-			setResource("props/leverl_on");
+			setResource("props/lever_on");
 		}
 		if (state==OFF){
 			setResource("props/lever_off");
