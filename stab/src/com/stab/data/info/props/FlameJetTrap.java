@@ -15,8 +15,9 @@ public class FlameJetTrap extends DecoGadget implements RemoteActivated{
 	 public void init() {
 		super.init();
 		setResource("fireslits");
-		setText("");
+		setText("Flame trap");
 		setDescription("Some slits on the side, with scorched markings");
+		setDeviceDc(10,10);
 	};
 	
 	public void channelOn() {

@@ -249,6 +249,7 @@ import com.stab.data.info.props.CDoor;
 import com.stab.data.info.props.Crate;
 import com.stab.data.info.props.Dummy;
 import com.stab.data.info.props.FlameJetTrap;
+import com.stab.data.info.props.FloorLever;
 import com.stab.data.info.props.IronBars;
 import com.stab.data.info.props.LDoor;
 import com.stab.data.info.props.RDoor;
@@ -403,6 +404,7 @@ public class StabInit {
 		of.setMapping(SkillExtraText.class);
 		of.setMapping(HasLockInfo.class);
 		of.setMapping(Key.class);
+		of.setMapping(FloorLever.class);
 		
 		//criaturas
 		of.setMapping(Zombie.class);
