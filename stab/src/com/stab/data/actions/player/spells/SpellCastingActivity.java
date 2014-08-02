@@ -1,26 +1,25 @@
-package com.stab.data.info.buff;
+package com.stab.data.actions.player.spells;
 
 import com.stab.common.Constants;
-import com.stab.data.actions.player.spells.SpellAction;
 import com.stab.data.animation.GenericSpriteOnAnimation;
 import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
-import com.stab.model.action.Action;
 import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.DecorToken;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.activity.ProgressActivity;
 
-public class SpellCasting_Condition extends Buff {
+public class SpellCastingActivity extends ProgressActivity {
+
+public static final String ID="SPELLCASTING";
 	
-	public static final String ID="SPELLCASTING";
+SpellAction action;
 	
-	Action action;
-	
-	public SpellCasting_Condition(Action action) {
+	public SpellCastingActivity(SpellAction action) {
 		this.action=action;
+		this.setMaxProgress(1);
 	}
 	
 	
-	public Action getAction() {
+	public SpellAction getAction() {
 		return action;
 	}
 	
@@ -30,15 +29,26 @@ public class SpellCasting_Condition extends Buff {
 		return t;
 	}
 	
-	protected void configureEffectToken(DecorToken token) {
+	@Override
+	protected void configureEffectSprite(Sprite token) {
 		//En un futuro, usar una animacion distinta para divine casting, y para spell like
-		if (action instanceof SpellAction){
-			SpellAction a= (SpellAction)action;
-			if (a.getSpell().isArcane())
+		if (!action.getSpell().isSpellLikeAbility()){
+			if (action.getSpell().isArcane())
 				token.playAnimation(GenericSpriteOnAnimation.ID,SpecialEffectsSpriteFactory.SPELLCASTING);
-			if (a.getSpell().isDivine())
+			if (action.getSpell().isDivine())
 				token.playAnimation(GenericSpriteOnAnimation.ID,SpecialEffectsSpriteFactory.DIVINESPELLCASTING);
 		}
+		
 	}
 
+	
+	@Override
+		public void advanceActivity() {
+			getTarget().waitAnimation(200);
+			super.advanceActivity();
+			
+			
+		}
+	
+	
 }

@@ -1,10 +1,15 @@
 package com.stab.data.info.applicable;
 
+import java.util.EnumSet;
+
+import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.actions.player.spells.Spell;
+import com.stab.data.actions.player.spells.SpellProperties;
+import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
 
-public class SpellCasting extends Applicable {
+public class SpellCasting extends Applicable implements SpellProperties {
 	
 	//Eventualmente podemos meter aqui algun calculo de coste (doble coste para escuelas negadas, etc)
 
@@ -26,7 +31,7 @@ public class SpellCasting extends Applicable {
 	
 	public SpellCasting(Info instigator,Spell spell) {
 		super(instigator);
-		this.spell=spell;
+		this.spell=spell.getCopy();
 		setResult(SUCCESS);
 		clModifier=0;
 	}
@@ -86,5 +91,78 @@ public class SpellCasting extends Applicable {
 	
 	public void modifyCl(int amount){
 		clModifier+=amount;
+	}
+
+	
+	
+	
+	
+	
+	
+	//From spell (revisar todo esto)
+	
+	@Override
+	public EnumSet<EffectDescriptor> getDescriptors() {
+		return spell.getDescriptors();
+	}
+
+	@Override
+	public int getLevel() {
+		return spell.getLevel();
+	}
+
+	@Override
+	public String getAttribute() {
+		return spell.getAttribute();
+	}
+
+	@Override
+	public int getDC(BaseInfo caster) {
+		return spell.getDC(caster);
+	}
+
+	@Override
+	public String getCasterClass() {
+		return spell.getCasterClass();
+	}
+
+	@Override
+	public int getRange(Info caster) {
+		return spell.getRange(caster);
+	}
+
+	@Override
+	public int getCasterLevel(BaseInfo caster) {
+		return spell.getCasterLevel(caster);
+	}
+
+	@Override
+	public String getSave() {
+		return spell.getSave();
+	}
+
+	@Override
+	public int getMedium() {
+		return spell.getMedium();
+	}
+
+	@Override
+	public boolean isWeaponChargeSpell() {
+		return spell.isWeaponChargeSpell();
+	}
+
+	@Override
+	public boolean canCast(BaseInfo caster) {
+		return spell.canCast(caster);
+	}
+
+	@Override
+	public boolean isAffectedBySR() {
+		return spell.isAffectedBySR();
+	}
+
+	@Override
+	public SavingThrowEffect getSavingThrow(BaseInfo caster, BaseInfo target) {
+		return spell.getSavingThrow(caster, target);
 	}
 }

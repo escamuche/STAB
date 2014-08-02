@@ -10,7 +10,6 @@ import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.info.applicable.BreakSpellResistance;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.data.info.applicable.SpellCasting;
-import com.stab.data.info.buff.SpellCasting_Condition;
 import com.stab.data.info.equipment.SpellActionEffect;
 import com.stab.data.info.equipment.SpellWeapon;
 import com.stab.model.action.Action;
@@ -19,6 +18,7 @@ import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.base.Creature;
+import com.stab.model.info.trait.base.activity.Activity;
 import com.stab.model.info.trait.base.gear.Weapon;
 import com.stab.model.request.basic.ActionRequest;
 import com.stab.util.StabUtils;
@@ -36,6 +36,18 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	}
 
 	
+	public Class getActivityClass(){
+		return SpellCastingActivity.class;
+	}
+	
+	@Override
+	public Activity createActivity(ActionRequest ar) {
+		SpellCastingActivity act=new SpellCastingActivity(this);
+		
+		return act;
+	}
+	
+	/*
 	public final int execute(Info origin,Info target,Point point,ActionRequest ar){
 	
 		if (!attemptCast(origin,target,point))
@@ -62,12 +74,13 @@ public abstract class SpellAction extends Action implements SpellProperties{
 			sleep(50);
 		}
 	}
+	/**/
 	
 	public boolean attemptCast(Info origin,Info target,Point point){
-		beginCasting(origin);
+	//	beginCasting(origin);
 		SpellCasting sc= new SpellCasting(origin,getSpell());
 		sc.check();
-		endCasting(origin);
+	//	endCasting(origin);
 		if (sc.failed()){
 			switch(sc.getResult()){
 				case SpellCasting.ARMORFAIL: 
