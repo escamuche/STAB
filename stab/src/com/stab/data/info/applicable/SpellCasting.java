@@ -27,18 +27,15 @@ public class SpellCasting extends Applicable implements SpellProperties {
 	
 	Spell spell;
 	
-	int clModifier; //Aun no funciona / hay que plantearlo de otra manera
 	
 	public SpellCasting(Info instigator,Spell spell) {
 		super(instigator);
 		this.spell=spell.getCopy();
 		setResult(SUCCESS);
-		clModifier=0;
 	}
 	
 	@Override
 	public void validate() {
-		// TODO Auto-generated method stub
 		
 	}
 	
@@ -81,18 +78,6 @@ public class SpellCasting extends Applicable implements SpellProperties {
 	}
 	
 	
-	public void setClModifier(int clModifier) {
-		this.clModifier = clModifier;
-	}
-	
-	public int getClModifier() {
-		return clModifier;
-	}
-	
-	public void modifyCl(int amount){
-		clModifier+=amount;
-	}
-
 	
 	
 	

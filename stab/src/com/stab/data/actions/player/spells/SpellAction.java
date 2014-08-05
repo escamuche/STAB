@@ -1,15 +1,16 @@
 package com.stab.data.actions.player.spells;
 
 import java.awt.Point;
+import java.lang.annotation.Inherited;
 import java.util.EnumSet;
 
 import org.newdawn.slick.Color;
 
+import com.stab.annotations.Instanced;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.info.applicable.BreakSpellResistance;
 import com.stab.data.info.applicable.SavingThrowEffect;
-import com.stab.data.info.applicable.SpellCasting;
 import com.stab.data.info.equipment.SpellActionEffect;
 import com.stab.data.info.equipment.SpellWeapon;
 import com.stab.model.action.Action;
@@ -23,18 +24,24 @@ import com.stab.model.info.trait.base.gear.Weapon;
 import com.stab.model.request.basic.ActionRequest;
 import com.stab.util.StabUtils;
 
+
+@Instanced
 public abstract class SpellAction extends Action implements SpellProperties{
 
 	
 	
-	
+	Spell baseSpell;
 	Spell spell;
 	
 	public SpellAction() {
-		spell=new Spell();
-		
+		baseSpell=new Spell();
+		spell=baseSpell;
 	}
 
+	
+	public Spell getBaseSpell() {
+		return baseSpell;
+	}
 	
 	public Class getActivityClass(){
 		return SpellCastingActivity.class;
@@ -45,6 +52,19 @@ public abstract class SpellAction extends Action implements SpellProperties{
 		SpellCastingActivity act=new SpellCastingActivity(this);
 		
 		return act;
+	}
+	
+	
+	@Override
+	protected void fail(ActionRequest ar) {
+		super.fail(ar);
+		this.setSpell(getBaseSpell());
+	}
+	
+	@Override
+	protected void success(ActionRequest ar) {
+		super.success(ar);
+		this.setSpell(getBaseSpell());
 	}
 	
 	/*
@@ -76,32 +96,17 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	}
 	/**/
 	
-	public boolean attemptCast(Info origin,Info target,Point point){
-	//	beginCasting(origin);
-		SpellCasting sc= new SpellCasting(origin,getSpell());
-		sc.check();
-	//	endCasting(origin);
-		if (sc.failed()){
-			switch(sc.getResult()){
-				case SpellCasting.ARMORFAIL: 
-				case SpellCasting.INDUCEDFAIL:
-				case SpellCasting.CONCENTRATIONFAIL:
-				case SpellCasting.SPELLCHECKFAIL:
-				case SpellCasting.GENERICFAIL:
-						origin.showFloatingText("FAILED", Color.red);
-			}
-			return false;
-		}
-		return true;
-	}
 	
+	public void setSpell(Spell spell) {
+		this.spell = spell;
+	}
 	
 	public Spell getSpell() {
 		return spell;
 	}
 	
 	public void setLevel(int level) {
-		getSpell().setLevel(level);
+		getBaseSpell().setLevel(level);
 	}
 
 	public int getLevel() {
@@ -117,7 +122,7 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	}
 
 	public void setCasterClass(String casterClass) {
-		getSpell().setCasterClass(casterClass);
+		getBaseSpell().setCasterClass(casterClass);
 	}
 
 	public String getCasterClass() {
@@ -141,7 +146,7 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	}
 
 	public void setSave(String save) {
-		getSpell().setSave(save);
+		getBaseSpell().setSave(save);
 	}
 
 	public int getMedium() {
@@ -157,15 +162,15 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	}
 
 	public void setMedium(int medium) {
-		getSpell().setMedium(medium);
+		getBaseSpell().setMedium(medium);
 	}
 
 	public void setAffectedBySR(boolean affectedBySR) {
-		getSpell().setAffectedBySR(affectedBySR);
+		getBaseSpell().setAffectedBySR(affectedBySR);
 	}
 
 	public boolean isAffectedBySR() {
-		return getSpell().isAffectedBySR();
+		return getBaseSpell().isAffectedBySR();
 	}
 
 	public boolean isHarmfulFor(Info instigator,Info target) {
@@ -184,13 +189,13 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	}
 	
 	public void setRange(int range){
-		getSpell().setRange(range);
+		getBaseSpell().setRange(range);
 	}
 	
 	
 	
 	public void setWeapon(String weapon) {
-		getSpell().setWeapon(weapon);
+		getBaseSpell().setWeapon(weapon);
 	}
 
 	public boolean isWeaponChargeSpell() {
@@ -198,7 +203,7 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	}
 
 	public void setWeaponChargeSpell(boolean weaponChargeSpell) {
-		getSpell().setWeaponChargeSpell(weaponChargeSpell);
+		getBaseSpell().setWeaponChargeSpell(weaponChargeSpell);
 	}
 
 	@Override
@@ -228,11 +233,11 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	
 	
 	public void setDescriptors(EffectDescriptor arg0) {
-		getSpell().setDescriptors(arg0);
+		getBaseSpell().setDescriptors(arg0);
 	}
 
 	public void setDescriptors(EffectDescriptor arg0, EffectDescriptor... arg1) {
-		getSpell().setDescriptors(arg0, arg1);
+		getBaseSpell().setDescriptors(arg0, arg1);
 	}
 
 	@Override
@@ -383,18 +388,16 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	}
 	
 	@Override
-		public int getCost() {
-			if(getSpell().getLevel()==0)
-				return 0;
-			return (getSpell().getLevel()*5)+5;
-		}
+	public int getCost() {
+		return getSpell().getCost();
+	}
 
 	public void setSomatic(boolean somatic) {
-		getSpell().setSomatic(somatic);
+		getBaseSpell().setSomatic(somatic);
 	}
 
 	public void setVerbal(boolean verbal) {
-		getSpell().setVerbal(verbal);
+		getBaseSpell().setVerbal(verbal);
 	}
 
 

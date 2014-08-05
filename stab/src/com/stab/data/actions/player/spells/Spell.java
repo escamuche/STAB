@@ -24,10 +24,11 @@ public class Spell implements SpellProperties {
 	int medium=SELECTED;
 	
 	int range=0;
-	int cost=0;
+	Integer cost=0;
 	boolean affectedBySR=true;
 	
 	boolean spellLikeAbility=false;
+	boolean isItem=false;
 	
 	String weapon=null;
 	boolean weaponChargeSpell=false;
@@ -37,6 +38,12 @@ public class Spell implements SpellProperties {
 	boolean somatic=true;
 	
 	Integer fixedCasterLevel=null;
+	int casterLevelMod=0;
+	
+	
+	float powerMult=1.0f;
+	boolean maximized=false;
+	boolean minimized=false;
 	
 	
 	public void setLevel(int level) {
@@ -125,12 +132,13 @@ public class Spell implements SpellProperties {
 	
 	@Override
 	public int getCasterLevel(BaseInfo caster) {
-		
+		int v;
 		if (getFixedCasterLevel()!=null)
-			return getFixedCasterLevel();
-		
-	//	System.out.println("Caster level is "+caster.getAttributeValue(getCasterClass())+" in  "+getCasterClass());
-		int v= caster.getValue(getCasterClass());
+			v= getFixedCasterLevel();
+		else
+		 v= caster.getValue(getCasterClass());
+
+		v=v+getCasterLevelMod();
 		
 		return v;
 	}
@@ -188,8 +196,10 @@ public class Spell implements SpellProperties {
 		return affectedBySR;
 	}
 	
-	public int getSPCost(int level){
-		return (level*5)+5;
+	public int getSPCost(){
+		if(getLevel()==0)
+			return 0;
+		return (getLevel()*5)+5;
 	}
 	
 	
@@ -255,6 +265,8 @@ public class Spell implements SpellProperties {
 	
 	
 	public boolean isSubjectToArcaneArmorFailure() {
+		if (isSpellLikeAbility() || isItem())
+			return false;
 		if (getCasterClass().equals(StabConstants.WIZARDCASTER))
 			return true;
 		if (getCasterClass().equals(StabConstants.SORCERERCASTER))
@@ -298,14 +310,89 @@ public class Spell implements SpellProperties {
 	
 	public Spell getCopy(){
 		Spell s=new Spell();
-		try {
+		copyProperties(s);
+		/*try {
 			BeanUtils.copyProperties(s, this);
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 		} catch (InvocationTargetException e) {
 			e.printStackTrace();
-		}
+		}/**/
 		return s;
+	}
+	
+	protected void copyProperties(Spell sp){
+		sp.level=level;
+		sp.attribute=attribute;
+		sp.casterClass = casterClass;
+		sp.save=save;
+		sp.medium=medium;
+		int medium=SELECTED;
+		sp.range=range;
+		if (cost!=null)
+			sp.cost=new Integer(cost);
+		sp.affectedBySR=affectedBySR;
+		sp.spellLikeAbility=spellLikeAbility;
+		sp.weapon=weapon;
+		sp.weaponChargeSpell=weaponChargeSpell;
+		sp.verbal=verbal;
+		sp.somatic=somatic;
+		if (sp.descriptors!=null)
+			sp.descriptors=descriptors.clone();
+		if (fixedCasterLevel!=null)
+			sp.fixedCasterLevel=new Integer(fixedCasterLevel);
+		sp.casterLevelMod= casterLevelMod;
+		sp.powerMult=powerMult;
+		sp.maximized=maximized;
+		sp.minimized=minimized;
+		sp.isItem=isItem;
+	}
+	
+	public void setCasterLevelMod(int casterLevelMod) {
+		this.casterLevelMod = casterLevelMod;
+	}
+	
+	public int getCasterLevelMod() {
+		return casterLevelMod;
+	}
+	
+	
+	public void setMaximized(boolean maximized) {
+		this.maximized = maximized;
+	}
+	public boolean isMaximized() {
+		return maximized;
+	}
+	
+	public void setMinimized(boolean minimized) {
+		this.minimized = minimized;
+	}
+	public boolean isMinimized() {
+		return minimized;
+	}
+	
+	public void setPowerMult(float powerMult) {
+		this.powerMult = powerMult;
+	}
+	public float getPowerMult() {
+		return powerMult;
+	}
+	
+	public void setCost(int cost) {
+		this.cost = cost;
+	}
+	public int getCost() {
+		if (cost==null)
+			return getSPCost();
+		return cost;
+	}
+	
+	public void setItem(boolean isItem) {
+		this.isItem = isItem;
+	}
+	
+	public boolean isItem() {
+		return isItem;
 	}
 	
 }

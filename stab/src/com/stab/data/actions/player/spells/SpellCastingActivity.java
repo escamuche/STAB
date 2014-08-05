@@ -1,10 +1,16 @@
 package com.stab.data.actions.player.spells;
 
+import java.awt.Point;
+
+import org.newdawn.slick.Color;
+
 import com.stab.common.Constants;
 import com.stab.data.animation.GenericSpriteOnAnimation;
 import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
+import com.stab.data.info.applicable.SpellCasting;
 import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.DecorToken;
+import com.stab.model.info.Info;
 import com.stab.model.info.trait.base.activity.ProgressActivity;
 
 public class SpellCastingActivity extends ProgressActivity {
@@ -46,8 +52,38 @@ SpellAction action;
 		public void advanceActivity() {
 			getTarget().waitAnimation(200);
 			super.advanceActivity();
-			
-			
+			}
+	
+	
+	@Override
+		public void startActivity() {
+			super.startActivity();
+			boolean b=attemptCast();
+			if (!b){
+				cancelActivity();
+				return;
+			}
+				
+		}
+	
+	public boolean attemptCast(){
+			SpellCasting sc= new SpellCasting(getTarget(),this.action.getBaseSpell());
+			sc.check();
+		//	endCasting(origin);
+			if (sc.failed()){
+				switch(sc.getResult()){
+					case SpellCasting.ARMORFAIL: 
+					case SpellCasting.INDUCEDFAIL:
+					case SpellCasting.CONCENTRATIONFAIL:
+					case SpellCasting.SPELLCHECKFAIL:
+					case SpellCasting.GENERICFAIL:
+							getTarget().showFloatingText("FAILED", Color.red);
+				}
+				return false;
+			}
+			action.setSpell(sc.getSpell());//Cambiamos las propiedades del hechizo por las que han resultado del spellcasting (inicialmente una copia
+											//pero cualquier attends puede haberlo modiifcado (ie: sumar caster lelvel, etc)
+			return true;
 		}
 	
 	

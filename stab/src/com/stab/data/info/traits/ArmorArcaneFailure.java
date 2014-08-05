@@ -20,7 +20,7 @@ public class ArmorArcaneFailure extends Trait implements Attends<SpellCasting>{
 	@Override
 	public void attend(SpellCasting app) {
 		if (app.isSubjectToArcaneArmorFailure())
-		if (app.isVerbal()){
+		if (app.isSomatic()){
 			int fail=((BaseInfo)app.getInstigator()).getValue(StabConstants.SPELLFAILURE);
 			if (Roll.d100()<=fail)
 				app.setResult(SpellCasting.ARMORFAIL);
