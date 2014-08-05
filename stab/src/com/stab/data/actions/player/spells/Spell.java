@@ -1,9 +1,6 @@
 package com.stab.data.actions.player.spells;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.EnumSet;
-
-import org.apache.commons.beanutils.BeanUtils;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
@@ -12,6 +9,10 @@ import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.data.info.equipment.SpellWeapon;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.info.applicable.Applicable;
+import com.stab.model.info.applicable.NumericApplicable;
+import com.stab.model.info.applicable.base.Damage;
+import com.stab.model.info.applicable.base.RolledDamage;
 
 public class Spell implements SpellProperties {
 	
@@ -24,7 +25,7 @@ public class Spell implements SpellProperties {
 	int medium=SELECTED;
 	
 	int range=0;
-	Integer cost=0;
+	Integer cost=null;
 	boolean affectedBySR=true;
 	
 	boolean spellLikeAbility=false;
@@ -393,6 +394,25 @@ public class Spell implements SpellProperties {
 	
 	public boolean isItem() {
 		return isItem;
+	}
+	
+	
+	//Aun no se usa, pero todo llegara.
+	public void adjust(Applicable a){
+		
+		if (a instanceof RolledDamage){
+			if (isMaximized()){
+				((RolledDamage)a).setMax();
+			}
+			if (isMinimized())
+				((RolledDamage)a).setMin();
+		}
+		
+		if (a instanceof NumericApplicable){
+			NumericApplicable n=(NumericApplicable)a;
+			n.setAmount((int)(n.getAmount()*this.getPowerMult()));
+		}
+		
 	}
 	
 }
