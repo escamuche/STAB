@@ -18,6 +18,7 @@ public class SpellCastingActivity extends ProgressActivity {
 public static final String ID="SPELLCASTING";
 	
 SpellAction action;
+Spell spell;
 	
 	public SpellCastingActivity(SpellAction action) {
 		this.action=action;
@@ -81,10 +82,22 @@ SpellAction action;
 				}
 				return false;
 			}
+			spell=sc.getSpell();
+			this.setMaxProgress(sc.getSpell().getCastingTime()+1);
 			action.setSpell(sc.getSpell());//Cambiamos las propiedades del hechizo por las que han resultado del spellcasting (inicialmente una copia
 											//pero cualquier attends puede haberlo modiifcado (ie: sumar caster lelvel, etc)
 			return true;
 		}
 	
+	
+	@Override
+		public boolean shouldEndTurn() {
+			if (spell!=null){
+				if (spell.getCastingTime()==SpellProperties.INSTANT)
+					return false;
+			}
+		
+			return super.shouldEndTurn();
+		}
 	
 }

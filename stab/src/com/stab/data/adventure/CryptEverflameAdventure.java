@@ -1346,7 +1346,7 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		  
 		//Elementos necesarios. Esto tiene que ir fuera de aqui! si no solo se inicializa en el host!
-				StabInit.getActionLibrary().register(new ClimbAction());
+				StabInit.getActionLibrary().register(ClimbAction.class);
 				StabInit.setMapping(ClimbWaypoint.class);
 	//Escena de las cuerdas
 				DefaultTileMapScene ropes=new DefaultTileMapScene();

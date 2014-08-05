@@ -1,7 +1,10 @@
 package com.stab.data.actions.player;
 
 
+import com.stab.data.StabConstants;
 import com.stab.data.actions.monster.AcidFlask;
+import com.stab.data.actions.player.spells.SpellAction;
+import com.stab.data.actions.player.spells.SpellUtils;
 import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
 import com.stab.data.actions.player.spells.wizard.level0.Bleed_Wizard;
 import com.stab.data.actions.player.spells.wizard.level0.Daze;
@@ -33,15 +36,15 @@ public class WizardActionSet extends PathfinderActionSet {
 	public WizardActionSet() {
 		
 		this.addAction(AcidSplash.ID);
-		this.addAction(Bleed_Wizard.ID);
+	//	this.addAction(Bleed_Wizard.ID);
 		this.addAction(Daze.ID);
 		this.addAction(DisruptUndead.ID);
 		this.addAction(Flare.ID);
-		this.addAction(Light_Wizard.ID);
+	//	this.addAction(Light_Wizard.ID);
 	//	this.addAction(MageHand.ID);
 		this.addAction(OpenClose.ID);
 		this.addAction(RayFrost.ID);
-		this.addAction(Resistance_Wizard.ID);
+	//	this.addAction(Resistance_Wizard.ID);
 		this.addAction(TouchFatigue.ID);
 		
 		this.addAction(BurningHands.ID);
@@ -53,7 +56,7 @@ public class WizardActionSet extends PathfinderActionSet {
 		this.addAction(Identify.ID);
 		this.addAction(Jump.ID);
 		this.addAction(MageArmor.ID);
-		this.addAction(MagicMissile.ID);
+	//	this.addAction(MagicMissile.ID);
 		this.addAction(RayEnfeeblement.ID);
 		this.addAction(Shield.ID);
 		this.addAction(ShockingGrasp.ID);
@@ -74,5 +77,15 @@ public class WizardActionSet extends PathfinderActionSet {
 				
 				this.addAction(AcidFlask.ID);
 				this.setAction(AcidFlask.ID,6);
+				
+				
+		SpellAction mm= SpellUtils.asCaster(MagicMissile.ID, StabConstants.WIZARDCASTER);
+		this.addAction(mm);
+		this.setAction(mm, 2);
+		System.out.println("Action mm "+mm+" "+mm.getId()+" "+mm.getLocator());
+		SpellAction mm2= SpellUtils.asSpellLike(MagicMissile.ID, StabConstants.WIZARDCASTER,9);
+		this.addAction(mm2);
+		this.setAction(mm2, 3);
+		System.out.println("Action mm2 "+mm+" "+mm.getId()+" "+mm.getLocator());
 	}
 }

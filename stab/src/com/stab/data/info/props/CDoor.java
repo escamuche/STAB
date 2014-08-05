@@ -29,4 +29,13 @@ public static final String ID="CDOOR";
 		setResource("cdoorClosed");
 		super.close();
 	}
+	
+	@Override
+		public void setState(int state) {
+			if (state==DESTROYED_STATE)
+				setResource("cdoorOpen");
+			super.setState(state);
+		}
+	
+	
 }

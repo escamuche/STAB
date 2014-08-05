@@ -33,6 +33,8 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	Spell baseSpell;
 	Spell spell;
 	
+	
+	
 	public SpellAction() {
 		baseSpell=new Spell();
 		spell=baseSpell;
@@ -414,4 +416,11 @@ public abstract class SpellAction extends Action implements SpellProperties{
 		return getSpell().isSubjectToArcaneArmorFailure();
 	}
 	
+	public void setCastingTime(int time){
+		this.getBaseSpell().setCastingTime(time);
+	}
+	
+	public int getCastingTime(){
+		return getSpell().getCastingTime();
+	}
 }

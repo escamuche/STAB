@@ -29,6 +29,10 @@ public interface SpellProperties extends HasDescriptor{
 	
 	
 	
+	//Casting time
+	public static final int INSTANT=-1;
+	public static final int STANDARD=0;
+	public static final int FULLROUND=1;
 	
 	
 	public int getLevel();

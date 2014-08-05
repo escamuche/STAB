@@ -515,35 +515,35 @@ public class StabInit {
 	
 	static void initActions(){
 		//accciones
-		getActionLibrary().register(new DefendAction());
+		getActionLibrary().register(DefendAction.class);
 		getActionLibrary().getAction(InteractAction.ID).setResource("actions/inv_gizmo_02");
 		getActionLibrary().register(PathfinderWeaponAttackAction.class);
-		getActionLibrary().register(new Rage());
-		getActionLibrary().register(new HealAction());
+		getActionLibrary().register(Rage.class);
+		getActionLibrary().register(HealAction.class);
 	//	getActionLibrary().getAction(SearchAction.ID).setResource("actions/inv_gizmo_02");
-		getActionLibrary().register(new PathfinderSearchAction());
-		getActionLibrary().register(new ChannelPossitiveEnergyAction());
-		getActionLibrary().register(new SmiteEvil());
-		getActionLibrary().register(new NobilityDomain());
-		getActionLibrary().register(new AcidFlask());
+		getActionLibrary().register(PathfinderSearchAction.class);
+		getActionLibrary().register(ChannelPossitiveEnergyAction.class);
+		getActionLibrary().register(SmiteEvil.class);
+		getActionLibrary().register(NobilityDomain.class);
+		getActionLibrary().register(AcidFlask.class);
 		
 		//feats
-		getActionLibrary().register(new PowerAttack());
-		getActionLibrary().register(new Expertise());
+		getActionLibrary().register(PowerAttack.class);
+		getActionLibrary().register(Expertise.class);
 		
 		//conjuros
 			//bard0
-		getActionLibrary().register(new DancingLights_Bard());
-		getActionLibrary().register(new Daze_Bard());
-		getActionLibrary().register(new DetectMagic_Bard());
-		getActionLibrary().register(new Flare_Bard());
-		getActionLibrary().register(new GhostSound_Bard());
-		getActionLibrary().register(new Light_Bard());
-		getActionLibrary().register(new Lullaby());
-		getActionLibrary().register(new MageHand_Bard());
-		getActionLibrary().register(new Mending_Bard());
-		getActionLibrary().register(new Message_Bard());
-		getActionLibrary().register(new OpenClose_Bard());
+		/*getActionLibrary().register(new DancingLights_Bard.class);
+		getActionLibrary().register(new Daze_Bard.class);
+		getActionLibrary().register(new DetectMagic_Bard.class);
+		getActionLibrary().register(new Flare_Bard.class);
+		getActionLibrary().register(new GhostSound_Bard.class);
+		getActionLibrary().register(new Light_Bard.class);
+		getActionLibrary().register(new Lullaby.class);
+		getActionLibrary().register(new MageHand_Bard.class);
+		getActionLibrary().register(new Mending_Bard.class);
+		getActionLibrary().register(new Message_Bard.class);
+		getActionLibrary().register(new OpenClose_Bard.class);
 		getActionLibrary().register(new Resistance_Bard());
 			
 			//bard1
@@ -571,27 +571,27 @@ public class StabInit {
 		getActionLibrary().register(new UndetectableAlignment());
 		getActionLibrary().register(new UnseenServant_Bard());
 		getActionLibrary().register(new Ventriloquism_Bard());
-		
+		*/
 			//cleric0
-		getActionLibrary().register(new Bleed());
-		getActionLibrary().register(new Guidance());
-		getActionLibrary().register(new Resistance());
-		getActionLibrary().register(new Stabilize());
-		getActionLibrary().register(new Virtue());
-		getActionLibrary().register(new Light());
+		getActionLibrary().register(Bleed.class);
+		getActionLibrary().register(Guidance.class);
+		getActionLibrary().register(Resistance.class);
+		getActionLibrary().register(Stabilize.class);
+		getActionLibrary().register(Virtue.class);
+		getActionLibrary().register(Light.class);
 		
 			//cleric1
-		getActionLibrary().register(new Bane());
-		getActionLibrary().register(new Bless());
-		getActionLibrary().register(new Command());
-		getActionLibrary().register(new CureLight());
-		getActionLibrary().register(new DivineFavor());
-		getActionLibrary().register(new Doom());
-		getActionLibrary().register(new EntropicShield());
-		getActionLibrary().register(new InflictLight());
-		getActionLibrary().register(new MagicStone());
-		getActionLibrary().register(new ShieldFaith());
-		
+		getActionLibrary().register(Bane.class);
+		getActionLibrary().register(Bless.class);
+		getActionLibrary().register(Command.class);
+		getActionLibrary().register(CureLight.class);
+		getActionLibrary().register(DivineFavor.class);
+		getActionLibrary().register(Doom.class);
+		getActionLibrary().register(EntropicShield.class);
+		getActionLibrary().register(InflictLight.class);
+		getActionLibrary().register(MagicStone.class);
+		getActionLibrary().register(ShieldFaith.class);
+/*		
 			//druid0
 		getActionLibrary().register(new CreateWater_Druid());
 		getActionLibrary().register(new DetectMagic_Druid());
@@ -604,30 +604,30 @@ public class StabInit {
 		getActionLibrary().register(new Resistance_Druid());
 		getActionLibrary().register(new Stabilize_Druid());
 		getActionLibrary().register(new Virtue_Druid());
-		
+	/**/	
 			//druid1
-		getActionLibrary().register(new CalmAnimals());
-		getActionLibrary().register(new CharmAnimal());
-		getActionLibrary().register(new CureLight_Druid());
-		getActionLibrary().register(new DetectAnimals());
-		getActionLibrary().register(new DetectSnares());
-		getActionLibrary().register(new EndureElements_Druid());
-		getActionLibrary().register(new Entangle());
-		getActionLibrary().register(new FaerieFire());
-		getActionLibrary().register(new Goodberry());
-		getActionLibrary().register(new HideAnimals());
-		getActionLibrary().register(new Jump_Druid());
-		getActionLibrary().register(new Longstrider());
-		getActionLibrary().register(new MagicFang());
-		getActionLibrary().register(new MagicStone_Druid());
-		getActionLibrary().register(new ObscuringMist_Druid());
-		getActionLibrary().register(new PassTrace());
-		getActionLibrary().register(new ProduceFlame());
-		getActionLibrary().register(new Shillelagh());
-		getActionLibrary().register(new SpeakAnimals());
-		getActionLibrary().register(new SummonNature1());
+		getActionLibrary().register(CalmAnimals.class);
+		getActionLibrary().register(CharmAnimal.class);
+		//getActionLibrary().register(new CureLight_Druid());
+		getActionLibrary().register(DetectAnimals.class);
+		getActionLibrary().register(DetectSnares.class);
+		//getActionLibrary().register(new EndureElements_Druid());
+		getActionLibrary().register(Entangle.class);
+		getActionLibrary().register(FaerieFire.class);
+		getActionLibrary().register(Goodberry.class);
+		getActionLibrary().register(HideAnimals.class);
+		//getActionLibrary().register(new Jump_Druid());
+		getActionLibrary().register(Longstrider.class);
+		getActionLibrary().register(MagicFang.class);
+		//getActionLibrary().register(new MagicStone_Druid());
+		//getActionLibrary().register(new ObscuringMist_Druid());
+		getActionLibrary().register(PassTrace.class);
+		getActionLibrary().register(ProduceFlame.class);
+		getActionLibrary().register(Shillelagh.class);
+		getActionLibrary().register(SpeakAnimals.class);
+		getActionLibrary().register(SummonNature1.class);
 		
-		//sorcerer0
+	/*	//sorcerer0
 	getActionLibrary().register(new AcidSplash_Sorcerer());
 	getActionLibrary().register(new Bleed_Sorcerer());
 	getActionLibrary().register(new Daze_Sorcerer());
@@ -655,36 +655,36 @@ public class StabInit {
 	getActionLibrary().register(new Shield_Sorcerer());
 	getActionLibrary().register(new ShockingGrasp_Sorcerer());
 	getActionLibrary().register(new TrueStrike_Sorcerer());
-			
+		/**/	
 			//wizard0
-		getActionLibrary().register(new AcidSplash());
-		getActionLibrary().register(new Bleed_Wizard());
-		getActionLibrary().register(new Daze());
-		getActionLibrary().register(new DancingLights());
-		getActionLibrary().register(new DisruptUndead());
-		getActionLibrary().register(new Flare());
-		getActionLibrary().register(new Light_Wizard());
-		getActionLibrary().register(new MageHand());
-		getActionLibrary().register(new OpenClose());
-		getActionLibrary().register(new RayFrost());
-		getActionLibrary().register(new Resistance_Wizard());
-		getActionLibrary().register(new TouchFatigue());
+		getActionLibrary().register(AcidSplash.class);
+		getActionLibrary().register(Bleed_Wizard.class);
+		getActionLibrary().register(Daze.class);
+		getActionLibrary().register(DancingLights.class);
+		getActionLibrary().register(DisruptUndead.class);
+		getActionLibrary().register(Flare.class);
+		//getActionLibrary().register(new Light_Wizard.class);
+		getActionLibrary().register(MageHand.class);
+		getActionLibrary().register(OpenClose.class);
+		getActionLibrary().register(RayFrost.class);
+		//getActionLibrary().register(new Resistance_Wizard());
+		getActionLibrary().register(TouchFatigue.class);
 
 			//wizard1
-		getActionLibrary().register(new BurningHands());
-		getActionLibrary().register(new CharmPerson());
-		getActionLibrary().register(new ChillTouch());
-		getActionLibrary().register(new EnlargePerson());
-		getActionLibrary().register(new ExpeditiousRetreat());
-		getActionLibrary().register(new HoldPortal());
-		getActionLibrary().register(new Identify());
-		getActionLibrary().register(new Jump());
-		getActionLibrary().register(new MageArmor());
-		getActionLibrary().register(new MagicMissile());
-		getActionLibrary().register(new RayEnfeeblement());
-		getActionLibrary().register(new Shield());
-		getActionLibrary().register(new ShockingGrasp());
-		getActionLibrary().register(new TrueStrike());
+		getActionLibrary().register(BurningHands.class);
+		getActionLibrary().register(CharmPerson.class);
+		getActionLibrary().register(ChillTouch.class);
+		getActionLibrary().register(EnlargePerson.class);
+		getActionLibrary().register(ExpeditiousRetreat.class);
+		getActionLibrary().register(HoldPortal.class);
+		getActionLibrary().register(Identify.class);
+		getActionLibrary().register(Jump.class);
+		getActionLibrary().register(MageArmor.class);
+		getActionLibrary().register(MagicMissile.class);
+		getActionLibrary().register(RayEnfeeblement.class);
+		getActionLibrary().register(Shield.class);
+		getActionLibrary().register(ShockingGrasp.class);
+		getActionLibrary().register(TrueStrike.class);
 
 	}
 	

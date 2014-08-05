@@ -2,6 +2,7 @@ package com.stab.data.actions.player.spells.wizard.level1;
 
 import java.awt.Point;
 
+import com.stab.annotations.Instanced;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.animation.MagicMissileAnimation;
@@ -11,6 +12,7 @@ import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.applicable.base.RolledDamage;
 
+@Instanced
 public class MagicMissile extends SpellOnTarget{
 	
 	public static final String ID="MagicMissile";

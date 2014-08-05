@@ -46,6 +46,8 @@ public class Spell implements SpellProperties {
 	boolean maximized=false;
 	boolean minimized=false;
 	
+	int castingTime=STANDARD;
+	
 	
 	public void setLevel(int level) {
 		this.level = level;
@@ -347,6 +349,7 @@ public class Spell implements SpellProperties {
 		sp.maximized=maximized;
 		sp.minimized=minimized;
 		sp.isItem=isItem;
+		sp.castingTime=castingTime;
 	}
 	
 	public void setCasterLevelMod(int casterLevelMod) {
@@ -396,6 +399,14 @@ public class Spell implements SpellProperties {
 		return isItem;
 	}
 	
+	
+	public int getCastingTime() {
+		return castingTime;
+	}
+	
+	public void setCastingTime(int castingTime) {
+		this.castingTime = castingTime;
+	}
 	
 	//Aun no se usa, pero todo llegara.
 	public void adjust(Applicable a){
