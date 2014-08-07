@@ -159,12 +159,16 @@ import com.stab.data.adventure.ColiseoAdventure;
 import com.stab.data.adventure.CryptEverflameAdventure;
 import com.stab.data.adventure.TestAdventure;
 import com.stab.data.adventure.Zombies;
+import com.stab.data.adventure.duskwood.BrotherManfred;
+import com.stab.data.adventure.duskwood.DesnaChalice;
+import com.stab.data.adventure.duskwood.DuskwoodAdventure;
 import com.stab.data.adventure.everflame.Roldare;
 import com.stab.data.animation.AlertAnimation;
 import com.stab.data.animation.AnimatedIconAnimation;
 import com.stab.data.animation.AnimatedSparkAnimation;
 import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.animation.BlockAnimation;
+import com.stab.data.animation.CenterCamAnimation;
 import com.stab.data.animation.CloseDoorAnimation;
 import com.stab.data.animation.DamageNumberAnimation;
 import com.stab.data.animation.DecayAnimation;
@@ -353,7 +357,10 @@ public class StabInit {
 		TestAdventure t=new TestAdventure();
 		ServiceManager.getService(AdventureLibrary.class).register(t);
 		Zombies z=new Zombies();
-		ServiceManager.getService(AdventureLibrary.class).register(z);
+		//ServiceManager.getService(AdventureLibrary.class).register(z);
+		DuskwoodAdventure a= new DuskwoodAdventure();
+		ServiceManager.getService(AdventureLibrary.class).register(a);
+		
 		ColiseoAdventure c=new ColiseoAdventure();
 		ServiceManager.getService(AdventureLibrary.class).register(c);
 		CryptEverflameAdventure e=new CryptEverflameAdventure();
@@ -429,8 +436,10 @@ public class StabInit {
 		of.setMapping(BloodySkeleton.class);
 		
 		
-		//pnjs
+		//pnjs. trampa por ahora, mas adelante los registrara la aventura
 		of.setMapping(Roldare.class);
+		of.setMapping(BrotherManfred.class);
+		of.setMapping(DesnaChalice.class);
 		
 		//botones
 		of.setMapping(ActionSlotButton.class);
@@ -488,6 +497,7 @@ public class StabInit {
 		of.setMapping(SuccessAnimation.class);
 		of.setMapping(FailureAnimation.class);
 		of.setMapping(TinkerAnimation.class);
+		of.setMapping(CenterCamAnimation.class);
 		
 		//Tokens
 		of.setMapping(IronBarsToken.class);

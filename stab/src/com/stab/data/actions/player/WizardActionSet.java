@@ -6,14 +6,11 @@ import com.stab.data.actions.monster.AcidFlask;
 import com.stab.data.actions.player.spells.SpellAction;
 import com.stab.data.actions.player.spells.SpellUtils;
 import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
-import com.stab.data.actions.player.spells.wizard.level0.Bleed_Wizard;
 import com.stab.data.actions.player.spells.wizard.level0.Daze;
 import com.stab.data.actions.player.spells.wizard.level0.DisruptUndead;
 import com.stab.data.actions.player.spells.wizard.level0.Flare;
-import com.stab.data.actions.player.spells.wizard.level0.Light_Wizard;
 import com.stab.data.actions.player.spells.wizard.level0.OpenClose;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
-import com.stab.data.actions.player.spells.wizard.level0.Resistance_Wizard;
 import com.stab.data.actions.player.spells.wizard.level0.TouchFatigue;
 import com.stab.data.actions.player.spells.wizard.level0.unfinished.DancingLights;
 import com.stab.data.actions.player.spells.wizard.level1.BurningHands;
@@ -82,10 +79,10 @@ public class WizardActionSet extends PathfinderActionSet {
 		SpellAction mm= SpellUtils.asCaster(MagicMissile.ID, StabConstants.WIZARDCASTER);
 		this.addAction(mm);
 		this.setAction(mm, 2);
-		System.out.println("Action mm "+mm+" "+mm.getId()+" "+mm.getLocator());
-		SpellAction mm2= SpellUtils.asSpellLike(MagicMissile.ID, StabConstants.WIZARDCASTER,9);
-		this.addAction(mm2);
-		this.setAction(mm2, 3);
-		System.out.println("Action mm2 "+mm+" "+mm.getId()+" "+mm.getLocator());
+		
+		//Ojo... esto no puede ir aqui, sino que tiene que ir en el info! mmmm...
+		//SpellAction mm2= SpellUtils.addSpellLike(this,MagicMissile.ID, StabConstants.WIZARDCASTER,9,2);
+		//this.setAction(mm2, 3);
+		
 	}
 }

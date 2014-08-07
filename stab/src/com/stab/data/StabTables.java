@@ -32,6 +32,10 @@ public class StabTables extends Reference<WeightedTable>{
 		return tables.getValue(id);
 	}
 
+	
+	public static void registerTable(String id,InfosWeightedTable t){
+		tables.register(id, t);
+	}
 
 
 	//public static final String RND_GOBLIN="1:NULL;2:"+Goblin.ID+";2:"+GoblinShaman.ID+";1:"+Goblin.ID+","+Goblin.ID+";1:"+Goblin.ID+","+GoblinShaman.ID+";";

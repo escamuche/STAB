@@ -46,9 +46,13 @@ public class SpeechBubbleAnimation extends Animation {
 		if (img!=null)
 			icon.setIcon(img);
 		
+		
+		
 		setTime(icon.getCurrentState().getTimed()+200);
 		
 		((AbstractGameScreen)s.getScreen()).add(icon);
+		
+		icon.requestValidate();
 	}
 
 }

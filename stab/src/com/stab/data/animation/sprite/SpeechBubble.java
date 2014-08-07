@@ -18,6 +18,7 @@ public class SpeechBubble extends Label implements SpeechLayerComponent {//,Mous
 		super.init();
 		setBackground(PaintUtils.getPainter("speech$X"));
 		setDesiredSize(240,CONTENT);
+		setCap(220);
 		setTextColor(Color.black);
 		setMargin(20,16,8,24);
 		this.setMode(BANNER);

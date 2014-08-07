@@ -1,6 +1,8 @@
 package com.stab.data.actions.player.spells;
 
 import com.stab.data.StabConstants;
+import com.stab.model.info.BaseInfo;
+import com.stab.model.info.trait.base.resource.Resource;
 import com.stab.util.StabUtils;
 
 public class SpellUtils {
@@ -32,9 +34,16 @@ public class SpellUtils {
 		a.getSpell().setCost(0);
 		return a;
 	}
-	//no ira aqui, sino en el info correspondiente... o quizas como trait?
-	public static SpellAction asSpellLike(String action,String caster,int fixedlevel,int uses){
+	
+	static int counter=0;
+	//Pensarse si colocarlo como trait? por ahora aqui mas facil
+	public static SpellAction addSpellLike(BaseInfo info,String action,String caster,int fixedlevel,int uses){
 		SpellAction a= asSpellLike(action,caster,fixedlevel);
+		String res=a.getId()+counter++;
+		a.setRequiredResource(res, 1);
+		Resource r=new Resource(res,uses);
+		info.addTrait(r);
+		info.getActionSet().addAction(a);
 		return a;
 	}
 	public static SpellAction asItem(String action,String caster,int level,int fixedlevel){

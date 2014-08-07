@@ -95,6 +95,8 @@ Spell spell;
 			if (spell!=null){
 				if (spell.getCastingTime()==SpellProperties.INSTANT)
 					return false;
+				if (spell.getCastingTime()==SpellProperties.STANDARD)
+					return true;
 			}
 		
 			return super.shouldEndTurn();
