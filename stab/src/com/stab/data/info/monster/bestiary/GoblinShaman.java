@@ -32,7 +32,7 @@ public class GoblinShaman extends Goblin  implements Minion{
 		
 		setResource("goblinshaman");
 		setText("Goblin Shaman");
-		
+		setDescription("Some sort of goblin shaman");
 		
 		this.setAttribute(StabConstants.XP,200);
 		this.setAttribute(StabConstants.STRENGHT,9);

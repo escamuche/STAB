@@ -20,6 +20,7 @@ public class PillarArrowsAction extends Action  {
 		setRange(6);
 		setAoE(true);
 		setTargetMode(SELF);
+		setAPCost(0);
 	}
 
 	@Override

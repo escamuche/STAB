@@ -67,6 +67,7 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	protected void success(ActionRequest ar) {
 		super.success(ar);
 		this.setSpell(getBaseSpell());
+		
 	}
 	
 	/*

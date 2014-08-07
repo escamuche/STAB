@@ -22,6 +22,7 @@ public class Goblin extends Humanoid {
 		
 		setResource("goblin");
 		setText("Goblin");
+		setDescription("A goblin, evil and coward, but dangerous nonetheless");
 		this.addTrait(new ImprovedInitiative_Feat());
 		
 		this.setAttribute(StabConstants.XP,135);

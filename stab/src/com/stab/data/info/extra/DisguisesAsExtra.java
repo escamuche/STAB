@@ -16,6 +16,12 @@ public class DisguisesAsExtra extends SkillCheckExtra {
 	String resource;
 	
 	
+	public DisguisesAsExtra(BaseInfo i){
+		name=i.getText();
+		description=i.getDescription();
+		resource=i.getResource();
+	}
+	
 	public DisguisesAsExtra(){
 		name=null;
 		resource=null;

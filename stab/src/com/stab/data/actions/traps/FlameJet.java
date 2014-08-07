@@ -19,6 +19,7 @@ public class FlameJet extends Action  {
 		setRange(3);
 		setAoE(true);
 		setTargetMode(Action.TILE);
+		setAPCost(0);
 	}
 
 	@Override

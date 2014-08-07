@@ -17,7 +17,15 @@ public class SkillCheckExtra extends Extra {
 	
 	
 	
+	public SkillCheckExtra() {
+		skill=null;
+		dc=0;
+	}
 	
+	public void setSkill(String skill, int dc){
+		this.skill=skill;
+		this.dc=dc;
+	}
 	
 	
 	
@@ -29,9 +37,14 @@ public class SkillCheckExtra extends Extra {
 			return; 
 		}
 		if (instigator instanceof BaseInfo){
-			SkillRoll r=StabUtils.getGameLogic().getSkillRoll((BaseInfo)instigator,skill,dc);
-			r.check();
-			if (r.success()){
+			boolean b=true;
+			if (skill!=null){
+				SkillRoll r=StabUtils.getGameLogic().getSkillRoll((BaseInfo)instigator,skill,dc);
+				r.check();
+				b=r.success();
+			}
+			
+			if (b){
 				setActive(true);
 					
 				skillCheckPassed((BaseInfo)instigator,((Token)getOwnerElement()).getInfo());

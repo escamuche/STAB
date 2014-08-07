@@ -22,6 +22,7 @@ public class GoblinChieftain extends Goblin implements Commander{
 		
 		setResource("goblinChief");
 		setText("Goblin Chieftain");
+		setDescription("This goblin seems to be taller and stronger than the rest");
 		
 		this.setAttribute(StabConstants.HITDICENUMBER, 2);
 		this.setAttribute(StabConstants.STRENGHT,14);

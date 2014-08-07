@@ -24,7 +24,7 @@ public class GoblinAlchemist  extends Goblin implements Minion{
 		
 		setResource("goblinAlchemist");
 		setText("Goblin Alchemist");
-		
+		setDescription("A goblin with madness in its eyes, and some foul potion in his hands");
 		
 		this.setAttribute(StabConstants.XP,135);
 		this.setAttribute(StabConstants.DEXTERITY,15);

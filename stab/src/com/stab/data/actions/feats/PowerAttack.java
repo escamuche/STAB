@@ -22,7 +22,7 @@ public class PowerAttack extends Action implements  StanceAction {
 		this.setResource("actions/ability_backstab");
 		this.setUsableByAI(false);
 		setTargetMode(SELF);
-	
+		setAPCost(0);
 	}
 	
 	@Override

@@ -17,10 +17,10 @@ public class Zombie extends Undead {
 	@Override
 	public void init() {
 		super.init();
-		setMaxMovePoints(6);
+		setMaxMovePoints(4);
 		setResource("zombie");
 		setText("Zombie");
-		
+		setDescription("A walking corpse");
 			
 		this.setAttribute(StabConstants.XP,200);
 		this.setAttribute(StabConstants.TOHIT,+1);

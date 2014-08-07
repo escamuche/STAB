@@ -4,6 +4,7 @@ import com.stab.adventure.Adventure;
 import com.stab.common.events.DefaultRule;
 import com.stab.data.StabTables;
 import com.stab.data.info.monster.Undead;
+import com.stab.data.info.monster.bestiary.PlagueZombie;
 import com.stab.data.info.monster.bestiary.Zombie;
 import com.stab.data.rules.TrackerSetStatusResponse;
 import com.stab.data.scene.DefaultStabMapScene;
@@ -19,7 +20,6 @@ import com.stab.model.basic.scenes.event.condition.InfoIsTag;
 import com.stab.model.basic.scenes.event.response.ActivateRuleResponse;
 import com.stab.model.basic.scenes.event.response.DefeatResponse;
 import com.stab.model.basic.scenes.event.response.ShowMessageResponse;
-import com.stab.model.basic.scenes.event.response.infos.AddTraitResponse;
 import com.stab.model.basic.scenes.event.response.infos.PlayAnimationResponse;
 import com.stab.model.basic.scenes.event.response.infos.SpawnRandomInfoResponse;
 import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
@@ -58,7 +58,7 @@ public class DuskwoodAdventure extends Adventure {
 		Narration n=new Narration();
 		n.createContents();
 		n.setTag("BEGIN");
-		n.setNext("MAP.Start");
+		n.setNext("MAP.START");
 		n.setText("A huge storm had you looking for shelter in the forest of Duskwood. As the night nears, you found yourselves to be completely lost, and begin to wander. Suddenly, you find a clearing in the forest, with a ruined chapel just ahead.");
 		this.addScene(n);
 		
@@ -90,10 +90,10 @@ public class DuskwoodAdventure extends Adventure {
 		
 		//Tablas de spawn
 		InfosWeightedTable t= new InfosWeightedTable();
-		//t.setValues("1:"+Zombie.ID+","+Zombie.ID+";3:"+Zombie.ID+";1:"+PlagueZombie.ID);
+		t.setValues("1:"+Zombie.ID+","+Zombie.ID+";3:"+Zombie.ID+";1:"+PlagueZombie.ID);
 		StabTables.registerTable(ZOMBIE, t);
 		t= new InfosWeightedTable();
-		t.setValues("2:"+ZOMBIE+","+ZOMBIE+","+ZOMBIE+";1:"+ZOMBIE+","+ZOMBIE+","+ZOMBIE+","+ZOMBIE);
+		t.setValues("2:TABLE#"+ZOMBIE+",TABLE#"+ZOMBIE+",TABLE#"+ZOMBIE+";1:TABLE#"+ZOMBIE+",TABLE#"+ZOMBIE+",TABLE#"+ZOMBIE+",TABLE#"+ZOMBIE);
 		StabTables.registerTable(ZOMBIES, t);
 		
 		//Esta regla asigna un trait a cada undead que spawnea, haciendole que odie la reliquia, sepa donde esta y vaya a por ella

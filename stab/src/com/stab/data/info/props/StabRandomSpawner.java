@@ -7,7 +7,7 @@ import com.stab.util.InfosWeightedTable;
 
 public class StabRandomSpawner extends RandomSpawner {
 
-	public static final String ID="RANDOM_INFO";
+	public static final String ID=RandomSpawner.ID;
 	
 	@Override
 	public void setTable(String table) {
@@ -22,7 +22,7 @@ public class StabRandomSpawner extends RandomSpawner {
 	
 	@Override
 	public void spawn(String s) {
-		if (s.startsWith("TABLE:")){
+		if (s.startsWith("TABLE#")){
 			InfosWeightedTable tb= (InfosWeightedTable) StabTables.getTable(s.substring(6));
 			String[] data=tb.getTypedValue();
 			for(String ss:data){

@@ -21,6 +21,7 @@ public class SmiteEvil extends Action {//implements SelfAction{
      setName("Smite Evil");
      this.setEffectType(DEBUFF);
      this.setRequiredResource(SmiteEvil.RESOURCE_ID, 1);
+     setAPCost(0);
 	}
 
 

@@ -14,7 +14,7 @@ public class GoblinWarrior extends Goblin implements Minion {
 		
 		setResource("goblin");
 		setText("Goblin Warrior");
-		
+		setDescription("A better than average armed goblin");
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("SHORTSWORD"), HumanoidGear.MAINHAND);
 		this.equip(StabInit.getArmorFactory().getArmor("LIGHTLEATHER"), HumanoidGear.ARMOR);

@@ -21,6 +21,7 @@ public class Rage extends Action  {
      setName("Rage");
      this.setEffectType(BUFF);
      this.setRequiredResource(Rage.RESOURCE_ID, 1);
+     setAPCost(0);
 	}
 
 

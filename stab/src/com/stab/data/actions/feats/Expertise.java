@@ -20,6 +20,7 @@ public class Expertise extends Action   {
 		this.setName("Expertise");
 		this.setResource("actions/ability_warrior_safeguard");
 		//this.setUsableByAI(false);
+		setAPCost(0);
 	
 	}
 	
