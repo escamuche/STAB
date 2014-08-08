@@ -28,10 +28,19 @@ public interface SpellProperties extends HasDescriptor{
 	public static final int FIXED=100; //especial o fijo por conjuro (porbablemente esta constante sobre)
 	
 	
+	//Duracion
+	//public static final int INSTANT=-1;  //no aplicable, o en todo caso, hasta el final del round
+	public static final int ROUND=1;   //1 round
+	public static final int SHORT=2;  //1 round per CL 
+	//public static final int MEDIUM=2; //10 round per CL
+	//public static final int LONG=4; //600 round per CL
+	public static final int PERMANENT=-3; //Hasta que se gaste por otro modo, o simplemente permanente
+	
 	
 	//Casting time
 	public static final int INSTANT=-1;
 	public static final int STANDARD=0;
+	public static final int FULLACTION=0;//TODO: revisar en su momento
 	public static final int FULLROUND=1;
 	
 	
@@ -50,7 +59,7 @@ public interface SpellProperties extends HasDescriptor{
 	public boolean isSomatic();
 	public boolean isVerbal(); 
 	public boolean isSubjectToArcaneArmorFailure();
-	
+	public int getDuration();
 	
 	
 	

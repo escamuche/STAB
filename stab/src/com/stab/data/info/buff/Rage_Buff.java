@@ -9,9 +9,9 @@ import com.stab.model.basic.token.DecorToken;
 import com.stab.model.extras.VisionMode;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class Rage_Buff extends Buff {
+public class Rage_Buff extends BuffEffect {
 	
 	public static final String ID="RAGE_BUFF";
 	int rounds = 0; // Plantear si deberia ser 0 o 1 para ver si lo desactivas justo despues de activarlo deberia meter fatigued o no

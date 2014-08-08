@@ -1,18 +1,18 @@
 package com.stab.data.info.buff.spells;
 
 import com.stab.model.info.trait.Trait;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
 public class LightInUse extends Trait {
 	
-	Buff buff = null;
+	BuffEffect buffEffect = null;
 	public static String ID="LIGHTINUSE";
 	
-	public void setBuff(Buff buff) {
-		this.buff = buff;
+	public void setBuff(BuffEffect buffEffect) {
+		this.buffEffect = buffEffect;
 	}
 	
-	public Buff getBuff() {
-		return buff;
+	public BuffEffect getBuff() {
+		return buffEffect;
 	}
 }

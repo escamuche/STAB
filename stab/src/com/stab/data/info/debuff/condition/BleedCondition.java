@@ -3,9 +3,9 @@ package com.stab.data.info.debuff.condition;
 import com.stab.data.actions.general.HealAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.base.Damage;
-import com.stab.model.info.trait.base.Debuff;
+import com.stab.model.info.trait.base.DebuffEffect;
 
-public class BleedCondition extends Debuff {
+public class BleedCondition extends DebuffEffect {
 
 	public static final String ID="BLEEDCONDITION_DEBUFF";
 	int damage = 0;

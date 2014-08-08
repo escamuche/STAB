@@ -147,6 +147,11 @@ public class SpellCasting extends Applicable implements SpellProperties {
 	}
 
 	@Override
+	public int getDuration() {
+		return spell.getDuration();
+	}
+	
+	@Override
 	public SavingThrowEffect getSavingThrow(BaseInfo caster, BaseInfo target) {
 		return spell.getSavingThrow(caster, target);
 	}

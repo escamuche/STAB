@@ -2,9 +2,9 @@ package com.stab.data.info.buff.spells;
 
 import com.stab.data.StabConstants;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class Jump_Buff extends Buff {
+public class Jump_Buff extends BuffEffect {
 
 	public static final String ID="JUMP_BUFF";
 	

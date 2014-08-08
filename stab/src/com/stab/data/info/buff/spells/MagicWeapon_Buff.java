@@ -7,9 +7,9 @@ import com.stab.model.info.applicable.Affects;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.base.WeaponAttack;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class MagicWeapon_Buff extends Buff implements Affects<WeaponAttack> {
+public class MagicWeapon_Buff extends BuffEffect implements Affects<WeaponAttack> {
 
 	public static final String ID="MAGICWEAPON_BUFF";
 	String weapon;

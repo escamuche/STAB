@@ -4,9 +4,9 @@ import com.stab.data.StabConstants;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.base.Heal;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class Virtue_Buff extends Buff {
+public class Virtue_Buff extends BuffEffect {
 
 	public static final String ID="VIRTUE_BUFF";
 	

@@ -11,7 +11,6 @@ import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.NumericApplicable;
-import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.applicable.base.RolledDamage;
 
 public class Spell implements SpellProperties {
@@ -23,7 +22,7 @@ public class Spell implements SpellProperties {
 	String save=null;
 	
 	int medium=SELECTED;
-	
+	int duration=INSTANT;
 	int range=0;
 	Integer cost=null;
 	boolean affectedBySR=true;
@@ -48,6 +47,22 @@ public class Spell implements SpellProperties {
 	
 	int castingTime=STANDARD;
 	
+	String text;
+	String description;
+	
+	
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public void setText(String text) {
+		this.text = text;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public String getText() {
+		return text;
+	}
 	
 	public void setLevel(int level) {
 		this.level = level;
@@ -350,6 +365,9 @@ public class Spell implements SpellProperties {
 		sp.minimized=minimized;
 		sp.isItem=isItem;
 		sp.castingTime=castingTime;
+		sp.duration=duration;
+		sp.text=text;
+		sp.description=description;
 	}
 	
 	public void setCasterLevelMod(int casterLevelMod) {
@@ -425,5 +443,11 @@ public class Spell implements SpellProperties {
 		}
 		
 	}
+	
+	
+	public void setDuration(int duration) {
+		this.duration = duration;
+	}
+	public int getDuration() {return duration;}
 	
 }

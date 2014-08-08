@@ -3,9 +3,9 @@ package com.stab.data.info.buff;
 import com.stab.data.StabConstants;
 import com.stab.data.info.traits.AllSkillsModifier;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class NobilityDomain_Buff extends Buff {
+public class NobilityDomain_Buff extends BuffEffect {
 
 	public static final String ID="NOBILITYDOMAIN_BUFF";
 	

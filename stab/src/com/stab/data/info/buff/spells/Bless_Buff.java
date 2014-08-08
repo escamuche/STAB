@@ -1,15 +1,16 @@
 package com.stab.data.info.buff.spells;
 
 import com.stab.data.StabConstants;
+import com.stab.data.info.SpellEffect;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class Bless_Buff extends Buff {
+public class Bless_Buff extends BuffEffect {
 
 	public static final String ID="BLESS_BUFF";
 	
 	public Bless_Buff() {
-	
+
 		
 		this.setAnimIcon("actions/bless");				
 		this.setSound("HolyCast");

@@ -4,9 +4,9 @@ import com.stab.common.utils.Roll;
 import com.stab.data.info.applicable.SpellCasting;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
-import com.stab.model.info.trait.base.Debuff;
+import com.stab.model.info.trait.base.DebuffEffect;
 
-public class DeafCondition  extends Debuff  implements Attends<SpellCasting> {
+public class DeafCondition  extends DebuffEffect  implements Attends<SpellCasting> {
 //Esta hay que ampliarla, claro
 	
 	@Override

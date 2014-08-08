@@ -53,6 +53,7 @@ import com.stab.data.actions.player.spells.druid.level1.ProduceFlame;
 import com.stab.data.actions.player.spells.druid.level1.Shillelagh;
 import com.stab.data.actions.player.spells.druid.level1.SpeakAnimals;
 import com.stab.data.actions.player.spells.druid.level1.SummonNature1;
+import com.stab.data.actions.player.spells.lvl0.DetectMagic;
 import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
 import com.stab.data.actions.player.spells.wizard.level0.Bleed_Wizard;
 import com.stab.data.actions.player.spells.wizard.level0.Daze;
@@ -596,7 +597,9 @@ public class StabInit {
 	getActionLibrary().register(new ShockingGrasp_Sorcerer());
 	getActionLibrary().register(new TrueStrike_Sorcerer());
 		/**/	
-			//wizard0
+		//lvl0
+		getActionLibrary().register(DetectMagic.class);
+		
 		getActionLibrary().register(AcidSplash.class);
 		getActionLibrary().register(Bleed_Wizard.class);
 		getActionLibrary().register(Daze.class);

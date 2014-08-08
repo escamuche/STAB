@@ -2,9 +2,9 @@ package com.stab.data.info.buff.spells;
 
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.base.Creature;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class ExpeditiousRetreat_Buff extends Buff {
+public class ExpeditiousRetreat_Buff extends BuffEffect {
 
 	public static final String ID="EXPEDITIOUSRETREAT_BUFF";
 	BaseInfo self = new BaseInfo();

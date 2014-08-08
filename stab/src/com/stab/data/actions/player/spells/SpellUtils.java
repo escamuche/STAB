@@ -1,6 +1,7 @@
 package com.stab.data.actions.player.spells;
 
 import com.stab.data.StabConstants;
+import com.stab.data.actions.EffectDescriptor;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.trait.base.resource.Resource;
 import com.stab.util.StabUtils;
@@ -60,5 +61,57 @@ public class SpellUtils {
 	public static SpellAction asCleric(String action){
 		return asCaster(action,StabConstants.CLERICCASTER);
 	}
+	
+	
+	public static String getVisualAura(Spell s){
+		String desc="PARTICLE#spells/";
+		if (s.getDescriptors().contains(EffectDescriptor.ABJURATION))
+			return desc+"Abjuration";
+		if (s.getDescriptors().contains(EffectDescriptor.CONJURATION))
+			return desc+"Conjuration";
+		if (s.getDescriptors().contains(EffectDescriptor.EVOCATION))
+			return desc+"Evocation";
+		if (s.getDescriptors().contains(EffectDescriptor.ENCHANTMENT))
+			return desc+"Enchantment";
+		if (s.getDescriptors().contains(EffectDescriptor.ILLUSION))
+			return desc+"Illusion";
+		if (s.getDescriptors().contains(EffectDescriptor.TRANSMUTATION))
+			return desc+"TRANSMUTATION";
+		if (s.getDescriptors().contains(EffectDescriptor.NECROMANCY))
+			return desc+"Necromancy";
+		if (s.getDescriptors().contains(EffectDescriptor.DIVINATION))
+			return desc+"Divination";
+		return desc+"GenericAura";
+	
+	}
+	
+	public static String getGenericDescription(Spell s){
+		String desc="";
+		if (s.getLevel()>=9)
+			desc="Superior ";
+		else
+		if (s.getLevel()<3)
+			desc="Minor ";
+		else if (s.getLevel()>6)
+			desc="Major ";
+		if (s.getDescriptors().contains(EffectDescriptor.ABJURATION))
+			return desc+"Abjuration";
+		if (s.getDescriptors().contains(EffectDescriptor.CONJURATION))
+			return desc+"Conjuration";
+		if (s.getDescriptors().contains(EffectDescriptor.EVOCATION))
+			return desc+"Evocation";
+		if (s.getDescriptors().contains(EffectDescriptor.ENCHANTMENT))
+			return desc+"Enchantment";
+		if (s.getDescriptors().contains(EffectDescriptor.ILLUSION))
+			return desc+"Illusion";
+		if (s.getDescriptors().contains(EffectDescriptor.TRANSMUTATION))
+			return desc+"TRANSMUTATION";
+		if (s.getDescriptors().contains(EffectDescriptor.NECROMANCY))
+			return desc+"Necromancy";
+		if (s.getDescriptors().contains(EffectDescriptor.DIVINATION))
+			return desc+"Divination";
+		return desc+" Generic spell";
+	}
+
 	
 }

@@ -1,7 +1,7 @@
 package com.stab.data.actions.player.spells.bard.level0;
 
 import com.stab.data.StabConstants;
-import com.stab.data.actions.player.spells.cleric.level0.unfinished.DetectMagic;
+import com.stab.data.actions.player.spells.lvl0.DetectMagic;
 
 public class DetectMagic_Bard extends DetectMagic{
 

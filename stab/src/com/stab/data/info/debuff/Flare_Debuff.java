@@ -2,9 +2,9 @@ package com.stab.data.info.debuff;
 
 import com.stab.data.StabConstants;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class Flare_Debuff extends Buff {
+public class Flare_Debuff extends BuffEffect {
 
 	public static final String ID="FLARE_DEBUFF";
 	

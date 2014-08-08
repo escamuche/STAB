@@ -2,9 +2,9 @@ package com.stab.data.info.player.abilities;
 
 import com.stab.data.StabConstants;
 import com.stab.model.info.trait.AttributeBasedModifier;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class BardicKnowledge extends Buff {
+public class BardicKnowledge extends BuffEffect {
 	
 	public static final String ID="BARDICKNOWLEDGE_BUFF";
 	

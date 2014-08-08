@@ -5,9 +5,9 @@ import com.stab.data.info.applicable.magic.MagicMissileAttack;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class Shield_Buff extends Buff implements Attends<MagicMissileAttack>{
+public class Shield_Buff extends BuffEffect implements Attends<MagicMissileAttack>{
 
 	public static final String ID="SHIELD_BUFF";
 	

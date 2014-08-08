@@ -4,9 +4,9 @@ import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.info.monster.MonstrousHumanoid;
 import com.stab.data.info.monster.monstertraits.HumanoidTraits;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.trait.base.Debuff;
+import com.stab.model.info.trait.base.DebuffEffect;
 
-public class CharmPerson_Debuff extends Debuff {
+public class CharmPerson_Debuff extends DebuffEffect {
 	
 	public static final String ID="CHARMPERSON_DEBUFF";
 	BaseInfo target = getTarget();

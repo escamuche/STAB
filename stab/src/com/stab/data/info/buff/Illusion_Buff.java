@@ -8,9 +8,9 @@ import com.stab.model.info.applicable.Affects;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.applicable.base.Attack;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class Illusion_Buff extends Buff implements Affects<PathfinderAttack>, Attends<PathfinderAttack> {
+public class Illusion_Buff extends BuffEffect implements Affects<PathfinderAttack>, Attends<PathfinderAttack> {
 
 	@Override
 	public void affect(PathfinderAttack arg0) {

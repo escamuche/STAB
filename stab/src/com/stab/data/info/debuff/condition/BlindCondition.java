@@ -8,9 +8,9 @@ import com.stab.model.info.applicable.base.Attack;
 import com.stab.model.info.applicable.base.WeaponAttack;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.Debuff;
+import com.stab.model.info.trait.base.DebuffEffect;
 
-public class BlindCondition extends Debuff  implements Affects<WeaponAttack> {
+public class BlindCondition extends DebuffEffect  implements Affects<WeaponAttack> {
 
 	public static final String ID="BLINDEDCONDITION_DEBUFF";
 	

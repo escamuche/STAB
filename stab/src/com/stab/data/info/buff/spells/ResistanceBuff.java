@@ -2,9 +2,9 @@ package com.stab.data.info.buff.spells;
 
 import com.stab.data.StabConstants;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class ResistanceBuff extends Buff {
+public class ResistanceBuff extends BuffEffect {
 
 	public static final String ID="RESISTANCE_BUFF";
 	

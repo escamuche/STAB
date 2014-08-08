@@ -2,9 +2,9 @@ package com.stab.data.info.traits;
 
 import com.stab.data.StabConstants;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class AllSkillsModifier extends Buff {
+public class AllSkillsModifier extends BuffEffect {
 
 	public static final String ID="ALLATRIBUTEMODIFIER_BUFF";
 	

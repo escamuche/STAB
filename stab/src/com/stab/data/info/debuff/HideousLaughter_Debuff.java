@@ -3,9 +3,9 @@ package com.stab.data.info.debuff;
 import com.stab.data.StabConstants;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.trait.base.Debuff;
+import com.stab.model.info.trait.base.DebuffEffect;
 
-public class HideousLaughter_Debuff extends Debuff {
+public class HideousLaughter_Debuff extends DebuffEffect {
 	public static final String ID="HIDEOUSLAUGHTER_DEBUFF";
 	
 	BaseInfo i = getTarget();

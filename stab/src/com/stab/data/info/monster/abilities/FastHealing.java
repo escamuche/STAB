@@ -2,10 +2,10 @@ package com.stab.data.info.monster.abilities;
 
 import com.stab.model.info.applicable.base.Heal;
 import com.stab.model.info.base.Creature;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 import com.stab.model.info.trait.base.VisualEffect;
 
-public class FastHealing extends Buff {
+public class FastHealing extends BuffEffect {
 	
 	public static final String ID="FASTHEALING_BUFF";
 	int c = 0;

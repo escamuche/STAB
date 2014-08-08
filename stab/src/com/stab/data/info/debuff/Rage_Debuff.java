@@ -3,9 +3,9 @@ package com.stab.data.info.debuff;
 import com.stab.data.info.debuff.condition.FatiguedCondition;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.base.Damage;
-import com.stab.model.info.trait.base.Debuff;
+import com.stab.model.info.trait.base.DebuffEffect;
 
-public class Rage_Debuff extends Debuff {
+public class Rage_Debuff extends DebuffEffect {
 
 	public static final String ID="RAGE_DEBUFF";
 	

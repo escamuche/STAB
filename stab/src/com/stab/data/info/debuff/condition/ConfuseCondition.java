@@ -4,9 +4,9 @@ import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.base.RolledDamage;
-import com.stab.model.info.trait.base.Debuff;
+import com.stab.model.info.trait.base.DebuffEffect;
 
-public class ConfuseCondition extends Debuff {
+public class ConfuseCondition extends DebuffEffect {
 
 	public static final String ID="CONFUSECONDITION_DEBUFF";
 	BaseInfo target=null;

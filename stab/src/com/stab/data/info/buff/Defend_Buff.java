@@ -4,9 +4,9 @@ import com.stab.common.Constants;
 import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.DecorToken;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class Defend_Buff extends Buff {
+public class Defend_Buff extends BuffEffect {
 	
 	public static final String ID="DEFEND_BUFF";
 	

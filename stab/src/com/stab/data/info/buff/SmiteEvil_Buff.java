@@ -5,9 +5,9 @@ import com.stab.data.info.applicable.PathfinderAttack;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class SmiteEvil_Buff extends Buff implements Attends<PathfinderAttack>{
+public class SmiteEvil_Buff extends BuffEffect implements Attends<PathfinderAttack>{
 
 	BaseInfo smitetarget = null;
 	

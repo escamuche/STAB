@@ -3,9 +3,9 @@ package com.stab.data.info.debuff;
 import com.stab.data.StabConstants;
 import com.stab.data.info.traits.AllSkillsModifier;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class Doom_Debuff extends Buff {
+public class Doom_Debuff extends BuffEffect {
 
 	public static final String ID="DOOM_DEBUFF";
 	

@@ -6,9 +6,9 @@ import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.applicable.base.Attack;
 import com.stab.model.info.applicable.base.WeaponAttack;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class EntropicShield_Buff extends Buff implements Attends<WeaponAttack> {
+public class EntropicShield_Buff extends BuffEffect implements Attends<WeaponAttack> {
 
 	public static final String ID="ENTROPICSHIELD_BUFF";
 	

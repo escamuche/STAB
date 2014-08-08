@@ -2,9 +2,9 @@ package com.stab.data.info.player.abilities;
 
 import com.stab.data.StabConstants;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class NatureSense extends Buff {
+public class NatureSense extends BuffEffect {
 	
 	public static final String ID="NATURESENSE";
 	

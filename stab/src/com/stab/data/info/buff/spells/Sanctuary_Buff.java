@@ -1,8 +1,8 @@
 package com.stab.data.info.buff.spells;
 
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class Sanctuary_Buff extends Buff {
+public class Sanctuary_Buff extends BuffEffect {
 
 	public static final String ID="SANCTUARY_BUFF";
 	

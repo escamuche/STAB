@@ -2,9 +2,9 @@ package com.stab.data.info.debuff;
 
 import com.stab.data.StabConstants;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.Debuff;
+import com.stab.model.info.trait.base.DebuffEffect;
 
-public class Lullaby_Debuff extends Debuff{
+public class Lullaby_Debuff extends DebuffEffect{
 	
 	public static final String ID="LULLABY_DEBUFF";
 	

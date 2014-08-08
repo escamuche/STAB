@@ -3,9 +3,9 @@ package com.stab.data.info.player.abilities;
 import com.stab.data.info.equipment.Armor;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.player.BarbarianCharacter;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class FastMovementBarbarian extends Buff {
+public class FastMovementBarbarian extends BuffEffect {
 	
 	public static final String ID="BARBARIANFASTMOVEMENT_BUFF";
 	

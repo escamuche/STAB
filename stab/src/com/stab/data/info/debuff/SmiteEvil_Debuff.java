@@ -10,9 +10,9 @@ import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.base.DamageModification;
-import com.stab.model.info.trait.base.Debuff;
+import com.stab.model.info.trait.base.DebuffEffect;
 
-public class SmiteEvil_Debuff extends Debuff implements Attends<PathfinderAttack> {
+public class SmiteEvil_Debuff extends DebuffEffect implements Attends<PathfinderAttack> {
 
 
 	BaseInfo paladin = null;

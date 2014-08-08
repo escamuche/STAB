@@ -3,9 +3,9 @@ package com.stab.data.info.buff.spells;
 import com.stab.data.StabConstants;
 import com.stab.data.info.traits.AllSkillsModifier;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class Guidance_Buff extends Buff {
+public class Guidance_Buff extends BuffEffect {
 
 	public static final String ID="GUIDANCE_BUFF";
 	

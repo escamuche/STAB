@@ -5,9 +5,9 @@ import com.stab.data.StabConstants;
 import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.DecorToken;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.Debuff;
+import com.stab.model.info.trait.base.DebuffEffect;
 
-public class FatiguedCondition extends Debuff {
+public class FatiguedCondition extends DebuffEffect {
 
 	public static final String ID="FATIGUEDCONDITION_DEBUFF";
 	

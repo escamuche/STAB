@@ -2,9 +2,9 @@ package com.stab.data.info.debuff;
 
 import com.stab.data.info.debuff.condition.BleedCondition;
 import com.stab.model.info.BaseInfo;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class Bleed_Debuff extends Buff {
+public class Bleed_Debuff extends BuffEffect {
 
 	public static final String ID="BLEED_DEBUFF";
 	

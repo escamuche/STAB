@@ -3,9 +3,9 @@ package com.stab.data.info.debuff.condition;
 import com.stab.data.info.applicable.SpellCasting;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
-import com.stab.model.info.trait.base.Debuff;
+import com.stab.model.info.trait.base.DebuffEffect;
 
-public class SilencedCondition extends Debuff  implements Attends<SpellCasting> {
+public class SilencedCondition extends DebuffEffect  implements Attends<SpellCasting> {
 
 	@Override
 	public boolean canAttend(Applicable a) {

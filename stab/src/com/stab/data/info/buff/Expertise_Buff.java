@@ -2,9 +2,9 @@ package com.stab.data.info.buff;
 
 import com.stab.data.StabConstants;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.Buff;
+import com.stab.model.info.trait.base.BuffEffect;
 
-public class Expertise_Buff extends Buff {
+public class Expertise_Buff extends BuffEffect {
 
 	public static final String ID="EXPERTISE_BUFF";
 	
