@@ -1,6 +1,7 @@
 package com.stab.data.info.monster.bestiary;
 
-import com.stab.data.info.extra.DisguisesAsExtra;
+import com.stab.data.actions.monster.BileSplash;
+import com.stab.data.info.traits.DisguisesAsExtra;
 
 public class PlagueZombie extends Zombie {
 
@@ -15,8 +16,17 @@ public class PlagueZombie extends Zombie {
 		
 		DisguisesAsExtra d= new DisguisesAsExtra(new Zombie());
 		d.setSkill(null,0);
-		this.addExtra(d);
+		addTrait(d);
 	
+	}
+	
+	
+	@Override
+	protected void onDeath() {
+		BileSplash b= new BileSplash();
+		b.execute(this, this, this.getPos(), null);
+		super.onDeath();
+		
 	}
 	
 }

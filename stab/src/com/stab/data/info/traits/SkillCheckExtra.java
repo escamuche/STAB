@@ -1,14 +1,17 @@
-package com.stab.data.info.extra;
+package com.stab.data.info.traits;
 
 import com.stab.model.basic.token.Token;
-import com.stab.model.extras.Extra;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.SkillRoll;
+import com.stab.model.info.interfaces.Examinable;
+import com.stab.model.info.trait.TargetedTrait;
 import com.stab.model.info.trait.base.VisualEffect;
 import com.stab.util.StabUtils;
 
-public class SkillCheckExtra extends Extra {
+
+
+public abstract class SkillCheckExtra extends TargetedTrait implements Examinable {
 	
 	
 	
@@ -31,11 +34,6 @@ public class SkillCheckExtra extends Extra {
 	
 	@Override
 	public void examinedBy(Info instigator) {
-		super.examinedBy(instigator);
-		if (this.isActive()){
-		//	System.out.println("Ya esta activa ");
-			return; 
-		}
 		if (instigator instanceof BaseInfo){
 			boolean b=true;
 			if (skill!=null){
@@ -47,7 +45,7 @@ public class SkillCheckExtra extends Extra {
 			if (b){
 				setActive(true);
 					
-				skillCheckPassed((BaseInfo)instigator,((Token)getOwnerElement()).getInfo());
+				skillCheckPassed((BaseInfo)instigator,getTarget());
 			}
 			
 		}

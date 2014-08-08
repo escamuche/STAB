@@ -20,11 +20,13 @@ import com.stab.model.basic.scenes.event.condition.InfoIsTag;
 import com.stab.model.basic.scenes.event.response.ActivateRuleResponse;
 import com.stab.model.basic.scenes.event.response.DefeatResponse;
 import com.stab.model.basic.scenes.event.response.ShowMessageResponse;
+import com.stab.model.basic.scenes.event.response.infos.AddTraitResponse;
 import com.stab.model.basic.scenes.event.response.infos.PlayAnimationResponse;
 import com.stab.model.basic.scenes.event.response.infos.SpawnRandomInfoResponse;
 import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
 import com.stab.model.basic.scenes.event.rule.TurnsElapsedRule;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
+import com.stab.model.info.trait.Trait;
 import com.stab.model.info.trait.base.VisualEffect;
 import com.stab.util.InfosWeightedTable;
 
@@ -100,7 +102,8 @@ public class DuskwoodAdventure extends Adventure {
 		DefaultRule rcreated = new DefaultRule();
 		rcreated.setEvent(InfoEntersZone.class);
 		rcreated.addCondition(new InfoIsFaction(Undead.DEFAULT_UNDEAD_FACTION));
-	//	rcreated.addResponse(AddTraitResponse());
+		Trait tr=new AttackTargetTrait(ms.getElementByTag("RELIC"));
+		rcreated.addResponse(new AddTraitResponse(tr));
 		
 		
 		//wave spawn. un contador de un par de turnos desde que se pone en marcha, que lanza la primera oleada y activa otra regla
