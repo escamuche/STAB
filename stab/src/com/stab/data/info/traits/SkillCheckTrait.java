@@ -11,7 +11,7 @@ import com.stab.util.StabUtils;
 
 
 
-public abstract class SkillCheckExtra extends TargetedTrait implements Examinable {
+public abstract class SkillCheckTrait extends TargetedTrait implements Examinable {
 	
 	
 	
@@ -20,7 +20,7 @@ public abstract class SkillCheckExtra extends TargetedTrait implements Examinabl
 	
 	
 	
-	public SkillCheckExtra() {
+	public SkillCheckTrait() {
 		skill=null;
 		dc=0;
 	}

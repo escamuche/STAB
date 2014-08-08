@@ -1,7 +1,7 @@
 package com.stab.data.info.monster.bestiary;
 
 import com.stab.data.actions.monster.BileSplash;
-import com.stab.data.info.traits.DisguisesAsExtra;
+import com.stab.data.info.traits.DisguisesAsTrait;
 
 public class PlagueZombie extends Zombie {
 
@@ -14,7 +14,7 @@ public class PlagueZombie extends Zombie {
 		setDescription("Foul vapor emanate from its swollen belly. Seems about to burst!");
 		setResource("plaguezombie");
 		
-		DisguisesAsExtra d= new DisguisesAsExtra(new Zombie());
+		DisguisesAsTrait d= new DisguisesAsTrait(new Zombie());
 		d.setSkill(null,0);
 		addTrait(d);
 	

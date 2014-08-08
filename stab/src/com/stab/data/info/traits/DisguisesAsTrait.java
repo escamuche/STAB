@@ -4,7 +4,7 @@ import com.stab.model.Entity;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 
-public class DisguisesAsExtra extends SkillCheckExtra {
+public class DisguisesAsTrait extends SkillCheckTrait {
 
 	
 	public static final String ID="DISGUISES_AS";
@@ -16,13 +16,13 @@ public class DisguisesAsExtra extends SkillCheckExtra {
 	String resource;
 	
 	
-	public DisguisesAsExtra(BaseInfo i){
+	public DisguisesAsTrait(BaseInfo i){
 		name=i.getText();
 		description=i.getDescription();
 		resource=i.getResource();
 	}
 	
-	public DisguisesAsExtra(){
+	public DisguisesAsTrait(){
 		name=null;
 		resource=null;
 		description=null;
