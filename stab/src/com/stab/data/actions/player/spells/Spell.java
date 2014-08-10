@@ -49,6 +49,8 @@ public class Spell implements SpellProperties {
 	
 	String text;
 	String description;
+	boolean identified=false;
+	boolean dismissable=false;
 	
 	
 	public void setDescription(String description) {
@@ -355,7 +357,7 @@ public class Spell implements SpellProperties {
 		sp.weaponChargeSpell=weaponChargeSpell;
 		sp.verbal=verbal;
 		sp.somatic=somatic;
-		if (sp.descriptors!=null)
+		if (descriptors!=null)
 			sp.descriptors=descriptors.clone();
 		if (fixedCasterLevel!=null)
 			sp.fixedCasterLevel=new Integer(fixedCasterLevel);
@@ -368,6 +370,8 @@ public class Spell implements SpellProperties {
 		sp.duration=duration;
 		sp.text=text;
 		sp.description=description;
+		sp.identified=identified;
+		sp.dismissable=dismissable;
 	}
 	
 	public void setCasterLevelMod(int casterLevelMod) {
@@ -449,5 +453,19 @@ public class Spell implements SpellProperties {
 		this.duration = duration;
 	}
 	public int getDuration() {return duration;}
+	
+	public void setDismissable(boolean dismissable) {
+		this.dismissable = dismissable;
+	}
+	public boolean isDismissable() {
+		return dismissable;
+	}
+	
+	public void setIdentified(boolean identified) {
+		this.identified = identified;
+	}
+	public boolean isIdentified() {
+		return identified;
+	}
 	
 }

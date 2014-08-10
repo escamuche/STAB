@@ -65,6 +65,8 @@ public class SpellUtils {
 	
 	public static String getVisualAura(Spell s){
 		String desc="PARTICLE#spells/";
+		if (s.getDescriptors()==null)
+			return desc+"GenericAura";
 		if (s.getDescriptors().contains(EffectDescriptor.ABJURATION))
 			return desc+"Abjuration";
 		if (s.getDescriptors().contains(EffectDescriptor.CONJURATION))

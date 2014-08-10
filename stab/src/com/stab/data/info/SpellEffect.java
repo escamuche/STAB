@@ -5,9 +5,10 @@ import com.stab.data.actions.player.spells.SpellProperties;
 import com.stab.data.actions.player.spells.SpellUtils;
 import com.stab.data.actions.player.spells.lvl0.DetectMagic;
 import com.stab.model.basic.Sprite;
+import com.stab.model.basic.token.Token;
 import com.stab.model.extras.OnlyVisibleWithMode;
 import com.stab.model.info.Info;
-import com.stab.model.info.base.EffectDecoration;
+import com.stab.model.info.interfaces.PlayerOwned;
 import com.stab.model.info.trait.base.VisualEffect;
 
 /**
@@ -32,6 +33,7 @@ public class SpellEffect extends VisualEffect {
 	int casterLevel;//El caster level final con el que se lanzo (en el spell no esta calculado, por eso se apunta aqui)
 	
 	boolean evident=false; //Si el efecto es evidente
+	boolean identified=false;
 	String effectResource;
 	
 	public SpellEffect(Spell spell, Info caster, int casterLevel) {
@@ -41,6 +43,7 @@ public class SpellEffect extends VisualEffect {
 		this.casterLevel = casterLevel;
 		recalcDuration();
 		recalcSpecialEffect();
+		this.setIdentified(spell.isIdentified());
 	}
 
 	
@@ -94,7 +97,7 @@ public class SpellEffect extends VisualEffect {
 	protected Sprite createEffectSprite() {
 		SpellDecoration e=new SpellDecoration(this);
 		e.setResource(getEffectResource());
-		
+		e.setSelectable(Token.SELECTABLE_MENU);
 		if (!isEvident()){
 			e.setHidden();
 			e.setHideCheck(-1); //evita que se detecte por search
@@ -105,9 +108,23 @@ public class SpellEffect extends VisualEffect {
 		return e;
 	}
 	
+	public boolean isIdentified() {
+		if (getCaster() instanceof PlayerOwned)
+			return true;
+		return identified;
+	}
+	
+	public void setIdentified(boolean identified) {
+		this.identified = identified;
+	}
 	
 	
-	
+	@Override
+	public String getAnimIcon() {
+		if (isIdentified())
+			return super.getAnimIcon();
+		return "actions/spells/unknown_spell";
+	}
 	
 	
 	

@@ -17,6 +17,7 @@ import com.stab.data.info.equipment.RangedWeapon;
 import com.stab.data.info.equipment.Shield;
 import com.stab.data.info.equipment.SpellDeliverWeapon;
 import com.stab.model.action.base.WeaponAttackAction;
+import com.stab.model.ai.senses.Sense;
 import com.stab.model.basic.scenes.MapLogic;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
@@ -288,4 +289,24 @@ public class PathfinderUtils {
 		return false;
 	}
 	
+	
+	public static Collection<Creature>  getCreaturesSensing(Info s){
+		ArrayList<Creature> list= new ArrayList<Creature>();
+		for (Creature c:s.getScene().getElements(Creature.class))
+			if (c.isAwareOf(s))
+				if (c.canSense(s))
+					list.add(c);
+		return list;
+	}
+	public static Collection<Creature>  getCreaturesSensing(Info s, Class sense){
+		ArrayList<Creature> list= new ArrayList<Creature>();
+		for (Creature c:s.getScene().getElements(Creature.class))
+			if (c.isAwareOf(s))
+				for (Sense sen:c.getSenses())
+					if (sense.isAssignableFrom(sen.getClass()))
+						if (sen.inRange(s))
+							if (sen.canSense(s))
+								list.add(c);
+		return list;
+	}
 }

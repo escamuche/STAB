@@ -446,4 +446,8 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	public void setDuration(int n){
 		getBaseSpell().setDuration(n);
 	}
+	
+	public void setDismissable(boolean b){
+		getBaseSpell().setDismissable(b);
+	}
 }

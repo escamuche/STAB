@@ -5,6 +5,7 @@ import com.stab.data.StabConstants;
 import com.stab.data.actions.monster.AcidFlask;
 import com.stab.data.actions.player.spells.SpellAction;
 import com.stab.data.actions.player.spells.SpellUtils;
+import com.stab.data.actions.player.spells.lvl0.DetectMagic;
 import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
 import com.stab.data.actions.player.spells.wizard.level0.Daze;
 import com.stab.data.actions.player.spells.wizard.level0.DisruptUndead;
@@ -80,9 +81,7 @@ public class WizardActionSet extends PathfinderActionSet {
 		this.addAction(mm);
 		this.setAction(mm, 2);
 		
-		//Ojo... esto no puede ir aqui, sino que tiene que ir en el info! mmmm...
-		//SpellAction mm2= SpellUtils.addSpellLike(this,MagicMissile.ID, StabConstants.WIZARDCASTER,9,2);
-		//this.setAction(mm2, 3);
+		this.setAction(DetectMagic.ID,1);
 		
 	}
 }

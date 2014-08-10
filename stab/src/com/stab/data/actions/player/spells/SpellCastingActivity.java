@@ -11,6 +11,7 @@ import com.stab.data.info.applicable.SpellCasting;
 import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.DecorToken;
 import com.stab.model.info.Info;
+import com.stab.model.info.interfaces.PlayerOwned;
 import com.stab.model.info.trait.base.activity.ProgressActivity;
 
 public class SpellCastingActivity extends ProgressActivity {
@@ -83,6 +84,14 @@ Spell spell;
 				return false;
 			}
 			spell=sc.getSpell();
+			if (this.getTarget() instanceof PlayerOwned)
+				spell.setIdentified(true);
+			else{
+				//Intento de identificarlo por parte de todos los casters cercanos. Por ahora, de los casters Jugadores
+				//en un futuro, hacer que los monstruos tiren para obtener informacion? o colocar directamente en su actionPerformed?
+				//mas bien en "actionPerformedDelanteDeSusNarices".  
+				
+			}
 			this.setMaxProgress(sc.getSpell().getCastingTime()+1);
 			action.setSpell(sc.getSpell());//Cambiamos las propiedades del hechizo por las que han resultado del spellcasting (inicialmente una copia
 											//pero cualquier attends puede haberlo modiifcado (ie: sumar caster lelvel, etc)
