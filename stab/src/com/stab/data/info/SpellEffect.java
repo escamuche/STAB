@@ -1,11 +1,15 @@
 package com.stab.data.info;
 
+import com.stab.data.actions.player.spells.DismissSpellAction;
 import com.stab.data.actions.player.spells.Spell;
 import com.stab.data.actions.player.spells.SpellProperties;
 import com.stab.data.actions.player.spells.SpellUtils;
 import com.stab.data.actions.player.spells.lvl0.DetectMagic;
+import com.stab.data.adventure.everflame.ClimbAction;
+import com.stab.model.action.ActionLibrary;
 import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.Token;
+import com.stab.model.extras.ContextualOption;
 import com.stab.model.extras.OnlyVisibleWithMode;
 import com.stab.model.info.Info;
 import com.stab.model.info.interfaces.PlayerOwned;
@@ -35,6 +39,7 @@ public class SpellEffect extends VisualEffect {
 	boolean evident=false; //Si el efecto es evidente
 	boolean identified=false;
 	String effectResource;
+	ContextualOption dismiss;
 	
 	public SpellEffect(Spell spell, Info caster, int casterLevel) {
 		super();
@@ -104,6 +109,11 @@ public class SpellEffect extends VisualEffect {
 			//visionMode
 			e.addExtra(new OnlyVisibleWithMode(DetectMagic.VISIONMODE));
 		}
+		if (this.getSpell().isDismissable()){
+			dismiss= new ContextualOption();
+			dismiss.setAction(ActionLibrary.getActionLibrary().getAction(DismissSpellAction.ID));
+			e.addExtra(dismiss);
+		}
 		
 		return e;
 	}
@@ -126,7 +136,14 @@ public class SpellEffect extends VisualEffect {
 		return "actions/spells/unknown_spell";
 	}
 	
-	
+	@Override
+	protected void configureEffectSprite(Sprite es) {
+		super.configureEffectSprite(es);
+		if (this.getTarget()!=null)
+			if (this.getTarget().getToken()!=null)
+				dismiss.setAllowedActor(getTarget().getToken());
+		
+	}
 	
 	
 	

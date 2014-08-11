@@ -17,7 +17,7 @@ public class DismissSpellAction extends ContextualAction {
 	public DismissSpellAction() {
 		setRange(5);
 		setName("Dismiss spell");
-		setResource("actions/spell/dismiss");
+		setResource("actions/spells/dismiss");
 		setDescription("Dismiss the active spell, ending it");
 		setLosType(IN_SIGHT);
 		setTargetInfoClass(SpellDecoration.class);
