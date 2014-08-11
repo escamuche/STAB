@@ -22,6 +22,7 @@ import com.stab.data.actions.player.abilities.ChannelPossitiveEnergyAction;
 import com.stab.data.actions.player.abilities.NobilityDomain;
 import com.stab.data.actions.player.abilities.Rage;
 import com.stab.data.actions.player.abilities.SmiteEvil;
+import com.stab.data.actions.player.spells.DismissSpellAction;
 import com.stab.data.actions.player.spells.cleric.level0.Bleed;
 import com.stab.data.actions.player.spells.cleric.level0.Light;
 import com.stab.data.actions.player.spells.cleric.level0.Resistance;
@@ -455,6 +456,9 @@ public class StabInit {
 	
 	static void initActions(){
 		//accciones
+		
+		getActionLibrary().register(DismissSpellAction.class);
+		
 		getActionLibrary().register(DefendAction.class);
 		getActionLibrary().getAction(InteractAction.ID).setResource("actions/inv_gizmo_02");
 		getActionLibrary().register(PathfinderWeaponAttackAction.class);

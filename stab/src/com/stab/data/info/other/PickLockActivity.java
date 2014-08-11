@@ -21,7 +21,7 @@ public class PickLockActivity extends TinkerActivity{
 	
 	@Override
 	protected void configureEffectSprite(Sprite es) {
-	    super.configureEffectSprite(es);
+	   // super.configureEffectSprite(es);
 		es.playAnimation(VisualEffect.ANIMATED_ICON_ANIMATION,0,0,3,1000,true,false);
 	}
 }
