@@ -1,6 +1,6 @@
 package com.stab.data.info.equipment;
 
-import com.stab.data.actions.player.spells.wizard.level0.AcidSplash;
+import com.stab.data.actions.player.spells.lvl0.AcidSplash;
 import com.stab.data.actions.player.spells.wizard.level0.DisruptUndead;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.actions.player.spells.wizard.level0.TouchFatigue;

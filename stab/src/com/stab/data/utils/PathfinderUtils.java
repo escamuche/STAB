@@ -290,6 +290,7 @@ public class PathfinderUtils {
 	}
 	
 	
+	//TODO: mover a una libreria mas general?
 	public static Collection<Creature>  getCreaturesSensing(Info s){
 		ArrayList<Creature> list= new ArrayList<Creature>();
 		for (Creature c:s.getScene().getElements(Creature.class))

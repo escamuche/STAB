@@ -49,9 +49,11 @@ public class Spell implements SpellProperties {
 	
 	String text;
 	String description;
+	String resource;
 	boolean identified=false;
 	boolean dismissable=false;
-	
+	int finalCasterLevel=0;
+	SpellAction action;
 	
 	public void setDescription(String description) {
 		this.description = description;
@@ -64,6 +66,27 @@ public class Spell implements SpellProperties {
 	}
 	public String getText() {
 		return text;
+	}
+	
+	public void setResource(String resource) {
+		this.resource = resource;
+	}
+	public String getResource() {
+		return resource;
+	}
+	
+	public void setAction(SpellAction action) {
+		this.action = action;
+	}
+	public int getFinalCasterLevel() {
+		return finalCasterLevel;
+	}
+	
+	public SpellAction getAction() {
+		return action;
+	}
+	public void setFinalCasterLevel(int finalCasterLevel) {
+		this.finalCasterLevel = finalCasterLevel;
 	}
 	
 	public void setLevel(int level) {
@@ -372,6 +395,10 @@ public class Spell implements SpellProperties {
 		sp.description=description;
 		sp.identified=identified;
 		sp.dismissable=dismissable;
+		sp.action=action;
+		sp.resource=resource;
+		sp.finalCasterLevel=finalCasterLevel;
+				
 	}
 	
 	public void setCasterLevelMod(int casterLevelMod) {

@@ -1,18 +1,21 @@
 package com.stab.data.actions.player.spells;
 
-import java.awt.Point;
-
 import org.newdawn.slick.Color;
 
 import com.stab.common.Constants;
+import com.stab.data.StabConstants;
 import com.stab.data.animation.GenericSpriteOnAnimation;
 import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
 import com.stab.data.info.applicable.SpellCasting;
+import com.stab.data.utils.PathfinderUtils;
+import com.stab.model.ai.senses.SightSense;
 import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.DecorToken;
-import com.stab.model.info.Info;
+import com.stab.model.info.applicable.base.SkillRoll;
+import com.stab.model.info.base.Creature;
 import com.stab.model.info.interfaces.PlayerOwned;
 import com.stab.model.info.trait.base.activity.ProgressActivity;
+import com.stab.util.StabUtils;
 
 public class SpellCastingActivity extends ProgressActivity {
 
@@ -71,7 +74,6 @@ Spell spell;
 	public boolean attemptCast(){
 			SpellCasting sc= new SpellCasting(getTarget(),this.action.getBaseSpell());
 			sc.check();
-		//	endCasting(origin);
 			if (sc.failed()){
 				switch(sc.getResult()){
 					case SpellCasting.ARMORFAIL: 
@@ -84,13 +86,23 @@ Spell spell;
 				return false;
 			}
 			spell=sc.getSpell();
+			spell.setAction(getAction());
+			spell.setFinalCasterLevel(spell.getCasterLevel(getTarget()));
 			if (this.getTarget() instanceof PlayerOwned)
 				spell.setIdentified(true);
 			else{
 				//Intento de identificarlo por parte de todos los casters cercanos. Por ahora, de los casters Jugadores
 				//en un futuro, hacer que los monstruos tiren para obtener informacion? o colocar directamente en su actionPerformed?
-				//mas bien en "actionPerformedDelanteDeSusNarices".  
-				
+				//mas bien en "actionPerformedDelanteDeSusNarices".  <--- eso
+				boolean identified=false;
+				for (Creature c:PathfinderUtils.getCreaturesSensing(this.getTarget(), SightSense.class))
+					if (c instanceof PlayerOwned && !identified){
+						SkillRoll sk=StabUtils.getGameLogic().getSkillRoll(c, StabConstants.SPELLCRAFT, 10+spell.getLevel());
+						sk.check();
+						identified=sk.success();
+					}
+				if (identified)
+					spell.setIdentified(true);
 			}
 			this.setMaxProgress(sc.getSpell().getCastingTime()+1);
 			action.setSpell(sc.getSpell());//Cambiamos las propiedades del hechizo por las que han resultado del spellcasting (inicialmente una copia

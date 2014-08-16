@@ -12,8 +12,8 @@ public class DetectMagic_Buff extends SpellEffect implements Buff{
 
 	VisionMode vis;
 	
-	public DetectMagic_Buff(Spell spell, Info caster, int casterLevel) {
-		super(spell, caster, casterLevel);
+	public DetectMagic_Buff(Spell spell, Info caster) {
+		super(spell, caster);
 		vis=new VisionMode(DetectMagic.VISIONMODE);
 		setAnimIcon("actions/spells/sheikah_eye");
 		this.setEvident(true);

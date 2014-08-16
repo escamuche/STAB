@@ -4,7 +4,6 @@ package com.stab.data.actions.player;
 import com.stab.data.actions.player.abilities.ChannelPossitiveEnergyAction;
 import com.stab.data.actions.player.abilities.NobilityDomain;
 import com.stab.data.actions.player.spells.cleric.level0.Bleed;
-import com.stab.data.actions.player.spells.cleric.level0.Resistance;
 import com.stab.data.actions.player.spells.cleric.level0.Stabilize;
 import com.stab.data.actions.player.spells.cleric.level0.Virtue;
 import com.stab.data.actions.player.spells.cleric.level1.Bane;
@@ -17,6 +16,7 @@ import com.stab.data.actions.player.spells.cleric.level1.EntropicShield;
 import com.stab.data.actions.player.spells.cleric.level1.InflictLight;
 import com.stab.data.actions.player.spells.cleric.level1.MagicStone;
 import com.stab.data.actions.player.spells.cleric.level1.ShieldFaith;
+import com.stab.data.actions.player.spells.lvl0.Resistance;
 
 
 public class ClericActionSet extends PathfinderActionSet {

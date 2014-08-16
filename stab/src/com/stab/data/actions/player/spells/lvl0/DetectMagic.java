@@ -31,7 +31,7 @@ public class DetectMagic extends SpellOnSelf{
 	@Override
 	public int affect(Info origin, Info t, Point point, ActionRequest ar) {
 		
-		DetectMagic_Buff b= new DetectMagic_Buff(getSpell(), origin, getSpell().getCasterLevel((BaseInfo)origin));
+		DetectMagic_Buff b= new DetectMagic_Buff(getSpell(), origin);
 		((BaseInfo)t).addTrait(b);
 		return OK;
 	}

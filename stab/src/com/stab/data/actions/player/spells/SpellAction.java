@@ -38,6 +38,7 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	public SpellAction() {
 		baseSpell=new Spell();
 		spell=baseSpell;
+		spell.setAction(this);
 		setCasterClass(StabConstants.WIZARDCASTER);
 	}
 	
@@ -51,6 +52,12 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	public void setDescription(String description) {
 		super.setDescription(description);
 		getBaseSpell().setDescription(description);
+	}
+	
+	@Override
+	public void setResource(String resource) {
+		super.setResource(resource);
+		getBaseSpell().setResource(resource);
 	}
 	
 	

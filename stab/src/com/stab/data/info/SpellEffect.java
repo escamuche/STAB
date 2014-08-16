@@ -5,7 +5,6 @@ import com.stab.data.actions.player.spells.Spell;
 import com.stab.data.actions.player.spells.SpellProperties;
 import com.stab.data.actions.player.spells.SpellUtils;
 import com.stab.data.actions.player.spells.lvl0.DetectMagic;
-import com.stab.data.adventure.everflame.ClimbAction;
 import com.stab.model.action.ActionLibrary;
 import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.Token;
@@ -34,18 +33,24 @@ public class SpellEffect extends VisualEffect {
 	Spell spell; //El spell del que proviene, para tener informacion adicional
 	Info caster;//El caster original (ojo, que puede ser null? para varitas, pociones, etc?)
 				//Es con vistas a dismiss
-	int casterLevel;//El caster level final con el que se lanzo (en el spell no esta calculado, por eso se apunta aqui)
+	//int casterLevel;//El caster level final con el que se lanzo (en el spell no esta calculado, por eso se apunta aqui)
 	
 	boolean evident=false; //Si el efecto es evidente
 	boolean identified=false;
 	String effectResource;
 	ContextualOption dismiss;
 	
-	public SpellEffect(Spell spell, Info caster, int casterLevel) {
+	public SpellEffect(Spell spell, Info caster) {
 		super();
 		this.spell = spell;
 		this.caster = caster;
-		this.casterLevel = casterLevel;
+	//	this.casterLevel = casterLevel;
+		setSound("HolyCast");
+		setAnimIcon(spell.getResource());
+		setResource(spell.getResource());
+		setName(spell.getText());
+		
+		
 		recalcDuration();
 		recalcSpecialEffect();
 		this.setIdentified(spell.isIdentified());
@@ -71,7 +76,7 @@ public class SpellEffect extends VisualEffect {
 	}
 	
 	public int getCasterLevel() {
-		return casterLevel;
+		return spell.getFinalCasterLevel();
 	}
 	
 	public Info getCaster() {

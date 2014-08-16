@@ -1,4 +1,4 @@
-package com.stab.data.actions.player.spells.wizard.level0;
+package com.stab.data.actions.player.spells.lvl0;
 
 import java.awt.Point;
 
@@ -24,12 +24,14 @@ public class Daze extends SpellOnTarget{
 		setName("Daze");
 		this.setEffectType(DEBUFF);
 		setRange(CLOSE);
+		setDescriptors(EffectDescriptor.ENCHANTMENT,EffectDescriptor.MIND_AFFECTING,EffectDescriptor.COMPULSION);
 		this.setDescription("This spell clouds the mind of a humanoid creature with 4 or fewer Hit Dice so that it takes no actions. Humanoids of 5 or more HD are not affected. A dazed subject is not stunned, so attackers get no special advantage against it. After a creature has been dazed by this spell, it is immune to the effects of this spell for 1 minute.");
 		this.setSave(StabConstants.WILLSAVE);
 	}
 
 @Override
 protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
+	//TODO: check de numero de HD del target
 	DazedCondition buff = new DazedCondition();
 	buff.setTime(1);
 	target.addTrait(buff);

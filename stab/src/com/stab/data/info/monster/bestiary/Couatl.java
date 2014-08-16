@@ -2,7 +2,7 @@ package com.stab.data.info.monster.bestiary;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
-import com.stab.data.actions.player.spells.wizard.level0.Daze;
+import com.stab.data.actions.player.spells.lvl0.Daze;
 import com.stab.data.actions.player.spells.wizard.level0.DisruptUndead;
 import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
 import com.stab.data.actions.player.spells.wizard.level0.Resistance_Wizard;

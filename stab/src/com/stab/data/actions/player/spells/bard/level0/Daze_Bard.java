@@ -1,7 +1,7 @@
 package com.stab.data.actions.player.spells.bard.level0;
 
 import com.stab.data.StabConstants;
-import com.stab.data.actions.player.spells.wizard.level0.Daze;
+import com.stab.data.actions.player.spells.lvl0.Daze;
 
 public class Daze_Bard extends Daze{
 
