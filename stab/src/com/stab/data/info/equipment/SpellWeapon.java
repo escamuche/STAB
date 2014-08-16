@@ -3,6 +3,7 @@ package com.stab.data.info.equipment;
 import java.awt.Point;
 import java.util.ArrayList;
 
+import com.stab.data.actions.player.spells.Spell;
 import com.stab.data.actions.player.spells.SpellAction;
 import com.stab.model.action.Action;
 import com.stab.model.info.BaseInfo;
@@ -23,8 +24,8 @@ public class SpellWeapon extends OverrideWeapon implements ActionPerformedListen
 	}
 
 	public void addEffect(BaseInfo instigator, BaseInfo target, Point point,
-			String action,ActionRequest ar) {
-		this.ae=new SpellActionEffect(instigator, target, point, action,ar);
+			Spell spell,ActionRequest ar) {
+		this.ae=new SpellActionEffect(instigator, target, point, spell,ar);
 	}
 	
 	

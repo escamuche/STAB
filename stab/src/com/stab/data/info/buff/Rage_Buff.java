@@ -41,7 +41,7 @@ public class Rage_Buff extends BuffEffect {
 	public void applyTo(BaseInfo baseInfo) {
 		super.applyTo(baseInfo);
 		baseInfo.heal(2, false);  //se mete aqui para q solo cure cuando te aplique el buff
-		baseInfo.addExtra(vm);
+	//	baseInfo.addExtra(vm);
 	}
 	
 	@Override
@@ -51,7 +51,7 @@ public class Rage_Buff extends BuffEffect {
 		debuff.setTime(rounds*2); // doble duracion del debuff que los rounds gastados en rabia
 		 if(rounds>0)  //comprueba que no se aplique si no hay rounds de debuff
 			 baseInfo.addTrait(debuff);
-		 baseInfo.removeExtra(vm);
+		// baseInfo.removeExtra(vm);
 	}	
 	
 	@Override

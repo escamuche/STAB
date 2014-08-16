@@ -106,11 +106,12 @@ public class SpellEffect extends VisualEffect {
 	@Override
 	protected Sprite createEffectSprite() {
 		SpellDecoration e=new SpellDecoration(this);
+		//e.setText(getSpell().getText());
 		e.setResource(getEffectResource());
 		e.setSelectable(Token.SELECTABLE_MENU);
 		if (!isEvident()){
-			e.setHidden();
-			e.setHideCheck(-1); //evita que se detecte por search
+		//	e.setHidden();
+		//	e.setHideCheck(-1); //evita que se detecte por search
 			//visionMode
 			e.addExtra(new OnlyVisibleWithMode(DetectMagic.VISIONMODE));
 		}

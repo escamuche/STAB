@@ -39,6 +39,8 @@ public class PathfinderGameLogic extends GameLogic {
 	public boolean detectAttempt(Info instigator, Info target) {
 		if (!(instigator instanceof BaseInfo))
 			return true; //Es algun tipo de efecto especial
+		if (!target.canBeDetected())
+			return false;
 		
 		BaseInfo i=(BaseInfo)instigator;
 		

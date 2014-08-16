@@ -292,7 +292,7 @@ public abstract class SpellAction extends Action implements SpellProperties{
 				return r;
 			}
 			//Si no se usa un ataque, castear normalmente
-			SpellActionEffect ae= new SpellActionEffect(caster,target,point,this.getLocator(),ar);
+			SpellActionEffect ae= new SpellActionEffect(caster,target,point,this.getSpell(),ar);
 			target.apply(ae);
 		
 		
@@ -300,7 +300,7 @@ public abstract class SpellAction extends Action implements SpellProperties{
 		}
 		//Si no es harmful, considerar que afecta siempre
 		//TODO: mirarse lo de resistencia magica para efectos beneficiosos, tecnicamente se aplica
-		SpellActionEffect ae= new SpellActionEffect(caster,target,point,this.getId(),ar);
+		SpellActionEffect ae= new SpellActionEffect(caster,target,point,this.getSpell(),ar);
 		target.apply(ae);
 		
 		
@@ -404,7 +404,7 @@ public abstract class SpellAction extends Action implements SpellProperties{
 		SpellWeapon w= getSpell().getWeapon();
 		if (w==null)
 			return null;
-		w.addEffect(caster,target,point,this.getLocator(),ar);
+		w.addEffect(caster,target,point,this.getSpell(),ar);
 		Weapon old=(Weapon)((Creature)caster).getEquipment(w.getSlot());
 		w.setOld(old);
 		return w;

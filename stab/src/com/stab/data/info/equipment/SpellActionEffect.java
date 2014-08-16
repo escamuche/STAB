@@ -7,6 +7,7 @@ import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.actions.HasDescriptor;
 import com.stab.data.actions.player.spells.Spell;
 import com.stab.data.actions.player.spells.SpellAction;
+import com.stab.model.action.Action;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.base.ActionEffect;
 import com.stab.model.request.basic.ActionRequest;
@@ -21,17 +22,32 @@ public class SpellActionEffect extends ActionEffect implements HasDescriptor{
 	
 	protected EnumSet<EffectDescriptor> descriptors;
 	
+	Spell spell;
 	
 	public SpellActionEffect(BaseInfo instigator, BaseInfo target, Point point,
-			String action,ActionRequest ar) {
-		super(instigator, target, point, action,ar);
+			Spell spell,ActionRequest ar) {
+		super(instigator, target, point, null,ar);
+		this.spell=spell;
+		
+	}
+	
+	@Override
+	public Action getAction() {
+		return getSpell().getAction();
 	}
 
+	public Spell getSpell() {
+		return spell;
+	}
 	
 	
 	@Override
 	public void applyEffects() {
-		int i=((SpellAction)getAction()).spellAffect((BaseInfo)getInstigator(), this.getTarget(),getPoint(),isCritical(),this.getActionRequest());
+		SpellAction sp=(SpellAction)getAction();
+		Spell old=sp.getSpell();
+		sp.setSpell(getSpell());
+		int i=sp.spellAffect((BaseInfo)getInstigator(), this.getTarget(),getPoint(),isCritical(),this.getActionRequest());
+		sp.setSpell(old);
 		this.setResult(i); //Revisar, aqui hay algo raro (eso de reutilizar suena muy raro)
 		setCritical(false); //Por si lo reutilizamos
 	}

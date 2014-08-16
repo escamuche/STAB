@@ -10,13 +10,15 @@ import com.stab.model.info.trait.base.Buff;
 
 public class DetectMagic_Buff extends SpellEffect implements Buff{
 
+	public static final String ID="DETECT_MAGIC_BUFF";
+	
 	VisionMode vis;
 	
 	public DetectMagic_Buff(Spell spell, Info caster) {
 		super(spell, caster);
 		vis=new VisionMode(DetectMagic.VISIONMODE);
 		setAnimIcon("actions/spells/sheikah_eye");
-		this.setEvident(true);
+		//this.setEvident(true);
 	}
 
 	@Override
