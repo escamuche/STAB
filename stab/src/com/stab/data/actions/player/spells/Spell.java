@@ -128,7 +128,7 @@ public class Spell implements SpellProperties {
 	public void setCasterClass(String casterClass) {
 		this.casterClass = casterClass;
 		if (casterClass.equals(StabConstants.WIZARDCASTER))
-			setAttribute(StabConstants.INTELIGENCE);
+			setAttribute(StabConstants.INTELLIGENCE);
 		if (casterClass.equals(StabConstants.CLERICCASTER)||casterClass.equals(StabConstants.DRUIDCASTER)||casterClass.equals(StabConstants.RANGERCASTER))
 			setAttribute(StabConstants.WISDOM);
 		if (casterClass.equals(StabConstants.BARDCASTER)||casterClass.equals(StabConstants.SORCERERCASTER)||casterClass.equals(StabConstants.PALADINCASTER))

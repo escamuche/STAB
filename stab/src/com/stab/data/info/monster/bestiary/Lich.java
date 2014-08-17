@@ -42,7 +42,7 @@ public class Lich extends Undead {
 		this.setAttribute(StabConstants.STRENGHT,10);
 		this.setAttribute(StabConstants.DEXTERITY,14);
 		this.setAttribute(StabConstants.CONSTITUTION,10);
-		this.setAttribute(StabConstants.INTELIGENCE,22);
+		this.setAttribute(StabConstants.INTELLIGENCE,22);
 		this.setAttribute(StabConstants.WISDOM,14);
 		this.setAttribute(StabConstants.CHARISMA,16);
 		this.setAttribute(StabConstants.SIZE,StabConstants.MEDIUM_SIZE);

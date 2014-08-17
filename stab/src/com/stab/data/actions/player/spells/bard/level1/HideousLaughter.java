@@ -26,7 +26,7 @@ public class HideousLaughter extends SpellOnTarget{
 
 	@Override
 	protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
-		if(target.getValue(StabConstants.INTELIGENCE)>2){
+		if(target.getValue(StabConstants.INTELLIGENCE)>2){
 			HideousLaughter_Debuff debuff = new HideousLaughter_Debuff(caster);
 			int t = getCasterLevel(caster);
 			debuff.setTime(t);

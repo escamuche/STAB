@@ -36,7 +36,7 @@ public static final String ID="PALADIN_INFO";
 		this.setAttribute(StabConstants.STRENGHT, 17);
 		this.setAttribute(StabConstants.DEXTERITY, 12);
 		this.setAttribute(StabConstants.CONSTITUTION, 13);
-		this.setAttribute(StabConstants.INTELIGENCE, 8);
+		this.setAttribute(StabConstants.INTELLIGENCE, 8);
 		this.setAttribute(StabConstants.WISDOM, 10);
 		this.setAttribute(StabConstants.CHARISMA, 14);
 		

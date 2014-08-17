@@ -23,7 +23,7 @@ public class Shadow extends Undead {
 		setText("Shadow");
 	
 	
-		this.addTrait(new Attribute(StabConstants.INTELIGENCE,6));
+		this.addTrait(new Attribute(StabConstants.INTELLIGENCE,6));
 		this.addTrait(new Attribute(StabConstants.DEXTERITY,14));
 		this.addTrait(new Attribute(StabConstants.WISDOM,12));
 		this.addTrait(new Attribute(StabConstants.CHARISMA,14));

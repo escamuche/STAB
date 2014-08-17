@@ -46,7 +46,7 @@ public class Couatl extends Outsider {
 		this.setAttribute(StabConstants.STRENGHT,20);
 		this.setAttribute(StabConstants.DEXTERITY,16);
 		this.setAttribute(StabConstants.CONSTITUTION,20);
-		this.setAttribute(StabConstants.INTELIGENCE,17);
+		this.setAttribute(StabConstants.INTELLIGENCE,17);
 		this.setAttribute(StabConstants.WISDOM,19);
 		this.setAttribute(StabConstants.CHARISMA,17);
 		this.setAttribute(StabConstants.SIZE,StabConstants.LARGE_SIZE);

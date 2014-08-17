@@ -28,7 +28,7 @@ public class Goblin extends Humanoid {
 		this.setAttribute(StabConstants.XP,135);
 		this.setAttribute(StabConstants.STRENGHT,11);
 		this.setAttribute(StabConstants.DEXTERITY,15);
-		this.setAttribute(StabConstants.INTELIGENCE,10);
+		this.setAttribute(StabConstants.INTELLIGENCE,10);
 		this.setAttribute(StabConstants.CONSTITUTION,12);
 		this.setAttribute(StabConstants.WISDOM,9);
 		this.setAttribute(StabConstants.CHARISMA,6);

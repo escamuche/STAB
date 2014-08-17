@@ -13,7 +13,7 @@ public class BasicAttributes extends CompoundTrait{
 		this.addTrait(new Attribute(StabConstants.STRENGHT,10));
 		this.addTrait(new Attribute(StabConstants.DEXTERITY,10));
 		this.addTrait(new Attribute(StabConstants.CONSTITUTION,10));
-		this.addTrait(new Attribute(StabConstants.INTELIGENCE,10));
+		this.addTrait(new Attribute(StabConstants.INTELLIGENCE,10));
 		this.addTrait(new Attribute(StabConstants.WISDOM,10));
 		this.addTrait(new Attribute(StabConstants.CHARISMA,10));
 		this.addTrait(new Attribute(StabConstants.TOHIT,0));
@@ -45,7 +45,9 @@ public class BasicAttributes extends CompoundTrait{
 		this.addTrait(new AttributeBasedModifier(StabConstants.CMD, StabConstants.BAB));
 		this.addTrait(new PathfinderAttributeBonus(StabConstants.CMD, StabConstants.DEXTERITY));
 		this.addTrait(new PathfinderAttributeBonus(StabConstants.CMD, StabConstants.STRENGHT));
-		this.addTrait(new AttributeBasedModifier(StabConstants.CMD, StabConstants.DEFLECTIONMOD));
+		
+		//Que es todo esto???
+		/*this.addTrait(new AttributeBasedModifier(StabConstants.CMD, StabConstants.DEFLECTIONMOD));
 		this.addTrait(new AttributeBasedModifier(StabConstants.CMD, StabConstants.INSIGHTMOD));
 		this.addTrait(new AttributeBasedModifier(StabConstants.CMD, StabConstants.DODGEMOD));
 		this.addTrait(new AttributeBasedModifier(StabConstants.CMD, StabConstants.LUCKMOD));
@@ -53,12 +55,12 @@ public class BasicAttributes extends CompoundTrait{
 		this.addTrait(new AttributeBasedModifier(StabConstants.CMD, StabConstants.PROFANEMOD));
 		this.addTrait(new AttributeBasedModifier(StabConstants.CMD, StabConstants.SACREDMOD));
 		this.addTrait(new AttributeBasedModifier(StabConstants.CMD, StabConstants.CIRCUMSTANCEMOD));
+		/**/
 		
 		//CMB con sus modificaciones
 		this.addTrait(new AttributeBasedModifier(StabConstants.CMB, StabConstants.BAB));
 		this.addTrait(new PathfinderAttributeBonus(StabConstants.CMB, StabConstants.STRENGHT));
 	
-		//this.addTrait(new PathfinderAttributeBonus(StabConstants.RAGEROUNDS,StabConstants.CONSTITUTION));
 		
 		this.addTrait(new SizeModifier(StabConstants.PASSIVEDEFENSE,+1));
 		this.addTrait(new SizeModifier(StabConstants.TOHIT,+1));
@@ -80,7 +82,13 @@ public class BasicAttributes extends CompoundTrait{
 		this.addTrait(new AttributeBasedModifier(StabConstants.SWIMSKILL,StabConstants.ARMORCHECKPENALTY));
 		//etc...
 		
-		
+		//Attribute checks
+		this.addTrait(new AttributeBasedModifier(StabConstants.STRENGHT_CHECK,StabConstants.STRENGHT));
+		this.addTrait(new AttributeBasedModifier(StabConstants.DEXTERITY_CHECK,StabConstants.DEXTERITY));
+		this.addTrait(new AttributeBasedModifier(StabConstants.CONSTITUTION_CHECK,StabConstants.CONSTITUTION));
+		this.addTrait(new AttributeBasedModifier(StabConstants.INTELLIGENCE_CHECK,StabConstants.INTELLIGENCE));
+		this.addTrait(new AttributeBasedModifier(StabConstants.WISDOM_CHECK,StabConstants.WISDOM));
+		this.addTrait(new AttributeBasedModifier(StabConstants.CHARISMA_CHECK,StabConstants.CHARISMA));
 	}
 
 }

@@ -35,7 +35,7 @@ public static final String ID="WIZARD_INFO";
 		this.setAttribute(StabConstants.STRENGHT, 10);
 		this.setAttribute(StabConstants.DEXTERITY, 13);
 		this.setAttribute(StabConstants.CONSTITUTION, 14);
-		this.setAttribute(StabConstants.INTELIGENCE, 17);
+		this.setAttribute(StabConstants.INTELLIGENCE, 17);
 		this.setAttribute(StabConstants.WISDOM, 12);
 		this.setAttribute(StabConstants.CHARISMA, 8);
 		
@@ -50,7 +50,7 @@ public static final String ID="WIZARD_INFO";
 		
 		this.setAttribute(StabConstants.WIZARDCASTER, 1);
 		
-		this.addTrait(new BonusAttributeMP(StabConstants.MAXMP, StabConstants.INTELIGENCE, getValue(StabConstants.WIZARDCASTER)));
+		this.addTrait(new BonusAttributeMP(StabConstants.MAXMP, StabConstants.INTELLIGENCE, getValue(StabConstants.WIZARDCASTER)));
 		
 		this.addTrait(new Alertness_Feat());
 		this.addTrait(new CombatCasting_Feat());

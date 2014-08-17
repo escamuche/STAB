@@ -29,7 +29,7 @@ public static final String ID="ROGUE_INFO";
 		this.setAttribute(StabConstants.STRENGHT, 14);
 		this.setAttribute(StabConstants.DEXTERITY, 17);
 		this.setAttribute(StabConstants.CONSTITUTION, 13);
-		this.setAttribute(StabConstants.INTELIGENCE, 10);
+		this.setAttribute(StabConstants.INTELLIGENCE, 10);
 		this.setAttribute(StabConstants.WISDOM, 8);
 		this.setAttribute(StabConstants.CHARISMA, 12);
 		

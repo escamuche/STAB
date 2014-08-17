@@ -27,7 +27,7 @@ public class GoblinChieftain extends Goblin implements Commander{
 		this.setAttribute(StabConstants.HITDICENUMBER, 2);
 		this.setAttribute(StabConstants.STRENGHT,14);
 		this.setAttribute(StabConstants.DEXTERITY,15);
-		this.setAttribute(StabConstants.INTELIGENCE,14);
+		this.setAttribute(StabConstants.INTELLIGENCE,14);
 		this.setAttribute(StabConstants.CONSTITUTION,14);
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.SHORTSWORD), HumanoidGear.MAINHAND);

@@ -32,7 +32,7 @@ public static final String ID="DRUID_INFO";
 		this.setAttribute(StabConstants.STRENGHT, 15);
 		this.setAttribute(StabConstants.DEXTERITY, 10);
 		this.setAttribute(StabConstants.CONSTITUTION, 16);
-		this.setAttribute(StabConstants.INTELIGENCE, 12);
+		this.setAttribute(StabConstants.INTELLIGENCE, 12);
 		this.setAttribute(StabConstants.WISDOM, 15);
 		this.setAttribute(StabConstants.CHARISMA, 6);
 		

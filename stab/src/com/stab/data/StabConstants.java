@@ -24,7 +24,7 @@ public class StabConstants {
 	public static final String STRENGHT="STRENGHT";
 	public static final String DEXTERITY="DEXTERITY";
 	public static final String CONSTITUTION="CONSTITUTION";
-	public static final String INTELIGENCE="INTELIGENCE";
+	public static final String INTELLIGENCE="INTELLIGENCE";
 	public static final String WISDOM="WISDOM";
 	public static final String CHARISMA="CHARISMA";
 	public static final String DAMAGEREDUCTION="DAMAGEREDUCTION"; //Este mejor como trait attends<Damage>
@@ -47,6 +47,14 @@ public class StabConstants {
 	//public static final String CMDGRAPPLE="CMDGRAPPLE";
 	//public static final String CMDOVERRUN="CMDOVERRUN";
 	//public static final String CMDSUNDER="CMDSUNDER";
+	
+	//Ability checks
+	public static final String STRENGHT_CHECK="STRENGHT_CHECK";
+	public static final String DEXTERITY_CHECK="DEXTERITY_CHECK";
+	public static final String CONSTITUTION_CHECK="CONSTITUTION_CHECK";
+	public static final String INTELLIGENCE_CHECK="INTELLIGENCE_CHECK";
+	public static final String WISDOM_CHECK="WISDOM_CHECK";
+	public static final String CHARISMA_CHECK="CHARISMA_CHECK";
 	
 	//En una primera aproximacion meteria solo los basicos
 	public static final String ACROBATICS="ACROBATICS";

@@ -26,7 +26,7 @@ public class Wolf extends Animal {
 		this.setAttribute(StabConstants.STRENGHT,13);
 		this.setAttribute(StabConstants.DEXTERITY,15);
 		this.setAttribute(StabConstants.CONSTITUTION,15);
-		this.setAttribute(StabConstants.INTELIGENCE,2);
+		this.setAttribute(StabConstants.INTELLIGENCE,2);
 		this.setAttribute(StabConstants.WISDOM,12);
 		this.setAttribute(StabConstants.CHARISMA,6);
 		this.setAttribute(StabConstants.SIZE,StabConstants.MEDIUM_SIZE);

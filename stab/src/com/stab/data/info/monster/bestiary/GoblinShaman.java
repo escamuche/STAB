@@ -36,7 +36,7 @@ public class GoblinShaman extends Goblin  implements Minion{
 		
 		this.setAttribute(StabConstants.XP,200);
 		this.setAttribute(StabConstants.STRENGHT,9);
-		this.setAttribute(StabConstants.INTELIGENCE,14);
+		this.setAttribute(StabConstants.INTELLIGENCE,14);
 		this.setAttribute(StabConstants.WISDOM,14);
 
 		this.setAttribute(StabConstants.HITDICENUMBER, 1);

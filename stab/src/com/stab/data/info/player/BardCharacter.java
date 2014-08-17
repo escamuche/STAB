@@ -31,7 +31,7 @@ public static final String ID="BARD_INFO";
 		this.setAttribute(StabConstants.DEXTERITY, 14);
 		this.setAttribute(StabConstants.CONSTITUTION, 12);
 		this.setAttribute(StabConstants.CHARISMA, 17);
-		this.setAttribute(StabConstants.INTELIGENCE, 13);
+		this.setAttribute(StabConstants.INTELLIGENCE, 13);
 		this.setAttribute(StabConstants.WISDOM, 8);
 		this.setAttribute(StabConstants.REFLEXSAVE, 2);
 		this.setAttribute(StabConstants.WILLSAVE, 2);

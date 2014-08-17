@@ -32,7 +32,7 @@ public static final String ID="MONK_INFO";
 		this.setAttribute(StabConstants.STRENGHT, 12);
 		this.setAttribute(StabConstants.DEXTERITY, 16);
 		this.setAttribute(StabConstants.CONSTITUTION, 10);
-		this.setAttribute(StabConstants.INTELIGENCE, 13);
+		this.setAttribute(StabConstants.INTELLIGENCE, 13);
 		this.setAttribute(StabConstants.WISDOM, 15);
 		this.setAttribute(StabConstants.CHARISMA, 8);
 		

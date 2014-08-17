@@ -13,7 +13,7 @@ public class Expertise_Feat extends CombatFeat{
 	
 	public Expertise_Feat() {
 		
-		this.addRequiredAttribute(StabConstants.INTELIGENCE, 13);
+		this.addRequiredAttribute(StabConstants.INTELLIGENCE, 13);
 	}
 	
 	@Override

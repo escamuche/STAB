@@ -25,7 +25,7 @@ public class GiantBombardierBeetle extends Vermin {
 		this.setAttribute(StabConstants.STRENGHT,15);
 		this.setAttribute(StabConstants.DEXTERITY,10);
 		this.setAttribute(StabConstants.CONSTITUTION,14);
-		this.setAttribute(StabConstants.INTELIGENCE,2);
+		this.setAttribute(StabConstants.INTELLIGENCE,2);
 		this.setAttribute(StabConstants.WISDOM,10);
 		this.setAttribute(StabConstants.CHARISMA,9);
 		this.setAttribute(StabConstants.SIZE,StabConstants.MEDIUM_SIZE);

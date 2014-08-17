@@ -35,7 +35,7 @@ public static final String ID="SORCERER_INFO";
 		this.setAttribute(StabConstants.STRENGHT, 10);
 		this.setAttribute(StabConstants.DEXTERITY, 14);
 		this.setAttribute(StabConstants.CONSTITUTION, 13);
-		this.setAttribute(StabConstants.INTELIGENCE, 12);
+		this.setAttribute(StabConstants.INTELLIGENCE, 12);
 		this.setAttribute(StabConstants.WISDOM, 8);
 		this.setAttribute(StabConstants.CHARISMA, 17);
 		

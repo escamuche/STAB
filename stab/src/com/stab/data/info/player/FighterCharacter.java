@@ -31,7 +31,7 @@ public static final String ID="FIGHTER_INFO";
 		this.setAttribute(StabConstants.STRENGHT, 17);
 		this.setAttribute(StabConstants.DEXTERITY, 14);
 		this.setAttribute(StabConstants.CONSTITUTION, 12);
-		this.setAttribute(StabConstants.INTELIGENCE, 8);
+		this.setAttribute(StabConstants.INTELLIGENCE, 8);
 		this.setAttribute(StabConstants.WISDOM, 13);
 		this.setAttribute(StabConstants.CHARISMA, 10);
 		

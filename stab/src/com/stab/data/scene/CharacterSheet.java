@@ -275,7 +275,7 @@ public class CharacterSheet extends InfoDataScene{
 		fuerza.setText(""+((BaseInfo) i).getValue(StabConstants.STRENGHT));
 		destreza.setText(""+((BaseInfo) i).getValue(StabConstants.DEXTERITY));
 		constitucion.setText(""+((BaseInfo) i).getValue(StabConstants.CONSTITUTION));
-		inteligencia.setText(""+((BaseInfo) i).getValue(StabConstants.INTELIGENCE));
+		inteligencia.setText(""+((BaseInfo) i).getValue(StabConstants.INTELLIGENCE));
 		sabiduria.setText(""+((BaseInfo) i).getValue(StabConstants.WISDOM));
 		carisma.setText(""+((BaseInfo) i).getValue(StabConstants.CHARISMA));
 		fortitude.setText(""+((BaseInfo) i).getValue(StabConstants.FORTITUDESAVE));

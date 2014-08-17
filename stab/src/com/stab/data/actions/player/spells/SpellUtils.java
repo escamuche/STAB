@@ -61,7 +61,15 @@ public class SpellUtils {
 	public static SpellAction asCleric(String action){
 		return asCaster(action,StabConstants.CLERICCASTER);
 	}
-	
+	public static SpellAction asSorcerer(String action){
+		return asCaster(action,StabConstants.SORCERERCASTER);
+	}
+	public static SpellAction asDruid(String action){
+		return asCaster(action,StabConstants.DRUIDCASTER);
+	}
+	public static SpellAction asBard(String action){
+		return asCaster(action,StabConstants.BARDCASTER);
+	}
 	
 	public static String getVisualAura(Spell s){
 		String desc="PARTICLE#spells/";

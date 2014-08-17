@@ -30,7 +30,7 @@ public class Orc extends Humanoid {
 		this.setAttribute(StabConstants.STRENGHT,17);
 		this.setAttribute(StabConstants.DEXTERITY,11);
 		this.setAttribute(StabConstants.CONSTITUTION,12);
-		this.setAttribute(StabConstants.INTELIGENCE,7);
+		this.setAttribute(StabConstants.INTELLIGENCE,7);
 		this.setAttribute(StabConstants.WISDOM,8);
 		this.setAttribute(StabConstants.CHARISMA,6);
 		this.setAttribute(StabConstants.HITDICENUMBER, 1);

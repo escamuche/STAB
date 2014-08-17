@@ -30,7 +30,7 @@ public class SkeletalChampion extends Undead {
 		this.setAttribute(StabConstants.XP,600);
 		this.setAttribute(StabConstants.STRENGHT,17);
 		this.setAttribute(StabConstants.DEXTERITY,13);
-		this.setAttribute(StabConstants.INTELIGENCE,9);
+		this.setAttribute(StabConstants.INTELLIGENCE,9);
 		this.setAttribute(StabConstants.CHARISMA,12);
 		this.setAttribute(StabConstants.HITDICENUMBER, 3);
 		
