@@ -1,6 +1,7 @@
 package com.stab.data.info.other;
 
 import com.stab.data.StabConstants;
+import com.stab.data.info.debuff.FatigueDebuff;
 import com.stab.data.info.debuff.condition.FatiguedCondition;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
@@ -38,7 +39,7 @@ public class PushActivity extends PathfinderActivity{
 	@Override
 	protected void fails(SkillRoll sk) {
 		super.fails(sk);
-		FatiguedCondition debuff = new FatiguedCondition(); 
+		FatigueDebuff debuff = new FatigueDebuff(); 
 		debuff.setTime(1);
 		this.getTarget().addTrait(debuff);
 	}

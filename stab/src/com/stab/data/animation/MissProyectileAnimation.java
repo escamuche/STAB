@@ -14,10 +14,12 @@ public class MissProyectileAnimation extends ShootProyectileAnimation {
 		Random r=new Random();
 		double dist=p.distanceSq(getOriginPoint());
 		Point t=null;
+		int md=70;
 		boolean b=false;
 		while(!b){
-			t=new Point(p.x+r.nextInt(64)-64,p.y+r.nextInt(64)-64);
-			if (dist+16<(t.distance(getOriginPoint())))
+			t=new Point(p.x+r.nextInt(md)-md,p.y+r.nextInt(md)-md);
+			System.out.println(dist +"  vs "+(t.distanceSq(getOriginPoint())));
+			if (dist<(t.distanceSq(getOriginPoint())))
 				b=true;
 		}
 		
