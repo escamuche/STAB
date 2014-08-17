@@ -96,12 +96,12 @@ public class PathfinderActivity extends CoopActivity{
 
 
 	protected void fails(SkillRoll sk) {
-		getTarget().playAnimation(VisualEffect.FAILURE_ANIMATION);
+		sleep(getTarget().playAnimation(VisualEffect.FAILURE_ANIMATION));
 	}
 
 
 	protected void success(SkillRoll sk) {
-		getTarget().playAnimation(VisualEffect.SUCCESS_ANIMATION);
+		sleep(getTarget().playAnimation(VisualEffect.SUCCESS_ANIMATION));
 	}
 	
 	public void setContinuous(boolean continuous) {
@@ -122,4 +122,7 @@ public class PathfinderActivity extends CoopActivity{
 		super.advanceActivity();
 	}
 	
+	
+
+
 }

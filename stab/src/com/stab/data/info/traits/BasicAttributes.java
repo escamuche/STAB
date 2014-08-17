@@ -83,12 +83,12 @@ public class BasicAttributes extends CompoundTrait{
 		//etc...
 		
 		//Attribute checks
-		this.addTrait(new AttributeBasedModifier(StabConstants.STRENGHT_CHECK,StabConstants.STRENGHT));
-		this.addTrait(new AttributeBasedModifier(StabConstants.DEXTERITY_CHECK,StabConstants.DEXTERITY));
-		this.addTrait(new AttributeBasedModifier(StabConstants.CONSTITUTION_CHECK,StabConstants.CONSTITUTION));
-		this.addTrait(new AttributeBasedModifier(StabConstants.INTELLIGENCE_CHECK,StabConstants.INTELLIGENCE));
-		this.addTrait(new AttributeBasedModifier(StabConstants.WISDOM_CHECK,StabConstants.WISDOM));
-		this.addTrait(new AttributeBasedModifier(StabConstants.CHARISMA_CHECK,StabConstants.CHARISMA));
+		this.addTrait(new PathfinderAttributeBonus(StabConstants.STRENGHT_CHECK,StabConstants.STRENGHT));
+		this.addTrait(new PathfinderAttributeBonus(StabConstants.DEXTERITY_CHECK,StabConstants.DEXTERITY));
+		this.addTrait(new PathfinderAttributeBonus(StabConstants.CONSTITUTION_CHECK,StabConstants.CONSTITUTION));
+		this.addTrait(new PathfinderAttributeBonus(StabConstants.INTELLIGENCE_CHECK,StabConstants.INTELLIGENCE));
+		this.addTrait(new PathfinderAttributeBonus(StabConstants.WISDOM_CHECK,StabConstants.WISDOM));
+		this.addTrait(new PathfinderAttributeBonus(StabConstants.CHARISMA_CHECK,StabConstants.CHARISMA));
 	}
 
 }

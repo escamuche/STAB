@@ -17,6 +17,7 @@ import com.stab.data.actions.feats.PowerAttack;
 import com.stab.data.actions.general.DefendAction;
 import com.stab.data.actions.general.HealAction;
 import com.stab.data.actions.general.PathfinderWeaponAttackAction;
+import com.stab.data.actions.general.PushAction;
 import com.stab.data.actions.monster.AcidFlask;
 import com.stab.data.actions.player.abilities.ChannelPossitiveEnergyAction;
 import com.stab.data.actions.player.abilities.NobilityDomain;
@@ -92,6 +93,7 @@ import com.stab.data.animation.AnimatedIconAnimation;
 import com.stab.data.animation.AnimatedSparkAnimation;
 import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.animation.BlockAnimation;
+import com.stab.data.animation.BumpAnimation;
 import com.stab.data.animation.CenterCamAnimation;
 import com.stab.data.animation.CloseDoorAnimation;
 import com.stab.data.animation.DamageNumberAnimation;
@@ -424,6 +426,7 @@ public class StabInit {
 		of.setMapping(FailureAnimation.class);
 		of.setMapping(TinkerAnimation.class);
 		of.setMapping(CenterCamAnimation.class);
+		of.setMapping(BumpAnimation.class);
 		
 		//Tokens
 		of.setMapping(IronBarsToken.class);
@@ -457,6 +460,7 @@ public class StabInit {
 	static void initActions(){
 		//accciones
 		
+		getActionLibrary().register(PushAction.class);
 		getActionLibrary().register(DismissSpellAction.class);
 		
 		getActionLibrary().register(DefendAction.class);

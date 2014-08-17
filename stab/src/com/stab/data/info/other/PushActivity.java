@@ -11,6 +11,7 @@ public class PushActivity extends PathfinderActivity{
 	public PushActivity(int dc) {
 		super(StabConstants.STRENGHT_CHECK, dc);
 		setContinuous(true);
+		this.setName("Pushing");
 	}
 	
 	
