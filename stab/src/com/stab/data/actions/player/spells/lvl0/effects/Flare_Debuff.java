@@ -1,4 +1,4 @@
-package com.stab.data.info.debuff;
+package com.stab.data.actions.player.spells.lvl0.effects;
 
 import com.stab.data.StabConstants;
 import com.stab.model.info.trait.Modifier;

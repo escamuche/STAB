@@ -1,6 +1,7 @@
-package com.stab.data.actions.player.spells.wizard.level0;
+package com.stab.data.actions.player.spells.lvl0;
 
 import com.stab.data.StabConstants;
+import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
@@ -26,6 +27,7 @@ public class RayFrost extends SpellOnTarget{
 		setMedium(RAY);
 		setWeapon(RayFrost.ID);
 		this.setDescription("A ray of freezing air and ice projects from your pointing finger. You must succeed on a ranged touch attack with the ray to deal damage to a target. The ray deals 1d3 points of cold damage.");
+		this.setDescriptors(EffectDescriptor.EVOCATION,EffectDescriptor.COLD);
 	}
 
 	@Override

@@ -3,9 +3,9 @@ package com.stab.data.info.monster.bestiary;
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.actions.player.spells.lvl0.Daze;
-import com.stab.data.actions.player.spells.wizard.level0.DisruptUndead;
-import com.stab.data.actions.player.spells.wizard.level0.RayFrost;
-import com.stab.data.actions.player.spells.wizard.level0.Resistance_Wizard;
+import com.stab.data.actions.player.spells.lvl0.DisruptUndead;
+import com.stab.data.actions.player.spells.lvl0.RayFrost;
+import com.stab.data.actions.player.spells.lvl0.Resistance;
 import com.stab.data.actions.player.spells.wizard.level1.MageArmor;
 import com.stab.data.actions.player.spells.wizard.level1.TrueStrike;
 import com.stab.data.info.alignment.Good;
@@ -29,7 +29,7 @@ public class Couatl extends Outsider {
 		this.getActionSet().addAction(Daze.ID);
 		this.getActionSet().addAction(DisruptUndead.ID);
 		this.getActionSet().addAction(RayFrost.ID);
-		this.getActionSet().addAction(Resistance_Wizard.ID);
+		this.getActionSet().addAction(Resistance.ID);
 		this.getActionSet().addAction(MageArmor.ID);
 		this.getActionSet().addAction(TrueStrike.ID);
 		

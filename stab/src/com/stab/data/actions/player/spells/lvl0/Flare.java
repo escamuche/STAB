@@ -1,13 +1,17 @@
-package com.stab.data.actions.player.spells.wizard.level0;
+package com.stab.data.actions.player.spells.lvl0;
 
+import java.awt.Color;
 import java.awt.Point;
 
 import com.stab.data.StabConstants;
+import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.actions.player.spells.SpellOnTarget;
+import com.stab.data.actions.player.spells.lvl0.effects.Flare_Debuff;
 import com.stab.data.animation.BasicSparkAnimation;
-import com.stab.data.info.debuff.Flare_Debuff;
+import com.stab.model.ai.senses.SightSense;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.info.base.Creature;
 import com.stab.model.request.basic.ActionRequest;
 
 public class Flare extends SpellOnTarget{
@@ -16,6 +20,12 @@ public class Flare extends SpellOnTarget{
 
 @Override
 protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
+	//Chechk sight sense en target
+	if (target instanceof Creature)
+		if (((Creature)target).getSense(SightSense.class)==null){
+			target.showFloatingText("INEFFECTIVE", Color.pink);
+			return false;
+		}
 	Flare_Debuff buff = new Flare_Debuff();
 	buff.setTime(10);
 	target.addTrait(buff);
@@ -25,7 +35,7 @@ protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 	public Flare() {
 		setLevel(0);
 		setCasterClass(StabConstants.WIZARDCASTER);
-		
+		setDescriptors(EffectDescriptor.EVOCATION,EffectDescriptor.LIGHT);
 		setResource("actions/flare");
 		setName("Flare");
 		this.setEffectType(BUFF);

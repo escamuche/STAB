@@ -1,7 +1,7 @@
 package com.stab.data.actions.player.spells.sorcerer.level0;
 
 import com.stab.data.StabConstants;
-import com.stab.data.actions.player.spells.wizard.level0.Flare;
+import com.stab.data.actions.player.spells.lvl0.Flare;
 
 public class Flare_Sorcerer extends Flare {
 	

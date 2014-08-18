@@ -1,7 +1,7 @@
 package com.stab.data.actions.player.spells.sorcerer.level0;
 
 import com.stab.data.StabConstants;
-import com.stab.data.actions.player.spells.wizard.level0.DisruptUndead;
+import com.stab.data.actions.player.spells.lvl0.DisruptUndead;
 
 public class DisruptUndead_Sorcerer extends DisruptUndead {
 	

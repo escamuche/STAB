@@ -1,9 +1,10 @@
-package com.stab.data.actions.player.spells.wizard.level0;
+package com.stab.data.actions.player.spells.lvl0;
 
 import java.awt.Color;
 import java.awt.Point;
 
 import com.stab.data.StabConstants;
+import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.info.monster.monstertraits.UndeadTraits;
 import com.stab.model.info.BaseInfo;
@@ -27,6 +28,7 @@ public class DisruptUndead extends SpellOnTarget {
  	 setMedium(MISSILE);
  	 this.setDescription("You direct a ray of positive energy. You must make a ranged touch attack to hit, and if the ray hits an undead creature, it deals 1d6 points of damage to it.");
  	 setWeapon(ID);
+ 	 setDescriptors(EffectDescriptor.NECROMANCY);
 	}
 
 	@Override
@@ -35,6 +37,7 @@ public class DisruptUndead extends SpellOnTarget {
 		if (target.hasTrait(UndeadTraits.ID)) {	
 		
 					Damage d= new RolledDamage(1,6,0, Damage.HOLY_DAMAGE,caster);
+					getSpell().adjust(d);
 					target.apply(d);
 					return super.fullEffect(caster, target, point);
 					
