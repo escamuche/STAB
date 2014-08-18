@@ -98,6 +98,7 @@ import com.stab.data.animation.CenterCamAnimation;
 import com.stab.data.animation.CloseDoorAnimation;
 import com.stab.data.animation.DamageNumberAnimation;
 import com.stab.data.animation.DecayAnimation;
+import com.stab.data.animation.DirectedAnimatedSparkAnimation;
 import com.stab.data.animation.EffectAddAnimation;
 import com.stab.data.animation.EffectRemoveAnimation;
 import com.stab.data.animation.ExtraInfoAnimation;
@@ -422,6 +423,7 @@ public class StabInit {
 		of.setMapping(MarkAnimation.class);
 		of.setMapping(AnimatedIconAnimation.class);
 		of.setMapping(AnimatedSparkAnimation.class);
+		of.setMapping(DirectedAnimatedSparkAnimation.class);
 		of.setMapping(SuccessAnimation.class);
 		of.setMapping(FailureAnimation.class);
 		of.setMapping(TinkerAnimation.class);

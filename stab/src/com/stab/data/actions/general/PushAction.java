@@ -44,7 +44,7 @@ public class PushAction extends Action {
 		int dc=0;
 		BaseInfo target=(BaseInfo)getTarget(ar);
 		Pushable p=(Pushable)target.getTrait(Pushable.class);
-		PushActivity pa= new PushActivity(p.getDc());
+		PushActivity pa= new PushActivity(p.getDc(),getTarget(ar));
 		return pa;
 	}
 

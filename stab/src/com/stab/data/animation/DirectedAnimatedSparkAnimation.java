@@ -1,21 +1,26 @@
 package com.stab.data.animation;
 
+import java.awt.Point;
+
+import com.stab.adventure.Game;
 import com.stab.client.slick.AbstractGameScreen;
 import com.stab.client.slick.base.visualobjects.StabSprite;
 import com.stab.data.utils.AnimUtils;
-import com.stab.model.animation.Animation;
+import com.stab.model.animation.OnTileAnimation;
 import com.stab.model.info.trait.base.VisualEffect;
 import com.tien.princess.engine.sprite.StateSprite;
 import com.tien.princess.engine.sprite.common.painters.Painter;
 import com.tien.princess.engine.sprite.common.states.StateSet;
-import com.tien.princess.engine.sprite.common.states.ValueState;
+import com.tien.princess.engine.sprite.common.states.ValueState2;
 import com.tien.princess.engine.sprite.common.updaters.conditions.OnRefDestroyed;
 import com.tien.princess.engine.utils.PaintUtils;
 
-public class AnimatedSparkAnimation extends Animation {
-	public static final String ID=VisualEffect.ANIMATED_SPARK_ANIMATION;
+public class DirectedAnimatedSparkAnimation  extends OnTileAnimation {
+
+	public static final String ID=VisualEffect.DIRECTED_ANIMATED_SPARK_ANIMATION;
 	
-	public AnimatedSparkAnimation() {
+	
+	public DirectedAnimatedSparkAnimation() {
 		
 		setTime(1000);
 	}
@@ -23,20 +28,24 @@ public class AnimatedSparkAnimation extends Animation {
 	@Override
 	public void start() {
 		super.start();
-		String img=getParam(0);
-	
-		int timed= getIntParam(1);
-		int i=getIntParam(2);
-		int f=getIntParam(3);
-		int t=getIntParam(4);
-		boolean loop=getBooleanParam(5);
-		boolean bounce=getBooleanParam(6);
+		
+		double a=getAngle();
+		int dist=32;
+		
+		String img=getParam(2);
+		dist=getIntParam(3);
+		int timed= getIntParam(4);
+		int i=getIntParam(5);
+		int f=getIntParam(6);
+		int t=getIntParam(7);
+		boolean loop=getBooleanParam(8);
+		boolean bounce=getBooleanParam(9);
 		
 		
 		setTime(timed);
 		
 		
-		ValueState st= new ValueState();
+		ValueState2 st= new ValueState2();
 		
 		if (!bounce){
 			if (loop)
@@ -49,9 +58,10 @@ public class AnimatedSparkAnimation extends Animation {
 			else
 				st.setFrame(0,i,t,f,t*2,i);
 		}
-		
-		StabSprite icon=new StabSprite();
+		st.setRotation((float)Math.toDegrees(a));
 	
+		StabSprite icon=new StabSprite();
+		
 		if (timed>0)
 			st.setTimed(timed, StateSet.DESTROYED);
 		else{
@@ -64,14 +74,15 @@ public class AnimatedSparkAnimation extends Animation {
 		
 		
 
-	
-		icon.setPos(getOriginPoint());
+		Point tp=getOriginPoint();
+		Point sp=new Point((int)(tp.x+dist*Math.cos(a)),(int)(tp.y+dist*Math.sin(a)));
+		icon.setPos(sp);
 		icon.setSize(64,64);
 		
 		icon.setPainter(p);
 		
 		icon.setState(st);
-
+		
 		
 		StateSprite s=AnimUtils.getSprite(getSource());
 		((AbstractGameScreen)s.getScreen()).add(icon);

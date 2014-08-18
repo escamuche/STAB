@@ -1,5 +1,7 @@
 package com.stab.data.info.other;
 
+import java.awt.Point;
+
 import com.stab.data.StabConstants;
 import com.stab.data.info.debuff.FatigueDebuff;
 import com.stab.data.info.debuff.condition.FatiguedCondition;
@@ -11,11 +13,14 @@ import com.stab.model.info.trait.base.VisualEffect;
 
 public class PushActivity extends PathfinderActivity{
 
-	public PushActivity(int dc) {
+	Info target;
+	
+	public PushActivity(int dc,Info target) {
 		super(StabConstants.STRENGHT_CHECK, dc);
 		setContinuous(true);
 		this.setName("Pushing");
-		setActivityIcon("animations/push&0");
+		setActivityIcon("blank");
+		this.target=target;
 	}
 	
 	
@@ -53,6 +58,7 @@ public class PushActivity extends PathfinderActivity{
 	@Override
 	protected void configureEffectSprite(Sprite es) {
 		//super.configureEffectSprite(es);
-		es.playAnimation(VisualEffect.ANIMATED_ICON_ANIMATION,0,0,3,1000,true,false);
+		Point p=target.getPos();
+		es.playAnimationOn(VisualEffect.DIRECTED_ANIMATED_SPARK_ANIMATION,p,"animations/push&0",32,-1,0,3,1000,true,false);
 	}
 }
