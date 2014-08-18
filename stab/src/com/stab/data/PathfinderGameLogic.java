@@ -14,6 +14,7 @@ import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.base.OpposedSkillRoll;
 import com.stab.model.info.applicable.base.SkillRoll;
 import com.stab.model.info.trait.base.gear.Weapon;
+import com.stab.model.request.basic.ActionRequest;
 
 public class PathfinderGameLogic extends GameLogic {
 
@@ -114,5 +115,12 @@ public class PathfinderGameLogic extends GameLogic {
 		return s;
 	}
 	
+	
+	//En un futuro meter aqui comprobaciones automaticas (ej: no le quedan acciones posibles, ni free actions)
+	public boolean shouldEndTurn(Action action,ActionRequest ar,boolean success){
+		Info actor=action.getInfo(ar);
+		//if (actor instanceof Creature)
+		return true;
+	}
 	
 }
