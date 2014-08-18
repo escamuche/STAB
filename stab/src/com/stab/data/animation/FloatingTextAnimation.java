@@ -3,8 +3,8 @@ package com.stab.data.animation;
 import org.newdawn.slick.Color;
 
 import com.stab.client.slick.AbstractGameScreen;
+import com.stab.client.slick.base.util.AnimUtils;
 import com.stab.common.Constants;
-import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.trait.base.VisualEffect;
 import com.tien.princess.engine.Resources;

@@ -4,10 +4,10 @@ import java.awt.Point;
 
 import org.newdawn.slick.Color;
 
+import com.stab.client.slick.base.util.AnimUtils;
 import com.stab.common.Constants;
 import com.stab.common.utils.Roll;
 import com.stab.data.animation.sprite.MagicMissileSprite;
-import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTargetAnimation;
 import com.stab.model.basic.Sprite;
 import com.tien.princess.engine.sprite.StateSprite;

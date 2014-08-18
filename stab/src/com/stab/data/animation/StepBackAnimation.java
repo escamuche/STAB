@@ -1,7 +1,7 @@
 package com.stab.data.animation;
 
+import com.stab.client.slick.base.util.AnimUtils;
 import com.stab.data.animation.state.StepBackState;
-import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTargetAnimation;
 import com.tien.princess.engine.sprite.StateSprite;
 

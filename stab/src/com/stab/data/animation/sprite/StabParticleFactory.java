@@ -2,8 +2,8 @@ package com.stab.data.animation.sprite;
 
 import org.newdawn.slick.Color;
 
+import com.stab.client.slick.base.util.AnimUtils;
 import com.stab.common.utils.Roll;
-import com.stab.data.utils.AnimUtils;
 import com.tien.princess.engine.sprite.base.PixelParticle;
 import com.tien.princess.engine.sprite.base.TrailSprite;
 import com.tien.princess.engine.sprite.common.painters.SimpleImagePainter;

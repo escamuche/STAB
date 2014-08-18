@@ -2,10 +2,10 @@ package com.stab.data.animation;
 
 import java.awt.Point;
 
+import com.stab.client.slick.base.util.AnimUtils;
 import com.stab.client.slick.base.visualobjects.LightSprite;
 import com.stab.client.slick.base.visualobjects.StabSprite;
 import com.stab.data.animation.state.MoveToPointState;
-import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTargetAnimation;
 import com.stab.model.basic.Sprite;
 import com.tien.princess.engine.sprite.StateSprite;

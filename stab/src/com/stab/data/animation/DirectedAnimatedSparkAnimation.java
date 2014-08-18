@@ -4,8 +4,8 @@ import java.awt.Point;
 
 import com.stab.adventure.Game;
 import com.stab.client.slick.AbstractGameScreen;
+import com.stab.client.slick.base.util.AnimUtils;
 import com.stab.client.slick.base.visualobjects.StabSprite;
-import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTileAnimation;
 import com.stab.model.info.trait.base.VisualEffect;
 import com.tien.princess.engine.sprite.StateSprite;

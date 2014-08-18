@@ -5,8 +5,8 @@ import java.awt.Rectangle;
 import java.util.Collection;
 
 import com.stab.adventure.Game;
+import com.stab.client.slick.base.util.AnimUtils;
 import com.stab.data.StabInit;
-import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.OnTileAnimation;
 import com.stab.model.info.trait.base.VisualEffect;
 import com.tien.princess.engine.sprite.Sprite;

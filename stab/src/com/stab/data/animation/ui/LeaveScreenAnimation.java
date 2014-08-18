@@ -1,6 +1,6 @@
 package com.stab.data.animation.ui;
 
-import com.stab.data.utils.AnimUtils;
+import com.stab.client.slick.base.util.AnimUtils;
 import com.stab.model.animation.Animation;
 import com.tien.princess.engine.sprite.StateSprite;
 import com.tien.princess.engine.sprite.ui.states.UIStateSet;

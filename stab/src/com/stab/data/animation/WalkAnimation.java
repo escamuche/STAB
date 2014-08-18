@@ -3,8 +3,8 @@ package com.stab.data.animation;
 import java.awt.Point;
 
 import com.stab.adventure.Game;
+import com.stab.client.slick.base.util.AnimUtils;
 import com.stab.data.animation.state.MoveToPointState;
-import com.stab.data.utils.AnimUtils;
 import com.stab.model.action.base.WalkToAction;
 import com.stab.model.animation.OnTileAnimation;
 import com.tien.princess.engine.sprite.StateSprite;

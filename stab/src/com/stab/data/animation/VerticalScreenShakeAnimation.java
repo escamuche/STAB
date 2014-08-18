@@ -1,8 +1,8 @@
 package com.stab.data.animation;
 
 import com.stab.client.slick.AbstractGameScreen;
+import com.stab.client.slick.base.util.AnimUtils;
 import com.stab.data.animation.sprite.ScreenShakeSprite;
-import com.stab.data.utils.AnimUtils;
 import com.stab.model.animation.Animation;
 import com.tien.princess.engine.sprite.StateSprite;
 
