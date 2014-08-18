@@ -29,6 +29,12 @@ public class PushAction extends Action {
 	
 	
 	@Override
+	public void execute(ActionRequest ar) {
+		// TODO Auto-generated method stub
+		super.execute(ar);
+	}
+	
+	@Override
 	public Class getActivityClass() {
 		return PushActivity.class;
 	}

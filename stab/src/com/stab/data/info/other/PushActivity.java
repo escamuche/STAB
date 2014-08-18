@@ -3,9 +3,11 @@ package com.stab.data.info.other;
 import com.stab.data.StabConstants;
 import com.stab.data.info.debuff.FatigueDebuff;
 import com.stab.data.info.debuff.condition.FatiguedCondition;
+import com.stab.model.basic.Sprite;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.SkillRoll;
+import com.stab.model.info.trait.base.VisualEffect;
 
 public class PushActivity extends PathfinderActivity{
 
@@ -13,7 +15,10 @@ public class PushActivity extends PathfinderActivity{
 		super(StabConstants.STRENGHT_CHECK, dc);
 		setContinuous(true);
 		this.setName("Pushing");
+		setActivityIcon("animations/push&0");
 	}
+	
+	
 	
 	
 	@Override
@@ -44,4 +49,10 @@ public class PushActivity extends PathfinderActivity{
 		this.getTarget().addTrait(debuff);
 	}
 	
+	
+	@Override
+	protected void configureEffectSprite(Sprite es) {
+		//super.configureEffectSprite(es);
+		es.playAnimation(VisualEffect.ANIMATED_ICON_ANIMATION,0,0,3,1000,true,false);
+	}
 }
