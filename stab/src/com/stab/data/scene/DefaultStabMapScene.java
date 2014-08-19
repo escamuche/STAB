@@ -47,11 +47,13 @@ public class DefaultStabMapScene  extends DefaultTileMapScene {
 		lbl.setText("Objectives");
 		questPanel.addChild(lbl);
 		this.add(questPanel);
+		questPanel.setVisible(false);
 	}
 
 	public int addTracker(QuestTracker qt){
 		trackers.add(qt);
 		questPanel.addChild(qt);
+		questPanel.setVisible(true);
 		return trackers.size()-1;
 	}
 	
@@ -72,7 +74,7 @@ public class DefaultStabMapScene  extends DefaultTileMapScene {
 				CharSheetPanel cp= new CharSheetPanel();
 				cp.setInfo((BaseInfo)info);
 				add(cp);
-				//cp.setVisible(false);
+				cp.setVisible(false);
 			}
 	}
 	

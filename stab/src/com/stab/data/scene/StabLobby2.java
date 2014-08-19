@@ -98,7 +98,7 @@ public class StabLobby2  extends Scene{
 		i.setAction(action);
 		i.setMargin(14);
 		i.setBackground("FOUR#red#ui/card$X");
-	//	i.setVisible(false);
+		i.setVisible(false);
 		add(i);
 		chars[n]=i;
 	}
