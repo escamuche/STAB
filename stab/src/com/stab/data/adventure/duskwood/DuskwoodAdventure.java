@@ -22,6 +22,7 @@ import com.stab.model.basic.scenes.event.response.DefeatResponse;
 import com.stab.model.basic.scenes.event.response.ShowMessageResponse;
 import com.stab.model.basic.scenes.event.response.infos.AddTraitResponse;
 import com.stab.model.basic.scenes.event.response.infos.PlayAnimationResponse;
+import com.stab.model.basic.scenes.event.response.infos.SetMusicResponse;
 import com.stab.model.basic.scenes.event.response.infos.SpawnRandomInfoResponse;
 import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
 import com.stab.model.basic.scenes.event.rule.TurnsElapsedRule;
@@ -73,7 +74,7 @@ public class DuskwoodAdventure extends Adventure {
 		ms.setTiles(DefaultTileMapScene.DEFAULT,"tiles2");
 		ms.setTag("MAP");
 		ms.setWaitsForAll(true);
-
+		ms.setMusic("Abandoned");
 		//Quests
 		QuestTracker qt1=new QuestTracker();
 		qt1.setMessage("Explore the ruined chapel");
@@ -110,6 +111,7 @@ public class DuskwoodAdventure extends Adventure {
 		DefaultRule wave1 = new TurnsElapsedRule(3);
 		wave1.setOnlyOnce(true);
 		wave1.setActive(false);
+		wave1.addResponse(new SetMusicResponse("Pursued"));
 		wave1.addResponse(new ShowMessageResponse(null, "You are alerted by an inhuman growl. Something foul has awakened and is coming towards the chapel"));
 		wave1.addResponse(new SpawnRandomInfoResponse(ZOMBIES, "GRAVEYARD1"));
 		wave1.addResponse(new SpawnRandomInfoResponse(ZOMBIES, "GRAVEYARD2"));
@@ -125,6 +127,7 @@ public class DuskwoodAdventure extends Adventure {
 		r1.addResponse(new TrackerSetStatusResponse(0, QuestTracker.COMPLETED));
 		r1.addResponse(new TrackerSetStatusResponse(1, QuestTracker.IN_PROGRESS));
 		r1.addResponse(new TrackerSetStatusResponse(2, QuestTracker.IN_PROGRESS));
+	
 		r1.addResponse(new PlayAnimationResponse("MANFRED",VisualEffect.CENTER_CAM_ANIMATION));
 		r1.addResponse(new PlayAnimationResponse("MANFRED",VisualEffect.SPEECH_ANIMATION,"Praised be Desna! My prayers have been heard! Quickly, gather around..."));
 		r1.addResponse(new PlayAnimationResponse("MANFRED",VisualEffect.SPEECH_ANIMATION,"This is a holy relic. Its power is fragile, but it attracts the undead. I need your help protecting the relic, or this forest will be doomed forever!"));

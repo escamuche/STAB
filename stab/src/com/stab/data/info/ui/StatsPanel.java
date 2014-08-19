@@ -8,8 +8,9 @@ import com.stab.model.basic.ui.Panel;
 import com.stab.model.basic.ui.Text;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.interfaces.PlayerOwned;
+import com.stab.model.info.interfaces.ValueChangeListener;
 
-public class StatsPanel extends Panel{
+public class StatsPanel extends Panel implements ValueChangeListener{
 
 	BaseInfo info;
 	
@@ -41,6 +42,7 @@ public class StatsPanel extends Panel{
 		this.info = info;
 		this.setPlayerRestricted(((PlayerOwned)info).getOwner());
 		refresh();
+		info.addValueChangeListener(this);
 	}
 	
 	public BaseInfo getInfo() {
@@ -59,6 +61,11 @@ public class StatsPanel extends Panel{
 	public void refresh(){
 		for (TextValueLink tv:links)
 			tv.check(getInfo());
+	}
+
+	@Override
+	public void valueChanged() {
+		refresh();
 	}
 	
 }
