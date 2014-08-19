@@ -24,10 +24,7 @@ import com.stab.data.actions.player.abilities.NobilityDomain;
 import com.stab.data.actions.player.abilities.Rage;
 import com.stab.data.actions.player.abilities.SmiteEvil;
 import com.stab.data.actions.player.spells.DismissSpellAction;
-import com.stab.data.actions.player.spells.cleric.level0.Bleed;
-import com.stab.data.actions.player.spells.cleric.level0.Stabilize;
 import com.stab.data.actions.player.spells.cleric.level0.Virtue;
-import com.stab.data.actions.player.spells.cleric.level0.unfinished.Guidance;
 import com.stab.data.actions.player.spells.cleric.level1.Bane;
 import com.stab.data.actions.player.spells.cleric.level1.Bless;
 import com.stab.data.actions.player.spells.cleric.level1.Command;
@@ -61,11 +58,8 @@ import com.stab.data.actions.player.spells.lvl0.Flare;
 import com.stab.data.actions.player.spells.lvl0.Light;
 import com.stab.data.actions.player.spells.lvl0.RayFrost;
 import com.stab.data.actions.player.spells.lvl0.Resistance;
+import com.stab.data.actions.player.spells.lvl0.Stabilize;
 import com.stab.data.actions.player.spells.lvl0.TouchFatigue;
-import com.stab.data.actions.player.spells.wizard.level0.OpenClose;
-import com.stab.data.actions.player.spells.wizard.level0.unfinished.Bleed_Wizard;
-import com.stab.data.actions.player.spells.wizard.level0.unfinished.DancingLights;
-import com.stab.data.actions.player.spells.wizard.level0.unfinished.MageHand;
 import com.stab.data.actions.player.spells.wizard.level1.BurningHands;
 import com.stab.data.actions.player.spells.wizard.level1.CharmPerson;
 import com.stab.data.actions.player.spells.wizard.level1.ChillTouch;
@@ -524,12 +518,10 @@ public class StabInit {
 		getActionLibrary().register(new Ventriloquism_Bard());
 		*/
 			//cleric0
-		getActionLibrary().register(Bleed.class);
-		getActionLibrary().register(Guidance.class);
-		getActionLibrary().register(Resistance.class);
-		getActionLibrary().register(Stabilize.class);
-		getActionLibrary().register(Virtue.class);
-		getActionLibrary().register(Light.class);
+	//	getActionLibrary().register(Guidance.class);
+	//	getActionLibrary().register(Resistance.class);
+	//	getActionLibrary().register(Virtue.class);
+	//	getActionLibrary().register(Light.class);
 		
 			//cleric1
 		getActionLibrary().register(Bane.class);
@@ -609,21 +601,36 @@ public class StabInit {
 		/**/	
 		//lvl0
 		getActionLibrary().register(DetectMagic.class);
-		
 		getActionLibrary().register(AcidSplash.class);
-		getActionLibrary().register(Bleed_Wizard.class);
 		getActionLibrary().register(Daze.class);
-		getActionLibrary().register(DancingLights.class);
+//		getActionLibrary().register(DancingLights.class);
 		getActionLibrary().register(DisruptUndead.class);
 		getActionLibrary().register(Flare.class);
-		//getActionLibrary().register(new Light_Wizard.class);
-		getActionLibrary().register(MageHand.class);
-		getActionLibrary().register(OpenClose.class);
+		getActionLibrary().register(Light.class);
+	//	getActionLibrary().register(MageHand.class);
+	//	getActionLibrary().register(OpenClose.class);
 		getActionLibrary().register(RayFrost.class);
-		//getActionLibrary().register(new Resistance_Wizard());
+		getActionLibrary().register(Resistance.class);
 		getActionLibrary().register(TouchFatigue.class);
-
-			//wizard1
+		getActionLibrary().register(Stabilize.class);
+		getActionLibrary().register(Virtue.class);
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		//wizard1
 		getActionLibrary().register(BurningHands.class);
 		getActionLibrary().register(CharmPerson.class);
 		getActionLibrary().register(ChillTouch.class);

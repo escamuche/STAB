@@ -3,7 +3,6 @@ package com.stab.data.actions.player.spells;
 import java.awt.Point;
 
 import com.stab.data.info.SpellDecoration;
-import com.stab.data.info.SpellEffect;
 import com.stab.model.action.ContextualAction;
 import com.stab.model.info.Info;
 import com.stab.model.request.basic.ActionRequest;

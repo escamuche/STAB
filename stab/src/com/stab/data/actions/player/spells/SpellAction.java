@@ -1,7 +1,6 @@
 package com.stab.data.actions.player.spells;
 
 import java.awt.Point;
-import java.lang.annotation.Inherited;
 import java.util.EnumSet;
 
 import org.newdawn.slick.Color;

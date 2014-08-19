@@ -1,41 +1,5 @@
 package com.stab.data.actions.player;
 
-import com.stab.data.actions.player.spells.bard.level0.DancingLights_Bard;
-import com.stab.data.actions.player.spells.bard.level0.Daze_Bard;
-import com.stab.data.actions.player.spells.bard.level0.DetectMagic_Bard;
-import com.stab.data.actions.player.spells.bard.level0.Flare_Bard;
-import com.stab.data.actions.player.spells.bard.level0.GhostSound_Bard;
-import com.stab.data.actions.player.spells.bard.level0.Light_Bard;
-import com.stab.data.actions.player.spells.bard.level0.Lullaby;
-import com.stab.data.actions.player.spells.bard.level0.MageHand_Bard;
-import com.stab.data.actions.player.spells.bard.level0.Mending_Bard;
-import com.stab.data.actions.player.spells.bard.level0.Message_Bard;
-import com.stab.data.actions.player.spells.bard.level0.OpenClose_Bard;
-import com.stab.data.actions.player.spells.bard.level0.Resistance_Bard;
-import com.stab.data.actions.player.spells.bard.level1.Alarm_Bard;
-import com.stab.data.actions.player.spells.bard.level1.AnimateRope_Bard;
-import com.stab.data.actions.player.spells.bard.level1.CauseFear_Bard;
-import com.stab.data.actions.player.spells.bard.level1.CharmPerson_Bard;
-import com.stab.data.actions.player.spells.bard.level1.ComprehendLanguages_Bard;
-import com.stab.data.actions.player.spells.bard.level1.CureLight_Bard;
-import com.stab.data.actions.player.spells.bard.level1.DetectSecretDoors_Bard;
-import com.stab.data.actions.player.spells.bard.level1.DisguiseSelf_Bard;
-import com.stab.data.actions.player.spells.bard.level1.Erase_Bard;
-import com.stab.data.actions.player.spells.bard.level1.ExpeditiousRetreat_Bard;
-import com.stab.data.actions.player.spells.bard.level1.FeatherFall_Bard;
-import com.stab.data.actions.player.spells.bard.level1.Grease_Bard;
-import com.stab.data.actions.player.spells.bard.level1.HideousLaughter;
-import com.stab.data.actions.player.spells.bard.level1.Hypnotism_Bard;
-import com.stab.data.actions.player.spells.bard.level1.Identify_Bard;
-import com.stab.data.actions.player.spells.bard.level1.LesserConfusion;
-import com.stab.data.actions.player.spells.bard.level1.MagicAura_Bard;
-import com.stab.data.actions.player.spells.bard.level1.RemoveFear_Bard;
-import com.stab.data.actions.player.spells.bard.level1.SilentImage_Bard;
-import com.stab.data.actions.player.spells.bard.level1.Sleep_Bard;
-import com.stab.data.actions.player.spells.bard.level1.SummonMonster1_Bard;
-import com.stab.data.actions.player.spells.bard.level1.UndetectableAlignment;
-import com.stab.data.actions.player.spells.bard.level1.UnseenServant_Bard;
-import com.stab.data.actions.player.spells.bard.level1.Ventriloquism_Bard;
 
 
 
@@ -43,7 +7,7 @@ import com.stab.data.actions.player.spells.bard.level1.Ventriloquism_Bard;
 public class BardActionSet extends PathfinderActionSet {
 
 	public BardActionSet() {
-		
+	/*	
 		this.addAction(DancingLights_Bard.ID);
 		this.addAction(Daze_Bard.ID);
 		this.addAction(DetectMagic_Bard.ID);
@@ -88,5 +52,6 @@ public class BardActionSet extends PathfinderActionSet {
 		this.setAction(Resistance_Bard.ID, 4);
 		this.setAction(CharmPerson_Bard.ID, 5);
 		this.setAction(CureLight_Bard.ID, 6);
+		/**/
 	}	
 }

@@ -11,7 +11,6 @@ import com.tien.princess.engine.sprite.common.states.ValueState;
 import com.tien.princess.engine.sprite.common.updaters.angle.AngleToRotation;
 import com.tien.princess.engine.sprite.common.updaters.angle.MoveA;
 import com.tien.princess.engine.sprite.common.updaters.conditions.OnRefDestroyed;
-import com.tien.princess.engine.sprite.common.updaters.move.Move;
 import com.tien.princess.engine.sprite.common.updaters.ref.StickToRef;
 import com.tien.princess.engine.utils.PaintUtils;
 

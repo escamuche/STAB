@@ -3,7 +3,6 @@ package com.stab.data.actions.player.spells.lvl0.effects;
 import java.awt.Color;
 
 import com.stab.data.actions.player.spells.lvl0.Daze;
-import com.stab.data.info.applicable.SpellCasting;
 import com.stab.data.info.debuff.condition.DazedCondition;
 import com.stab.data.info.equipment.SpellActionEffect;
 import com.stab.model.info.applicable.Applicable;

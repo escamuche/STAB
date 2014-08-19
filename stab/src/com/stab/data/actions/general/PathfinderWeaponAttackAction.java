@@ -20,7 +20,6 @@ import com.stab.data.animation.ThrustAnimation;
 import com.stab.data.info.applicable.PathfinderAttack;
 import com.stab.data.info.applicable.SneakAttack;
 import com.stab.data.info.equipment.BasicWeapon;
-import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.RangedWeapon;
 import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.action.Action;

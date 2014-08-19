@@ -1,6 +1,5 @@
 package com.stab.data.info.traits;
 
-import com.stab.model.Entity;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 

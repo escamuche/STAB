@@ -1,36 +1,5 @@
 package com.stab.data.actions.player;
 
-import com.stab.data.actions.player.spells.druid.level0.CreateWater_Druid;
-import com.stab.data.actions.player.spells.druid.level0.DetectMagic_Druid;
-import com.stab.data.actions.player.spells.druid.level0.DetectPoison_Druid;
-import com.stab.data.actions.player.spells.druid.level0.Flare_Druid;
-import com.stab.data.actions.player.spells.druid.level0.Guidance_Druid;
-import com.stab.data.actions.player.spells.druid.level0.Light_Druid;
-import com.stab.data.actions.player.spells.druid.level0.Mending_Druid;
-import com.stab.data.actions.player.spells.druid.level0.PurifyFood_Druid;
-import com.stab.data.actions.player.spells.druid.level0.Resistance_Druid;
-import com.stab.data.actions.player.spells.druid.level0.Stabilize_Druid;
-import com.stab.data.actions.player.spells.druid.level0.Virtue_Druid;
-import com.stab.data.actions.player.spells.druid.level1.CalmAnimals;
-import com.stab.data.actions.player.spells.druid.level1.CharmAnimal;
-import com.stab.data.actions.player.spells.druid.level1.CureLight_Druid;
-import com.stab.data.actions.player.spells.druid.level1.DetectAnimals;
-import com.stab.data.actions.player.spells.druid.level1.DetectSnares;
-import com.stab.data.actions.player.spells.druid.level1.EndureElements_Druid;
-import com.stab.data.actions.player.spells.druid.level1.Entangle;
-import com.stab.data.actions.player.spells.druid.level1.FaerieFire;
-import com.stab.data.actions.player.spells.druid.level1.Goodberry;
-import com.stab.data.actions.player.spells.druid.level1.HideAnimals;
-import com.stab.data.actions.player.spells.druid.level1.Jump_Druid;
-import com.stab.data.actions.player.spells.druid.level1.Longstrider;
-import com.stab.data.actions.player.spells.druid.level1.MagicFang;
-import com.stab.data.actions.player.spells.druid.level1.MagicStone_Druid;
-import com.stab.data.actions.player.spells.druid.level1.ObscuringMist_Druid;
-import com.stab.data.actions.player.spells.druid.level1.PassTrace;
-import com.stab.data.actions.player.spells.druid.level1.ProduceFlame;
-import com.stab.data.actions.player.spells.druid.level1.Shillelagh;
-import com.stab.data.actions.player.spells.druid.level1.SpeakAnimals;
-import com.stab.data.actions.player.spells.druid.level1.SummonNature1;
 
 
 
@@ -38,7 +7,7 @@ import com.stab.data.actions.player.spells.druid.level1.SummonNature1;
 public class DruidActionSet extends PathfinderActionSet {
 
 	public DruidActionSet() {
-		
+	/*	
 		this.addAction(CreateWater_Druid.ID);
 		this.addAction(DetectMagic_Druid.ID);
 		this.addAction(DetectPoison_Druid.ID);
@@ -78,6 +47,6 @@ public class DruidActionSet extends PathfinderActionSet {
 		this.setAction(Stabilize_Druid.ID, 3);
 		this.setAction(Flare_Druid.ID, 4);
 		this.setAction(Guidance_Druid.ID, 5);
-		
+		/**/
 	}	
 }

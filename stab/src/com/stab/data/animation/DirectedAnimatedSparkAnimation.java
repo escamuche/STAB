@@ -2,7 +2,6 @@ package com.stab.data.animation;
 
 import java.awt.Point;
 
-import com.stab.adventure.Game;
 import com.stab.client.slick.AbstractGameScreen;
 import com.stab.client.slick.base.util.AnimUtils;
 import com.stab.client.slick.base.visualobjects.StabSprite;

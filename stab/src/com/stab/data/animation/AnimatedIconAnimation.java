@@ -1,6 +1,5 @@
 package com.stab.data.animation;
 
-import com.stab.client.slick.base.updaters.SyncState;
 import com.stab.client.slick.base.util.AnimUtils;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.trait.base.VisualEffect;
