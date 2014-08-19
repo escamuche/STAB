@@ -8,6 +8,7 @@ public class StabConstants {
 	//Constantes de comportamiento
 	
 	public static final boolean USEMAXHPFORMONSTERS=true;
+	public static final boolean USEMAXHPFORPLAYERS=true;
 
 	
 	//Atributos

@@ -25,7 +25,7 @@ public class BasicAttributes extends CompoundTrait{
 		this.addTrait(new Attribute(StabConstants.PASSIVEDEFENSE,10));
 		
 		
-		
+		//TODO: retirarlo cuando esten en marcha las character class
 		this.addTrait(new PathfinderAttributeBonus(StabConstants.MAXHP,StabConstants.CONSTITUTION));
 		
 		//Estos 4 puede que desaparezcan y sean sustituidos por valores calculados.

@@ -5,7 +5,7 @@ import com.stab.model.info.BaseInfo;
 public abstract class CharacterClass {
 
 	
-	public void levelUpTo(BaseInfo info,int level){
+	public void levelUp(BaseInfo info,int level){
 		switch(level){
 			case 1: level1(info,level);break;
 			case 2: level2(info,level);break;
