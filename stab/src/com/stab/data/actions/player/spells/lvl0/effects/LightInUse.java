@@ -1,4 +1,4 @@
-package com.stab.data.info.buff.spells;
+package com.stab.data.actions.player.spells.lvl0.effects;
 
 import com.stab.model.info.trait.Trait;
 import com.stab.model.info.trait.base.BuffEffect;

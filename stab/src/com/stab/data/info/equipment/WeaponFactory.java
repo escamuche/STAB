@@ -3,7 +3,7 @@ package com.stab.data.info.equipment;
 import com.stab.data.actions.player.spells.lvl0.AcidSplash;
 import com.stab.data.actions.player.spells.lvl0.DisruptUndead;
 import com.stab.data.actions.player.spells.lvl0.RayFrost;
-import com.stab.data.actions.player.spells.wizard.level0.TouchFatigue;
+import com.stab.data.actions.player.spells.lvl0.TouchFatigue;
 import com.stab.data.animation.GenericProyectileAnimation;
 import com.stab.data.animation.LungeAnimation;
 import com.stab.data.animation.ShootBeamAnimation;

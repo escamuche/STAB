@@ -1,8 +1,9 @@
-package com.stab.data.actions.player.spells.wizard.level0;
+package com.stab.data.actions.player.spells.lvl0;
 
 import java.awt.Point;
 
 import com.stab.data.StabConstants;
+import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.info.debuff.FatigueDebuff;
@@ -31,6 +32,7 @@ public class TouchFatigue extends SpellOnTarget{
 		this.setDescription("You channel negative energy through your touch, fatiguing the target. You must succeed on a touch attack to strike a target. The subject is immediately fatigued for the spell's duration. This spell has no effect on a creature that is already fatigued. Unlike with normal fatigue, the effect ends as soon as the spell's duration expires.");
 		this.setSave(StabConstants.FORTITUDESAVE);
 		setWeapon(TouchFatigue.ID);
+		setDescriptors(EffectDescriptor.NECROMANCY);
 	}
 	
 	@Override
