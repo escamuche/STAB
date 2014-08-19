@@ -44,7 +44,7 @@ public class TextValueLink {
 		if (attr)
 			o=info.getAttributeValue(field2);
 		else
-			info.getValue(field2);
+			o=info.getValue(field2);
 		return o;
 	}
 }
