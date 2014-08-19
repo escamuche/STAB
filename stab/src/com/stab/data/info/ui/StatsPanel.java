@@ -47,6 +47,14 @@ public class StatsPanel extends Panel{
 		return info;
 	}
 	
+	protected Text text(String val,int px,int py){
+		Text t= new Text();
+		t.setSize(Constants.CONTENT,Constants.CONTENT);
+		t.setPos(Constants.PERCENT+px,Constants.PERCENT+py);
+		addChild(t);
+		link(val,t);
+		return t;
+	}
 	
 	public void refresh(){
 		for (TextValueLink tv:links)

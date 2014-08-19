@@ -6,9 +6,14 @@ import org.newdawn.slick.Color;
 
 import com.stab.client.slick.BasicActionsController;
 import com.stab.common.Constants;
+import com.stab.data.info.player.PathfinderCharacter;
+import com.stab.data.info.ui.CharSheetPanel;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 import com.stab.model.basic.ui.Label;
 import com.stab.model.basic.ui.Panel;
+import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
+import com.stab.model.info.interfaces.PlayerOwned;
 
 public class DefaultStabMapScene  extends DefaultTileMapScene {
 
@@ -55,6 +60,20 @@ public class DefaultStabMapScene  extends DefaultTileMapScene {
 			return trackers.get(number);
 		}catch(Exception e){}
 		return null;
+	}
+	
+	
+	
+	@Override
+	public void addInfo(Info info) {
+		super.addInfo(info);
+		if (info instanceof PathfinderCharacter)
+			if (info instanceof PlayerOwned){
+				CharSheetPanel cp= new CharSheetPanel();
+				cp.setInfo((BaseInfo)info);
+				add(cp);
+				//cp.setVisible(false);
+			}
 	}
 	
 }

@@ -25,7 +25,18 @@ public class TextValueLink {
 	
 	public void check(BaseInfo info){
 		Object val=getValue(info,field);
-		
+		if (!compare(val)){
+			value=val;
+			assign();
+		}
+	}
+	
+	protected boolean compare(Object val){
+		return (val==value);
+	}
+	
+	protected void assign(){
+		object.setText(value.toString());
 	}
 
 	protected Object getValue(BaseInfo info, String field2) {
