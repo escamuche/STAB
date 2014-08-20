@@ -5,7 +5,7 @@ import java.awt.Point;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.actions.player.spells.SpellOnTarget;
-import com.stab.data.info.SpellEffect;
+import com.stab.data.info.spellcasting.SpellEffect;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.trait.Modifier;

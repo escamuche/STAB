@@ -1,4 +1,4 @@
-package com.stab.data.info;
+package com.stab.data.info.spellcasting;
 
 import com.stab.data.actions.player.spells.DismissSpellAction;
 import com.stab.data.actions.player.spells.Spell;

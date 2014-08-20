@@ -1,4 +1,4 @@
-package com.stab.data.info;
+package com.stab.data.info.player;
 
 import java.util.Arrays;
 import java.util.Collection;

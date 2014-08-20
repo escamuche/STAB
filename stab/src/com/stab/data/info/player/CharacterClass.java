@@ -1,4 +1,4 @@
-package com.stab.data.info;
+package com.stab.data.info.player;
 
 import com.stab.model.info.BaseInfo;
 

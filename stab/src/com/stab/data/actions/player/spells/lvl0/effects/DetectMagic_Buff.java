@@ -2,7 +2,7 @@ package com.stab.data.actions.player.spells.lvl0.effects;
 
 import com.stab.data.actions.player.spells.Spell;
 import com.stab.data.actions.player.spells.lvl0.DetectMagic;
-import com.stab.data.info.SpellEffect;
+import com.stab.data.info.spellcasting.SpellEffect;
 import com.stab.model.extras.VisionMode;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
