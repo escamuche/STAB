@@ -37,8 +37,8 @@ public class ActionPanel extends Panel{
 		act1.setPos(Constants.BEGIN,Constants.NEXT);
 		//act1.setBackground("ui/consoleback$X");
 		act1.setMargin(3);
-		act1.setMargins(4,8);
-		act1.setGap(14, 8);
+		act1.setMargins(8,8);
+		act1.setGap(8, 8);
 		act1.setLayout("horizontal");
 		addChild(act1);
 	}
@@ -72,8 +72,8 @@ public class ActionPanel extends Panel{
 
 	protected void createAction(Panel p,Action a) {
 		Button di=new Button();
-		di.setButtonType(Button.RADIO);
-		di.setButtonGroup("ACTBG"+info.getId());
+	//	di.setButtonType(Button.RADIO);
+	//	di.setButtonGroup("ACTBG"+info.getId());
 		//di.setBackground("ui/actionoverlays#0");
 		di.setSize(40, 40);
 		di.setImage("FOUR#red#"+a.getResource((BaseInfo)getInfo())+"$S");

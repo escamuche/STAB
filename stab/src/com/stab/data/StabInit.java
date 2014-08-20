@@ -12,6 +12,7 @@ import com.stab.client.slick.base.visualobjects.token.ImageToken_sprite;
 import com.stab.common.fw.ServiceManager;
 import com.stab.data.actions.PathfinderPathAction;
 import com.stab.data.actions.PathfinderSearchAction;
+import com.stab.data.actions.StabActionState;
 import com.stab.data.actions.feats.Expertise;
 import com.stab.data.actions.feats.PowerAttack;
 import com.stab.data.actions.general.DefendAction;
@@ -293,6 +294,9 @@ public class StabInit {
 	
 	static void createFactory(){
 		of= new BasicObjectFactory();
+		
+		
+		of.setMapping(StabActionState.class);
 		
 		//scenes
 		of.setMapping(StabLobby2.class);
