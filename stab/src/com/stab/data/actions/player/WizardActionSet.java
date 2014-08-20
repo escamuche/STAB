@@ -11,9 +11,8 @@ import com.stab.data.actions.player.spells.lvl0.DetectMagic;
 import com.stab.data.actions.player.spells.lvl0.DisruptUndead;
 import com.stab.data.actions.player.spells.lvl0.Flare;
 import com.stab.data.actions.player.spells.lvl0.RayFrost;
+import com.stab.data.actions.player.spells.lvl0.Resistance;
 import com.stab.data.actions.player.spells.lvl0.TouchFatigue;
-import com.stab.data.actions.player.spells.wizard.level0.OpenClose;
-import com.stab.data.actions.player.spells.wizard.level0.unfinished.DancingLights;
 import com.stab.data.actions.player.spells.wizard.level1.BurningHands;
 import com.stab.data.actions.player.spells.wizard.level1.CharmPerson;
 import com.stab.data.actions.player.spells.wizard.level1.ChillTouch;
@@ -42,7 +41,7 @@ public class WizardActionSet extends PathfinderActionSet {
 	//	this.addAction(MageHand.ID);
 	//	this.addAction(OpenClose.ID);
 		this.addAction(RayFrost.ID);
-	//	this.addAction(Resistance_Wizard.ID);
+		this.addAction(Resistance.ID);
 		this.addAction(TouchFatigue.ID);
 		
 		this.addAction(BurningHands.ID);
@@ -70,16 +69,16 @@ public class WizardActionSet extends PathfinderActionSet {
 				this.setAction(TouchFatigue.ID,6);
 				
 				
-				this.setAction(Daze.ID, 2);
+				this.setAction(Resistance.ID, 2);
 				
 				
-				this.addAction(AcidFlask.ID);
-				this.setAction(AcidFlask.ID,6);
+			//	this.addAction(AcidFlask.ID);
+			//	this.setAction(AcidFlask.ID,6);
 				
 				
-		SpellAction mm= SpellUtils.asCaster(MagicMissile.ID, StabConstants.WIZARDCASTER);
-		this.addAction(mm);
-		this.setAction(mm, 2);
+		//SpellAction mm= SpellUtils.asCaster(MagicMissile.ID, StabConstants.WIZARDCASTER);
+		//this.addAction(mm);
+		//this.setAction(mm, 2);
 		
 		this.setAction(DetectMagic.ID,1);
 		

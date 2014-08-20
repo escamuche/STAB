@@ -39,9 +39,22 @@ public class TextValueLink {
 		object.setText(value.toString());
 	}
 
+	
+	public boolean isAttr() {
+		return attr;
+	}
+	
+	public String getField() {
+		return field;
+	}
+	
+	public Text getObject() {
+		return object;
+	}
+	
 	protected Object getValue(BaseInfo info, String field2) {
 		Object o=null;
-		if (attr)
+		if (isAttr())
 			o=info.getAttributeValue(field2);
 		else
 			o=info.getValue(field2);

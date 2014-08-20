@@ -43,6 +43,8 @@ public class ActionPanel extends Panel{
 		addChild(act1);
 	}
 	
+	
+	
 	public void setInfo(BaseInfo info) {
 		this.info = info;
 		this.setPlayerRestricted(((PlayerOwned)info).getOwner());
