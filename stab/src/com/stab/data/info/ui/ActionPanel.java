@@ -37,7 +37,9 @@ public class ActionPanel extends Panel{
 		act1.setPos(Constants.BEGIN,Constants.NEXT);
 		//act1.setBackground("ui/consoleback$X");
 		act1.setMargin(3);
-		
+		act1.setMargins(4,8);
+		act1.setGap(14, 8);
+		act1.setLayout("horizontal");
 		addChild(act1);
 	}
 	
