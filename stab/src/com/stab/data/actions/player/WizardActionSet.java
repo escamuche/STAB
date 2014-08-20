@@ -40,7 +40,7 @@ public class WizardActionSet extends PathfinderActionSet {
 		this.addAction(Flare.ID);
 	//	this.addAction(Light_Wizard.ID);
 	//	this.addAction(MageHand.ID);
-		this.addAction(OpenClose.ID);
+	//	this.addAction(OpenClose.ID);
 		this.addAction(RayFrost.ID);
 	//	this.addAction(Resistance_Wizard.ID);
 		this.addAction(TouchFatigue.ID);
