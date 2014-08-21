@@ -4,6 +4,7 @@ import com.stab.data.StabConstants;
 
 public class SorcererSpellSlots extends SpontaneousSpellSlots{
 
+	public static final String ID="SORCERER_SLOTS";
 	
 	static int[][] BASE= new int[][]{
 			{3,0,0,0,0,0,0,0,0},
