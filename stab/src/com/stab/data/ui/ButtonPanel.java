@@ -1,0 +1,98 @@
+package com.stab.data.ui;
+
+import java.util.Collection;
+import java.util.Hashtable;
+
+import com.stab.client.slick.BasicActionsController;
+import com.stab.common.Constants;
+import com.stab.model.Player;
+import com.stab.model.basic.ui.Button;
+import com.stab.model.basic.ui.ButtonListener;
+import com.stab.model.basic.ui.Panel;
+import com.stab.model.basic.ui.Text;
+
+public class ButtonPanel extends Panel implements ButtonListener{
+
+	Panel inner;
+	Text title;
+	Hashtable<Object,Button> map;
+	
+	
+	
+	@Override
+	public void init() {
+		super.init();
+		map=new Hashtable<Object,Button>();
+		setOpenAction(BasicActionsController.SKILLBOOK);
+		setSize(480,512);
+		setPos(Constants.BEGIN,60);
+		setBackground("ui/paperback$S");
+		setOverlay("ui/consolefront$X");
+		title= new Text();
+		title.setText(" ");
+		title.setPos(Constants.CENTER,Constants.BEGIN);
+		title.setSize(Constants.FILL,Constants.CONTENT);
+		addChild(title);
+		inner= new Panel();
+		inner.setSize(Constants.FILL,Constants.CONTENT);
+		inner.setPos(Constants.BEGIN,Constants.NEXT);
+		inner.setMargins(8,8);
+		inner.setGap(8, 8);
+		inner.setLayout("horizontal");
+		addChild(inner);
+	}
+	
+	public Text getTitle() {
+		return title;
+	}
+	public Panel getInnerPanel(){
+		return inner;
+	}
+	
+	
+	public void refresh(Collection list){
+		int n=0;
+		//añadir los inexistentes
+		for (Object o:list){
+			if (map.get(o)==null){
+				//crearlo
+				Button b=createButtonFor(o);
+				b.setOrder(n);
+			}else{
+				//reconfigurarlo
+				Button b=map.get(o);
+				configureButton(b,o);
+				b.setOrder(n);
+			}
+			n++;
+		}
+		//Purgar el resto
+		for (Object o: map.keySet())
+			if (!list.contains(o)){
+				getInnerPanel().removeChild(map.get(o));
+				map.remove(o);
+			}
+				
+	}
+
+	protected void configureButton(Button b, Object o) {
+		
+	}
+
+	protected Button createButtonFor(Object o) {
+		Button b= new Button();
+		b.setSize(40, 40);
+		b.setPos(Constants.NEXT,Constants.PREVIOUS);
+		b.addButtonListener(this);
+		getInnerPanel().addChild(b);
+		return b;
+	}
+
+	@Override
+	public void buttonActivated(Player p, Button b) {
+		
+	}
+	
+	
+	
+}

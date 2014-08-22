@@ -1,4 +1,4 @@
-package com.stab.data.info.ui;
+package com.stab.data.ui;
 
 import java.util.ArrayList;
 

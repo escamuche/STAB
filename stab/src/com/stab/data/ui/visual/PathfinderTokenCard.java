@@ -1,4 +1,4 @@
-package com.stab.data.ui;
+package com.stab.data.ui.visual;
 
 import com.stab.client.slick.base.DefaultTokenCard;
 import com.stab.client.slick.base.TokenCard;

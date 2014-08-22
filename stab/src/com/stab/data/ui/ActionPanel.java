@@ -1,4 +1,4 @@
-package com.stab.data.info.ui;
+package com.stab.data.ui;
 
 import com.stab.client.slick.BasicActionsController;
 import com.stab.common.Constants;

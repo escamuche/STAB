@@ -1,4 +1,4 @@
-package com.stab.data.info.ui;
+package com.stab.data.ui;
 
 import com.stab.model.basic.ui.Text;
 import com.stab.model.info.BaseInfo;

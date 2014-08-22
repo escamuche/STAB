@@ -6,16 +6,20 @@ import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.info.debuff.condition.DyingCondition;
+import com.stab.data.info.equipment.EquipmentFactory;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.traits.BasicAttributes;
 import com.stab.model.basic.token.Token;
 import com.stab.model.info.base.Character;
+import com.stab.model.info.base.pickup.Inventory;
+import com.stab.model.info.base.pickup.ItemPickup;
 import com.stab.model.info.trait.base.gear.Equipment;
 import com.stab.model.info.trait.base.gear.Item;
 
 public class PathfinderCharacter extends Character {
 	
 public static final String ID="PATH_INFO";
+public static final String QUICK_INVENTORY="QUICK_INVENTORY";
 	
 	
 	@Override
@@ -27,6 +31,17 @@ public static final String ID="PATH_INFO";
 	    this.setBloodeffEct("PARTICLE#damage/redblood");
 	    this.setGear(new HumanoidGear());
 	    this.setOverlay("border");
+	    
+	    
+	    Inventory quick= new Inventory();
+	    quick.setId(QUICK_INVENTORY);
+	    addTrait(quick);
+	    
+	    ItemPickup i=new ItemPickup();
+	    i.setItem((Item)StabInit.getEquipment(EquipmentFactory.TORCH));
+	    i.setInventory(quick);
+	    
+	    
 	}
 	
 	

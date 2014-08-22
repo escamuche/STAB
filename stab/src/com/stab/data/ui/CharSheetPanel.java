@@ -1,4 +1,4 @@
-package com.stab.data.info.ui;
+package com.stab.data.ui;
 
 import com.stab.common.Constants;
 import com.stab.data.StabConstants;

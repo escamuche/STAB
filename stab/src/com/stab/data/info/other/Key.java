@@ -1,7 +1,7 @@
 package com.stab.data.info.other;
 
 import com.stab.annotations.Injected;
-import com.stab.model.info.base.Pickup;
+import com.stab.model.info.base.pickup.Pickup;
 import com.stab.model.info.trait.base.KeyTrait;
 
 public class Key extends Pickup {

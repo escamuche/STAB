@@ -7,8 +7,9 @@ import org.newdawn.slick.Color;
 import com.stab.client.slick.BasicActionsController;
 import com.stab.common.Constants;
 import com.stab.data.info.player.PathfinderCharacter;
-import com.stab.data.info.ui.ActionPanel;
-import com.stab.data.info.ui.CharSheetPanel;
+import com.stab.data.ui.ActionPanel;
+import com.stab.data.ui.CharSheetPanel;
+import com.stab.data.ui.PlayerInventoryPanel;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 import com.stab.model.basic.ui.Label;
 import com.stab.model.basic.ui.Panel;
@@ -80,6 +81,10 @@ public class DefaultStabMapScene  extends DefaultTileMapScene {
 				ap.setInfo((BaseInfo)info);
 				add(ap);
 				ap.setVisible(false);
+				PlayerInventoryPanel ip= new PlayerInventoryPanel();
+				ip.setInfo((BaseInfo)info);
+				add(ip);
+				ip.setVisible(false);
 			}
 	}
 	
