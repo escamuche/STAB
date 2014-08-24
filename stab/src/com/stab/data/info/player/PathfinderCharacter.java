@@ -14,6 +14,7 @@ import com.stab.model.info.base.Character;
 import com.stab.model.info.base.pickup.Inventory;
 import com.stab.model.info.base.pickup.ItemPickup;
 import com.stab.model.info.trait.base.gear.Equipment;
+import com.stab.model.info.trait.base.gear.Gear;
 import com.stab.model.info.trait.base.gear.Item;
 
 public class PathfinderCharacter extends Character {
@@ -21,6 +22,7 @@ public class PathfinderCharacter extends Character {
 public static final String ID="PATH_INFO";
 public static final String QUICK_INVENTORY="QUICK_INVENTORY";
 	
+	Inventory quickInventory;
 	
 	@Override
 	public void init() {
@@ -33,13 +35,13 @@ public static final String QUICK_INVENTORY="QUICK_INVENTORY";
 	    this.setOverlay("border");
 	    
 	    
-	    Inventory quick= new Inventory();
-	    quick.setId(QUICK_INVENTORY);
-	    addTrait(quick);
+	    quickInventory= new Inventory();
+	    quickInventory.setId(QUICK_INVENTORY);
+	    addTrait(quickInventory);
 	    
-	    ItemPickup i=new ItemPickup();
+	    ItemPickup i=(ItemPickup)getEntityManager().createElement(ItemPickup.ID);
 	    i.setItem((Item)StabInit.getEquipment(EquipmentFactory.TORCH));
-	    i.setInventory(quick);
+	    i.setInventory(quickInventory);
 	    
 	    
 	}
@@ -166,5 +168,37 @@ public static final String QUICK_INVENTORY="QUICK_INVENTORY";
 				this.addTrait(new DyingCondition());
 			}
 		}
+	
+	
+	
+	//Gestion de equip unequip
+	@Override
+		public void equipmentChanged(Gear gear, String slot,
+				Equipment oldEquipment, Equipment newEquipment,boolean childEvent) {
+			super.equipmentChanged(gear, slot, oldEquipment, newEquipment,childEvent);
+		
+			if (oldEquipment!=null)
+			if (gear instanceof HumanoidGear)
+				if (HumanoidGear.BOTHHANDS.equals(oldEquipment.getSlot()))
+					if (!HumanoidGear.BOTHHANDS.equals(slot))
+						return; //no hacer el drop por los unequip de main hand y off hand de un arma both hands
+			if (oldEquipment instanceof Item){
+				 Inventory inv=getBasicInventory();
+				 if (inv.get((Item)oldEquipment)!=null){
+					 ItemPickup i=(ItemPickup)getEntityManager().createElement(ItemPickup.ID);
+					 i.setItem((Item)oldEquipment);
+				 	 if (inv.canAdd(i))
+						 i.setInventory(inv);
+					 else
+						 i.setInventory(null);
+				 }
+			}
+		}
+
+
+	protected Inventory getBasicInventory() {
+		return quickInventory;
+	}
+	
 }
 	

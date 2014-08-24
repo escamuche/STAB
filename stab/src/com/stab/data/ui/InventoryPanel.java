@@ -18,7 +18,7 @@ public class InventoryPanel extends ButtonPanel {
 	
 	public void setInventory(Inventory inventory) {
 		this.inventory = inventory;
-		getTitle().setText(inventory.getText());
+		getTitle().setText("Quick inventory");
 		refresh();
 	}
 	
@@ -35,8 +35,9 @@ public class InventoryPanel extends ButtonPanel {
 	protected Button createButtonFor(Object o) {
 		Button b=super.createButtonFor(o);
 		ItemPickup i=(ItemPickup)o;
-		b.setImage(i.getItemResource());
+		b.setImage(i.getItemResource()+"$S");
 		b.setTooltip(i.getItem().getName());
+		System.out.println("created button for "+i.getItem().getName());
 		return b;
 	}
 	

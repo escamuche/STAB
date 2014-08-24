@@ -16,18 +16,26 @@ public class ButtonPanel extends Panel implements ButtonListener{
 	Panel inner;
 	Text title;
 	Hashtable<Object,Button> map;
+	Hashtable<Button,Object> map2;
 	
+	Object selected;
 	
 	
 	@Override
 	public void init() {
 		super.init();
+		selected=null;
 		map=new Hashtable<Object,Button>();
+		map2=new Hashtable<Button, Object>();
 		setOpenAction(BasicActionsController.SKILLBOOK);
 		setSize(480,512);
 		setPos(Constants.BEGIN,60);
 		setBackground("ui/paperback$S");
 		setOverlay("ui/consolefront$X");
+		setLayout("vertical");
+		setMargins(8,8);
+		setGap(8, 8);
+		setMargin(5);
 		title= new Text();
 		title.setText(" ");
 		title.setPos(Constants.CENTER,Constants.BEGIN);
@@ -39,6 +47,7 @@ public class ButtonPanel extends Panel implements ButtonListener{
 		inner.setMargins(8,8);
 		inner.setGap(8, 8);
 		inner.setLayout("horizontal");
+		inner.setOverlay("ui/nanoborder$X");
 		addChild(inner);
 	}
 	
@@ -58,6 +67,8 @@ public class ButtonPanel extends Panel implements ButtonListener{
 				//crearlo
 				Button b=createButtonFor(o);
 				b.setOrder(n);
+				map.put(o, b);
+				map2.put(b, o);
 			}else{
 				//reconfigurarlo
 				Button b=map.get(o);
@@ -79,18 +90,35 @@ public class ButtonPanel extends Panel implements ButtonListener{
 		
 	}
 
+	int n=1;
 	protected Button createButtonFor(Object o) {
 		Button b= new Button();
-		b.setSize(40, 40);
+		b.setSize(45, 45);
 		b.setPos(Constants.NEXT,Constants.PREVIOUS);
 		b.addButtonListener(this);
+		b.setAction("SELECT"+n++);
+		b.setActOnScene(false);
 		getInnerPanel().addChild(b);
 		return b;
+	}
+	
+	public Object getSelected() {
+		return selected;
+	}
+	
+	public Button getSelectedButton(){
+		if (selected!=null)
+			return map.get(selected);
+		return null;
 	}
 
 	@Override
 	public void buttonActivated(Player p, Button b) {
-		
+		if (selected!=null)
+			if (map.get(selected)!=null)
+				map.get(selected).setActivated(false);
+		selected=map2.get(b);
+		b.setActivated(true);
 	}
 	
 	

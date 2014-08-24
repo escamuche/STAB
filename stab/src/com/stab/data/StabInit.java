@@ -106,6 +106,7 @@ import com.stab.data.animation.GenericSpriteAnimation;
 import com.stab.data.animation.GenericSpriteOnAnimation;
 import com.stab.data.animation.HealNumberAnimation;
 import com.stab.data.animation.HorizontalScreenShakeAnimation;
+import com.stab.data.animation.LootDropAnimation;
 import com.stab.data.animation.LungeAnimation;
 import com.stab.data.animation.MagicMissileAnimation;
 import com.stab.data.animation.MarkAnimation;
@@ -135,6 +136,7 @@ import com.stab.data.animation.ui.EnterScreenAnimation;
 import com.stab.data.animation.ui.LeaveScreenAnimation;
 import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.EquipmentFactory;
+import com.stab.data.info.equipment.PathfinderItemPickup;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.extra.SkillExtraText;
 import com.stab.data.info.monster.bestiary.BloodySkeleton;
@@ -297,6 +299,7 @@ public class StabInit {
 		
 		
 		of.setMapping(StabActionState.class);
+		of.setMapping(PathfinderItemPickup.class);
 		
 		//scenes
 		of.setMapping(StabLobby2.class);
@@ -427,6 +430,7 @@ public class StabInit {
 		of.setMapping(TinkerAnimation.class);
 		of.setMapping(CenterCamAnimation.class);
 		of.setMapping(BumpAnimation.class);
+		of.setMapping(LootDropAnimation.class);
 		
 		//Tokens
 		of.setMapping(IronBarsToken.class);
