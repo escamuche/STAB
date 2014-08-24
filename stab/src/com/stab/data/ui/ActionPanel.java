@@ -1,50 +1,69 @@
 package com.stab.data.ui;
 
+import java.util.ArrayList;
+
 import com.stab.client.slick.BasicActionsController;
 import com.stab.common.Constants;
+import com.stab.model.Player;
 import com.stab.model.action.Action;
 import com.stab.model.action.ActionSet;
 import com.stab.model.action.base.BasicAction;
+import com.stab.model.action.base.EmptyAction;
 import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.Panel;
-import com.stab.model.basic.ui.Text;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.interfaces.PlayerOwned;
 
 
-public class ActionPanel extends Panel{
+public class ActionPanel extends ButtonPanel{
 
 	BaseInfo info;
 	
-	Panel act1;
+	Panel pact;
+	ArrayList<Button> abuttons;
+	
 	
 	@Override
 	public void init() {
 		super.init();
-	
 		setOpenAction(BasicActionsController.SKILLBOOK);
 		setSize(480,512);
 		setPos(Constants.BEGIN,60);
-		setBackground("ui/paperback$S");
-		setOverlay("ui/consolefront$X");
-		Text t= new Text();
-		t.setText("Actions");
-		t.setPos(Constants.CENTER,Constants.BEGIN);
-		t.setSize(Constants.FILL,Constants.CONTENT);
-		addChild(t);
-		act1= new Panel();
-		act1.setSize(Constants.FILL,400);
-		act1.setPos(Constants.BEGIN,Constants.NEXT);
-		//act1.setBackground("ui/consoleback$X");
-		act1.setMargin(3);
-		act1.setMargins(8,8);
-		act1.setGap(8, 8);
-		act1.setLayout("horizontal");
-		addChild(act1);
+		getTitle().setText("Actions");
+		pact= new Panel();
+		pact.setSize(Constants.FILL,105);
+		pact.setPos(Constants.BEGIN,400);
+		pact.setMargins(5,5);
+		pact.setGap(1, 5);
+		pact.setLayout("default");
+		pact.setOverlay("ui/nanoborder$X");
+		addChild(pact);
+		abuttons= new ArrayList<Button>();
+		createButtons();
 	}
 	
 	
 	
+	protected void createButtons() {
+		for (int f=0;f<20;f++){
+			Button b= new Button();
+			b.setSize(45, 45);
+			b.setPos(Constants.NEXT,Constants.PREVIOUS);
+			if (f==10)
+				b.setPos(Constants.BEGIN,Constants.NEXT_MAX);
+			b.addButtonListener(this);
+			b.setAction("ACTION"+f);
+			b.setBackground("ui/actionoverlays&0$S");
+			b.setOverlay("ui/actionoverlays&0$S");
+			b.setMargin(2);
+			b.setActOnScene(false);
+			pact.addChild(b);
+			abuttons.add(b);
+		}
+	}
+
+
+
 	public void setInfo(BaseInfo info) {
 		this.info = info;
 		this.setPlayerRestricted(((PlayerOwned)info).getOwner());
@@ -57,40 +76,62 @@ public class ActionPanel extends Panel{
 	}
 	
 	public void refresh(){
-		createActions(act1);
-	}
-	
-	
-	
-	public void createActions(Panel p){
 		ActionSet as=((BaseInfo)getInfo()).getActionSet();
+		ArrayList<Action> list= new ArrayList<Action>(); 
 		for (Action a:as.getAllActions())
-			if (isValidAction(p,a)){
-				createAction(p,a);
+			if (isValidAction(a)){
+				list.add(a);
 			}
+		refresh(as.getAllActions());
+		
+		for (int f=0;f<20;f++){
+			Action a=as.getAction(f);
+			if (a==null || a.getId()==EmptyAction.ID){
+				abuttons.get(f).setImage(null);
+			}else
+				abuttons.get(f).setImage(a.getCanonicalResource()+"$S");
+		}
 	}
 	
 	
+	
+	
 
-	protected void createAction(Panel p,Action a) {
-		Button di=new Button();
-	//	di.setButtonType(Button.RADIO);
-	//	di.setButtonGroup("ACTBG"+info.getId());
-		//di.setBackground("ui/actionoverlays#0");
-		di.setSize(40, 40);
-		di.setImage("FOUR#red#"+a.getResource((BaseInfo)getInfo())+"$S");
-		di.setTooltip(a.getName()+"#"+a.getDescription());
-		di.setPos(Constants.NEXT,Constants.PREVIOUS);
-		
-		p.addChild(di);
-		
-		//System.out.println("+"+di+" "+a);
+	
+	@Override
+	protected Button createButtonFor(Object o) {
+		Button b=super.createButtonFor(o);
+		Action a= (Action)o;
+		b.setBackground("ui/actionoverlays&0$S");
+		b.setMargin(2);
+		b.setImage("FOUR#cyan#"+a.getResource()+"$S");
+		b.setTooltip(a.getName()+"#"+a.getDescription());
+		return b;
 	}
+	
 
 
-	protected boolean isValidAction(Panel p, Action a) {
+	protected boolean isValidAction(Action a) {
 		if (a instanceof BasicAction)
 			return false;
 		return true;
+	}
+	
+	
+	
+	@Override
+	public void buttonActivated(Player p, Button b) {
+		if (b.getAction()!=null)
+			if (b.getAction().startsWith("ACTION")){
+				int n=Integer.parseInt(b.getAction().substring(6));
+				if (getSelected() instanceof Action){
+					ActionSet as=((BaseInfo)getInfo()).getActionSet();
+					as.setAction((Action)getSelected(), n);
+					b.setImage(((Action)getSelected()).getCanonicalResource()+"$S");
+					((BaseInfo)getInfo()).reCheckActions();
+				}
+				return;
+			}
+		super.buttonActivated(p, b);
 	}
 }

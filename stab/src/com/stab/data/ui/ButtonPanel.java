@@ -98,10 +98,17 @@ public class ButtonPanel extends Panel implements ButtonListener{
 		b.addButtonListener(this);
 		b.setAction("SELECT"+n++);
 		b.setActOnScene(false);
-		getInnerPanel().addChild(b);
+		getPanelFor(o).addChild(b);
 		return b;
 	}
 	
+	
+	
+	
+	protected Panel getPanelFor(Object o) {
+		return getInnerPanel();
+	}
+
 	public Object getSelected() {
 		return selected;
 	}

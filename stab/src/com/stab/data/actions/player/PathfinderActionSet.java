@@ -19,6 +19,7 @@ public class PathfinderActionSet extends BasicActionSet {
 		
 		GearSlotDelegatedAction sl1= new GearSlotDelegatedAction(null, HumanoidGear.MAINHAND, 0);
 		//this.addAction(PathfinderWeaponAttackAction.ID);
+		sl1.setCanonicalResource("ui/righthand");
 		this.addAction(sl1);
 		this.setAction(sl1, 0);
 		
