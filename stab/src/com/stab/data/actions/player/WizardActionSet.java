@@ -61,15 +61,15 @@ public class WizardActionSet extends PathfinderActionSet {
 		
 	//	this.addAction(DancingLights.ID);
 	//	
-				this.setAction(Shield.ID,1);
-				this.setAction(Daze.ID, 2);
-				this.setAction(DisruptUndead.ID, 3);
-				this.setAction(BurningHands.ID, 4);
-				this.setAction(RayFrost.ID,5);
-				this.setAction(TouchFatigue.ID,6);
+		this.setAction(Shield.ID,1);
+		this.setAction(Daze.ID, 2);
+		this.setAction(DisruptUndead.ID, 3);
+		this.setAction(BurningHands.ID, 4);
+		this.setAction(RayFrost.ID,5);
+		this.setAction(TouchFatigue.ID,6);
 				
 				
-				this.setAction(Resistance.ID, 2);
+		this.setAction(Resistance.ID, 2);
 				
 				
 			//	this.addAction(AcidFlask.ID);
