@@ -82,7 +82,7 @@ public class ActionPanel extends ButtonPanel{
 			if (isValidAction(a)){
 				list.add(a);
 			}
-		refresh(as.getAllActions());
+		refresh(list);
 		
 		for (int f=0;f<20;f++){
 			Action a=as.getAction(f);
@@ -105,7 +105,7 @@ public class ActionPanel extends ButtonPanel{
 		b.setBackground("ui/actionoverlays&0$S");
 		b.setMargin(2);
 		b.setImage("FOUR#cyan#"+a.getResource()+"$S");
-		b.setTooltip(a.getName()+"#"+a.getDescription());
+		b.setTooltip(a.getName()+"#"+a.getId()+"-"+a.getLocator()+"#"+a.getDescription());
 		return b;
 	}
 	

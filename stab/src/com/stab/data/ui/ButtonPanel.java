@@ -44,9 +44,10 @@ public class ButtonPanel extends Panel implements ButtonListener{
 		inner= new Panel();
 		inner.setSize(Constants.FILL,Constants.CONTENT);
 		inner.setPos(Constants.BEGIN,Constants.NEXT);
+	//	inner.setSize(Constants.FILL,350);
 		inner.setMargins(8,8);
 		inner.setGap(8, 8);
-		inner.setLayout("horizontal");
+		inner.setLayout("rows");
 		inner.setOverlay("ui/nanoborder$X");
 		addChild(inner);
 	}
