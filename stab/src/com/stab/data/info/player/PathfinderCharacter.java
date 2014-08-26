@@ -176,12 +176,13 @@ public static final String QUICK_INVENTORY="QUICK_INVENTORY";
 		public void equipmentChanged(Gear gear, String slot,
 				Equipment oldEquipment, Equipment newEquipment,boolean childEvent) {
 			super.equipmentChanged(gear, slot, oldEquipment, newEquipment,childEvent);
-		
-			if (oldEquipment!=null)
+			
+		/*	if (oldEquipment!=null)
 			if (gear instanceof HumanoidGear)
 				if (HumanoidGear.BOTHHANDS.equals(oldEquipment.getSlot()))
 					if (!HumanoidGear.BOTHHANDS.equals(slot))
 						return; //no hacer el drop por los unequip de main hand y off hand de un arma both hands
+						//**/
 			if (oldEquipment instanceof Item){
 				 Inventory inv=getBasicInventory();
 				 if (inv.get((Item)oldEquipment)!=null){
@@ -196,7 +197,7 @@ public static final String QUICK_INVENTORY="QUICK_INVENTORY";
 		}
 
 
-	protected Inventory getBasicInventory() {
+	public Inventory getBasicInventory() {
 		return quickInventory;
 	}
 	

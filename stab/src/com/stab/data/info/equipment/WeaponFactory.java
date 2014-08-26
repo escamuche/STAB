@@ -171,6 +171,7 @@ public class WeaponFactory extends ItemFactory{
 		
 		
 		w=new BasicWeapon("gauntlet",1,3,Damage.IMPACT_DAMAGE,"effects/sword",SwingAnimation.ID);
+		w.setDropSound("effects/dropMetal");
 		register(GAUNTLET,w);
 		
 		w=new BasicWeapon("unarmed",1,3,Damage.IMPACT_DAMAGE,"effects/sword",SwingAnimation.ID);
@@ -208,6 +209,7 @@ public class WeaponFactory extends ItemFactory{
 		
 		w=new BasicWeapon("quarterstaff",1,6,Damage.IMPACT_DAMAGE,"effects/WizardAttack",SwingAnimation.ID);
 		w.setTwoHanded(true);
+		w.setDropSound("effects/dropWood");
 		register(QUARTERSTAFF,w);
 		
 		w=new BasicWeapon("spear",1,8,Damage.PIERCING_DAMAGE,1,3,"effects/sword",SwingAnimation.ID);

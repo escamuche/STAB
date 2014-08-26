@@ -20,7 +20,7 @@ public class LootState extends ValueState2 {
 	
 		InterpolatorValueProvider r= new InterpolatorValueProvider(0,0,300,42,350,42,700,0);
 		setRadius(r);
-		setAngle((float)Math.toRadians(90));
+		setAngle((float)Math.toRadians(270));
 		addUpdater(new Orbit());
 		InterpolatorValueProvider r2= new InterpolatorValueProvider(0,0,180,320);
 		setRotation(r2);

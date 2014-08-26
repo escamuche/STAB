@@ -84,7 +84,9 @@ public class ButtonPanel extends Panel implements ButtonListener{
 		//Purgar el resto
 		for (Object o: map.keySet())
 			if (!list.contains(o)){
-				getInnerPanel().removeChild(map.get(o));
+				Button b=(map.get(o));
+				getInnerPanel().removeChild(b);
+				b.destroy();
 				map.remove(o);
 			}
 				
@@ -125,13 +127,21 @@ public class ButtonPanel extends Panel implements ButtonListener{
 
 	@Override
 	public void buttonActivated(Player p, Button b) {
-		if (selected!=null)
+		/*if (selected!=null)
 			if (map.get(selected)!=null)
-				map.get(selected).setActivated(false);
-		selected=map2.get(b);
-		b.setActivated(true);
+				map.get(selected).setActivated(false);/**/
+		setSelected(map2.get(b));
+		//b.setActivated(true);
 	}
 	
 	
-	
+	public void setSelected(Object o){
+		if (selected!=null)
+			if (map.get(selected)!=null)
+				map.get(selected).setActivated(false);
+		selected=o;
+		if (selected!=null)
+		if (map.get(selected)!=null)
+			map.get(selected).setActivated(true);
+	}
 }
