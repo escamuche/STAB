@@ -31,7 +31,7 @@ public class ButtonPanel extends Panel implements ButtonListener{
 		setSize(480,512);
 		setPos(Constants.BEGIN,60);
 		setBackground("ui/paperback$S");
-		setOverlay("ui/consolefront$X");
+//		setOverlay("ui/consolefront$X");
 		setLayout("default");
 		setMargins(8,8);
 		setGap(8, 8);

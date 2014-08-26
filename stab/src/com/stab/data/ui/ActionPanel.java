@@ -37,7 +37,7 @@ public class ActionPanel extends ButtonPanel{
 		pact.setMargins(5,5);
 		pact.setGap(1, 5);
 		pact.setLayout("default");
-		pact.setOverlay("ui/nanoborder$X");
+	//	pact.setOverlay("ui/nanoborder$X");
 		addChild(pact);
 		abuttons= new ArrayList<Button>();
 		createButtons();
