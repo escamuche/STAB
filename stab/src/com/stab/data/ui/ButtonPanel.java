@@ -8,13 +8,13 @@ import com.stab.common.Constants;
 import com.stab.model.Player;
 import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.ButtonListener;
+import com.stab.model.basic.ui.Label;
 import com.stab.model.basic.ui.Panel;
-import com.stab.model.basic.ui.Text;
 
 public class ButtonPanel extends Panel implements ButtonListener{
 
 	Panel inner;
-	Text title;
+	Label title;
 	Hashtable<Object,Button> map;
 	Hashtable<Button,Object> map2;
 	
@@ -32,19 +32,21 @@ public class ButtonPanel extends Panel implements ButtonListener{
 		setPos(Constants.BEGIN,60);
 		setBackground("ui/paperback$S");
 		setOverlay("ui/consolefront$X");
-		setLayout("vertical");
+		setLayout("default");
 		setMargins(8,8);
 		setGap(8, 8);
 		setMargin(5);
-		title= new Text();
+		title= new Label();
 		title.setText(" ");
 		title.setPos(Constants.CENTER,Constants.BEGIN);
-		title.setSize(Constants.FILL,Constants.CONTENT);
-		addChild(title);
+		title.setSize(Constants.FULL,Constants.CONTENT);
+		title.setMode(Label.BANNER);
+	//	addChild(title);
 		inner= new Panel();
-		inner.setSize(Constants.FILL,Constants.CONTENT);
+		inner.setSize(Constants.FULL,Constants.CONTENT);
 		inner.setPos(Constants.BEGIN,Constants.NEXT);
-	//	inner.setSize(Constants.FILL,350);
+	//	inner.setPos(0,50);
+	//	inner.setSize(445,350);
 		inner.setMargins(8,8);
 		inner.setGap(8, 8);
 		inner.setLayout("rows");
@@ -52,7 +54,7 @@ public class ButtonPanel extends Panel implements ButtonListener{
 		addChild(inner);
 	}
 	
-	public Text getTitle() {
+	public Label getTitle() {
 		return title;
 	}
 	public Panel getInnerPanel(){

@@ -10,6 +10,7 @@ import com.stab.model.action.ActionSet;
 import com.stab.model.action.base.BasicAction;
 import com.stab.model.action.base.EmptyAction;
 import com.stab.model.basic.ui.Button;
+import com.stab.model.basic.ui.Label;
 import com.stab.model.basic.ui.Panel;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.interfaces.PlayerOwned;
@@ -37,9 +38,9 @@ public class ActionPanel extends ButtonPanel{
 		pact.setGap(1, 5);
 		pact.setLayout("default");
 		pact.setOverlay("ui/nanoborder$X");
-		addChild(pact);
+	//	addChild(pact);
 		abuttons= new ArrayList<Button>();
-		createButtons();
+//		createButtons();
 	}
 	
 	
@@ -82,8 +83,8 @@ public class ActionPanel extends ButtonPanel{
 			if (isValidAction(a)){
 				list.add(a);
 			}
-		refresh(list);
-		
+//		refresh(list);
+	/*	
 		for (int f=0;f<20;f++){
 			Action a=as.getAction(f);
 			if (a==null || a.getId()==EmptyAction.ID){
@@ -91,6 +92,8 @@ public class ActionPanel extends ButtonPanel{
 			}else
 				abuttons.get(f).setImage(a.getCanonicalResource()+"$S");
 		}
+		
+	/**/	
 	}
 	
 	
@@ -103,6 +106,7 @@ public class ActionPanel extends ButtonPanel{
 		Button b=super.createButtonFor(o);
 		Action a= (Action)o;
 		b.setBackground("ui/actionoverlays&0$S");
+		b.setMode(Label.BANNER);
 		b.setMargin(2);
 		b.setImage("FOUR#cyan#"+a.getResource()+"$S");
 		b.setTooltip(a.getName()+"#"+a.getId()+"-"+a.getLocator()+"#"+a.getDescription());
