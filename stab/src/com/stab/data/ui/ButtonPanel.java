@@ -32,10 +32,11 @@ public class ButtonPanel extends Panel implements ButtonListener{
 		setPos(Constants.BEGIN,60);
 		setBackground("ui/paperback$S");
 		setOverlay("ui/consolefront$X");
-		setLayout("default");
-		setMargins(8,8);
+		
+		setMargins(5,5);
 		setGap(8, 8);
-		setMargin(5);
+		setLayout("default");
+	//	setMargin(5);
 		title= new Label();
 		title.setText(" ");
 		title.setPos(Constants.CENTER,Constants.BEGIN);
@@ -47,10 +48,10 @@ public class ButtonPanel extends Panel implements ButtonListener{
 		inner.setPos(Constants.BEGIN,Constants.NEXT);
 	//	inner.setPos(0,50);
 	//	inner.setSize(445,350);
-		inner.setMargins(8,8);
-		inner.setGap(8, 8);
+		inner.setMargins(7,7);
+		inner.setGap(6, 6);
 		inner.setLayout("rows");
-		inner.setOverlay("ui/nanoborder$X");
+		inner.setOverlay("ui/nanoborder$B");
 		addChild(inner);
 	}
 	

@@ -1,6 +1,8 @@
 package com.stab.data.ui;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import com.stab.client.slick.BasicActionsController;
 import com.stab.common.Constants;
@@ -83,6 +85,7 @@ public class ActionPanel extends ButtonPanel{
 			if (isValidAction(a)){
 				list.add(a);
 			}
+		Collections.sort(list,new MyActionComparator());
 		refresh(list);
 	/*	*/
 		for (int f=0;f<20;f++){
@@ -138,4 +141,18 @@ public class ActionPanel extends ButtonPanel{
 			}
 		super.buttonActivated(p, b);
 	}
+}
+class MyActionComparator implements Comparator<Action>{
+
+	@Override
+	public int compare(Action arg0, Action arg1) {
+		String s="";
+		String s2="";
+		if (arg0.getName()!=null)
+			s=arg0.getName();
+		if (arg1.getName()!=null)
+			s2=arg1.getName();
+		return s.compareTo(s2);
+	}
+	
 }
