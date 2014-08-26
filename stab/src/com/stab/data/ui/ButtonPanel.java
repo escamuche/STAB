@@ -41,7 +41,7 @@ public class ButtonPanel extends Panel implements ButtonListener{
 		title.setPos(Constants.CENTER,Constants.BEGIN);
 		title.setSize(Constants.FULL,Constants.CONTENT);
 		title.setMode(Label.BANNER);
-	//	addChild(title);
+		addChild(title);
 		inner= new Panel();
 		inner.setSize(Constants.FULL,Constants.CONTENT);
 		inner.setPos(Constants.BEGIN,Constants.NEXT);

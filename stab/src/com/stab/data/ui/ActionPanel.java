@@ -38,9 +38,9 @@ public class ActionPanel extends ButtonPanel{
 		pact.setGap(1, 5);
 		pact.setLayout("default");
 		pact.setOverlay("ui/nanoborder$X");
-	//	addChild(pact);
+		addChild(pact);
 		abuttons= new ArrayList<Button>();
-//		createButtons();
+		createButtons();
 	}
 	
 	
@@ -83,8 +83,8 @@ public class ActionPanel extends ButtonPanel{
 			if (isValidAction(a)){
 				list.add(a);
 			}
-//		refresh(list);
-	/*	
+		refresh(list);
+	/*	*/
 		for (int f=0;f<20;f++){
 			Action a=as.getAction(f);
 			if (a==null || a.getId()==EmptyAction.ID){
@@ -109,7 +109,7 @@ public class ActionPanel extends ButtonPanel{
 		b.setMode(Label.BANNER);
 		b.setMargin(2);
 		b.setImage("FOUR#cyan#"+a.getResource()+"$S");
-		b.setTooltip(a.getName()+"#"+a.getId()+"-"+a.getLocator()+"#"+a.getDescription());
+		b.setTooltip(a.getName()+"#"+a.getDescription());
 		return b;
 	}
 	
