@@ -26,7 +26,25 @@ public class LootDropAnimation extends Animation{
 	public void start() {
 		super.start();
 		StateSprite s=AnimUtils.getSprite(getSource());
-	
+		String img=getParam(0);
+		
+		if (!s.isVisible()){
+			setTime(0);
+			return;
+		}
+		
+		StateSprite icon=new StateSprite();
+		//icon.setDesiredLayer(Constants.OVERMAP);
+	//	icon.setPos(s.getCenter());
+		icon.setPos(getOriginPoint());
+		icon.setSize(64,64);
+		icon.setPainter(PaintUtils.getPainter(img));
+		icon.setState(new BasicAnimState(this.getTime()));
+		LootState st=new LootState();
+		st.setTimed(700, StateSet.DESTROYED);
+		icon.setState(st);
+		((AbstractGameScreen)s.getScreen()).add(icon);
+	/*
 		StabSprite sp=new StabSprite();
 	//	sp.setDesiredLayer(Constants.EFFECTS);
 	//	sp.setPainter(s.getPainter());
@@ -43,6 +61,7 @@ public class LootDropAnimation extends Animation{
 		sp.setPainter(p);
 		sp.setState(a);
 		((AbstractGameScreen)s.getScreen()).add(sp);
+		/**/
 	}
 	
 	
