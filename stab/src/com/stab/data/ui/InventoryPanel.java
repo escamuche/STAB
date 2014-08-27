@@ -5,6 +5,7 @@ import com.stab.model.Player;
 import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.Label;
 import com.stab.model.basic.ui.Panel;
+import com.stab.model.info.base.Creature;
 import com.stab.model.info.base.pickup.Inventory;
 import com.stab.model.info.base.pickup.ItemPickup;
 import com.stab.model.info.interfaces.InventoryListener;
@@ -17,21 +18,11 @@ public class InventoryPanel extends ButtonPanel  implements InventoryListener{
 	
 	Panel pact;
 	Button drop;
+	Button equip;
+	Button use;
 	
 	
-	@Override
-	public void init() {
-		super.init();
-		pact= new Panel();
-		pact.setSize(Constants.FILL,65);
-		pact.setPos(Constants.BEGIN,400);
-		pact.setMargins(5,5);
-		pact.setGap(1, 5);
-		pact.setLayout("default");
-		pact.setBackground("ui/nanoborder$X");
-		addChild(pact);
-		createButtons();
-	}
+	
 	
 	public void setInventory(Inventory inventory) {
 		if (this.inventory!=null)
@@ -65,41 +56,13 @@ public class InventoryPanel extends ButtonPanel  implements InventoryListener{
 	}
 	
 	
-	public void createButtons(){
-		drop= new Button();
-		drop.setSize(145, 45);
-		drop.setPos(Constants.NEXT,Constants.PREVIOUS);
-		drop.addButtonListener(this);
-		drop.setAction("DROP");
-		drop.setActOnScene(false);
-		drop.setText("DROP");
-		drop.setDisabled(true);
-		drop.setMode(Label.BANNER);
-		pact.addChild(drop);
-	}
 	
 	
-	@Override
-	public void setSelected(Object o) {
-		super.setSelected(o);
-		if (getSelected() instanceof ItemPickup){
-			if (getInventory()!=null)
-				drop.setDisabled(!getInventory().canRemove((ItemPickup)getSelected()));
-		}else{
-			drop.setDisabled(true);
-		}
-	}
 	
 	
-	@Override
-	public void buttonActivated(Player p, Button b) {
-		if (b==drop){
-			dropSelected();
-			return;
-		}
-		super.buttonActivated(p, b);
-	}
 	
+	
+
 
 	public void dropSelected(){
 		if (getSelected() instanceof ItemPickup){

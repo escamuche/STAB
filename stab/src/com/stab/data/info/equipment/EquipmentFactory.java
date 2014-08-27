@@ -5,7 +5,7 @@ import com.stab.model.info.trait.base.gear.Item;
 import com.stab.model.info.trait.base.gear.ItemFactory;
 
 public class EquipmentFactory extends ItemFactory{
-//Ya lo cambiaremos por otra clase cuando la metamos (item extends equipment, por ejemplo)
+
 	
 	
 	public static final String TORCH="TORCH";
@@ -19,6 +19,8 @@ public class EquipmentFactory extends ItemFactory{
 		e.setName("Torch");
 		e.setSlots(HumanoidGear.OFFHAND);
 		e.addTrait(new Torchlight_Buff());
+		e.setWorldResource("../effects/torch");
+		e.setDropSound("effects/dropWood");
 		register(TORCH,e);
 		
 	}

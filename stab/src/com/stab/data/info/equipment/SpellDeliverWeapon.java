@@ -60,4 +60,12 @@ public class SpellDeliverWeapon extends BasicWeapon {
 		this.setResource("items/"+baseItem);
 	}
 	
+	
+	//TODO: meter aqui el mult por el spellPower?
+	//O en apply antes de aplicar cada aplicable (damage o heal) que llevemos?  <---Probablemente eso
+	@Override
+	protected int calcDamage(WeaponAttack app) {
+		return super.calcDamage(app);
+	}
+	
 }
