@@ -49,7 +49,6 @@ public class BurningHands extends SpellOnTile   {
 		int level = getCasterLevel(caster);
 		if(level>5)
 			level=5;
-
 		RolledDamage g = new RolledDamage(level,4,0,Damage.FIRE_DAMAGE,caster);
 		target.apply(g);
 		return super.fullEffect(caster, target, point);	
@@ -58,7 +57,6 @@ public class BurningHands extends SpellOnTile   {
 	@Override
 	protected boolean partialEffect(BaseInfo caster, BaseInfo target,
 			Point point) {
-		
 		int level = getCasterLevel(caster);
 		if(level>5)
 			level=5;

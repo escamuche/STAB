@@ -1,6 +1,7 @@
 package com.stab.data.ui;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Hashtable;
 
 import com.stab.client.slick.BasicActionsController;
@@ -19,6 +20,7 @@ import com.stab.model.info.interfaces.PlayerOwned;
 import com.stab.model.info.trait.base.gear.Equipment;
 import com.stab.model.info.trait.base.gear.Gear;
 import com.stab.model.info.trait.base.gear.Item;
+import com.stab.model.info.trait.base.gear.OverrideWeapon;
 
 
 public class PlayerInventoryPanel extends InventoryPanel implements EquipmentListener {
@@ -219,7 +221,46 @@ public class PlayerInventoryPanel extends InventoryPanel implements EquipmentLis
 	protected void equipSelected() {
 
 		if (getSelected() instanceof ItemPickup){
-			boolean b=((Creature)this.getInfo()).equip(((ItemPickup)getSelected()).getItem());
+			
+			//Primero desequipar lo que este equipado en ese slot...
+			Item newItem=((ItemPickup)getSelected()).getItem();
+			//ahora viene la parte interesante... pueden ser varios slots si es bothhands
+			Hashtable<Equipment,String> toremove=new Hashtable<Equipment,String>();
+			if (HumanoidGear.BOTHHANDS.equals(newItem.getSlot())){
+				Equipment e=getItem(HumanoidGear.MAINHAND);
+				if (e!=null)
+					toremove.put(e,HumanoidGear.MAINHAND);
+				e=getItem(HumanoidGear.OFFHAND);
+				if (e!=null)
+					toremove.put(e,HumanoidGear.OFFHAND);
+				e=getItem(HumanoidGear.BOTHHANDS);
+				if (e!=null)
+					toremove.put(e,HumanoidGear.BOTHHANDS);
+			}else{
+				Equipment e=getItem(newItem.getSlot());
+				if (e!=null)
+					toremove.put(e,newItem.getSlot());
+			}
+			for (Equipment e:toremove.keySet()){
+				if (!canUnequip(e))
+					return;
+			}
+			for (Equipment e:toremove.keySet()){
+				
+				((Creature)this.getInfo()).unequip(toremove.get(e));
+				//crear un itempickup y decidir si podemos guardarlo o se arroja al suelo
+				 ItemPickup i=(ItemPickup)getEntityManager().createElement(ItemPickup.ID);
+				 i.setItem((Item)e);
+			 	 if (getInventory().canAdd(i))
+					 i.setInventory(getInventory());
+				 else
+					 i.setInventory(null);
+				
+			}	
+			
+	
+			
+			boolean b=((Creature)this.getInfo()).equip(newItem);
 			if (b){
 				((ItemPickup)getSelected()).destroy();
 				getInfo().playSound("effects/equip");
@@ -229,7 +270,8 @@ public class PlayerInventoryPanel extends InventoryPanel implements EquipmentLis
 			Equipment e=getItem((String)getSelected());
 			if (e==null)
 				return;
-			((Creature)this.getInfo()).unequip(((String)getSelected()));
+			String slot=e.getSlot();
+			((Creature)this.getInfo()).unequip(slot);
 			//crear un itempickup y decidir si podemos guardarlo o se arroja al suelo
 			 ItemPickup i=(ItemPickup)getEntityManager().createElement(ItemPickup.ID);
 			 i.setItem((Item)e);
@@ -245,8 +287,11 @@ public class PlayerInventoryPanel extends InventoryPanel implements EquipmentLis
 			Equipment e=getItem((String)getSelected());
 			if (e==null)
 				return;
+			if (!canUnequip(e))
+				return;
+			String slot=e.getSlot();
 			
-			((Creature)this.getInfo()).unequip(((String)getSelected()));
+			((Creature)this.getInfo()).unequip(slot);
 			
 			//crear un itempickup y decidir si podemos guardarlo o se arroja al suelo
 			 ItemPickup i=(ItemPickup)getEntityManager().createElement(ItemPickup.ID);
@@ -256,6 +301,12 @@ public class PlayerInventoryPanel extends InventoryPanel implements EquipmentLis
 			super.dropSelected();
 	}
 	
+	
+	public boolean canUnequip(Equipment e){
+		if (e instanceof OverrideWeapon)
+			return false;
+		return true;
+	}
 	
 	public void refreshGear(){
 		for (String s:((Creature)getInfo()).getGear().getSlots()){

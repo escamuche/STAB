@@ -8,6 +8,7 @@ import com.stab.data.StabInit;
 import com.stab.data.info.debuff.condition.DyingCondition;
 import com.stab.data.info.equipment.EquipmentFactory;
 import com.stab.data.info.equipment.HumanoidGear;
+import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.traits.BasicAttributes;
 import com.stab.model.basic.token.Token;
 import com.stab.model.info.base.Character;
@@ -39,13 +40,18 @@ public static final String QUICK_INVENTORY="QUICK_INVENTORY";
 	    quickInventory.setId(QUICK_INVENTORY);
 	    addTrait(quickInventory);
 	    
-	    ItemPickup i=(ItemPickup)getEntityManager().createElement(ItemPickup.ID);
-	    i.setItem((Item)StabInit.getEquipment(EquipmentFactory.TORCH));
-	    i.setInventory(quickInventory);
 	    
+	    addToInventory(EquipmentFactory.TORCH);
+	    addToInventory(WeaponFactory.DAGGER);
 	    
 	}
 	
+	
+	public void addToInventory(String id){
+		ItemPickup i=(ItemPickup)getEntityManager().createElement(ItemPickup.ID);
+	    i.setItem((Item)StabInit.getEquipment(id));
+	    i.setInventory(quickInventory);
+	}
 	
 	@Override
 	public void rollInitiative() {
@@ -177,23 +183,7 @@ public static final String QUICK_INVENTORY="QUICK_INVENTORY";
 				Equipment oldEquipment, Equipment newEquipment,boolean childEvent) {
 			super.equipmentChanged(gear, slot, oldEquipment, newEquipment,childEvent);
 			
-		/**/	if (oldEquipment!=null)
-			if (gear instanceof HumanoidGear)
-				if (HumanoidGear.BOTHHANDS.equals(oldEquipment.getSlot()))
-					if (!HumanoidGear.BOTHHANDS.equals(slot))
-						return; //no hacer el drop por los unequip de main hand y off hand de un arma both hands
-						//**/
-			if (oldEquipment instanceof Item){
-				 Inventory inv=getBasicInventory();
-				 if (inv.get((Item)oldEquipment)!=null){
-					 ItemPickup i=(ItemPickup)getEntityManager().createElement(ItemPickup.ID);
-					 i.setItem((Item)oldEquipment);
-				 	 if (inv.canAdd(i))
-						 i.setInventory(inv);
-					 else
-						 i.setInventory(null);
-				 }
-			}
+	
 		}
 
 

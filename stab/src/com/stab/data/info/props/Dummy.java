@@ -13,7 +13,7 @@ public class Dummy extends Obstacle {
 	
 	public void init() {
 		super.init();
-		setMaxHp(70);
+		setMaxHp(20);
 		setMaxEp(0);
 		healFully();
 		setResource("dummy");
