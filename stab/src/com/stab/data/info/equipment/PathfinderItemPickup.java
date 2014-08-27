@@ -1,6 +1,7 @@
 package com.stab.data.info.equipment;
 
 import com.stab.data.info.player.PathfinderCharacter;
+import com.stab.model.action.ActionLibrary;
 import com.stab.model.action.base.PickupAction;
 import com.stab.model.basic.token.interfaces.Interactive;
 import com.stab.model.extras.ContextualOption;
@@ -22,7 +23,8 @@ public class PathfinderItemPickup extends ItemPickup implements Interactive {
 		
 		setAutoPickUp(false);
 		ContextualOption d=new ContextualOption();
-		d.setAction(PickupAction.ID);
+		//d.setAction(PickupAction.ID);
+		d.setAction(ActionLibrary.getActionLibrary().getAction(PickupAction.ID));
 		addExtra(d);
 		
 		addTag(Interactive.INTERACTIVE_TAG);
@@ -40,7 +42,8 @@ public class PathfinderItemPickup extends ItemPickup implements Interactive {
 		 Creature c=(Creature)info;
 		//Primero ver si es posible equiparlo directamente en una mano si es apropiado
 		 boolean b=false;
-		if (this.getItem().getSlot()==HumanoidGear.MAINHAND ||this.getItem().getSlot()==HumanoidGear.MAINHAND )
+	//	 System.out.println("Picking up "+this.getItem()+"   sugests "+this.getItem().getSlot());
+		if (HumanoidGear.MAINHAND.equals(this.getItem().getSlot()) ||HumanoidGear.OFFHAND.equals(this.getItem().getSlot()) || HumanoidGear.BOTHHANDS.equals(this.getItem().getSlot()))
 			if (c.getGear().isEmpty(this.getItem().getSlot())){
 				b=c.equip(getItem(), this.getItem().getSlot());
 			}

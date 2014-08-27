@@ -1,11 +1,7 @@
 package com.stab.data.ui;
 
-import com.stab.common.Constants;
-import com.stab.model.Player;
 import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.Label;
-import com.stab.model.basic.ui.Panel;
-import com.stab.model.info.base.Creature;
 import com.stab.model.info.base.pickup.Inventory;
 import com.stab.model.info.base.pickup.ItemPickup;
 import com.stab.model.info.interfaces.InventoryListener;
@@ -47,6 +43,7 @@ public class InventoryPanel extends ButtonPanel  implements InventoryListener{
 		b.setTooltip(i.getItem().getName());
 		b.setBackground("ui/nanoborder$X");
 		b.setMode(Label.BANNER);
+		b.setText("");
 		b.setMargin(2);
 		//System.out.println("created button for "+i.getItem().getName());
 		return b;

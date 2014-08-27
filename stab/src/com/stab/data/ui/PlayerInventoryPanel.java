@@ -90,6 +90,7 @@ public class PlayerInventoryPanel extends InventoryPanel implements EquipmentLis
 		b.setDisabled(true);
 		b.setMode(Label.BANNER);
 		b.setTooltip(slot);
+		b.setMargin(2);
 		gear.addChild(b);
 		gearButtons.put(slot,b);
 		b.setBackground("tokens/blank");
@@ -208,6 +209,8 @@ public class PlayerInventoryPanel extends InventoryPanel implements EquipmentLis
 	
 
 	protected void useSelected() {
+		
+		//TODO: en un futuro, retirar el interfaz Usable e incorporarlo a los items, que decidiran en base a si tienen un trait de usable o no
 		if (getSelected() instanceof ItemPickup){
 			((ItemPickup)getSelected()).use(getInventory(), getInfo());
 		}
@@ -242,7 +245,9 @@ public class PlayerInventoryPanel extends InventoryPanel implements EquipmentLis
 			Equipment e=getItem((String)getSelected());
 			if (e==null)
 				return;
+			
 			((Creature)this.getInfo()).unequip(((String)getSelected()));
+			
 			//crear un itempickup y decidir si podemos guardarlo o se arroja al suelo
 			 ItemPickup i=(ItemPickup)getEntityManager().createElement(ItemPickup.ID);
 			 i.setItem((Item)e);

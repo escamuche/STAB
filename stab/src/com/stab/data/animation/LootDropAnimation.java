@@ -7,9 +7,11 @@ import com.stab.common.Constants;
 import com.stab.data.animation.state.LootState;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.trait.base.VisualEffect;
-import com.tien.princess.engine.layers.SpriteLayer;
 import com.tien.princess.engine.sprite.StateSprite;
+import com.tien.princess.engine.sprite.common.painters.Painter;
+import com.tien.princess.engine.sprite.common.states.BasicAnimState;
 import com.tien.princess.engine.sprite.common.states.StateSet;
+import com.tien.princess.engine.utils.PaintUtils;
 
 public class LootDropAnimation extends Animation{
 
@@ -26,7 +28,7 @@ public class LootDropAnimation extends Animation{
 		StateSprite s=AnimUtils.getSprite(getSource());
 	
 		StabSprite sp=new StabSprite();
-		sp.setDesiredLayer(Constants.EFFECTS);
+	//	sp.setDesiredLayer(Constants.EFFECTS);
 	//	sp.setPainter(s.getPainter());
 
 		LootState st=new LootState();
@@ -36,7 +38,10 @@ public class LootDropAnimation extends Animation{
 		sp.setPos(getOriginPoint());
 		sp.setSize(64,64);
 		
-		sp.setPainter("tokens/genericDrop");
+		BasicAnimState a= new BasicAnimState(6000);
+		Painter p=PaintUtils.getPainter("tokens/genericDrop");
+		sp.setPainter(p);
+		sp.setState(a);
 		((AbstractGameScreen)s.getScreen()).add(sp);
 	}
 	
