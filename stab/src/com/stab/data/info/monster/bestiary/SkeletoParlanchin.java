@@ -25,7 +25,7 @@ public class SkeletoParlanchin extends Undead {
 		
 		setResource("skeleto");
 		setText("Esqueleto");
-	
+		this.setBloodeffEct("PARTICLE#damage/boneburst");
 		this.addTrait(new Attribute(StabConstants.STRENGHT,15));
 		this.addTrait(new Attribute(StabConstants.DEXTERITY,14));
 		this.addTrait(new Attribute(StabConstants.XP,135));

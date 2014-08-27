@@ -26,7 +26,7 @@ public class SkeletalChampion extends Undead {
 		setResource("skeletalchampion");
 		setText("Skeletal Champion");
 	
-			
+		this.setBloodeffEct("PARTICLE#damage/boneburst");	
 		this.setAttribute(StabConstants.XP,600);
 		this.setAttribute(StabConstants.STRENGHT,17);
 		this.setAttribute(StabConstants.DEXTERITY,13);

@@ -22,7 +22,7 @@ public class GoblinShaman extends Goblin  implements Minion{
 		super.init();
 		setMaxMovePoints(6);
 		setMaxEp(30);
-	
+		setDeathSound("death/goblindeath2");
 		this.getActionSet().addAction(CureLight.ID);
 		this.getActionSet().addAction(MagicMissile.ID);
 		

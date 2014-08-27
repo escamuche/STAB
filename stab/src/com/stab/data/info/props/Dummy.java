@@ -21,6 +21,7 @@ public class Dummy extends Obstacle {
 		setText("Target dummy");
 		setDescription("A training dummy");
 		this.addTrait(new Modifier(StabConstants.ARMORDEFENSE,StabConstants.ARMORMOD,2));
+		this.setBloodeffEct("PARTICLE#damage/splinterburst");
 	
 	//	this.setActionSet(new WarriorActionSet());
 	//	this.setCurrentAI(new DefaultAIPackage());

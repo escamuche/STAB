@@ -19,7 +19,7 @@ public class Goblin extends Humanoid {
 	public void init() {
 		super.init();
 		setMaxMovePoints(6);
-		
+		setDeathSound("death/goblindeath1");
 		setResource("goblin");
 		setText("Goblin");
 		setDescription("A goblin, evil and coward, but dangerous nonetheless");

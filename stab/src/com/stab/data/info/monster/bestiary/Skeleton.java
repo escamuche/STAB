@@ -22,11 +22,11 @@ public class Skeleton extends Undead {
 	public void init() {
 		super.init();
 		setMaxMovePoints(6);
-		
+		setDeathSound("death/skeletondeath");
 		setResource("skeleto");
 		setText("Esqueleto");
 		setDescription("An animated skeleton");
-	
+		this.setBloodeffEct("PARTICLE#damage/boneburst");
 		this.addTrait(new Attribute(StabConstants.STRENGHT,15));
 		this.addTrait(new Attribute(StabConstants.DEXTERITY,14));
 		this.addTrait(new Attribute(StabConstants.XP,135));

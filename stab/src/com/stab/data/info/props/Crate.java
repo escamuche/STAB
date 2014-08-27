@@ -16,5 +16,6 @@ public class Crate extends Obstacle {
 		setText("Crate");
 		setDescription("A wooden crate of unimportant contents");
 		setDestroyedResource("brokenCrate");
+		this.setBloodeffEct("PARTICLE#damage/splinterburst");
 	}
 }

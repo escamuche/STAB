@@ -18,6 +18,7 @@ public class Barrel extends Obstacle {
 		setText("Barrel");
 		setDescription("A heavy wooden barrel, with unknown contents.");
 		addTrait(new Pushable(8));
+		this.setBloodeffEct("PARTICLE#damage/splinterburst");
 	}
 	
 

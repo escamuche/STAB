@@ -17,7 +17,7 @@ public class DireRat extends Animal {
 		setMaxMovePoints(8);
 		
 		
-			
+		setDeathSound("death/critterdeath");
 		
 		setResource("direrat");
 		setText("Dire Rat");

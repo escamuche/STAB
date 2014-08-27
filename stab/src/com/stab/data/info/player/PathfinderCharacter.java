@@ -177,7 +177,7 @@ public static final String QUICK_INVENTORY="QUICK_INVENTORY";
 				Equipment oldEquipment, Equipment newEquipment,boolean childEvent) {
 			super.equipmentChanged(gear, slot, oldEquipment, newEquipment,childEvent);
 			
-		/*	if (oldEquipment!=null)
+		/**/	if (oldEquipment!=null)
 			if (gear instanceof HumanoidGear)
 				if (HumanoidGear.BOTHHANDS.equals(oldEquipment.getSlot()))
 					if (!HumanoidGear.BOTHHANDS.equals(slot))

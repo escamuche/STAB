@@ -21,7 +21,7 @@ public class Zombie extends Undead {
 		setResource("zombie");
 		setText("Zombie");
 		setDescription("A walking corpse");
-			
+		setDeathSound("death/zombiedeath");	
 		this.setAttribute(StabConstants.XP,200);
 		this.setAttribute(StabConstants.TOHIT,+1);
 		this.setAttribute(StabConstants.STRENGHT,17);

@@ -15,7 +15,7 @@ public class Wolf extends Animal {
 	public void init() {
 		super.init();
 		setMaxMovePoints(10);
-		
+		setDeathSound("death/beastdeath");
 		
 			
 		

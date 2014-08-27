@@ -15,6 +15,7 @@ public class Statue extends Obstacle {
 		setResource("gargoylestatue");
 		setText("Statue");
 		setDescription("A stone staue. Heavy and weathered");
+		this.setBloodeffEct("PARTICLE#damage/rockburst");
 		//Añadir traits de piedra
 	}
 }

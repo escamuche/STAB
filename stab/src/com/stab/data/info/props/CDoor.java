@@ -14,6 +14,7 @@ public static final String ID="CDOOR";
 		setResource("cdoorClosed");
 		setText("Door");
 		setDescription("A wooden door");
+		this.setBloodeffEct("PARTICLE#damage/splinterburst");
 	}
 	
 	
