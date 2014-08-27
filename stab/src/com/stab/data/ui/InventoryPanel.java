@@ -16,10 +16,7 @@ public class InventoryPanel extends ButtonPanel  implements InventoryListener{
 	Inventory inventory;
 	
 	
-	Panel pact;
-	Button drop;
-	Button equip;
-	Button use;
+	
 	
 	
 	
@@ -51,7 +48,7 @@ public class InventoryPanel extends ButtonPanel  implements InventoryListener{
 		b.setBackground("ui/nanoborder$X");
 		b.setMode(Label.BANNER);
 		b.setMargin(2);
-		System.out.println("created button for "+i.getItem().getName());
+		//System.out.println("created button for "+i.getItem().getName());
 		return b;
 	}
 	

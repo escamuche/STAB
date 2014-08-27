@@ -41,11 +41,13 @@ public class PathfinderItemPickup extends ItemPickup implements Interactive {
 		//Primero ver si es posible equiparlo directamente en una mano si es apropiado
 		 boolean b=false;
 		if (this.getItem().getSlot()==HumanoidGear.MAINHAND ||this.getItem().getSlot()==HumanoidGear.MAINHAND )
-			if (c.getGear().isEmpty(this.getItem().getSlot()))
+			if (c.getGear().isEmpty(this.getItem().getSlot())){
 				b=c.equip(getItem(), this.getItem().getSlot());
+			}
 		
 		if (b){
 			this.playPickupAnimation();
+			playSound("effects/equip");
 			this.destroy();
 			return;
 		}

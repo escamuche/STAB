@@ -1,5 +1,6 @@
 package com.stab.data.ui;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Hashtable;
 
@@ -82,14 +83,22 @@ public class ButtonPanel extends Panel implements ButtonListener{
 			n++;
 		}
 		//Purgar el resto
+		ArrayList toRemove= new ArrayList();
 		for (Object o: map.keySet())
-			if (!list.contains(o)){
+			if (shouldRemove(list,o)){
 				Button b=(map.get(o));
 				getInnerPanel().removeChild(b);
 				b.destroy();
-				map.remove(o);
+				toRemove.add(o);
 			}
-				
+		for (Object o:toRemove)
+			map.remove(o);		
+	}
+
+	protected boolean shouldRemove(Collection list, Object o) {
+		if(!list.contains(o))
+			return true;
+		return false;
 	}
 
 	protected void configureButton(Button b, Object o) {

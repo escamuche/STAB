@@ -59,7 +59,7 @@ public static final String ID="WIZARD_INFO";
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon("QUARTERSTAFF"), HumanoidGear.BOTHHANDS);
 		
-		this.equip(EquipmentFactory.TORCH);
+	//	this.equip(EquipmentFactory.TORCH);
 
 		this.addTrait(new Modifier(StabConstants.APPRAISE,+3)); // Familiar--> cuervo
 		
