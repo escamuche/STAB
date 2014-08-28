@@ -224,6 +224,8 @@ public class PlayerInventoryPanel extends InventoryPanel implements EquipmentLis
 			
 			//Primero desequipar lo que este equipado en ese slot...
 			Item newItem=((ItemPickup)getSelected()).getItem();
+			if (newItem.getSlot()==null)
+				return;
 			//ahora viene la parte interesante... pueden ser varios slots si es bothhands
 			Hashtable<Equipment,String> toremove=new Hashtable<Equipment,String>();
 			if (HumanoidGear.BOTHHANDS.equals(newItem.getSlot())){

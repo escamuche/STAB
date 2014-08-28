@@ -43,6 +43,7 @@ public static final String QUICK_INVENTORY="QUICK_INVENTORY";
 	    
 	    addToInventory(EquipmentFactory.TORCH);
 	    addToInventory(WeaponFactory.DAGGER);
+	    addToInventory(EquipmentFactory.POTION_CLW);
 	    
 	}
 	

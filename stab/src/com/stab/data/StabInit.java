@@ -94,6 +94,7 @@ import com.stab.data.animation.CloseDoorAnimation;
 import com.stab.data.animation.DamageNumberAnimation;
 import com.stab.data.animation.DecayAnimation;
 import com.stab.data.animation.DirectedAnimatedSparkAnimation;
+import com.stab.data.animation.DrinkPotionAnimation;
 import com.stab.data.animation.EffectAddAnimation;
 import com.stab.data.animation.EffectRemoveAnimation;
 import com.stab.data.animation.ExtraInfoAnimation;
@@ -274,6 +275,11 @@ public class StabInit {
 			createFactory();
 		//Acciones
 		initActions();
+		//Factorias
+		
+		wf=new WeaponFactory();
+		af=new ArmorFactory();
+		ef=new EquipmentFactory();
 	}
 	
 	static void initAdventures(){
@@ -431,6 +437,7 @@ public class StabInit {
 		of.setMapping(CenterCamAnimation.class);
 		of.setMapping(BumpAnimation.class);
 		of.setMapping(LootDropAnimation.class);
+		of.setMapping(DrinkPotionAnimation.class);
 		
 		//Tokens
 		of.setMapping(IronBarsToken.class);
@@ -446,11 +453,7 @@ public class StabInit {
 		
 		
 		
-		//Factorias
-		
-		wf=new WeaponFactory();
-		af=new ArmorFactory();
-		ef=new EquipmentFactory();
+	
 		
 		
 		
