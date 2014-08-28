@@ -270,6 +270,7 @@ public class PlayerInventoryPanel extends InventoryPanel implements EquipmentLis
 			if (b){
 				((ItemPickup)getSelected()).destroy();
 				getInfo().playSound("effects/equip");
+				//this.refresh();
 			}
 		}else
 		if (getSelected() instanceof String){
