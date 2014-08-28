@@ -155,8 +155,11 @@ public class PlayerInventoryPanel extends InventoryPanel implements EquipmentLis
 	public void setSelected(Object o) {
 		super.setSelected(o);
 		if (getSelected() instanceof ItemPickup){
-			if (getInventory()!=null)
-				drop.setDisabled(!getInventory().canRemove((ItemPickup)getSelected()));
+			if (getInventory()!=null){
+				boolean b=getInventory().canRemove((ItemPickup)getSelected());
+				
+				drop.setDisabled(!b);
+			}
 		}else{
 			if (o instanceof String){
 				drop.setDisabled(!(getItem((String)o)!=null));
@@ -168,6 +171,7 @@ public class PlayerInventoryPanel extends InventoryPanel implements EquipmentLis
 		if (getSelected() instanceof ItemPickup){
 			if (getInventory()!=null){
 				boolean b=(getInventory().canRemove((ItemPickup)getSelected()));
+				b=b& ((((ItemPickup)getSelected()).getItem().getSlot()!=null));
 				equip.setDisabled(!b);
 				equip.setText("EQUIP");
 			}
