@@ -7,6 +7,7 @@ import com.stab.data.actions.player.RogueActionSet;
 import com.stab.data.info.alignment.Evil;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
+import com.stab.data.info.player.abilities.SneakAttack_Ability;
 
 
 public class RogueCharacter extends PathfinderCharacter{
@@ -54,12 +55,12 @@ public static final String ID="ROGUE_INFO";
 
 		this.addTrait(new Evil());
 		
+		this.addTrait(new SneakAttack_Ability(1));
+		
 		
 		/* Habilidades especiales
-		 * SneakAttack 1d6					hace falta la comprobacion de flanked en attack
-		 * Trapfinding						hacen falta trampas, sneak y unas cuantas cosas primero,
-		 * 									pero sera una accion de search que haga tiradas de search contra todo lo que tenga en LOS
 		 * 
+		*   tapfinding.  un trait que attends spotroll, y sume +1/2 level min 1  si el target es una trampa. y un modificador igual a disable device 
 		 */
 	}
 	

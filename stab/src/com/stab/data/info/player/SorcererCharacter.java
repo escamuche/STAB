@@ -63,7 +63,9 @@ public static final String ID="SORCERER_INFO";
 		
 		this.addTrait(new Lawful());
 		
-		this.addTrait(new Modifier(StabConstants.FORTITUDESAVE,+2)); //familiar--> rata 
+		this.addTrait(new Modifier(StabConstants.FORTITUDESAVE,+2)); 
+		
+		//familiar--> rata 
 		//Bloodline arcana
 		
 		

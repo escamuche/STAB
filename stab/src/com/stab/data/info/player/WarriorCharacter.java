@@ -48,13 +48,13 @@ public static final String ID="WARRIOR_INFO";
 		this.addTrait(new PowerAttack_Feat());
 		this.getActionSet().setAction(PowerAttack.ID, 16);
 		
-		Weapon w=StabInit.getWeaponFactory().getWeapon("LONGSWORD");
-		w.addTrait(new FlamingWeapon());
-	//	this.equip(w, HumanoidGear.MAINHAND);
+		
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.SHORTSWORD));
-		this.equip(EquipmentFactory.TORCH);
+		
+		//this.equip(EquipmentFactory.TORCH);
 				
+		//hay que ponerle algo de equipo
 		
 		//ehum.... warrior se jubila entonces. pobre. nunca fue el mismo despues de perder sus poderes destructores de dummys
 	}

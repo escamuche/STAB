@@ -28,7 +28,7 @@ public static final String ID="BARBARIAN_INFO";
 		super.init();
 		setActionSet(new BarbarianActionSet());
 		setResource("tokenBarbarian");
-		setText("Barbarian1");
+		setText("Barbarian");
 		
 		this.setMaxHp(1200);
 		this.healFully();
