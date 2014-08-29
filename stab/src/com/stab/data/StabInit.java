@@ -66,6 +66,7 @@ import com.stab.data.actions.player.spells.lvl0.Virtue;
 import com.stab.data.actions.player.spells.lvl1.BurningHands;
 import com.stab.data.actions.player.spells.lvl1.MageArmor;
 import com.stab.data.actions.player.spells.lvl1.MagicMissile;
+import com.stab.data.actions.player.spells.lvl1.SummonMonsterI;
 import com.stab.data.actions.player.spells.wizard.level1.CharmPerson;
 import com.stab.data.actions.player.spells.wizard.level1.ChillTouch;
 import com.stab.data.actions.player.spells.wizard.level1.EnlargePerson;
@@ -642,7 +643,7 @@ public class StabInit {
 		
 		
 		
-		
+		getActionLibrary().register(SummonMonsterI.class);
 		
 		//wizard1
 		getActionLibrary().register(BurningHands.class);

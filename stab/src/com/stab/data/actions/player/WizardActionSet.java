@@ -16,6 +16,7 @@ import com.stab.data.actions.player.spells.lvl0.TouchFatigue;
 import com.stab.data.actions.player.spells.lvl1.BurningHands;
 import com.stab.data.actions.player.spells.lvl1.MageArmor;
 import com.stab.data.actions.player.spells.lvl1.MagicMissile;
+import com.stab.data.actions.player.spells.lvl1.SummonMonsterI;
 import com.stab.data.actions.player.spells.wizard.level1.CharmPerson;
 import com.stab.data.actions.player.spells.wizard.level1.ChillTouch;
 import com.stab.data.actions.player.spells.wizard.level1.EnlargePerson;
@@ -65,14 +66,14 @@ public class WizardActionSet extends PathfinderActionSet {
 	//	this.addAction(DancingLights.ID);
 	//	
 		this.setAction(Shield.ID,1);
-		this.setAction(Daze.ID, 2);
+		this.setAction(SummonMonsterI.ID, 2);
 		this.setAction(DisruptUndead.ID, 3);
 		this.setAction(BurningHands.ID, 4);
 		this.setAction(RayFrost.ID,5);
 		this.setAction(TouchFatigue.ID,6);
 				
 				
-		this.setAction(Resistance.ID, 2);
+		//this.setAction(Resistance.ID, 2);
 				
 				
 			//	this.addAction(AcidFlask.ID);

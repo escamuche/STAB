@@ -17,7 +17,7 @@ public class Wolf extends Animal {
 		setMaxMovePoints(10);
 		setDeathSound("death/beastdeath");
 		
-			
+
 		
 		setResource("wolf");
 		setText("Wolf");
@@ -43,7 +43,7 @@ public class Wolf extends Animal {
 			
 		this.addTrait(new SkillFocusPerception_Feat());
 		
-		this.setBloodeffEct("PARTICLE#redblood");
+		this.setBloodeffEct("PARTICLE#damage/redblood");
 		
 		Weapon bite=StabInit.getWeaponFactory().getWeapon("MEDIUMBITE");
 		
