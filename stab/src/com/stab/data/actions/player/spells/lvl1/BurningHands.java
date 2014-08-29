@@ -1,8 +1,9 @@
-package com.stab.data.actions.player.spells.wizard.level1;
+package com.stab.data.actions.player.spells.lvl1;
 
 import java.awt.Point;
 
 import com.stab.data.StabConstants;
+import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.actions.player.spells.SpellOnTile;
 import com.stab.model.action.Action;
 import com.stab.model.action.AoE;
@@ -28,6 +29,7 @@ public class BurningHands extends SpellOnTile   {
 	     this.setSave(StabConstants.REFLEXSAVE);
 	     this.setDescription("A cone of searing flame shoots from your fingertips. Any creature in the area of the flames takes 1d4 points of fire damage per caster level (maximum 5d4).");
 	     this.setLosType(IN_SIGHT);
+	     setDescriptors(EffectDescriptor.EVOCATION,EffectDescriptor.FIRE);
 	}
 
 

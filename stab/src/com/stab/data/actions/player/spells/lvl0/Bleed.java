@@ -1,8 +1,9 @@
-package com.stab.data.actions.player.spells.lvl0.unfinished;
+package com.stab.data.actions.player.spells.lvl0;
 
 import java.awt.Point;
 
 import com.stab.data.StabConstants;
+import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.info.debuff.Bleed_Debuff;
@@ -22,6 +23,7 @@ public class Bleed extends SpellOnTarget{
 	     setName("Bleed");
 	     this.setEffectType(DEBUFF);
 	     this.setSave(StabConstants.WILLSAVE);
+	     setDescriptors(EffectDescriptor.NECROMANCY);
 	     this.setDescription("You cause a living creature that is below 0 hit points but stabilized to resume dying. Upon casting this spell, you target a living creature that has -1 or fewer hit points. That creature begins dying, taking 1 point of damage per round. The creature can be stabilized later normally. This spell causes a creature that is dying to take 1 point of damage.");
 		}
 
