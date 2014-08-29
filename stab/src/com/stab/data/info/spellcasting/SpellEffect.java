@@ -145,7 +145,8 @@ public class SpellEffect extends VisualEffect {
 	@Override
 	protected void configureEffectSprite(Sprite es) {
 		super.configureEffectSprite(es);
-		if (this.getTarget()!=null)
+		if (this.getSpell().isDismissable())
+		  if (this.getTarget()!=null)
 			if (this.getTarget().getToken()!=null)
 				dismiss.setAllowedActor(getTarget().getToken());
 		

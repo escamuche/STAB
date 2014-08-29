@@ -1,4 +1,4 @@
-package com.stab.data.actions.player.spells.cleric.level0.unfinished;
+package com.stab.data.actions.player.spells.lvl0.unfinished;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTarget;
@@ -11,7 +11,7 @@ public class Mending extends SpellOnTarget{
 	
 	public Mending() {
 		setLevel(0);
-		setCasterClass(StabConstants.CLERICCASTER);
+		setCasterClass(StabConstants.WIZARDCASTER);
      setRange(2);
      
      setResource("actions/ability_druid_naturalperfection");

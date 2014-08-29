@@ -38,6 +38,7 @@ public class Resistance extends SpellOnTarget{
 		setResource("actions/nightshield");
 		setName("Resistance");
 		this.setEffectType(BUFF);
+		setDuration(FIXED);
 		this.setDescriptors(EffectDescriptor.ABJURATION);
 		this.setRange(TOUCH);
 		this.setDescription("You imbue the subject with magical energy that protects it from harm, granting it a +1 resistance bonus on saves." +

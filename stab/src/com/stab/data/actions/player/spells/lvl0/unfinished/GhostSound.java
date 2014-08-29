@@ -1,19 +1,19 @@
-package com.stab.data.actions.player.spells.wizard.level0.unfinished;
+package com.stab.data.actions.player.spells.lvl0.unfinished;
 
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellOnTile;
 
-public class Message extends SpellOnTile{
+public class GhostSound extends SpellOnTile{
 
-	public static final String ID="MESSAGE";
+	public static final String ID="GHOSTSOUND";
 	
-	public Message() {
+	public GhostSound() {
 	     
 		 setLevel(0);
 		 setCasterClass(StabConstants.WIZARDCASTER);
-		 setRange(22);
+		 setRange(6);
 	     setResource("actions/ability_mage_arcanebarrage");
-	     setName("Message");
+	     setName("GhostSound");
 	     this.setEffectType(SPECIAL);
 		}
 

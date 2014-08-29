@@ -1,12 +1,15 @@
-package com.stab.data.actions.player.spells.wizard.level0;
+package com.stab.data.actions.player.spells.lvl0;
 
 import java.awt.Point;
 
 import com.stab.data.StabConstants;
+import com.stab.data.actions.player.spells.SpellDummy;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.model.basic.token.DoorToken;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
+import com.stab.model.info.applicable.base.Interaction;
 import com.stab.model.info.base.Door;
 import com.stab.model.request.basic.ActionRequest;
 
@@ -17,8 +20,22 @@ public class OpenClose extends SpellOnTarget{
 @Override
 protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 	Door Atacado = (Door)target;
-	Atacado.infoInteracts(caster);
-	return super.fullEffect(caster, target, point);
+	SpellDummy dummy= new SpellDummy();
+	Interaction i=new Interaction(dummy);
+	((BaseInfo)target).apply(i);
+	return i.success();
+	//return super.fullEffect(caster, target, point);
+}
+
+@Override
+public boolean validateAffect(Info instigator, Info target) {
+	
+	if (target instanceof Door)
+		return true;
+	
+	//TODO: meter chests, y esas cosas
+	
+	return false;
 }
 	
 	public OpenClose() {

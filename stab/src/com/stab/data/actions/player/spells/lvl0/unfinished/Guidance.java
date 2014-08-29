@@ -1,4 +1,4 @@
-package com.stab.data.actions.player.spells.cleric.level0.unfinished;
+package com.stab.data.actions.player.spells.lvl0.unfinished;
 
 import java.awt.Point;
 

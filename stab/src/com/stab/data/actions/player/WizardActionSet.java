@@ -32,6 +32,9 @@ public class WizardActionSet extends PathfinderActionSet {
 
 	public WizardActionSet() {
 		
+		
+		//No tardando mucho esto vendra directamente de una spell list en la clase wizard. por ahora, sigue puesto a piñon
+		
 		this.addAction(AcidSplash.ID);
 	//	this.addAction(Bleed_Wizard.ID);
 		this.addAction(Daze.ID);

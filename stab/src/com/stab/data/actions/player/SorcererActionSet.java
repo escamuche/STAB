@@ -1,36 +1,13 @@
 package com.stab.data.actions.player;
 
-import com.stab.data.actions.player.spells.sorcerer.level0.AcidSplash_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level0.Bleed_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level0.Daze_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level0.DisruptUndead_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level0.Flare_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level0.Light_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level0.MageHand_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level0.OpenClose_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level0.RayFrost_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level0.Resistance_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level0.TouchFatigue_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level1.BurningHands_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level1.CharmPerson_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level1.ChillTouch_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level1.EnlargePerson_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level1.ExpeditiousRetreat_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level1.HoldPortal_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level1.Identify_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level1.Jump_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level1.MageArmor_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level1.MagicMissile_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level1.RayEnfeeblement_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level1.Shield_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level1.ShockingGrasp_Sorcerer;
-import com.stab.data.actions.player.spells.sorcerer.level1.TrueStrike_Sorcerer;
 
 
 public class SorcererActionSet extends PathfinderActionSet {
 
 	public SorcererActionSet() {
 		
+		//Cambair por SpellUtils.asSorcerer( ... )
+		/*
 		this.addAction(AcidSplash_Sorcerer.ID);
 		this.addAction(Bleed_Sorcerer.ID);
 		this.addAction(Daze_Sorcerer.ID);
@@ -65,6 +42,6 @@ public class SorcererActionSet extends PathfinderActionSet {
 				this.setAction(RayFrost_Sorcerer.ID, 4);
 				this.setAction(TouchFatigue_Sorcerer.ID, 5);
 				this.setAction(Light_Sorcerer.ID, 6);
-	
+	/**/
 	}	
 }

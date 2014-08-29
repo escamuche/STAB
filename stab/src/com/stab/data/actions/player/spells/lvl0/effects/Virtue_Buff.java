@@ -1,22 +1,25 @@
-package com.stab.data.info.buff.spells;
+package com.stab.data.actions.player.spells.lvl0.effects;
 
 import com.stab.data.StabConstants;
+import com.stab.data.actions.player.spells.Spell;
+import com.stab.data.info.spellcasting.SpellEffect;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Heal;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.BuffEffect;
+import com.stab.model.info.trait.base.Buff;
 
-public class Virtue_Buff extends BuffEffect {
+public class Virtue_Buff extends  SpellEffect implements Buff{
 
 	public static final String ID="VIRTUE_BUFF";
 	
-	public Virtue_Buff() {
-	
-		
-		this.setAnimIcon("actions/bless");				
-		this.setSound("HolyCast");
-		this.setResource("actions/bless");                  
-		this.setName("Virtue");
+	public Virtue_Buff(Spell spell, Info caster) {
+		super(spell, caster);
+		setTime(10);
+	//	this.setAnimIcon("actions/bless");				
+	//	this.setSound("HolyCast");
+	//	this.setResource("actions/bless");                  
+	//	this.setName("Virtue");
 	
 		BaseInfo target=getTarget();
 		if(target.hasTrait(Virtue_Buff.ID) == true) {

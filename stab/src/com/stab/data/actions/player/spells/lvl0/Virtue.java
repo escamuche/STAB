@@ -1,14 +1,19 @@
-package com.stab.data.actions.player.spells.cleric.level0;
+package com.stab.data.actions.player.spells.lvl0;
 
 import java.awt.Point;
 
 import com.stab.data.StabConstants;
+import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.actions.player.spells.SpellOnTarget;
+import com.stab.data.actions.player.spells.lvl0.effects.Virtue_Buff;
 import com.stab.data.animation.BasicSparkAnimation;
-import com.stab.data.info.buff.spells.Virtue_Buff;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.request.basic.ActionRequest;
+
+
+//WIP... aun pendiente de cambiar por otra cosa
+//(el comportamiento de los puntos de vida temporales necesita ser revisado)
 
 public class Virtue extends SpellOnTarget{
 	
@@ -16,8 +21,8 @@ public class Virtue extends SpellOnTarget{
 
 	@Override
 	protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
-		Virtue_Buff buff = new Virtue_Buff();
-		buff.setTime(10);
+		Virtue_Buff buff = new Virtue_Buff(getSpell(),caster);
+		
 		target.addTrait(buff);
 		return super.fullEffect(caster, target, point);
 	}
@@ -27,10 +32,10 @@ public class Virtue extends SpellOnTarget{
 		setLevel(0);
 		setCasterClass(StabConstants.CLERICCASTER);
 		setRange(CLOSE);
-		
+		setDescriptors(EffectDescriptor.TRANSMUTATION);
 		setResource("actions/ability_druid_naturalperfection");
 		setName("Virtue");
-		this.setEffectType(HEAL);
+		this.setEffectType(BUFF);
 		this.setDescription("With a touch, you infuse a creature with a tiny surge of life, granting the subject 1 temporary hit point.");
 	}
 	
