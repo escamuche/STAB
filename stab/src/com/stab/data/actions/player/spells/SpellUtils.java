@@ -97,6 +97,9 @@ public class SpellUtils {
 	
 	public static String getGenericDescription(Spell s){
 		String desc="";
+		if (s.getLevel()==0)
+			desc="Cantrip ";
+		else
 		if (s.getLevel()>=9)
 			desc="Superior ";
 		else

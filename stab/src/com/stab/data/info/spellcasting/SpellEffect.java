@@ -1,5 +1,7 @@
 package com.stab.data.info.spellcasting;
 
+import java.awt.Point;
+
 import com.stab.data.actions.player.spells.DismissSpellAction;
 import com.stab.data.actions.player.spells.Spell;
 import com.stab.data.actions.player.spells.SpellProperties;
@@ -10,6 +12,7 @@ import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.Token;
 import com.stab.model.extras.ContextualOption;
 import com.stab.model.extras.OnlyVisibleWithMode;
+import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.interfaces.PlayerOwned;
 import com.stab.model.info.trait.base.VisualEffect;
@@ -152,6 +155,9 @@ public class SpellEffect extends VisualEffect {
 		
 	}
 	
-	
+	//Para spelleffects que tengan efectos activados (ie: descargar el hechizo haciendo algo)
+	public void activate(int slot,BaseInfo instigator,Info target,Point point){
+		
+	}
 	
 }

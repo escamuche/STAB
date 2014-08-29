@@ -16,7 +16,7 @@ import com.stab.data.actions.player.spells.cleric.level1.ShieldFaith;
 import com.stab.data.actions.player.spells.lvl0.Resistance;
 import com.stab.data.actions.player.spells.lvl0.Stabilize;
 import com.stab.data.actions.player.spells.lvl0.Virtue;
-import com.stab.data.actions.player.spells.lvl0.unfinished.Bleed;
+import com.stab.data.actions.player.spells.lvl0.unfinished.Guidance;
 
 
 public class ClericActionSet extends PathfinderActionSet {
@@ -24,13 +24,13 @@ public class ClericActionSet extends PathfinderActionSet {
 	public ClericActionSet() {
 		
 		
-		this.addAction(Bleed.ID);
-		//this.addAction(Guidance.ID);
+		//this.addAction(Bleed.ID);
+		this.addAction(Guidance.ID);
 		this.addAction(Resistance.ID);
 		this.addAction(Stabilize.ID);
 		this.addAction(Virtue.ID);
 		
-		
+		/*
 		this.addAction(Bane.ID);
 		this.addAction(Bless.ID);
 		this.addAction(Command.ID);
@@ -41,7 +41,7 @@ public class ClericActionSet extends PathfinderActionSet {
 		this.addAction(InflictLight.ID);
 		this.addAction(MagicStone.ID);
 		this.addAction(ShieldFaith.ID);
-		
+		/**/
 		this.addAction(ChannelPossitiveEnergyAction.ID);
 		
 		this.setAction(CureLight.ID, 1);

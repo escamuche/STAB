@@ -26,7 +26,9 @@ public class BleedCondition extends DebuffEffect {
 	@Override
 	public void applyTo(BaseInfo baseInfo) {
 			super.applyTo(baseInfo);
-			baseInfo.getActionSet().setAction(HealAction.ID,-1);
+			
+			//TODO: añadir con extra la contextualoption
+			//baseInfo.getActionSet().setAction(HealAction.ID,-1);
 	}
 	@Override
 	public void turnStarts() {

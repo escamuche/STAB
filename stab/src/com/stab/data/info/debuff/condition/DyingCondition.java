@@ -20,7 +20,7 @@ public class DyingCondition extends UnableToActCondition {
 		this.setName("Dying");
 		this.setPermanent();
 		addTrait(new CannotThreatCondition());
-		addTrait(new UnableToActCondition());
+	
 		 
 	}
 	

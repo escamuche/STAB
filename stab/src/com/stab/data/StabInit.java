@@ -61,6 +61,7 @@ import com.stab.data.actions.player.spells.lvl0.Resistance;
 import com.stab.data.actions.player.spells.lvl0.Stabilize;
 import com.stab.data.actions.player.spells.lvl0.TouchFatigue;
 import com.stab.data.actions.player.spells.lvl0.Virtue;
+import com.stab.data.actions.player.spells.lvl0.unfinished.Guidance;
 import com.stab.data.actions.player.spells.wizard.level1.BurningHands;
 import com.stab.data.actions.player.spells.wizard.level1.CharmPerson;
 import com.stab.data.actions.player.spells.wizard.level1.ChillTouch;
@@ -476,7 +477,6 @@ public class StabInit {
 		getActionLibrary().register(PathfinderPathAction.class);
 		getActionLibrary().register(Rage.class);
 		getActionLibrary().register(HealAction.class);
-	//	getActionLibrary().getAction(SearchAction.ID).setResource("actions/inv_gizmo_02");
 		getActionLibrary().register(PathfinderSearchAction.class);
 		getActionLibrary().register(ChannelPossitiveEnergyAction.class);
 		getActionLibrary().register(SmiteEvil.class);
@@ -617,6 +617,7 @@ public class StabInit {
 //		getActionLibrary().register(DancingLights.class);
 		getActionLibrary().register(DisruptUndead.class);
 		getActionLibrary().register(Flare.class);
+		getActionLibrary().register(Guidance.class);
 		getActionLibrary().register(Light.class);
 	//	getActionLibrary().register(MageHand.class);
 	//	getActionLibrary().register(OpenClose.class);

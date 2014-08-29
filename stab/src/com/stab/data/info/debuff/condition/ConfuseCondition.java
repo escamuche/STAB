@@ -1,5 +1,7 @@
 package com.stab.data.info.debuff.condition;
 
+import java.awt.Color;
+
 import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.model.info.BaseInfo;
@@ -24,16 +26,19 @@ public class ConfuseCondition extends DebuffEffect {
 		
 		int t = Roll.d4();
 		
-		if(t==2)
+		if(t==2){
+			target.showFloatingText("Confused: no action",Color.yellow);
 			target.isTurnDone();
-		
+		}
 		if(t==3){
 			RolledDamage damage = new RolledDamage(1,8,target.getAttributeValue(StabConstants.STRENGHT),target);
+			target.showFloatingText("Confused: Hurt self",Color.yellow);
 			target.apply(damage);
 			target.isTurnDone();
 		}
 		if(t==4){
 			//aqui atacar a lo mas cercano
+			//Implicara cambiar el aipackage, la faccion, etc (añadiendo otro debuff)
 		}
 		
 		
