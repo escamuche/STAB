@@ -24,7 +24,7 @@ import com.stab.data.info.equipment.RangedWeapon;
 import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.action.Action;
 import com.stab.model.action.base.WeaponAttackAction;
-import com.stab.model.ai.DefaultAIPackage;
+import com.stab.model.ai.packages.DefaultAIPackage;
 import com.stab.model.animation.BaseSpeech;
 import com.stab.model.basic.scenes.MapLogic;
 import com.stab.model.basic.token.Token;
