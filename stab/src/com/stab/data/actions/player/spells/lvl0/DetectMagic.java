@@ -25,6 +25,7 @@ public class DetectMagic extends SpellOnSelf{
 	     setDuration(MEDIUM);
 	     setDescriptors(EffectDescriptor.DIVINATION);
 	     this.setDismissable(true);
+	     this.setTraitIDActivated(DetectMagic_Buff.ID);
 	}
 
 

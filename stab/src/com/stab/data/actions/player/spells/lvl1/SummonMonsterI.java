@@ -10,8 +10,9 @@ import com.stab.data.actions.player.spells.SpellOnTile;
 import com.stab.data.actions.player.spells.lvl1.effects.SummonActivity;
 import com.stab.data.actions.player.spells.lvl1.effects.SummonedCreature;
 import com.stab.data.info.monster.bestiary.Wolf;
-import com.stab.model.basic.scenes.map.DefaultMapLogic;
+import com.stab.model.ai.traits.CompanionAITrait;
 import com.stab.model.basic.scenes.map.TileMapScene;
+import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.base.VisualEffect;
@@ -69,9 +70,13 @@ public class SummonMonsterI extends SpellOnTile   {
 		for (Creature c:getSummonedCreatures(origin,point,ar)){
 			SummonedCreature sc=new SummonedCreature();
 			sc.setTime(getSpell().getFinalCasterLevel());
-			sc.setTime(3);
+sc.setTime(10);
 			c.addTrait(sc);
 			c.setFaction(origin.getFaction());
+			CompanionAITrait comp= new CompanionAITrait();
+			comp.setMaster((BaseInfo)origin);
+			c.addTrait(comp);
+			c.setInitiative(((BaseInfo)origin).getInitiative());
 			//Colocar la criatura
 			if (origin.getScene() instanceof TileMapScene)
 				((TileMapScene)origin.getScene()).findEntranceFor(c, point, 3);
