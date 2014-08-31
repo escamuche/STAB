@@ -12,6 +12,7 @@ import com.stab.data.info.applicable.BreakSpellResistance;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.data.info.equipment.SpellActionEffect;
 import com.stab.data.info.equipment.SpellWeapon;
+import com.stab.data.info.other.ConcentrationActivity;
 import com.stab.model.action.Action;
 import com.stab.model.action.base.WeaponAttackAction;
 import com.stab.model.info.BaseInfo;
@@ -329,7 +330,7 @@ public abstract class SpellAction extends Action implements SpellProperties{
 		if (getSpell().getSave()!=null){
 			SavingThrowEffect st=new SavingThrowEffect(caster, getSpell().getSave(), target);
 			st.setTargetNumber(getSpell().getDC(caster));
-			
+			st.setDescriptors(getSpell().getDescriptors());
 			st.check();
 			
 			if (st.isEvaded()){
@@ -462,5 +463,37 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	}
 	public int getConcentration() {
 		return  getSpell().getConcentration();
+	}
+	
+	
+	@Override
+	public int execute(Info origin, Info target, Point point, ActionRequest ar) {
+		onExecute( origin,  target,  point,  ar);
+		return super.execute(origin, target, point, ar);
+	}
+	
+	protected void onExecute(Info origin, Info target, Point point, ActionRequest ar){
+		ConcentrationActivity c= createConcentrationActivity();
+		getSpell().setConcentrationActivity(c);
+		if (c!=null && (origin instanceof BaseInfo))
+			((BaseInfo)origin).addTrait(c);
+	}
+	
+	public ConcentrationActivity createConcentrationActivity(){
+		if (getConcentration()==SpellProperties.NONE)
+			return null;
+		ConcentrationActivity c= new ConcentrationActivity();
+		c.setText("Concentrate on "+getSpell().getText());
+		String s="Concentrate on the spell.#";
+		if (getConcentration()==SpellProperties.CONCENTRATION_EXTENDS){
+			s=s+"Spell will keep going while you concentrate, and then some time";
+			c.setKeepEveryRound(true);
+		}
+		if (getConcentration()==SpellProperties.CONCENTRATION_REQUIRED){
+			s=s+"If you don't concentrate every round, the spell will end";
+			c.setKeepEveryRound(true);
+		}
+		c.setDescription(s);
+		return c;
 	}
 }

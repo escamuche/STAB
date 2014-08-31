@@ -1,37 +1,79 @@
 package com.stab.data.info.other;
 
+import java.util.ArrayList;
+
+import com.stab.data.actions.player.ConcentrateOnAction;
+import com.stab.model.extras.PlayerContextualOption;
+import com.stab.model.info.BaseInfo;
 import com.stab.model.info.interfaces.TurnBased;
 import com.stab.model.info.trait.base.activity.Activity;
 
 public class ConcentrationActivity extends Activity implements TurnBased {
 	
-	ConcentrationTarget concentrationTarget;
+	ArrayList<ConcentrationListener> listeners;
 	boolean keepEveryRound=false;
 	boolean done;
+	PlayerContextualOption opt;
+	String description;
+	
 	
 	public ConcentrationActivity() {
 		setInterruptable(true);
-	}
-	
-	public void setConcentrationTarget(ConcentrationTarget concentrationTarget) {
-		this.concentrationTarget = concentrationTarget;
-	}
-	public ConcentrationTarget getConcentrationTarget() {
-		return concentrationTarget;
+		listeners= new ArrayList<ConcentrationListener>();
+		setResource("actions/concentrate");
+		done=true; //para que se mantenga el primer round
 	}
 	
 	
+	@Override
+	public void applyTo(BaseInfo baseInfo) {
+		super.applyTo(baseInfo);
+		opt=new PlayerContextualOption();
+		ConcentrateOnAction act= createAction();
+		act.setConcentration(this);
+		opt.setAction(act);
+		baseInfo.addExtra(opt);
+	}
 	
-	public void conenctrate(){
+	protected ConcentrateOnAction createAction() {
+		ConcentrateOnAction a= new ConcentrateOnAction();
+		a.setResource(getResource());
+		a.setName(getName());
+		a.setDescription(getDescription());
+		return a;
+	}
+
+
+	@Override
+	public void removeFrom(BaseInfo baseInfo) {
+		super.removeFrom(baseInfo);
+		baseInfo.removeExtra(opt);
+	}
+	
+	public void addConcentrationListener(ConcentrationListener concentrationListener) {
+		listeners.add(concentrationListener);
+	}
+	
+	public void removeConcentrationListener(ConcentrationListener concentrationListener) {
+		listeners.remove(concentrationListener);
+		if (listeners.isEmpty()) //No quedan efectos asociados a esta concentracion
+			this.end();
+	}
+	
+	
+	
+	public void concentrate(){
 		done=true;
-		getConcentrationTarget().concentrate();
+		for (ConcentrationListener l:listeners)
+			l.concentrate();
 	}
 	
 
 	@Override
 	public void cancelActivity() {
 		super.cancelActivity();
-		getConcentrationTarget().concentrationCancelled();
+		for (ConcentrationListener l:listeners)
+			l.concentrationCancelled();
 	}
 	
 	@Override
@@ -52,4 +94,11 @@ public class ConcentrationActivity extends Activity implements TurnBased {
 	public boolean isKeepEveryRound() {
 		return keepEveryRound;
 	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getDescription() {
+		return description;
+	}
+	
 }

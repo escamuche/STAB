@@ -7,7 +7,7 @@ import com.stab.data.actions.player.spells.Spell;
 import com.stab.data.actions.player.spells.SpellProperties;
 import com.stab.data.actions.player.spells.SpellUtils;
 import com.stab.data.actions.player.spells.lvl0.DetectMagic;
-import com.stab.data.info.other.ConcentrationTarget;
+import com.stab.data.info.other.ConcentrationListener;
 import com.stab.model.action.ActionLibrary;
 import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.Token;
@@ -31,7 +31,7 @@ import com.stab.model.info.trait.base.VisualEffect;
  * 
  * tendra un metodo para renovar automaticamente la duracion (por si se castea otro) 
  */
-public class SpellEffect extends VisualEffect implements ConcentrationTarget {
+public class SpellEffect extends VisualEffect implements ConcentrationListener {
 
 	
 	Spell spell; //El spell del que proviene, para tener informacion adicional
@@ -61,9 +61,6 @@ public class SpellEffect extends VisualEffect implements ConcentrationTarget {
 		recalcDuration();
 		recalcSpecialEffect();
 		this.setIdentified(spell.isIdentified());
-		
-		
-		
 	}
 
 	
@@ -94,12 +91,15 @@ public class SpellEffect extends VisualEffect implements ConcentrationTarget {
 	}
 
 	protected void recalcDuration() {
+		int b=0;
+		if (this.getSpell().getConcentration()==SpellProperties.CONCENTRATION_EXTENDS || this.getSpell().getConcentration()==SpellProperties.CONCENTRATION_REQUIRED)
+			b=b+1;
 		switch(getSpell().getDuration()){
 			case SpellProperties.INSTANT: this.setTillEndOfTurn();break;
 			case SpellProperties.ROUND: this.setTime(1);break;
-			case SpellProperties.SHORT: this.setTime(getCasterLevel()*10);break;
-			case SpellProperties.MEDIUM: this.setTime(getCasterLevel()*100);break;
-			case SpellProperties.LONG: this.setTime(getCasterLevel()*600);break;
+			case SpellProperties.SHORT: this.setTime(getCasterLevel()*10+b);break;
+			case SpellProperties.MEDIUM: this.setTime(getCasterLevel()*100+b);break;
+			case SpellProperties.LONG: this.setTime(getCasterLevel()*600+b);break;
 			case SpellProperties.PERMANENT: this.setPermanent();break;
 			default: setTime(1);
 		}
@@ -183,6 +183,13 @@ public class SpellEffect extends VisualEffect implements ConcentrationTarget {
 		
 	}
 
+	@Override
+	public void end() {
+		super.end();
+		if (getSpell().getConcentrationActivity()!=null)
+			getSpell().getConcentrationActivity().removeConcentrationListener(this);
+	}
+	
 
 	@Override
 	public void concentrationCancelled() {

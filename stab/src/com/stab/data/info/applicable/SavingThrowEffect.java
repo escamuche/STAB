@@ -1,7 +1,9 @@
 package com.stab.data.info.applicable;
 
 import java.util.ArrayList;
+import java.util.EnumSet;
 
+import com.stab.data.actions.EffectDescriptor;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.base.Damage;
@@ -17,7 +19,8 @@ public  class SavingThrowEffect extends OpposedSkillRoll {
 	boolean nullIfSuccess;
 	ArrayList<Applicable> toApplyPass;
 	
-
+	EnumSet<EffectDescriptor> descriptors;
+	
 	
 	/**
 	 * 
@@ -109,4 +112,15 @@ public  class SavingThrowEffect extends OpposedSkillRoll {
 		super.validate();
 		System.out.println("Saving throw : "+this.getSkill()+" roll "+getRollResult()+" + "+getFinalModifier()+"   against "+getFinalTargetNumber()+"  result: "+getResult()+" (success:"+success()+" evaded: "+isEvaded()+" botch: "+isBotch()+")");
 	}
+	
+	
+	public EnumSet<EffectDescriptor> getDescriptors() {
+		return descriptors;
+	}
+	
+	public void setDescriptors(EnumSet<EffectDescriptor> descriptors) {
+		this.descriptors = descriptors;
+	}
+	
+	
 }

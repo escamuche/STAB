@@ -16,7 +16,7 @@ public class DetectMagic extends SpellOnSelf{
 	public static final String ID="DETECTMAGIC";
 
 	public DetectMagic() {
-	     
+	   //  setConcentration(CONCENTRATION_REQUIRED);
 		 setLevel(0);
 	     setResource("actions/spells/sheikah_eye");
 	     setName("DetectMagic");
@@ -34,6 +34,7 @@ public class DetectMagic extends SpellOnSelf{
 		
 		DetectMagic_Buff b= new DetectMagic_Buff(getSpell(), origin);
 		((BaseInfo)t).addTrait(b);
+	//	getSpell().getConcentrationActivity().addConcentrationListener(b);
 		return OK;
 	}
 	

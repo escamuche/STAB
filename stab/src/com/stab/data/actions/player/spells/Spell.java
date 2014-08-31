@@ -7,6 +7,7 @@ import com.stab.data.StabInit;
 import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.data.info.equipment.SpellWeapon;
+import com.stab.data.info.other.ConcentrationActivity;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
@@ -56,6 +57,8 @@ public class Spell implements SpellProperties {
 	boolean dismissable=false;
 	int finalCasterLevel=0;
 	SpellAction action;
+	
+	ConcentrationActivity concentrationActivity;
 	
 	public void setDescription(String description) {
 		this.description = description;
@@ -400,7 +403,8 @@ public class Spell implements SpellProperties {
 		sp.action=action;
 		sp.resource=resource;
 		sp.finalCasterLevel=finalCasterLevel;
-				
+		sp.concentration=concentration;
+		sp.concentrationActivity=concentrationActivity;
 	}
 	
 	public void setCasterLevelMod(int casterLevelMod) {
@@ -502,6 +506,15 @@ public class Spell implements SpellProperties {
 	}
 	public int getConcentration() {
 		return concentration;
+	}
+	
+	public void setConcentrationActivity(
+			ConcentrationActivity concentrationActivity) {
+		this.concentrationActivity = concentrationActivity;
+	}
+	
+	public ConcentrationActivity getConcentrationActivity() {
+		return concentrationActivity;
 	}
 	
 }

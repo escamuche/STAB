@@ -1,21 +1,17 @@
 package com.stab.data.actions.player;
 
 
-import com.stab.data.StabConstants;
-import com.stab.data.actions.monster.AcidFlask;
-import com.stab.data.actions.player.spells.SpellAction;
-import com.stab.data.actions.player.spells.SpellUtils;
 import com.stab.data.actions.player.spells.lvl0.AcidSplash;
 import com.stab.data.actions.player.spells.lvl0.Daze;
 import com.stab.data.actions.player.spells.lvl0.DetectMagic;
 import com.stab.data.actions.player.spells.lvl0.DisruptUndead;
 import com.stab.data.actions.player.spells.lvl0.Flare;
+import com.stab.data.actions.player.spells.lvl0.Lullaby;
 import com.stab.data.actions.player.spells.lvl0.RayFrost;
 import com.stab.data.actions.player.spells.lvl0.Resistance;
 import com.stab.data.actions.player.spells.lvl0.TouchFatigue;
 import com.stab.data.actions.player.spells.lvl1.BurningHands;
 import com.stab.data.actions.player.spells.lvl1.MageArmor;
-import com.stab.data.actions.player.spells.lvl1.MagicMissile;
 import com.stab.data.actions.player.spells.lvl1.SummonMonsterI;
 import com.stab.data.actions.player.spells.wizard.level1.CharmPerson;
 import com.stab.data.actions.player.spells.wizard.level1.ChillTouch;
@@ -86,5 +82,6 @@ public class WizardActionSet extends PathfinderActionSet {
 		
 		this.setAction(DetectMagic.ID,1);
 		
+		this.setAction(Lullaby.ID, 2);
 	}
 }
