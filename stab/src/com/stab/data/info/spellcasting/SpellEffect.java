@@ -7,6 +7,7 @@ import com.stab.data.actions.player.spells.Spell;
 import com.stab.data.actions.player.spells.SpellProperties;
 import com.stab.data.actions.player.spells.SpellUtils;
 import com.stab.data.actions.player.spells.lvl0.DetectMagic;
+import com.stab.data.info.other.ConcentrationTarget;
 import com.stab.model.action.ActionLibrary;
 import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.Token;
@@ -30,7 +31,7 @@ import com.stab.model.info.trait.base.VisualEffect;
  * 
  * tendra un metodo para renovar automaticamente la duracion (por si se castea otro) 
  */
-public class SpellEffect extends VisualEffect {
+public class SpellEffect extends VisualEffect implements ConcentrationTarget {
 
 	
 	Spell spell; //El spell del que proviene, para tener informacion adicional
@@ -42,6 +43,9 @@ public class SpellEffect extends VisualEffect {
 	boolean identified=false;
 	String effectResource;
 	ContextualOption dismiss;
+	
+	
+
 	
 	public SpellEffect(Spell spell, Info caster) {
 		super();
@@ -57,6 +61,9 @@ public class SpellEffect extends VisualEffect {
 		recalcDuration();
 		recalcSpecialEffect();
 		this.setIdentified(spell.isIdentified());
+		
+		
+		
 	}
 
 	
@@ -158,6 +165,30 @@ public class SpellEffect extends VisualEffect {
 	//Para spelleffects que tengan efectos activados (ie: descargar el hechizo haciendo algo)
 	public void activate(int slot,BaseInfo instigator,Info target,Point point){
 		
+	}
+
+
+
+
+	@Override
+	public void concentrate() {
+		switch(getSpell().getConcentration()){
+			case SpellProperties.CONCENTRATION_EXTENDS: this.setTime(this.getRemainingTime()+1);break;
+		}
+		concentrateAction();
+	}
+
+	//Para spelleffects que hagan algo cuando se concentra el caster en ellos
+	public void concentrateAction(){
+		
+	}
+
+
+	@Override
+	public void concentrationCancelled() {
+		switch(getSpell().getConcentration()){
+			case SpellProperties.CONCENTRATION_REQUIRED: this.end();break;
+		}
 	}
 	
 }

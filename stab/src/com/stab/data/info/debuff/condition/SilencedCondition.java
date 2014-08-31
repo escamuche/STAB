@@ -1,6 +1,6 @@
 package com.stab.data.info.debuff.condition;
 
-import com.stab.data.info.applicable.SpellCasting;
+import com.stab.data.info.spellcasting.SpellCasting;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.trait.base.DebuffEffect;

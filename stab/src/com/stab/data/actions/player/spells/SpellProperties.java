@@ -43,6 +43,11 @@ public interface SpellProperties extends HasDescriptor{
 	public static final int FULLACTION=0;//TODO: revisar en su momento
 	public static final int FULLROUND=1;
 	
+	//Concentration
+	public static final int NONE=0; //no afecta
+	public static final int CONCENTRATION_EXTENDS=1; //duracion del hechizo= concentracion (+ x rounds opcionalmente, en base a duration)
+	public static final int CONCENTRATION_REQUIRED=2; //cancela el hechizo si se falla / deja de concentrar (concentration up to...)
+	public static final int CONCENTRATION_OTHER=3; //no afecta, pero si se concentra hace algo (ie: cambiar direccion o algo)
 	
 	public int getLevel();
 	public String getAttribute();

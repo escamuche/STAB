@@ -1,10 +1,11 @@
-package com.stab.data.info.applicable;
+package com.stab.data.info.spellcasting;
 
 import java.util.EnumSet;
 
 import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.actions.player.spells.Spell;
 import com.stab.data.actions.player.spells.SpellProperties;
+import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;

@@ -10,6 +10,7 @@ import com.stab.data.info.player.PathfinderCharacter;
 import com.stab.data.ui.ActionPanel;
 import com.stab.data.ui.CharSheetPanel;
 import com.stab.data.ui.PlayerInventoryPanel;
+import com.stab.data.ui.QuestTracker;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 import com.stab.model.basic.ui.Label;
 import com.stab.model.basic.ui.Panel;

@@ -456,4 +456,11 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	public void setDismissable(boolean b){
 		getBaseSpell().setDismissable(b);
 	}
+	
+	public void setConcentration(int concentration) {
+		getBaseSpell().setConcentration(concentration);
+	}
+	public int getConcentration() {
+		return  getSpell().getConcentration();
+	}
 }

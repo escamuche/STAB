@@ -2,7 +2,7 @@ package com.stab.data.info.traits;
 
 import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
-import com.stab.data.info.applicable.SpellCasting;
+import com.stab.data.info.spellcasting.SpellCasting;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;

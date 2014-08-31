@@ -2,7 +2,7 @@ package com.stab.data.adventure;
 
 import com.stab.adventure.Adventure;
 import com.stab.data.scene.DefaultStabMapScene;
-import com.stab.data.scene.QuestTracker;
+import com.stab.data.ui.QuestTracker;
 import com.stab.data.utils.StabBlockData;
 import com.stab.model.basic.scenes.Choice;
 import com.stab.model.basic.scenes.Narration;

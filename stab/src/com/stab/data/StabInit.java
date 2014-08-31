@@ -192,12 +192,6 @@ import com.stab.data.info.props.StabRandomSpawner;
 import com.stab.data.info.props.Statue;
 import com.stab.data.info.props.TriggerPlate;
 import com.stab.data.info.props.WoodenDoor;
-import com.stab.data.scene.ActionBarSelectionScene2;
-import com.stab.data.scene.ActionSlotButton;
-import com.stab.data.scene.CharacterSheet;
-import com.stab.data.scene.Feats;
-import com.stab.data.scene.PrayerBook;
-import com.stab.data.scene.SpellBook;
 import com.stab.data.scene.StabLobby2;
 import com.stab.data.tokens.CDoorToken;
 import com.stab.data.tokens.IronBarsToken;
@@ -241,7 +235,7 @@ public class StabInit {
 		
 		StabVisualEngine sv=(StabVisualEngine)ServiceManager.getService(VisualEngine.class);
 		if (sv!=null){
-			sv.getFactory().setMapping(ActionSlotButton.ID,Button_sprite.class);
+		//	sv.getFactory().setMapping(ActionSlotButton.ID,Button_sprite.class);
 			sv.getFactory().setMapping(PathfinderTokenCard.class);
 			sv.getFactory().setMapping(StabActionBar.class);
 			sv.getFactory().setMapping(IronBarsToken.ID,ImageToken_sprite.class);
@@ -312,11 +306,12 @@ public class StabInit {
 		
 		//scenes
 		of.setMapping(StabLobby2.class);
-		of.setMapping(CharacterSheet.class);
+		/*of.setMapping(CharacterSheet.class);
 		of.setMapping(SpellBook.class);
 		of.setMapping(Feats.class);
 		of.setMapping(PrayerBook.class);
 		of.setMapping(ActionBarSelectionScene2.class);
+		/**/
 		
 		//personajes
 		of.setMapping(WarriorCharacter.class);
@@ -381,7 +376,7 @@ public class StabInit {
 		of.setMapping(DesnaChalice.class);
 		
 		//botones
-		of.setMapping(ActionSlotButton.class);
+	//	of.setMapping(ActionSlotButton.class);
 		of.setMapping(RolledOptionButton.class);
 		of.setMapping(RolledSkillOptionButton.class);
 		

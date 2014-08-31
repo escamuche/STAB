@@ -47,6 +47,8 @@ public class Spell implements SpellProperties {
 	
 	int castingTime=STANDARD;
 	
+	int concentration=NONE;
+	
 	String text;
 	String description;
 	String resource;
@@ -493,6 +495,13 @@ public class Spell implements SpellProperties {
 	}
 	public boolean isIdentified() {
 		return identified;
+	}
+	
+	public void setConcentration(int concentration) {
+		this.concentration = concentration;
+	}
+	public int getConcentration() {
+		return concentration;
 	}
 	
 }

@@ -1,4 +1,4 @@
-package com.stab.data.scene;
+package com.stab.data.ui;
 
 import org.newdawn.slick.Color;
 

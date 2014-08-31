@@ -6,7 +6,7 @@ import com.stab.common.Constants;
 import com.stab.data.StabConstants;
 import com.stab.data.animation.GenericSpriteOnAnimation;
 import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
-import com.stab.data.info.applicable.SpellCasting;
+import com.stab.data.info.spellcasting.SpellCasting;
 import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.ai.senses.SightSense;
 import com.stab.model.basic.Sprite;
