@@ -77,6 +77,7 @@ sc.setTime(10);
 			comp.setMaster((BaseInfo)origin);
 			c.addTrait(comp);
 			c.setInitiative(((BaseInfo)origin).getInitiative());
+			c.setPriorityInsert(true);
 			//Colocar la criatura
 			if (origin.getScene() instanceof TileMapScene)
 				((TileMapScene)origin.getScene()).findEntranceFor(c, point, 3);
