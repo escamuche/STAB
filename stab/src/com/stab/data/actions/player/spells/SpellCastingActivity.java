@@ -11,6 +11,7 @@ import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.ai.senses.SightSense;
 import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.DecorToken;
+import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.applicable.base.SkillRoll;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.interfaces.PlayerOwned;
@@ -27,6 +28,7 @@ Spell spell;
 	public SpellCastingActivity(SpellAction action) {
 		this.action=action;
 		this.setMaxProgress(1);
+		setInterruptable(true);
 	}
 	
 	
@@ -81,7 +83,7 @@ Spell spell;
 					case SpellCasting.CONCENTRATIONFAIL:
 					case SpellCasting.SPELLCHECKFAIL:
 					case SpellCasting.GENERICFAIL:
-							getTarget().showFloatingText("FAILED", Color.red);
+							getTarget().showFloatingText("FAILED", Color.orange);
 				}
 				return false;
 			}
@@ -122,5 +124,17 @@ Spell spell;
 		
 			return super.shouldEndTurn();
 		}
+	
+	@Override
+	protected void receivedDamage(Damage d) {
+		/*
+		SkillRoll cr=StabUtils.getGameLogic().getSkillRoll(this.getTarget(), StabConstants.CONCENTRATION, d.getFinalAmount()+10);
+		cr.check();
+		if (cr.failed()){
+			getTarget().showFloatingText("CONCENTRATION LOSS", Color.orange);
+			cancelActivity();
+		}
+		/**/
+	}
 	
 }
