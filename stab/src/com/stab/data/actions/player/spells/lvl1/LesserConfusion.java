@@ -1,11 +1,15 @@
-package com.stab.data.actions.player.spells.bard.level1;
+package com.stab.data.actions.player.spells.lvl1;
 
 import java.awt.Point;
 
 import com.stab.data.StabConstants;
+import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.actions.player.spells.SpellOnTarget;
+import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.info.debuff.condition.ConfuseCondition;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
+import com.stab.model.request.basic.ActionRequest;
 
 public class LesserConfusion extends SpellOnTarget{
 
@@ -20,6 +24,8 @@ public class LesserConfusion extends SpellOnTarget{
 	     this.setEffectType(SPECIAL);
 	     this.setDescription("This spell causes a single creature to become confused for 1 round.");
 	     this.setSave(StabConstants.WILLSAVE);
+	     this.setRange(CLOSE);
+	     this.setDescriptors(EffectDescriptor.ENCHANTMENT, EffectDescriptor.COMPULSION,EffectDescriptor.MIND_AFFECTING);
 	}
 
 		@Override
@@ -30,5 +36,11 @@ public class LesserConfusion extends SpellOnTarget{
 			return super.fullEffect(caster, target, point);
 		}
 
-
+		@Override
+		public void playExecuteActionAnimation(Info caster, Info target,
+				Point pos,ActionRequest ar) {
+			super.playExecuteActionAnimation(caster, target, pos, ar);
+			target.playAnimation(BasicSparkAnimation.ID,"PARTICLE#spells/swirl");
+			target.playSound("effects/Curse");
+		}
 }

@@ -70,6 +70,9 @@ public class SpellUtils {
 	public static SpellAction asBard(String action){
 		return asCaster(action,StabConstants.BARDCASTER);
 	}
+	public static SpellAction asWizard(String action){
+		return asCaster(action,StabConstants.WIZARDCASTER);
+	}
 	
 	public static String getVisualAura(Spell s){
 		String desc="PARTICLE#spells/";

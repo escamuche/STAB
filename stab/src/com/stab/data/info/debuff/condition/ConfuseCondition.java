@@ -2,8 +2,11 @@ package com.stab.data.info.debuff.condition;
 
 import java.awt.Color;
 
+import com.stab.common.Constants;
 import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
+import com.stab.model.basic.Sprite;
+import com.stab.model.basic.token.DecorToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.base.RolledDamage;
 import com.stab.model.info.trait.base.DebuffEffect;
@@ -15,7 +18,7 @@ public class ConfuseCondition extends DebuffEffect {
 	
 	public ConfuseCondition() {
 		
-		this.setName("Confuse");
+		this.setName("Confused");
 		target = getTarget();
 		
 		
@@ -45,4 +48,11 @@ public class ConfuseCondition extends DebuffEffect {
 		super.turnStarts();
 	}
 
+	@Override
+	protected Sprite createEffectSprite() {
+		DecorToken t=createEffectToken(null,Constants.EFFECTS);
+		t.setResource("PARTICLE#effects/confused");
+		return t;
+	}
+	
 }

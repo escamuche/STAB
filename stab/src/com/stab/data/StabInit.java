@@ -34,7 +34,6 @@ import com.stab.data.actions.player.spells.cleric.level1.Doom;
 import com.stab.data.actions.player.spells.cleric.level1.EntropicShield;
 import com.stab.data.actions.player.spells.cleric.level1.InflictLight;
 import com.stab.data.actions.player.spells.cleric.level1.MagicStone;
-import com.stab.data.actions.player.spells.cleric.level1.ShieldFaith;
 import com.stab.data.actions.player.spells.druid.level1.CalmAnimals;
 import com.stab.data.actions.player.spells.druid.level1.CharmAnimal;
 import com.stab.data.actions.player.spells.druid.level1.DetectAnimals;
@@ -68,6 +67,7 @@ import com.stab.data.actions.player.spells.lvl0.Virtue;
 import com.stab.data.actions.player.spells.lvl1.BurningHands;
 import com.stab.data.actions.player.spells.lvl1.MageArmor;
 import com.stab.data.actions.player.spells.lvl1.MagicMissile;
+import com.stab.data.actions.player.spells.lvl1.ShieldFaith;
 import com.stab.data.actions.player.spells.lvl1.SummonMonsterI;
 import com.stab.data.actions.player.spells.wizard.level1.CharmPerson;
 import com.stab.data.actions.player.spells.wizard.level1.ChillTouch;
@@ -627,23 +627,18 @@ public class StabInit {
 		getActionLibrary().register(Stabilize.class);
 		getActionLibrary().register(Virtue.class);
 		
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		//lvl 1
+		getActionLibrary().register(MageArmor.class);
+		getActionLibrary().register(BurningHands.class);
+		getActionLibrary().register(MagicMissile.class);
 		getActionLibrary().register(SummonMonsterI.class);
+		getActionLibrary().register(ShieldFaith.class);
+		
+		
+		
 		
 		//wizard1
-		getActionLibrary().register(BurningHands.class);
+		
 		getActionLibrary().register(CharmPerson.class);
 		getActionLibrary().register(ChillTouch.class);
 		getActionLibrary().register(EnlargePerson.class);
@@ -651,8 +646,8 @@ public class StabInit {
 		getActionLibrary().register(HoldPortal.class);
 		getActionLibrary().register(Identify.class);
 		getActionLibrary().register(Jump.class);
-		getActionLibrary().register(MageArmor.class);
-		getActionLibrary().register(MagicMissile.class);
+		
+		
 		getActionLibrary().register(RayEnfeeblement.class);
 		getActionLibrary().register(Shield.class);
 		getActionLibrary().register(ShockingGrasp.class);
