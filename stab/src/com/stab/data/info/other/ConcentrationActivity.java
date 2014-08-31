@@ -56,11 +56,13 @@ public class ConcentrationActivity extends Activity implements TurnBased {
 	
 	public void removeConcentrationListener(ConcentrationListener concentrationListener) {
 		listeners.remove(concentrationListener);
+		endIfNotActive();
+	}
+	
+	public void endIfNotActive(){
 		if (listeners.isEmpty()) //No quedan efectos asociados a esta concentracion
 			this.end();
 	}
-	
-	
 	
 	public void concentrate(){
 		done=true;
@@ -84,8 +86,10 @@ public class ConcentrationActivity extends Activity implements TurnBased {
 	
 	@Override
 	public void turnEnds() {
+		
 		if (!done && isKeepEveryRound())
 			this.cancelActivity();
+		endIfNotActive();
 	}
 	
 	public void setKeepEveryRound(boolean keepEveryRound) {
