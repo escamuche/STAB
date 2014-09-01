@@ -1,10 +1,11 @@
-package com.stab.data.actions.player.spells.wizard.level1;
+package com.stab.data.actions.player.spells.lvl1;
 
 import java.awt.Point;
 
 import com.stab.data.StabConstants;
+import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.actions.player.spells.SpellOnSelf;
-import com.stab.data.info.buff.spells.TrueStrike_Buff;
+import com.stab.data.actions.player.spells.lvl1.effects.TrueStrike_Buff;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 
@@ -19,12 +20,14 @@ public class TrueStrike extends SpellOnSelf{
      setResource("actions/truestrike");
      setName("TrueStrike");
      this.setEffectType(BUFF);
+     setDuration(FIXED);
+     setDescriptors(EffectDescriptor.DIVINATION);
      this.setDescription("You gain temporary, intuitive insight into the immediate future during your next attack. Your next single attack roll (if it is made before the end of the next round) gains a +20 insight bonus. Additionally, you are not affected by the miss chance that applies to attackers trying to strike a concealed target.");
 	}
 
 	@Override
 	protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
-		TrueStrike_Buff buff = new TrueStrike_Buff();
+		TrueStrike_Buff buff = new TrueStrike_Buff(getSpell(),caster);
 		buff.setTime(1);
 		target.addTrait(buff);
 		return super.fullEffect(caster, target, point);

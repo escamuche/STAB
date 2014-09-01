@@ -7,7 +7,7 @@ import com.stab.data.actions.player.spells.lvl0.DisruptUndead;
 import com.stab.data.actions.player.spells.lvl0.RayFrost;
 import com.stab.data.actions.player.spells.lvl0.Resistance;
 import com.stab.data.actions.player.spells.lvl1.MageArmor;
-import com.stab.data.actions.player.spells.wizard.level1.TrueStrike;
+import com.stab.data.actions.player.spells.lvl1.TrueStrike;
 import com.stab.data.info.alignment.Good;
 import com.stab.data.info.alignment.Lawful;
 import com.stab.data.info.equipment.HumanoidGear;
