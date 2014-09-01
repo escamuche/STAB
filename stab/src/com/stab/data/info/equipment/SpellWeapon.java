@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import com.stab.data.actions.player.spells.Spell;
 import com.stab.data.actions.player.spells.SpellAction;
+import com.stab.data.info.spellcasting.SpellActionEffect;
 import com.stab.model.action.Action;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;

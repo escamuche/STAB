@@ -4,7 +4,7 @@ import java.awt.Color;
 
 import com.stab.data.actions.player.spells.lvl0.Daze;
 import com.stab.data.info.debuff.condition.DazedCondition;
-import com.stab.data.info.equipment.SpellActionEffect;
+import com.stab.data.info.spellcasting.SpellActionEffect;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.trait.base.DebuffEffect;

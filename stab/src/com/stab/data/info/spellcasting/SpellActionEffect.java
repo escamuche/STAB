@@ -1,4 +1,4 @@
-package com.stab.data.info.equipment;
+package com.stab.data.info.spellcasting;
 
 import java.awt.Point;
 import java.util.EnumSet;

@@ -8,8 +8,8 @@ import java.util.HashSet;
 
 import com.stab.common.utils.PathUtils;
 import com.stab.data.actions.general.PathfinderWeaponAttackAction;
+import com.stab.data.actions.player.spells.lvl1.effects.Shield_Buff;
 import com.stab.data.info.applicable.SavingThrowEffect;
-import com.stab.data.info.buff.spells.Shield_Buff;
 import com.stab.data.info.debuff.condition.CannotThreatCondition;
 import com.stab.data.info.equipment.Armor;
 import com.stab.data.info.equipment.HumanoidGear;
