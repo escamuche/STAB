@@ -22,7 +22,7 @@ public class Resistance extends SpellOnTarget{
 		Modifier fortsave=new Modifier(StabConstants.FORTITUDESAVE,StabConstants.RESISTANCEMOD,+1);
 		Modifier refsave=new Modifier(StabConstants.REFLEXSAVE,StabConstants.RESISTANCEMOD, +1);
 		Modifier willsave=new Modifier(StabConstants.WILLSAVE,StabConstants.RESISTANCEMOD, +1);
-	
+		buff.setBuffDebuff(BUFF);
 		buff.addTrait(fortsave);
 		buff.addTrait(refsave);
 		buff.addTrait(willsave);

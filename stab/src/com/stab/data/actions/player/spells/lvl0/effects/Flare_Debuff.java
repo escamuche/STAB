@@ -2,9 +2,9 @@ package com.stab.data.actions.player.spells.lvl0.effects;
 
 import com.stab.data.StabConstants;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.BuffEffect;
+import com.stab.model.info.trait.base.DebuffEffect;
 
-public class Flare_Debuff extends BuffEffect {
+public class Flare_Debuff extends DebuffEffect {
 
 	public static final String ID="FLARE_DEBUFF";
 	

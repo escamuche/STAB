@@ -18,6 +18,7 @@ public class MageArmor extends SpellOnTarget{
 	protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 		
 		SpellEffect buff= new SpellEffect(getSpell(),caster);
+		buff.setBuffDebuff(BUFF);
 		buff.setId(BUFF_ID);
 		buff.setEvident(true);
 		buff.setEffectResource("PARTICLE#spells/magearmor");

@@ -31,7 +31,7 @@ protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 	buff.setId(BUFF_ID);
 	buff.setEvident(true);
 	buff.setEffectResource("SHADER#goldshield#effects/globe$S");
-
+	buff.setBuffDebuff(BUFF);
 	Modifier ca=new Modifier(StabConstants.ARMORDEFENSE,StabConstants.DEFLECTIONMOD,+2);
 	buff.addTrait(ca);
 	target.addTrait(buff);

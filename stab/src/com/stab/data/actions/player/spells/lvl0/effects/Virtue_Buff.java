@@ -7,9 +7,8 @@ import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Heal;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.Buff;
 
-public class Virtue_Buff extends  SpellEffect implements Buff{
+public class Virtue_Buff extends  SpellEffect{
 
 	public static final String ID="VIRTUE_BUFF";
 	
@@ -20,7 +19,7 @@ public class Virtue_Buff extends  SpellEffect implements Buff{
 	//	this.setSound("HolyCast");
 	//	this.setResource("actions/bless");                  
 	//	this.setName("Virtue");
-	
+		setBuffDebuff(BUFF);
 		BaseInfo target=getTarget();
 		if(target.hasTrait(Virtue_Buff.ID) == true) {
 			

@@ -24,6 +24,7 @@ public class Lullaby_Debuff extends SpellEffect implements Attends<SavingThrowEf
 		setEffectResource("PARTICLE#spells/lullaby");
 		Modifier a=new Modifier(StabConstants.PERCEPTION, -5);
 		addTrait(a);
+		setBuffDebuff(DEBUFF);
 	}
 
 	@Override

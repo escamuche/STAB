@@ -16,6 +16,7 @@ public class Daze_Debuff extends DebuffEffect implements Attends<SpellActionEffe
 		dc.setTime(1);
 		this.addTrait(dc);
 		this.setTime(10);
+		setBuffDebuff(DEBUFF);
 	}
 
 	@Override

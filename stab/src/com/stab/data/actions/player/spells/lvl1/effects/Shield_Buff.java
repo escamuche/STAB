@@ -5,14 +5,14 @@ import com.stab.data.actions.player.spells.Spell;
 import com.stab.data.info.spellcasting.SpellEffect;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.Buff;
 
-public class Shield_Buff extends SpellEffect implements Buff{//implements Attends<SpellActionEffect>{
+public class Shield_Buff extends SpellEffect {//implements Attends<SpellActionEffect>{
 
 	public static final String ID="SHIELD_BUFF";
 	
 	public Shield_Buff(Spell spell,BaseInfo caster) {
 		super(spell,caster);
+		setBuffDebuff(BUFF);
 		setEvident(false);
 		Modifier ca=new Modifier(StabConstants.SHIELDDEFENSE,StabConstants.SHIELDMOD,+4);
 		addTrait(ca);

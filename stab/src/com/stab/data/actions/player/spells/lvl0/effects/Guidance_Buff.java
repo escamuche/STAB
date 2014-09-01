@@ -16,15 +16,14 @@ import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.applicable.base.SkillRoll;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.Buff;
 
-public class Guidance_Buff extends  SpellEffect implements Buff,  Attends<SkillRoll>{
+public class Guidance_Buff extends  SpellEffect implements   Attends<SkillRoll>{
 
 	public static final String ID="GUIDANCE_BUFF";
 	
 	public Guidance_Buff(Spell spell, Info caster) {
 		super(spell, caster);
-		
+		setBuffDebuff(BUFF);
 	}
 	
 	boolean active=false;
