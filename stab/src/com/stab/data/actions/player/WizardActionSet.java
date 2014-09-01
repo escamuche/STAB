@@ -11,9 +11,9 @@ import com.stab.data.actions.player.spells.lvl0.RayFrost;
 import com.stab.data.actions.player.spells.lvl0.Resistance;
 import com.stab.data.actions.player.spells.lvl0.TouchFatigue;
 import com.stab.data.actions.player.spells.lvl1.BurningHands;
+import com.stab.data.actions.player.spells.lvl1.EntropicShield;
 import com.stab.data.actions.player.spells.lvl1.MageArmor;
 import com.stab.data.actions.player.spells.lvl1.Shield;
-import com.stab.data.actions.player.spells.lvl1.ShieldFaith;
 import com.stab.data.actions.player.spells.lvl1.SummonMonsterI;
 import com.stab.data.actions.player.spells.lvl1.TrueStrike;
 import com.stab.data.actions.player.spells.lvl1.unfinished.ChillTouch;
@@ -83,6 +83,6 @@ public class WizardActionSet extends PathfinderActionSet {
 		
 		this.setAction(DetectMagic.ID,1);
 		
-		this.setAction(SpellUtils.asWizard(ShieldFaith.ID), 2);
+		this.setAction(SpellUtils.asWizard(EntropicShield.ID), 2);
 	}
 }

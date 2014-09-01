@@ -16,6 +16,7 @@ public class Shield_Buff extends SpellEffect {//implements Attends<SpellActionEf
 		setEvident(false);
 		Modifier ca=new Modifier(StabConstants.SHIELDDEFENSE,StabConstants.SHIELDMOD,+4);
 		addTrait(ca);
+	
 		setEffectResource("SHADER#blueshield#effects/globe2$S");
 		}
 /*

@@ -31,7 +31,6 @@ import com.stab.data.actions.player.spells.cleric.level1.Command;
 import com.stab.data.actions.player.spells.cleric.level1.CureLight;
 import com.stab.data.actions.player.spells.cleric.level1.DivineFavor;
 import com.stab.data.actions.player.spells.cleric.level1.Doom;
-import com.stab.data.actions.player.spells.cleric.level1.EntropicShield;
 import com.stab.data.actions.player.spells.cleric.level1.InflictLight;
 import com.stab.data.actions.player.spells.cleric.level1.MagicStone;
 import com.stab.data.actions.player.spells.druid.level1.CalmAnimals;
@@ -65,6 +64,7 @@ import com.stab.data.actions.player.spells.lvl0.Stabilize;
 import com.stab.data.actions.player.spells.lvl0.TouchFatigue;
 import com.stab.data.actions.player.spells.lvl0.Virtue;
 import com.stab.data.actions.player.spells.lvl1.BurningHands;
+import com.stab.data.actions.player.spells.lvl1.EntropicShield;
 import com.stab.data.actions.player.spells.lvl1.MageArmor;
 import com.stab.data.actions.player.spells.lvl1.MagicMissile;
 import com.stab.data.actions.player.spells.lvl1.Shield;
@@ -540,10 +540,10 @@ public class StabInit {
 		getActionLibrary().register(CureLight.class);
 		getActionLibrary().register(DivineFavor.class);
 		getActionLibrary().register(Doom.class);
-		getActionLibrary().register(EntropicShield.class);
+		
 		getActionLibrary().register(InflictLight.class);
 		getActionLibrary().register(MagicStone.class);
-		getActionLibrary().register(ShieldFaith.class);
+		
 /*		
 			//druid0
 		getActionLibrary().register(new CreateWater_Druid());
@@ -628,11 +628,14 @@ public class StabInit {
 		getActionLibrary().register(Virtue.class);
 		
 		//lvl 1
-		getActionLibrary().register(MageArmor.class);
+		
 		getActionLibrary().register(BurningHands.class);
+		getActionLibrary().register(EntropicShield.class);
+		getActionLibrary().register(MageArmor.class);
 		getActionLibrary().register(MagicMissile.class);
 		getActionLibrary().register(SummonMonsterI.class);
 		getActionLibrary().register(ShieldFaith.class);
+		
 		
 		
 		

@@ -258,6 +258,8 @@ protected void playHitAnimation(WeaponAttack ad, BaseInfo origin, Token target) 
 		
 		if (SwingAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(SwingAnimation.ID,target,ad.getAnimationIcon());
+			for (String s:ad.getAdditionalEffects())
+				origin.playAnimationOn(SwingAnimation.ID,target,s);
 			origin.playSound("effects/SwipeTarget");
 			origin.waitAnimation(500);
 			sleep(500);
@@ -270,6 +272,8 @@ protected void playHitAnimation(WeaponAttack ad, BaseInfo origin, Token target) 
 		}
 		if (ThrustAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(ThrustAnimation.ID,target,ad.getAnimationIcon());
+			for (String s:ad.getAdditionalEffects())
+				origin.playAnimationOn(ThrustAnimation.ID,target,s);
 			origin.waitAnimation(100);
 			sleep(100);
 			origin.playSound("effects/SwipeTarget");
@@ -294,6 +298,8 @@ protected void playHitAnimation(WeaponAttack ad, BaseInfo origin, Token target) 
 		
 		if (SwingAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(SwingAnimation.ID,target,ad.getAnimationIcon());
+			for (String s:ad.getAdditionalEffects())
+				origin.playAnimationOn(SwingAnimation.ID,target,s);
 			origin.playSound("effects/SwipeTarget");
 			origin.waitAnimation(500);
 			sleep(500);
@@ -314,6 +320,8 @@ protected void playHitAnimation(WeaponAttack ad, BaseInfo origin, Token target) 
 		}
 		if (ThrustAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(ThrustAnimation.ID,target,ad.getAnimationIcon());
+			for (String s:ad.getAdditionalEffects())
+				origin.playAnimationOn(ThrustAnimation.ID,target,s);
 			origin.waitAnimation(100);
 			sleep(100);
 			origin.playSound("effects/SwipeTarget");

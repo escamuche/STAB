@@ -10,7 +10,7 @@ import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.request.basic.ActionRequest;
 
-public class SmiteEvil extends Action {//implements SelfAction{
+public class SmiteEvil extends Action {
 	
 	public static final String ID="SMITEEVIL";
 	public static final String RESOURCE_ID="SMITEEVIL";

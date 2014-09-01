@@ -1,25 +1,24 @@
-package com.stab.data.info.buff.spells;
+package com.stab.data.actions.player.spells.lvl1.effects;
 
 import com.stab.common.utils.Roll;
+import com.stab.data.actions.player.spells.Spell;
 import com.stab.data.info.applicable.PathfinderAttack;
+import com.stab.data.info.spellcasting.SpellEffect;
+import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.applicable.base.Attack;
 import com.stab.model.info.applicable.base.WeaponAttack;
-import com.stab.model.info.trait.base.BuffEffect;
 
-public class EntropicShield_Buff extends BuffEffect implements Attends<WeaponAttack> {
+public class EntropicShield_Buff extends SpellEffect implements Attends<WeaponAttack> {
 
 	public static final String ID="ENTROPICSHIELD_BUFF";
 	
-	public EntropicShield_Buff() {
-	
-		
-		this.setAnimIcon("actions/ability_shaman_watershield");				
-		this.setSound("HolyCast");
-		this.setResource("actions/ability_shaman_watershield");                  
-		this.setName("Entropic Shield");
-		
+	public EntropicShield_Buff(Spell spell,BaseInfo caster) {
+		super(spell,caster);
+		setBuffDebuff(BUFF);
+		setEvident(true);
+		setEffectResource("SHADER#entropicshield#effects/globe$S");
 		}
 
 	@Override

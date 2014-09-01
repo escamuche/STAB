@@ -9,13 +9,13 @@ import com.stab.data.actions.player.spells.cleric.level1.Command;
 import com.stab.data.actions.player.spells.cleric.level1.CureLight;
 import com.stab.data.actions.player.spells.cleric.level1.DivineFavor;
 import com.stab.data.actions.player.spells.cleric.level1.Doom;
-import com.stab.data.actions.player.spells.cleric.level1.EntropicShield;
 import com.stab.data.actions.player.spells.cleric.level1.InflictLight;
 import com.stab.data.actions.player.spells.cleric.level1.MagicStone;
 import com.stab.data.actions.player.spells.lvl0.Guidance;
 import com.stab.data.actions.player.spells.lvl0.Resistance;
 import com.stab.data.actions.player.spells.lvl0.Stabilize;
 import com.stab.data.actions.player.spells.lvl0.Virtue;
+import com.stab.data.actions.player.spells.lvl1.EntropicShield;
 import com.stab.data.actions.player.spells.lvl1.ShieldFaith;
 
 
