@@ -15,6 +15,8 @@ import com.tien.princess.engine.sprite.StateSprite;
 import com.tien.princess.engine.sprite.base.AttachedParticleSprite;
 import com.tien.princess.engine.sprite.base.BeamSprite;
 import com.tien.princess.engine.sprite.base.TrailSprite;
+import com.tien.princess.engine.sprite.common.painters.Painter;
+import com.tien.princess.engine.sprite.common.painters.ValuePainter;
 import com.tien.princess.engine.sprite.common.states.ValueState2;
 import com.tien.princess.engine.sprite.common.states.base.ClearParticlesState;
 import com.tien.princess.engine.sprite.common.updaters.angle.MoveA;
@@ -24,6 +26,7 @@ import com.tien.princess.engine.sprite.common.updaters.ref.StickToRef;
 import com.tien.princess.engine.sprite.common.updaters.sound.PlaySound;
 import com.tien.princess.engine.sprite.factory.AbstractSpriteFactory;
 import com.tien.princess.engine.sprite.factory.EmitterUtils;
+import com.tien.princess.engine.utils.PaintUtils;
 
 public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 
@@ -40,7 +43,11 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 	public static final String BLUE_IMPACT="BLUEIMPACT";
 	public static final String BLUE_BEAM="BLUEBEAMT";
 	
-	
+	public static final String PURPLE_EXPLOSION="NECROEXPLOSION";
+	public static final String PURPLE_CAST="BLACKCAST";
+	public static final String PURPLE_IMPACT="SOULIMPACT";
+	public static final String PURPLE_BEAM="BLACKBEAM";
+	public static final String PURPLE_CHANNEL="PURPLECHANNEL";
 	
 	public static final String FREEZE_EXPLOSION="FEEZEEXPLOSION";
 	public static final String ACID_EXPLOSION="ACIDEXPLOSION";
@@ -156,7 +163,33 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 			s.getFadeState().setAlpha(new InterpolatorValueProvider(0,0.6f,500,0f));
 			return Arrays.asList((Sprite)s);
 		}
-		
+		if (PURPLE_CAST.equals(type)){
+			return getSpark("PARTICLE#effects/mist","effects/GhostlyStrikeImpact");
+		}
+		if (PURPLE_EXPLOSION.equals(type)){
+			return getSpark("PARTICLE#effects/negativeStrike","effects/ShadowCast");
+		}
+		if (PURPLE_BEAM.equals(type)){
+			BeamSprite s= new BeamSprite();
+			s.setImage(Resources.INSTANCE.getImage("effects/purpleBeam"));
+			s.setStyle(Constants.TILED);
+		/*	Painter p=PaintUtils.getPainter("effects/frostBeam");
+			((ValuePainter)p).setStyle(Constants.TILED);
+			s.setBeamPainter(p);/**/
+			//s.setImage(Resources.INSTANCE.getImage("effects/beam"));
+			//s.setStyle(Constants.BOXED);
+			s.getFireState().setAlpha(new InterpolatorValueProvider(0,0.1f,100,0.8f));
+			s.getFireState().setWidth(new InterpolatorValueProvider(0,0,200,8));
+			s.getFadeState().setWidth(new InterpolatorValueProvider(0,8,400,0));
+			s.getFadeState().setAlpha(new InterpolatorValueProvider(0,0.6f,500,0f));
+			return Arrays.asList((Sprite)s);
+		}
+		if (PURPLE_CHANNEL.equals(type)){
+			AttachedParticleSprite s= new AttachedParticleSprite();
+			s.setPainter("PARTICLE#effects/negativeStrike");
+			((ValueState2)s.getCurrentState()).setScale(0.5f);
+			return Arrays.asList((Sprite)s);
+		}
 		if (FLASK_SHATTER.equals(type)){
 			Sprite sp= EmitterUtils.getTimedSpawner(EmitterUtils.getBang(StabParticleFactory.GLASSSHARD, 3));
 			

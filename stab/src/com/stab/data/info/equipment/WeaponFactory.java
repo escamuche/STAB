@@ -4,6 +4,7 @@ import com.stab.data.actions.player.spells.lvl0.AcidSplash;
 import com.stab.data.actions.player.spells.lvl0.DisruptUndead;
 import com.stab.data.actions.player.spells.lvl0.RayFrost;
 import com.stab.data.actions.player.spells.lvl0.TouchFatigue;
+import com.stab.data.actions.player.spells.lvl1.RayEnfeeblement;
 import com.stab.data.animation.GenericProyectileAnimation;
 import com.stab.data.animation.LungeAnimation;
 import com.stab.data.animation.ShootBeamAnimation;
@@ -154,7 +155,9 @@ public class WeaponFactory extends ItemFactory{
 		w.setBaseItem(TOUCH);
 		((SpellDeliverWeapon)w).setRanged(false);
 		register( TouchFatigue.ID,w);
-		
+		w=new SpellDeliverWeapon("Ray of Enfeeblement",0,1,Damage.GENERIC_DAMAGE, RayEnfeeblement.ID,GenericProyectileAnimation.ID);
+		w.setBaseItem(RAY);
+		register( RayEnfeeblement.ID,w);
 		
 		//Armas de criaturas
 		w=new BasicWeapon("Claw",1,6,Damage.SLASHING_DAMAGE,"effects/zombieclaw",SwingAnimation.ID);

@@ -7,6 +7,7 @@ import com.stab.data.StabInit;
 import com.stab.data.actions.player.spells.lvl0.AcidSplash;
 import com.stab.data.actions.player.spells.lvl0.DisruptUndead;
 import com.stab.data.actions.player.spells.lvl0.RayFrost;
+import com.stab.data.actions.player.spells.lvl1.RayEnfeeblement;
 import com.stab.data.animation.state.ExplodeState;
 import com.tien.princess.engine.sprite.Sprite;
 import com.tien.princess.engine.sprite.common.states.StateSet;
@@ -55,16 +56,36 @@ public class SpellsSpriteFactory extends AbstractSpriteFactory{
 			ExplodeState x=new ExplodeState(SpecialEffectsSpriteFactory.FREEZE_EXPLOSION);
 			x.addUpdater(new LoopSound("effects/ArcaneExplosion"));
 			x.setTimed(2000, StateSet.DESTROYED);
-			SpawnUpdater beam2= new SpawnUpdater(SpecialEffectsSpriteFactory.BLUE_IMPACT,true);
-			beam2.setFactory(StabInit.getSpriteFactory());
-			x.addUpdater(beam2);
+		//	SpawnUpdater beam2= new SpawnUpdater(SpecialEffectsSpriteFactory.BLUE_IMPACT,true);
+		//	beam2.setFactory(StabInit.getSpriteFactory());
+		//	x.addUpdater(beam2);
 			s.setOnReach(x, 16);
 			s.setOnFade(SpecialEffectsSpriteFactory.FREEZE_EXPLOSION);
 			s.setOnFire(SpecialEffectsSpriteFactory.BLUE_CHANNEL);
 			s.setOriented();
 			return Arrays.asList((Sprite)s);
 		}
-		
+		if (RayEnfeeblement.ID.equals(type)){
+			StabProyectile s= new StabProyectile(0.5f);
+			s.setPainter("PARTICLE#effects/purpleEye");
+			s.setLoopSound("effects/ShadowMissileLoop");
+			SpawnUpdater beam= new SpawnUpdater(SpecialEffectsSpriteFactory.PURPLE_BEAM);
+			beam.setFactory(StabInit.getSpriteFactory());
+			s.getTravel().addUpdater(beam);
+			//ExplodeState x=new ExplodeState("PARTICLE#effects/negativeStrike","effects/ShadowCast");
+			ExplodeState x=new ExplodeState(SpecialEffectsSpriteFactory.PURPLE_EXPLOSION);
+		//	x.addUpdater(new LoopSound("effects/ShadowMissileLoop"));
+			x.setTimed(2000, StateSet.DESTROYED);
+	//		SpawnUpdater beam2= new SpawnUpdater(SpecialEffectsSpriteFactory.PURPLE_IMPACT,true);
+	//		beam2.setFactory(StabInit.getSpriteFactory());
+	//		x.addUpdater(beam2);
+			s.setOnReach(x, 16);
+		//	s.setOnReach("PARTICLE#effects/negativeStrike","effects/ShadowCast",16);
+			s.setOnFade("PARTICLE#effects/negativeStrike","effects/ShadowCast");
+			s.setOnFire(SpecialEffectsSpriteFactory.PURPLE_CHANNEL);
+			s.setOriented();
+			return Arrays.asList((Sprite)s);
+		}
 		return null;
 
 		
