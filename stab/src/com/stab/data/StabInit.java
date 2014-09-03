@@ -27,12 +27,11 @@ import com.stab.data.actions.player.abilities.SmiteEvil;
 import com.stab.data.actions.player.spells.DismissSpellAction;
 import com.stab.data.actions.player.spells.cleric.level1.Bane;
 import com.stab.data.actions.player.spells.cleric.level1.Bless;
-import com.stab.data.actions.player.spells.cleric.level1.Command;
 import com.stab.data.actions.player.spells.cleric.level1.CureLight;
-import com.stab.data.actions.player.spells.cleric.level1.DivineFavor;
 import com.stab.data.actions.player.spells.cleric.level1.Doom;
 import com.stab.data.actions.player.spells.cleric.level1.InflictLight;
 import com.stab.data.actions.player.spells.cleric.level1.MagicStone;
+import com.stab.data.actions.player.spells.cleric.level1.unfinished.Command;
 import com.stab.data.actions.player.spells.druid.level1.CalmAnimals;
 import com.stab.data.actions.player.spells.druid.level1.CharmAnimal;
 import com.stab.data.actions.player.spells.druid.level1.DetectAnimals;
@@ -64,6 +63,7 @@ import com.stab.data.actions.player.spells.lvl0.Stabilize;
 import com.stab.data.actions.player.spells.lvl0.TouchFatigue;
 import com.stab.data.actions.player.spells.lvl0.Virtue;
 import com.stab.data.actions.player.spells.lvl1.BurningHands;
+import com.stab.data.actions.player.spells.lvl1.DivineFavor;
 import com.stab.data.actions.player.spells.lvl1.EntropicShield;
 import com.stab.data.actions.player.spells.lvl1.MageArmor;
 import com.stab.data.actions.player.spells.lvl1.MagicMissile;
@@ -95,6 +95,7 @@ import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.animation.BlockAnimation;
 import com.stab.data.animation.BumpAnimation;
 import com.stab.data.animation.CenterCamAnimation;
+import com.stab.data.animation.CirclingAnimation;
 import com.stab.data.animation.CloseDoorAnimation;
 import com.stab.data.animation.DamageNumberAnimation;
 import com.stab.data.animation.DecayAnimation;
@@ -438,6 +439,7 @@ public class StabInit {
 		of.setMapping(BumpAnimation.class);
 		of.setMapping(LootDropAnimation.class);
 		of.setMapping(DrinkPotionAnimation.class);
+		of.setMapping(CirclingAnimation.class);
 		
 		//Tokens
 		of.setMapping(IronBarsToken.class);
