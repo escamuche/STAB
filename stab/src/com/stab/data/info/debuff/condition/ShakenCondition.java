@@ -1,22 +1,17 @@
-package com.stab.data.info.debuff;
+package com.stab.data.info.debuff.condition;
 
 import com.stab.data.StabConstants;
 import com.stab.data.info.traits.AllSkillsModifier;
 import com.stab.model.info.trait.Modifier;
-import com.stab.model.info.trait.base.BuffEffect;
+import com.stab.model.info.trait.base.DebuffEffect;
 
-public class Doom_Debuff extends BuffEffect {
+public class ShakenCondition extends DebuffEffect {
 
-	public static final String ID="DOOM_DEBUFF";
 	
-	public Doom_Debuff() {
-	
+	public ShakenCondition() {
 		
-		this.setAnimIcon("actions/doom");				
-		this.setSound("HolyCast");
-		this.setResource("actions/doom");                  
-		this.setName("Doom");
-	
+		this.setName("Shaken");
+	 
 		Modifier tohit=new Modifier(StabConstants.TOHIT, -2);
 		Modifier tohitranged=new Modifier(StabConstants.TOHITRANGED, -2);
 		Modifier damage=new Modifier(StabConstants.DAMAGE, -2);
