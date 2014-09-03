@@ -4,6 +4,8 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Hashtable;
 
+import org.newdawn.slick.Color;
+
 import com.stab.client.slick.BasicActionsController;
 import com.stab.common.Constants;
 import com.stab.data.info.equipment.HumanoidGear;
@@ -328,6 +330,12 @@ public class PlayerInventoryPanel extends InventoryPanel implements EquipmentLis
 				}else{
 					b.setDisabled(false);
 					b.setImage("FOUR#cyan#"+e.getResource()+"$S");
+					b.setColor(Color.white);
+					if (e instanceof Item)
+					if (((Item)e).getMaxAmount()>0)
+						b.setText(""+((Item)e).getAmount());
+					else
+						b.setText("");
 				}
 			}
 		}

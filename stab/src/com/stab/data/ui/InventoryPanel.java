@@ -1,5 +1,7 @@
 package com.stab.data.ui;
 
+import org.newdawn.slick.Color;
+
 import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.Label;
 import com.stab.model.info.base.pickup.Inventory;
@@ -43,7 +45,11 @@ public class InventoryPanel extends ButtonPanel  implements InventoryListener{
 		b.setTooltip(i.getItem().getName());
 		b.setBackground("ui/nanoborder$X");
 		b.setMode(Label.BANNER);
-		b.setText("");
+		b.setColor(Color.white);
+		if (i.getItem().getMaxAmount()>0)
+			b.setText(""+i.getItem().getAmount());
+		else
+			b.setText("");
 		b.setMargin(2);
 		//System.out.println("created button for "+i.getItem().getName());
 		return b;

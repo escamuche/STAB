@@ -12,6 +12,7 @@ public class Potion extends Item {
 		setResource("items/inv_potion_a");
 		setWorldResource("../effects/potion1");
 		setAmount(1);
+		setMaxAmount(1);
 		//setDropSound("effects/dropPotion");
 	}
 	

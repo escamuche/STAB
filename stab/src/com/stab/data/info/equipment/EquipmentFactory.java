@@ -29,7 +29,7 @@ public class EquipmentFactory extends ItemFactory{
 		
 		
 		Potion p= new Potion();
-		p.setName("Pocion de Curacion");
+		p.setName("Potion of CureLight Wounds");
 		p.setWorldResource("../effects/potion2");
 		p.setInventoryAction(SpellUtils.asItem(CureLight.ID, StabConstants.CLERICCASTER, 1, 1));
 		register(POTION_CLW,p);
