@@ -4,7 +4,9 @@ import com.stab.data.actions.player.spells.lvl0.AcidSplash;
 import com.stab.data.actions.player.spells.lvl0.DisruptUndead;
 import com.stab.data.actions.player.spells.lvl0.RayFrost;
 import com.stab.data.actions.player.spells.lvl0.TouchFatigue;
+import com.stab.data.actions.player.spells.lvl1.MagicStone;
 import com.stab.data.actions.player.spells.lvl1.RayEnfeeblement;
+import com.stab.data.actions.player.spells.lvl1.effects.MagicStoneWeaponTrait;
 import com.stab.data.animation.GenericProyectileAnimation;
 import com.stab.data.animation.LungeAnimation;
 import com.stab.data.animation.ShootBeamAnimation;
@@ -158,6 +160,11 @@ public class WeaponFactory extends ItemFactory{
 		w=new SpellDeliverWeapon("Ray of Enfeeblement",0,1,Damage.GENERIC_DAMAGE, RayEnfeeblement.ID,GenericProyectileAnimation.ID);
 		w.setBaseItem(RAY);
 		register( RayEnfeeblement.ID,w);
+		w= new ThrownWeapon("Magic Stone", 1, 6, Damage.IMPACT_DAMAGE, "PARTICLE#effects/magicsparktrail#effects/stone", ShootProyectileAnimation.ID);
+	    w.addTrait(new MagicStoneWeaponTrait());
+	    w.setMaxAmount(3);
+	    w.setAmount(3);
+	    register( MagicStone.ID,w);
 		
 		//Armas de criaturas
 		w=new BasicWeapon("Claw",1,6,Damage.SLASHING_DAMAGE,"effects/zombieclaw",SwingAnimation.ID);
