@@ -20,11 +20,11 @@ import com.stab.data.actions.player.spells.lvl1.TrueStrike;
 import com.stab.data.actions.player.spells.lvl1.unfinished.ChillTouch;
 import com.stab.data.actions.player.spells.lvl1.unfinished.ExpeditiousRetreat;
 import com.stab.data.actions.player.spells.lvl1.unfinished.ShockingGrasp;
-import com.stab.data.actions.player.spells.wizard.level1.CharmPerson;
-import com.stab.data.actions.player.spells.wizard.level1.EnlargePerson;
 import com.stab.data.actions.player.spells.wizard.level1.HoldPortal;
 import com.stab.data.actions.player.spells.wizard.level1.Identify;
 import com.stab.data.actions.player.spells.wizard.level1.Jump;
+import com.stab.data.actions.player.spells.wizard.level1.unfinished.CharmPerson;
+import com.stab.data.actions.player.spells.wizard.level1.unfinished.EnlargePerson;
 
 public class WizardActionSet extends PathfinderActionSet {
 

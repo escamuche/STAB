@@ -1,4 +1,4 @@
-package com.stab.data.actions.player.spells.wizard.level1;
+package com.stab.data.actions.player.spells.wizard.level1.unfinished;
 
 import java.awt.Point;
 

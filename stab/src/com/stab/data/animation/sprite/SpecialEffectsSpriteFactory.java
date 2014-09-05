@@ -15,8 +15,7 @@ import com.tien.princess.engine.sprite.StateSprite;
 import com.tien.princess.engine.sprite.base.AttachedParticleSprite;
 import com.tien.princess.engine.sprite.base.BeamSprite;
 import com.tien.princess.engine.sprite.base.TrailSprite;
-import com.tien.princess.engine.sprite.common.painters.Painter;
-import com.tien.princess.engine.sprite.common.painters.ValuePainter;
+import com.tien.princess.engine.sprite.common.states.State;
 import com.tien.princess.engine.sprite.common.states.ValueState2;
 import com.tien.princess.engine.sprite.common.states.base.ClearParticlesState;
 import com.tien.princess.engine.sprite.common.updaters.angle.MoveA;
@@ -26,7 +25,6 @@ import com.tien.princess.engine.sprite.common.updaters.ref.StickToRef;
 import com.tien.princess.engine.sprite.common.updaters.sound.PlaySound;
 import com.tien.princess.engine.sprite.factory.AbstractSpriteFactory;
 import com.tien.princess.engine.sprite.factory.EmitterUtils;
-import com.tien.princess.engine.utils.PaintUtils;
 
 public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 
@@ -56,6 +54,8 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 	public static final String ACID_FLASK="ACIDFLASK";
 	public static final String ACID_FLASK_EXPLOSION="ACID_FLASK_EXPLOSION";
 	public static final String FLASK_SHATTER="FLASK_SHATTER";
+	
+	public static final String ZAP ="ZAP";
 	
 	//-----------------------------
 	
@@ -220,6 +220,29 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 			TrailSprite trail = new TrailSprite(Color.red,20,12,100);
 			trail.setRef(s);
 			return Arrays.asList((Sprite)s,trail);
+		}
+		
+		if (ZAP.equals(type)){
+			StabProyectile p= new StabProyectile(0.2f);
+			p.setPainter("tokens/blank");
+			
+			p.setOnReach(new ExplodeState(SpecialEffectsSpriteFactory.BLUE_EXPLOSION), 16);
+			p.setOnFade(new ExplodeState(SpecialEffectsSpriteFactory.BLUE_EXPLOSION));
+			
+			StateSprite s= new StateSprite();
+			
+			s.setState(new State());
+		//	s.addUpdater(new StickToRef());
+			s.addUpdater(new OnRefDestroyed());
+			s.addUpdater(new Orbit());
+			s.addUpdater(new MoveA());
+			s.setRef(p);
+			s.setA(Math.toRadians(90));
+			s.setSa((float)((172+Math.random()*19)/100));
+			s.setR(8);
+			TrailSprite trail = new TrailSprite(Color.cyan,80,2,17);
+			trail.setRef(s);
+			return Arrays.asList(p,(Sprite)s,trail);
 		}
 		
 		return null;

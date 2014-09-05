@@ -31,7 +31,7 @@ public static final String ID=VisualEffect.GENERICPROYECTILE_ANIMATION;
 		
 		Point origin=getOriginPoint();
 		Point target=getTargetPoint();
-		
+		//System.out.println("IMG: "+img);
 		Collection<Sprite> sprites= StabInit.getSpriteFactory().getSprites(img);
 		if (sprites==null){
 			setTime(0);

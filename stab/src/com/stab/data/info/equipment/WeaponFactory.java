@@ -13,6 +13,7 @@ import com.stab.data.animation.ShootBeamAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.ThrustAnimation;
+import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.base.gear.ItemFactory;
 import com.stab.model.info.trait.base.gear.Weapon;
@@ -159,6 +160,7 @@ public class WeaponFactory extends ItemFactory{
 		register( TouchFatigue.ID,w);
 		w=new SpellDeliverWeapon("Ray of Enfeeblement",0,1,Damage.GENERIC_DAMAGE, RayEnfeeblement.ID,GenericProyectileAnimation.ID);
 		w.setBaseItem(RAY);
+	//	w.setAnimationIcon(SpecialEffectsSpriteFactory.ZAP);
 		register( RayEnfeeblement.ID,w);
 		w= new ThrownWeapon("Magic Stone", 1, 6, Damage.IMPACT_DAMAGE, "PARTICLE#effects/magicsparktrail#effects/stone", ShootProyectileAnimation.ID);
 	    w.addTrait(new MagicStoneWeaponTrait());
