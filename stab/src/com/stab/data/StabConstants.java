@@ -172,6 +172,7 @@ public class StabConstants {
 	public static final String SHIELDDEFENSE="SHIELDDEFENSE";
 	public static final String ARMORDEFENSE="ARMORDEFENSE";
 	public static final String AC="AC";  //CA calculada, para ayudar a los logs
+	public static final String COVER="COVER";
 	
 	public static final String ARMORCHECKPENALTY="ARMORCHECKPENALTY";
 	public static final String SPELLFAILURE="SPELLFAILURE";

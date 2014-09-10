@@ -30,6 +30,7 @@ import com.stab.model.basic.scenes.MapLogic;
 import com.stab.model.basic.token.Token;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.applicable.base.RolledDamage;
 import com.stab.model.info.applicable.base.WeaponAttack;
 import com.stab.model.info.base.Creature;
@@ -119,6 +120,18 @@ public class PathfinderWeaponAttackAction extends WeaponAttackAction  {
 		
 		//TODO: atacado unaware , no puede ver al atacante, etc (bono a dar, do sneak
 		
+		
+		//Linea del ataque para ranged solamente por ahora
+		for (Point p:ml.getPointsInLine2(yo.getPos(), point, (int)point.distance(yo.getPos()))){
+			for (Token t: ml.getTokensAt(p.x, p.y)){
+				Info i=t.getInfo();
+				if (i!=yo && i!=target){
+					if (i instanceof Attends)
+						if (((Attends)i).canAttend(ad))
+							((Attends)i).attend(ad);
+				}
+			}
+		}
 		//TODO: visibilidad, concealment, etc
 		
 		
@@ -241,6 +254,7 @@ public class PathfinderWeaponAttackAction extends WeaponAttackAction  {
      setName("Attack");
      this.setEffectType(DAMAGE);
      setDescription("Ataca con el arma equipada en la mano principal (O en ambas manos). El daño depende del arma.");
+     setLosType(IN_SIGHT);
 	}
 
 	@Override
