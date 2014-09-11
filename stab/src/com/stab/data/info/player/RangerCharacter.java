@@ -5,9 +5,11 @@ import com.stab.data.StabInit;
 import com.stab.data.actions.general.DefendAction;
 import com.stab.data.actions.player.RangerActionSet;
 import com.stab.data.info.alignment.Lawful;
+import com.stab.data.info.equipment.EquipmentFactory;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.feat.combat.PointBlankShot_Feat;
 import com.stab.data.info.feat.general.SkillFocusPerception_Feat;
+import com.stab.model.info.trait.base.gear.Item;
 
 
 public class RangerCharacter extends PathfinderCharacter{
@@ -50,6 +52,10 @@ public static final String ID="RANGER_INFO";
 		
 		this.equip(StabInit.getArmorFactory().getArmor("STUDDEDLEATHER"), HumanoidGear.ARMOR);
 		this.equip(StabInit.getWeaponFactory().getWeapon("LONGBOW"), HumanoidGear.MAINHAND);
+		this.equip(EquipmentFactory.ARROW);
+		Item a=(Item)StabInit.getEquipment(EquipmentFactory.FLAMEARROW);
+		a.setAmount(5);
+		this.addToInventory(a);
 		
 		this.addTrait(new Lawful());
 		

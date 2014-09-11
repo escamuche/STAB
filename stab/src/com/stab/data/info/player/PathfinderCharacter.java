@@ -53,6 +53,11 @@ public static final String QUICK_INVENTORY="QUICK_INVENTORY";
 	    i.setItem((Item)StabInit.getEquipment(id));
 	    i.setInventory(quickInventory);
 	}
+	public void addToInventory(Item it){
+		ItemPickup i=(ItemPickup)getEntityManager().createElement(ItemPickup.ID);
+	    i.setItem(it);
+	    i.setInventory(quickInventory);
+	}
 	
 	@Override
 	public void rollInitiative() {
