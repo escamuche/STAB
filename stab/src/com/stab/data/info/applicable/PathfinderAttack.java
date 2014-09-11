@@ -2,9 +2,13 @@ package com.stab.data.info.applicable;
 
 import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
+import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.WeaponAttack;
+import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.Modifier;
+import com.stab.model.info.trait.base.gear.Ammo;
 import com.stab.model.info.trait.base.gear.Weapon;
 
 public  class PathfinderAttack extends WeaponAttack{
@@ -181,6 +185,10 @@ public  class PathfinderAttack extends WeaponAttack{
 		return i;
 	}
 	
-	
+	protected Ammo findAmmo(Info instigator) {
+		if (instigator instanceof Creature)
+			return (Ammo)((Creature)instigator).getEquipment(HumanoidGear.AMMO);
+		return null;
+	}
 	
 }

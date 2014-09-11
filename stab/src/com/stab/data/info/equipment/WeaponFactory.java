@@ -355,20 +355,16 @@ public class WeaponFactory extends ItemFactory{
 		w.setTwoHanded(true);
 		register(SCYTHE,w);
 		
-		w=new RangedWeapon("longbow",1,8,Damage.PIERCING_DAMAGE,1,3,"effects/arrow",ShootProyectileAnimation.ID);
-		w.setTwoHanded(true);
+		w=new Bow("longbow",1,8,Damage.PIERCING_DAMAGE);
 		register(LONGBOW,w);
 		
-		w=new RangedWeapon("compositelongbow",1,8,Damage.PIERCING_DAMAGE,1,3,"effects/arrow",ShootProyectileAnimation.ID);
-		w.setTwoHanded(true);
+		w=new Bow("compositelongbow",1,8,Damage.PIERCING_DAMAGE);
 		register(COMPOSITELONGBOW,w);
 	
-		w=new RangedWeapon("shortbow",1,6,Damage.PIERCING_DAMAGE,1,3,"effects/arrow",ShootProyectileAnimation.ID);
-		w.setTwoHanded(true);
+		w=new Bow("shortbow",1,6,Damage.PIERCING_DAMAGE);
 		register(SHORTBOW,w);
 	
-		w=new RangedWeapon("compositeshortbow",1,6,Damage.PIERCING_DAMAGE,1,3,"effects/arrow",ShootProyectileAnimation.ID);
-		w.setTwoHanded(true);
+		w=new Bow("compositeshortbow",1,6,Damage.PIERCING_DAMAGE);
 		register(COMPOSITESHORTBOW,w);
 	
 		w=new BasicWeapon("kama",1,6,Damage.SLASHING_DAMAGE,"effects/sword",SwingAnimation.ID);
