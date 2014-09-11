@@ -327,6 +327,8 @@ public class PlayerInventoryPanel extends InventoryPanel implements EquipmentLis
 				if (e==null){
 					b.setDisabled(true);
 					b.setImage("tokens/blank");
+					b.setText("");
+					b.setTooltip(s);
 				}else{
 					b.setDisabled(false);
 					b.setImage("FOUR#cyan#"+e.getResource()+"$S");
@@ -336,6 +338,7 @@ public class PlayerInventoryPanel extends InventoryPanel implements EquipmentLis
 						b.setText(""+((Item)e).getAmount());
 					else
 						b.setText("");
+					b.setTooltip(s+"#"+e.getName());
 				}
 			}
 		}
