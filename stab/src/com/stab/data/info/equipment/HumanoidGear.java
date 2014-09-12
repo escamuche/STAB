@@ -33,8 +33,12 @@ public class HumanoidGear extends Gear {
 			unequip(BOTHHANDS);
 		super.equip(e, slot);
 		if (BOTHHANDS.equals(slot)){
+			Equipment oldm=getEquipment(MAINHAND);
+			Equipment oldo=getEquipment(OFFHAND);
 			assign(MAINHAND,e);
 			assign(OFFHAND,e);
+			fireEquipmentChanged(MAINHAND, oldm,e,true);
+			fireEquipmentChanged(OFFHAND, oldm,e,true);
 		}
 	}
 	

@@ -39,12 +39,12 @@ public class EquipmentFactory extends ItemFactory{
 		register(POTION_CLW,p);
 		
 		
-		Arrow a= new Arrow("Arrows",null,null,null,null,null,"arrow");
+		Arrow a= new Arrow("Arrows",null,null,null,null,null,"effects/arrow");
 		//a.setWorldResource("../effects/droparrows");
 		register(ARROW,a);
 		
 		
-		a= new Arrow("Fire Arrows",1,1,null,0,1,null);//"PARTICLE#effects/flamingStrike#arrow");
+		a= new Arrow("Fire Arrows",1,1,null,0,1,"effects/arrow");//"PARTICLE#effects/flamingStrike#arrow");
 		a.addTrait(new FlamingWeapon());
 		//a.setWorldResource("PARTICLE#effects/flamingStrike#../effects/droparrows");
 		//a.setResource();

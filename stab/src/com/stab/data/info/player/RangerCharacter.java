@@ -51,7 +51,7 @@ public static final String ID="RANGER_INFO";
 		
 		
 		this.equip(StabInit.getArmorFactory().getArmor("STUDDEDLEATHER"), HumanoidGear.ARMOR);
-		this.equip(StabInit.getWeaponFactory().getWeapon("LONGBOW"), HumanoidGear.MAINHAND);
+		this.equip(StabInit.getWeaponFactory().getWeapon("LONGBOW"), HumanoidGear.BOTHHANDS);
 		this.equip(EquipmentFactory.ARROW);
 		Item a=(Item)StabInit.getEquipment(EquipmentFactory.FLAMEARROW);
 		a.setAmount(5);
