@@ -32,8 +32,8 @@ public  class PathfinderAttack extends WeaponAttack{
 	public PathfinderAttack(BaseInfo instigator,Weapon weapon,BaseInfo target) {
 		super(instigator,StabConstants.TOHIT,weapon,target,StabConstants.AC);  //Realmente no se usa lo de AC (ver mas abajo en recalcTarget
 		setDice(20);
-		setCritRange(1);
-		setBotchRange(1);
+	//	setCritRange(1);
+	//	setBotchRange(1);
 		touch=false;
 	}
 	

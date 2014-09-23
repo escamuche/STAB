@@ -1,6 +1,6 @@
 package com.stab.data.actions;
 
-import com.stab.model.basic.ActionState;
+import com.stab.model.extras.ActionState;
 
 public class StabActionState extends ActionState {
 	

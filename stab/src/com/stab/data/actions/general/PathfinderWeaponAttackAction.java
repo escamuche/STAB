@@ -20,6 +20,7 @@ import com.stab.data.animation.ThrustAnimation;
 import com.stab.data.info.applicable.PathfinderAttack;
 import com.stab.data.info.applicable.SneakAttack;
 import com.stab.data.info.equipment.BasicWeapon;
+import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.RangedWeapon;
 import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.action.Action;
@@ -34,6 +35,7 @@ import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.applicable.base.RolledDamage;
 import com.stab.model.info.applicable.base.WeaponAttack;
 import com.stab.model.info.base.Creature;
+import com.stab.model.info.trait.base.gear.Ammo;
 import com.stab.model.info.trait.base.gear.Weapon;
 import com.stab.model.request.basic.ActionRequest;
 
@@ -90,7 +92,7 @@ public class PathfinderWeaponAttackAction extends WeaponAttackAction  {
 			return INVALID;
 		}
 		
-		//TODO: ver como se rellena el slot!
+		
 		
 		PathfinderAttack ad=new PathfinderAttack (atacante,arma,atacado);
 	
@@ -268,7 +270,8 @@ public class PathfinderWeaponAttackAction extends WeaponAttackAction  {
 	}
 	
 protected void playHitAnimation(WeaponAttack ad, BaseInfo origin, Token target) {
-	
+	if (ad.getMissAnimationType()==null)
+		return;
 		
 		if (SwingAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(SwingAnimation.ID,target,ad.getAnimationIcon());
@@ -304,6 +307,8 @@ protected void playHitAnimation(WeaponAttack ad, BaseInfo origin, Token target) 
 	}
 
 	protected void playMissAnimation(WeaponAttack ad, BaseInfo origin, Token target) {
+		if (ad.getMissAnimationType()==null)
+			return;
 		if (ad.getResult()==PathfinderAttack.BLOCK)
 			playBlockAnimation(ad,origin,target);
 		if (ad.getResult()==PathfinderAttack.DODGE)
@@ -358,5 +363,12 @@ protected void playHitAnimation(WeaponAttack ad, BaseInfo origin, Token target) 
 		}
 		sleep(origin.playAnimationOn(ad.getMissAnimationType(),target,ad.getAnimationIcon()));
 	}
+	
+	protected Ammo findAmmo(Info instigator) {
+		if (instigator instanceof Creature)
+			return (Ammo)((Creature)instigator).getEquipment(HumanoidGear.AMMO);
+		return null;
+	}
+
 	
 }
