@@ -32,6 +32,7 @@ import com.stab.model.basic.token.Token;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Attends;
+import com.stab.model.info.applicable.base.Attack;
 import com.stab.model.info.applicable.base.RolledDamage;
 import com.stab.model.info.applicable.base.WeaponAttack;
 import com.stab.model.info.base.Creature;
@@ -123,7 +124,7 @@ public class PathfinderWeaponAttackAction extends WeaponAttackAction  {
 		//TODO: atacado unaware , no puede ver al atacante, etc (bono a dar, do sneak
 		
 		
-		//Linea del ataque para ranged solamente por ahora
+		//Linea del ataque para cover y otros efectos
 		for (Point p:ml.getPointsInLine2(yo.getPos(), point, (int)point.distance(yo.getPos()))){
 			for (Token t: ml.getTokensAt(p.x, p.y)){
 				Info i=t.getInfo();
@@ -149,6 +150,21 @@ public class PathfinderWeaponAttackAction extends WeaponAttackAction  {
 			atacante.doSpeech(BaseSpeech.BATTLECRY, atacante,atacado);
 		}
 		
+		if (ad.getResult()==PathfinderAttack.COVER || ad.getResult()==PathfinderAttack.COVERMISS){
+			trySneak=false;
+			
+			//Quizas un notify en el target antes de cambiarlo, por si algo actua cuando se nos falla un ataque? seguramente si
+			if (target instanceof BaseInfo)
+				((BaseInfo)target).notifyListen(ad);
+			
+			target = ad.getCover();
+			ad.setTarget(ad.getCover());
+			if (ad.getResult()==PathfinderAttack.COVER)
+				ad.setResult(Attack.HIT);
+			else
+				ad.setResult(PathfinderAttack.ARMOR);
+			System.out.println("El ataque se detuvo en cover "+ad.getCover()+" result "+(ad.hits()));
+		}
 		if (ad.hits()){
 			 boolean isSneak=false;
 			//Sneak attack. siempre se hace (inicialmente 0 dados)
@@ -170,6 +186,7 @@ public class PathfinderWeaponAttackAction extends WeaponAttackAction  {
 				atacado.showFloatingText("Sneak Attack", Color.red);
 			}
 			ad.applyEffects();
+			ad.notifyListen();
 			sleep(500);
 			if (ad.isCritical()){
 				if (Roll.check(40))
@@ -181,7 +198,7 @@ public class PathfinderWeaponAttackAction extends WeaponAttackAction  {
 		}
 		else{
 			playMissAnimation(ad,atacante,target.getToken());
-			
+			ad.notifyListen();
 		}
 	
 		

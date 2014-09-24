@@ -19,7 +19,7 @@ public class MissProyectileAnimation extends ShootProyectileAnimation {
 		int tries=0;
 		while(!b && tries<5){
 			t=new Point(p.x+r.nextInt(md)-md,p.y+r.nextInt(md)-md);
-			System.out.println(dist +"  vs "+(t.distanceSq(getOriginPoint())));
+		//	System.out.println(dist +"  vs "+(t.distanceSq(getOriginPoint())));
 			if (dist<(t.distanceSq(getOriginPoint()))){
 				b=true;
 			}else{

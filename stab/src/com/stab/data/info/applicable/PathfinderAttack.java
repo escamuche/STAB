@@ -3,6 +3,7 @@ package com.stab.data.info.applicable;
 import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.data.info.equipment.HumanoidGear;
+import com.stab.data.info.props.Cover;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.WeaponAttack;
@@ -19,6 +20,7 @@ public  class PathfinderAttack extends WeaponAttack{
 	public static final int DODGE = 22;
 	public static final int ARMOR = 23;
 	public static final int COVER = 24;
+	public static final int COVERMISS = 25;
 
 	//En un futuro añadir o reutilizar los que hay para "le has dado a una imagen" o "fallo por concealment", etc
 	//Añadir tambien si ha sido CA, dodge, cover, parry o block lo que ha parado el ataque (con vistas a animacion)
@@ -56,11 +58,16 @@ public  class PathfinderAttack extends WeaponAttack{
 	protected void recalcTarget() {
 		BaseInfo target=getTarget();
 		int i;
-		i=Modifier.getModFrom(StabConstants.PASSIVEDEFENSE,target.getModifiers(StabConstants.PASSIVEDEFENSE),getTargetModifiers(StabConstants.PASSIVEDEFENSE));
 		
+		
+		i=Modifier.getModFrom(StabConstants.PASSIVEDEFENSE,target.getModifiers(StabConstants.PASSIVEDEFENSE),getTargetModifiers(StabConstants.PASSIVEDEFENSE));
+		i=i+getModifier(StabConstants.PASSIVEDEFENSE);
 		
 			//TODO: comprobaciones unaware, flatfooted, etc
+			//if (target.canDefendFrom(instigator)) o similar
 			i=i+Modifier.getModFrom(StabConstants.ACTIVEDEFENSE,target.getModifiers(StabConstants.ACTIVEDEFENSE),getTargetModifiers(StabConstants.ACTIVEDEFENSE));
+			i=i+getModifier(StabConstants.ACTIVEDEFENSE);
+			
 		if (!isTouch()){
 			i=i+Modifier.getModFrom(StabConstants.ARMORDEFENSE,target.getModifiers(StabConstants.ARMORDEFENSE),getTargetModifiers(StabConstants.ARMORDEFENSE));
 			i=i+Modifier.getModFrom(StabConstants.SHIELDDEFENSE,target.getModifiers(StabConstants.SHIELDDEFENSE),getTargetModifiers(StabConstants.SHIELDDEFENSE));
@@ -168,6 +175,17 @@ public  class PathfinderAttack extends WeaponAttack{
 			int dif=getFinalTargetNumber()-getRollResult();
 			BaseInfo t=getTarget();
 			//En su momento pensarse COVER
+			int cover=getModifierByType(StabConstants.COVER);
+			System.out.println("Cover was "+cover+" diff is "+dif);
+			if (dif<=cover ){
+				//Comprobar si ha golpeado cover
+				int cac=getCover().getAttributeValue(StabConstants.PASSIVEDEFENSE);
+				if (this.getRollResult()>=cac)
+					return COVER;
+				else
+					return COVERMISS;
+			}
+			dif=dif-cover;
 			int shield=t.getValue(StabConstants.SHIELDDEFENSE);
 			if (dif<=shield && !isTouch())
 				return BLOCK;
@@ -190,5 +208,15 @@ public  class PathfinderAttack extends WeaponAttack{
 			return (Ammo)((Creature)instigator).getEquipment(HumanoidGear.AMMO);
 		return null;
 	}
+
+
+	Cover cover;
+	public void registerAsCover(Cover cover) {
+		this.cover=cover;
+	}
+	public Cover getCover() {
+		return cover;
+	}
+	
 	
 }
