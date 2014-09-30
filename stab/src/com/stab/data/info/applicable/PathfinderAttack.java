@@ -176,7 +176,7 @@ public  class PathfinderAttack extends WeaponAttack{
 			BaseInfo t=getTarget();
 			//En su momento pensarse COVER
 			int cover=getModifierByType(StabConstants.COVER);
-			System.out.println("Cover was "+cover+" diff is "+dif);
+		//	System.out.println("Cover was "+cover+" diff is "+dif);
 			if (dif<=cover ){
 				//Comprobar si ha golpeado cover
 				int cac=getCover().getAttributeValue(StabConstants.PASSIVEDEFENSE);

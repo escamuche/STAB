@@ -22,4 +22,8 @@ public class Shield extends Armor {
 		return effectIcon;
 	}
 	
+	
+	//TODO:
+	//generar una accion de bash con el shield, usando una weapon apropiada
+	
 }
