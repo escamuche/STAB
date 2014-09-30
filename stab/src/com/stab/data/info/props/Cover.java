@@ -23,10 +23,12 @@ public class Cover extends Obstacle implements Attends<PathfinderAttack>{
 			return;
 		
 		PathfinderAttack a=(PathfinderAttack)app;
+		if(a.isRanged())
 		if (this.getMapLogic().isAdyacent(this, a.getInstigator())) //No penalizar por cover adyacente al atacante
 			return;
+		a.attended(this);
 		int bonus=getCoverBonus(a.getTarget());
-		bonus=20;
+
 		a.addModifier(new Modifier(StabConstants.PASSIVEDEFENSE,StabConstants.COVER,bonus));
 		
 		//registrarse como cover
@@ -35,7 +37,7 @@ public class Cover extends Obstacle implements Attends<PathfinderAttack>{
 
 	protected int getCoverBonus(BaseInfo target) {
 		// TODO calcular cover bonus en base a los tamaños relativos?
-		return 2;
+		return 4;
 	}
 
 }

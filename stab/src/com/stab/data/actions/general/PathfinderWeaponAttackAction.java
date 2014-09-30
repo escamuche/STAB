@@ -121,6 +121,9 @@ public class PathfinderWeaponAttackAction extends WeaponAttackAction  {
 			
 		}
 		
+		//Preparamos los bonos del atacante (esto nos hace falta para saber si es ranged o no, etc)
+		ad.ready();
+		
 		//TODO: atacado unaware , no puede ver al atacante, etc (bono a dar, do sneak
 		
 		
