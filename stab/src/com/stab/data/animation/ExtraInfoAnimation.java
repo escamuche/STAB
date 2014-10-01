@@ -22,13 +22,16 @@ public class ExtraInfoAnimation extends Animation {
 	
 		StateSprite s=AnimUtils.getSprite(getSource());
 		
+		String img=getParam(1);
 		
-		
+		String snd=getParam(2);
 		
 	
 		
 		
-		((AbstractGameScreen)s.getScreen()).setTooltip(txt);
+		((AbstractGameScreen)s.getScreen()).setTooltip(txt,img);
+		if (snd!=null)
+			AnimUtils.getScreen(getSource()).playSound(snd);
 	}
 
 }
