@@ -40,6 +40,7 @@ public abstract class SpellAction extends Action implements SpellProperties{
 		spell=baseSpell;
 		spell.setAction(this);
 		setCasterClass(StabConstants.WIZARDCASTER);
+		setLosType(IN_SIGHT);
 	}
 	
 	@Override
