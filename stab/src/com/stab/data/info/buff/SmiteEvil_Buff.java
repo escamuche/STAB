@@ -3,11 +3,13 @@ package com.stab.data.info.buff;
 import com.stab.data.StabConstants;
 import com.stab.data.info.applicable.PathfinderAttack;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.applicable.Affects;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
+import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.base.BuffEffect;
 
-public class SmiteEvil_Buff extends BuffEffect implements Attends<PathfinderAttack>{
+public class SmiteEvil_Buff extends BuffEffect implements Attends<PathfinderAttack>, Affects<Damage>{
 
 	BaseInfo smitetarget = null;
 	
@@ -32,6 +34,19 @@ public class SmiteEvil_Buff extends BuffEffect implements Attends<PathfinderAtta
 	if(arg0 instanceof PathfinderAttack)				
 		return true;
 	return false;
+	}
+
+	@Override
+	public boolean canAffect(Applicable a) {
+		if (a instanceof Damage)
+			return true;
+		return false;
+	}
+
+	@Override
+	public void affect(Damage app) {
+		if (app.getTarget()==smitetarget)
+			app.setIgnoreAllResistance(true);
 	}
 
 
