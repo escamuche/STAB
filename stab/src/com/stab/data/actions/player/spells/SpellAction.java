@@ -41,6 +41,7 @@ public abstract class SpellAction extends Action implements SpellProperties{
 		spell.setAction(this);
 		setCasterClass(StabConstants.WIZARDCASTER);
 		setLosType(IN_SIGHT);
+		
 	}
 	
 	@Override
@@ -241,7 +242,7 @@ public abstract class SpellAction extends Action implements SpellProperties{
 			case MISSILE:
 			case RAY:
 			case SELECTED:
-						return LOS;
+						return IN_SIGHT;
 			case SIGHT:
 						return IN_SIGHT;
 		}
