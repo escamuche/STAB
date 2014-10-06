@@ -54,7 +54,7 @@ public class TestAdventure extends Adventure{
 		ms.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
 		ms.loadTiled("map2", 0, 0);
 		ms.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
-		
+		//ms.setDefaultLightLevel(64);
 		ms.setTag("BATTLE");
 		ms.setWaitsForAll(true);
 		
