@@ -16,7 +16,7 @@ public class ClimbWaypoint extends Decoration {
 		super.init();
 		setResource("waypoint");
 		setSelectable(Token.SELECTABLE);
-		setDepth(Constants.FLOOR);
+		setDepth(Constants.AURAS);
 		//Añadir contextualAction
 		ContextualOption op= new ContextualOption();
 		op.setAction(ActionLibrary.getActionLibrary().getAction(ClimbAction.ID));

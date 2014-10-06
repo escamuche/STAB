@@ -11,6 +11,10 @@ import com.stab.data.ui.ActionPanel;
 import com.stab.data.ui.CharSheetPanel;
 import com.stab.data.ui.PlayerInventoryPanel;
 import com.stab.data.ui.QuestTracker;
+import com.stab.model.basic.scenes.event.response.DefeatResponse;
+import com.stab.model.basic.scenes.event.response.VictoryResponse;
+import com.stab.model.basic.scenes.event.rule.AllPlayersAtZoneRule;
+import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 import com.stab.model.basic.ui.Label;
 import com.stab.model.basic.ui.Panel;
@@ -88,5 +92,18 @@ public class DefaultStabMapScene  extends DefaultTileMapScene {
 				ip.setVisible(false);
 			}
 	}
+	
+	
+	public void setOnDeath(String nextScene){
+		AllPlayersDeadRule r=new AllPlayersDeadRule();
+		r.addResponse(new DefeatResponse(0,nextScene));
+		addRule(r);
+	}
+	public void setOnExit(String exit,String nextScene){
+		AllPlayersAtZoneRule r=new AllPlayersAtZoneRule(exit);
+		r.addResponse(new VictoryResponse(0,nextScene));
+		addRule(r);
+	}
+	
 	
 }

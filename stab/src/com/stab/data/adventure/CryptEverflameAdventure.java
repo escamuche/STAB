@@ -2,13 +2,16 @@ package com.stab.data.adventure;
 
 import com.stab.adventure.Adventure;
 import com.stab.common.Constants;
+import com.stab.common.events.Condition;
 import com.stab.common.events.DefaultRule;
+import com.stab.common.events.ManagedEvent;
 import com.stab.common.utils.Roll;
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.adventure.everflame.ClimbAction;
 import com.stab.data.adventure.everflame.ClimbWaypoint;
 import com.stab.data.rules.CharacterSkillRollCondition;
+import com.stab.data.scene.DefaultStabMapScene;
 import com.stab.data.ui.RolledSkillOptionButton;
 import com.stab.data.utils.StabBlockData;
 import com.stab.model.basic.scenes.Choice;
@@ -24,6 +27,7 @@ import com.stab.model.basic.scenes.event.response.TravelAllToSceneResponse;
 import com.stab.model.basic.scenes.event.response.TravelToSceneResponse;
 import com.stab.model.basic.scenes.event.response.VictoryResponse;
 import com.stab.model.basic.scenes.event.rule.AllMonstersDeadRule;
+import com.stab.model.basic.scenes.event.rule.AllPlayersAtZoneRule;
 import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 import com.stab.model.basic.ui.Button;
@@ -1348,10 +1352,12 @@ public class CryptEverflameAdventure extends Adventure{
 		//Elementos necesarios. Esto tiene que ir fuera de aqui! si no solo se inicializa en el host!
 				StabInit.getActionLibrary().register(ClimbAction.class);
 				StabInit.setMapping(ClimbWaypoint.class);
+				
 	//Escena de las cuerdas
-				DefaultTileMapScene ropes=new DefaultTileMapScene();
+				DefaultStabMapScene ropes=new DefaultStabMapScene();
 				ropes.createContents();
 				ropes.createMap(16,14);
+				ropes.setDefaultLightLevel(64);
 				ropes.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
 				ropes.loadTiled("cliff", 0, 0);
 				ropes.setTiles(DefaultTileMapScene.DEFAULT,"tiles");
@@ -1359,13 +1365,26 @@ public class CryptEverflameAdventure extends Adventure{
 				ropes.setTag("ROPECLIFFS");
 				
 				//Regla para hacer visibles las cuerdas si la usaron
+				DefaultRule rv= new DefaultRule();
+				rv.setEvent(PlayerEntersScene.class);
+				rv.addCondition(new PartyValueIs("USEROPES",true));  //Esto esta por revisar!
+				rv.addResponse(new SetVisibleResponse("ROPES", true));
+				ropes.addRule(rv);
 				
 				//Regla de todos los players llegan a la salida
+				AllPlayersAtZoneRule rz= new AllPlayersAtZoneRule("EXIT");
+				rz.addResponse(new VictoryResponse(0,"CRYPT1"));
+				ropes.addRule(rz);
+				
+				//regla estandar de todos muertos -> defeat... pensarse el meterla en la escena estandar
 				r2=new AllPlayersDeadRule();
 				r2.addResponse(new DefeatResponse(0,"DEFEAT"));
 				ropes.addRule(r2);
 				this.addScene(ropes);
 		
+				
+				//Estoy en proceso de poner metodos para facilitar agregar esas reglas automaticamente en DefaultStabMapScene
+				
 	}
 }
 
