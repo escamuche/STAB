@@ -202,8 +202,9 @@ public class StabConstants {
 	public static final String MOVE_ACTION="MOVE_ACTION";
 	public static final String STANDARD_ACTION="STANDARD_ACTION";
 	public static final String FULLROUND_ACTION="FULLROUND_ACTION";
-
+	public static final String QUICKENED_MAGIC = "QUICKENED_MAGIC";
 	public static final String AOO = "ATTACKOFOPPORTUNITY";
+	public static final String ATTACK_ACTION="ATTACK_ACTION";
 	
 	
 	
