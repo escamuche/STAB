@@ -196,6 +196,12 @@ public static final String QUICK_INVENTORY="QUICK_INVENTORY";
 	public Inventory getBasicInventory() {
 		return quickInventory;
 	}
+
+	@Override
+		public void purgeItems() {
+			super.purgeItems();
+			this.getBasicInventory().purge();
+		}
 	
 }
 	
