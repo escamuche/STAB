@@ -7,6 +7,7 @@ import com.stab.client.slick.base.util.AnimUtils;
 import com.stab.common.Constants;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.applicable.Applicable;
 import com.tien.princess.engine.Resources;
 import com.tien.princess.engine.sprite.StateSprite;
 import com.tien.princess.engine.sprite.base.FloatingText;
@@ -42,6 +43,15 @@ public class DamageNumberAnimation extends Animation{
 		 ft.setPos(s.getX()+s.getWidth()/2,s.getY()+16);
 		 ft.setSize(64,64);
 		 ft.setSpeed(0, -0.03f);
+		 
+		 
+		 int i=getIntParam(3);
+		 if (i==Applicable.REDUCED|| i==Applicable.NEUTRALIZED)
+			 ft.setTextColor(Color.pink);
+		 if (i==Applicable.AMPLIFIED)
+			 ft.setTextColor(Color.orange);
+		
+		 
 		((AbstractGameScreen)s.getScreen()).add(ft);
 		
 	}

@@ -112,7 +112,7 @@ public class BasicWeapon extends Weapon {
 		// cambiado el calculo de daño para que añada la tirada de dado como setBaseDamageApplicable
 		RolledDamage d=new RolledDamage(this.dices, dice, 0, baseDamageType, app.getInstigator());
 		app.setBaseDamageApplicable(d);
-	//	System.out.println("Creando rolledDamage para weaponattack "+d.getAmount()+"  "+d.getFinalAmount());
+		System.out.println("Creando rolledDamage para weaponattack "+d.getAmount()+"  "+d.getFinalAmount());
 		//los traits anidados ya se comprueban automaticamente.
 		
 	}

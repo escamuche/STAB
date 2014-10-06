@@ -1,4 +1,4 @@
-package com.stab.data.info.buff;
+package com.stab.data.adventure.everflame;
 
 import com.stab.data.StabConstants;
 import com.stab.data.info.applicable.PathfinderAttack;

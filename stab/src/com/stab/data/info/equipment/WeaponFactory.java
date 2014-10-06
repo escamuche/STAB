@@ -164,7 +164,7 @@ public class WeaponFactory extends ItemFactory{
 		register( RayEnfeeblement.ID,w);
 		w= new ThrownWeapon("Magic Stone", 1, 6, Damage.IMPACT_DAMAGE, "PARTICLE#effects/magicsparktrail#effects/stone", ShootProyectileAnimation.ID);
 	    w.addTrait(new MagicStoneWeaponTrait());
-	    w.setMaxAmount(9);
+	    w.setMaxAmount(3);
 	    w.setAmount(3);
 	    w.setUseAmmo(Weapon.AMMO_ITSELF);
 	    register( MagicStone.ID,w);

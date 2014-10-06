@@ -2,6 +2,7 @@ package com.stab.data.info.debuff;
 
 import com.stab.data.info.debuff.condition.FatiguedCondition;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.base.DebuffEffect;
 
@@ -26,7 +27,7 @@ public class Rage_Debuff extends DebuffEffect {
 	@Override
 	public void applyTo(BaseInfo baseInfo) {
 			super.applyTo(baseInfo);
-			baseInfo.receiveDamage(2, Damage.GENERIC_DAMAGE, false,false); //igual que el heal se pone aqui para que solo se aplique cuando te ponen el debuff
+			baseInfo.receiveDamage(2, Damage.GENERIC_DAMAGE, false,false,Applicable.OK); //igual que el heal se pone aqui para que solo se aplique cuando te ponen el debuff
 	}
 	
 }
