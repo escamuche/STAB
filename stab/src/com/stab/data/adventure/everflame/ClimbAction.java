@@ -4,12 +4,15 @@ import java.awt.Point;
 
 import com.stab.data.StabConstants;
 import com.stab.data.animation.AlertAnimation;
+import com.stab.data.animation.VerticalScreenShakeAnimation;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.model.action.ContextualAction;
 import com.stab.model.action.base.WalkToAction;
 import com.stab.model.basic.token.DecorToken;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.info.applicable.base.Damage;
+import com.stab.model.info.applicable.base.RolledDamage;
 import com.stab.model.info.applicable.base.SkillRoll;
 import com.stab.model.request.basic.ActionRequest;
 import com.stab.util.StabUtils;
@@ -69,8 +72,20 @@ public class ClimbAction extends ContextualAction {
 		//ahora viene la gracia.
 		int rolled=st.getRollResult();
 		//ver los distintos casos.
+		int steps=1;
+		// calcular los steps por los que caes dependiendo de lo que falles 1 o 2 (si fallas por mas de 5) era asi, no?
+		if ((10-rolled)>5){
+		 steps=2;
+		}
+		Point p= getFallPoint(target.getPos(),steps);
+		
+		sleep(character.playAnimationOn(WalkToAction.ANIMATION_ID, target.getPos()));
+		character.setPos(target.getPos());
+		sleep(character.playAnimation(VerticalScreenShakeAnimation.ID));
 		
 		
+		Damage d= new RolledDamage(steps,6,Damage.IMPACT_DAMAGE,null);
+		character.apply(d);
 		
 		return OK;
 	}

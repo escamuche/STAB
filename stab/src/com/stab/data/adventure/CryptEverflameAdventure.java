@@ -1367,7 +1367,7 @@ public class CryptEverflameAdventure extends Adventure{
 				//Regla para hacer visibles las cuerdas si la usaron
 				DefaultRule rv= new DefaultRule();
 				rv.setEvent(PlayerEntersScene.class);
-				rv.addCondition(new PartyValueIs("USEROPES",true));  //Esto esta por revisar!
+				rv.addCondition(new PartyValueIs("USARCUERDAS",true));  //Esto esta por revisar!
 				rv.addResponse(new SetVisibleResponse("ROPES", true));
 				ropes.addRule(rv);
 				
