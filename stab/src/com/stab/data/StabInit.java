@@ -87,6 +87,8 @@ import com.stab.data.adventure.Zombies;
 import com.stab.data.adventure.duskwood.BrotherManfred;
 import com.stab.data.adventure.duskwood.DesnaChalice;
 import com.stab.data.adventure.duskwood.DuskwoodAdventure;
+import com.stab.data.adventure.everflame.CrackDoor;
+import com.stab.data.adventure.everflame.CrackDoorToken;
 import com.stab.data.adventure.everflame.OrcIlu;
 import com.stab.data.adventure.everflame.Roldare;
 import com.stab.data.animation.AlertAnimation;
@@ -214,7 +216,6 @@ import com.stab.model.action.ActionLibrary;
 import com.stab.model.action.base.InteractAction;
 import com.stab.model.basic.scenes.TokenBasedScene;
 import com.stab.model.info.trait.base.gear.Equipment;
-import com.tien.princess.engine.Resources;
 import com.tien.princess.engine.sprite.factory.AbstractSpriteFactory;
 import com.tien.princess.engine.sprite.factory.SpriteFactory;
 
@@ -378,6 +379,8 @@ public class StabInit {
 		
 		//pnjs. trampa por ahora, mas adelante los registrara la aventura
 		of.setMapping(Roldare.class);
+		of.setMapping(CrackDoor.class);
+		TokenBasedScene.tokenFactory.setMapping(CrackDoor.ID, CrackDoorToken.ID);
 		of.setMapping(BrotherManfred.class);
 		of.setMapping(DesnaChalice.class);
 		
