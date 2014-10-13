@@ -27,13 +27,13 @@ public class PushActivity extends PathfinderActivity{
 	
 	
 	@Override
-	public void advanceActivity() {
+	public void processActivity() {
 		if (getTarget().hasTrait(FatiguedCondition.class)){
 			cancelActivity();
 			return;
 		}
 			
-		super.advanceActivity();
+		super.processActivity();
 	}
 	
 	

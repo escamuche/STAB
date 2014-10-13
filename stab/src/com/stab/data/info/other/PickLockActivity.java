@@ -14,8 +14,8 @@ public class PickLockActivity extends TinkerActivity{
 	
 	
 	@Override
-	public void advanceActivity() {
-		super.advanceActivity();
+	public void processActivity() {
+		super.processActivity();
 	//	System.out.println("pick lock "+this.getProgress()+" of "+this.getMaxProgress()+" finished? "+this.isFinished()+" shouldEndTurn? "+this.shouldEndTurn());
 	}
 	

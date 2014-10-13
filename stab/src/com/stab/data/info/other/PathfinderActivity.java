@@ -113,13 +113,13 @@ public class PathfinderActivity extends CoopActivity{
 	}
 	
 	@Override
-	public void advanceActivity() {
+	public void processActivity() {
 		if (isContinuous())
 			if (getTarget().hasTrait(UnableToActCondition.class)){
 				cancelActivity();
 				return;
 			}	
-		super.advanceActivity();
+		super.processActivity();
 	}
 	
 	

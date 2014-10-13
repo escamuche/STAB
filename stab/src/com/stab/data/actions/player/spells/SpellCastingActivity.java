@@ -56,9 +56,9 @@ Spell spell;
 
 	
 	@Override
-		public void advanceActivity() {
+		public void processActivity() {
 			getTarget().waitAnimation(200);
-			super.advanceActivity();
+			super.processActivity();
 			}
 	
 	
