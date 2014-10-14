@@ -54,7 +54,7 @@ public class ClimbAction extends ContextualAction {
 		if (ck.success()){
 			//Ir al waypoint, todo bien.
 			//animacion de moverse
-			sleep(character.playAnimationOn(WalkToAction.ANIMATION_ID, target.getPos()));
+			sleep(character.playAnimationAt(WalkToAction.ANIMATION_ID, target.getPos()));
 			character.setPos(target.getPos());
 			return OK;
 		}
@@ -79,7 +79,7 @@ public class ClimbAction extends ContextualAction {
 		}
 		Point p= getFallPoint(target.getPos(),steps);
 		
-		sleep(character.playAnimationOn(WalkToAction.ANIMATION_ID, target.getPos()));
+		sleep(character.playAnimationAt(WalkToAction.ANIMATION_ID, target.getPos()));
 		character.setPos(target.getPos());
 		sleep(character.playAnimation(VerticalScreenShakeAnimation.ID));
 		

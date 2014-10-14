@@ -4,6 +4,7 @@ import org.newdawn.slick.Color;
 
 import com.stab.client.slick.base.util.SpeechLayerComponent;
 import com.stab.data.animation.state.SpeechPanelState;
+import com.tien.princess.engine.sprite.common.updaters.pos.Orbit;
 import com.tien.princess.engine.sprite.ui.Label;
 import com.tien.princess.engine.sprite.ui.states.UIStateSet;
 import com.tien.princess.engine.sprite.ui.states.animating.ComponentFadeOutState;
@@ -23,7 +24,7 @@ public class SpeechBubble extends Label implements SpeechLayerComponent {//,Mous
 		setMargin(20,16,8,24);
 		this.setMode(BANNER);
 		ComponentFadeOutState fade= new ComponentFadeOutState(500, UIStateSet.DESTROYED);
-	
+		fade.addUpdater(new Orbit());
 		this.addState(fade);
 		st= new SpeechPanelState();
 	//	this.setState(st);

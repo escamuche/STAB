@@ -82,7 +82,7 @@ public class BileSplash extends PathfinderAction {
 		super.playExecuteActionAnimation(caster, target, pos, ar);
 		
 	//	target.playAnimationOnTile(BasicSparkAnimation.ID,"PARTICLE#spells/swirl");
-		caster.playAnimationOn(GenericProyectileAnimation.ID,pos,SpecialEffectsSpriteFactory.ACID_EXPLOSION,0);
+		caster.playAnimationAt(GenericProyectileAnimation.ID,pos,SpecialEffectsSpriteFactory.ACID_EXPLOSION,0);
 		//target.playSound("effects/Curse");
 	}
 	

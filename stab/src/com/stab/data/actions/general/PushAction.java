@@ -59,11 +59,11 @@ public class PushAction extends Action {
 		
 		MapLogic ml=getMapLogic(instigator);
 		if (!ml.isWalkable(instigator.getToken(),tp.x,tp.y)){
-			sleep(instigator.playAnimationOn(WalkToAction.BUMP_ANIMATION_ID, tp));
+			sleep(instigator.playAnimationAt(WalkToAction.BUMP_ANIMATION_ID, tp));
 			return FAIL;
 		}else{
-			target.playAnimationOn(WalkToAction.ANIMATION_ID, tp);
-			instigator.playAnimationOn(WalkToAction.ANIMATION_ID, t);
+			target.playAnimationAt(WalkToAction.ANIMATION_ID, tp);
+			instigator.playAnimationAt(WalkToAction.ANIMATION_ID, t);
 			sleep(300);
 			target.setPos(tp);
 			instigator.setPos(t);

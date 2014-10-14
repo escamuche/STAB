@@ -215,6 +215,7 @@ import com.stab.fw.EntityManager;
 import com.stab.model.action.ActionLibrary;
 import com.stab.model.action.base.InteractAction;
 import com.stab.model.basic.scenes.TokenBasedScene;
+import com.stab.model.basic.token.DoorToken;
 import com.stab.model.info.trait.base.gear.Equipment;
 import com.tien.princess.engine.sprite.factory.AbstractSpriteFactory;
 import com.tien.princess.engine.sprite.factory.SpriteFactory;
@@ -381,6 +382,7 @@ public class StabInit {
 		of.setMapping(Roldare.class);
 		of.setMapping(CrackDoor.class);
 		TokenBasedScene.tokenFactory.setMapping(CrackDoor.ID, CrackDoorToken.ID);
+	//	of.setMapping(CrackDoorToken.ID,ImageToken_sprite.class);
 		of.setMapping(BrotherManfred.class);
 		of.setMapping(DesnaChalice.class);
 		

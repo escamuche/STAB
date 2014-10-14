@@ -82,7 +82,7 @@ public class AcidFlask extends PathfinderAction {
 		super.playExecuteActionAnimation(caster, target, pos, ar);
 		
 	//	target.playAnimationOnTile(BasicSparkAnimation.ID,"PARTICLE#spells/swirl");
-		caster.playAnimationOn(GenericProyectileAnimation.ID,pos,SpecialEffectsSpriteFactory.ACID_FLASK,caster.getWidth());
+		caster.playAnimationAt(GenericProyectileAnimation.ID,pos,SpecialEffectsSpriteFactory.ACID_FLASK,caster.getWidth());
 		//target.playSound("effects/Curse");
 	}
 	

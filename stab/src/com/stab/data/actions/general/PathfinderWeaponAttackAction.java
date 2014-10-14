@@ -320,7 +320,7 @@ protected void playHitAnimation(WeaponAttack ad, BaseInfo origin, Token target) 
 			return;
 		}
 		if (GenericProyectileAnimation.ID.equals(ad.getAnimationType())){
-			sleep(origin.playAnimationOn(GenericProyectileAnimation.ID,target.getPos(),ad.getAnimationIcon(),origin.getWidth()));
+			sleep(origin.playAnimationAt(GenericProyectileAnimation.ID,target.getPos(),ad.getAnimationIcon(),origin.getWidth()));
 			return;
 		}
 		sleep(origin.playAnimationOn(ad.getAnimationType(),target,ad.getAnimationIcon()));
@@ -376,9 +376,9 @@ protected void playHitAnimation(WeaponAttack ad, BaseInfo origin, Token target) 
 		}
 		if (GenericProyectileAnimation.ID.equals(ad.getAnimationType())){
 			if (ad.getResult()==PathfinderAttack.BLOCK || (ad.getResult()==PathfinderAttack.DODGE )|| (ad.getResult()==PathfinderAttack.ARMOR) )
-				sleep(origin.playAnimationOn(GenericProyectileAnimation.ID,target.getPos(),ad.getAnimationIcon(),origin.getWidth()));
+				sleep(origin.playAnimationAt(GenericProyectileAnimation.ID,target.getPos(),ad.getAnimationIcon(),origin.getWidth()));
 			else
-			sleep(origin.playAnimationOn(GenericProyectileMissAnimation.ID,target.getPos(),ad.getAnimationIcon(),origin.getWidth()));
+			sleep(origin.playAnimationAt(GenericProyectileMissAnimation.ID,target.getPos(),ad.getAnimationIcon(),origin.getWidth()));
 			return;
 		}
 		sleep(origin.playAnimationOn(ad.getMissAnimationType(),target,ad.getAnimationIcon()));

@@ -59,6 +59,6 @@ public class PushActivity extends PathfinderActivity{
 	protected void configureEffectSprite(Sprite es) {
 		//super.configureEffectSprite(es);
 		Point p=target.getPos();
-		es.playAnimationOn(VisualEffect.DIRECTED_ANIMATED_SPARK_ANIMATION,p,"animations/push&0",32,-1,0,3,1000,true,false);
+		es.playAnimationAt(VisualEffect.DIRECTED_ANIMATED_SPARK_ANIMATION,p,"animations/push&0",32,-1,0,3,1000,true,false);
 	}
 }
