@@ -212,6 +212,7 @@ import com.stab.data.utils.DefaultBlockData;
 import com.stab.data.utils.StabBlockData;
 import com.stab.fw.BasicObjectFactory;
 import com.stab.fw.EntityManager;
+import com.stab.fw.MappedInheritedObjectFactory;
 import com.stab.model.action.ActionLibrary;
 import com.stab.model.action.base.InteractAction;
 import com.stab.model.basic.scenes.TokenBasedScene;
@@ -222,7 +223,7 @@ import com.tien.princess.engine.sprite.factory.SpriteFactory;
 
 public class StabInit {
 
-	static BasicObjectFactory of=null; 
+	static MappedInheritedObjectFactory of=null; 
 	
 	static WeaponFactory wf;
 	static ArmorFactory af;

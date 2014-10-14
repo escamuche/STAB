@@ -109,10 +109,10 @@ public class Roldare extends Humanoid implements HasDialog {
 		
 		DecisionStage ds= new DecisionStage("V1");
 		ds.addOption(0, da);
-		ds.addOption(0, db);
-		ds.addOption(0, dc);
+		ds.addOption(1, db);
+		ds.addOption(2, dc);
 		
-		d.addStage(ds);
+		d1.addStage(ds);
 		
 		d.setInnerActivity(d1);
 		
