@@ -1,24 +1,40 @@
 package com.stab.data.adventure.everflame;
 
+import com.stab.common.events.DefaultRule;
 import com.stab.data.StabConstants;
+import com.stab.data.actions.player.spells.lvl1.unfinished.RemoveFear;
 import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.EquipmentFactory;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.general.Alertness_Feat;
 import com.stab.data.info.monster.Humanoid;
+import com.stab.model.action.Action;
 import com.stab.model.action.DelegatedAction;
 import com.stab.model.action.base.DialogAction;
+import com.stab.model.basic.scenes.event.SpecialSceneEvent;
+import com.stab.model.basic.scenes.event.condition.SpecialEventIs;
+import com.stab.model.basic.scenes.event.response.SendChannelResponse;
+import com.stab.model.basic.scenes.event.response.infos.PlayAnimationResponse;
+import com.stab.model.basic.scenes.event.response.infos.SetFactionResponse;
 import com.stab.model.extras.ContextualOption;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
+import com.stab.model.info.applicable.base.SkillRoll;
+import com.stab.model.info.interfaces.ActionPerformedListener;
 import com.stab.model.info.interfaces.HasDialog;
+import com.stab.model.info.trait.base.VisualEffect;
 import com.stab.model.info.trait.base.activity.ComplexActivity;
 import com.stab.model.info.trait.base.activity.Dialog;
 import com.stab.model.info.trait.base.activity.stage.DecisionStage;
 import com.stab.model.info.trait.base.activity.stage.QueryStage;
+import com.stab.model.info.trait.base.activity.stage.SendSceneEventStage;
+import com.stab.model.info.trait.base.activity.stage.SkillRollStage;
+import com.stab.model.request.basic.ActionRequest;
 
-public class Roldare extends Humanoid implements HasDialog {
+public class Roldare extends Humanoid implements HasDialog, ActionPerformedListener {
 
 	public static final String ID="ROLDARE_INFO";
+	public static final String EVENT="ROLDARE_CALMED";
 	
 	@Override
 	public void init() {
@@ -98,14 +114,31 @@ public class Roldare extends Humanoid implements HasDialog {
 		d1.addStage(q);
 		
 		
+		Dialog dd= new Dialog();
+		dd.addTText("Que?... ah... no sois los monstruos!");
+		dd.addStage(new SendSceneEventStage(EVENT));
+		
 		Dialog da= new Dialog();
 		da.addIText("Roldare, somos nosotros... intenta calmarte... somos tus amigos");
+		//Esto como muestra del proceso completo. Hay un atajo en dialog para los casos sencillos
+		da.addStage(new SkillRollStage(ComplexActivity.INSTIGATOR,StabConstants.DIPLOMACY,10,"V2"));
+		DecisionStage ds2= new DecisionStage("V2");
+		ds2.addOption(SkillRoll.SUCCESS, dd);
+		ds2.addOption(SkillRoll.CRITICAL, dd);
+		da.addStage(ds2);
+		da.addIText("NO! Monstruos! Alejaos de mi!");
+		
 		
 		Dialog db= new Dialog();
 		db.addIText("Roldare, maldita sea! Suelta el arma y abre la puerta! Si no acabaré contigo como con el resto de monstruos de esta cripta!");
+		db.addOnSkillSuccess(StabConstants.INTIMIDATE, 10, dd);
+		db.addIText("NO! No pienso abrir! no me cogereis con vida!");
 		
 		Dialog dc= new Dialog();
 		dc.addIText("Ya esta todo bien... no quedan monstruos, puedes salir y volver a casa");
+		dd.addOnSkillSuccess(StabConstants.BLUFF, 10, dd);
+		dc.addIText("NO! Aun puedo oirlos!! Puedo oirlos! Vienen a por mi!");
+		
 		
 		DecisionStage ds= new DecisionStage("V1");
 		ds.addOption(0, da);
@@ -117,6 +150,34 @@ public class Roldare extends Humanoid implements HasDialog {
 		d.setInnerActivity(d1);
 		
 		return d;
+	}
+	
+	
+	@Override
+	public void actionPerformed(Info info, Action action, int result,
+			ActionRequest request) {
+		super.actionPerformed(info, action, result, request);
+		//Vale, deberia comprobar tambien que yo era el target y que el result ha sido correcto, pero estoy vago
+		if (RemoveFear.ID.equals(action.getId())){
+			getScene().notify(new SpecialSceneEvent(getScene(), EVENT));
+		}
+	}
+	
+	
+	@Override
+	public void enter() {
+		super.enter();
+		
+		DefaultRule r= new DefaultRule();
+		r.setEvent(SpecialSceneEvent.class);
+		r.addCondition(new SpecialEventIs(EVENT));
+		r.addResponse(new PlayAnimationResponse("ROLDARE",VisualEffect.CENTER_CAM_ANIMATION));
+		r.addResponse(new SetFactionResponse(0));
+		r.addResponse(new PlayAnimationResponse("ROLDARE",VisualEffect.SPEECH_ANIMATION,"Ah! thank gods! I'm saved!"));
+		r.addResponse(new PlayAnimationResponse("ROLDARE",VisualEffect.SPEECH_ANIMATION,"This is madness! the crypt is full of monsters! I.. I need to get out of here!"));
+		r.addResponse(new SendChannelResponse(101, true));
+		
+		this.getScene().addRule(r);
 	}
 	
 }
