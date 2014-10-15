@@ -1,6 +1,9 @@
 package com.stab.data.adventure.everflame;
 
 import com.stab.common.events.DefaultRule;
+import com.stab.common.events.ManagedEvent;
+import com.stab.common.events.Response;
+import com.stab.common.events.Rule;
 import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.lvl1.unfinished.RemoveFear;
 import com.stab.data.info.equipment.ArmorFactory;
@@ -11,9 +14,14 @@ import com.stab.data.info.monster.Humanoid;
 import com.stab.model.action.Action;
 import com.stab.model.action.DelegatedAction;
 import com.stab.model.action.base.DialogAction;
+import com.stab.model.basic.scenes.event.InfoBecomesAwareOfInfo;
+import com.stab.model.basic.scenes.event.InfoDestroyed;
 import com.stab.model.basic.scenes.event.SpecialSceneEvent;
+import com.stab.model.basic.scenes.event.condition.InfoIsTag;
 import com.stab.model.basic.scenes.event.condition.SpecialEventIs;
+import com.stab.model.basic.scenes.event.response.ActivateRuleResponse;
 import com.stab.model.basic.scenes.event.response.SendChannelResponse;
+import com.stab.model.basic.scenes.event.response.ShowMessageResponse;
 import com.stab.model.basic.scenes.event.response.infos.PlayAnimationResponse;
 import com.stab.model.basic.scenes.event.response.infos.SetFactionResponse;
 import com.stab.model.extras.ContextualOption;
@@ -40,7 +48,6 @@ public class Roldare extends Humanoid implements HasDialog, ActionPerformedListe
 	public void init() {
 		super.init();
 		setMaxMovePoints(6);
-		
 		setResource("roldaretoken");
 		setText("Roldare");
 		setDescription("Uno de los aldeanos, Roldare, visiblemente asustado");
@@ -137,7 +144,7 @@ public class Roldare extends Humanoid implements HasDialog, ActionPerformedListe
 		Dialog dc= new Dialog();
 		dc.addIText("Ya esta todo bien... no quedan monstruos, puedes salir y volver a casa");
 		dd.addOnSkillSuccess(StabConstants.BLUFF, 10, dd);
-		dc.addIText("NO! Aun puedo oirlos!! Puedo oirlos! Vienen a por mi!");
+		dc.addTText("NO! Aun puedo oirlos!! Puedo oirlos! Vienen a por mi!");
 		
 		
 		DecisionStage ds= new DecisionStage("V1");
@@ -158,26 +165,63 @@ public class Roldare extends Humanoid implements HasDialog, ActionPerformedListe
 			ActionRequest request) {
 		super.actionPerformed(info, action, result, request);
 		//Vale, deberia comprobar tambien que yo era el target y que el result ha sido correcto, pero estoy vago
+		System.out.println("Action performed on me "+action.getId());
 		if (RemoveFear.ID.equals(action.getId())){
 			getScene().notify(new SpecialSceneEvent(getScene(), EVENT));
 		}
 	}
 	
 	
+
+	
 	@Override
 	public void enter() {
 		super.enter();
 		
+		//Regla para volverlo amistoso cuando se le calma (sea por el metodo que sea)
 		DefaultRule r= new DefaultRule();
+		r.setOnlyOnce(true);
 		r.setEvent(SpecialSceneEvent.class);
 		r.addCondition(new SpecialEventIs(EVENT));
 		r.addResponse(new PlayAnimationResponse("ROLDARE",VisualEffect.CENTER_CAM_ANIMATION));
-		r.addResponse(new SetFactionResponse(0));
-		r.addResponse(new PlayAnimationResponse("ROLDARE",VisualEffect.SPEECH_ANIMATION,"Ah! thank gods! I'm saved!"));
-		r.addResponse(new PlayAnimationResponse("ROLDARE",VisualEffect.SPEECH_ANIMATION,"This is madness! the crypt is full of monsters! I.. I need to get out of here!"));
-		r.addResponse(new SendChannelResponse(101, true));
+		r.addResponse(new SetFactionResponse("ROLDARE",0));
+		r.addResponse(new PlayAnimationResponse("ROLDARE",VisualEffect.SPEECH_ANIMATION,"Ah! por los cielos! Estoy salvado!"));
+		r.addResponse(new PlayAnimationResponse("ROLDARE",VisualEffect.SPEECH_ANIMATION,"Es una locura! la cripta esta llena de monstruos! Tengo que salir de aqui!"));
+		r.addResponse(new SendChannelResponse(101, true)); //esto abrira la puerta cerrada
+		r.addResponse(new Response(){
+			@Override
+			public boolean execute(Rule r, ManagedEvent e) {
+				test();
+				return true;
+			}
+		});
 		
 		this.getScene().addRule(r);
+		
+		//regla para lamentar su muerte
+		
+		r= new DefaultRule();
+		r.setOnlyOnce(true);
+		r.setEvent(InfoDestroyed.class);
+		r.addCondition(new InfoIsTag("ROLDARE"));
+		r.addResponse(new ShowMessageResponse(null,"Lamentablemente, Roldare nunca conseguira volver a su casa. Su muerte pesará siempre en vuestras consciencias..."));
+		//opcionalmente meter un setpartyvalue si eso.
+		r.setActive(false);//desactivada inicialmente, ver mas abajo
+		this.getScene().addRule(r);
+		
+		//Regla que activa la anterior una vez que os encontrais con roldare. Matarlo accidentalmente sin que el se de cuenta no
+		//contaria. Ej: una bola de fuego o algo. Muy improbable, vamos
+		DefaultRule r2= new DefaultRule();
+		r2.setOnlyOnce(true);
+		r2.setEvent(InfoBecomesAwareOfInfo.class);
+		r2.addCondition(new InfoIsTag("ROLDARE"));
+		r2.addResponse(new ActivateRuleResponse(r));
+		this.getScene().addRule(r2);
+		
+	}
+	
+	public void test(){
+		System.out.println("Una prueba, por la fuerza bruta :D");
 	}
 	
 }

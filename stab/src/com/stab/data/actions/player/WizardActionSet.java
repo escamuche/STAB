@@ -19,6 +19,7 @@ import com.stab.data.actions.player.spells.lvl1.SummonMonsterI;
 import com.stab.data.actions.player.spells.lvl1.TrueStrike;
 import com.stab.data.actions.player.spells.lvl1.unfinished.ChillTouch;
 import com.stab.data.actions.player.spells.lvl1.unfinished.ExpeditiousRetreat;
+import com.stab.data.actions.player.spells.lvl1.unfinished.RemoveFear;
 import com.stab.data.actions.player.spells.lvl1.unfinished.ShockingGrasp;
 import com.stab.data.actions.player.spells.wizard.level1.HoldPortal;
 import com.stab.data.actions.player.spells.wizard.level1.Identify;
@@ -84,5 +85,6 @@ public class WizardActionSet extends PathfinderActionSet {
 		this.setAction(DetectMagic.ID,1);
 		
 		this.setAction(SpellUtils.asWizard(MagicStone.ID), 2);
+		this.setAction(SpellUtils.asWizard(RemoveFear.ID), 2);
 	}
 }

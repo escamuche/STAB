@@ -74,6 +74,7 @@ import com.stab.data.actions.player.spells.lvl1.SummonMonsterI;
 import com.stab.data.actions.player.spells.lvl1.TrueStrike;
 import com.stab.data.actions.player.spells.lvl1.unfinished.ChillTouch;
 import com.stab.data.actions.player.spells.lvl1.unfinished.ExpeditiousRetreat;
+import com.stab.data.actions.player.spells.lvl1.unfinished.RemoveFear;
 import com.stab.data.actions.player.spells.lvl1.unfinished.ShockingGrasp;
 import com.stab.data.actions.player.spells.wizard.level1.HoldPortal;
 import com.stab.data.actions.player.spells.wizard.level1.Identify;
@@ -216,7 +217,6 @@ import com.stab.fw.MappedInheritedObjectFactory;
 import com.stab.model.action.ActionLibrary;
 import com.stab.model.action.base.InteractAction;
 import com.stab.model.basic.scenes.TokenBasedScene;
-import com.stab.model.basic.token.DoorToken;
 import com.stab.model.info.trait.base.gear.Equipment;
 import com.tien.princess.engine.sprite.factory.AbstractSpriteFactory;
 import com.tien.princess.engine.sprite.factory.SpriteFactory;
@@ -647,7 +647,7 @@ public class StabInit {
 		getActionLibrary().register(SummonMonsterI.class);
 		getActionLibrary().register(ShieldFaith.class);
 		
-		
+		getActionLibrary().register(RemoveFear.class);
 		
 		
 		
