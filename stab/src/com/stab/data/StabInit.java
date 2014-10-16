@@ -255,6 +255,10 @@ public class StabInit {
 			sv.getFactory().setMapping(RolledOptionButton.ID,Button_sprite.class);
 			sv.getFactory().setMapping(RolledSkillOptionButton.ID,Button_sprite.class);
 			sv.getFactory().setMapping(PathfinderTokenTooltip.class);
+			
+			//TODO: trampa gorda... es necesario solucionar esto, asi como el mapa
+			//Por ahora no queda otro remedio
+			sv.getFactory().setMapping(CrackDoorToken.ID,ImageToken_sprite.class);
 		}
 	}
 	
@@ -382,6 +386,7 @@ public class StabInit {
 		//pnjs. trampa por ahora, mas adelante los registrara la aventura
 		of.setMapping(Roldare.class);
 		of.setMapping(CrackDoor.class);
+		of.setMapping(CrackDoorToken.class);
 		TokenBasedScene.tokenFactory.setMapping(CrackDoor.ID, CrackDoorToken.ID);
 	//	of.setMapping(CrackDoorToken.ID,ImageToken_sprite.class);
 		of.setMapping(BrotherManfred.class);

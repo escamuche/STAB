@@ -110,7 +110,7 @@ public class Roldare extends Humanoid implements HasDialog, ActionPerformedListe
 
 		Dialog d= new Dialog();
 		d.setInfo(ComplexActivity.TARGET, this);
-		
+		d.setCancelOnTurnEnd(true);
 		
 		Dialog d1= new Dialog();
 		d1.addIText("Roldare! no me reconoces?");
@@ -165,7 +165,7 @@ public class Roldare extends Humanoid implements HasDialog, ActionPerformedListe
 			ActionRequest request) {
 		super.actionPerformed(info, action, result, request);
 		//Vale, deberia comprobar tambien que yo era el target y que el result ha sido correcto, pero estoy vago
-		System.out.println("Action performed on me "+action.getId());
+		//System.out.println("Action performed on me "+action.getId());
 		if (RemoveFear.ID.equals(action.getId())){
 			getScene().notify(new SpecialSceneEvent(getScene(), EVENT));
 		}
@@ -199,7 +199,7 @@ public class Roldare extends Humanoid implements HasDialog, ActionPerformedListe
 		this.getScene().addRule(r);
 		
 		//regla para lamentar su muerte
-		
+		//Si, si, entinedo que es mas facil meter el codigo en destroyed() pero queria probar las reglas.
 		r= new DefaultRule();
 		r.setOnlyOnce(true);
 		r.setEvent(InfoDestroyed.class);
@@ -222,6 +222,9 @@ public class Roldare extends Humanoid implements HasDialog, ActionPerformedListe
 	
 	public void test(){
 		System.out.println("Una prueba, por la fuerza bruta :D");
+		this.setDescription("Un aldeano del pueblo, ahora algo mas calmado");
+		//Aqui habria que meter mas cosas: cambiar la ai para que quiera salir, pero mantenerse cerca de sus aliados
+		//quizas cambiar la opcion de dialogo para que explique a los pjs lo sucedido, cosas asi.
 	}
 	
 }

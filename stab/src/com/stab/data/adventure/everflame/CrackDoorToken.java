@@ -33,4 +33,16 @@ public class CrackDoorToken extends   DoorToken{
 		
 	}
 	
+	
+	@Override
+	public void init() {
+		super.init();
+	}
+	
+
+	@Override
+	public float getTransparency() {
+		return 1.0f;
+	}
+	
 }
