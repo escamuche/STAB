@@ -9,7 +9,7 @@ public class CrackDoorToken extends   DoorToken{
 	public static final String ID="CRACKDOOR_TOKEN";
 
 	public static int EMPTY=BytePropertiesMapData.EMPTY;
-	public static int BAR=BytePropertiesMapData.WALL;
+	public static int BAR=BytePropertiesMapData.GLASS2;
 	
 	static	int[][]openibmd=new int[][]{{BytePropertiesMapData.EMPTY}};
 	

@@ -12,7 +12,7 @@ import com.stab.model.info.trait.base.VisualEffect;
 
 public class Blocked extends VisualEffect implements Attends<Interaction> {
 
-
+  public static final String ID="BLOCKED";
 	
 	public Blocked() {
 		this.setVisible(false);

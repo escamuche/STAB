@@ -11,6 +11,7 @@ import com.stab.data.info.equipment.EquipmentFactory;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.general.Alertness_Feat;
 import com.stab.data.info.monster.Humanoid;
+import com.stab.data.info.other.Blocked;
 import com.stab.model.action.Action;
 import com.stab.model.action.DelegatedAction;
 import com.stab.model.action.base.DialogAction;
@@ -20,7 +21,6 @@ import com.stab.model.basic.scenes.event.SpecialSceneEvent;
 import com.stab.model.basic.scenes.event.condition.InfoIsTag;
 import com.stab.model.basic.scenes.event.condition.SpecialEventIs;
 import com.stab.model.basic.scenes.event.response.ActivateRuleResponse;
-import com.stab.model.basic.scenes.event.response.SendChannelResponse;
 import com.stab.model.basic.scenes.event.response.ShowMessageResponse;
 import com.stab.model.basic.scenes.event.response.infos.PlayAnimationResponse;
 import com.stab.model.basic.scenes.event.response.infos.SetFactionResponse;
@@ -104,9 +104,25 @@ public class Roldare extends Humanoid implements HasDialog, ActionPerformedListe
 		this.addExtra(e);
 	}
 
+	
+	int dstate=0;
+	
 	@Override
 	public Dialog getDialogFor(BaseInfo instigator) {
 
+		
+		if (dstate==1){
+			
+			
+			Dialog d1= new Dialog();
+			d1.setInfo(ComplexActivity.TARGET, this);
+			d1.setCancelOnTurnEnd(true);
+			d1.addTText("Habeis conseguido encontrar a mi hermana?");
+			d1.addIText("No, me temo que aun no");
+			d1.addTText("Por favor, teneis que encontrarla... temo por su vida");
+			return d1;
+
+		}
 
 		Dialog d= new Dialog();
 		d.setInfo(ComplexActivity.TARGET, this);
@@ -133,13 +149,13 @@ public class Roldare extends Humanoid implements HasDialog, ActionPerformedListe
 		ds2.addOption(SkillRoll.SUCCESS, dd);
 		ds2.addOption(SkillRoll.CRITICAL, dd);
 		da.addStage(ds2);
-		da.addIText("NO! Monstruos! Alejaos de mi!");
+		da.addTText("NO! Monstruos! Alejaos de mi!");
 		
 		
 		Dialog db= new Dialog();
 		db.addIText("Roldare, maldita sea! Suelta el arma y abre la puerta! Si no acabaré contigo como con el resto de monstruos de esta cripta!");
 		db.addOnSkillSuccess(StabConstants.INTIMIDATE, 10, dd);
-		db.addIText("NO! No pienso abrir! no me cogereis con vida!");
+		db.addTText("NO! No pienso abrir! no me cogereis con vida!");
 		
 		Dialog dc= new Dialog();
 		dc.addIText("Ya esta todo bien... no quedan monstruos, puedes salir y volver a casa");
@@ -186,8 +202,10 @@ public class Roldare extends Humanoid implements HasDialog, ActionPerformedListe
 		r.addResponse(new PlayAnimationResponse("ROLDARE",VisualEffect.CENTER_CAM_ANIMATION));
 		r.addResponse(new SetFactionResponse("ROLDARE",0));
 		r.addResponse(new PlayAnimationResponse("ROLDARE",VisualEffect.SPEECH_ANIMATION,"Ah! por los cielos! Estoy salvado!"));
-		r.addResponse(new PlayAnimationResponse("ROLDARE",VisualEffect.SPEECH_ANIMATION,"Es una locura! la cripta esta llena de monstruos! Tengo que salir de aqui!"));
-		r.addResponse(new SendChannelResponse(101, true)); //esto abrira la puerta cerrada
+		r.addResponse(new PlayAnimationResponse("ROLDARE",VisualEffect.SPEECH_ANIMATION,"Es una locura! la cripta esta llena de monstruos! conseguí esconderme aqui."));
+		r.addResponse(new PlayAnimationResponse("ROLDARE",VisualEffect.SPEECH_ANIMATION,"Este es un sitio seguro, pero no puedo irme. Mi hermana... los vi arrastrarla al nivel inferior"));
+		r.addResponse(new PlayAnimationResponse("ROLDARE",VisualEffect.SPEECH_ANIMATION,"Teneis que ayudarme! debeis salvarla, por favor!"));
+		//Opcionalmente aqui meter la quest y todo eso
 		r.addResponse(new Response(){
 			@Override
 			public boolean execute(Rule r, ManagedEvent e) {
@@ -223,8 +241,9 @@ public class Roldare extends Humanoid implements HasDialog, ActionPerformedListe
 	public void test(){
 		System.out.println("Una prueba, por la fuerza bruta :D");
 		this.setDescription("Un aldeano del pueblo, ahora algo mas calmado");
-		//Aqui habria que meter mas cosas: cambiar la ai para que quiera salir, pero mantenerse cerca de sus aliados
-		//quizas cambiar la opcion de dialogo para que explique a los pjs lo sucedido, cosas asi.
+
+		((BaseInfo)this.getScene().getElementByTag("CRACKDOOR")).removeTrait(Blocked.ID);
+		dstate=1;//cambio de dialogo
 	}
 	
 }
