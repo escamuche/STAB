@@ -47,6 +47,7 @@ import com.stab.data.actions.player.spells.druid.level1.SpeakAnimals;
 import com.stab.data.actions.player.spells.druid.level1.SummonNature1;
 import com.stab.data.actions.player.spells.lvl0.AcidSplash;
 import com.stab.data.actions.player.spells.lvl0.Bleed;
+import com.stab.data.actions.player.spells.lvl0.DancingLights;
 import com.stab.data.actions.player.spells.lvl0.Daze;
 import com.stab.data.actions.player.spells.lvl0.DetectMagic;
 import com.stab.data.actions.player.spells.lvl0.DisruptUndead;
@@ -635,6 +636,7 @@ public class StabInit {
 		getActionLibrary().register(Bleed.class);
 		getActionLibrary().register(Daze.class);
 		getActionLibrary().register(DisruptUndead.class);
+		getActionLibrary().register(DancingLights.class);
 		getActionLibrary().register(Flare.class);
 		getActionLibrary().register(Guidance.class);
 		getActionLibrary().register(Light.class);

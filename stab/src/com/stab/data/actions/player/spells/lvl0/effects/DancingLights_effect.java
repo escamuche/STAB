@@ -1,5 +1,7 @@
 package com.stab.data.actions.player.spells.lvl0.effects;
 
+import com.stab.common.Constants;
+import com.stab.model.basic.token.Token;
 import com.stab.model.info.base.LightDecoration;
 
 public class DancingLights_effect extends LightDecoration {
@@ -9,7 +11,10 @@ public class DancingLights_effect extends LightDecoration {
 	@Override
 	public void init() {
 		super.init();
-		this.setLightIntensity(9);
+		this.setSize(1, 1);
+		this.setDepth(Constants.EFFECTS);
+		this.setSelectable(Token.SELECTABLE_MENU);
+		this.setLightIntensity(5);
 		this.setLightOn(true);
 		this.setResource("SHADER#dancinglights");
 		//TODO: tag dispeleable, asociar a un spelleffect, etc.

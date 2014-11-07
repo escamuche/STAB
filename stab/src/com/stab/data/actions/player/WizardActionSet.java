@@ -3,6 +3,7 @@ package com.stab.data.actions.player;
 
 import com.stab.data.actions.player.spells.SpellUtils;
 import com.stab.data.actions.player.spells.lvl0.AcidSplash;
+import com.stab.data.actions.player.spells.lvl0.DancingLights;
 import com.stab.data.actions.player.spells.lvl0.Daze;
 import com.stab.data.actions.player.spells.lvl0.DetectMagic;
 import com.stab.data.actions.player.spells.lvl0.DisruptUndead;
@@ -39,6 +40,7 @@ public class WizardActionSet extends PathfinderActionSet {
 	//	this.addAction(Bleed_Wizard.ID);
 		this.addAction(Daze.ID);
 		this.addAction(DisruptUndead.ID);
+		this.addAction(DancingLights.ID);
 		this.addAction(Flare.ID);
 		this.addAction(Light.ID);
 	//	this.addAction(MageHand.ID);
