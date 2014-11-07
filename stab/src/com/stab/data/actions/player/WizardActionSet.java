@@ -7,6 +7,7 @@ import com.stab.data.actions.player.spells.lvl0.Daze;
 import com.stab.data.actions.player.spells.lvl0.DetectMagic;
 import com.stab.data.actions.player.spells.lvl0.DisruptUndead;
 import com.stab.data.actions.player.spells.lvl0.Flare;
+import com.stab.data.actions.player.spells.lvl0.Light;
 import com.stab.data.actions.player.spells.lvl0.RayFrost;
 import com.stab.data.actions.player.spells.lvl0.Resistance;
 import com.stab.data.actions.player.spells.lvl0.TouchFatigue;
@@ -39,7 +40,7 @@ public class WizardActionSet extends PathfinderActionSet {
 		this.addAction(Daze.ID);
 		this.addAction(DisruptUndead.ID);
 		this.addAction(Flare.ID);
-	//	this.addAction(Light_Wizard.ID);
+		this.addAction(Light.ID);
 	//	this.addAction(MageHand.ID);
 	//	this.addAction(OpenClose.ID);
 		this.addAction(RayFrost.ID);

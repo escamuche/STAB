@@ -60,6 +60,7 @@ import com.stab.data.actions.player.spells.lvl0.Resistance;
 import com.stab.data.actions.player.spells.lvl0.Stabilize;
 import com.stab.data.actions.player.spells.lvl0.TouchFatigue;
 import com.stab.data.actions.player.spells.lvl0.Virtue;
+import com.stab.data.actions.player.spells.lvl0.effects.DancingLights_effect;
 import com.stab.data.actions.player.spells.lvl1.BurningHands;
 import com.stab.data.actions.player.spells.lvl1.DivineFavor;
 import com.stab.data.actions.player.spells.lvl1.Doom;
@@ -359,6 +360,9 @@ public class StabInit {
 		of.setMapping(HasLockInfo.class);
 		of.setMapping(Key.class);
 		of.setMapping(FloorLever.class);
+		
+		//efectos especiales
+		of.setMapping(DancingLights_effect.class);
 		
 		//criaturas
 		of.setMapping(Zombie.class);

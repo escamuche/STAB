@@ -1,12 +1,18 @@
 package com.stab.data.actions.player.spells.lvl0.effects;
 
-import com.stab.data.info.buff.Torchlight_Buff;
-import com.stab.model.basic.Sprite;
-import com.stab.model.basic.token.LightDecorToken;
+import com.stab.data.actions.player.spells.Spell;
+import com.stab.data.info.spellcasting.SpellEffect;
 import com.stab.model.info.BaseInfo;
+import com.stab.model.info.Info;
 
-public class Light_Buff extends Torchlight_Buff{
+public class Light_Buff extends  SpellEffect{
 
+	public Light_Buff(Spell spell, Info caster) {
+		super(spell, caster);
+		this.addTrait(new Light_Effect());
+	}
+
+	
 	LightInUse inUseTrait = null;
 	
 	public LightInUse getInUseTrait() {
@@ -25,15 +31,5 @@ public class Light_Buff extends Torchlight_Buff{
 		super.removeFrom(baseInfo);
 	}
 	
-	
-	@Override
-	protected Sprite createEffectSprite() {
-		LightDecorToken light= new LightDecorToken ();
-		light.setLightIntensity(9);
-		//light.setResource("PARTICLE#brazier");
-		//light.setResource("Palanca_icono");
-		//light.setDepth(20);
-		return light;
-	}
 	
 }
