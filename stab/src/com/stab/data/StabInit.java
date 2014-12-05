@@ -85,6 +85,7 @@ import com.stab.data.actions.player.spells.wizard.level1.unfinished.CharmPerson;
 import com.stab.data.actions.player.spells.wizard.level1.unfinished.EnlargePerson;
 import com.stab.data.adventure.ColiseoAdventure;
 import com.stab.data.adventure.CryptEverflameAdventure;
+import com.stab.data.adventure.RndGenTestAdventure;
 import com.stab.data.adventure.TestAdventure;
 import com.stab.data.adventure.Zombies;
 import com.stab.data.adventure.duskwood.BrotherManfred;
@@ -303,6 +304,9 @@ public class StabInit {
 		//ServiceManager.getService(AdventureLibrary.class).register(z);
 		DuskwoodAdventure a= new DuskwoodAdventure();
 		ServiceManager.getService(AdventureLibrary.class).register(a);
+		
+		RndGenTestAdventure r= new RndGenTestAdventure();
+		ServiceManager.getService(AdventureLibrary.class).register(r);
 		
 		ColiseoAdventure c=new ColiseoAdventure();
 		ServiceManager.getService(AdventureLibrary.class).register(c);

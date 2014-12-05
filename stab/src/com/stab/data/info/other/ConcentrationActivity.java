@@ -2,7 +2,7 @@ package com.stab.data.info.other;
 
 import java.util.ArrayList;
 
-import com.stab.data.actions.player.ConcentrateOnAction;
+import com.stab.data.actions.player.spells.ConcentrateOnAction;
 import com.stab.model.extras.PlayerContextualOption;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.interfaces.TurnBased;

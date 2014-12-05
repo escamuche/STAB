@@ -1,4 +1,4 @@
-package com.stab.data.actions.player;
+package com.stab.data.actions.player.spells;
 
 import java.awt.Point;
 
