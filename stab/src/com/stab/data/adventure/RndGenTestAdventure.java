@@ -32,6 +32,8 @@ public class RndGenTestAdventure extends Adventure{
 		this.addScene(n);
 		
 		RNDTestScene ms=new RNDTestScene();
+		
+		
 		ms.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
 		ms.setTiles(DefaultTileMapScene.DEFAULT,"tiles2");
 		ms.setTag("BATTLE");

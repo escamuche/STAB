@@ -199,6 +199,7 @@ import com.stab.data.info.props.RDoor;
 import com.stab.data.info.props.SkillNote;
 import com.stab.data.info.props.StabRandomSpawner;
 import com.stab.data.info.props.Statue;
+import com.stab.data.info.props.TorchStand;
 import com.stab.data.info.props.TriggerPlate;
 import com.stab.data.info.props.WoodenDoor;
 import com.stab.data.scene.StabLobby2;
@@ -352,6 +353,7 @@ public class StabInit {
 		of.setMapping(Barrel.class);
 		of.setMapping(Dummy.class);
 		of.setMapping(Brazier.class);
+		of.setMapping(TorchStand.class);
 		of.setMapping(StabRandomSpawner.class);
 		of.setMapping(Statue.class);
 		of.setMapping(IronBars.class);

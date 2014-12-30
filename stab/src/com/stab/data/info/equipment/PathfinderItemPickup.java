@@ -73,4 +73,16 @@ public class PathfinderItemPickup extends ItemPickup implements Interactive {
 			infoPicksUp((PathfinderCharacter)actor);
 	}
 
+
+	@Override
+	public int getDistance() {
+		return 1;
+	}
+
+
+	@Override
+	public boolean consumesAction() {
+		return true;
+	}
+
 }
