@@ -10,7 +10,7 @@ public class StabRandomGenDecoration extends RandomGenFloorDecoration{
 	@Override
 	public void init() {
 		super.init();
-		
+		setSize(1,1);
 		add("decor/1x1Blood1");
 		add("decor/1x1Blood2");
 		add("decor/1x1Blood3");
