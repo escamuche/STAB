@@ -197,6 +197,7 @@ import com.stab.data.info.props.IronBars;
 import com.stab.data.info.props.LDoor;
 import com.stab.data.info.props.RDoor;
 import com.stab.data.info.props.SkillNote;
+import com.stab.data.info.props.StabRandomGenDecoration;
 import com.stab.data.info.props.StabRandomSpawner;
 import com.stab.data.info.props.Statue;
 import com.stab.data.info.props.TorchStand;
@@ -348,6 +349,7 @@ public class StabInit {
 		of.setMapping(SorcererCharacter.class);
 		
 		//objetos
+		of.setMapping(StabRandomGenDecoration.class);
 		of.setMapping(Crate.class);
 		of.setMapping(WoodenDoor.class);
 		of.setMapping(Barrel.class);
