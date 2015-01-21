@@ -45,6 +45,7 @@ public class RndGenTestAdventure extends Adventure{
 		builder.generateMap();
 		
 		ms.setAllExplored(true);
+		ms.setAllVisible(true);
 		
 		this.addScene(ms);
 		

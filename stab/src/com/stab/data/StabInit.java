@@ -189,6 +189,7 @@ import com.stab.data.info.player.WizardCharacter;
 import com.stab.data.info.props.Barrel;
 import com.stab.data.info.props.Brazier;
 import com.stab.data.info.props.CDoor;
+import com.stab.data.info.props.Column;
 import com.stab.data.info.props.Crate;
 import com.stab.data.info.props.Dummy;
 import com.stab.data.info.props.FlameJetTrap;
@@ -358,6 +359,7 @@ public class StabInit {
 		of.setMapping(TorchStand.class);
 		of.setMapping(StabRandomSpawner.class);
 		of.setMapping(Statue.class);
+		of.setMapping(Column.class);
 		of.setMapping(IronBars.class);
 		of.setMapping(TriggerPlate.class);
 		of.setMapping(FlameJetTrap.class);
