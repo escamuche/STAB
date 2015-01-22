@@ -196,8 +196,10 @@ import com.stab.data.info.props.FlameJetTrap;
 import com.stab.data.info.props.FloorLever;
 import com.stab.data.info.props.IronBars;
 import com.stab.data.info.props.LDoor;
+import com.stab.data.info.props.Niche;
 import com.stab.data.info.props.RDoor;
 import com.stab.data.info.props.SkillNote;
+import com.stab.data.info.props.Slab;
 import com.stab.data.info.props.StabRandomGenDecoration;
 import com.stab.data.info.props.StabRandomSpawner;
 import com.stab.data.info.props.Statue;
@@ -208,8 +210,10 @@ import com.stab.data.scene.StabLobby2;
 import com.stab.data.tokens.CDoorToken;
 import com.stab.data.tokens.IronBarsToken;
 import com.stab.data.tokens.LDoorToken;
+import com.stab.data.tokens.NicheToken;
 import com.stab.data.tokens.RDoorToken;
 import com.stab.data.tokens.RoundToken;
+import com.stab.data.tokens.SlabToken;
 import com.stab.data.ui.RolledOptionButton;
 import com.stab.data.ui.RolledSkillOptionButton;
 import com.stab.data.ui.visual.PathfinderTokenCard;
@@ -258,6 +262,8 @@ public class StabInit {
 			sv.getFactory().setMapping(RDoorToken.ID,ImageToken_sprite.class);
 			sv.getFactory().setMapping(CDoorToken.ID,ImageToken_sprite.class);
 			sv.getFactory().setMapping(RoundToken.ID,ImageToken_sprite.class);
+			sv.getFactory().setMapping(NicheToken.ID,ImageToken_sprite.class);
+			sv.getFactory().setMapping(SlabToken.ID,ImageToken_sprite.class);
 			sv.getFactory().setMapping(RolledOptionButton.ID,Button_sprite.class);
 			sv.getFactory().setMapping(RolledSkillOptionButton.ID,Button_sprite.class);
 			sv.getFactory().setMapping(PathfinderTokenTooltip.class);
@@ -359,6 +365,9 @@ public class StabInit {
 		of.setMapping(TorchStand.class);
 		of.setMapping(StabRandomSpawner.class);
 		of.setMapping(Statue.class);
+		of.setMapping(Column.class);
+		of.setMapping(Niche.class);
+		of.setMapping(Slab.class);
 		of.setMapping(Column.class);
 		of.setMapping(IronBars.class);
 		of.setMapping(TriggerPlate.class);
@@ -481,7 +490,10 @@ public class StabInit {
 		TokenBasedScene.tokenFactory.setMapping(CDoor.ID, CDoorToken.ID);
 		of.setMapping(RoundToken.class);
 		TokenBasedScene.tokenFactory.setMapping(Statue.ID, RoundToken.ID);
-		
+		of.setMapping(NicheToken.class);
+		TokenBasedScene.tokenFactory.setMapping(Niche.ID, NicheToken.ID);
+		of.setMapping(SlabToken.class);
+		TokenBasedScene.tokenFactory.setMapping(Slab.ID, SlabToken.ID);
 		
 		
 	

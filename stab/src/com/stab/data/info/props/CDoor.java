@@ -27,14 +27,14 @@ public static final String ID="CDOOR";
 	
 	protected void close(){
 		playSound("door_close");
-		setResource("cdoorClosed");
+		setResource("cdoorClosed$A");
 		super.close();
 	}
 	
 	@Override
 		public void setState(int state) {
 			if (state==DESTROYED_STATE)
-				setResource("cdoorOpen");
+				setResource("cdoorOpen$A");
 			super.setState(state);
 		}
 	
