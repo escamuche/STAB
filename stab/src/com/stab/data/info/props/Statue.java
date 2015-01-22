@@ -13,6 +13,7 @@ public class Statue extends Obstacle {
 		setMaxEp(0);
 		healFully();
 		setResource("gargoylestatue");
+		setDestroyedResource("props/1x1BrokenStatue");
 		setText("Statue");
 		setDescription("A stone staue. Heavy and weathered");
 		this.setBloodeffEct("PARTICLE#damage/rockburst");

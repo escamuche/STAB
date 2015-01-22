@@ -198,6 +198,7 @@ import com.stab.data.info.props.IronBars;
 import com.stab.data.info.props.LDoor;
 import com.stab.data.info.props.Niche;
 import com.stab.data.info.props.RDoor;
+import com.stab.data.info.props.SecretDoor;
 import com.stab.data.info.props.SkillNote;
 import com.stab.data.info.props.Slab;
 import com.stab.data.info.props.StabRandomGenDecoration;
@@ -375,6 +376,7 @@ public class StabInit {
 		of.setMapping(LDoor.class);
 		of.setMapping(RDoor.class);
 		of.setMapping(CDoor.class);
+		of.setMapping(SecretDoor.class);
 		of.setMapping(SkillNote.class);
 		of.setMapping(SkillExtraText.class);
 		of.setMapping(HasLockInfo.class);
