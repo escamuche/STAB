@@ -1,8 +1,9 @@
 package com.stab.data.info.props;
 
 import com.stab.model.info.base.Lever;
+import com.stab.model.info.interfaces.RemoteActivated;
 
-public class FloorLever extends Lever {
+public class FloorLever extends Lever implements RemoteActivated{
 
 	public static final String ID="FLOOR_LEVER";
 	
@@ -26,6 +27,12 @@ public class FloorLever extends Lever {
 		}
 	}
 	
+	public void channelOn() {
+		setState(ON);
+	}
+	public void channelOff() {
+		setState(OFF);
+	}
 	
 	
 }

@@ -28,6 +28,7 @@ public static final String ID="SECRETDOOR";
 	
 	@Override
 		public void channelOn(int ch) {
+		System.out.println("CHANNEL "+ch);
 			super.channelOn(ch);
 		}
 	
