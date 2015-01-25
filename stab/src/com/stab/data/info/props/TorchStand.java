@@ -18,6 +18,6 @@ public class TorchStand extends LightDecoration {
 		setDescription("A torch on the wall, casting a dim light");
 		setLightIntensity(8);
 		//setSelectable();
-		setLightColor(Color.orange);
+		//setLightColor(Color.orange);
 	}
 }

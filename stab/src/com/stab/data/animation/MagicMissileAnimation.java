@@ -60,7 +60,7 @@ public class MagicMissileAnimation extends OnTargetAnimation{
 			
 			icon.setR(speed+(Roll.d4()/(float)30));
 			icon.setPos(origin);
-			icon.setSize(64,64);
+			icon.setSize(2,2);
 			icon.setA(a);
 			icon.setTarget(AnimUtils.getSprite(getTarget()),true);
 //	icon.setPainter(Resources.INSTANCE.getImage("tokens/door"),Constants.CENTER);

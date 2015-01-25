@@ -14,6 +14,7 @@ import com.stab.data.actions.player.spells.lvl0.Resistance;
 import com.stab.data.actions.player.spells.lvl0.TouchFatigue;
 import com.stab.data.actions.player.spells.lvl1.BurningHands;
 import com.stab.data.actions.player.spells.lvl1.MageArmor;
+import com.stab.data.actions.player.spells.lvl1.MagicMissile;
 import com.stab.data.actions.player.spells.lvl1.MagicStone;
 import com.stab.data.actions.player.spells.lvl1.RayEnfeeblement;
 import com.stab.data.actions.player.spells.lvl1.Shield;
@@ -58,7 +59,7 @@ public class WizardActionSet extends PathfinderActionSet {
 		this.addAction(Identify.ID);
 		this.addAction(Jump.ID);
 		this.addAction(MageArmor.ID);
-	//	this.addAction(MagicMissile.ID);
+		this.addAction(MagicMissile.ID);
 		this.addAction(RayEnfeeblement.ID);
 		this.addAction(Shield.ID);
 		this.addAction(ShockingGrasp.ID);

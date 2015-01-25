@@ -50,9 +50,9 @@ public class ScreenShakeSprite extends StateSprite {
 		
 	}
 	
-	@Override
+	/**/@Override
 	public void destroy() {
 		getScreen().setViewPoint(old.x, old.y);
 		super.destroy();
-	}
+	}/**/
 }

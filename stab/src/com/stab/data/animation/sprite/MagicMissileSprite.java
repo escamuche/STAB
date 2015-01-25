@@ -4,6 +4,7 @@ import org.newdawn.slick.Color;
 
 import com.stab.client.slick.base.visualobjects.LightSprite;
 import com.stab.client.slick.base.visualobjects.StabSprite;
+import com.stab.data.animation.state.SpawnTrailUpdater;
 import com.tien.princess.engine.sprite.Sprite;
 import com.tien.princess.engine.sprite.base.TagPoint;
 import com.tien.princess.engine.sprite.common.painters.ValuePainter;
@@ -20,12 +21,18 @@ public class MagicMissileSprite extends LightSprite {
 
 	boolean blocked=false;;
 	
+	@Override
+	public void setSize(int w, int h) {
+		// TODO Auto-generated method stub
+		super.setSize(w, h);
+	}
+	
 	public MagicMissileSprite(long t) {
 		setLightOn(true);
 		setLightIntensity(3);
 		setLightColor(Color.blue);
 		setPainter(PaintUtils.getPainter("PARTICLE#spells/magicMissile"));
-		
+		setSize(2,2);
 		BasicAnimState st=new BasicAnimState(t);
 	//	st.addUpdater(new SpawnTrailUpdater());
 		st.addUpdater(new CorrectAim(0.015));
