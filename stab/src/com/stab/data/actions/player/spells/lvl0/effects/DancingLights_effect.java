@@ -14,7 +14,7 @@ public class DancingLights_effect extends LightDecoration {
 		this.setSize(1, 1);
 		this.setDepth(Constants.EFFECTS);
 		this.setSelectable(Token.SELECTABLE_MENU);
-		this.setLightIntensity(5);
+		this.setLightIntensity(7);
 		this.setLightOn(true);
 		this.setResource("SHADER#dancinglights");
 		//TODO: tag dispeleable, asociar a un spelleffect, etc.

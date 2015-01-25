@@ -6,6 +6,7 @@ import java.util.Collection;
 
 import org.newdawn.slick.Color;
 
+import com.stab.client.slick.base.visualobjects.LightSprite;
 import com.stab.common.Constants;
 import com.stab.common.value.InterpolatorValueProvider;
 import com.stab.data.animation.state.ExplodeState;
@@ -16,6 +17,7 @@ import com.tien.princess.engine.sprite.base.AttachedParticleSprite;
 import com.tien.princess.engine.sprite.base.BeamSprite;
 import com.tien.princess.engine.sprite.base.TrailSprite;
 import com.tien.princess.engine.sprite.common.states.State;
+import com.tien.princess.engine.sprite.common.states.StateSet;
 import com.tien.princess.engine.sprite.common.states.ValueState2;
 import com.tien.princess.engine.sprite.common.states.base.ClearParticlesState;
 import com.tien.princess.engine.sprite.common.updaters.angle.MoveA;
@@ -28,6 +30,8 @@ import com.tien.princess.engine.sprite.factory.EmitterUtils;
 
 public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 
+	
+	public static final String LIGHT_FLASH="LIGHT_FLASH";
 	
 	public static final String RED_MARK="RED_MARK";
 	
@@ -209,7 +213,14 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 			
 			return Arrays.asList((Sprite)s);
 		}
-		
+		if (LIGHT_FLASH.equals(type)){
+			LightSprite s= new LightSprite();
+			State st= new State();
+			s.setLightIntensity(7);
+			st.setTimed(1000, StateSet.DESTROYED);
+			s.setState(st);
+			return Arrays.asList((Sprite)s);
+		}
 		if (RED_MARK.equals(type)){
 			StateSprite s= (StateSprite)getSpark(null).iterator().next();
 			s.addUpdater(new StickToRef());

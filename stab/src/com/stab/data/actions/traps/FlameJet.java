@@ -3,6 +3,9 @@ package com.stab.data.actions.traps;
 import java.awt.Point;
 
 import com.stab.data.animation.BasicSparkAnimation;
+import com.stab.data.animation.GenericSpriteAnimation;
+import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
+import com.stab.data.animation.sprite.StabSpriteFactory;
 import com.stab.model.action.Action;
 import com.stab.model.action.AoE;
 import com.stab.model.info.BaseInfo;
@@ -63,6 +66,7 @@ public class FlameJet extends Action  {
 
 		super.playExecuteActionAnimation(caster, target, pos, ar);
 		caster.playSound("flames");
+		caster.playAnimationAt(GenericSpriteAnimation.ID,pos,SpecialEffectsSpriteFactory.LIGHT_FLASH);
 		caster.playAnimation(BasicSparkAnimation.ID,"PARTICLE#generic/flamejet",1500,Math.toDegrees(getAngle(caster, target, pos)));
 	}
 	
