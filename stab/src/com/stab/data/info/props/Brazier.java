@@ -17,6 +17,6 @@ public class Brazier extends LightDecoration {
 		setText("Brazier");
 		setDescription("A lit brazier, casting a dim light");
 		setLightIntensity(8);
-		setLightColor(Color.orange);
+		//setLightColor(Color.orange);
 	}
 }

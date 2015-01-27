@@ -189,6 +189,7 @@ import com.stab.data.info.player.WizardCharacter;
 import com.stab.data.info.props.Barrel;
 import com.stab.data.info.props.Brazier;
 import com.stab.data.info.props.CDoor;
+import com.stab.data.info.props.Chest;
 import com.stab.data.info.props.Column;
 import com.stab.data.info.props.Crate;
 import com.stab.data.info.props.Dummy;
@@ -384,6 +385,7 @@ public class StabInit {
 		of.setMapping(HasLockInfo.class);
 		of.setMapping(Key.class);
 		of.setMapping(FloorLever.class);
+		of.setMapping(Chest.class);
 		
 		//efectos especiales
 		of.setMapping(DancingLights_effect.class);

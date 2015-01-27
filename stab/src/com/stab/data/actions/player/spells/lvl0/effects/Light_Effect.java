@@ -19,7 +19,7 @@ public class Light_Effect extends Torchlight_Buff{
 	protected Sprite createEffectSprite() {
 		LightDecorToken light= new LightDecorToken ();
 		light.setLightIntensity(9);
-		light.setLightColor(Color.green);
+		light.setLightColor(Color.blue);
 		return light;
 	}
 }
