@@ -200,6 +200,7 @@ import com.stab.data.info.props.IronBars;
 import com.stab.data.info.props.LDoor;
 import com.stab.data.info.props.Niche;
 import com.stab.data.info.props.RDoor;
+import com.stab.data.info.props.Rune;
 import com.stab.data.info.props.SecretDoor;
 import com.stab.data.info.props.SkillNote;
 import com.stab.data.info.props.Slab;
@@ -389,7 +390,7 @@ public class StabInit {
 		of.setMapping(FloorLever.class);
 		of.setMapping(Chest.class);
 		of.setMapping(TreasureChest.class);
-		
+		of.setMapping(Rune.class);
 		//efectos especiales
 		of.setMapping(DancingLights_effect.class);
 		

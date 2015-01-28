@@ -145,6 +145,10 @@ public class Spell implements SpellProperties {
 	}
 	
 	
+	public int getMinimumCasterLevel(){
+		return SpellUtils.getMinimumCasterLevel(getCasterClass(),getLevel());
+	}
+	
 	public int getRange(Info caster) {
 		if (caster instanceof BaseInfo)
 			return getRange((BaseInfo)caster);

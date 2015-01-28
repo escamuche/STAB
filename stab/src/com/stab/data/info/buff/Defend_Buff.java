@@ -15,8 +15,8 @@ public class Defend_Buff extends BuffEffect {
 		Modifier masdosalaCA= new Modifier("CA", +2);  // Creamos un modificador de +2 a la ca
 		this.addTrait(masdosalaCA);
 		this.setTime(1);
-		this.setAnimIcon("actions/ability_warrior_defensivestance");				
-		this.setSound("HolyCast");
+	//	this.setAnimIcon("actions/ability_warrior_defensivestance");				
+	//	this.setSound("HolyCast");
 		this.setResource("actions/ability_warrior_defensivestance");                  
 		this.setName("Defending");
 		this.setUnique(true);

@@ -128,6 +128,28 @@ public class SpellUtils {
 			return desc+"Divination";
 		return desc+" Generic spell";
 	}
+	
+	
+	
+	public static int getMinimumCasterLevel(String casterClass, int level) {
+		if (level==0)
+			return 1;
+		int type=0;
+		if (casterClass.equals(StabConstants.SORCERERCASTER))
+			type=1;
+		if (casterClass.equals(StabConstants.BARDCASTER)||casterClass.equals(StabConstants.RANGERCASTER)||casterClass.equals(StabConstants.PALADINCASTER))
+		    type=2;
+		
+		switch(type){
+		  case 0: return level*2-1;
+		  case 1: if (level==1)
+			  		return 1;
+		  		  return level*2;
+		  case 2:  return (level-1)*3 +1;
+			      
+		}
+		return 0;
+	}
 
 	
 }

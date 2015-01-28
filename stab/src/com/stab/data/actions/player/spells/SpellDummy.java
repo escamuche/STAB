@@ -1,5 +1,6 @@
 package com.stab.data.actions.player.spells;
 
+import com.stab.model.basic.token.Token;
 import com.stab.model.info.BaseInfo;
 
 //Dummy para las interacciones de algunos hechizos.
@@ -8,4 +9,12 @@ import com.stab.model.info.BaseInfo;
 //WIP
 public class SpellDummy extends BaseInfo {
 
+	
+	@Override
+	public void init() {
+		super.init();
+		setSelectable(Token.NOT_SELECTABLE);
+		setInvulnerable(true);
+	}
+	
 }

@@ -288,7 +288,8 @@ public abstract class SpellAction extends Action implements SpellProperties{
 			
 			SpellWeapon w=getWeapon(caster,target,point,ar);
 			if (w!=null){
-				((Creature)caster).equip(w);
+				if (caster instanceof Creature)
+					((Creature)caster).equip(w);
 				WeaponAttackAction a=(WeaponAttackAction)StabUtils.getGameLogic().getAttackAction(w);
 				int r=a.affect(caster, target, point, ar);
 				return r;
@@ -407,8 +408,10 @@ public abstract class SpellAction extends Action implements SpellProperties{
 		if (w==null)
 			return null;
 		w.addEffect(caster,target,point,this.getSpell(),ar);
-		Weapon old=(Weapon)((Creature)caster).getEquipment(w.getSlot());
-		w.setOld(old);
+		if (caster instanceof Creature){
+			Weapon old=(Weapon)((Creature)caster).getEquipment(w.getSlot());
+			w.setOld(old);
+		}
 		return w;
 	}
 	
