@@ -166,9 +166,28 @@ public static final String QUICK_INVENTORY="QUICK_INVENTORY";
 	}
 	
 	
+	@Override
+		public void setMovePoints(int moves) {
+			super.setMovePoints(moves);
+			setCustomString(StabConstants.MOVEMENTS,moves);
+		}
+	
 	public void refreshCA(){
 			if (this.getToken()!=null)
 				this.getToken().setCustomProperty(StabConstants.AC, getValue(StabConstants.AC));
+	}
+	
+	public void setCustomString(String id){
+		if (this.getToken()!=null){
+			this.getToken().setCustomProperty(id, getValue(id));
+			this.getToken().setVisible(getToken().isVisible());//Ñapa para forzar a que refresque las tokencards
+		}
+	}
+	public void setCustomString(String id,Object val){
+		if (this.getToken()!=null){
+			this.getToken().setCustomProperty(id,val.toString());
+			this.getToken().setVisible(getToken().isVisible());//Ñapa para forzar a que refresque las tokencards
+		}
 	}
 	
 	@Override

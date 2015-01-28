@@ -15,6 +15,7 @@ import com.stab.data.actions.feats.Expertise;
 import com.stab.data.actions.feats.PowerAttack;
 import com.stab.data.actions.general.DefendAction;
 import com.stab.data.actions.general.HealAction;
+import com.stab.data.actions.general.PassDefendAction;
 import com.stab.data.actions.general.PathfinderPathAction;
 import com.stab.data.actions.general.PathfinderSearchAction;
 import com.stab.data.actions.general.PathfinderWeaponAttackAction;
@@ -206,6 +207,7 @@ import com.stab.data.info.props.StabRandomGenDecoration;
 import com.stab.data.info.props.StabRandomSpawner;
 import com.stab.data.info.props.Statue;
 import com.stab.data.info.props.TorchStand;
+import com.stab.data.info.props.TreasureChest;
 import com.stab.data.info.props.TriggerPlate;
 import com.stab.data.info.props.WallButton;
 import com.stab.data.info.props.WoodenDoor;
@@ -386,6 +388,7 @@ public class StabInit {
 		of.setMapping(Key.class);
 		of.setMapping(FloorLever.class);
 		of.setMapping(Chest.class);
+		of.setMapping(TreasureChest.class);
 		
 		//efectos especiales
 		of.setMapping(DancingLights_effect.class);
@@ -515,7 +518,7 @@ public class StabInit {
 	
 	static void initActions(){
 		//accciones
-		
+		getActionLibrary().register(PassDefendAction.class);
 		getActionLibrary().register(PushAction.class);
 		getActionLibrary().register(DismissSpellAction.class);
 		

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.stab.common.Constants;
 import com.stab.data.StabInit;
 import com.stab.data.info.equipment.WeaponFactory;
+import com.stab.model.basic.token.Token;
 import com.stab.model.info.Info;
 import com.stab.model.info.base.Gadget;
 import com.stab.model.info.base.pickup.Inventory;
@@ -50,14 +51,14 @@ public static final String ID="CHEST";
 			openChest(actor);
 		}
 	}
-
+/*
 	@Override
 	public boolean consumesAction() {
 		if (this.getState()==OPEN)
 			return false;
 		return true;
 	}
-	
+	/**/
 	
 	protected void openChest(Info actor) {
 		playSound("door_open");
@@ -66,6 +67,7 @@ public static final String ID="CHEST";
 		//Volcamos todo el loot
 		ArrayList<ItemPickup> items=new ArrayList<ItemPickup>();
 		items.addAll(inventory.getItems());
+		this.setSelectable(Token.NOT_SELECTABLE);
 		for (ItemPickup i:items)
 			i.setInventory(null);
 	}

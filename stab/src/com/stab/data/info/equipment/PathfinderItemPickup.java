@@ -80,9 +80,6 @@ public class PathfinderItemPickup extends ItemPickup implements Interactive {
 	}
 
 
-	@Override
-	public boolean consumesAction() {
-		return true;
-	}
+	
 
 }

@@ -21,9 +21,9 @@ public class PathfinderTokenCard extends DefaultTokenCard {
 		Token t=this.getToken();
 		
 		if (t!=null && showData(t)){
-			String ac=t.getCustomString(StabConstants.AC);
+			String ac=t.getCustomString(StabConstants.MOVEMENTS);
 			if (ac!=null && ac.length()>0)
-				this.setName(getName()+" (AC:"+ac+")");
+				this.setName(getName()+" (MP:"+ac+")");
 		}
 	}
 	

@@ -206,6 +206,9 @@ public class StabConstants {
 	public static final String AOO = "ATTACKOFOPPORTUNITY";
 	public static final String ATTACK_ACTION="ATTACK_ACTION";
 	
+	public static final String MOVEMENTS = "MOVEMENTS";
+	public static final String GOLD = "GOLD";
+	
 	
 	
 	

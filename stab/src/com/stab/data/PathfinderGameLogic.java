@@ -119,7 +119,15 @@ public class PathfinderGameLogic extends GameLogic {
 	//En un futuro meter aqui comprobaciones automaticas (ej: no le quedan acciones posibles, ni free actions)
 	public boolean shouldEndTurn(Action action,ActionRequest ar,boolean success){
 		Info actor=action.getInfo(ar);
-		//if (actor instanceof Creature)
+		
+	
+		if (actor instanceof BaseInfo){
+			BaseInfo i=(BaseInfo)actor;
+			if (i.getActionPoints()==0)
+				return true;
+			return false;
+		}
+			
 		return true;
 	}
 	

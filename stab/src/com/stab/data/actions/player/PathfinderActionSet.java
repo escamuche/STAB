@@ -1,6 +1,7 @@
 package com.stab.data.actions.player;
 
 import com.stab.data.actions.general.DefendAction;
+import com.stab.data.actions.general.PassDefendAction;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.model.action.BasicActionSet;
 import com.stab.model.action.base.GearSlotDelegatedAction;
@@ -26,12 +27,13 @@ public class PathfinderActionSet extends BasicActionSet {
 		this.addAction(DefendAction.ID);
 		this.addAction(SearchAction.ID);
 		this.addAction(TinkerAction.ID);
+		this.addAction(PassDefendAction.ID);
 		
 		
 		//this.setAction(PathfinderWeaponAttackAction.ID, 0);
 		this.setAction(InteractAction.ID,8);
-		this.setAction(DefendAction.ID,9);
-		this.setAction(PassAction.ID,19);
+		this.setAction(PassDefendAction.ID,9);
+	//	this.setAction(PassAction.ID,19);
 		this.setAction(SearchAction.ID,7);
 		this.setAction(TinkerAction.ID,18);
 		//stealth 17
