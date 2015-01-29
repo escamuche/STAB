@@ -290,8 +290,12 @@ public abstract class SpellAction extends Action implements SpellProperties{
 			if (w!=null){
 				if (caster instanceof Creature)
 					((Creature)caster).equip(w);
+				else
+					caster.addTrait(w);
 				WeaponAttackAction a=(WeaponAttackAction)StabUtils.getGameLogic().getAttackAction(w);
 				int r=a.affect(caster, target, point, ar);
+				if (!(caster instanceof Creature))
+					caster.removeTrait(w);
 				return r;
 			}
 			//Si no se usa un ataque, castear normalmente

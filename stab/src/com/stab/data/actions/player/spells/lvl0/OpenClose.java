@@ -3,7 +3,7 @@ package com.stab.data.actions.player.spells.lvl0;
 import java.awt.Point;
 
 import com.stab.data.StabConstants;
-import com.stab.data.actions.player.spells.SpellDummy;
+import com.stab.data.actions.player.spells.ActionDummy;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.model.basic.token.DoorToken;
@@ -20,7 +20,7 @@ public class OpenClose extends SpellOnTarget{
 @Override
 protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {
 	Door Atacado = (Door)target;
-	SpellDummy dummy= new SpellDummy();
+	ActionDummy dummy= new ActionDummy();
 	Interaction i=new Interaction(dummy);
 	((BaseInfo)target).apply(i);
 	return i.success();

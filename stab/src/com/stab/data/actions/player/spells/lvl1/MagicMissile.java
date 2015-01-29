@@ -16,7 +16,7 @@ import com.stab.model.info.applicable.base.RolledDamage;
 @Instanced
 public class MagicMissile extends SpellOnTarget{
 	
-	public static final String ID="MagicMissile";
+	public static final String ID="MAGICMISSILE";
 	
 	@Override
 	protected boolean fullEffect(BaseInfo caster, BaseInfo target, Point point) {

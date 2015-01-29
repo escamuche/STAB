@@ -5,9 +5,11 @@ import java.awt.Rectangle;
 import java.util.Collection;
 
 import com.stab.model.basic.token.interfaces.Area;
+import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.base.FloorDecoration;
+import com.stab.model.info.trait.base.VisualEffect;
 
 public class TriggerArea extends FloorDecoration implements Area{
 
@@ -71,7 +73,12 @@ public class TriggerArea extends FloorDecoration implements Area{
 			return;
 		if (!willTrigger(info))
 			return;
-		revealFor(info);
+		if (this.isHiddenFrom(info)&&(info instanceof BaseInfo)){
+			((BaseInfo)info).clearActions();
+			info.playAnimation(VisualEffect.ALERT_ANIMATION);
+			revealFor(info);
+		}
+		
 		onEnter(info);
 	}
 

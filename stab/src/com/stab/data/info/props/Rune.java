@@ -3,14 +3,17 @@ package com.stab.data.info.props;
 import java.awt.Point;
 
 import com.stab.annotations.Injected;
+import com.stab.data.StabConstants;
 import com.stab.data.actions.player.spells.SpellAction;
-import com.stab.data.actions.player.spells.SpellDummy;
+import com.stab.data.actions.player.spells.ActionDummy;
 import com.stab.data.actions.player.spells.SpellUtils;
 import com.stab.data.actions.player.spells.lvl0.DetectMagic;
 import com.stab.model.action.Action;
 import com.stab.model.basic.token.Token;
 import com.stab.model.extras.OnlyVisibleWithMode;
+import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.model.info.trait.base.VisualEffect;
 import com.stab.util.StabUtils;
 
 public class Rune extends TriggerArea {
@@ -21,11 +24,12 @@ public class Rune extends TriggerArea {
 	String spell;
 	
 	SpellAction action;
-	SpellDummy dummy;
+	ActionDummy dummy;
 	
 	@Injected
 	boolean rechargeable;
 	
+	int lvl;
 	
 	@Override
 	public void init() {
@@ -43,7 +47,7 @@ public class Rune extends TriggerArea {
 		SpellAction a;
 		a=(SpellAction)StabUtils.getActionLibrary().getAction(s);
 		String cc=a.getSpell().getCasterClass();
-		int lvl=a.getSpell().getMinimumCasterLevel();
+		lvl=a.getSpell().getMinimumCasterLevel();
 		setAction(SpellUtils.asSpellLike(s, cc, lvl));
 	}
 	
@@ -56,19 +60,22 @@ public class Rune extends TriggerArea {
 	@Override
 	public void enter() {
 		super.enter();
-		dummy=new SpellDummy();
-		dummy.setPos(this.getPos());
-		dummy.setSize(this.getSize());
+		dummy=new ActionDummy();
+		dummy.setPos(this.getCenter());
+		dummy.setSize(1,1);
 		OnlyVisibleWithMode m= new OnlyVisibleWithMode(DetectMagic.VISIONMODE);
 		dummy.addExtra(m);
 		dummy.setResource(SpellUtils.getVisualAura(this.action.getSpell()));
-		
+		dummy.setAttribute(StabConstants.BAB, lvl);
 		this.getScene().add(dummy);
 	}
 	@Override
 	protected void onEnter(Info info) {
 		super.onEnter(info);
+		
+
 		boolean b=cast(info);
+		b=true;//parecia una buena idea, pero mejor no. o no se descargara si falla.
 		if (b){
 			
 			if (rechargeable)

@@ -1,11 +1,14 @@
 package com.stab.data.actions.player.spells.lvl0;
 
+import java.awt.Point;
+
 import com.stab.data.StabConstants;
 import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.actions.player.spells.SpellOnTarget;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
+import com.stab.model.request.basic.ActionRequest;
 
 public class RayFrost extends SpellOnTarget{
 	
@@ -13,7 +16,11 @@ public class RayFrost extends SpellOnTarget{
 
 	
 	
-	
+	@Override
+	public int execute(Info origin, Info target, Point point, ActionRequest ar) {
+		// TODO Auto-generated method stub
+		return super.execute(origin, target, point, ar);
+	}
 
 
 	public RayFrost() {

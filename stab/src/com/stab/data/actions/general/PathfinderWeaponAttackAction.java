@@ -290,7 +290,7 @@ public class PathfinderWeaponAttackAction extends WeaponAttackAction  {
 	}
 	
 protected void playHitAnimation(WeaponAttack ad, BaseInfo origin, Token target) {
-	if (ad.getMissAnimationType()==null)
+	if (ad.getMissAnimationType()==null)  //TODO: check... es eso un error? deberia ser getAnimationType? o es miss por algo? no lo recuerdo
 		return;
 		
 		if (SwingAnimation.ID.equals(ad.getAnimationType())){
