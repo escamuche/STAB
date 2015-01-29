@@ -222,6 +222,7 @@ import com.stab.data.tokens.RoundToken;
 import com.stab.data.tokens.SlabToken;
 import com.stab.data.ui.RolledOptionButton;
 import com.stab.data.ui.RolledSkillOptionButton;
+import com.stab.data.ui.TokenController2;
 import com.stab.data.ui.visual.PathfinderTokenCard;
 import com.stab.data.ui.visual.PathfinderTokenTooltip;
 import com.stab.data.ui.visual.StabActionBar;
@@ -273,6 +274,7 @@ public class StabInit {
 			sv.getFactory().setMapping(RolledOptionButton.ID,Button_sprite.class);
 			sv.getFactory().setMapping(RolledSkillOptionButton.ID,Button_sprite.class);
 			sv.getFactory().setMapping(PathfinderTokenTooltip.class);
+			sv.getFactory().setMapping(TokenController2.class);
 			
 			//TODO: trampa gorda... es necesario solucionar esto, asi como el mapa
 			//Por ahora no queda otro remedio

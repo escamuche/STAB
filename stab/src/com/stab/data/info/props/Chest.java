@@ -85,6 +85,11 @@ public static final String ID="CHEST";
 		}
 	
 	
-
+	@Override
+	public boolean isSolid() {
+		if (getState()==OFF)  //O de lo contrario al abrirlo se vuelve traspasable
+			return true;
+		return super.isSolid();
+	}
 
 }

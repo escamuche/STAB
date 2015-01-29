@@ -3,15 +3,17 @@ package com.stab.data.ui;
 import org.newdawn.slick.Input;
 
 import com.stab.client.slick.GameScreen;
-import com.stab.client.slick.base.visualobjects.token.Token_sprite;
+import com.stab.data.actions.general.PassDefendAction;
 import com.stab.model.action.base.InteractAction;
 import com.stab.model.action.base.SearchAction;
 import com.stab.model.action.base.TinkerAction;
-import com.tien.princess.engine.Resources;
+import com.tien.princess.engine.Screen;
 import com.tien.princess.engine.controllers.BasicController;
 
 public class TokenController2 extends BasicController{
 		
+	
+	public static final String ID=GameScreen.MAINCONTROLLER;
 		
 		public static final int PING=31;
 
@@ -19,8 +21,14 @@ public class TokenController2 extends BasicController{
 		
 		
 
-		public TokenController2(GameScreen screen) {
-			this.screen=screen;
+		public TokenController2() {
+			
+		}
+		
+		@Override
+		public void setScreen(Screen s) {
+			super.setScreen(s);
+			this.screen=(GameScreen)s;
 		}
 		
 		public void init(){
@@ -61,22 +69,22 @@ public class TokenController2 extends BasicController{
 			
 				case PING: screen.sendPing();break;
 				case BUTTON1: //if (screen.getSelectedToken()!=null)
-								screen.sendAction(screen.getActiveToken(),  "", screen.getSelectedToken(), null);
+							//	screen.sendAction(screen.getActiveToken(),  "", screen.getSelectedToken(), screen.getSelectedToken().getPos());
 								break;
 				case BUTTON2: //if (screen.getSelectedToken()!=null)
-								screen.sendAction(screen.getActiveToken(),  "", screen.getSelectedToken(), null);
+							//	screen.sendAction(screen.getActiveToken(),  "", screen.getSelectedToken(), screen.getSelectedToken().getPos());
 								break;
 				case BUTTON3: if (screen.getSelectedToken()!=null)
-									screen.sendAction(screen.getActiveToken(),  InteractAction.ID, screen.getSelectedToken(), null);
+									screen.sendAction(screen.getActiveToken(),  InteractAction.ID, screen.getSelectedToken(), screen.getSelectedToken().getPos());
 								break;
 				case BUTTON4: //if (screen.getSelectedToken()!=null)
-								screen.sendAction(screen.getActiveToken(),  SearchAction.ID,null, null);
+								screen.sendAction(screen.getActiveToken(),  SearchAction.ID,screen.getActiveToken(), screen.getActiveToken().getPos());
 								break;
 				case BUTTON5: if (screen.getSelectedToken()!=null)
-								screen.sendAction(screen.getActiveToken(),  TinkerAction.ID, screen.getSelectedToken(), null);
+								screen.sendAction(screen.getActiveToken(),  TinkerAction.ID, screen.getSelectedToken(), screen.getSelectedToken().getPos());
 								break;
 				case BUTTON6: //if (screen.getSelectedToken()!=null)
-								//screen.sendAction(screen.getActiveToken(),  PassDefendAction.ID,null, null);
+								screen.sendAction(screen.getActiveToken(),  PassDefendAction.ID,screen.getActiveToken(), screen.getActiveToken().getPos());
 								break;
 			}
 		}
