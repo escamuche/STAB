@@ -141,6 +141,7 @@ import com.stab.data.animation.StartledAnimation;
 import com.stab.data.animation.StepBackAnimation;
 import com.stab.data.animation.SuccessAnimation;
 import com.stab.data.animation.SwingAnimation;
+import com.stab.data.animation.SwingAtAnimation;
 import com.stab.data.animation.ThrustAnimation;
 import com.stab.data.animation.TinkerAnimation;
 import com.stab.data.animation.VerticalScreenShakeAnimation;
@@ -187,6 +188,7 @@ import com.stab.data.info.player.RogueCharacter;
 import com.stab.data.info.player.SorcererCharacter;
 import com.stab.data.info.player.WarriorCharacter;
 import com.stab.data.info.player.WizardCharacter;
+import com.stab.data.info.props.AttackTrap;
 import com.stab.data.info.props.Barrel;
 import com.stab.data.info.props.Brazier;
 import com.stab.data.info.props.CDoor;
@@ -210,6 +212,7 @@ import com.stab.data.info.props.Statue;
 import com.stab.data.info.props.TorchStand;
 import com.stab.data.info.props.TreasureChest;
 import com.stab.data.info.props.TriggerPlate;
+import com.stab.data.info.props.TriggeredActionTrap;
 import com.stab.data.info.props.WallButton;
 import com.stab.data.info.props.WoodenDoor;
 import com.stab.data.scene.StabLobby2;
@@ -393,6 +396,9 @@ public class StabInit {
 		of.setMapping(Chest.class);
 		of.setMapping(TreasureChest.class);
 		of.setMapping(Rune.class);
+		of.setMapping(TriggeredActionTrap.class);
+		of.setMapping(AttackTrap.class);
+		
 		//efectos especiales
 		of.setMapping(DancingLights_effect.class);
 		
@@ -449,6 +455,7 @@ public class StabInit {
 		of.setMapping(ShootProyectileAnimation.class);
 		of.setMapping(MissProyectileAnimation.class);
 		of.setMapping(SwingAnimation.class);
+		of.setMapping(SwingAtAnimation.class);
 		of.setMapping(BasicSparkAnimation.class);
 		of.setMapping(ShakeAnimation.class);
 		of.setMapping(ShootBeamAnimation.class);

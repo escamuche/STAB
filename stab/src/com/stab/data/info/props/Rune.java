@@ -40,6 +40,7 @@ public class Rune extends TriggerArea {
 		this.setDescription("A glowing magical rune. Touching it will trigger a spell.");
 		OnlyVisibleWithMode m= new OnlyVisibleWithMode(DetectMagic.VISIONMODE);
 		addExtra(m);
+		this.setAlwaysVisible(false);
 	}
 	
 	
@@ -73,6 +74,7 @@ public class Rune extends TriggerArea {
 	protected void onEnter(Info info) {
 		super.onEnter(info);
 		
+		//Probablemente una animacion o algo aqui...
 
 		boolean b=cast(info);
 		b=true;//parecia una buena idea, pero mejor no. o no se descargara si falla.
