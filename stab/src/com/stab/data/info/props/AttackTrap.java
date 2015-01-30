@@ -1,8 +1,20 @@
 package com.stab.data.info.props;
 
+import java.awt.Point;
+
 import com.stab.annotations.Injected;
+import com.stab.common.utils.PathUtils;
 import com.stab.data.StabConstants;
+import com.stab.data.StabInit;
+import com.stab.data.actions.player.spells.ActionDummy;
+import com.stab.data.info.equipment.RangedWeapon;
+import com.stab.model.action.base.WeaponAttackAction;
+import com.stab.model.basic.token.Token;
+import com.stab.model.info.BaseInfo;
+import com.stab.model.info.base.Creature;
+import com.stab.model.info.base.Obstacle;
 import com.stab.model.info.trait.base.gear.Weapon;
+import com.stab.util.StabUtils;
 
 public class AttackTrap extends TriggeredActionTrap{
 
@@ -16,6 +28,8 @@ public class AttackTrap extends TriggeredActionTrap{
 	int bonus;
 	
 	Weapon useWeapon;
+	ActionDummy dummy;
+	
 	
 	@Override
 	public void init() {
@@ -26,16 +40,70 @@ public class AttackTrap extends TriggeredActionTrap{
 	
 	public void setWeapon(String weapon) {
 		this.weapon = weapon;
+		useWeapon=StabInit.getWeaponFactory().getWeapon(weapon);
 	}
 	
 	public void setBonus(int bonus) {
 		this.bonus = bonus;
 	}
 	
+	@Override
+	public void enter() {
+		super.enter();
+		dummy=new ActionDummy();
+		dummy.setPos(this.getCenter());
+		dummy.setSize(1,1);
+		dummy.setAttribute(StabConstants.BAB, bonus);
+		dummy.addTrait(useWeapon);
+		dummy.setFaction(NEUTRAL_FACTION);
+		this.getScene().add(dummy);
+	}
+	
+	
 	
 	@Override
 	protected void performAction() {
-		super.performAction();
+		
+		Point tile=this.getPos();
+		tile=PathUtils.advancePoint(tile, this.getAngle());
+		
+		//Buscamos un objetivo valido.
+		//Para ello diferenciamos entre si somos ranged o no
+		BaseInfo target=null;
+		int range=0;
+		if (useWeapon instanceof RangedWeapon){
+			range=((RangedWeapon)useWeapon).getMaxRange();
+		}
+		int r=0;
+		while(target==null && r<=range){
+			for (Token t:this.getMapLogic().getTokensAt(tile.x, tile.y)){
+				if ((t.getInfo() instanceof Creature) || (t.getInfo() instanceof Obstacle))
+					target=(BaseInfo)t.getInfo();
+			}
+			if (target==null)
+				tile=PathUtils.advancePoint(tile, this.getAngle());
+			r++;
+		}
+		//Si no hemos encontrado un objetivo valido, usaremos un dummy invisible para poder hacer las animaciones.
+		boolean falseEnemy=false;
+		if (target==null){
+			falseEnemy=true;
+			target= new ActionDummy();
+			target.setAttribute(StabConstants.ARMORDEFENSE,100);
+			target.setPos(tile);
+			target.setSize(1,1);
+			target.setFaction(-10000);
+			target.setMaxHp(1);
+			target.setHp(1);
+			this.getScene().add(target);
+		}
+		dummy.setPos(this.getCenter());
+		//creamos el ataque y lo ejecutamos.
+		WeaponAttackAction a=(WeaponAttackAction)StabUtils.getGameLogic().getAttackAction(useWeapon);
+		a.execute(dummy, target, tile, null);
+		
+		if (falseEnemy)
+			target.destroy();
 		
 	}
 

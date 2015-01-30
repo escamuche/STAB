@@ -1,6 +1,8 @@
 package com.stab.data.info.props;
 
+import java.awt.Color;
 import java.awt.Point;
+import java.util.Random;
 
 import com.stab.annotations.Injected;
 import com.stab.data.StabConstants;
@@ -31,10 +33,14 @@ public class Rune extends TriggerArea {
 	
 	int lvl;
 	
+	static String[] res={"marks/runeTrap1","marks/runeTrap2","marks/runeTrap3"};
+	
 	@Override
 	public void init() {
 		super.init();
 		rechargeable=false;
+		setResource(res[new Random().nextInt(res.length)]);
+		setColor("red");
 		this.setSelectable(Token.SELECTABLE);
 		this.setText("Magic Rune");
 		this.setDescription("A glowing magical rune. Touching it will trigger a spell.");

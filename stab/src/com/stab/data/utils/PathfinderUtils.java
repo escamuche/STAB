@@ -216,7 +216,7 @@ public class PathfinderUtils {
 		char c=PathUtils.getPointPos(target.getBounds(), p);
 		c=PathUtils.reverse(c);
 		if (c=='S'){
-			System.out.println("Check de flank desde dentro del target!");
+			//System.out.println("Check de flank desde dentro del target!"); //perfectamente valido.vease rune trap con tirada de ataque.
 			return enemies;
 		}
 	//	System.out.println("Check de flank desde "+p+" en direccion "+c+" sobre "+ target);
@@ -242,6 +242,8 @@ public class PathfinderUtils {
 	public static Collection<Creature> getFlankersFor(BaseInfo target, BaseInfo attacker, Collection<Info> infos){
 		HashSet<Creature> enemies=new HashSet<Creature>();
 		MapLogic ml=target.getMapLogic();
+		if (ml==null)
+			return enemies;
 		for (Point tp:ml.getPointsInRect(attacker.getBounds())){
 			Collection<Creature> candidates=getFlankersFor(target,tp,infos);
 			enemies.addAll(candidates);
