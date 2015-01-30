@@ -88,8 +88,11 @@ public  class SavingThrowEffect extends OpposedSkillRoll {
 		if (success()){
 			for (Applicable a:toApplyPass)
 				getTarget().apply(a);
-		}else
-			super.applyEffects();
+		}else{
+			
+			for (Applicable a:toApply)
+				getTarget().apply(a);
+		}
 	}
 	
 	public void addApplicablePass(Applicable a){

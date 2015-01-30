@@ -40,7 +40,7 @@ public class WallScythe extends Action  {
 
 	@Override
 	public int getAreaType() {
-		return AoE.CONE;	
+		return AoE.COLUMN;	
 	}
 
 	@Override
@@ -50,7 +50,7 @@ public class WallScythe extends Action  {
 
 	@Override
 	public float getWidth(Info caster) {
-		return 180;
+		return 1;
 	}
 
 	@Override
@@ -67,7 +67,7 @@ public class WallScythe extends Action  {
 	@Override
 	public int affectTile(Point tile, Info instigator, Info target,Point point,ActionRequest ar){
 			
-			instigator.playAnimationAt(GenericSpriteAnimation.ID,tile,SpecialEffectsSpriteFactory.DAZED);
+		//	instigator.playAnimationAt(GenericSpriteAnimation.ID,tile,SpecialEffectsSpriteFactory.DAZED);
 			return super.affectTile(tile, instigator, target, point, ar);
 	}
 	

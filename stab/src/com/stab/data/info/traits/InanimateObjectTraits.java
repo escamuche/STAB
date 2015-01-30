@@ -10,7 +10,7 @@ public class InanimateObjectTraits extends CompoundTrait {
 	public InanimateObjectTraits() {
 		
 		
-		AutomaticSaveResult ar= new AutomaticSaveResult(StabConstants.DEXTERITY, SavingThrowEffect.AUTOMATIC_FAIL);
+		AutomaticSaveResult ar= new AutomaticSaveResult(StabConstants.REFLEXSAVE, SavingThrowEffect.AUTOMATIC_FAIL);
 		addTrait(ar);
 		SneakAttackImmunnity si= new SneakAttackImmunnity();
 		this.addTrait(si);

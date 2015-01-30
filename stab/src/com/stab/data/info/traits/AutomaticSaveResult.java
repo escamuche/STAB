@@ -23,7 +23,7 @@ public class AutomaticSaveResult extends AdvancedTrait  implements Attends<Savin
 	@Override
 	public boolean canAttend(Applicable a) {
 		if (a instanceof SavingThrowEffect)
-			if (((SavingThrowEffect)a).getTargetSkill().equals(skill))
+			if (((SavingThrowEffect)a).getSkill().equals(skill))
 				return true;
 		return false;
 	}
@@ -31,6 +31,7 @@ public class AutomaticSaveResult extends AdvancedTrait  implements Attends<Savin
 	@Override
 	public void attend(SavingThrowEffect app) {
 	  app.setResult(result);
+	  app.setReady(true);//Revisar esto quizas
 	}
 
 	
