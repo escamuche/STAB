@@ -3,7 +3,9 @@ package com.stab.data.actions.traps;
 import java.awt.Point;
 
 import com.stab.data.StabConstants;
+import com.stab.data.animation.GenericSpriteAnimation;
 import com.stab.data.animation.SwingAtAnimation;
+import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.action.Action;
@@ -29,7 +31,7 @@ public class WallScythe extends Action  {
 	public int affect(Info instigator, Info target, Point point, ActionRequest ar) {
 		if (target instanceof BaseInfo){
 			Damage f=new RolledDamage(3,6,Damage.SLASHING_DAMAGE,instigator);
-			SavingThrowEffect s=PathfinderUtils.createST_Half((BaseInfo)instigator, (BaseInfo)target, StabConstants.REFLEXSAVE, 15, f);
+			SavingThrowEffect s=PathfinderUtils.createST_Half(null, (BaseInfo)target, StabConstants.REFLEXSAVE, 15, f);
 			((BaseInfo)target).apply(s);
 		
 		}
@@ -43,12 +45,12 @@ public class WallScythe extends Action  {
 
 	@Override
 	public float getLength(Info caster) {
-		return 1;
+		return 1f;
 	}
 
 	@Override
 	public float getWidth(Info caster) {
-		return 3;
+		return 180;
 	}
 
 	@Override
@@ -61,6 +63,13 @@ public class WallScythe extends Action  {
 		return false;
 	}
 
+	
+	@Override
+	public int affectTile(Point tile, Info instigator, Info target,Point point,ActionRequest ar){
+			
+			instigator.playAnimationAt(GenericSpriteAnimation.ID,tile,SpecialEffectsSpriteFactory.DAZED);
+			return super.affectTile(tile, instigator, target, point, ar);
+	}
 	
 	@Override
 	public void playExecuteActionAnimation(Info caster, Info target,

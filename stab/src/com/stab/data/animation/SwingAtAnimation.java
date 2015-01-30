@@ -27,7 +27,7 @@ public class SwingAtAnimation extends OnTileAnimation{
 		
 		
 		
-		String img=getParam(1);
+		String img=getParam(2);
 		
 		Point origin=getOriginPoint();
 	

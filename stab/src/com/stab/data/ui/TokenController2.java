@@ -64,7 +64,8 @@ public class TokenController2 extends BasicController{
 			if (action==PING){
 				
 			}
-			
+			if (screen.getActiveToken()==null)
+				return;
 			switch(action){
 			
 				case PING: screen.sendPing();break;

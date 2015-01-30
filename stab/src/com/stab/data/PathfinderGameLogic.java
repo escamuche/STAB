@@ -5,6 +5,7 @@ import java.util.HashSet;
 import com.stab.adventure.GameLogic;
 import com.stab.data.info.applicable.DetectRoll;
 import com.stab.data.info.applicable.SpotRoll;
+import com.stab.data.info.traits.InanimateObjectTraits;
 import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.action.Action;
 import com.stab.model.basic.token.interfaces.Mechanism;
@@ -13,6 +14,7 @@ import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.base.OpposedSkillRoll;
 import com.stab.model.info.applicable.base.SkillRoll;
+import com.stab.model.info.base.Obstacle;
 import com.stab.model.info.trait.base.gear.Weapon;
 import com.stab.model.request.basic.ActionRequest;
 
@@ -130,5 +132,17 @@ public class PathfinderGameLogic extends GameLogic {
 			
 		return true;
 	}
+	
+	
+	@Override
+	public Info initializeInfo(Info i) {
+	
+		if (i instanceof Obstacle)
+			((Obstacle)i).addTrait(new InanimateObjectTraits());
+		
+		return i;
+	}
+	
+	
 	
 }

@@ -71,7 +71,8 @@ public class SpecialEffectsSpriteFactory extends  AbstractSpriteFactory{
 	}
 	protected Collection<Sprite> getSpark(String painter,String sound,long t){
 		AttachedParticleSprite s= new AttachedParticleSprite();
-		s.setPainter(painter);
+		if (painter!=null)
+			s.setPainter(painter);
 		
 		s.getCurrentState().setTimed(t, ClearParticlesState.ID);
 		if (sound!=null){

@@ -84,6 +84,8 @@ import com.stab.data.actions.player.spells.wizard.level1.Identify;
 import com.stab.data.actions.player.spells.wizard.level1.Jump;
 import com.stab.data.actions.player.spells.wizard.level1.unfinished.CharmPerson;
 import com.stab.data.actions.player.spells.wizard.level1.unfinished.EnlargePerson;
+import com.stab.data.actions.traps.FlameJet;
+import com.stab.data.actions.traps.WallScythe;
 import com.stab.data.adventure.ColiseoAdventure;
 import com.stab.data.adventure.CryptEverflameAdventure;
 import com.stab.data.adventure.RndGenTestAdventure;
@@ -543,6 +545,9 @@ public class StabInit {
 		getActionLibrary().register(SmiteEvil.class);
 		getActionLibrary().register(NobilityDomain.class);
 		getActionLibrary().register(AcidFlask.class);
+		
+		getActionLibrary().register(FlameJet.class);
+		getActionLibrary().register(WallScythe.class);
 		
 		//feats
 		getActionLibrary().register(PowerAttack.class);

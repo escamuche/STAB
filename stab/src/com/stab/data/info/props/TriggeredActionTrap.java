@@ -11,10 +11,11 @@ import com.stab.model.basic.SpriteListener;
 import com.stab.model.info.InfoListener;
 import com.stab.model.info.base.DecoGadget;
 import com.stab.model.info.base.Obstacle;
+import com.stab.model.info.interfaces.ActiveTurnBased;
 import com.stab.model.info.interfaces.RemoteActivated;
-import com.stab.model.info.interfaces.TurnBased;
+import com.stab.model.request.Request;
 
-public class TriggeredActionTrap extends DecoGadget implements RemoteActivated,TurnBased, SpriteListener, InfoListener{
+public class TriggeredActionTrap extends DecoGadget implements RemoteActivated,ActiveTurnBased, SpriteListener, InfoListener{
 
 	public static final String ID="ACTION_TRAP";
 	
@@ -105,14 +106,14 @@ public class TriggeredActionTrap extends DecoGadget implements RemoteActivated,T
 		
 	}
 	
-	public void setAction(Action act) {
+	public void setTrapAction(Action act) {
 		this.act = act;
 		
 	}
 	
 	public void setAction(String action) {
 		this.action = action;
-		setAction(ActionLibrary.getActionLibrary().getAction(action));
+		setTrapAction(ActionLibrary.getActionLibrary().getAction(action));
 		
 	}
 
@@ -174,6 +175,89 @@ public class TriggeredActionTrap extends DecoGadget implements RemoteActivated,T
 	@Override
 	public void stateChanged(int newState) {
 	
+	}
+
+
+	@Override
+	public boolean isTurnActive() {
+		return false;
+	}
+
+
+	
+	@Override
+	public boolean isTurnDone() {
+		return true;
+	}
+
+
+	@Override
+	public Request getNextAction() {
+		return null;
+	}
+
+
+	@Override
+	public void setActed(boolean b) {
+	}
+
+
+	@Override
+	public void setTurnDone(boolean b) {
+	}
+
+
+	@Override
+	public boolean hasActed() {
+		return true;
+	}
+
+
+	@Override
+	public int getInitiative() {
+		return 50;
+	}
+
+
+	@Override
+	public Request getDefaultAction() {
+		return null;
+	}
+
+
+	@Override
+	public void rollInitiative() {
+		
+	}
+
+
+	@Override
+	public boolean isReady() {
+		return true;
+	}
+
+
+	@Override
+	public void checkTurnDone() {
+	
+	}
+
+
+	@Override
+	public void tick(long t) {
+		
+	}
+
+
+	@Override
+	public boolean isPriorityInsert() {
+		return false;
+	}
+
+
+	@Override
+	public void setPriorityInsert(boolean b) {
+		
 	}
 	
 }
