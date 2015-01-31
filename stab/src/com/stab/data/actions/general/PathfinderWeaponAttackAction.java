@@ -290,8 +290,8 @@ public class PathfinderWeaponAttackAction extends WeaponAttackAction  {
 	}
 	
 protected void playHitAnimation(WeaponAttack ad, BaseInfo origin, Token target) {
-	if (ad.getMissAnimationType()==null)  //TODO: check... es eso un error? deberia ser getAnimationType? o es miss por algo? no lo recuerdo
-		return;
+	//if (ad.getMissAnimationType()==null)  //TODO: check... es eso un error? deberia ser getAnimationType? o es miss por algo? no lo recuerdo
+	//	return;
 		
 		if (SwingAnimation.ID.equals(ad.getAnimationType())){
 			origin.playAnimationOn(SwingAnimation.ID,target,ad.getAnimationIcon());
@@ -323,12 +323,13 @@ protected void playHitAnimation(WeaponAttack ad, BaseInfo origin, Token target) 
 			sleep(origin.playAnimationAt(GenericProyectileAnimation.ID,target.getPos(),ad.getAnimationIcon(),origin.getWidth()));
 			return;
 		}
-		sleep(origin.playAnimationOn(ad.getAnimationType(),target,ad.getAnimationIcon()));
+		if (ad.getAnimationType()!=null)
+			sleep(origin.playAnimationOn(ad.getAnimationType(),target,ad.getAnimationIcon()));
 	}
 
 	protected void playMissAnimation(WeaponAttack ad, BaseInfo origin, Token target) {
-		if (ad.getMissAnimationType()==null)
-			return;
+		//if (ad.getMissAnimationType()==null)
+		//	return;
 		if (ad.getResult()==PathfinderAttack.BLOCK)
 			playBlockAnimation(ad,origin,target);
 		if (ad.getResult()==PathfinderAttack.DODGE)
@@ -381,7 +382,8 @@ protected void playHitAnimation(WeaponAttack ad, BaseInfo origin, Token target) 
 			sleep(origin.playAnimationAt(GenericProyectileMissAnimation.ID,target.getPos(),ad.getAnimationIcon(),origin.getWidth()));
 			return;
 		}
-		sleep(origin.playAnimationOn(ad.getMissAnimationType(),target,ad.getAnimationIcon()));
+		if (ad.getMissAnimationType()!=null)
+			sleep(origin.playAnimationOn(ad.getMissAnimationType(),target,ad.getAnimationIcon()));
 	}
 	
 	protected Ammo findAmmo(Info instigator) {

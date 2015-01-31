@@ -1,5 +1,6 @@
 package com.stab.data.info.applicable;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.EnumSet;
 
@@ -109,6 +110,22 @@ public  class SavingThrowEffect extends OpposedSkillRoll {
 		}
 	}
 	
+	
+	@Override
+	public void check() {
+		super.check();
+		animate();
+	}
+	
+	
+	public void animate(){
+		if (isEvaded()){
+			getTarget().showFloatingText("EVADED", Color.pink);
+		}else
+			if (success()){
+				getTarget().showFloatingText("SAVE", Color.green);	
+			}
+	}
 	
 	@Override
 	public void validate() {

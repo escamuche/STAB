@@ -399,10 +399,10 @@ public abstract class SpellAction extends Action implements SpellProperties{
 	};
 	protected void playFullEffectAnimation(BaseInfo caster, BaseInfo target,Point point, ActionRequest ar){};
 	protected void playPartialEffectAnimation(BaseInfo caster, BaseInfo target,Point point,ActionRequest ar){
-		target.showFloatingText("SAVE", Color.green);
+		//target.showFloatingText("SAVE", Color.green);
 	};
 	protected void playEvadedAnimation(BaseInfo caster, BaseInfo target,Point point,ActionRequest ar){
-		target.showFloatingText("EVADED", Color.pink);
+		//target.showFloatingText("EVADED", Color.pink);
 	};
 	 
 	

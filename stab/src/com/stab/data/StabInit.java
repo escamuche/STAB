@@ -194,10 +194,12 @@ import com.stab.data.info.props.AttackTrap;
 import com.stab.data.info.props.Barrel;
 import com.stab.data.info.props.Brazier;
 import com.stab.data.info.props.CDoor;
+import com.stab.data.info.props.CaveIn;
 import com.stab.data.info.props.Chest;
 import com.stab.data.info.props.Column;
 import com.stab.data.info.props.Crate;
 import com.stab.data.info.props.Dummy;
+import com.stab.data.info.props.Exit;
 import com.stab.data.info.props.FlameJetTrap;
 import com.stab.data.info.props.FloorLever;
 import com.stab.data.info.props.IronBars;
@@ -400,6 +402,8 @@ public class StabInit {
 		of.setMapping(Rune.class);
 		of.setMapping(TriggeredActionTrap.class);
 		of.setMapping(AttackTrap.class);
+		of.setMapping(CaveIn.class);
+		of.setMapping(Exit.class);
 		
 		//efectos especiales
 		of.setMapping(DancingLights_effect.class);
@@ -548,6 +552,7 @@ public class StabInit {
 		
 		getActionLibrary().register(FlameJet.class);
 		getActionLibrary().register(WallScythe.class);
+		getActionLibrary().register(com.stab.data.actions.traps.CaveIn.class);
 		
 		//feats
 		getActionLibrary().register(PowerAttack.class);

@@ -1,6 +1,7 @@
 package com.stab.data.actions.traps;
 
 import java.awt.Point;
+import java.util.Random;
 
 import com.stab.data.StabConstants;
 import com.stab.data.animation.BasicSparkAnimation;
@@ -12,11 +13,15 @@ import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.applicable.base.RolledDamage;
+import com.stab.model.info.base.FloorDecoration;
 import com.stab.model.request.basic.ActionRequest;
 
 public class CaveIn extends Action  {
 
 	public static final String ID="CAVEIN_ACTION";
+	
+	
+	static String[] res={"marks/runeTrap1","marks/runeTrap2","marks/runeTrap3"};
 	
 	public CaveIn() {
 		setRange(3);
@@ -70,4 +75,18 @@ public class CaveIn extends Action  {
 		caster.playAnimationAt(BasicSparkAnimation.ID,pos,"PARTICLE#effects/crumble");
 		
 	}
+	
+	
+	public int affectTile(Point tile, Info instigator, Info target, Point point, ActionRequest ar) {
+	
+		if (new Random().nextInt(5)==1){
+			//Crear decoracion de derrumbamiento.
+			FloorDecoration d=(FloorDecoration)instigator.getEntityManager().createElement(FloorDecoration.ID);
+			d.setPos(tile);
+			d.setSize(1,1);
+			d.setResource(res[new Random().nextInt(res.length)]); 
+		}		
+		return super.affectTile(tile, instigator, target, point, ar);
+	}
+	
 }

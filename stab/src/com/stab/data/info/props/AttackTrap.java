@@ -75,13 +75,19 @@ public class AttackTrap extends TriggeredActionTrap{
 			range=((RangedWeapon)useWeapon).getMaxRange();
 		}
 		int r=0;
-		while(target==null && r<=range){
+		boolean solid=false;
+		while(target==null && r<=range && !solid){
 			for (Token t:this.getMapLogic().getTokensAt(tile.x, tile.y)){
 				if ((t.getInfo() instanceof Creature) || (t.getInfo() instanceof Obstacle))
 					target=(BaseInfo)t.getInfo();
 			}
-			if (target==null)
-				tile=PathUtils.advancePoint(tile, this.getAngle());
+			if (target==null){
+				Point p=PathUtils.advancePoint(tile, this.getAngle());
+				if (this.getMapLogic().isTileSolid(p.x, p.y))
+					solid=true;
+				else
+					tile=p;
+			}
 			r++;
 		}
 		//Si no hemos encontrado un objetivo valido, usaremos un dummy invisible para poder hacer las animaciones.
