@@ -4,7 +4,7 @@ import java.awt.Point;
 import java.util.Random;
 
 import com.stab.data.StabConstants;
-import com.stab.data.animation.BasicSparkAnimation;
+import com.stab.data.animation.BasicSparkAnimationAt;
 import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.action.Action;
@@ -21,7 +21,7 @@ public class CaveIn extends Action  {
 	public static final String ID="CAVEIN_ACTION";
 	
 	
-	static String[] res={"marks/runeTrap1","marks/runeTrap2","marks/runeTrap3"};
+	static String[] res={"decor/smallrocks1","decor/smallrocks1","decor/smallrocks1"};
 	
 	public CaveIn() {
 		setRange(3);
@@ -47,7 +47,7 @@ public class CaveIn extends Action  {
 
 	@Override
 	public float getLength(Info caster) {
-		return 3;
+		return 1;
 	}
 
 	@Override
@@ -72,7 +72,7 @@ public class CaveIn extends Action  {
 
 		super.playExecuteActionAnimation(caster, target, pos, ar);
 		caster.playSound("effects/crumble");
-		caster.playAnimationAt(BasicSparkAnimation.ID,pos,"PARTICLE#effects/crumble");
+		caster.playAnimationAt(BasicSparkAnimationAt.ID,pos,"PARTICLE#effects/crumble");
 		
 	}
 	
@@ -85,6 +85,7 @@ public class CaveIn extends Action  {
 			d.setPos(tile);
 			d.setSize(1,1);
 			d.setResource(res[new Random().nextInt(res.length)]); 
+			instigator.getScene().add(d);
 		}		
 		return super.affectTile(tile, instigator, target, point, ar);
 	}

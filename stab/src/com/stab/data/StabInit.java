@@ -102,6 +102,7 @@ import com.stab.data.animation.AlertAnimation;
 import com.stab.data.animation.AnimatedIconAnimation;
 import com.stab.data.animation.AnimatedSparkAnimation;
 import com.stab.data.animation.BasicSparkAnimation;
+import com.stab.data.animation.BasicSparkAnimationAt;
 import com.stab.data.animation.BlockAnimation;
 import com.stab.data.animation.BumpAnimation;
 import com.stab.data.animation.CenterCamAnimation;
@@ -463,6 +464,7 @@ public class StabInit {
 		of.setMapping(SwingAnimation.class);
 		of.setMapping(SwingAtAnimation.class);
 		of.setMapping(BasicSparkAnimation.class);
+		of.setMapping(BasicSparkAnimationAt.class);
 		of.setMapping(ShakeAnimation.class);
 		of.setMapping(ShootBeamAnimation.class);
 		of.setMapping(ThrustAnimation.class);

@@ -22,6 +22,7 @@ public class TriggerArea extends FloorDecoration implements Area{
 	public void init() {
 		super.init();
 		setClassLimit(Creature.class);
+		setAlwaysVisible(false);
 	}
 	
 	public void setClassLimit(Class classLimit) {
