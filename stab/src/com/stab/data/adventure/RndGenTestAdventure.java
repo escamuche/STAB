@@ -1,6 +1,7 @@
 package com.stab.data.adventure;
 
 import com.stab.adventure.Adventure;
+import com.stab.data.info.StabMapBuilder;
 import com.stab.data.scene.DefaultStabMapScene;
 import com.stab.data.utils.StabBlockData;
 import com.stab.model.basic.scenes.Narration;
@@ -33,17 +34,22 @@ public class RndGenTestAdventure extends Adventure{
 		this.addScene(n);
 		
 		DefaultStabMapScene ms=new DefaultStabMapScene();
+		//RNDTestScene ms= new RNDTestScene();
 		ms.setTag("BATTLE");
 		ms.createContents();
 		ms.setProperties(DefaultTileMapScene.DEFAULT, StabBlockData.ID);
 		ms.setTiles(DefaultTileMapScene.DEFAULT,"tiles2");
 	
-		BasicMapBuilder builder=new BasicMapBuilder();
+		BasicMapBuilder builder=new StabMapBuilder();
 		builder.setScene(ms);  //Aqui ya tenemos que tener creado el mapa, y con los tileproperties listos (nos lo han pasado en la aventura)
 		builder.createMap(8, 8);
 		builder.loadParts();     //porque aqui se necesita
 		builder.generateMap();
-		
+	/*	
+		ms.setBuilder(builder);
+		builder.prepareMap();
+		builder.placeInfos();
+	/**/	
 		ms.setAllExplored(true);
 		ms.setAllVisible(true);
 		

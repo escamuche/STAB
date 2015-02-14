@@ -22,6 +22,7 @@ public class Kobold extends Humanoid {
 		
 		setResource("kobold");
 		setText("Kobold");
+		setDescription("A Kobold, a common low level pest.");
 			
 		
 		this.setAttribute(StabConstants.XP,100);

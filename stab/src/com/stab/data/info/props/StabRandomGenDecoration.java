@@ -28,6 +28,26 @@ public class StabRandomGenDecoration extends RandomGenFloorDecoration{
 		add("decor/smallrocks1");
 		add("decor/smallrocks2");
 		add("decor/smallrocks3");
+		add("decor/skeleton1");
+		add("decor/skeleton2");
+		add("decor/skeleton3");
+		add("decor/sink1");
+		add("decor/sink2");
+		add("decor/mushrooms1");
+		add("decor/mushrooms2");
+		add("decor/mushrooms3");
+		add("decor/brokenBarrel");
+		add("decor/brokenStatue1");
+		add("decor/brokenStatue2");
+		
+		add("tiny/bloodstain$C");
+		add("tiny/bones$C");
+		add("tiny/dart$C");
+		add("tiny/dirt$C");
+		add("tiny/deadRat$C");
+		add("tiny/rocks$C");
+		add("tiny/skull$C");
+		
 		
 	}
 }
