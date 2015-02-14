@@ -194,6 +194,7 @@ import com.stab.data.info.player.WizardCharacter;
 import com.stab.data.info.props.AttackTrap;
 import com.stab.data.info.props.Barrel;
 import com.stab.data.info.props.Brazier;
+import com.stab.data.info.props.BreakableColumn;
 import com.stab.data.info.props.CDoor;
 import com.stab.data.info.props.CaveIn;
 import com.stab.data.info.props.Chest;
@@ -218,6 +219,7 @@ import com.stab.data.info.props.TorchStand;
 import com.stab.data.info.props.TreasureChest;
 import com.stab.data.info.props.TriggerPlate;
 import com.stab.data.info.props.TriggeredActionTrap;
+import com.stab.data.info.props.Wall;
 import com.stab.data.info.props.WallButton;
 import com.stab.data.info.props.WoodenDoor;
 import com.stab.data.scene.StabLobby2;
@@ -385,6 +387,7 @@ public class StabInit {
 		of.setMapping(Niche.class);
 		of.setMapping(Slab.class);
 		of.setMapping(Column.class);
+		of.setMapping(BreakableColumn.class);
 		of.setMapping(IronBars.class);
 		of.setMapping(TriggerPlate.class);
 		of.setMapping(WallButton.class);
@@ -405,6 +408,7 @@ public class StabInit {
 		of.setMapping(AttackTrap.class);
 		of.setMapping(CaveIn.class);
 		of.setMapping(Exit.class);
+		of.setMapping(Wall.class);
 		
 		//efectos especiales
 		of.setMapping(DancingLights_effect.class);
