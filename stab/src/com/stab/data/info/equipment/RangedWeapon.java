@@ -6,7 +6,7 @@ import com.stab.model.info.applicable.base.WeaponAttack;
 
 public class RangedWeapon extends BasicWeapon {
 
-	int maxRange=10;
+	int maxRange=20;
 	//en un futuro, range y range increments
 	
 	

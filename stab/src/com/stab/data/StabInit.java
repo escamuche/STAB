@@ -118,6 +118,7 @@ import com.stab.data.animation.ExtraInfoAnimation;
 import com.stab.data.animation.FailureAnimation;
 import com.stab.data.animation.FlashAnimation;
 import com.stab.data.animation.FloatingTextAnimation;
+import com.stab.data.animation.FlySwarmAnimation;
 import com.stab.data.animation.GenericProyectileAnimation;
 import com.stab.data.animation.GenericProyectileMissAnimation;
 import com.stab.data.animation.GenericSpriteAnimation;
@@ -153,6 +154,7 @@ import com.stab.data.animation.WalkAnimation;
 import com.stab.data.animation.sprite.StabSpriteFactory;
 import com.stab.data.animation.ui.EnterScreenAnimation;
 import com.stab.data.animation.ui.LeaveScreenAnimation;
+import com.stab.data.info.Connector;
 import com.stab.data.info.equipment.ArmorFactory;
 import com.stab.data.info.equipment.EquipmentFactory;
 import com.stab.data.info.equipment.PathfinderItemPickup;
@@ -409,6 +411,7 @@ public class StabInit {
 		of.setMapping(CaveIn.class);
 		of.setMapping(Exit.class);
 		of.setMapping(Wall.class);
+		of.setMapping(Connector.class);
 		
 		//efectos especiales
 		of.setMapping(DancingLights_effect.class);
@@ -509,6 +512,7 @@ public class StabInit {
 		of.setMapping(LootDropAnimation.class);
 		of.setMapping(DrinkPotionAnimation.class);
 		of.setMapping(CirclingAnimation.class);
+		of.setMapping(FlySwarmAnimation.class);
 		
 		//Tokens
 		of.setMapping(IronBarsToken.class);

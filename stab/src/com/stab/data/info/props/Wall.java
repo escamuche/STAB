@@ -17,7 +17,9 @@ public class Wall extends Info {
 	@Override
 	public void init() {
 		super.init();
-		tile=3;
+		this.setSize(1, 1);
+		tile=2;
+		
 	}
 	
 	public void setTile(int tile) {

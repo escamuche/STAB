@@ -36,7 +36,9 @@ public class GenericSpriteOnAnimation extends Animation {
 		
 			first.setRef(s);
 		
-	
+	if (AnimUtils.getScreen(getSource())==null)
+		System.out.println("NULL SCREEN!");
+	else
 		for (Sprite icon:sprites)
 			AnimUtils.getScreen(getSource()).add(icon);
 		

@@ -3,7 +3,10 @@ package com.stab.data.info.monster.bestiary;
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
 import com.stab.data.info.alignment.Evil;
+import com.stab.data.info.equipment.ArmorFactory;
+import com.stab.data.info.equipment.EquipmentFactory;
 import com.stab.data.info.equipment.HumanoidGear;
+import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.general.ImprovedInitiative_Feat;
 import com.stab.data.info.monster.Undead;
 import com.stab.data.info.monster.ZombieAIParameters;
@@ -49,9 +52,9 @@ public class EsqueletoArquero extends Undead {
 		
 		
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("LONGBOW"), HumanoidGear.BOTHHANDS);
-		this.equip(StabInit.getArmorFactory().getArmor("STUDDEDLEATHER"), HumanoidGear.ARMOR);
-		
+		this.equip(ArmorFactory.STUDDEDLEATHER);
+		this.equip(WeaponFactory.SHORTBOW);
+		this.equip(EquipmentFactory.ARROW);
 		
 		
 	}

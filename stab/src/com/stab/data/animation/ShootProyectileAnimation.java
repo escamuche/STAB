@@ -81,7 +81,7 @@ public class ShootProyectileAnimation extends OnTargetAnimation{
 	}
 	
 	protected float getSpeed(){
-		return 0.3f;
+		return 0.4f;
 	}
 	
 	@Override
