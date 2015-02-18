@@ -9,6 +9,9 @@ import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.data.info.feat.combat.WeaponFocus_Feat;
 import com.stab.data.info.monster.Humanoid;
+import com.stab.model.ai.traits.Agressor;
+import com.stab.model.ai.traits.DistanceMapAI;
+import com.stab.model.ai.traits.SelfPreservation;
 
 public class Orc extends Humanoid {
 
@@ -18,10 +21,10 @@ public class Orc extends Humanoid {
 	public void init() {
 		super.init();
 		setMaxMovePoints(6);
-		
+		setDeathSound("death/goblindeath1");
 		setResource("orc");
 		setText("Orc");
-		
+		setDescription("A vicious orc, as dangerous as evil");
 		this.addTrait(new WeaponFocus_Feat(WeaponFactory.GREATAXE));
 		
 		this.setAttribute(StabConstants.XP,135);
@@ -44,7 +47,13 @@ public class Orc extends Humanoid {
 		this.addTrait(new Evil());
 		this.addTrait(new Chaotic());
 		
-	
+		
+		
+		this.addTrait(new SelfPreservation());
+		this.addTrait(new Agressor());
+	//	this.addTrait(new FlankAI(1.0f));
+	//	this.addTrait(new DangerMapAI());
+		this.addTrait(new DistanceMapAI());
 		
 		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.GREATAXE), HumanoidGear.BOTHHANDS);
 		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.STUDDEDLEATHER), HumanoidGear.ARMOR);

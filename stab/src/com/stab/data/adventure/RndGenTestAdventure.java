@@ -5,6 +5,7 @@ import com.stab.data.info.StabMapBuilder;
 import com.stab.data.scene.DefaultStabMapScene;
 import com.stab.data.utils.StabBlockData;
 import com.stab.model.basic.scenes.Narration;
+import com.stab.model.basic.scenes.event.rule.ConditionalMusic;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 import com.stab.model.basic.scenes.map.gen.BasicMapBuilder;
 
@@ -51,11 +52,31 @@ public class RndGenTestAdventure extends Adventure{
 		builder.prepareMap();
 		builder.placeInfos();
 	/**/	
-		ms.setAllExplored(true);
-		ms.setAllVisible(true);
+	//	ms.setAllExplored(true);
+	//	ms.setAllVisible(true);
+		
+		
+		ms.setWaitsForAll(true);
+		ConditionalMusic m=new ConditionalMusic(ms);
+		m.setMusic("Lone", "Pursued", "Midnight", "LastBattle");
+		
+		ms.setOnDeath("DEFEAT");
 		
 		this.addScene(ms);
 		
-	
+		Narration n2=new Narration();
+		n2.createContents();
+		n2.setTag("VICTORY");
+		n2.setText("Victoria! has escapado del dungeon!");
+		n2.setNext(null);
+		this.addScene(n2);
+		
+		n2=new Narration();
+		n2.createContents();
+		n2.setTag("DEFEAT");
+		n2.setText("Todos los aventureros han muerto!");
+		n2.setNext(null);
+		this.addScene(n2);
+
 	}
 }
