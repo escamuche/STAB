@@ -16,7 +16,7 @@ import com.tien.princess.engine.utils.PaintUtils;
 
 public class ShockwaveAnimation extends OnTileAnimation {
 
-	public static final String ID=VisualEffect.SPARK_ANIMATION;
+	public static final String ID="SHOCKWAVE_ANIMATION";
 	
 	
 	public ShockwaveAnimation() {
