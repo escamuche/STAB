@@ -85,6 +85,7 @@ import com.stab.data.actions.player.spells.wizard.level1.Jump;
 import com.stab.data.actions.player.spells.wizard.level1.unfinished.CharmPerson;
 import com.stab.data.actions.player.spells.wizard.level1.unfinished.EnlargePerson;
 import com.stab.data.actions.traps.FlameJet;
+import com.stab.data.actions.traps.WakeDormants;
 import com.stab.data.actions.traps.WallScythe;
 import com.stab.data.adventure.ColiseoAdventure;
 import com.stab.data.adventure.CryptEverflameAdventure;
@@ -136,6 +137,7 @@ import com.stab.data.animation.PlaySoundAnimation;
 import com.stab.data.animation.RSwingAnimation;
 import com.stab.data.animation.RevealAnimation;
 import com.stab.data.animation.ShakeAnimation;
+import com.stab.data.animation.ShockwaveAnimation;
 import com.stab.data.animation.ShootBeamAnimation;
 import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.ShootRotatingProyectileAnimation;
@@ -202,6 +204,7 @@ import com.stab.data.info.props.CaveIn;
 import com.stab.data.info.props.Chest;
 import com.stab.data.info.props.Column;
 import com.stab.data.info.props.Crate;
+import com.stab.data.info.props.DormantInfo;
 import com.stab.data.info.props.Dummy;
 import com.stab.data.info.props.Exit;
 import com.stab.data.info.props.FlameJetTrap;
@@ -221,6 +224,7 @@ import com.stab.data.info.props.TorchStand;
 import com.stab.data.info.props.TreasureChest;
 import com.stab.data.info.props.TriggerPlate;
 import com.stab.data.info.props.TriggeredActionTrap;
+import com.stab.data.info.props.WakeUpZone;
 import com.stab.data.info.props.Wall;
 import com.stab.data.info.props.WallButton;
 import com.stab.data.info.props.WoodenDoor;
@@ -412,6 +416,8 @@ public class StabInit {
 		of.setMapping(Exit.class);
 		of.setMapping(Wall.class);
 		of.setMapping(Connector.class);
+		of.setMapping(DormantInfo.class);
+		of.setMapping(WakeUpZone.class);
 		
 		//efectos especiales
 		of.setMapping(DancingLights_effect.class);
@@ -513,6 +519,7 @@ public class StabInit {
 		of.setMapping(DrinkPotionAnimation.class);
 		of.setMapping(CirclingAnimation.class);
 		of.setMapping(FlySwarmAnimation.class);
+		of.setMapping(ShockwaveAnimation.class);
 		
 		//Tokens
 		of.setMapping(IronBarsToken.class);
@@ -563,6 +570,7 @@ public class StabInit {
 		getActionLibrary().register(FlameJet.class);
 		getActionLibrary().register(WallScythe.class);
 		getActionLibrary().register(com.stab.data.actions.traps.CaveIn.class);
+		getActionLibrary().register(WakeDormants.class);
 		
 		//feats
 		getActionLibrary().register(PowerAttack.class);

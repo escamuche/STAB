@@ -19,11 +19,18 @@ public static final String ID="SECRETDOOR";
 	public void init() {
 		super.init();
 		setSelectable(Token.NOT_SELECTABLE);
-		setState(Door.CLOSED);
+	
 		setResource("blank");
 	}
 	
 	
+	
+	@Override
+	public void enter() {
+		 this.getMapLogic().setTile(getX(), getY(),2 );
+		 setState(Door.CLOSED);
+		
+	}
 	
 	
 	@Override

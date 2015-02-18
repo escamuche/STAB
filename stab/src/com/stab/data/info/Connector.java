@@ -33,7 +33,7 @@ public class Connector extends Info{
 		if (ml.isEmpty(r.getLocation(), (int)r.getWidth(),(int) r.getHeight()))
 				placeConnection(c);
 		else{
-			System.out.println("Connector discarded");
+			System.out.println("Connector discarded at "+this.getPos());
 		}
 			
 		destroy();	
@@ -62,9 +62,9 @@ public class Connector extends Info{
 				p=PathUtils.advancePoint(p, dir);
 				place(p,CDoor.ID,PathUtils.rotateR(dir, 2));
 				break;
-		case 3: place(p,Wall.ID,dir);
+		case 3: place(p,CDoor.ID,PathUtils.rotateR(dir, 2));
 				p=PathUtils.advancePoint(p, dir);
-				place(p,Wall.ID,dir);
+				place(p,CDoor.ID,PathUtils.rotateR(dir, 2));
 				break;
 		case 8: place(p,Slab.ID,PathUtils.rotateR(dir, 4));
 				p=PathUtils.advancePoint(p, dir);

@@ -14,6 +14,7 @@ import com.stab.data.info.monster.bestiary.PlagueZombie;
 import com.stab.data.info.monster.bestiary.Skeleton;
 import com.stab.data.info.monster.bestiary.Wolf;
 import com.stab.data.info.monster.bestiary.Zombie;
+import com.stab.data.info.props.TreasureChest;
 import com.stab.util.InfosWeightedTable;
 
 public class StabTables extends Reference<WeightedTable>{
@@ -26,6 +27,9 @@ public class StabTables extends Reference<WeightedTable>{
 	public static final String RND_GOBLIN="RND_GOBLIN";
 	public static final String RND_UNDEAD="RND_UNDEAD";
 	public static final String RND_ZOMBIE="RND_ZOMBIE";
+
+
+	public static final String TREASURE = "TREASURE";
 	
 	
 	static StabTables tables;
@@ -114,6 +118,11 @@ public class StabTables extends Reference<WeightedTable>{
 		t.addValue(1, Orc.ID,Wolf.ID,Wolf.ID);
 	
 		register(RND_LEVEL1,t);
+		
+		
+		t = new InfosWeightedTable();
+		t.addValue(1, TreasureChest.ID);
+		register(TREASURE,t);
 		
 	}
 	

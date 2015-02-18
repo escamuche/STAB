@@ -43,6 +43,7 @@ public class RndGenTestAdventure extends Adventure{
 		BasicMapBuilder builder=new StabMapBuilder();
 		builder.setScene(ms);  //Aqui ya tenemos que tener creado el mapa, y con los tileproperties listos (nos lo han pasado en la aventura)
 		builder.createMap(8, 8);
+	
 		builder.loadParts();     //porque aqui se necesita
 		builder.generateMap();
 	/*	

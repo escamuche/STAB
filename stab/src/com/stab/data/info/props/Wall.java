@@ -30,11 +30,13 @@ public class Wall extends Info {
 	public void enter() {
 		super.enter();
 		Rectangle r=this.getBounds();
-		for (int y = r.y; y < r.y + r.height; y++)
-			for (int x = r.x; x < r.x + r.width; x++) {
-				this.getMapLogic().setTile(x, y, tile);		
-			}
-		
+		if (getMapLogic().isEmpty(r.getLocation(), (int)r.getWidth(), (int)r.getHeight()))
+		{
+			for (int y = r.y; y < r.y + r.height; y++)
+				for (int x = r.x; x < r.x + r.width; x++) {
+					this.getMapLogic().setTile(x, y, tile);		
+				}
+		}
 		destroy();
 	}
 	
