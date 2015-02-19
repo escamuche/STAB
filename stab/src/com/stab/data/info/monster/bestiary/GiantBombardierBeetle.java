@@ -2,6 +2,7 @@ package com.stab.data.info.monster.bestiary;
 
 import com.stab.data.StabConstants;
 import com.stab.data.StabInit;
+import com.stab.data.actions.traps.FlameJet;
 import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.data.info.monster.Vermin;
 import com.stab.model.info.trait.base.gear.Weapon;
@@ -45,6 +46,8 @@ public class GiantBombardierBeetle extends Vermin {
 		this.equip(bite, HumanoidGear.BOTHHANDS);
 		
 		//falta ataque de aliento
+		
+		this.getActionSet().addAction(FlameJet.ID);
 		
 	}
 }
