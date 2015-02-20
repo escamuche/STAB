@@ -1,9 +1,9 @@
 package com.stab.data.adventure.duskwood;
 
-import com.stab.data.StabConstants;
-import com.stab.data.actions.player.spells.SpellUtils;
-import com.stab.data.actions.player.spells.cleric.level1.CureLight;
-import com.stab.data.info.monster.Construct;
+import com.stab.pf.StabConstants;
+import com.stab.pf.actions.player.spells.SpellUtils;
+import com.stab.pf.actions.player.spells.cleric.level1.CureLight;
+import com.stab.pf.info.monster.Construct;
 
 public class DesnaChalice extends Construct {
 	public static final String ID="DESNARELIC";

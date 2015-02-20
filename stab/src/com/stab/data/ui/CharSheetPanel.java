@@ -1,8 +1,8 @@
 package com.stab.data.ui;
 
 import com.stab.common.Constants;
-import com.stab.data.StabConstants;
 import com.stab.model.basic.ui.Text;
+import com.stab.pf.StabConstants;
 
 public class CharSheetPanel extends StatsPanel {
 

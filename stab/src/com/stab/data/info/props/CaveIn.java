@@ -2,10 +2,10 @@ package com.stab.data.info.props;
 
 import java.awt.Point;
 
-import com.stab.data.actions.player.spells.ActionDummy;
 import com.stab.model.action.Action;
 import com.stab.model.basic.token.Token;
 import com.stab.model.info.Info;
+import com.stab.pf.actions.player.spells.ActionDummy;
 import com.stab.util.StabUtils;
 
 public class CaveIn  extends TriggerArea {

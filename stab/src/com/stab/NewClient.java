@@ -1,7 +1,7 @@
 package com.stab;
 
 import com.stab.client.StabClient;
-import com.stab.data.StabInit;
+import com.stab.pf.StabInit;
 
 public class NewClient extends  StabClient {
 

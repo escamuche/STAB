@@ -4,14 +4,10 @@ import com.stab.client.slick.AbstractGameScreen;
 import com.stab.client.slick.base.util.AnimUtils;
 import com.stab.client.slick.base.visualobjects.StabSprite;
 import com.stab.model.animation.OnTileAnimation;
-import com.stab.model.info.trait.base.VisualEffect;
 import com.tien.princess.engine.sprite.StateSprite;
-import com.tien.princess.engine.sprite.base.AttachedParticleSprite;
 import com.tien.princess.engine.sprite.common.painters.Painter;
-import com.tien.princess.engine.sprite.common.painters.ParticleSystemPainter;
 import com.tien.princess.engine.sprite.common.painters.ValuePainter;
 import com.tien.princess.engine.sprite.common.states.BasicAnimState;
-import com.tien.princess.engine.sprite.common.states.base.ClearParticlesState;
 import com.tien.princess.engine.utils.PaintUtils;
 
 public class ShockwaveAnimation extends OnTileAnimation {

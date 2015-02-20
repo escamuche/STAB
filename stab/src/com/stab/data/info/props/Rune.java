@@ -1,21 +1,18 @@
 package com.stab.data.info.props;
 
-import java.awt.Color;
 import java.awt.Point;
 import java.util.Random;
 
 import com.stab.annotations.Injected;
-import com.stab.data.StabConstants;
-import com.stab.data.actions.player.spells.SpellAction;
-import com.stab.data.actions.player.spells.ActionDummy;
-import com.stab.data.actions.player.spells.SpellUtils;
-import com.stab.data.actions.player.spells.lvl0.DetectMagic;
 import com.stab.model.action.Action;
 import com.stab.model.basic.token.Token;
 import com.stab.model.extras.OnlyVisibleWithMode;
-import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
-import com.stab.model.info.trait.base.VisualEffect;
+import com.stab.pf.StabConstants;
+import com.stab.pf.actions.player.spells.ActionDummy;
+import com.stab.pf.actions.player.spells.SpellAction;
+import com.stab.pf.actions.player.spells.SpellUtils;
+import com.stab.pf.actions.player.spells.lvl0.DetectMagic;
 import com.stab.util.StabUtils;
 
 public class Rune extends TriggerArea {

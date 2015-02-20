@@ -2,7 +2,6 @@ package com.stab.data.info.props;
 
 import java.util.Collection;
 
-import com.stab.annotations.NoToken;
 import com.stab.common.utils.Utils;
 import com.stab.model.basic.token.PhysicalToken;
 import com.stab.model.basic.token.Token;

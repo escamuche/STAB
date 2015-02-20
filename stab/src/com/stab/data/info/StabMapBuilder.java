@@ -1,16 +1,10 @@
 package com.stab.data.info;
 
-import java.util.Random;
-
-import com.stab.data.StabInit;
-import com.stab.data.StabTables;
-import com.stab.data.info.equipment.EquipmentFactory;
-import com.stab.data.info.monster.Monster;
-import com.stab.data.info.props.TreasureChest;
 import com.stab.model.basic.scenes.map.gen.BasicMapBuilder;
 import com.stab.model.info.Info;
 import com.stab.model.info.base.RandomSpawner;
-import com.stab.model.info.trait.base.gear.Item;
+import com.stab.pf.StabTables;
+import com.stab.pf.info.monster.Monster;
 
 public class StabMapBuilder extends BasicMapBuilder {
 

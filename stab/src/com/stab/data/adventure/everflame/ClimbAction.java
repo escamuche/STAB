@@ -2,10 +2,8 @@ package com.stab.data.adventure.everflame;
 
 import java.awt.Point;
 
-import com.stab.data.StabConstants;
 import com.stab.data.animation.AlertAnimation;
 import com.stab.data.animation.VerticalScreenShakeAnimation;
-import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.model.action.ContextualAction;
 import com.stab.model.action.base.WalkToAction;
 import com.stab.model.basic.token.DecorToken;
@@ -15,6 +13,8 @@ import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.applicable.base.RolledDamage;
 import com.stab.model.info.applicable.base.SkillRoll;
 import com.stab.model.request.basic.ActionRequest;
+import com.stab.pf.StabConstants;
+import com.stab.pf.info.applicable.SavingThrowEffect;
 import com.stab.util.StabUtils;
 
 public class ClimbAction extends ContextualAction {

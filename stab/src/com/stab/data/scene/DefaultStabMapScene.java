@@ -6,7 +6,6 @@ import org.newdawn.slick.Color;
 
 import com.stab.client.slick.BasicActionsController;
 import com.stab.common.Constants;
-import com.stab.data.info.player.PathfinderCharacter;
 import com.stab.data.ui.ActionPanel;
 import com.stab.data.ui.CharSheetPanel;
 import com.stab.data.ui.PlayerInventoryPanel;
@@ -21,6 +20,7 @@ import com.stab.model.basic.ui.Panel;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.interfaces.PlayerOwned;
+import com.stab.pf.info.player.PathfinderCharacter;
 
 public class DefaultStabMapScene  extends DefaultTileMapScene {
 

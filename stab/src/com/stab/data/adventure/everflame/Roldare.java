@@ -4,13 +4,6 @@ import com.stab.common.events.DefaultRule;
 import com.stab.common.events.ManagedEvent;
 import com.stab.common.events.Response;
 import com.stab.common.events.Rule;
-import com.stab.data.StabConstants;
-import com.stab.data.actions.player.spells.lvl1.unfinished.RemoveFear;
-import com.stab.data.info.equipment.ArmorFactory;
-import com.stab.data.info.equipment.EquipmentFactory;
-import com.stab.data.info.equipment.WeaponFactory;
-import com.stab.data.info.feat.general.Alertness_Feat;
-import com.stab.data.info.monster.Humanoid;
 import com.stab.data.info.other.Blocked;
 import com.stab.model.action.Action;
 import com.stab.model.action.DelegatedAction;
@@ -38,6 +31,13 @@ import com.stab.model.info.trait.base.activity.stage.QueryStage;
 import com.stab.model.info.trait.base.activity.stage.SendSceneEventStage;
 import com.stab.model.info.trait.base.activity.stage.SkillRollStage;
 import com.stab.model.request.basic.ActionRequest;
+import com.stab.pf.StabConstants;
+import com.stab.pf.actions.player.spells.lvl1.unfinished.RemoveFear;
+import com.stab.pf.info.equipment.ArmorFactory;
+import com.stab.pf.info.equipment.EquipmentFactory;
+import com.stab.pf.info.equipment.WeaponFactory;
+import com.stab.pf.info.feat.general.Alertness_Feat;
+import com.stab.pf.info.monster.Humanoid;
 
 public class Roldare extends Humanoid implements HasDialog, ActionPerformedListener {
 

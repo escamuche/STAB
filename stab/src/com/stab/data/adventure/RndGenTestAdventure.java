@@ -3,11 +3,11 @@ package com.stab.data.adventure;
 import com.stab.adventure.Adventure;
 import com.stab.data.info.StabMapBuilder;
 import com.stab.data.scene.DefaultStabMapScene;
-import com.stab.data.utils.StabBlockData;
 import com.stab.model.basic.scenes.Narration;
 import com.stab.model.basic.scenes.event.rule.ConditionalMusic;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 import com.stab.model.basic.scenes.map.gen.BasicMapBuilder;
+import com.stab.pf.utils.StabBlockData;
 
 public class RndGenTestAdventure extends Adventure{
 	

@@ -1,14 +1,12 @@
 package com.stab.data.ui;
 
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Hashtable;
 
 import org.newdawn.slick.Color;
 
 import com.stab.client.slick.BasicActionsController;
 import com.stab.common.Constants;
-import com.stab.data.info.equipment.HumanoidGear;
 import com.stab.model.Player;
 import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.Label;
@@ -23,6 +21,7 @@ import com.stab.model.info.trait.base.gear.Equipment;
 import com.stab.model.info.trait.base.gear.Gear;
 import com.stab.model.info.trait.base.gear.Item;
 import com.stab.model.info.trait.base.gear.OverrideWeapon;
+import com.stab.pf.info.equipment.HumanoidGear;
 
 
 public class PlayerInventoryPanel extends InventoryPanel implements EquipmentListener {

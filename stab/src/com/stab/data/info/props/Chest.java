@@ -3,8 +3,6 @@ package com.stab.data.info.props;
 import java.util.ArrayList;
 
 import com.stab.common.Constants;
-import com.stab.data.StabInit;
-import com.stab.data.info.equipment.WeaponFactory;
 import com.stab.model.basic.token.Token;
 import com.stab.model.info.Info;
 import com.stab.model.info.base.Gadget;
@@ -35,7 +33,7 @@ public static final String ID="CHEST";
 		inventory=new Inventory();
 		this.addTrait(inventory);
 		
-		addLoot(StabInit.getWeaponFactory().getItem(WeaponFactory.BATTLEAXE));
+		
 	}
 	
 	

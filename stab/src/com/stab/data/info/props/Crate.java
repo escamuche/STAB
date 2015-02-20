@@ -1,6 +1,5 @@
 package com.stab.data.info.props;
 
-import com.stab.model.info.base.Obstacle;
 
 public class Crate extends Cover {
 

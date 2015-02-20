@@ -3,12 +3,12 @@ package com.stab.data.animation.sprite;
 import java.util.Arrays;
 import java.util.Collection;
 
-import com.stab.data.StabInit;
-import com.stab.data.actions.player.spells.lvl0.AcidSplash;
-import com.stab.data.actions.player.spells.lvl0.DisruptUndead;
-import com.stab.data.actions.player.spells.lvl0.RayFrost;
-import com.stab.data.actions.player.spells.lvl1.RayEnfeeblement;
 import com.stab.data.animation.state.ExplodeState;
+import com.stab.pf.StabInit;
+import com.stab.pf.actions.player.spells.lvl0.AcidSplash;
+import com.stab.pf.actions.player.spells.lvl0.DisruptUndead;
+import com.stab.pf.actions.player.spells.lvl0.RayFrost;
+import com.stab.pf.actions.player.spells.lvl1.RayEnfeeblement;
 import com.tien.princess.engine.sprite.Sprite;
 import com.tien.princess.engine.sprite.common.states.StateSet;
 import com.tien.princess.engine.sprite.common.states.ValueState2;

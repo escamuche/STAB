@@ -1,7 +1,5 @@
 package com.stab.data.info.props;
 
-import org.newdawn.slick.Color;
-
 import com.stab.model.info.base.LightDecoration;
 
 public class Brazier extends LightDecoration {

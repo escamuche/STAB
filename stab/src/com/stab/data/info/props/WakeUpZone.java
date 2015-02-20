@@ -1,10 +1,10 @@
 package com.stab.data.info.props;
 
-import com.stab.data.actions.player.spells.ActionDummy;
 import com.stab.data.actions.traps.WakeDormants;
 import com.stab.model.action.Action;
 import com.stab.model.action.ActionLibrary;
 import com.stab.model.info.Info;
+import com.stab.pf.actions.player.spells.ActionDummy;
 
 
 public class WakeUpZone extends TriggerArea {

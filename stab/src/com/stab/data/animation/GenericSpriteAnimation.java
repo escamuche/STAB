@@ -4,8 +4,8 @@ import java.awt.Point;
 import java.util.Collection;
 
 import com.stab.client.slick.base.util.AnimUtils;
-import com.stab.data.StabInit;
 import com.stab.model.animation.OnTileAnimation;
+import com.stab.pf.StabInit;
 import com.tien.princess.engine.sprite.Sprite;
 import com.tien.princess.engine.sprite.base.TagPoint;
 

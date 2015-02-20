@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 import org.newdawn.slick.Color;
 
-import com.stab.data.info.debuff.condition.UnableToActCondition;
 import com.stab.model.basic.Sprite;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.SkillRoll;
 import com.stab.model.info.trait.base.VisualEffect;
 import com.stab.model.info.trait.base.activity.CoopActivity;
+import com.stab.pf.info.debuff.condition.UnableToActCondition;
 import com.stab.util.StabUtils;
 
 public class PathfinderActivity extends CoopActivity{

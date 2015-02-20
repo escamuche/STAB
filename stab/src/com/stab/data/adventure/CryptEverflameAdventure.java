@@ -2,22 +2,18 @@ package com.stab.data.adventure;
 
 import com.stab.adventure.Adventure;
 import com.stab.common.Constants;
-import com.stab.common.events.Condition;
 import com.stab.common.events.DefaultRule;
-import com.stab.common.events.ManagedEvent;
 import com.stab.common.utils.Roll;
-import com.stab.data.StabConstants;
-import com.stab.data.StabInit;
 import com.stab.data.adventure.everflame.ClimbAction;
 import com.stab.data.adventure.everflame.ClimbWaypoint;
-import com.stab.data.rules.CharacterSkillRollCondition;
 import com.stab.data.scene.DefaultStabMapScene;
 import com.stab.data.ui.RolledSkillOptionButton;
-import com.stab.data.utils.StabBlockData;
+import com.stab.model.action.ActionLibrary;
 import com.stab.model.basic.scenes.Choice;
 import com.stab.model.basic.scenes.Narration;
 import com.stab.model.basic.scenes.event.InfoInteractsWith;
 import com.stab.model.basic.scenes.event.PlayerEntersScene;
+import com.stab.model.basic.scenes.event.condition.CharacterSkillRollCondition;
 import com.stab.model.basic.scenes.event.condition.PartyValueIs;
 import com.stab.model.basic.scenes.event.condition.TargetInfoIsTag;
 import com.stab.model.basic.scenes.event.response.DefeatResponse;
@@ -33,6 +29,9 @@ import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.Image;
 import com.stab.model.basic.ui.Text;
+import com.stab.pf.StabConstants;
+import com.stab.pf.StabInit;
+import com.stab.pf.utils.StabBlockData;
 import com.tien.princess.engine.Resources;
 
 public class CryptEverflameAdventure extends Adventure{
@@ -1350,7 +1349,7 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		  
 		//Elementos necesarios. Esto tiene que ir fuera de aqui! si no solo se inicializa en el host!
-				StabInit.getActionLibrary().register(ClimbAction.class);
+				ActionLibrary.getActionLibrary().register(ClimbAction.class);
 				StabInit.setMapping(ClimbWaypoint.class);
 				
 	//Escena de las cuerdas

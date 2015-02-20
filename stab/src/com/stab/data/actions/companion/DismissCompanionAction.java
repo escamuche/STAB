@@ -2,7 +2,6 @@ package com.stab.data.actions.companion;
 
 import java.awt.Point;
 
-import com.stab.data.info.spellcasting.SpellDecoration;
 import com.stab.model.action.ContextualAction;
 import com.stab.model.info.Info;
 import com.stab.model.request.basic.ActionRequest;

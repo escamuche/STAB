@@ -1,10 +1,10 @@
 package com.stab.data.info.props;
 
-import com.stab.data.StabConstants;
-import com.stab.data.actions.player.spells.lvl0.DetectMagic;
 import com.stab.model.extras.OnlyVisibleWithMode;
 import com.stab.model.info.base.Obstacle;
 import com.stab.model.info.trait.Modifier;
+import com.stab.pf.StabConstants;
+import com.stab.pf.actions.player.spells.lvl0.DetectMagic;
 
 public class Dummy extends Obstacle {
 

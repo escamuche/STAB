@@ -2,12 +2,7 @@ package com.stab.data.actions.traps;
 
 import java.awt.Point;
 
-import com.stab.data.StabConstants;
-import com.stab.data.animation.GenericSpriteAnimation;
 import com.stab.data.animation.SwingAtAnimation;
-import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
-import com.stab.data.info.applicable.SavingThrowEffect;
-import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.action.Action;
 import com.stab.model.action.AoE;
 import com.stab.model.info.BaseInfo;
@@ -15,6 +10,9 @@ import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.applicable.base.RolledDamage;
 import com.stab.model.request.basic.ActionRequest;
+import com.stab.pf.StabConstants;
+import com.stab.pf.info.applicable.SavingThrowEffect;
+import com.stab.pf.utils.PathfinderUtils;
 
 public class WallScythe extends Action  {
 

@@ -2,7 +2,6 @@ package com.stab.data.actions.traps;
 
 import java.awt.Point;
 
-import com.stab.data.animation.BasicSparkAnimationAt;
 import com.stab.data.animation.ShockwaveAnimation;
 import com.stab.data.info.props.DormantInfo;
 import com.stab.model.action.Action;

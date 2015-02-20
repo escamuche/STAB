@@ -17,12 +17,6 @@ import com.stab.data.animation.SidestepAnimation;
 import com.stab.data.animation.StepBackAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.ThrustAnimation;
-import com.stab.data.info.applicable.PathfinderAttack;
-import com.stab.data.info.applicable.SneakAttack;
-import com.stab.data.info.equipment.BasicWeapon;
-import com.stab.data.info.equipment.HumanoidGear;
-import com.stab.data.info.equipment.RangedWeapon;
-import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.action.Action;
 import com.stab.model.action.base.WeaponAttackAction;
 import com.stab.model.ai.packages.DefaultAIPackage;
@@ -39,6 +33,12 @@ import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.base.gear.Ammo;
 import com.stab.model.info.trait.base.gear.Weapon;
 import com.stab.model.request.basic.ActionRequest;
+import com.stab.pf.info.applicable.PathfinderAttack;
+import com.stab.pf.info.applicable.SneakAttack;
+import com.stab.pf.info.equipment.BasicWeapon;
+import com.stab.pf.info.equipment.HumanoidGear;
+import com.stab.pf.info.equipment.RangedWeapon;
+import com.stab.pf.utils.PathfinderUtils;
 
 @Instanced
 public class PathfinderWeaponAttackAction extends WeaponAttackAction  {

@@ -1,6 +1,6 @@
 package com.stab.data.adventure.everflame;
 
-import com.stab.data.info.monster.bestiary.Orc;
+import com.stab.pf.info.monster.bestiary.Orc;
 
 public class OrcIlu extends Orc {
 

@@ -3,12 +3,12 @@ package com.stab.data.actions.general;
 import java.awt.Point;
 
 import com.stab.data.actions.PathfinderAction;
-import com.stab.data.info.buff.Defend_Buff;
 import com.stab.model.action.Action;
 import com.stab.model.events.common.ConsoleMessage;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.request.basic.ActionRequest;
+import com.stab.pf.info.buff.Defend_Buff;
 
 public class DefendAction extends PathfinderAction   {
 	

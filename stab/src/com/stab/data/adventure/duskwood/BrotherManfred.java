@@ -1,14 +1,14 @@
 package com.stab.data.adventure.duskwood;
 
-import com.stab.data.StabConstants;
-import com.stab.data.actions.player.abilities.ChannelPossitiveEnergyAction;
-import com.stab.data.actions.player.spells.cleric.level1.CureLight;
-import com.stab.data.info.equipment.ArmorFactory;
-import com.stab.data.info.equipment.WeaponFactory;
-import com.stab.data.info.monster.Humanoid;
-import com.stab.data.info.player.abilities.ChannelPositiveEnergy;
 import com.stab.model.ai.traits.Healer;
 import com.stab.model.info.trait.base.resource.RenewableResource;
+import com.stab.pf.StabConstants;
+import com.stab.pf.actions.player.abilities.ChannelPossitiveEnergyAction;
+import com.stab.pf.actions.player.spells.cleric.level1.CureLight;
+import com.stab.pf.info.equipment.ArmorFactory;
+import com.stab.pf.info.equipment.WeaponFactory;
+import com.stab.pf.info.monster.Humanoid;
+import com.stab.pf.info.player.abilities.ChannelPositiveEnergy;
 
 public class BrotherManfred extends Humanoid {
 

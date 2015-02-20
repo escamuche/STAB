@@ -2,14 +2,9 @@ package com.stab.data.adventure.duskwood;
 
 import com.stab.adventure.Adventure;
 import com.stab.common.events.DefaultRule;
-import com.stab.data.StabTables;
-import com.stab.data.info.monster.Undead;
-import com.stab.data.info.monster.bestiary.PlagueZombie;
-import com.stab.data.info.monster.bestiary.Zombie;
 import com.stab.data.rules.TrackerSetStatusResponse;
 import com.stab.data.scene.DefaultStabMapScene;
 import com.stab.data.ui.QuestTracker;
-import com.stab.data.utils.StabBlockData;
 import com.stab.model.basic.scenes.Narration;
 import com.stab.model.basic.scenes.event.InfoDestroyed;
 import com.stab.model.basic.scenes.event.InfoEntersZone;
@@ -29,6 +24,11 @@ import com.stab.model.basic.scenes.event.rule.TurnsElapsedRule;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 import com.stab.model.info.trait.Trait;
 import com.stab.model.info.trait.base.VisualEffect;
+import com.stab.pf.StabTables;
+import com.stab.pf.info.monster.Undead;
+import com.stab.pf.info.monster.bestiary.PlagueZombie;
+import com.stab.pf.info.monster.bestiary.Zombie;
+import com.stab.pf.utils.StabBlockData;
 import com.stab.util.InfosWeightedTable;
 
 public class DuskwoodAdventure extends Adventure {

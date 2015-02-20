@@ -1,12 +1,12 @@
 package com.stab.data.info.props;
 
-import com.stab.data.StabConstants;
-import com.stab.data.info.applicable.PathfinderAttack;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.base.Obstacle;
 import com.stab.model.info.trait.Modifier;
+import com.stab.pf.StabConstants;
+import com.stab.pf.info.applicable.PathfinderAttack;
 
 public class Cover extends Obstacle implements Attends<PathfinderAttack>{
 

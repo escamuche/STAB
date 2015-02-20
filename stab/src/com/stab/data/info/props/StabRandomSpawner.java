@@ -1,8 +1,8 @@
 package com.stab.data.info.props;
 
 import com.stab.common.utils.WeightedTable;
-import com.stab.data.StabTables;
 import com.stab.model.info.base.RandomSpawner;
+import com.stab.pf.StabTables;
 import com.stab.util.InfosWeightedTable;
 
 public class StabRandomSpawner extends RandomSpawner {

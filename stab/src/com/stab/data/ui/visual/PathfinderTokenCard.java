@@ -2,8 +2,8 @@ package com.stab.data.ui.visual;
 
 import com.stab.client.slick.base.DefaultTokenCard;
 import com.stab.client.slick.base.TokenCard;
-import com.stab.data.StabConstants;
 import com.stab.model.basic.token.Token;
+import com.stab.pf.StabConstants;
 
 public class PathfinderTokenCard extends DefaultTokenCard {
 

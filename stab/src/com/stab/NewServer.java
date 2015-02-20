@@ -1,7 +1,7 @@
 package com.stab;
 
 import com.stab.client.StabServer;
-import com.stab.data.StabInit;
+import com.stab.pf.StabInit;
 
 public class NewServer extends StabServer{
 

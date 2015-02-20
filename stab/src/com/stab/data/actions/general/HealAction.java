@@ -3,12 +3,12 @@ package com.stab.data.actions.general;
 import java.awt.Point;
 
 import com.stab.common.utils.Roll;
-import com.stab.data.StabConstants;
-import com.stab.data.info.debuff.condition.BleedCondition;
 import com.stab.model.action.Action;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.request.basic.ActionRequest;
+import com.stab.pf.StabConstants;
+import com.stab.pf.info.debuff.condition.BleedCondition;
 
 public class HealAction extends Action  {
 	

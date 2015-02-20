@@ -1,7 +1,6 @@
 package com.stab.data.info.props;
 
 import com.stab.data.info.other.Pushable;
-import com.stab.model.info.base.Obstacle;
 
 public class Barrel extends Cover {
 

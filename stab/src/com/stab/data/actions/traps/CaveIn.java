@@ -3,10 +3,7 @@ package com.stab.data.actions.traps;
 import java.awt.Point;
 import java.util.Random;
 
-import com.stab.data.StabConstants;
 import com.stab.data.animation.BasicSparkAnimationAt;
-import com.stab.data.info.applicable.SavingThrowEffect;
-import com.stab.data.utils.PathfinderUtils;
 import com.stab.model.action.Action;
 import com.stab.model.action.AoE;
 import com.stab.model.info.BaseInfo;
@@ -15,6 +12,9 @@ import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.applicable.base.RolledDamage;
 import com.stab.model.info.base.FloorDecoration;
 import com.stab.model.request.basic.ActionRequest;
+import com.stab.pf.StabConstants;
+import com.stab.pf.info.applicable.SavingThrowEffect;
+import com.stab.pf.utils.PathfinderUtils;
 
 public class CaveIn extends Action  {
 

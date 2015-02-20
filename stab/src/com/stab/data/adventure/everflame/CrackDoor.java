@@ -1,12 +1,12 @@
 package com.stab.data.adventure.everflame;
 
-import com.stab.data.StabConstants;
-import com.stab.data.info.applicable.PathfinderAttack;
 import com.stab.data.info.other.Blocked;
 import com.stab.data.info.props.CDoor;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.trait.Modifier;
+import com.stab.pf.StabConstants;
+import com.stab.pf.info.applicable.PathfinderAttack;
 
 public class CrackDoor extends CDoor  implements Attends<PathfinderAttack> {
 	

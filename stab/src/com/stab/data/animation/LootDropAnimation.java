@@ -2,13 +2,10 @@ package com.stab.data.animation;
 
 import com.stab.client.slick.AbstractGameScreen;
 import com.stab.client.slick.base.util.AnimUtils;
-import com.stab.client.slick.base.visualobjects.StabSprite;
-import com.stab.common.Constants;
 import com.stab.data.animation.state.LootState;
 import com.stab.model.animation.Animation;
 import com.stab.model.info.trait.base.VisualEffect;
 import com.tien.princess.engine.sprite.StateSprite;
-import com.tien.princess.engine.sprite.common.painters.Painter;
 import com.tien.princess.engine.sprite.common.states.BasicAnimState;
 import com.tien.princess.engine.sprite.common.states.StateSet;
 import com.tien.princess.engine.utils.PaintUtils;

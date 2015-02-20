@@ -5,7 +5,6 @@ import java.awt.Point;
 import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.data.animation.GenericSpriteAnimation;
 import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
-import com.stab.data.animation.sprite.StabSpriteFactory;
 import com.stab.model.action.Action;
 import com.stab.model.action.AoE;
 import com.stab.model.info.BaseInfo;

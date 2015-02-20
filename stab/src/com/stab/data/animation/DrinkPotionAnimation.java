@@ -7,7 +7,6 @@ import com.stab.model.animation.Animation;
 import com.tien.princess.engine.sprite.StateSprite;
 import com.tien.princess.engine.sprite.common.painters.Painter;
 import com.tien.princess.engine.sprite.common.states.StateSet;
-import com.tien.princess.engine.sprite.common.states.ValueState;
 import com.tien.princess.engine.sprite.common.states.ValueState2;
 import com.tien.princess.engine.sprite.common.updaters.pos.Orbit;
 import com.tien.princess.engine.utils.PaintUtils;

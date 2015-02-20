@@ -2,14 +2,14 @@ package com.stab.data.info.other;
 
 import java.awt.Point;
 
-import com.stab.data.StabConstants;
-import com.stab.data.info.debuff.FatigueDebuff;
-import com.stab.data.info.debuff.condition.FatiguedCondition;
 import com.stab.model.basic.Sprite;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.SkillRoll;
 import com.stab.model.info.trait.base.VisualEffect;
+import com.stab.pf.StabConstants;
+import com.stab.pf.info.debuff.FatigueDebuff;
+import com.stab.pf.info.debuff.condition.FatiguedCondition;
 
 public class PushActivity extends PathfinderActivity{
 

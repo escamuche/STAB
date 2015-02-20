@@ -1,9 +1,9 @@
 package com.stab.data.actions;
 
-import com.stab.data.StabConstants;
 import com.stab.model.action.Action;
 import com.stab.model.info.Info;
 import com.stab.model.request.basic.ActionRequest;
+import com.stab.pf.StabConstants;
 
 public abstract class PathfinderAction extends Action {
 

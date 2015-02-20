@@ -1,6 +1,6 @@
 package com.stab.data.animation.state;
 
-import com.stab.data.StabInit;
+import com.stab.pf.StabInit;
 import com.tien.princess.engine.sprite.common.states.State;
 import com.tien.princess.engine.sprite.common.states.StateSet;
 import com.tien.princess.engine.sprite.common.updaters.sound.PlaySound;

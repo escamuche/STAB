@@ -1,14 +1,14 @@
 package com.stab.data.adventure.everflame;
 
-import com.stab.data.StabConstants;
-import com.stab.data.info.applicable.PathfinderAttack;
-import com.stab.data.info.applicable.SavingThrowEffect;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Affects;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.applicable.base.Attack;
 import com.stab.model.info.trait.base.BuffEffect;
+import com.stab.pf.StabConstants;
+import com.stab.pf.info.applicable.PathfinderAttack;
+import com.stab.pf.info.applicable.SavingThrowEffect;
 
 public class Illusion_Buff extends BuffEffect implements Affects<PathfinderAttack>, Attends<PathfinderAttack> {
 

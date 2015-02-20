@@ -5,11 +5,6 @@ import java.util.Random;
 
 import com.stab.model.action.Action;
 import com.stab.model.basic.token.Token;
-import com.stab.model.info.BaseInfo;
-import com.stab.model.info.Info;
-import com.stab.model.info.applicable.Applicable;
-import com.stab.model.info.applicable.ListensTo;
-import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.base.FloorDecoration;
 import com.stab.util.StabUtils;
 

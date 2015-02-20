@@ -4,7 +4,6 @@ import org.newdawn.slick.Color;
 
 import com.stab.client.slick.base.visualobjects.LightSprite;
 import com.stab.client.slick.base.visualobjects.StabSprite;
-import com.stab.data.animation.state.SpawnTrailUpdater;
 import com.tien.princess.engine.sprite.Sprite;
 import com.tien.princess.engine.sprite.base.TagPoint;
 import com.tien.princess.engine.sprite.common.painters.ValuePainter;
