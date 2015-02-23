@@ -4,7 +4,6 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import com.stab.data.actions.EffectDescriptor;
 import com.stab.model.ai.traits.CompanionAITrait;
 import com.stab.model.basic.scenes.map.TileMapScene;
 import com.stab.model.info.BaseInfo;
@@ -14,6 +13,7 @@ import com.stab.model.info.trait.base.VisualEffect;
 import com.stab.model.info.trait.base.activity.Activity;
 import com.stab.model.request.basic.ActionRequest;
 import com.stab.pf.StabConstants;
+import com.stab.pf.actions.EffectDescriptor;
 import com.stab.pf.actions.player.spells.SpellOnTile;
 import com.stab.pf.actions.player.spells.lvl1.effects.SummonActivity;
 import com.stab.pf.actions.player.spells.lvl1.effects.SummonedCreature;

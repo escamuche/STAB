@@ -1,4 +1,4 @@
-package com.stab.data.actions;
+package com.stab.pf.actions;
 
 import com.stab.model.action.Action;
 import com.stab.model.info.Info;

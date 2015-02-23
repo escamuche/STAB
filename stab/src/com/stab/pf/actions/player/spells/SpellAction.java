@@ -6,7 +6,6 @@ import java.util.EnumSet;
 import org.newdawn.slick.Color;
 
 import com.stab.annotations.Instanced;
-import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.info.other.ConcentrationActivity;
 import com.stab.model.action.Action;
 import com.stab.model.action.base.WeaponAttackAction;
@@ -18,6 +17,7 @@ import com.stab.model.info.trait.base.activity.Activity;
 import com.stab.model.info.trait.base.gear.Weapon;
 import com.stab.model.request.basic.ActionRequest;
 import com.stab.pf.StabConstants;
+import com.stab.pf.actions.EffectDescriptor;
 import com.stab.pf.info.applicable.BreakSpellResistance;
 import com.stab.pf.info.applicable.SavingThrowEffect;
 import com.stab.pf.info.equipment.SpellWeapon;

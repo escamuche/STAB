@@ -3,12 +3,12 @@ package com.stab.pf.info.spellcasting;
 import java.awt.Point;
 import java.util.EnumSet;
 
-import com.stab.data.actions.EffectDescriptor;
-import com.stab.data.actions.HasDescriptor;
 import com.stab.model.action.Action;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.base.ActionEffect;
 import com.stab.model.request.basic.ActionRequest;
+import com.stab.pf.actions.EffectDescriptor;
+import com.stab.pf.actions.HasDescriptor;
 import com.stab.pf.actions.player.spells.Spell;
 import com.stab.pf.actions.player.spells.SpellAction;
 

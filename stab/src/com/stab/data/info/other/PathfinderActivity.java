@@ -17,8 +17,8 @@ public class PathfinderActivity extends CoopActivity{
 
 	String skill;
 	int bonus;
-	ArrayList<Info> coops;
-	boolean onlyOnce=true;
+	
+	
 	int dc;
 	boolean continuous;
 	
@@ -26,7 +26,7 @@ public class PathfinderActivity extends CoopActivity{
 		this.skill=skill;
 		bonus=0;
 		this.dc=dc;
-		coops= new ArrayList<Info>();
+	
 		this.setMaxProgress(2);
 		continuous=false;
 	}
@@ -38,21 +38,14 @@ public class PathfinderActivity extends CoopActivity{
 		es.playAnimation(VisualEffect.TINKER_ANIMATION);
 	}
 	
-	public boolean isOnlyOnce() {
-		return onlyOnce;
-	}
-	public void setOnlyOnce(boolean onlyOnce) {
-		this.onlyOnce = onlyOnce;
-	}
+	
 	
 	
 	@Override
 	protected void infoSupports(Info instigator) {
-		if (coops.contains(instigator))
-			return;
+	
 		super.infoSupports(instigator);
-		if (isOnlyOnce())
-			coops.add(instigator);
+	
 		if (!(instigator instanceof BaseInfo))
 			return;
 		SkillRoll sk=StabUtils.getGameLogic().getSkillRoll((BaseInfo)instigator, skill, 15);

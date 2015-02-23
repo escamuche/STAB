@@ -1,15 +1,15 @@
-package com.stab.data.info.traits;
+package com.stab.pf.info.trait;
 
 import java.util.EnumSet;
 
-import com.stab.data.actions.EffectDescriptor;
-import com.stab.data.actions.HasDescriptor;
 import com.stab.model.action.Action;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.trait.base.AdvancedTrait;
+import com.stab.pf.actions.EffectDescriptor;
+import com.stab.pf.actions.HasDescriptor;
 
 public class DescriptorImmunity extends AdvancedTrait  implements Attends<Applicable>{
 

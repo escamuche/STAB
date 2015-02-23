@@ -3,13 +3,13 @@ package com.stab.pf.actions.player.spells.lvl1;
 import java.awt.Point;
 
 import com.stab.annotations.Instanced;
-import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.animation.MagicMissileAnimation;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.applicable.base.RolledDamage;
 import com.stab.pf.StabConstants;
+import com.stab.pf.actions.EffectDescriptor;
 import com.stab.pf.actions.player.spells.SpellOnTarget;
 import com.stab.pf.actions.player.spells.lvl1.effects.Shield_Buff;
 

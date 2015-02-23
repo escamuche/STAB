@@ -2,10 +2,10 @@ package com.stab.pf.info.spellcasting;
 
 import java.util.EnumSet;
 
-import com.stab.data.actions.EffectDescriptor;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
+import com.stab.pf.actions.EffectDescriptor;
 import com.stab.pf.actions.player.spells.Spell;
 import com.stab.pf.actions.player.spells.SpellProperties;
 import com.stab.pf.info.applicable.SavingThrowEffect;

@@ -4,12 +4,12 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.EnumSet;
 
-import com.stab.data.actions.EffectDescriptor;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.applicable.base.OpposedSkillRoll;
 import com.stab.model.info.trait.Modifier;
+import com.stab.pf.actions.EffectDescriptor;
 
 public  class SavingThrowEffect extends OpposedSkillRoll {
 

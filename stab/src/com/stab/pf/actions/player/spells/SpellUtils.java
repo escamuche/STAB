@@ -1,9 +1,9 @@
 package com.stab.pf.actions.player.spells;
 
-import com.stab.data.actions.EffectDescriptor;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.trait.base.resource.Resource;
 import com.stab.pf.StabConstants;
+import com.stab.pf.actions.EffectDescriptor;
 import com.stab.util.StabUtils;
 
 public class SpellUtils {

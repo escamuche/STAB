@@ -1,8 +1,8 @@
 package com.stab.pf.actions.player.spells;
 
-import com.stab.data.actions.HasDescriptor;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
+import com.stab.pf.actions.HasDescriptor;
 import com.stab.pf.info.applicable.SavingThrowEffect;
 
 public interface SpellProperties extends HasDescriptor{

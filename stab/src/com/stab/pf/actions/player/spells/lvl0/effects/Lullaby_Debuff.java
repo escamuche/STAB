@@ -1,11 +1,11 @@
 package com.stab.pf.actions.player.spells.lvl0.effects;
 
-import com.stab.data.actions.EffectDescriptor;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.Attends;
 import com.stab.model.info.trait.Modifier;
 import com.stab.pf.StabConstants;
+import com.stab.pf.actions.EffectDescriptor;
 import com.stab.pf.actions.player.spells.Spell;
 import com.stab.pf.info.applicable.SavingThrowEffect;
 import com.stab.pf.info.spellcasting.SpellEffect;

@@ -91,7 +91,7 @@ import com.stab.data.animation.WalkAnimation;
 import com.stab.data.animation.sprite.StabSpriteFactory;
 import com.stab.data.animation.ui.EnterScreenAnimation;
 import com.stab.data.animation.ui.LeaveScreenAnimation;
-import com.stab.data.info.Connector;
+import com.stab.data.info.StabConnector;
 import com.stab.data.info.other.HasLockInfo;
 import com.stab.data.info.other.Key;
 import com.stab.data.info.props.AttackTrap;
@@ -147,6 +147,7 @@ import com.stab.model.action.ActionLibrary;
 import com.stab.model.action.base.InteractAction;
 import com.stab.model.basic.scenes.TokenBasedScene;
 import com.stab.model.extras.SkillExtraText;
+import com.stab.model.info.base.rndgen.Connector;
 import com.stab.model.info.trait.base.gear.Equipment;
 import com.stab.pf.actions.feats.Expertise;
 import com.stab.pf.actions.feats.PowerAttack;
@@ -342,7 +343,7 @@ public class StabInit {
 		ServiceManager.getService(AdventureLibrary.class).register(r);
 		
 		ColiseoAdventure c=new ColiseoAdventure();
-		ServiceManager.getService(AdventureLibrary.class).register(c);
+	//	ServiceManager.getService(AdventureLibrary.class).register(c);
 		CryptEverflameAdventure e=new CryptEverflameAdventure();
 		ServiceManager.getService(AdventureLibrary.class).register(e);
 		
@@ -416,6 +417,7 @@ public class StabInit {
 		of.setMapping(Exit.class);
 		of.setMapping(Wall.class);
 		of.setMapping(Connector.class);
+		of.setMapping(StabConnector.class);
 		of.setMapping(DormantInfo.class);
 		of.setMapping(WakeUpZone.class);
 		

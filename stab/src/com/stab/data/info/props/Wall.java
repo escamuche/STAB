@@ -3,9 +3,9 @@ package com.stab.data.info.props;
 import java.awt.Rectangle;
 
 import com.stab.annotations.Injected;
-import com.stab.model.info.Info;
+import com.stab.model.info.base.Marker;
 
-public class Wall extends Info {
+public class Wall extends Marker {
 
 	
 	public static final String ID="WALL";

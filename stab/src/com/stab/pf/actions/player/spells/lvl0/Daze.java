@@ -2,12 +2,12 @@ package com.stab.pf.actions.player.spells.lvl0;
 
 import java.awt.Point;
 
-import com.stab.data.actions.EffectDescriptor;
 import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.request.basic.ActionRequest;
 import com.stab.pf.StabConstants;
+import com.stab.pf.actions.EffectDescriptor;
 import com.stab.pf.actions.player.spells.SpellOnTarget;
 import com.stab.pf.info.debuff.condition.DazedCondition;
 

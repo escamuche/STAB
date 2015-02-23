@@ -2,7 +2,6 @@ package com.stab.data.actions.monster;
 
 import java.awt.Point;
 
-import com.stab.data.actions.PathfinderAction;
 import com.stab.data.animation.GenericProyectileAnimation;
 import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
 import com.stab.model.action.Action;
@@ -12,6 +11,7 @@ import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.applicable.base.RolledDamage;
 import com.stab.model.request.basic.ActionRequest;
+import com.stab.pf.actions.PathfinderAction;
 
 public class AcidFlask extends PathfinderAction {
 	

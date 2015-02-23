@@ -2,11 +2,11 @@ package com.stab.data.info.other;
 
 import java.util.ArrayList;
 
+import com.stab.data.actions.ConcentrateOnAction;
 import com.stab.model.extras.PlayerContextualOption;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.interfaces.TurnBased;
 import com.stab.model.info.trait.base.activity.Activity;
-import com.stab.pf.actions.player.spells.ConcentrateOnAction;
 
 public class ConcentrationActivity extends Activity implements TurnBased {
 	

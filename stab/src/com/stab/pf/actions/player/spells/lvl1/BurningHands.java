@@ -2,7 +2,6 @@ package com.stab.pf.actions.player.spells.lvl1;
 
 import java.awt.Point;
 
-import com.stab.data.actions.EffectDescriptor;
 import com.stab.model.action.Action;
 import com.stab.model.action.AoE;
 import com.stab.model.info.BaseInfo;
@@ -12,6 +11,7 @@ import com.stab.model.info.applicable.base.RolledDamage;
 import com.stab.model.info.trait.base.VisualEffect;
 import com.stab.model.request.basic.ActionRequest;
 import com.stab.pf.StabConstants;
+import com.stab.pf.actions.EffectDescriptor;
 import com.stab.pf.actions.player.spells.SpellOnTile;
 
 public class BurningHands extends SpellOnTile   {

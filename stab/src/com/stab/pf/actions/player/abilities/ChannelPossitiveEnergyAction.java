@@ -3,7 +3,6 @@ package com.stab.pf.actions.player.abilities;
 import java.awt.Point;
 
 import com.stab.common.utils.Roll;
-import com.stab.data.actions.PathfinderAction;
 import com.stab.model.action.Action;
 import com.stab.model.action.AoE;
 import com.stab.model.info.BaseInfo;
@@ -13,6 +12,7 @@ import com.stab.model.info.applicable.base.Heal;
 import com.stab.model.info.trait.base.VisualEffect;
 import com.stab.model.request.basic.ActionRequest;
 import com.stab.pf.StabConstants;
+import com.stab.pf.actions.PathfinderAction;
 import com.stab.pf.info.applicable.SavingThrowEffect;
 import com.stab.pf.info.feat.general.SelectiveChanneling_Feat;
 import com.stab.pf.info.monster.monstertraits.ConstructTraits;

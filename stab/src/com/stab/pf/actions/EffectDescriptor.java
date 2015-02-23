@@ -1,4 +1,4 @@
-package com.stab.data.actions;
+package com.stab.pf.actions;
 
 public enum EffectDescriptor { 
 	CONJURATION, ABJURATION, ILLUSION, NECROMANCY, EVOCATION, DIVINATION, TRANSMUTATION, ENCHANTMENT,UNIVERSAL,

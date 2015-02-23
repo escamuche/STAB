@@ -1,4 +1,4 @@
-package com.stab.pf.actions.player.spells;
+package com.stab.data.actions;
 
 import java.awt.Point;
 
@@ -13,7 +13,7 @@ import com.stab.model.request.basic.ActionRequest;
 public class ConcentrateOnAction extends ContextualAction{
 
 	
-	public static final String ID="CONCENTRATE_SPELL_ACTION";
+	public static final String ID="CONCENTRATE_ACTION";
 	
 	
 	
@@ -25,7 +25,7 @@ public class ConcentrateOnAction extends ContextualAction{
 		setTargetMode(Action.SELF);
 		setName("Concentrate");
 		setResource("actions/concentrate");
-		setDescription("Concentrate on an spell or activity");
+		setDescription("Keep concentrating");
 		setLosType(IN_RANGE);
 		setTargetInfoClass(null);
 	}

@@ -1,12 +1,12 @@
 package com.stab.pf.info.monster.monstertraits;
 
-import com.stab.data.actions.EffectDescriptor;
-import com.stab.data.info.traits.DescriptorImmunity;
 import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.AttributeBasedModifier;
 import com.stab.pf.StabConstants;
+import com.stab.pf.actions.EffectDescriptor;
 import com.stab.pf.info.feat.general.NaturalWeaponProficiency_Feat;
 import com.stab.pf.info.feat.general.SimpleWeaponProficiency_Feat;
+import com.stab.pf.info.trait.DescriptorImmunity;
 
 public class UndeadTraits extends RaceTraits {
 	

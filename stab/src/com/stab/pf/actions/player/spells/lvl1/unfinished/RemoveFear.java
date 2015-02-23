@@ -2,10 +2,10 @@ package com.stab.pf.actions.player.spells.lvl1.unfinished;
 
 import java.awt.Point;
 
-import com.stab.data.actions.EffectDescriptor;
 import com.stab.model.info.Info;
 import com.stab.model.request.basic.ActionRequest;
 import com.stab.pf.StabConstants;
+import com.stab.pf.actions.EffectDescriptor;
 import com.stab.pf.actions.player.spells.SpellOnTarget;
 
 public class RemoveFear extends SpellOnTarget{
