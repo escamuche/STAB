@@ -1,4 +1,4 @@
-package com.stab.data.actions.general;
+package com.stab.pf.actions.general;
 
 import com.stab.model.action.base.SearchAction;
 import com.stab.model.info.Info;

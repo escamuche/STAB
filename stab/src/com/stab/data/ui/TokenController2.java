@@ -3,10 +3,10 @@ package com.stab.data.ui;
 import org.newdawn.slick.Input;
 
 import com.stab.client.slick.GameScreen;
-import com.stab.data.actions.general.PassDefendAction;
 import com.stab.model.action.base.InteractAction;
 import com.stab.model.action.base.SearchAction;
 import com.stab.model.action.base.TinkerAction;
+import com.stab.pf.actions.general.PassDefendAction;
 import com.tien.princess.engine.Screen;
 import com.tien.princess.engine.controllers.BasicController;
 

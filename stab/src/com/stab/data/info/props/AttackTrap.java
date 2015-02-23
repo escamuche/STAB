@@ -6,13 +6,14 @@ import com.stab.annotations.Injected;
 import com.stab.common.utils.PathUtils;
 import com.stab.model.action.base.WeaponAttackAction;
 import com.stab.model.basic.token.Token;
+import com.stab.model.info.ActionDummy;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.base.Obstacle;
+import com.stab.model.info.base.TriggeredActionTrap;
 import com.stab.model.info.trait.base.gear.Weapon;
 import com.stab.pf.StabConstants;
 import com.stab.pf.StabInit;
-import com.stab.pf.actions.player.spells.ActionDummy;
 import com.stab.pf.info.equipment.RangedWeapon;
 import com.stab.util.StabUtils;
 

@@ -1,10 +1,10 @@
 package com.stab.pf.info.player;
 
-import com.stab.data.actions.general.DefendAction;
 import com.stab.pf.StabConstants;
 import com.stab.pf.StabInit;
 import com.stab.pf.actions.FighterActionSet;
 import com.stab.pf.actions.feats.PowerAttack;
+import com.stab.pf.actions.general.DefendAction;
 import com.stab.pf.info.equipment.HumanoidGear;
 import com.stab.pf.info.feat.combat.PowerAttack_Feat;
 import com.stab.pf.info.feat.general.IronWill_Feat;

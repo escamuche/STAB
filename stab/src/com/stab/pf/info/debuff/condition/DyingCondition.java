@@ -2,10 +2,10 @@ package com.stab.pf.info.debuff.condition;
 
 import org.newdawn.slick.Color;
 
-import com.stab.data.actions.general.HealAction;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.pf.StabConstants;
+import com.stab.pf.actions.general.HealAction;
 
 public class DyingCondition extends UnableToActCondition {
 

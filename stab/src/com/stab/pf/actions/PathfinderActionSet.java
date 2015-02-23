@@ -1,12 +1,12 @@
 package com.stab.pf.actions;
 
-import com.stab.data.actions.general.DefendAction;
-import com.stab.data.actions.general.PassDefendAction;
 import com.stab.model.action.BasicActionSet;
 import com.stab.model.action.base.GearSlotDelegatedAction;
 import com.stab.model.action.base.InteractAction;
 import com.stab.model.action.base.SearchAction;
 import com.stab.model.action.base.TinkerAction;
+import com.stab.pf.actions.general.DefendAction;
+import com.stab.pf.actions.general.PassDefendAction;
 import com.stab.pf.info.equipment.HumanoidGear;
 
 

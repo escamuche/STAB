@@ -1,7 +1,7 @@
 package com.stab.data.info.other;
 
-import com.stab.data.actions.general.PushAction;
 import com.stab.model.info.trait.base.InteractToAction;
+import com.stab.pf.actions.general.PushAction;
 
 public class Pushable extends InteractToAction {
 

@@ -7,7 +7,6 @@ import java.util.Collection;
 import java.util.HashSet;
 
 import com.stab.common.utils.PathUtils;
-import com.stab.data.actions.general.PathfinderWeaponAttackAction;
 import com.stab.model.action.base.WeaponAttackAction;
 import com.stab.model.ai.senses.Sense;
 import com.stab.model.basic.scenes.MapLogic;
@@ -18,6 +17,7 @@ import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.base.gear.Equipment;
 import com.stab.model.info.trait.base.gear.Weapon;
+import com.stab.pf.actions.general.PathfinderWeaponAttackAction;
 import com.stab.pf.actions.player.spells.lvl1.effects.Shield_Buff;
 import com.stab.pf.info.applicable.SavingThrowEffect;
 import com.stab.pf.info.debuff.condition.CannotThreatCondition;

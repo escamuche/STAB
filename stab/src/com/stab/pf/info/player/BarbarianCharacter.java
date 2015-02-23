@@ -1,10 +1,10 @@
 package com.stab.pf.info.player;
 
-import com.stab.data.actions.general.DefendAction;
 import com.stab.pf.StabConstants;
 import com.stab.pf.StabInit;
 import com.stab.pf.actions.BarbarianActionSet;
 import com.stab.pf.actions.feats.PowerAttack;
+import com.stab.pf.actions.general.DefendAction;
 import com.stab.pf.actions.player.abilities.Rage;
 import com.stab.pf.info.alignment.Chaotic;
 import com.stab.pf.info.equipment.ArmorFactory;

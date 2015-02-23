@@ -2,7 +2,6 @@ package com.stab.pf.info.spellcasting;
 
 import java.awt.Point;
 
-import com.stab.data.info.other.ConcentrationListener;
 import com.stab.model.action.ActionLibrary;
 import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.Token;
@@ -12,6 +11,7 @@ import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.interfaces.PlayerOwned;
 import com.stab.model.info.trait.base.VisualEffect;
+import com.stab.model.info.trait.base.activity.ConcentrationListener;
 import com.stab.pf.actions.player.spells.DismissSpellAction;
 import com.stab.pf.actions.player.spells.Spell;
 import com.stab.pf.actions.player.spells.SpellProperties;

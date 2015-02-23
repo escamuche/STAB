@@ -4,13 +4,13 @@ import java.awt.Point;
 
 import com.stab.data.animation.BasicSparkAnimation;
 import com.stab.model.basic.token.DoorToken;
+import com.stab.model.info.ActionDummy;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.Interaction;
 import com.stab.model.info.base.Door;
 import com.stab.model.request.basic.ActionRequest;
 import com.stab.pf.StabConstants;
-import com.stab.pf.actions.player.spells.ActionDummy;
 import com.stab.pf.actions.player.spells.SpellOnTarget;
 
 public class OpenClose extends SpellOnTarget{

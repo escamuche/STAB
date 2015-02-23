@@ -1,9 +1,9 @@
 package com.stab.pf.info.player;
 
-import com.stab.data.actions.general.DefendAction;
 import com.stab.pf.StabConstants;
 import com.stab.pf.StabInit;
 import com.stab.pf.actions.RogueActionSet;
+import com.stab.pf.actions.general.DefendAction;
 import com.stab.pf.info.alignment.Evil;
 import com.stab.pf.info.equipment.HumanoidGear;
 import com.stab.pf.info.feat.general.ImprovedInitiative_Feat;

@@ -1,10 +1,10 @@
 package com.stab.pf.info.player;
 
-import com.stab.data.actions.general.DefendAction;
 import com.stab.model.info.trait.base.resource.RenewableResource;
 import com.stab.pf.StabConstants;
 import com.stab.pf.StabInit;
 import com.stab.pf.actions.PaladinActionSet;
+import com.stab.pf.actions.general.DefendAction;
 import com.stab.pf.actions.player.abilities.SmiteEvil;
 import com.stab.pf.info.alignment.Good;
 import com.stab.pf.info.alignment.Lawful;

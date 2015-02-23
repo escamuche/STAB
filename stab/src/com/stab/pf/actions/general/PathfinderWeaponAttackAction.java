@@ -1,4 +1,4 @@
-package com.stab.data.actions.general;
+package com.stab.pf.actions.general;
 
 import java.awt.Color;
 import java.awt.Point;

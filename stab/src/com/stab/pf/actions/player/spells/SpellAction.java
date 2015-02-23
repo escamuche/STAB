@@ -6,7 +6,6 @@ import java.util.EnumSet;
 import org.newdawn.slick.Color;
 
 import com.stab.annotations.Instanced;
-import com.stab.data.info.other.ConcentrationActivity;
 import com.stab.model.action.Action;
 import com.stab.model.action.base.WeaponAttackAction;
 import com.stab.model.info.BaseInfo;
@@ -14,6 +13,7 @@ import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.base.activity.Activity;
+import com.stab.model.info.trait.base.activity.ConcentrationActivity;
 import com.stab.model.info.trait.base.gear.Weapon;
 import com.stab.model.request.basic.ActionRequest;
 import com.stab.pf.StabConstants;

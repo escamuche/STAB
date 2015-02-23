@@ -2,12 +2,12 @@ package com.stab.pf.actions.player.spells;
 
 import java.util.EnumSet;
 
-import com.stab.data.info.other.ConcentrationActivity;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.NumericApplicable;
 import com.stab.model.info.applicable.base.RolledDamage;
+import com.stab.model.info.trait.base.activity.ConcentrationActivity;
 import com.stab.pf.StabConstants;
 import com.stab.pf.StabInit;
 import com.stab.pf.actions.EffectDescriptor;

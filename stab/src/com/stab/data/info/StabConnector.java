@@ -6,7 +6,7 @@ import java.util.Random;
 import com.stab.common.utils.PathUtils;
 import com.stab.data.info.props.CDoor;
 import com.stab.data.info.props.Slab;
-import com.stab.data.info.props.Wall;
+import com.stab.model.info.base.Wall;
 import com.stab.model.info.base.rndgen.Connector;
 
 public class StabConnector extends Connector{
