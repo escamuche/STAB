@@ -2,9 +2,6 @@ package com.stab.data.adventure.duskwood;
 
 import com.stab.adventure.Adventure;
 import com.stab.common.events.DefaultRule;
-import com.stab.data.rules.TrackerSetStatusResponse;
-import com.stab.data.scene.DefaultStabMapScene;
-import com.stab.data.ui.QuestTracker;
 import com.stab.model.basic.scenes.Narration;
 import com.stab.model.basic.scenes.event.InfoDestroyed;
 import com.stab.model.basic.scenes.event.InfoEntersZone;
@@ -19,15 +16,18 @@ import com.stab.model.basic.scenes.event.response.infos.AddTraitResponse;
 import com.stab.model.basic.scenes.event.response.infos.PlayAnimationResponse;
 import com.stab.model.basic.scenes.event.response.infos.SetMusicResponse;
 import com.stab.model.basic.scenes.event.response.infos.SpawnRandomInfoResponse;
+import com.stab.model.basic.scenes.event.response.tracker.TrackerSetStatusResponse;
 import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
 import com.stab.model.basic.scenes.event.rule.TurnsElapsedRule;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
+import com.stab.model.basic.ui.advanced.QuestTracker;
 import com.stab.model.info.trait.Trait;
 import com.stab.model.info.trait.base.VisualEffect;
 import com.stab.pf.StabTables;
 import com.stab.pf.info.monster.Undead;
 import com.stab.pf.info.monster.bestiary.PlagueZombie;
 import com.stab.pf.info.monster.bestiary.Zombie;
+import com.stab.pf.scene.DefaultStabMapScene;
 import com.stab.pf.utils.StabBlockData;
 import com.stab.util.InfosWeightedTable;
 
@@ -79,16 +79,16 @@ public class DuskwoodAdventure extends Adventure {
 		QuestTracker qt1=new QuestTracker();
 		qt1.setMessage("Explore the ruined chapel");
 		qt1.setState(QuestTracker.IN_PROGRESS);
-		ms.addTracker(qt1);
+		ms.addTracker("1",qt1);
 		QuestTracker qt2=new QuestTracker();
 		qt2.setMessage("Protect the holy relic");
 		qt2.setState(QuestTracker.UNDISCOVERED);
-		ms.addTracker(qt2);
+		ms.addTracker("2",qt2);
 		QuestTracker qt3=new QuestTracker();
 		qt3.setMessage("Ensure Brother Manfred survives");
 		qt3.setState(QuestTracker.UNDISCOVERED);
 		qt3.setOptional(true);
-		ms.addTracker(qt3);
+		ms.addTracker("3",qt3);
 		
 		
 		//Tablas de spawn
@@ -124,9 +124,9 @@ public class DuskwoodAdventure extends Adventure {
 		r1.setEvent(InfoEntersZone.class);
 		r1.addCondition(new InfoIsPlayer());
 		r1.addCondition(new InfoIsTag(InfoEvent.TARGET,"chapel"));
-		r1.addResponse(new TrackerSetStatusResponse(0, QuestTracker.COMPLETED));
-		r1.addResponse(new TrackerSetStatusResponse(1, QuestTracker.IN_PROGRESS));
-		r1.addResponse(new TrackerSetStatusResponse(2, QuestTracker.IN_PROGRESS));
+		r1.addResponse(new TrackerSetStatusResponse("1", QuestTracker.COMPLETED));
+		r1.addResponse(new TrackerSetStatusResponse("2", QuestTracker.IN_PROGRESS));
+		r1.addResponse(new TrackerSetStatusResponse("3", QuestTracker.IN_PROGRESS));
 	
 		r1.addResponse(new PlayAnimationResponse("MANFRED",VisualEffect.CENTER_CAM_ANIMATION));
 		r1.addResponse(new PlayAnimationResponse("MANFRED",VisualEffect.SPEECH_ANIMATION,"Praised be Desna! My prayers have been heard! Quickly, gather around..."));
@@ -140,14 +140,14 @@ public class DuskwoodAdventure extends Adventure {
 		DefaultRule rmanfred = new DefaultRule();
 		rmanfred.setEvent(InfoDestroyed.class);
 		rmanfred.addCondition(new InfoIsTag("MANFRED"));
-		rmanfred.addResponse(new TrackerSetStatusResponse(2, QuestTracker.FAILED));
+		rmanfred.addResponse(new TrackerSetStatusResponse("2", QuestTracker.FAILED));
 		ms.addRule(rmanfred);
 		
 		//regla para la reliquia debe sobrevivir. Lleva a una escena de fracaso distinta de la normal
 		DefaultRule rrelic = new DefaultRule();
 		rrelic.setEvent(InfoDestroyed.class);
 		rrelic.addCondition(new InfoIsTag("RELIC"));
-		rrelic.addResponse(new TrackerSetStatusResponse(1, QuestTracker.FAILED));
+		rrelic.addResponse(new TrackerSetStatusResponse("1", QuestTracker.FAILED));
 		rrelic.addResponse(new DefeatResponse(0,"DEFEAT2"));
 		ms.addRule(rrelic);
 		

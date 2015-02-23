@@ -1,4 +1,4 @@
-package com.stab.data.scene;
+package com.stab.pf.scene;
 
 import java.util.ArrayList;
 
@@ -6,10 +6,6 @@ import org.newdawn.slick.Color;
 
 import com.stab.client.slick.BasicActionsController;
 import com.stab.common.Constants;
-import com.stab.data.ui.ActionPanel;
-import com.stab.data.ui.CharSheetPanel;
-import com.stab.data.ui.PlayerInventoryPanel;
-import com.stab.data.ui.QuestTracker;
 import com.stab.model.basic.scenes.event.response.DefeatResponse;
 import com.stab.model.basic.scenes.event.response.VictoryResponse;
 import com.stab.model.basic.scenes.event.rule.AllPlayersAtZoneRule;
@@ -17,22 +13,23 @@ import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
 import com.stab.model.basic.ui.Label;
 import com.stab.model.basic.ui.Panel;
+import com.stab.model.basic.ui.advanced.QuestTracker;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.interfaces.PlayerOwned;
 import com.stab.pf.info.player.PathfinderCharacter;
+import com.stab.pf.ui.ActionPanel;
+import com.stab.pf.ui.CharSheetPanel;
+import com.stab.pf.ui.PlayerInventoryPanel;
 
 public class DefaultStabMapScene  extends DefaultTileMapScene {
 
-	Panel questPanel;
-	ArrayList<QuestTracker> trackers;
-	
+
 	
 	
 	@Override
 	public void init() {
-		trackers=new ArrayList<QuestTracker>();
-		super.init();
+			super.init();
 	}
 	
 	@Override
@@ -42,7 +39,7 @@ public class DefaultStabMapScene  extends DefaultTileMapScene {
 	}
 	
 	public void createQuestPanel() {
-		questPanel= new Panel();
+		Panel questPanel= new Panel();
 		questPanel.setOpenAction(BasicActionsController.QUEST_LOG);
 		questPanel.setSize(240,Constants.CONTENT);
 		questPanel.setPos(Constants.END,Constants.CENTER);
@@ -53,23 +50,13 @@ public class DefaultStabMapScene  extends DefaultTileMapScene {
 		lbl.setPos(Constants.BEGIN,Constants.BEGIN);
 		lbl.setText("Objectives");
 		questPanel.addChild(lbl);
+		setQuestPanel(questPanel);
 		this.add(questPanel);
 		questPanel.setVisible(false);
+		
 	}
 
-	public int addTracker(QuestTracker qt){
-		trackers.add(qt);
-		questPanel.addChild(qt);
-		questPanel.setVisible(true);
-		return trackers.size()-1;
-	}
 	
-	public QuestTracker getTracker(int number){
-		try{
-			return trackers.get(number);
-		}catch(Exception e){}
-		return null;
-	}
 	
 	
 	

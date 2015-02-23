@@ -1,4 +1,4 @@
-package com.stab.data.ui.visual;
+package com.stab.pf.ui.visual;
 
 import com.stab.client.slick.base.ActionBar;
 import com.stab.client.slick.base.MultipageActionBar;

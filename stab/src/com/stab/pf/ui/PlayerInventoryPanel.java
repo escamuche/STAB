@@ -1,4 +1,4 @@
-package com.stab.data.ui;
+package com.stab.pf.ui;
 
 import java.util.Collection;
 import java.util.Hashtable;
@@ -11,6 +11,7 @@ import com.stab.model.Player;
 import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.Label;
 import com.stab.model.basic.ui.Panel;
+import com.stab.model.basic.ui.advanced.InventoryPanel;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.base.Creature;
 import com.stab.model.info.base.pickup.Inventory;
@@ -98,9 +99,7 @@ public class PlayerInventoryPanel extends InventoryPanel implements EquipmentLis
 		gearButtons.put(slot,b);
 		b.setBackground("tokens/blank");
 		b.setOverlay("ui/nanoborder$B");
-		map.put(slot, b);	
-
-		map2.put(b, slot);
+		addToMap(slot, b);	
 		return b;
 	}
 	
@@ -319,8 +318,8 @@ public class PlayerInventoryPanel extends InventoryPanel implements EquipmentLis
 	public void refreshGear(){
 		for (String s:((Creature)getInfo()).getGear().getSlots()){
 		//	System.out.println("SLOT "+s+" "+map.get(s));
-			if (map.containsKey(s)){
-				Button b=map.get(s);
+			if (hasButton(s)){
+				Button b=getButton(s);
 				
 				Equipment e=((Creature)getInfo()).getGear().getEquipment(s);
 				if (e==null){

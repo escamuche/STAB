@@ -1,8 +1,6 @@
 package com.stab.data.adventure;
 
 import com.stab.adventure.Adventure;
-import com.stab.data.scene.DefaultStabMapScene;
-import com.stab.data.ui.QuestTracker;
 import com.stab.model.basic.scenes.Choice;
 import com.stab.model.basic.scenes.Narration;
 import com.stab.model.basic.scenes.event.response.DefeatResponse;
@@ -11,6 +9,8 @@ import com.stab.model.basic.scenes.event.rule.AllMonstersDeadRule;
 import com.stab.model.basic.scenes.event.rule.AllPlayersDeadRule;
 import com.stab.model.basic.scenes.event.rule.ConditionalMusic;
 import com.stab.model.basic.scenes.map.DefaultTileMapScene;
+import com.stab.model.basic.ui.advanced.QuestTracker;
+import com.stab.pf.scene.DefaultStabMapScene;
 import com.stab.pf.utils.StabBlockData;
 
 public class TestAdventure extends Adventure{
@@ -63,7 +63,7 @@ public class TestAdventure extends Adventure{
 		qt.setProgress(0);
 		qt.setMax(1);
 		qt.setState(QuestTracker.IN_PROGRESS);
-		ms.addTracker(qt);
+		ms.addTracker("1",qt);
 		
 		ConditionalMusic m=new ConditionalMusic(ms);
 		m.setMusic("Lone", "Pursued", "Midnight", "LastBattle");

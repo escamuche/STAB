@@ -1,7 +1,10 @@
-package com.stab.data.ui;
+package com.stab.pf.ui;
 
+import com.stab.client.slick.BasicActionsController;
 import com.stab.common.Constants;
 import com.stab.model.basic.ui.Text;
+import com.stab.model.basic.ui.advanced.ColoredTextValueLink;
+import com.stab.model.basic.ui.advanced.StatsPanel;
 import com.stab.pf.StabConstants;
 
 public class CharSheetPanel extends StatsPanel {
@@ -24,6 +27,7 @@ public class CharSheetPanel extends StatsPanel {
 		text(StabConstants.FORTITUDESAVE,80,17);
 		text(StabConstants.REFLEXSAVE,80,27);
 		text(StabConstants.WILLSAVE,80,37);
+		setOpenAction(BasicActionsController.CHARACTER_SHEET);
 		
 	}
 	
@@ -40,7 +44,7 @@ public class CharSheetPanel extends StatsPanel {
 	
 	public void link(String field,Text text,int type){
 		ColoredTextValueLink tv= new ColoredTextValueLink(field, text);
-		links.add(tv);
+		addLink(tv);
 	}
 	
 	

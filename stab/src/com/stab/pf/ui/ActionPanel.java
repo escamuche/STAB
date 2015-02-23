@@ -1,4 +1,4 @@
-package com.stab.data.ui;
+package com.stab.pf.ui;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,6 +14,7 @@ import com.stab.model.action.base.EmptyAction;
 import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.Label;
 import com.stab.model.basic.ui.Panel;
+import com.stab.model.basic.ui.advanced.ButtonPanel;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.interfaces.PlayerOwned;
 

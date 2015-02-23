@@ -1,4 +1,4 @@
-package com.stab.data.ui;
+package com.stab.pf.ui;
 
 import org.newdawn.slick.Input;
 
@@ -40,7 +40,7 @@ public class TokenController2 extends BasicController{
 			defineKey(Input.KEY_W,BUTTON2);
 			defineKey(Input.KEY_E,BUTTON3);
 			defineKey(Input.KEY_R,BUTTON4);
-			defineKey(Input.KEY_T,BUTTON5);
+			defineKey(Input.KEY_Y,BUTTON5);
 			defineKey(Input.KEY_P,BUTTON6);
 			defineKey(Input.KEY_TAB,PING);
 		}
