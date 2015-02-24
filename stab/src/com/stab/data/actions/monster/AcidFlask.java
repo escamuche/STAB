@@ -2,7 +2,7 @@ package com.stab.data.actions.monster;
 
 import java.awt.Point;
 
-import com.stab.data.animation.GenericProyectileAnimation;
+import com.stab.client.animation.GenericProyectileAnimation;
 import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
 import com.stab.model.action.Action;
 import com.stab.model.action.AoE;

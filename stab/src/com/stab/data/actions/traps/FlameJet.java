@@ -2,8 +2,8 @@ package com.stab.data.actions.traps;
 
 import java.awt.Point;
 
-import com.stab.data.animation.BasicSparkAnimation;
-import com.stab.data.animation.GenericSpriteAnimation;
+import com.stab.client.animation.BasicSparkAnimation;
+import com.stab.client.animation.GenericSpriteAnimation;
 import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
 import com.stab.model.action.Action;
 import com.stab.model.action.AoE;

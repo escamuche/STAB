@@ -2,7 +2,7 @@ package com.stab.pf.actions.player.spells.lvl0;
 
 import java.awt.Point;
 
-import com.stab.data.animation.BasicSparkAnimation;
+import com.stab.client.animation.BasicSparkAnimation;
 import com.stab.model.basic.token.DoorToken;
 import com.stab.model.info.ActionDummy;
 import com.stab.model.info.BaseInfo;

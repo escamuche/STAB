@@ -2,8 +2,8 @@ package com.stab.pf.actions.player.spells;
 
 import org.newdawn.slick.Color;
 
+import com.stab.client.animation.GenericSpriteOnAnimation;
 import com.stab.common.Constants;
-import com.stab.data.animation.GenericSpriteOnAnimation;
 import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
 import com.stab.model.ai.senses.SightSense;
 import com.stab.model.basic.Sprite;

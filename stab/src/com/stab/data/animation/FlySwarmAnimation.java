@@ -1,5 +1,6 @@
 package com.stab.data.animation;
 
+import com.stab.client.animation.GenericSpriteOnAnimation;
 import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
 import com.stab.model.animation.Animation;
 

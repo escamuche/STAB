@@ -1,9 +1,9 @@
 package com.stab.pf.info.equipment;
 
-import com.stab.data.animation.GenericProyectileAnimation;
+import com.stab.client.animation.GenericProyectileAnimation;
+import com.stab.client.animation.ShootBeamAnimation;
+import com.stab.client.animation.ShootProyectileAnimation;
 import com.stab.data.animation.LungeAnimation;
-import com.stab.data.animation.ShootBeamAnimation;
-import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.ThrustAnimation;
 import com.stab.model.info.applicable.base.Damage;

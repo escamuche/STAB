@@ -6,10 +6,11 @@ import java.util.Collection;
 
 import org.newdawn.slick.Color;
 
+import com.stab.client.animation.sprite.StabProyectile;
+import com.stab.client.animation.state.ExplodeState;
 import com.stab.client.slick.base.visualobjects.LightSprite;
 import com.stab.common.Constants;
 import com.stab.common.value.InterpolatorValueProvider;
-import com.stab.data.animation.state.ExplodeState;
 import com.tien.princess.engine.Resources;
 import com.tien.princess.engine.sprite.Sprite;
 import com.tien.princess.engine.sprite.StateSprite;

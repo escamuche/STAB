@@ -3,7 +3,7 @@ package com.stab.data.actions.traps;
 import java.awt.Point;
 import java.util.Random;
 
-import com.stab.data.animation.BasicSparkAnimationAt;
+import com.stab.client.animation.BasicSparkAnimationAt;
 import com.stab.model.action.Action;
 import com.stab.model.action.AoE;
 import com.stab.model.info.BaseInfo;

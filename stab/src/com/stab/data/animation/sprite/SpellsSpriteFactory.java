@@ -3,8 +3,9 @@ package com.stab.data.animation.sprite;
 import java.util.Arrays;
 import java.util.Collection;
 
-import com.stab.data.animation.state.ExplodeState;
-import com.stab.pf.StabInit;
+import com.stab.client.animation.sprite.StabProyectile;
+import com.stab.client.animation.state.ExplodeState;
+import com.stab.client.slick.base.util.AnimUtils;
 import com.stab.pf.actions.player.spells.lvl0.AcidSplash;
 import com.stab.pf.actions.player.spells.lvl0.DisruptUndead;
 import com.stab.pf.actions.player.spells.lvl0.RayFrost;
@@ -51,7 +52,7 @@ public class SpellsSpriteFactory extends AbstractSpriteFactory{
 			s.setPainter("PARTICLE#effects/blueBeamHead");
 			s.setLoopSound("effects/ArcaneExplosion");
 			SpawnUpdater beam= new SpawnUpdater(SpecialEffectsSpriteFactory.BLUE_BEAM);
-			beam.setFactory(StabInit.getSpriteFactory());
+			beam.setFactory(AnimUtils.getSpriteFactory());
 			s.getTravel().addUpdater(beam);
 			ExplodeState x=new ExplodeState(SpecialEffectsSpriteFactory.FREEZE_EXPLOSION);
 			x.addUpdater(new LoopSound("effects/ArcaneExplosion"));
@@ -70,7 +71,7 @@ public class SpellsSpriteFactory extends AbstractSpriteFactory{
 			s.setPainter("PARTICLE#effects/purpleEye");
 			s.setLoopSound("effects/ShadowMissileLoop");
 			SpawnUpdater beam= new SpawnUpdater(SpecialEffectsSpriteFactory.PURPLE_BEAM);
-			beam.setFactory(StabInit.getSpriteFactory());
+			beam.setFactory(AnimUtils.getSpriteFactory());
 			s.getTravel().addUpdater(beam);
 			//ExplodeState x=new ExplodeState("PARTICLE#effects/negativeStrike","effects/ShadowCast");
 			ExplodeState x=new ExplodeState(SpecialEffectsSpriteFactory.PURPLE_EXPLOSION);

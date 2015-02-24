@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import com.stab.annotations.Instanced;
+import com.stab.client.animation.FlashAnimation;
+import com.stab.client.animation.GenericProyectileAnimation;
+import com.stab.client.animation.GenericProyectileMissAnimation;
+import com.stab.client.animation.MissProyectileAnimation;
+import com.stab.client.animation.ShootProyectileAnimation;
 import com.stab.common.utils.Roll;
 import com.stab.data.animation.BlockAnimation;
-import com.stab.data.animation.FlashAnimation;
-import com.stab.data.animation.GenericProyectileAnimation;
-import com.stab.data.animation.GenericProyectileMissAnimation;
-import com.stab.data.animation.MissProyectileAnimation;
-import com.stab.data.animation.ShootProyectileAnimation;
 import com.stab.data.animation.SidestepAnimation;
 import com.stab.data.animation.StepBackAnimation;
 import com.stab.data.animation.SwingAnimation;

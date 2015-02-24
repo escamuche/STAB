@@ -6,11 +6,50 @@ import com.stab.adventure.AdventureLibrary;
 import com.stab.adventure.Game;
 import com.stab.client.ClientEntityManager;
 import com.stab.client.VisualEngine;
+import com.stab.client.animation.AlertAnimation;
+import com.stab.client.animation.AnimatedIconAnimation;
+import com.stab.client.animation.AnimatedSparkAnimation;
+import com.stab.client.animation.BasicSparkAnimation;
+import com.stab.client.animation.BasicSparkAnimationAt;
+import com.stab.client.animation.BumpAnimation;
+import com.stab.client.animation.CenterCamAnimation;
+import com.stab.client.animation.CirclingAnimation;
+import com.stab.client.animation.DamageNumberAnimation;
+import com.stab.client.animation.DecayAnimation;
+import com.stab.client.animation.DirectedAnimatedSparkAnimation;
+import com.stab.client.animation.EffectAddAnimation;
+import com.stab.client.animation.EffectRemoveAnimation;
+import com.stab.client.animation.ExtraInfoAnimation;
+import com.stab.client.animation.FailureAnimation;
+import com.stab.client.animation.FlashAnimation;
+import com.stab.client.animation.FloatingTextAnimation;
+import com.stab.client.animation.GenericProyectileAnimation;
+import com.stab.client.animation.GenericProyectileMissAnimation;
+import com.stab.client.animation.GenericSpriteAnimation;
+import com.stab.client.animation.GenericSpriteOnAnimation;
+import com.stab.client.animation.HealNumberAnimation;
+import com.stab.client.animation.HorizontalScreenShakeAnimation;
+import com.stab.client.animation.LootDropAnimation;
+import com.stab.client.animation.MarkAnimation;
+import com.stab.client.animation.MissProyectileAnimation;
+import com.stab.client.animation.MissRotatingProyectileAnimation;
+import com.stab.client.animation.PlaySoundAnimation;
+import com.stab.client.animation.RevealAnimation;
+import com.stab.client.animation.ShakeAnimation;
+import com.stab.client.animation.ShockwaveAnimation;
+import com.stab.client.animation.ShootBeamAnimation;
+import com.stab.client.animation.ShootProyectileAnimation;
+import com.stab.client.animation.ShootRotatingProyectileAnimation;
+import com.stab.client.animation.SpeechBubbleAnimation;
+import com.stab.client.animation.StartledAnimation;
+import com.stab.client.animation.SuccessAnimation;
+import com.stab.client.animation.VerticalScreenShakeAnimation;
+import com.stab.client.animation.WaitAnimation;
+import com.stab.client.animation.WalkAnimation;
 import com.stab.client.slick.StabVisualEngine;
 import com.stab.client.slick.base.visualobjects.Button_sprite;
 import com.stab.client.slick.base.visualobjects.token.ImageToken_sprite;
 import com.stab.common.fw.ServiceManager;
-import com.stab.data.actions.StabActionState;
 import com.stab.data.actions.monster.AcidFlask;
 import com.stab.data.actions.traps.FlameJet;
 import com.stab.data.actions.traps.WallScythe;
@@ -26,60 +65,20 @@ import com.stab.data.adventure.everflame.CrackDoor;
 import com.stab.data.adventure.everflame.CrackDoorToken;
 import com.stab.data.adventure.everflame.OrcIlu;
 import com.stab.data.adventure.everflame.Roldare;
-import com.stab.data.animation.AlertAnimation;
-import com.stab.data.animation.AnimatedIconAnimation;
-import com.stab.data.animation.AnimatedSparkAnimation;
-import com.stab.data.animation.BasicSparkAnimation;
-import com.stab.data.animation.BasicSparkAnimationAt;
 import com.stab.data.animation.BlockAnimation;
-import com.stab.data.animation.BumpAnimation;
-import com.stab.data.animation.CenterCamAnimation;
-import com.stab.data.animation.CirclingAnimation;
 import com.stab.data.animation.CloseDoorAnimation;
-import com.stab.data.animation.DamageNumberAnimation;
-import com.stab.data.animation.DecayAnimation;
-import com.stab.data.animation.DirectedAnimatedSparkAnimation;
 import com.stab.data.animation.DrinkPotionAnimation;
-import com.stab.data.animation.EffectAddAnimation;
-import com.stab.data.animation.EffectRemoveAnimation;
-import com.stab.data.animation.ExtraInfoAnimation;
-import com.stab.data.animation.FailureAnimation;
-import com.stab.data.animation.FlashAnimation;
-import com.stab.data.animation.FloatingTextAnimation;
 import com.stab.data.animation.FlySwarmAnimation;
-import com.stab.data.animation.GenericProyectileAnimation;
-import com.stab.data.animation.GenericProyectileMissAnimation;
-import com.stab.data.animation.GenericSpriteAnimation;
-import com.stab.data.animation.GenericSpriteOnAnimation;
-import com.stab.data.animation.HealNumberAnimation;
-import com.stab.data.animation.HorizontalScreenShakeAnimation;
-import com.stab.data.animation.LootDropAnimation;
 import com.stab.data.animation.LungeAnimation;
 import com.stab.data.animation.MagicMissileAnimation;
-import com.stab.data.animation.MarkAnimation;
-import com.stab.data.animation.MissProyectileAnimation;
-import com.stab.data.animation.MissRotatingProyectileAnimation;
 import com.stab.data.animation.OpenDoorAnimation;
-import com.stab.data.animation.PlaySoundAnimation;
 import com.stab.data.animation.RSwingAnimation;
-import com.stab.data.animation.RevealAnimation;
-import com.stab.data.animation.ShakeAnimation;
-import com.stab.data.animation.ShockwaveAnimation;
-import com.stab.data.animation.ShootBeamAnimation;
-import com.stab.data.animation.ShootProyectileAnimation;
-import com.stab.data.animation.ShootRotatingProyectileAnimation;
 import com.stab.data.animation.SidestepAnimation;
-import com.stab.data.animation.SpeechBubbleAnimation;
-import com.stab.data.animation.StartledAnimation;
 import com.stab.data.animation.StepBackAnimation;
-import com.stab.data.animation.SuccessAnimation;
 import com.stab.data.animation.SwingAnimation;
 import com.stab.data.animation.SwingAtAnimation;
 import com.stab.data.animation.ThrustAnimation;
 import com.stab.data.animation.TinkerAnimation;
-import com.stab.data.animation.VerticalScreenShakeAnimation;
-import com.stab.data.animation.WaitAnimation;
-import com.stab.data.animation.WalkAnimation;
 import com.stab.data.animation.sprite.StabSpriteFactory;
 import com.stab.data.animation.ui.EnterScreenAnimation;
 import com.stab.data.animation.ui.LeaveScreenAnimation;
@@ -132,11 +131,8 @@ import com.stab.model.basic.scenes.TokenBasedScene;
 import com.stab.model.basic.ui.advanced.RolledOptionButton;
 import com.stab.model.basic.ui.advanced.RolledSkillOptionButton;
 import com.stab.model.extras.SkillExtraText;
-import com.stab.model.info.base.DormantInfo;
 import com.stab.model.info.base.TriggeredActionTrap;
-import com.stab.model.info.base.WakeUpZone;
 import com.stab.model.info.base.Wall;
-import com.stab.model.info.base.rndgen.Connector;
 import com.stab.model.info.trait.base.gear.Equipment;
 import com.stab.pf.actions.feats.Expertise;
 import com.stab.pf.actions.feats.PowerAttack;
@@ -276,6 +272,8 @@ public class StabInit {
 			
 		}
 		
+		getSpriteFactory();
+		
 		StabVisualEngine sv=(StabVisualEngine)ServiceManager.getService(VisualEngine.class);
 		if (sv!=null){
 		//	sv.getFactory().setMapping(ActionSlotButton.ID,Button_sprite.class);
@@ -354,7 +352,7 @@ public class StabInit {
 		of= new BasicObjectFactory();
 		
 		
-		of.setMapping(StabActionState.class);
+		//of.setMapping(StabActionState.class);
 		of.setMapping(PathfinderItemPickup.class);
 		
 		//scenes
@@ -778,6 +776,9 @@ public class StabInit {
 		e=StabInit.getEquipmentFactory().getItem(s); 
 		return e;
 	}
+	
+	
+	
 
 	public static SpriteFactory  getSpriteFactory() {
 		if (spritefactory==null)

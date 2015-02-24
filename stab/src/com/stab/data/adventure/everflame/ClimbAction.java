@@ -2,8 +2,8 @@ package com.stab.data.adventure.everflame;
 
 import java.awt.Point;
 
-import com.stab.data.animation.AlertAnimation;
-import com.stab.data.animation.VerticalScreenShakeAnimation;
+import com.stab.client.animation.AlertAnimation;
+import com.stab.client.animation.VerticalScreenShakeAnimation;
 import com.stab.model.action.ContextualAction;
 import com.stab.model.action.base.WalkToAction;
 import com.stab.model.basic.token.DecorToken;

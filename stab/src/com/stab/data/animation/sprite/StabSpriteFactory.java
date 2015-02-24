@@ -17,10 +17,6 @@ public class StabSpriteFactory extends GeneralSpriteFactory{
 		setFactory(this);
 	}
 	
-	@Override
-	public Collection<Sprite> getSprites(String type) {
-		// TODO Auto-generated method stub
-		return super.getSprites(type);
-	}
+
 	
 }

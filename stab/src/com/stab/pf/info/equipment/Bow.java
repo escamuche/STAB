@@ -1,6 +1,6 @@
 package com.stab.pf.info.equipment;
 
-import com.stab.data.animation.ShootProyectileAnimation;
+import com.stab.client.animation.ShootProyectileAnimation;
 
 public class Bow extends RangedWeapon {
 
