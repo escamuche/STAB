@@ -1,11 +1,11 @@
 package com.stab.pf.info.equipment;
 
+import com.stab.base.animation.LungeAnimation;
+import com.stab.base.animation.SwingAnimation;
+import com.stab.base.animation.ThrustAnimation;
 import com.stab.client.animation.GenericProyectileAnimation;
 import com.stab.client.animation.ShootBeamAnimation;
 import com.stab.client.animation.ShootProyectileAnimation;
-import com.stab.data.animation.LungeAnimation;
-import com.stab.data.animation.SwingAnimation;
-import com.stab.data.animation.ThrustAnimation;
 import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.base.gear.ItemFactory;
 import com.stab.model.info.trait.base.gear.Weapon;

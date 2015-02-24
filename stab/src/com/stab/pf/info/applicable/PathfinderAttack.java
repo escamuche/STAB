@@ -1,7 +1,7 @@
 package com.stab.pf.info.applicable;
 
+import com.stab.base.info.props.Cover;
 import com.stab.common.utils.Roll;
-import com.stab.data.info.props.Cover;
 import com.stab.model.info.BaseInfo;
 import com.stab.model.info.Info;
 import com.stab.model.info.applicable.base.WeaponAttack;

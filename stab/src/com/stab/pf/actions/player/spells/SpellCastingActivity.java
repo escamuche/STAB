@@ -4,7 +4,6 @@ import org.newdawn.slick.Color;
 
 import com.stab.client.animation.GenericSpriteOnAnimation;
 import com.stab.common.Constants;
-import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
 import com.stab.model.ai.senses.SightSense;
 import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.DecorToken;
@@ -14,6 +13,7 @@ import com.stab.model.info.base.Creature;
 import com.stab.model.info.interfaces.PlayerOwned;
 import com.stab.model.info.trait.base.activity.ProgressActivity;
 import com.stab.pf.StabConstants;
+import com.stab.pf.animations.sprite.SpecialEffectsSpriteFactory;
 import com.stab.pf.info.spellcasting.SpellCasting;
 import com.stab.pf.utils.PathfinderUtils;
 import com.stab.util.StabUtils;

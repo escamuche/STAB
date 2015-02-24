@@ -1,6 +1,6 @@
 package com.stab.pf.info.monster.bestiary;
 
-import com.stab.data.actions.traps.FlameJet;
+import com.stab.base.actions.traps.FlameJet;
 import com.stab.model.info.trait.base.gear.Weapon;
 import com.stab.pf.StabConstants;
 import com.stab.pf.StabInit;

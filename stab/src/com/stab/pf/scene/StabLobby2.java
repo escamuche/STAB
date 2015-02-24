@@ -1,8 +1,8 @@
 package com.stab.pf.scene;
 
+import com.stab.client.animation.EnterScreenAnimation;
+import com.stab.client.animation.LeaveScreenAnimation;
 import com.stab.common.Constants;
-import com.stab.data.animation.ui.EnterScreenAnimation;
-import com.stab.data.animation.ui.LeaveScreenAnimation;
 import com.stab.model.Player;
 import com.stab.model.Scene;
 import com.stab.model.basic.scenes.Lobby;

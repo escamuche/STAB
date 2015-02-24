@@ -1,8 +1,8 @@
 package com.stab.pf;
 
+import com.stab.base.info.props.TreasureChest;
 import com.stab.common.fw.Reference;
 import com.stab.common.utils.WeightedTable;
-import com.stab.data.info.props.TreasureChest;
 import com.stab.pf.info.monster.bestiary.DireRat;
 import com.stab.pf.info.monster.bestiary.EsqueletoArquero;
 import com.stab.pf.info.monster.bestiary.GiantBombardierBeetle;

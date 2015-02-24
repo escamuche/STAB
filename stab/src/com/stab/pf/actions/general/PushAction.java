@@ -2,9 +2,9 @@ package com.stab.pf.actions.general;
 
 import java.awt.Point;
 
+import com.stab.base.info.other.PushActivity;
+import com.stab.base.info.other.Pushable;
 import com.stab.common.utils.PathUtils;
-import com.stab.data.info.other.PushActivity;
-import com.stab.data.info.other.Pushable;
 import com.stab.model.action.Action;
 import com.stab.model.action.base.WalkToAction;
 import com.stab.model.basic.scenes.MapLogic;

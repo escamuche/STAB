@@ -1,6 +1,6 @@
 package com.stab.pf.info.monster.bestiary;
 
-import com.stab.data.actions.monster.AcidFlask;
+import com.stab.base.actions.monster.AcidFlask;
 import com.stab.model.ai.actions.orders.Minion;
 import com.stab.model.ai.traits.PrefferRanged;
 import com.stab.pf.StabConstants;

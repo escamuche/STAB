@@ -1,6 +1,6 @@
 package com.stab.pf.info.monster.bestiary;
 
-import com.stab.data.actions.monster.BileSplash;
+import com.stab.base.actions.monster.BileSplash;
 import com.stab.model.info.trait.base.DisguisesAsTrait;
 
 public class PlagueZombie extends Zombie {

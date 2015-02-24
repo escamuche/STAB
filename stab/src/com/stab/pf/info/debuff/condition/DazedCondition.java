@@ -4,10 +4,10 @@ import java.awt.Color;
 
 import com.stab.client.animation.GenericSpriteOnAnimation;
 import com.stab.common.Constants;
-import com.stab.data.animation.sprite.SpecialEffectsSpriteFactory;
 import com.stab.model.basic.Sprite;
 import com.stab.model.basic.token.DecorToken;
 import com.stab.model.info.BaseInfo;
+import com.stab.pf.animations.sprite.SpecialEffectsSpriteFactory;
 
 public class DazedCondition extends UnableToActCondition{
 

@@ -1,6 +1,6 @@
 package com.stab.pf.info.equipment;
 
-import com.stab.data.animation.DrinkPotionAnimation;
+import com.stab.base.animation.DrinkPotionAnimation;
 import com.stab.model.info.Info;
 import com.stab.model.info.trait.base.gear.Item;
 
