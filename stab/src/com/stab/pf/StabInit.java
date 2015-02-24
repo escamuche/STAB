@@ -118,6 +118,7 @@ import com.stab.client.animation.WalkAnimation;
 import com.stab.client.slick.StabVisualEngine;
 import com.stab.client.slick.base.visualobjects.Button_sprite;
 import com.stab.client.slick.base.visualobjects.token.ImageToken_sprite;
+import com.stab.common.fw.Loader;
 import com.stab.common.fw.ServiceManager;
 import com.stab.fw.BasicObjectFactory;
 import com.stab.fw.EntityManager;
@@ -248,6 +249,7 @@ import com.stab.pf.ui.visual.PathfinderTokenTooltip;
 import com.stab.pf.ui.visual.StabActionBar;
 import com.stab.pf.utils.DefaultBlockData;
 import com.stab.pf.utils.StabBlockData;
+import com.tien.princess.engine.Resources;
 import com.tien.princess.engine.sprite.factory.AbstractSpriteFactory;
 import com.tien.princess.engine.sprite.factory.SpriteFactory;
 
@@ -262,7 +264,9 @@ public class StabInit {
 	static AbstractSpriteFactory spritefactory;
 	
 	public static void clientInit(){
-	
+		
+		Loader.addDir("res");
+		Loader.addDir("pfres");
 		
 		initializeData();
 		ClientEntityManager cm=ServiceManager.getService(ClientEntityManager.class);
@@ -271,7 +275,7 @@ public class StabInit {
 		else{
 			
 		}
-		
+
 		getSpriteFactory();
 		
 		StabVisualEngine sv=(StabVisualEngine)ServiceManager.getService(VisualEngine.class);
@@ -294,6 +298,7 @@ public class StabInit {
 			//TODO: trampa gorda... es necesario solucionar esto, asi como el mapa
 			//Por ahora no queda otro remedio
 			sv.getFactory().setMapping(CrackDoorToken.ID,ImageToken_sprite.class);
+		
 		}
 	}
 	
@@ -554,7 +559,7 @@ public class StabInit {
 		getActionLibrary().register(DismissSpellAction.class);
 		
 		getActionLibrary().register(DefendAction.class);
-		getActionLibrary().getAction(InteractAction.ID).setResource("actions/inv_gizmo_02");
+	//	getActionLibrary().getAction(InteractAction.ID).setResource("actions/inv_gizmo_02");
 		getActionLibrary().register(PathfinderWeaponAttackAction.class);
 		getActionLibrary().register(PathfinderPathAction.class);
 		getActionLibrary().register(Rage.class);

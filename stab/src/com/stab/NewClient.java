@@ -2,6 +2,7 @@ package com.stab;
 
 import com.stab.client.StabClient;
 import com.stab.pf.StabInit;
+import com.tien.princess.engine.Resources;
 
 public class NewClient extends  StabClient {
 
@@ -17,6 +18,7 @@ public class NewClient extends  StabClient {
 		
 		NewClient client=new NewClient();
 		client.start();
+	
 	}
 
 	

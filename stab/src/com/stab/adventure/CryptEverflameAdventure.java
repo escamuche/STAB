@@ -1,10 +1,10 @@
 package com.stab.adventure;
 
-import com.stab.adventure.Adventure;
 import com.stab.adventure.everflame.ClimbAction;
 import com.stab.adventure.everflame.ClimbWaypoint;
 import com.stab.common.Constants;
 import com.stab.common.events.DefaultRule;
+import com.stab.common.fw.Loader;
 import com.stab.common.utils.Roll;
 import com.stab.model.action.ActionLibrary;
 import com.stab.model.basic.scenes.Choice;
@@ -32,7 +32,6 @@ import com.stab.pf.StabConstants;
 import com.stab.pf.StabInit;
 import com.stab.pf.scene.DefaultStabMapScene;
 import com.stab.pf.utils.StabBlockData;
-import com.tien.princess.engine.Resources;
 
 public class CryptEverflameAdventure extends Adventure{
 		
@@ -41,7 +40,7 @@ public class CryptEverflameAdventure extends Adventure{
 		
 		//INDICAMOS EL DIRECTORIO ADICIONAL DE RECURSOS
 		
-		Resources.INSTANCE.addDir("everflame");
+		Loader.addDir("everflame");
 		
 		
 		setName("Crypt of Everflame");
