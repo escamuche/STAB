@@ -6,6 +6,7 @@ import com.stab.base.actions.traps.FlameJet;
 import com.stab.common.utils.PathUtils;
 import com.stab.model.info.base.DecoGadget;
 import com.stab.model.info.interfaces.RemoteActivated;
+import com.stab.util.StabUtils;
 
 public class FlameJetTrap extends DecoGadget implements RemoteActivated{
 
@@ -29,7 +30,7 @@ public class FlameJetTrap extends DecoGadget implements RemoteActivated{
 		
 		//Use action on corresponding tile
 		
-		FlameJet fj= new FlameJet(); 
+		FlameJet fj= (FlameJet)StabUtils.getActionLibrary().getAction(FlameJet.ID); 
 		Point tile;
 		double[] dir=PathUtils.getDirStep(this.getAngle());
 		tile = new Point ((int)(this.getX()+dir[0]),(int)(this.getY()+dir[1]));

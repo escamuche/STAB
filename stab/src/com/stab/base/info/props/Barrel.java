@@ -13,7 +13,7 @@ public class Barrel extends Cover {
 		setMaxEp(0);
 		healFully();
 		setResource("props/barrel");
-		setDestroyedResource("props/BarrilRoto");
+		setDestroyedResource("brokenWood");
 		setText("Barrel");
 		setDescription("A heavy wooden barrel, with unknown contents.");
 		addTrait(new Pushable(8));

@@ -11,10 +11,10 @@ public class Crate extends Cover {
 		setMaxHp(10);
 		setMaxEp(0);
 		healFully();
-		setResource("crate");
+		setResource("props/crate");
 		setText("Crate");
 		setDescription("A wooden crate of unimportant contents");
-		setDestroyedResource("brokenCrate");
+		setDestroyedResource("brokenWood");
 		this.setBloodeffEct("PARTICLE#damage/splinterburst");
 	}
 }

@@ -17,7 +17,7 @@ public class ColiseoAdventure extends Adventure{
 		setMaxPlayers(5);
 		setAuthor("TestAdventure");
 		setDescription("Hagan sus apuestas!!!");
-		setIcon("rats");
+		setIcon("tokens/waypoint");
 	}
 	
 	public void init(){

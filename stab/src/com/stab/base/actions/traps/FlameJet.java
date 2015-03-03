@@ -64,7 +64,7 @@ public class FlameJet extends Action  {
 			Point pos, ActionRequest ar) {
 
 		super.playExecuteActionAnimation(caster, target, pos, ar);
-		caster.playSound("flames");
+		caster.playSound("effects/flames");
 		caster.playAnimationAt(GenericSpriteAnimation.ID,pos,SpecialEffectsSpriteFactory.LIGHT_FLASH);
 		caster.playAnimation(BasicSparkAnimation.ID,"PARTICLE#generic/flamejet",1500,Math.toDegrees(getAngle(caster, target, pos)));
 	}

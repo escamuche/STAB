@@ -20,7 +20,7 @@ public class RndGenTestAdventure extends Adventure{
 		setMaxPlayers(5);
 		setAuthor("TestAdventure");
 		setDescription("Test generacion Aleatoria");
-		setIcon("rats");
+		setIcon("tokens/waypoint");
 	}
 	
 	public void init(){

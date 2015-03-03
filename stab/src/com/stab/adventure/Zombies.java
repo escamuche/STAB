@@ -33,7 +33,7 @@ public class Zombies extends Adventure{
 		setMaxPlayers(5);
 		setAuthor("TestAdventure");
 		setDescription("Killing the zombie, killing, killing, killing the zombie");
-		setIcon("rats");
+		setIcon("tokens/waypoint");
 	}
 	
 	public void init(){

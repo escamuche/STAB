@@ -25,7 +25,7 @@ public class TestAdventure extends Adventure{
 		setMaxPlayers(5);
 		setAuthor("TestAdventure");
 		setDescription("A desperate woman needs help clearing her cellar of rats. Where else did you expect to begin?");
-		setIcon("rats");
+		setIcon("tokens/waypoint");
 	}
 	
 	public void init(){

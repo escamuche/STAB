@@ -47,7 +47,7 @@ public class DuskwoodAdventure extends Adventure {
 		setMaxPlayers(5);
 		setAuthor("TestAdventure");
 		setDescription("Stranded in the woods, you found someone in need for help");
-		setIcon("rats");
+		setIcon("tokens/waypoint");
 	
 	}
 	

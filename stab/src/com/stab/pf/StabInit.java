@@ -43,7 +43,6 @@ import com.stab.base.info.props.CaveIn;
 import com.stab.base.info.props.Chest;
 import com.stab.base.info.props.Column;
 import com.stab.base.info.props.Crate;
-import com.stab.base.info.props.Dummy;
 import com.stab.base.info.props.Exit;
 import com.stab.base.info.props.FlameJetTrap;
 import com.stab.base.info.props.FloorLever;
@@ -123,7 +122,6 @@ import com.stab.fw.BasicObjectFactory;
 import com.stab.fw.EntityManager;
 import com.stab.fw.MappedInheritedObjectFactory;
 import com.stab.model.action.ActionLibrary;
-import com.stab.model.action.base.InteractAction;
 import com.stab.model.action.base.WakeDormants;
 import com.stab.model.basic.scenes.TokenBasedScene;
 import com.stab.model.basic.ui.advanced.RolledOptionButton;
@@ -249,7 +247,6 @@ import com.stab.pf.ui.visual.PathfinderTokenTooltip;
 import com.stab.pf.ui.visual.StabActionBar;
 import com.stab.pf.utils.DefaultBlockData;
 import com.stab.pf.utils.StabBlockData;
-import com.tien.princess.engine.Resources;
 import com.tien.princess.engine.sprite.factory.AbstractSpriteFactory;
 import com.tien.princess.engine.sprite.factory.SpriteFactory;
 
@@ -266,7 +263,7 @@ public class StabInit {
 	public static void clientInit(){
 		
 		Loader.addDir("res");
-		Loader.addDir("pfres");
+	//	Loader.addDir("pfres");
 		
 		initializeData();
 		ClientEntityManager cm=ServiceManager.getService(ClientEntityManager.class);
@@ -388,7 +385,6 @@ public class StabInit {
 		of.setMapping(Crate.class);
 		of.setMapping(WoodenDoor.class);
 		of.setMapping(Barrel.class);
-		of.setMapping(Dummy.class);
 		of.setMapping(Brazier.class);
 		of.setMapping(TorchStand.class);
 		of.setMapping(StabRandomSpawner.class);
