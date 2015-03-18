@@ -11,7 +11,7 @@ import com.stab.model.info.trait.base.gear.Equipment;
 import com.stab.model.info.trait.base.gear.Gear;
 import com.stab.model.info.trait.base.gear.Item;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.info.debuff.condition.DyingCondition;
 import com.stab.pf.info.equipment.EquipmentFactory;
 import com.stab.pf.info.equipment.HumanoidGear;
@@ -50,7 +50,7 @@ public static final String QUICK_INVENTORY="QUICK_INVENTORY";
 	
 	public void addToInventory(String id){
 		ItemPickup i=(ItemPickup)getEntityManager().createElement(ItemPickup.ID);
-	    i.setItem((Item)StabInit.getEquipment(id));
+	    i.setItem((Item)PfModule.getEquipment(id));
 	    i.setInventory(quickInventory);
 	}
 	public void addToInventory(Item it){
@@ -59,10 +59,7 @@ public static final String QUICK_INVENTORY="QUICK_INVENTORY";
 	    i.setInventory(quickInventory);
 	}
 	
-	@Override
-	public void rollInitiative() {
-		setInitiative(Roll.d20()+getValue(StabConstants.INICIATIVEMOD));
-	}
+
 	
 	@Override
 	public void setMaxHp(int maxHp) {
@@ -91,11 +88,11 @@ public static final String QUICK_INVENTORY="QUICK_INVENTORY";
 	
 	
 	public boolean equip(String s) {
-		Equipment e= StabInit.getWeaponFactory().getWeapon(s);
+		Equipment e= PfModule.getWeaponFactory().getWeapon(s);
 		if (e==null)
-			e=StabInit.getArmorFactory().getArmor(s);
+			e=PfModule.getArmorFactory().getArmor(s);
 		if (e==null)
-			e=StabInit.getEquipmentFactory().getItem(s); 
+			e=PfModule.getEquipmentFactory().getItem(s); 
 		if (e==null)
 			return false;
 		return equip(e);

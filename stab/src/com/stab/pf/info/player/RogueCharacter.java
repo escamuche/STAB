@@ -1,7 +1,7 @@
 package com.stab.pf.info.player;
 
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.actions.RogueActionSet;
 import com.stab.pf.actions.general.DefendAction;
 import com.stab.pf.info.alignment.Evil;
@@ -49,9 +49,9 @@ public static final String ID="ROGUE_INFO";
 		this.addTrait(new ImprovedInitiative_Feat());
 		//this.addTrait(new WeaponFinesse_Feat());
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("SHORTSWORD"), HumanoidGear.MAINHAND);
+		this.equip(PfModule.getWeaponFactory().getWeapon("SHORTSWORD"), HumanoidGear.MAINHAND);
 		
-		this.equip(StabInit.getArmorFactory().getArmor("STUDDEDLEATHER"), HumanoidGear.ARMOR);
+		this.equip(PfModule.getArmorFactory().getArmor("STUDDEDLEATHER"), HumanoidGear.ARMOR);
 
 		this.addTrait(new Evil());
 		

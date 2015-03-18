@@ -8,7 +8,7 @@ import com.stab.common.Constants;
 import com.stab.model.basic.token.Token;
 import com.stab.model.info.trait.base.activity.Activity;
 import com.stab.model.info.trait.base.gear.Equipment;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.info.equipment.HumanoidGear;
 import com.tien.princess.engine.sprite.common.painters.Painter;
 import com.tien.princess.engine.sprite.ui.Icon;
@@ -75,7 +75,7 @@ public class PathfinderTokenTooltip extends DefaultTokenTooltip {
 		left.setPainter((Painter)null);
 		l=t.getCustomString(HumanoidGear.OFFHAND);
 		if (l!=null && l.length()>0){
-			Equipment w=StabInit.getEquipment(l);
+			Equipment w=PfModule.getEquipment(l);
 			if (w!=null){
 				left.setPainter(w.getResource(), Constants.SCALED);
 				b=true;
@@ -85,7 +85,7 @@ public class PathfinderTokenTooltip extends DefaultTokenTooltip {
 		armor.setPainter((Painter)null);
 		l=t.getCustomString(HumanoidGear.ARMOR);
 		if (l!=null && l.length()>0){
-			Equipment w=StabInit.getEquipment(l);
+			Equipment w=PfModule.getEquipment(l);
 			if (w!=null){
 				armor.setPainter(w.getResource(), Constants.SCALED);
 				b=true;
@@ -95,7 +95,7 @@ public class PathfinderTokenTooltip extends DefaultTokenTooltip {
 		right.setPainter((Painter)null);
 		l=t.getCustomString(HumanoidGear.MAINHAND);
 		if (l!=null && l.length()>0){
-			Equipment w=StabInit.getEquipment(l);
+			Equipment w=PfModule.getEquipment(l);
 			if (w!=null){
 				right.setPainter(w.getResource(), Constants.SCALED);
 				b=true;

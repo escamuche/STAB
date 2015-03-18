@@ -1,7 +1,11 @@
 package com.stab;
 
+import com.stab.base.FantasyModule;
 import com.stab.client.StabServer;
-import com.stab.pf.StabInit;
+import com.stab.fw.ModuleDefinition;
+import com.stab.fw.ModuleLibrary;
+import com.stab.pf.PfModule;
+import com.stab.util.StabUtils;
 
 public class NewServer extends StabServer{
 
@@ -17,7 +21,12 @@ public class NewServer extends StabServer{
 	
 	
 	public void specificInit(){
-		StabInit.serverInit();
+		ModuleLibrary ml=StabUtils.getModuleLibrary();
+		ModuleDefinition md= ml.fakeModule(FantasyModule.class.getResourceAsStream("/com/stab/base/module.cfg"));
+		ml.addModuleDefinition(md);
+		 ml=StabUtils.getModuleLibrary();
+		 md= ml.fakeModule(PfModule.class.getResourceAsStream("/com/stab/pf/module.cfg"));
+		ml.addModuleDefinition(md);
 	}
 	
 	

@@ -3,7 +3,7 @@ package com.stab.pf.info.monster.bestiary;
 import com.stab.base.actions.traps.FlameJet;
 import com.stab.model.info.trait.base.gear.Weapon;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.info.equipment.HumanoidGear;
 import com.stab.pf.info.monster.Vermin;
 
@@ -41,7 +41,7 @@ public class GiantBombardierBeetle extends Vermin {
 		
 	//	this.setBloodeffEct("PARTICLE#redblood");
 		
-		Weapon bite=StabInit.getWeaponFactory().getWeapon("MEDIUMBITE");
+		Weapon bite=PfModule.getWeaponFactory().getWeapon("MEDIUMBITE");
 		
 		this.equip(bite, HumanoidGear.BOTHHANDS);
 		

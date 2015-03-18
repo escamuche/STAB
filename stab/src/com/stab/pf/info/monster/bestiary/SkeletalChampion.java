@@ -4,7 +4,7 @@ import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.DamageReduction;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.info.alignment.Evil;
 import com.stab.pf.info.equipment.HumanoidGear;
 import com.stab.pf.info.equipment.WeaponFactory;
@@ -47,9 +47,9 @@ public class SkeletalChampion extends Undead {
 		this.addTrait(new PowerAttack_Feat());
 		this.addTrait(new WeaponFocus_Feat(WeaponFactory.LONGSWORD));
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("LONGSWORD"), HumanoidGear.MAINHAND);
-		this.equip(StabInit.getArmorFactory().getArmor("BREASTPLATE"), HumanoidGear.ARMOR);
-		this.equip(StabInit.getArmorFactory().getArmor("HEAVYSTEELSHIELD"), HumanoidGear.OFFHAND);
+		this.equip(PfModule.getWeaponFactory().getWeapon("LONGSWORD"), HumanoidGear.MAINHAND);
+		this.equip(PfModule.getArmorFactory().getArmor("BREASTPLATE"), HumanoidGear.ARMOR);
+		this.equip(PfModule.getArmorFactory().getArmor("HEAVYSTEELSHIELD"), HumanoidGear.OFFHAND);
 
 		this.setAIParams(new ZombieAIParameters());
 		

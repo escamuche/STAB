@@ -1,7 +1,7 @@
 package com.stab.pf.info.monster.bestiary;
 
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.actions.player.spells.lvl0.Daze;
 import com.stab.pf.actions.player.spells.lvl0.DisruptUndead;
 import com.stab.pf.actions.player.spells.lvl0.RayFrost;
@@ -61,7 +61,7 @@ public class Couatl extends Outsider {
 //		ai.setLog(true);
 //		this.setCurrentAI(ai);
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("SMALLBITE"), HumanoidGear.MAINHAND);
+		this.equip(PfModule.getWeaponFactory().getWeapon("SMALLBITE"), HumanoidGear.MAINHAND);
 			
 	//	this.setBloodeffEct("PARTICLE#redblood");
 		

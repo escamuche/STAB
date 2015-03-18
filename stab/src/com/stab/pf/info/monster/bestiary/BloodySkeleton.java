@@ -5,7 +5,7 @@ import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.DamageReduction;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.info.alignment.Evil;
 import com.stab.pf.info.equipment.ArmorFactory;
 import com.stab.pf.info.equipment.HumanoidGear;
@@ -48,7 +48,7 @@ public class BloodySkeleton extends Undead {
 		this.setAIParams(new ZombieAIParameters());
 		
 		//ponerle su ataque de 2 garras
-		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.LIGHTLEATHER), HumanoidGear.ARMOR);
+		this.equip(PfModule.getArmorFactory().getArmor(ArmorFactory.LIGHTLEATHER), HumanoidGear.ARMOR);
 		
 		
 		

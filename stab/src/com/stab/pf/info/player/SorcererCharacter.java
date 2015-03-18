@@ -2,7 +2,7 @@ package com.stab.pf.info.player;
 
 import com.stab.model.info.trait.Modifier;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.actions.SorcererActionSet;
 import com.stab.pf.actions.general.DefendAction;
 import com.stab.pf.info.alignment.Lawful;
@@ -59,7 +59,7 @@ public static final String ID="SORCERER_INFO";
 		this.addTrait(new EschewMaterials_Feat());
 		this.addTrait(new IronWill_Feat());
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("QUARTERSTAFF"), HumanoidGear.BOTHHANDS);
+		this.equip(PfModule.getWeaponFactory().getWeapon("QUARTERSTAFF"), HumanoidGear.BOTHHANDS);
 		
 		this.addTrait(new Lawful());
 		

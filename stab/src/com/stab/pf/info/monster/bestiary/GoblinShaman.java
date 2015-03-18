@@ -4,7 +4,7 @@ import com.stab.model.ai.actions.orders.Minion;
 import com.stab.model.ai.traits.Healer;
 import com.stab.model.info.trait.base.resource.RenewableResource;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.actions.player.abilities.ChannelPossitiveEnergyAction;
 import com.stab.pf.actions.player.spells.cleric.level1.CureLight;
 import com.stab.pf.actions.player.spells.lvl1.MagicMissile;
@@ -49,8 +49,8 @@ public class GoblinShaman extends Goblin  implements Minion{
 		//getAIParams().setLog(true);
 		
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.QUARTERSTAFF), HumanoidGear.BOTHHANDS);
-		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.CLOTH), HumanoidGear.ARMOR);
+		this.equip(PfModule.getWeaponFactory().getWeapon(WeaponFactory.QUARTERSTAFF), HumanoidGear.BOTHHANDS);
+		this.equip(PfModule.getArmorFactory().getArmor(ArmorFactory.CLOTH), HumanoidGear.ARMOR);
 		
 	
 		

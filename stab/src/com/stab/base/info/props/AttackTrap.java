@@ -13,7 +13,7 @@ import com.stab.model.info.base.Obstacle;
 import com.stab.model.info.base.TriggeredActionTrap;
 import com.stab.model.info.trait.base.gear.Weapon;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.info.equipment.RangedWeapon;
 import com.stab.util.StabUtils;
 
@@ -41,7 +41,7 @@ public class AttackTrap extends TriggeredActionTrap{
 	
 	public void setWeapon(String weapon) {
 		this.weapon = weapon;
-		useWeapon=StabInit.getWeaponFactory().getWeapon(weapon);
+		useWeapon=PfModule.getWeaponFactory().getWeapon(weapon);
 	}
 	
 	public void setBonus(int bonus) {

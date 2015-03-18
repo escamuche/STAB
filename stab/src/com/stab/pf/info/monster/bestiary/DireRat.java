@@ -2,7 +2,7 @@ package com.stab.pf.info.monster.bestiary;
 
 import com.stab.model.info.trait.base.gear.Weapon;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.info.equipment.HumanoidGear;
 import com.stab.pf.info.feat.general.SkillFocusPerception_Feat;
 import com.stab.pf.info.monster.Animal;
@@ -39,7 +39,7 @@ public class DireRat extends Animal {
 		
 	//	this.setBloodeffEct("PARTICLE#redblood");
 		
-		Weapon bite=StabInit.getWeaponFactory().getWeapon("SMALLBITE");
+		Weapon bite=PfModule.getWeaponFactory().getWeapon("SMALLBITE");
 		
 		this.equip(bite, HumanoidGear.MAINHAND);
 		

@@ -2,7 +2,7 @@ package com.stab.pf.info.monster.bestiary;
 
 import com.stab.model.info.trait.Modifier;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.info.alignment.Evil;
 import com.stab.pf.info.alignment.Lawful;
 import com.stab.pf.info.equipment.HumanoidGear;
@@ -46,8 +46,8 @@ public class Kobold extends Humanoid {
 	//	this.setCurrentAI(new DefaultAIPackage());
 			
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("SPEAR"), HumanoidGear.BOTHHANDS);
-		this.equip(StabInit.getArmorFactory().getArmor("LIGHTLEATHER"), HumanoidGear.ARMOR);
+		this.equip(PfModule.getWeaponFactory().getWeapon("SPEAR"), HumanoidGear.BOTHHANDS);
+		this.equip(PfModule.getArmorFactory().getArmor("LIGHTLEATHER"), HumanoidGear.ARMOR);
 		
 		
 		

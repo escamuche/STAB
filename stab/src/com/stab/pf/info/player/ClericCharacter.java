@@ -2,7 +2,7 @@ package com.stab.pf.info.player;
 
 import com.stab.model.info.trait.base.resource.RenewableResource;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.actions.ClericActionSet;
 import com.stab.pf.actions.general.DefendAction;
 import com.stab.pf.actions.player.abilities.ChannelPossitiveEnergyAction;
@@ -56,8 +56,8 @@ public static final String ID="CLERIC_INFO";
 		
 		this.addTrait(new BonusAttributeMP(StabConstants.MAXMP, StabConstants.WISDOM, getValue(StabConstants.CLERICCASTER)));
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("LIGHTCROSSBOW"), HumanoidGear.BOTHHANDS);
-		this.equip(StabInit.getArmorFactory().getArmor("CHAINMAIL"), HumanoidGear.ARMOR);
+		this.equip(PfModule.getWeaponFactory().getWeapon("LIGHTCROSSBOW"), HumanoidGear.BOTHHANDS);
+		this.equip(PfModule.getArmorFactory().getArmor("CHAINMAIL"), HumanoidGear.ARMOR);
 		
 		this.addTrait(new NobilityDomain_Ability());
 		this.getActionSet().setAction(NobilityDomain.ID, 6);

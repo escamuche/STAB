@@ -1,7 +1,7 @@
 package com.stab.pf.info.player;
 
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.actions.FighterActionSet;
 import com.stab.pf.actions.feats.PowerAttack;
 import com.stab.pf.actions.general.DefendAction;
@@ -48,9 +48,9 @@ public static final String ID="FIGHTER_INFO";
 		this.getActionSet().setAction(PowerAttack.ID, 6);
 		this.addTrait(new IronWill_Feat());
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("LONGSWORD"), HumanoidGear.MAINHAND);
-		this.equip(StabInit.getArmorFactory().getArmor("BREASTPLATE"), HumanoidGear.ARMOR);
-		this.equip(StabInit.getArmorFactory().getArmor("HEAVYWOODENSHIELD"), HumanoidGear.OFFHAND);
+		this.equip(PfModule.getWeaponFactory().getWeapon("LONGSWORD"), HumanoidGear.MAINHAND);
+		this.equip(PfModule.getArmorFactory().getArmor("BREASTPLATE"), HumanoidGear.ARMOR);
+		this.equip(PfModule.getArmorFactory().getArmor("HEAVYWOODENSHIELD"), HumanoidGear.OFFHAND);
 		
 	}
 	

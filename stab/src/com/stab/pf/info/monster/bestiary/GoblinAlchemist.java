@@ -4,7 +4,7 @@ import com.stab.base.actions.monster.AcidFlask;
 import com.stab.model.ai.actions.orders.Minion;
 import com.stab.model.ai.traits.PrefferRanged;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.info.alignment.Chaotic;
 import com.stab.pf.info.equipment.ArmorFactory;
 import com.stab.pf.info.equipment.HumanoidGear;
@@ -41,8 +41,8 @@ public class GoblinAlchemist  extends Goblin implements Minion{
 		
 		this.addTrait(new PrefferRanged());
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.DAGGER), HumanoidGear.MAINHAND);
-		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.LIGHTLEATHER), HumanoidGear.ARMOR);
+		this.equip(PfModule.getWeaponFactory().getWeapon(WeaponFactory.DAGGER), HumanoidGear.MAINHAND);
+		this.equip(PfModule.getArmorFactory().getArmor(ArmorFactory.LIGHTLEATHER), HumanoidGear.ARMOR);
 		
 		//this.unequip(HumanoidGear.MAINHAND);
 		

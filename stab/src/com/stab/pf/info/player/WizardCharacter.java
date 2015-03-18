@@ -2,7 +2,7 @@ package com.stab.pf.info.player;
 
 import com.stab.model.info.trait.Modifier;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.actions.WizardActionSet;
 import com.stab.pf.actions.general.DefendAction;
 import com.stab.pf.info.equipment.HumanoidGear;
@@ -58,7 +58,7 @@ public static final String ID="WIZARD_INFO";
 		this.addTrait(new ImprovedInitiative_Feat());
 		this.addTrait(new ScribeScroll_Feat());
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("QUARTERSTAFF"), HumanoidGear.BOTHHANDS);
+		this.equip(PfModule.getWeaponFactory().getWeapon("QUARTERSTAFF"), HumanoidGear.BOTHHANDS);
 		
 	//	this.equip(EquipmentFactory.TORCH);
 

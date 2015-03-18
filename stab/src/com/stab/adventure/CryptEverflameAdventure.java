@@ -6,6 +6,7 @@ import com.stab.common.Constants;
 import com.stab.common.events.DefaultRule;
 import com.stab.common.fw.Loader;
 import com.stab.common.utils.Roll;
+import com.stab.fw.Module;
 import com.stab.model.action.ActionLibrary;
 import com.stab.model.basic.scenes.Choice;
 import com.stab.model.basic.scenes.Narration;
@@ -28,10 +29,11 @@ import com.stab.model.basic.ui.Button;
 import com.stab.model.basic.ui.Image;
 import com.stab.model.basic.ui.Text;
 import com.stab.model.basic.ui.advanced.RolledSkillOptionButton;
+import com.stab.pf.PfModule;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
 import com.stab.pf.scene.DefaultStabMapScene;
 import com.stab.pf.utils.StabBlockData;
+import com.stab.util.StabUtils;
 
 public class CryptEverflameAdventure extends Adventure{
 		
@@ -1349,7 +1351,8 @@ public class CryptEverflameAdventure extends Adventure{
 		  
 		//Elementos necesarios. Esto tiene que ir fuera de aqui! si no solo se inicializa en el host!
 				ActionLibrary.getActionLibrary().register(ClimbAction.class);
-				StabInit.setMapping(ClimbWaypoint.class);
+				Module m=StabUtils.getModuleLibrary().getModule(PfModule.ID);
+				m.setMapping(ClimbWaypoint.class);
 				
 	//Escena de las cuerdas
 				DefaultStabMapScene ropes=new DefaultStabMapScene();

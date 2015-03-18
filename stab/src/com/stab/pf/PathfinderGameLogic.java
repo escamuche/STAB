@@ -3,6 +3,7 @@ package com.stab.pf;
 import java.util.HashSet;
 
 import com.stab.adventure.GameLogic;
+import com.stab.common.utils.Roll;
 import com.stab.model.action.Action;
 import com.stab.model.basic.token.interfaces.Mechanism;
 import com.stab.model.info.BaseInfo;
@@ -11,6 +12,7 @@ import com.stab.model.info.applicable.Applicable;
 import com.stab.model.info.applicable.base.OpposedSkillRoll;
 import com.stab.model.info.applicable.base.SkillRoll;
 import com.stab.model.info.base.Obstacle;
+import com.stab.model.info.interfaces.ActiveTurnBased;
 import com.stab.model.info.trait.base.gear.Weapon;
 import com.stab.model.request.basic.ActionRequest;
 import com.stab.pf.info.applicable.DetectRoll;
@@ -143,6 +145,13 @@ public class PathfinderGameLogic extends GameLogic {
 		return i;
 	}
 	
-	
+	@Override
+	public int getInitiativeFor(ActiveTurnBased t) {
+		if (t instanceof BaseInfo){
+			BaseInfo i=(BaseInfo)t;
+			return Roll.d20()+i.getValue(StabConstants.INICIATIVEMOD);
+		}
+		return 20;
+	}
 	
 }

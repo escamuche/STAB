@@ -1,8 +1,11 @@
 package com.stab;
 
+import com.stab.base.FantasyModule;
 import com.stab.client.StabClient;
-import com.stab.pf.StabInit;
-import com.tien.princess.engine.Resources;
+import com.stab.fw.ModuleDefinition;
+import com.stab.fw.ModuleLibrary;
+import com.stab.pf.PfModule;
+import com.stab.util.StabUtils;
 
 public class NewClient extends  StabClient {
 
@@ -24,7 +27,13 @@ public class NewClient extends  StabClient {
 	
 	
 	public void specificInit(){
-		StabInit.clientInit();
+		//new PfModule().clientInit();
+		ModuleLibrary ml=StabUtils.getModuleLibrary();
+		ModuleDefinition md= ml.fakeModule(FantasyModule.class.getResourceAsStream("/com/stab/base/module.cfg"));
+		ml.addModuleDefinition(md);
+		 ml=StabUtils.getModuleLibrary();
+		 md= ml.fakeModule(PfModule.class.getResourceAsStream("/com/stab/pf/module.cfg"));
+		ml.addModuleDefinition(md);
 	}
 
 

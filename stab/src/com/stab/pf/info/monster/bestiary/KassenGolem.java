@@ -5,7 +5,7 @@ import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.DamageReduction;
 import com.stab.model.info.trait.base.DamageVulnerability;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.info.equipment.HumanoidGear;
 import com.stab.pf.info.equipment.WeaponFactory;
 import com.stab.pf.info.monster.Construct;
@@ -39,7 +39,7 @@ public class KassenGolem extends Construct {
 		Modifier natural = new Modifier(StabConstants.ARMORDEFENSE,StabConstants.NATURALARMORMOD,+4);
 		this.addTrait(natural);
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.HEAVYSHIELD), HumanoidGear.MAINHAND);
+		this.equip(PfModule.getWeaponFactory().getWeapon(WeaponFactory.HEAVYSHIELD), HumanoidGear.MAINHAND);
 
 		ZombieAIParameters ai=new ZombieAIParameters();
 		this.setAIParams(new ZombieAIParameters());

@@ -5,7 +5,7 @@ import com.stab.client.slick.base.MultipageActionBar;
 import com.stab.common.Constants;
 import com.stab.model.basic.token.Token;
 import com.stab.model.info.trait.base.gear.Equipment;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.info.equipment.HumanoidGear;
 import com.tien.princess.engine.sprite.common.painters.Painter;
 import com.tien.princess.engine.sprite.ui.Component;
@@ -70,7 +70,7 @@ public class StabActionBar extends MultipageActionBar {
 		rightHand.setPainter((Painter)null);
 		String l=t.getCustomString(HumanoidGear.MAINHAND);
 		if (l!=null && l.length()>0){
-			Equipment w=StabInit.getEquipment(l);
+			Equipment w=PfModule.getEquipment(l);
 			if (w!=null){
 			//	System.out.println("Right hand: "+w.getResource());
 				rightHand.setPainter(w.getResource(), Constants.SCALED);
@@ -79,7 +79,7 @@ public class StabActionBar extends MultipageActionBar {
 		leftHand.setPainter((Painter)null);
 		l=t.getCustomString(HumanoidGear.OFFHAND);
 		if (l!=null && l.length()>0){
-			Equipment w=StabInit.getEquipment(l);
+			Equipment w=PfModule.getEquipment(l);
 			if (w!=null){
 				leftHand.setPainter(w.getResource(), Constants.SCALED);
 			}

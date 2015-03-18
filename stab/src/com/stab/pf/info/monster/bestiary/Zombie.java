@@ -4,7 +4,7 @@ import com.stab.model.info.applicable.base.Damage;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.DamageReduction;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.info.alignment.Evil;
 import com.stab.pf.info.equipment.HumanoidGear;
 import com.stab.pf.info.monster.Undead;
@@ -41,7 +41,7 @@ public class Zombie extends Undead {
 		
 //		((DefaultAIPackage)this.getCurrentAI()).setLog(true);
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("MEDIUMSLAM"), HumanoidGear.BOTHHANDS);	
+		this.equip(PfModule.getWeaponFactory().getWeapon("MEDIUMSLAM"), HumanoidGear.BOTHHANDS);	
 		
 		this.addTrait(new Evil());
 		

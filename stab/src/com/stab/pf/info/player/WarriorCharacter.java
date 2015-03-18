@@ -2,7 +2,7 @@ package com.stab.pf.info.player;
 
 import com.stab.model.info.trait.Modifier;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.actions.WarriorActionSet;
 import com.stab.pf.actions.feats.Expertise;
 import com.stab.pf.actions.feats.PowerAttack;
@@ -47,7 +47,7 @@ public static final String ID="WARRIOR_INFO";
 		
 		
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.SHORTSWORD));
+		this.equip(PfModule.getWeaponFactory().getWeapon(WeaponFactory.SHORTSWORD));
 		
 		//this.equip(EquipmentFactory.TORCH);
 				

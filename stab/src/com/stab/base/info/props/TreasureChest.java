@@ -6,7 +6,7 @@ import com.stab.model.info.Info;
 import com.stab.model.info.interfaces.PlayerOwned;
 import com.stab.model.info.trait.base.gear.Item;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.info.equipment.EquipmentFactory;
 
 public class TreasureChest extends Chest {
@@ -20,7 +20,7 @@ public class TreasureChest extends Chest {
 	public void init() {
 		super.init();
 		setGold(100);
-		addLoot((Item)StabInit.getEquipment(EquipmentFactory.POTION_CLW));
+		addLoot((Item)PfModule.getEquipment(EquipmentFactory.POTION_CLW));
 	}
 	
 	public void setGold(int gold) {

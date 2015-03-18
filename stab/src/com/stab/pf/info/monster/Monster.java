@@ -7,7 +7,7 @@ import com.stab.model.info.base.Creature;
 import com.stab.model.info.trait.base.gear.Equipment;
 import com.stab.model.info.trait.base.gear.Item;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.info.equipment.HumanoidGear;
 import com.stab.pf.info.trait.BasicAttributes;
 
@@ -33,19 +33,16 @@ public class Monster extends Creature {
 		rollHp();
 	}
 	
-	@Override
-	public void rollInitiative() {
-		setInitiative(Roll.d20()+getValue(StabConstants.INICIATIVEMOD));
-	}
+	
 	
 	
 
 	public boolean equip(String s) {
-		Equipment e= StabInit.getWeaponFactory().getWeapon(s);
+		Equipment e= PfModule.getWeaponFactory().getWeapon(s);
 		if (e==null)
-			e=StabInit.getArmorFactory().getArmor(s);
+			e=PfModule.getArmorFactory().getArmor(s);
 		if (e==null)
-			e=StabInit.getEquipmentFactory().getItem(s); 
+			e=PfModule.getEquipmentFactory().getItem(s); 
 		if (e==null)
 			return false;
 		return super.equip(e);

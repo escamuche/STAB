@@ -1,7 +1,7 @@
 package com.stab.pf.info.player;
 
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.actions.BarbarianActionSet;
 import com.stab.pf.actions.feats.PowerAttack;
 import com.stab.pf.actions.general.DefendAction;
@@ -52,8 +52,8 @@ public static final String ID="BARBARIAN_INFO";
 		
 		this.addTrait(new FastMovementBarbarian());
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.GREATAXE), HumanoidGear.BOTHHANDS);
-		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.BREASTPLATE), HumanoidGear.ARMOR);
+		this.equip(PfModule.getWeaponFactory().getWeapon(WeaponFactory.GREATAXE), HumanoidGear.BOTHHANDS);
+		this.equip(PfModule.getArmorFactory().getArmor(ArmorFactory.BREASTPLATE), HumanoidGear.ARMOR);
 		
 		this.setAttribute(StabConstants.CLIMB, 5);
 		this.setAttribute(StabConstants.KNOWLEDGENATURE, 4);

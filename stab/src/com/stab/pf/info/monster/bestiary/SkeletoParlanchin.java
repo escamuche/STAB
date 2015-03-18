@@ -5,7 +5,7 @@ import com.stab.model.info.trait.Attribute;
 import com.stab.model.info.trait.Modifier;
 import com.stab.model.info.trait.base.DamageReduction;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.info.alignment.Evil;
 import com.stab.pf.info.equipment.ArmorFactory;
 import com.stab.pf.info.equipment.HumanoidGear;
@@ -43,8 +43,8 @@ public class SkeletoParlanchin extends Undead {
 //		DefaultAIPackage ai = (DefaultAIPackage) this.getCurrentAI();
 //		ai.setLog(true);
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.SCIMITAR), HumanoidGear.MAINHAND);
-		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.LIGHTLEATHER), HumanoidGear.ARMOR);
+		this.equip(PfModule.getWeaponFactory().getWeapon(WeaponFactory.SCIMITAR), HumanoidGear.MAINHAND);
+		this.equip(PfModule.getArmorFactory().getArmor(ArmorFactory.LIGHTLEATHER), HumanoidGear.ARMOR);
 		
 		this.addTrait(new Evil());
 		

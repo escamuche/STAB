@@ -1,7 +1,7 @@
 package com.stab.pf.info.player;
 
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.actions.BardActionSet;
 import com.stab.pf.actions.general.DefendAction;
 import com.stab.pf.info.alignment.Chaotic;
@@ -54,8 +54,8 @@ public static final String ID="BARD_INFO";
 		this.setAttribute(StabConstants.STEALTH, 5);
 		this.setAttribute(StabConstants.USEMAGICDEVICE, 7);
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("RAPIER"), HumanoidGear.BOTHHANDS);
-		this.equip(StabInit.getArmorFactory().getArmor("STUDDEDLEATHER"), HumanoidGear.ARMOR);
+		this.equip(PfModule.getWeaponFactory().getWeapon("RAPIER"), HumanoidGear.BOTHHANDS);
+		this.equip(PfModule.getArmorFactory().getArmor("STUDDEDLEATHER"), HumanoidGear.ARMOR);
 		
 		this.addTrait(new Chaotic());
 		

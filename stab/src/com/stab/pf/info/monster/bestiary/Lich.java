@@ -3,7 +3,7 @@ package com.stab.pf.info.monster.bestiary;
 import com.stab.model.ai.traits.PrefferRanged;
 import com.stab.model.info.trait.Modifier;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.actions.player.spells.lvl0.RayFrost;
 import com.stab.pf.actions.player.spells.lvl1.Shield;
 import com.stab.pf.info.alignment.Evil;
@@ -64,6 +64,6 @@ public class Lich extends Undead {
 	
 	//	getAIParams().setLog(true);
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("MEDIUMSLAM"), HumanoidGear.BOTHHANDS);
+		this.equip(PfModule.getWeaponFactory().getWeapon("MEDIUMSLAM"), HumanoidGear.BOTHHANDS);
 	}
 }

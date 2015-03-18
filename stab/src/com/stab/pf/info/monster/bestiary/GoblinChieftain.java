@@ -6,7 +6,7 @@ import com.stab.model.ai.traits.Agressor;
 import com.stab.model.ai.traits.DefaultCommanderAI;
 import com.stab.model.ai.traits.DistanceMapAI;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.info.ai.FlankAI;
 import com.stab.pf.info.equipment.ArmorFactory;
 import com.stab.pf.info.equipment.HumanoidGear;
@@ -30,9 +30,9 @@ public class GoblinChieftain extends Goblin implements Commander{
 		this.setAttribute(StabConstants.INTELLIGENCE,14);
 		this.setAttribute(StabConstants.CONSTITUTION,14);
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.SHORTSWORD), HumanoidGear.MAINHAND);
-		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.CHAINSHIRT), HumanoidGear.ARMOR);
-		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.LIGHTSTEELSHIELD), HumanoidGear.OFFHAND);
+		this.equip(PfModule.getWeaponFactory().getWeapon(WeaponFactory.SHORTSWORD), HumanoidGear.MAINHAND);
+		this.equip(PfModule.getArmorFactory().getArmor(ArmorFactory.CHAINSHIRT), HumanoidGear.ARMOR);
+		this.equip(PfModule.getArmorFactory().getArmor(ArmorFactory.LIGHTSTEELSHIELD), HumanoidGear.OFFHAND);
 		
 		
 		this.addTrait(new Agressor());

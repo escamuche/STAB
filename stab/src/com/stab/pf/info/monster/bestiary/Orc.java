@@ -4,7 +4,7 @@ import com.stab.model.ai.traits.Agressor;
 import com.stab.model.ai.traits.DistanceMapAI;
 import com.stab.model.ai.traits.SelfPreservation;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.info.alignment.Chaotic;
 import com.stab.pf.info.alignment.Evil;
 import com.stab.pf.info.equipment.ArmorFactory;
@@ -55,8 +55,8 @@ public class Orc extends Humanoid {
 	//	this.addTrait(new DangerMapAI());
 		this.addTrait(new DistanceMapAI());
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.GREATAXE), HumanoidGear.BOTHHANDS);
-		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.STUDDEDLEATHER), HumanoidGear.ARMOR);
+		this.equip(PfModule.getWeaponFactory().getWeapon(WeaponFactory.GREATAXE), HumanoidGear.BOTHHANDS);
+		this.equip(PfModule.getArmorFactory().getArmor(ArmorFactory.STUDDEDLEATHER), HumanoidGear.ARMOR);
 	}
 	
 }

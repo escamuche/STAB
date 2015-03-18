@@ -2,7 +2,7 @@ package com.stab.pf.info.player;
 
 import com.stab.model.info.trait.base.gear.Item;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.actions.RangerActionSet;
 import com.stab.pf.actions.general.DefendAction;
 import com.stab.pf.info.alignment.Lawful;
@@ -50,10 +50,10 @@ public static final String ID="RANGER_INFO";
 		this.addTrait(new PointBlankShot_Feat());
 		
 		
-		this.equip(StabInit.getArmorFactory().getArmor("STUDDEDLEATHER"), HumanoidGear.ARMOR);
-		this.equip(StabInit.getWeaponFactory().getWeapon("LONGBOW"), HumanoidGear.BOTHHANDS);
+		this.equip(PfModule.getArmorFactory().getArmor("STUDDEDLEATHER"), HumanoidGear.ARMOR);
+		this.equip(PfModule.getWeaponFactory().getWeapon("LONGBOW"), HumanoidGear.BOTHHANDS);
 		this.equip(EquipmentFactory.ARROW);
-		Item a=(Item)StabInit.getEquipment(EquipmentFactory.FLAMEARROW);
+		Item a=(Item)PfModule.getEquipment(EquipmentFactory.FLAMEARROW);
 		a.setAmount(5);
 		this.addToInventory(a);
 		

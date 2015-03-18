@@ -1,7 +1,7 @@
 package com.stab.pf.info.player;
 
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.actions.DruidActionSet;
 import com.stab.pf.actions.general.DefendAction;
 import com.stab.pf.info.alignment.Lawful;
@@ -53,8 +53,8 @@ public static final String ID="DRUID_INFO";
 		
 		this.addTrait(new NatureSense());
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("SPEAR"), HumanoidGear.BOTHHANDS);
-		this.equip(StabInit.getArmorFactory().getArmor("HIDE"), HumanoidGear.ARMOR);
+		this.equip(PfModule.getWeaponFactory().getWeapon("SPEAR"), HumanoidGear.BOTHHANDS);
+		this.equip(PfModule.getArmorFactory().getArmor("HIDE"), HumanoidGear.ARMOR);
 		
 		this.addTrait(new Lawful());
 		

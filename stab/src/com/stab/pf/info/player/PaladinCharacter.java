@@ -2,7 +2,7 @@ package com.stab.pf.info.player;
 
 import com.stab.model.info.trait.base.resource.RenewableResource;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.actions.PaladinActionSet;
 import com.stab.pf.actions.general.DefendAction;
 import com.stab.pf.actions.player.abilities.SmiteEvil;
@@ -54,9 +54,9 @@ public static final String ID="PALADIN_INFO";
 		
 		this.addTrait(new RenewableResource(SmiteEvil.RESOURCE_ID, 1));
 		
-		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.BANDEDMAIL), HumanoidGear.ARMOR);
-		this.equip(StabInit.getWeaponFactory().getWeapon(WeaponFactory.LONGSWORD), HumanoidGear.MAINHAND);
-		this.equip(StabInit.getArmorFactory().getArmor(ArmorFactory.HEAVYWOODENSHIELD), HumanoidGear.OFFHAND);
+		this.equip(PfModule.getArmorFactory().getArmor(ArmorFactory.BANDEDMAIL), HumanoidGear.ARMOR);
+		this.equip(PfModule.getWeaponFactory().getWeapon(WeaponFactory.LONGSWORD), HumanoidGear.MAINHAND);
+		this.equip(PfModule.getArmorFactory().getArmor(ArmorFactory.HEAVYWOODENSHIELD), HumanoidGear.OFFHAND);
 		
 		this.addTrait(new Lawful());
 		this.addTrait(new Good());

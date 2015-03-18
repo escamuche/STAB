@@ -9,7 +9,7 @@ import com.stab.model.info.applicable.NumericApplicable;
 import com.stab.model.info.applicable.base.RolledDamage;
 import com.stab.model.info.trait.base.activity.ConcentrationActivity;
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.actions.EffectDescriptor;
 import com.stab.pf.info.applicable.SavingThrowEffect;
 import com.stab.pf.info.equipment.SpellWeapon;
@@ -225,9 +225,9 @@ public class Spell implements SpellProperties {
 		
 		if (weapon==null)
 			switch(medium){
-			case TOUCH: setWeapon(StabInit.getWeaponFactory().TOUCH);break;
-			case RAY: setWeapon(StabInit.getWeaponFactory().RAY);break;
-			case MISSILE: setWeapon(StabInit.getWeaponFactory().MISSILE);break;
+			case TOUCH: setWeapon(PfModule.getWeaponFactory().TOUCH);break;
+			case RAY: setWeapon(PfModule.getWeaponFactory().RAY);break;
+			case MISSILE: setWeapon(PfModule.getWeaponFactory().MISSILE);break;
 			}
 	}
 	
@@ -273,7 +273,7 @@ public class Spell implements SpellProperties {
 	public SpellWeapon getWeapon() {
 		if (weapon==null)
 			return null;
-		SpellWeapon w= new SpellWeapon(StabInit.getWeaponFactory().getWeapon(weapon));
+		SpellWeapon w= new SpellWeapon(PfModule.getWeaponFactory().getWeapon(weapon));
 		return w;
 	}
 	

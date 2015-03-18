@@ -1,7 +1,7 @@
 package com.stab.pf.info.player;
 
 import com.stab.pf.StabConstants;
-import com.stab.pf.StabInit;
+import com.stab.pf.PfModule;
 import com.stab.pf.actions.MonkActionSet;
 import com.stab.pf.actions.general.DefendAction;
 import com.stab.pf.info.alignment.Lawful;
@@ -53,7 +53,7 @@ public static final String ID="MONK_INFO";
 		//this.addTrait(new StunningFist_Feat());
 		//this.addTrait(new WeaponFinesse_Feat());
 		
-		this.equip(StabInit.getWeaponFactory().getWeapon("KAMA"), HumanoidGear.BOTHHANDS);
+		this.equip(PfModule.getWeaponFactory().getWeapon("KAMA"), HumanoidGear.BOTHHANDS);
 		
 		this.addTrait(new PathfinderAttributeBonus(StabConstants.ARMOR,StabConstants.WISDOM));
 		
