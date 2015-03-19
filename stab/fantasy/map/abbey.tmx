@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="56" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="tiles" tilewidth="64" tileheight="64">
+  <image source="tiles2b.png" width="512" height="512"/>
+ </tileset>
+ <layer name="tiles" width="32" height="56">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC8WYTWvbQBCGF0N0kIkghuhgiA6G6mCoCoLswVD9/59Vi85DHo3ttKWHHBZZ2t155+OdmV2/lFJevnh01zHouY4azzFGjXl+T9fxGmOJwZ4+5hvJmGLNpDXgj5LRJRljvLO/lw5PMfoYXazr0rcav5sYrAO/jzVNfO8Dq9HAtiXw129v1/Es3UfpPUmWZTRaCz5y8W/25yB5YIzh+2f5CNvA7CVnknz0Ap/3XvhVPhhjL77sYu45dCDWYHZ6EktkVclcsff/MVbs7/+wfnzwHduIDf6Y9J2Ym0tvMbAPe/HDIFnkkeMBPvvZO+jdekxpDfjEA1zwOq0lPovmjI9scmuR3El7zNM1/k9JZ9uBHlO5zW3j4198A38WyWbfa9i84r7L/klyrSP7hrLl85jwnYM16Z3zANuoP66N1BA4hb+d0+QA+NQ1x92+dy6jxyT8N2H0ZctH1zb0zPjmLXUG7tay5ZxteiofPcD1Mdfjvmzjg/7goxc6wj/zxvFstAYuODed77bNMfA656l97bzg3XY+B/572dZIx9U8cE7UhJ95SyyQaz/Sn4m/5boHOO/57hpgfGLCYL1zCBzm8T18XySnal1NsmrCt42sQSfXMnSAF+a+/deV29j7HAGW+e/4kSPOffaAvc7/DHzWDmXbN8kZ8sH1Oddfc78XjutSV7Yc+FZ+978cn1H78jmG2OT6i95w07Uo58A6jtexu445fi/CtQzzoNGc+Q+3qzD+1MvP13EJ7PYv1hub/Hb9WdL8PmSfhHEQ7kHfDuELvx+kn3vsPRt9JrJeYFxCjzbGTv4/6PdO88ydJG8o2z6R6xT68d3+bcP2NmJuXWx/K7/hA+e5c8n2E394v5ft2Jf1sQ5tWmd99pJLTbGfqTeOQ44BtmDXUXFu77yfy5aX1CfnhLlJjtELmMPXtsfvxjcH5vht/F4Y2f/OdbiB3DnsPst+sI/llndwYo6nc9xnOvOPNfZ9G3hzYHs4Nw9pkCvH8pF/xBnfG9/90b6HS+fyUetOwjnqeUrr4Klj4PNxzn/ygxwl//Cn8xhc7Lef92Wbl5dyG+OubP0Mfj6bPeKS8xJfzJrPc9Q/zh85/31mrQk/x/gk+SfF+qy19g822G76ez5/M+AHcrH/IPnmOXF3bUJP4kbMOfv4/J375CQ5c8i56NuxbGuO6wC6oo95Q5/PNcbnYt+H8J/jmfsOc3DQuLznc14+f3Ku8hnwXvzv8Y/acCy3/Pc+YkyO2X7fN5h37T0nfPdl93zP79L3fMbK9c/3kk5y8PFctv7PsXcMyAX3IM42PPP509x0/eesQ+1b3388GPiJ9egBBrUt1z/fG9ybXeMc08/wnbP0ipx/TcInNr4zuNbiA3z/CN/1hpx1jvu/g8/6v3PgLHnUu0f4+axA7rnn1PK4//iO6vpkf5J3uR64L+a8RyZ1jjzI5z+fQ3OM9sJyf4Mb7gnes0guvKcO5PMfcaFP4K+aZNLj8reMe+8OX+/gE3twfd/1nQ89qMnkOHUg19gq/EmyiYX1zdzwoDbCWddkfH4RPvHj7u3741K23PfAJ9ia65Xrsu9X8LIt2/88fYe1rEf3S/+PwZnQ9+oqfHDde907ff/13dfxNP+t46C18JZYfMY51zl8z37ikM945n/OD/PB++EE/kW+vyGjT3s64YFvG81fZKMLcenS95ow/d8L9sK7zKWvHr8AYCeoIgAcAAA=
+  </data>
+ </layer>
+ <objectgroup name="zones" width="32" height="56">
+  <object name="Start" type="START_MARKER" x="960" y="128" width="128" height="128">
+   <properties>
+    <property name="tag" value="START"/>
+   </properties>
+  </object>
+  <object name="Crate" type="CRATE" x="1472" y="1472" width="64" height="64"/>
+  <object name="statue" type="STATUE" x="832" y="1472" width="64" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+   </properties>
+  </object>
+  <object name="Barril" type="BARREL" x="1344" y="2496" width="64" height="64"/>
+  <object name="Manfred" type="BROTHERMANFRED" x="1088" y="2624" width="64" height="64">
+   <properties>
+    <property name="tag" value="MANFRED"/>
+   </properties>
+  </object>
+  <object name="brasero" type="BRAZIER_INFO" x="448" y="1920" width="64" height="64"/>
+  <object name="Door" type="CDOOR" x="896" y="3008" width="64" height="64">
+   <properties>
+    <property name="Channel" value="2"/>
+    <property name="angle" value="X"/>
+   </properties>
+  </object>
+  <object name="statue" type="STATUE" x="1152" y="1472" width="64" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+   </properties>
+  </object>
+  <object name="brasero" type="BRAZIER_INFO" x="1536" y="1920" width="64" height="64"/>
+  <object name="chapel" type="ZONE" x="512" y="2304" width="1024" height="704">
+   <properties>
+    <property name="tag" value="chapel"/>
+   </properties>
+  </object>
+  <object name="GRAVEYARD1" type="START_MARKER" x="320" y="896" width="512" height="448">
+   <properties>
+    <property name="tag" value="GRAVEYARD1"/>
+   </properties>
+  </object>
+  <object name="GRAVEYARD3" type="START_MARKER" x="128" y="2496" width="256" height="256">
+   <properties>
+    <property name="tag" value="GRAVEYARD3"/>
+   </properties>
+  </object>
+  <object name="GRAVEYARD4" type="START_MARKER" x="1728" y="3264" width="256" height="256">
+   <properties>
+    <property name="tag" value="GRAVEYARD4"/>
+   </properties>
+  </object>
+  <object name="GRAVEYARD2" type="START_MARKER" x="1536" y="1024" width="256" height="256">
+   <properties>
+    <property name="tag" value="GRAVEYARD2"/>
+   </properties>
+  </object>
+  <object name="GRAVEYARD5" type="START_MARKER" x="1344" y="128" width="256" height="256">
+   <properties>
+    <property name="tag" value="GRAVEYARD5"/>
+   </properties>
+  </object>
+  <object name="brasero" type="BRAZIER_INFO" x="1216" y="2816" width="64" height="64"/>
+  <object name="brasero" type="BRAZIER_INFO" x="768" y="2816" width="64" height="64"/>
+  <object name="Relic" type="DESNARELIC" x="960" y="2688" width="64" height="64">
+   <properties>
+    <property name="tag" value="RELIC"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="decorations" width="32" height="56">
+  <object name="grave" type="DECORATION_INFO" x="448" y="960" width="64" height="128">
+   <properties>
+    <property name="resource" value="decor/grave1x2A"/>
+   </properties>
+  </object>
+  <object name="grave" type="DECORATION_INFO" x="576" y="960" width="64" height="128">
+   <properties>
+    <property name="resource" value="decor/grave1x2B"/>
+   </properties>
+  </object>
+  <object name="grave" type="DECORATION_INFO" x="704" y="960" width="64" height="128">
+   <properties>
+    <property name="resource" value="decor/grave1x2A"/>
+   </properties>
+  </object>
+  <object name="grave" type="DECORATION_INFO" x="448" y="1152" width="64" height="128">
+   <properties>
+    <property name="resource" value="decor/grave1x2B"/>
+   </properties>
+  </object>
+  <object name="grave" type="DECORATION_INFO" x="576" y="1152" width="64" height="128">
+   <properties>
+    <property name="resource" value="decor/grave1x2D"/>
+   </properties>
+  </object>
+  <object name="grave" type="DECORATION_INFO" x="704" y="1152" width="64" height="128">
+   <properties>
+    <property name="resource" value="decor/grave1x2C"/>
+   </properties>
+  </object>
+  <object name="grave" type="DECORATION_INFO" x="1472" y="640" width="64" height="128">
+   <properties>
+    <property name="resource" value="decor/grave1x2C"/>
+   </properties>
+  </object>
+  <object name="grave" type="DECORATION_INFO" x="1600" y="640" width="64" height="128">
+   <properties>
+    <property name="resource" value="decor/grave1x2A"/>
+   </properties>
+  </object>
+  <object name="grave" type="DECORATION_INFO" x="1792" y="832" width="64" height="128">
+   <properties>
+    <property name="resource" value="decor/grave1x2A"/>
+   </properties>
+  </object>
+  <object name="grave" type="DECORATION_INFO" x="1664" y="832" width="64" height="128">
+   <properties>
+    <property name="resource" value="decor/grave1x2E"/>
+   </properties>
+  </object>
+  <object name="grave" type="DECORATION_INFO" x="1600" y="1088" width="128" height="64">
+   <properties>
+    <property name="angle" value="D"/>
+    <property name="resource" value="decor/grave1x2A"/>
+   </properties>
+  </object>
+  <object name="grave" type="DECORATION_INFO" x="1600" y="1216" width="128" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="resource" value="decor/grave1x2B"/>
+   </properties>
+  </object>
+  <object name="grave" type="DECORATION_INFO" x="1792" y="1088" width="128" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="resource" value="decor/grave1x2E"/>
+   </properties>
+  </object>
+  <object name="grave" type="DECORATION_INFO" x="1792" y="1216" width="128" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="resource" value="decor/grave1x2A"/>
+   </properties>
+  </object>
+  <object name="grave" type="DECORATION_INFO" x="192" y="576" width="128" height="64">
+   <properties>
+    <property name="angle" value="W"/>
+    <property name="resource" value="decor/grave1x2A"/>
+   </properties>
+  </object>
+  <object name="grave" type="DECORATION_INFO" x="1536" y="3328" width="128" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="resource" value="decor/grave1x2C"/>
+   </properties>
+  </object>
+  <object name="rocks" type="DECORATION_INFO" x="704" y="544" width="64" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="resource" value="decor/smallrocks1"/>
+   </properties>
+  </object>
+  <object name="rocks" type="DECORATION_INFO" x="1728" y="1728" width="64" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="resource" value="decor/smallrocks1"/>
+   </properties>
+  </object>
+  <object name="rocks" type="DECORATION_INFO" x="192" y="1984" width="64" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="resource" value="decor/smallrocks2"/>
+   </properties>
+  </object>
+  <object name="rocks" type="DECORATION_INFO" x="64" y="1472" width="64" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="resource" value="decor/smallrocks2"/>
+   </properties>
+  </object>
+  <object name="rocks" type="DECORATION_INFO" x="1280" y="1728" width="64" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="resource" value="decor/smallrocks3"/>
+   </properties>
+  </object>
+  <object name="rocks" type="DECORATION_INFO" x="1664" y="2240" width="64" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="resource" value="decor/smallrocks3"/>
+   </properties>
+  </object>
+  <object name="rocks" type="DECORATION_INFO" x="1728" y="2880" width="64" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="resource" value="decor/smallrocks1"/>
+   </properties>
+  </object>
+  <object name="altar" type="DECORATION_INFO" x="896" y="2688" width="192" height="128">
+   <properties>
+    <property name="resource" value="decor/altar3x2"/>
+   </properties>
+  </object>
+  <object name="bench" type="DECORATION_INFO" x="704" y="1600" width="192" height="64">
+   <properties>
+    <property name="angle" value="D"/>
+    <property name="resource" value="decor/bench1x4"/>
+   </properties>
+  </object>
+  <object name="bench" type="DECORATION_INFO" x="1152" y="1920" width="192" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="resource" value="decor/bench1x4"/>
+   </properties>
+  </object>
+  <object name="bench" type="DECORATION_INFO" x="704" y="1920" width="192" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="resource" value="decor/bench1x4"/>
+   </properties>
+  </object>
+  <object name="bench" type="DECORATION_INFO" x="1152" y="1664" width="192" height="128">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="resource" value="decor/bench2x4"/>
+   </properties>
+  </object>
+  <object name="bench" type="DECORATION_INFO" x="640" y="1728" width="192" height="128">
+   <properties>
+    <property name="angle" value="W"/>
+    <property name="resource" value="decor/bench2x4"/>
+   </properties>
+  </object>
+  <object name="wood" type="DECORATION_INFO" x="1280" y="1536" width="64" height="64">
+   <properties>
+    <property name="angle" value="A"/>
+    <property name="resource" value="decor/brokenwood"/>
+   </properties>
+  </object>
+  <object name="wood" type="DECORATION_INFO" x="1088" y="2048" width="64" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="resource" value="decor/brokenwood"/>
+   </properties>
+  </object>
+  <object name="wood" type="DECORATION_INFO" x="768" y="1728" width="64" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="resource" value="decor/brokenwood"/>
+   </properties>
+  </object>
+  <object name="wood" type="DECORATION_INFO" x="1024" y="1728" width="64" height="128">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="resource" value="decor/brokenwood2x1"/>
+   </properties>
+  </object>
+  <object name="Sound" type="SOUNDEFFECT" x="320" y="448" width="64" height="64">
+   <properties>
+    <property name="intensity" value="8"/>
+    <property name="marker" value="1"/>
+    <property name="range" value="10"/>
+    <property name="sound" value="loops/rain"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<system additive="true" points="false">
+<emitter imageName="img/effects/cloudcore.png" name="Default" renderType="inherit" useAdditive="false" useOriented="true">
+<spawnInterval enabled="true" max="1000.0" min="1000.0"/>
+<spawnCount enabled="true" max="10.0" min="8.0"/>
+<initialLife enabled="false" max="1000.0" min="1000.0"/>
+<initialSize enabled="false" max="10.0" min="10.0"/>
+<xOffset enabled="false" max="0.0" min="0.0"/>
+<yOffset enabled="false" max="0.0" min="0.0"/>
+<initialDistance enabled="false" max="0.0" min="0.0"/>
+<speed enabled="true" max="1.0" min="1.0"/>
+<length enabled="true" max="1000.0" min="1000.0"/>
+<emitCount enabled="false" max="1000.0" min="1000.0"/>
+<spread type="random" value="360.0"/>
+<angularOffset type="simple" value="0.0"/>
+<growthFactor type="simple" value="51.0"/>
+<gravityFactor type="simple" value="0.0"/>
+<windFactor type="simple" value="0.0"/>
+<startAlpha type="simple" value="182.0"/>
+<endAlpha type="simple" value="0.0"/>
+<alpha active="false" max="255" min="0" type="linear">
+<point x="0.0" y="0.0"/>
+<point x="1.0" y="255.0"/>
+</alpha>
+<size active="true" max="255" min="0" type="linear">
+<point x="0.0" y="0.0"/>
+<point x="0.09917355" y="0.0"/>
+<point x="0.34917355" y="61.5"/>
+<point x="0.6714876" y="3.0"/>
+<point x="1.0" y="3.0"/>
+</size>
+<velocity active="false" max="1" min="0" type="linear">
+<point x="0.0" y="0.0"/>
+<point x="1.0" y="1.0"/>
+</velocity>
+<scaleY active="false" max="1" min="0" type="linear">
+<point x="0.0" y="0.0"/>
+<point x="1.0" y="1.0"/>
+</scaleY>
+<color>
+<step b="1.0" g="1.0" offset="0.0" r="0.8"/>
+<step b="1.0" g="0.6" offset="1.0" r="0.4"/>
+</color>
+</emitter>
+<emitter imageName="img/effects/cloudcore.png" name="Default_clone" renderType="inherit" useAdditive="false" useOriented="true">
+<spawnInterval enabled="true" max="1000.0" min="1000.0"/>
+<spawnCount enabled="true" max="10.0" min="8.0"/>
+<initialLife enabled="false" max="1000.0" min="1000.0"/>
+<initialSize enabled="false" max="10.0" min="10.0"/>
+<xOffset enabled="true" max="6.0" min="6.0"/>
+<yOffset enabled="false" max="0.0" min="0.0"/>
+<initialDistance enabled="true" max="0.0" min="0.0"/>
+<speed enabled="true" max="1.0" min="1.0"/>
+<length enabled="true" max="1000.0" min="1000.0"/>
+<emitCount enabled="false" max="1000.0" min="1000.0"/>
+<spread type="random" value="0.0"/>
+<angularOffset type="simple" value="100.0"/>
+<growthFactor type="simple" value="51.0"/>
+<gravityFactor type="simple" value="0.0"/>
+<windFactor type="simple" value="0.0"/>
+<startAlpha type="simple" value="139.0"/>
+<endAlpha type="simple" value="0.0"/>
+<alpha active="false" max="255" min="0" type="linear">
+<point x="0.0" y="0.0"/>
+<point x="1.0" y="255.0"/>
+</alpha>
+<size active="true" max="255" min="0" type="linear">
+<point x="0.0" y="0.0"/>
+<point x="0.18801653" y="99.0"/>
+<point x="0.5082645" y="0.0"/>
+<point x="0.6714876" y="3.0"/>
+<point x="1.0" y="3.0"/>
+</size>
+<velocity active="false" max="1" min="0" type="linear">
+<point x="0.0" y="0.0"/>
+<point x="1.0" y="1.0"/>
+</velocity>
+<scaleY active="true" max="1" min="0" type="linear">
+<point x="0.0" y="0.4882353"/>
+<point x="0.19628099" y="0.5"/>
+<point x="0.36570248" y="0.04117647"/>
+<point x="1.0" y="0.0"/>
+</scaleY>
+<color>
+<step b="1.0" g="1.0" offset="0.0" r="0.8"/>
+<step b="1.0" g="0.6" offset="1.0" r="0.4"/>
+</color>
+</emitter>
+<emitter imageName="img/effects/cloudcore.png" name="NewEmitter_1370885195373" renderType="inherit" useAdditive="true" useOriented="true">
+<spawnInterval enabled="true" max="200.0" min="200.0"/>
+<spawnCount enabled="true" max="8.0" min="5.0"/>
+<initialLife enabled="true" max="800.0" min="600.0"/>
+<initialSize enabled="true" max="16.0" min="6.0"/>
+<xOffset enabled="true" max="-8.0" min="-8.0"/>
+<yOffset enabled="false" max="0.0" min="0.0"/>
+<initialDistance enabled="false" max="0.0" min="0.0"/>
+<speed enabled="true" max="75.0" min="25.0"/>
+<length enabled="true" max="1000.0" min="1000.0"/>
+<emitCount enabled="false" max="-1.0" min="-1.0"/>
+<spread type="random" value="272.0"/>
+<angularOffset type="simple" value="92.0"/>
+<growthFactor type="simple" value="36.0"/>
+<gravityFactor type="simple" value="0.0"/>
+<windFactor type="simple" value="5.0"/>
+<startAlpha type="simple" value="155.0"/>
+<endAlpha type="simple" value="9.0"/>
+<alpha active="false" max="255" min="0" type="linear">
+<point x="0.0" y="0.0"/>
+<point x="1.0" y="255.0"/>
+</alpha>
+<size active="false" max="255" min="0" type="linear">
+<point x="0.0" y="0.0"/>
+<point x="1.0" y="255.0"/>
+</size>
+<velocity active="true" max="1" min="0" type="linear">
+<point x="0.0" y="0.1882353"/>
+<point x="0.07231405" y="0.064705886"/>
+<point x="0.58677685" y="0.005882353"/>
+<point x="1.0" y="0.27058825"/>
+</velocity>
+<scaleY active="false" max="1" min="0" type="linear">
+<point x="0.0" y="0.0"/>
+<point x="1.0" y="1.0"/>
+</scaleY>
+<color>
+<step b="1.0" g="1.0" offset="0.0" r="1.0"/>
+<step b="1.0" g="0.6" offset="1.0" r="0.6"/>
+</color>
+</emitter>
+</system>

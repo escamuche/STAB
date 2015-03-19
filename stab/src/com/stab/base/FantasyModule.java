@@ -18,7 +18,7 @@ public class FantasyModule extends Module {
 	
 	public void commonInit(){
 		
-		Loader.addDir("res");
+		Loader.addDir("fantasy");
 		
 	}
 	

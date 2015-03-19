@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="12" height="12" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="tileset" tilewidth="64" tileheight="64">
+  <image source="tiles.png" width="512" height="512"/>
+ </tileset>
+ <layer name="Capa de Patrones 1" width="12" height="12">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NmYGBgHoRYigCmVL0QAYyunosApqf7CalF10OqelIwADWv6JBAAgAA
+  </data>
+ </layer>
+ <objectgroup name="Capa de Objetos 1" width="12" height="12">
+  <object name="undead" type="RANDOM_INFO" x="128" y="320" width="128" height="192">
+   <properties>
+    <property name="table" value="RND_UNDEAD"/>
+   </properties>
+  </object>
+  <object name="Crate" type="CRATE" x="64" y="576" width="64" height="64"/>
+  <object name="Crate" type="CRATE" x="128" y="576" width="64" height="64"/>
+  <object name="Crate" type="CRATE" x="192" y="576" width="64" height="64"/>
+  <object name="Crate" type="CRATE" x="256" y="576" width="64" height="64"/>
+  <object name="Crate" type="CRATE" x="320" y="576" width="64" height="64"/>
+  <object name="Crate" type="CRATE" x="384" y="576" width="64" height="64"/>
+  <object name="Crate" type="CRATE" x="448" y="576" width="64" height="64"/>
+  <object name="Crate" type="CRATE" x="512" y="576" width="64" height="64"/>
+  <object name="Crate" type="CRATE" x="576" y="576" width="64" height="64"/>
+  <object name="Crate" type="CRATE" x="640" y="576" width="64" height="64"/>
+  <object name="Balconada" type="START_MARKER" x="192" y="640" width="384" height="64"/>
+  <object name="Lich" type="LICH_INFO" x="128" y="256" width="64" height="64"/>
+  <object name="Crate" type="CRATE" x="256" y="320" width="64" height="64"/>
+  <object name="Crate" type="CRATE" x="448" y="320" width="64" height="64"/>
+  <object name="goblins" type="RANDOM_INFO" x="512" y="192" width="128" height="192">
+   <properties>
+    <property name="table" value="RND_GOBLIN"/>
+   </properties>
+  </object>
+  <object name="goblins" type="RANDOM_INFO" x="512" y="352" width="128" height="192">
+   <properties>
+    <property name="table" value="RND_GOBLIN"/>
+   </properties>
+  </object>
+  <object name="brazier" type="BRAZIER_INFO" x="320" y="192" width="64" height="64"/>
+  <object name="brazier" type="BRAZIER_INFO" x="576" y="640" width="64" height="64"/>
+  <object name="Chief" type="GOBLIN_CHIEFTAIN_INFO" x="448" y="192" width="64" height="64"/>
+ </objectgroup>
+</map>

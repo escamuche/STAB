@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="16" height="16" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="tiles" tilewidth="64" tileheight="64">
+  <image source="tiles.png" width="512" height="512"/>
+ </tileset>
+ <layer name="tiles" width="16" height="16">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2SvQrAMAiEg26Ojr7/g7ZDhA+xTUnWCkeSk/PnyBhnoZugXm7YPAWcIGcvep8I1Am8Y6EXaPLueFvJVb1Bw/kDXPJdf23yCf/oX85LP/Vhp6rnnA6/rXCOurV/+l37d7t3++/+nz/O4gK9IYg6AAQAAA==
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1" width="16" height="16">
+  <object name="cellar" type="START_MARKER" x="64" y="128" width="256" height="64"/>
+  <object name="stairs" type="START_MARKER" x="704" y="448" width="128" height="128"/>
+  <object name="Crate" type="CRATE" x="64" y="576" width="64" height="64"/>
+  <object name="Zombie" type="ZOMBIE_INFO" x="640" y="128" width="64" height="64"/>
+  <object name="Crate" type="CRATE" x="576" y="128" width="64" height="64"/>
+  <object name="statue" type="STATUE" x="448" y="192" width="64" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+   </properties>
+  </object>
+  <object name="Door" type="CDOOR" x="128" y="384" width="64" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="channel" value="8"/>
+   </properties>
+  </object>
+  <object name="Barril" type="BARREL" x="64" y="320" width="64" height="64"/>
+  <object name="Barril" type="BARREL" x="576" y="320" width="64" height="64"/>
+  <object name="Lever" type="WALLBUTTON" x="256" y="320" width="64" height="64">
+   <properties>
+    <property name="channel" value="1"/>
+   </properties>
+  </object>
+  <object name="Dummy" type="DUMMY" x="576" y="448" width="64" height="64"/>
+  <object name="Door" type="CDOOR" x="512" y="384" width="64" height="64">
+   <properties>
+    <property name="Channel" value="2"/>
+    <property name="angle" value="X"/>
+   </properties>
+  </object>
+  <object name="Crate" type="CRATE" x="576" y="192" width="64" height="64"/>
+  <object name="bars" type="IRON_BARS" x="704" y="256" width="64" height="64">
+   <properties>
+    <property name="Channel" value="2"/>
+    <property name="angle" value="D"/>
+   </properties>
+  </object>
+  <object name="brasero" type="BRAZIER_INFO" x="768" y="256" width="64" height="64"/>
+  <object name="Door" type="CDOOR" x="320" y="256" width="64" height="64">
+   <properties>
+    <property name="Channel" value="2"/>
+   </properties>
+  </object>
+  <object name="Door" type="CDOOR" x="320" y="192" width="64" height="64">
+   <properties>
+    <property name="Channel" value="1"/>
+   </properties>
+  </object>
+  <object name="CRACKDOOR" type="CRACKDOOR" x="256" y="512" width="64" height="64"/>
+  <object name="trap" type="ATTACK_TRAP" x="64" y="384" width="64" height="64">
+   <properties>
+    <property name="angle" value="w"/>
+    <property name="channel" value="1"/>
+    <property name="hideCheck" value="10"/>
+    <property name="resource" value="mechanism1"/>
+    <property name="weapon" value="RAYFROST"/>
+   </properties>
+  </object>
+  <object name="ROLDARE" type="ROLDARE_INFO" x="192" y="512" width="64" height="64"/>
+  <object name="Crate" type="CRATE" x="576" y="256" width="64" height="64"/>
+  <object name="brasero" type="BRAZIER_INFO" x="128" y="512" width="64" height="64"/>
+  <object name="chest" type="CHEST" x="256" y="128" width="64" height="64">
+   <properties>
+    <property name="angle" value="D"/>
+    <property name="color" value="blue_tint"/>
+   </properties>
+  </object>
+  <object name="deco" type="DECORATION" x="128" y="192" width="64" height="64">
+   <properties>
+    <property name="angle" value="r"/>
+    <property name="resource" value="tiny/goblet$C"/>
+    <property name="zone" value="r"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Object Layer 2" width="16" height="16">
+  <object name="Lock" type="HASLOCK" x="128" y="384" width="64" height="64">
+   <properties>
+    <property name="dc" value="10"/>
+    <property name="key" value="cellar"/>
+   </properties>
+  </object>
+  <object name="Small key" type="KEY" x="384" y="128" width="64" height="64">
+   <properties>
+    <property name="key" value="cellar"/>
+   </properties>
+  </object>
+  <object name="note" type="NOTE" x="576" y="576" width="64" height="64">
+   <properties>
+    <property name="note" value="text used for a note"/>
+    <property name="noteImage" value="rats"/>
+    <property name="noteSound" value="door_close"/>
+    <property name="resource" value="smallscroll"/>
+   </properties>
+  </object>
+  <object name="note" type="NOTE" x="512" y="576" width="64" height="64">
+   <properties>
+    <property name="note" value="text used for a note"/>
+    <property name="resource" value="smallscroll"/>
+   </properties>
+  </object>
+  <object name="rune" type="BREAKABLE_COLUMN" x="384" y="320" width="64" height="64"/>
+ </objectgroup>
+</map>

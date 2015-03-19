@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<system additive="true" points="false">
+<emitter imageName="img/effects/circle.png" name="burst" renderType="inherit" useAdditive="false" useOriented="false">
+<spawnInterval enabled="true" max="300.0" min="200.0"/>
+<spawnCount enabled="true" max="1.0" min="1.0"/>
+<initialLife enabled="true" max="1200.0" min="1200.0"/>
+<initialSize enabled="true" max="10.0" min="10.0"/>
+<xOffset enabled="false" max="0.0" min="0.0"/>
+<yOffset enabled="false" max="0.0" min="0.0"/>
+<initialDistance enabled="false" max="0.0" min="0.0"/>
+<speed enabled="true" max="0.0" min="0.0"/>
+<length enabled="false" max="-1.0" min="-1.0"/>
+<emitCount enabled="true" max="1.0" min="1.0"/>
+<spread type="random" value="0.0"/>
+<angularOffset type="simple" value="0.0"/>
+<growthFactor type="simple" value="0.0"/>
+<gravityFactor type="simple" value="0.0"/>
+<windFactor type="simple" value="0.0"/>
+<startAlpha type="simple" value="143.0"/>
+<endAlpha type="simple" value="0.0"/>
+<alpha active="false" max="255" min="0" type="linear">
+<point x="0.0" y="0.0"/>
+<point x="1.0" y="255.0"/>
+</alpha>
+<size active="true" max="255" min="0" type="linear">
+<point x="0.0" y="26.686047"/>
+<point x="0.0661157" y="7.4127903"/>
+<point x="0.11776859" y="8.895349"/>
+<point x="0.18181819" y="35.581394"/>
+<point x="0.2231405" y="90.43604"/>
+<point x="0.29752067" y="148.25581"/>
+<point x="0.35950413" y="192.73256"/>
+<point x="0.42561984" y="213.48837"/>
+<point x="0.4896694" y="223.86627"/>
+<point x="0.59504133" y="241.65697"/>
+<point x="0.7376033" y="250.55232"/>
+<point x="0.82024795" y="255.0"/>
+<point x="1.0" y="255.0"/>
+</size>
+<velocity active="false" max="1" min="0" type="linear">
+<point x="0.0" y="0.0"/>
+<point x="1.0" y="1.0"/>
+</velocity>
+<scaleY active="false" max="1" min="0" type="linear">
+<point x="0.0" y="0.0"/>
+<point x="1.0" y="1.0"/>
+</scaleY>
+<color>
+<step b="1.0" g="1.0" offset="0.0" r="1.0"/>
+<step b="1.0" g="1.0" offset="0.112" r="1.0"/>
+<step b="1.0" g="1.0" offset="1.0" r="1.0"/>
+</color>
+</emitter>
+</system>

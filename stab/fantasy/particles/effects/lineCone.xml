@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<system additive="false" points="false">
+<emitter imageName="img/effects/part01.png" name="Default_clone_clone" renderType="inherit" useAdditive="false" useOriented="true">
+<spawnInterval enabled="true" max="400.0" min="300.0"/>
+<spawnCount enabled="true" max="60.0" min="40.0"/>
+<initialLife enabled="true" max="2000.0" min="1000.0"/>
+<initialSize enabled="true" max="23.0" min="23.0"/>
+<xOffset enabled="true" max="0.0" min="0.0"/>
+<yOffset enabled="true" max="0.0" min="0.0"/>
+<initialDistance enabled="false" max="0.0" min="0.0"/>
+<speed enabled="true" max="121.0" min="100.0"/>
+<length enabled="true" max="2000.0" min="2000.0"/>
+<emitCount enabled="false" max="1000.0" min="1000.0"/>
+<spread type="random" value="83.0"/>
+<angularOffset type="simple" value="86.0"/>
+<growthFactor type="simple" value="7.0"/>
+<gravityFactor type="simple" value="0.0"/>
+<windFactor type="simple" value="0.0"/>
+<startAlpha type="simple" value="255.0"/>
+<endAlpha type="simple" value="235.0"/>
+<alpha active="false" max="255" min="0" type="linear">
+<point x="0.0" y="0.0"/>
+<point x="1.0" y="255.0"/>
+</alpha>
+<size active="true" max="255" min="0" type="linear">
+<point x="0.0" y="0.0"/>
+<point x="0.572314" y="156.0"/>
+<point x="0.79545456" y="30.0"/>
+<point x="1.0" y="0.0"/>
+</size>
+<velocity active="true" max="1" min="0" type="linear">
+<point x="0.0" y="0.03529412"/>
+<point x="0.022727273" y="0.62352943"/>
+<point x="0.16322315" y="0.0"/>
+<point x="1.0" y="0.44705883"/>
+</velocity>
+<scaleY active="true" max="1" min="0" type="linear">
+<point x="0.0" y="0.0"/>
+<point x="0.2376033" y="0.11176471"/>
+<point x="0.46280992" y="0.011764706"/>
+<point x="0.7293388" y="0.0"/>
+<point x="1.0" y="0.0"/>
+</scaleY>
+<color>
+<step b="0.4" g="0.6" offset="0.0" r="0.0"/>
+<step b="1.0" g="1.0" offset="1.0" r="1.0"/>
+</color>
+</emitter>
+</system>

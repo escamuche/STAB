@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<system additive="true" points="false">
+
+<emitter imageName="img/effects/whiteSpark.png" name="NewEmitter_1368130406579" renderType="inherit" useAdditive="false" useOriented="true">
+<spawnInterval enabled="true" max="80.0" min="50.0"/>
+<spawnCount enabled="true" max="20.0" min="20.0"/>
+<initialLife enabled="true" max="700.0" min="700.0"/>
+<initialSize enabled="false" max="10.0" min="10.0"/>
+<xOffset enabled="false" max="0.0" min="0.0"/>
+<yOffset enabled="false" max="0.0" min="0.0"/>
+<initialDistance enabled="false" max="0.0" min="0.0"/>
+<speed enabled="true" max="150.0" min="50.0"/>
+<length enabled="false" max="-1.0" min="-1.0"/>
+<emitCount enabled="true" max="90.0" min="80.0"/>
+<spread type="random" value="156.0"/>
+<angularOffset type="simple" value="271.0"/>
+<growthFactor type="simple" value="80.0"/>
+<gravityFactor type="simple" value="0.0"/>
+<windFactor type="simple" value="0.0"/>
+<startAlpha type="simple" value="15.0"/>
+<endAlpha type="simple" value="10.0"/>
+<alpha active="false" max="255" min="0" type="linear">
+<point x="0.0" y="0.0"/>
+<point x="1.0" y="255.0"/>
+</alpha>
+<size active="true" max="255" min="0" type="linear">
+<point x="0.0" y="-0.0"/>
+<point x="0.059917357" y="99.0"/>
+<point x="0.1983471" y="49.5"/>
+<point x="0.30165288" y="82.5"/>
+<point x="0.3966942" y="49.5"/>
+<point x="1.0" y="42.0"/>
+</size>
+<velocity active="false" max="1" min="0" type="linear">
+<point x="0.0" y="0.0"/>
+<point x="1.0" y="1.0"/>
+</velocity>
+<scaleY active="true" max="1" min="0" type="linear">
+<point x="0.0" y="0.16470589"/>
+<point x="0.12190083" y="0.38235295"/>
+<point x="0.2520661" y="0.14117648"/>
+<point x="0.5371901" y="0.7411765"/>
+<point x="0.6363636" y="0.16470589"/>
+<point x="1.0" y="0.34705883"/>
+</scaleY>
+<color>
+<step b="1.0" g="1.0" offset="0.0" r="0.6"/>
+<step b="1.0" g="0.8" offset="1.0" r="0.8"/>
+</color>
+</emitter>
+
+</system>

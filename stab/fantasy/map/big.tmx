@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="64" height="64" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="tiles" tilewidth="64" tileheight="64">
+  <image source="tiles.png" width="512" height="512"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="64" height="64">
+  <data encoding="base64" compression="gzip">
+   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
+  </data>
+ </layer>
+ <objectgroup name="map" width="64" height="64">
+  <object name="Entrance" type="START_MARKER" x="512" y="192" width="128" height="128"/>
+  <object name="Crate" type="CRATE" x="704" y="704" width="64" height="64"/>
+  <object name="Crate" type="CRATE" x="896" y="384" width="64" height="64"/>
+  <object name="Crate" type="CRATE" x="960" y="384" width="64" height="64"/>
+  <object name="Crate" type="CRATE" x="1088" y="384" width="64" height="64"/>
+  <object name="Crate" type="CRATE" x="1152" y="640" width="64" height="64"/>
+  <object name="Crate" type="CRATE" x="1600" y="1792" width="64" height="64"/>
+  <object name="Statue" type="STATUE" x="128" y="320" width="64" height="64"/>
+  <object name="Statue" type="STATUE" x="128" y="192" width="64" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+   </properties>
+  </object>
+  <object name="Statue" type="STATUE" x="256" y="192" width="64" height="64">
+   <properties>
+    <property name="angle" value="Z"/>
+    <property name="hideCheck" value="10"/>
+   </properties>
+  </object>
+  <object name="Statue" type="STATUE" x="256" y="384" width="64" height="64">
+   <properties>
+    <property name="angle" value="Q"/>
+   </properties>
+  </object>
+  <object name="Door" type="WOODEN_DOOR" x="384" y="320" width="64" height="64">
+   <properties>
+    <property name="channel" value="1"/>
+   </properties>
+  </object>
+  <object name="Plate" type="PRESSUREPLATE" x="448" y="320" width="64" height="64">
+   <properties>
+    <property name="channel" value="1"/>
+   </properties>
+  </object>
+  <object name="Plate" type="PRESSUREPLATE" x="320" y="320" width="64" height="64">
+   <properties>
+    <property name="channel" value="1"/>
+    <property name="hideCheck" value="15"/>
+   </properties>
+  </object>
+  <object name="Plate" type="PRESSUREPLATE" x="832" y="320" width="64" height="64">
+   <properties>
+    <property name="channel" value="2"/>
+    <property name="hideCheck" value="16"/>
+   </properties>
+  </object>
+  <object name="FlameTRap" type="FLAMEJET_TRAP" x="768" y="192" width="64" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="channel" value="2"/>
+    <property name="hideCheck" value="17"/>
+   </properties>
+  </object>
+  <object name="Plate" type="PRESSUREPLATE" x="512" y="576" width="128" height="64">
+   <properties>
+    <property name="channel" value="3"/>
+    <property name="hideCheck" value="16"/>
+   </properties>
+  </object>
+  <object name="FlameTRap" type="FLAMEJET_TRAP" x="640" y="576" width="64" height="64">
+   <properties>
+    <property name="angle" value="A"/>
+    <property name="channel" value="3"/>
+    <property name="hideCheck" value="17"/>
+   </properties>
+  </object>
+  <object name="note" type="NOTE" x="640" y="256" width="64" height="64">
+   <properties>
+    <property name="hideCheck" value="12"/>
+    <property name="note" value="El olor a humedad y podredumbre inunda la sala. Entre la penumbra se pueden distinguir restos de pequeño tamaño."/>
+    <property name="resource" value="smallscroll"/>
+    <property name="text" value="Nota"/>
+   </properties>
+  </object>
+  <object name="note" type="SKILLNOTE" x="256" y="256" width="64" height="64">
+   <properties>
+    <property name="dc" value="10"/>
+    <property name="note" value="Hay un aura extraña en el aire. Se ha usado magia de alteración recientemente en esta habitación"/>
+    <property name="resource" value="smallscroll"/>
+    <property name="skill" value="KNOWLEDGEARCANA"/>
+    <property name="text" value="Nota"/>
+   </properties>
+  </object>
+  <object name="Message" type="MESSAGE_ZONE" x="512" y="320" width="128" height="128">
+   <properties>
+    <property name="message" value="Al pasar frente a la puerta, observas restos de sangre en el pasillo. Algo no esta bien aquí. Deberías andar con precaución."/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="monsters" width="64" height="64">
+  <object name="Zombie" type="ZOMBIE_INFO" x="1920" y="960" width="64" height="64"/>
+  <object name="water" type="DECORATION_INFO" x="640" y="384" width="128" height="128">
+   <properties>
+    <property name="resource" value="SHADER#water1"/>
+   </properties>
+  </object>
+  <object name="Encounter" type="RANDOM_INFO" x="1024" y="256" width="128" height="128">
+   <properties>
+    <property name="table" value="RND_GOBLIN"/>
+   </properties>
+  </object>
+  <object name="Encounter" type="RANDOM_INFO" x="1024" y="768" width="128" height="128">
+   <properties>
+    <property name="table" value="RND_GOBLIN"/>
+   </properties>
+  </object>
+  <object name="Encounter" type="RANDOM_INFO" x="192" y="512" width="128" height="128">
+   <properties>
+    <property name="table" value="RND_GOBLIN"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="light" width="64" height="64">
+  <object name="Brazier" type="BRAZIER_INFO" x="960" y="192" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="1600" y="448" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="2112" y="448" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="1856" y="256" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="2048" y="192" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="1664" y="128" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="1344" y="704" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="1600" y="704" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="1216" y="768" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="1088" y="576" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="832" y="704" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="448" y="768" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="192" y="192" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="768" y="1280" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="1024" y="1216" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="1536" y="1664" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="1280" y="1856" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="768" y="1536" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="448" y="1536" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="128" y="1920" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="2176" y="1216" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="2176" y="896" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="2560" y="896" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="3008" y="512" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="2880" y="832" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="2816" y="128" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="3520" y="192" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="3904" y="1344" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="3520" y="1600" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="3008" y="1728" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="3072" y="1280" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="2752" y="1984" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="3904" y="2112" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="3584" y="2304" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="3456" y="2176" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="3840" y="2368" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="3584" y="2816" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="2944" y="2688" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="2240" y="2880" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="2880" y="3136" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="2496" y="3136" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="2048" y="3136" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="1920" y="3136" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="1536" y="2752" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="3328" y="3584" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="2880" y="3584" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="2880" y="3264" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="3200" y="3264" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="3008" y="3456" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="3712" y="3456" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="3840" y="3456" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="3776" y="3968" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="2816" y="3904" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="2112" y="3456" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="2304" y="3456" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="1856" y="3776" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="1152" y="3968" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="1344" y="3584" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="1152" y="3328" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="1344" y="3072" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="768" y="3584" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="512" y="3968" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="832" y="3968" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="128" y="3776" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="448" y="3072" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="512" y="2880" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="192" y="3200" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="192" y="2816" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="192" y="2560" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="512" y="2368" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="1216" y="2176" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="1280" y="2368" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="1664" y="2112" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="1920" y="1856" width="64" height="64"/>
+  <object name="Brazier" type="BRAZIER_INFO" x="2240" y="1984" width="64" height="64"/>
+  <object name="Bars" type="IRON_BARS" x="1984" y="384" width="64" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="channel" value="1"/>
+   </properties>
+  </object>
+  <object name="Bars" type="IRON_BARS" x="2240" y="384" width="64" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="channel" value="1"/>
+   </properties>
+  </object>
+  <object name="Bars" type="IRON_BARS" x="1984" y="576" width="64" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="channel" value="1"/>
+   </properties>
+  </object>
+  <object name="Bars" type="IRON_BARS" x="2240" y="576" width="64" height="64">
+   <properties>
+    <property name="angle" value="X"/>
+    <property name="channel" value="1"/>
+   </properties>
+  </object>
+  <object name="Bars" type="IRON_BARS" x="2752" y="640" width="64" height="64">
+   <properties>
+    <property name="angle" value="D"/>
+    <property name="channel" value="1"/>
+   </properties>
+  </object>
+  <object name="lever" type="LEVER_INFO" x="2432" y="512" width="64" height="64">
+   <properties>
+    <property name="channel" value="1"/>
+    <property name="resource" value="Palanca_icono"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

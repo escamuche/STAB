@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adventure name="Rats in the cellar" author="Test"
+	minLevel="1" maxLevel="10" minPlayers="1" maxPlayers="1"
+	icon="rats" 
+ 	description="A desperate woman needs help clearing her cellar of rats. A classic adventure." >
+	<narration tag="BEGIN" text="While resting at the inn, an old woman approaches you, asking for help. Apparently, a large plague of rats has invaded her cellar, and she is too old to fend them off.## You decide to help her." next="RATS1"/>
+	<narration tag="RATS1" image="rats" text="You travel to the old woman's house, expecting it to be a little cottage, overrun with rodents. However, it turns out to be a rather large mansion, with two access to the cellar." next="RATS2" />
+	<choice tag="RATS2" text="You can enter the cellar by the trapdoor outside, or by going down the stairs inside the house. However, any way you choose, the rats would be alerted, and you do´nt want them to escape by the other side">
+		<option text="Enter by the trapdoor outside" action="TRAPDOOR" />
+		<option text="Go downstairs from inside the house" action="STAIRS" />
+	</choice>
+</adventure>
