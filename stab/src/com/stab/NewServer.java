@@ -24,9 +24,12 @@ public class NewServer extends StabServer{
 		ModuleLibrary ml=StabUtils.getModuleLibrary();
 		ModuleDefinition md= ml.fakeModule(FantasyModule.class.getResourceAsStream("/com/stab/base/module.cfg"));
 		ml.addModuleDefinition(md);
-		 ml=StabUtils.getModuleLibrary();
+		
 		 md= ml.fakeModule(PfModule.class.getResourceAsStream("/com/stab/pf/module.cfg"));
 		ml.addModuleDefinition(md);
+		
+		//md= ml.fakeModule(PfModule.class.getResourceAsStream("/com/stab/cards/module.cfg"));
+		//ml.addModuleDefinition(md);
 	}
 	
 	
