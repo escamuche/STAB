@@ -1,6 +1,7 @@
 package com.stab;
 
 import com.stab.base.FantasyModule;
+import com.stab.cards.CardsModule;
 import com.stab.client.StabClient;
 import com.stab.fw.ModuleDefinition;
 import com.stab.fw.ModuleLibrary;
@@ -37,8 +38,8 @@ public class NewClient extends  StabClient {
 		ml.addModuleDefinition(md);
 		
 		 
-		//md= ml.fakeModule(PfModule.class.getResourceAsStream("/com/stab/cards/module.cfg"));
-		//ml.addModuleDefinition(md);
+		md= ml.fakeModule(CardsModule.class.getResourceAsStream("/com/stab/cards/module.cfg"));
+		ml.addModuleDefinition(md);
 	}
 
 
