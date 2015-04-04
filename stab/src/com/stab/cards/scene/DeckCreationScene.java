@@ -30,21 +30,30 @@ public class DeckCreationScene extends Scene{
 		super.init();
 		SceneLayout layout = new SceneLayout();
 		layout.setMargin(new Point(5,5));
+		layout.setGap(5, 5);
 		add(layout);
 		Backdrop bd=new Backdrop();
 		
 		add(bd);
 		
+		Panel p1= new Panel();
+		p1.setBackground("ui/roundrect$X");
+		p1.setPos(Constants.BEGIN,50);
+		p1.setSize(220,350);
+		p1.setMargins(3,3);
+		add(p1);
+		
 		Panel p= new Panel();
-		p.setBackground("ui/roundrect$B");
-		p.setPos(Constants.BEGIN,50);
-		p.setSize(220,350);
+		p.setBackground("ui/copperborder$B");
+		p.setPos(Constants.BEGIN,Constants.BEGIN);
+		p.setSize(Constants.FULL,Constants.FULL);
 		p.setMargin(3);
+		p1.addChild(p);
 		
 		Image i=new Image();
 		i.setPos(Constants.BEGIN,Constants.BEGIN);
 		i.setSize(Constants.FULL,Constants.FULL);
-		i.setImage("ui/paperback$S");
+		i.setImage("ui/cardback1$S");
 		p.addChild(i);
 		
 		Label l= new Label();
@@ -59,7 +68,7 @@ public class DeckCreationScene extends Scene{
 		i=new Image();
 		i.setPos(Constants.BEGIN,Constants.NEXT);
 		i.setSize(Constants.FILL,210);
-		i.setImage("ui/paperback$S");
+		i.setImage("art/card1$S");
 		p.addChild(i);
 		
 		l= new Label();
@@ -69,7 +78,7 @@ public class DeckCreationScene extends Scene{
 		l.setText("@description");
 		p.addChild(l);
 		
-		add(p);
+		
 		
 		
 		
@@ -78,7 +87,7 @@ public class DeckCreationScene extends Scene{
 		cards.setSize(Constants.FILL,Constants.FILL);
 		cards.setOverlay("ui/nanoborder$B");
 		add(cards);
-		cards.setMargin(5);
+		cards.setMargins(5,5);
 		cards.setGap(5, 5);
 		
 		Widget w=getWidget();
@@ -89,16 +98,16 @@ public class DeckCreationScene extends Scene{
 	public Widget getWidget(){
 		Widget w= new Widget();
 		w.setCloseable(false);
-		w.setMargin(5);
+		w.setMargins(5,5);
 		w.setSize(110,150);
 		w.setPos(Constants.NEXT,Constants.PREVIOUS);
-		w.setBackground("ui/card$S");
-		w.setOverlay("ui/nanoborder$X");
+		w.setBackground("ui/cardback1$S");
+		w.setOverlay("ui/copperborder$X");
 		Label l= new Label();
 		l.setMode(Label.BANNER);
 		l.setPos(Constants.BEGIN,Constants.BEGIN);
 		l.setSize(Constants.FILL,Constants.FILL);
-		l.setImage("art/camp");
+		l.setImage("art/card1");
 		l.setColor(Color.white);
 		l.setText("TEST CARD");
 		
@@ -107,7 +116,7 @@ public class DeckCreationScene extends Scene{
 		l.setMode(Label.BANNER);
 		l.setPos(Constants.END,Constants.BEGIN);
 		l.setSize(32,32);
-		l.setImage("effects/globe");
+		l.setImage("ui/numbershield$S");
 		l.setColor(Color.black);
 		l.setFont(Resources.BIG_BOLD_FONT);
 		l.setText("1");

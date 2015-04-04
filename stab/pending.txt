@@ -1,0 +1,33 @@
+Pending (apr15)
+
+- Aoe a traves de las puertas.
+- imagenes rotadas en 2x1 (ver si es posible una solucion facil)
+- mejorar algoritmos LoS
+- puertas abriendose solas on channel sin tener canal?
+
+
+TODO:
+
+- finish difficoult terrain, different height terrain
+- companion traits, mejoras ai, etc
+- niebla.
+- "fisica".  fuego, burning, interface isFuel, extender fuego, etc.
+- "fisica". liquidos. spill. barriles con liquido. douse. aceite
+- "fisica". apagar y encender antorchas, quitarlas de la pared, etc.
+- "fisica". Revisar, probar y mejorar push y pull (peso por material, volcar una estatua, etc)
+- graficos: swarms, reaccion ante la luz (esto es un poco fisica tambien)
+
+- Directional rooms en mapbuilder
+- Mapbuilder con reglas. las reglas han de poder ampliarse durante la creacion (ie: al meter una sala, añadir regla que exija otra sala)
+- Mapbuilder por fases (para poner una puerta, una sala con la llave y cerrar todo el mapa. Y despues "abrir" la puerta y seguir generando mapa)
+- separar info resolver del map builder, para que el builder sea generico y la resolucion de los rndgenzone e infos dependan del game.
+
+- Graficos: texturas procedurales para el suelo del dungeon
+- Decoraciones con particulas, algo de movimiento en el dungeon.
+
+- dungeon features: decoraciones elficas, 
+- dungeon hazzards: lava, fungus, necromancy zones, etc.
+- habitaciones y contenido mas de rol. pensarse si limitar los skill rolls o que
+
+
+-seguir toda la parte de cards.

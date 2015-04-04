@@ -1,6 +1,7 @@
 package com.stab.cards;
 
 import com.stab.cards.scene.DeckCreationScene;
+import com.stab.common.fw.Loader;
 import com.stab.fw.ModInfo;
 import com.stab.fw.Module;
 
@@ -22,7 +23,8 @@ public class CardsModule extends Module {
 	@Override
 	public void commonInit() {
 		super.commonInit();
-	
+		
+		Loader.addDir("cards");
 			
 		 setMapping(DeckCreationScene.class);
 	 }
