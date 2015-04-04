@@ -16,6 +16,7 @@ TODO:
 - "fisica". apagar y encender antorchas, quitarlas de la pared, etc.
 - "fisica". Revisar, probar y mejorar push y pull (peso por material, volcar una estatua, etc)
 - graficos: swarms, reaccion ante la luz (esto es un poco fisica tambien)
+- safeguard para no atacarse a uno mismo, aliados, etc... que paso con eso?
 
 - Directional rooms en mapbuilder
 - Mapbuilder con reglas. las reglas han de poder ampliarse durante la creacion (ie: al meter una sala, añadir regla que exija otra sala)
